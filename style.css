@@ -1,0 +1,127 @@
+/*
+Theme Name: Washington State University Human Resources Services
+Theme URI: https://web.wsu.edu/
+Author: WSU University Communications
+Author URI: https://web.wsu.edu/
+Description: A child theme of the WSU Web Communications Spine template.
+Template: spine
+Version: 0.8.6
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+* {
+	box-sizing: border-box;
+}
+html {
+	background-color:#fff;
+}
+html main {
+	color:#363636;
+}
+h1 {
+	font-weight:600;
+	text-transform: uppercase;
+	padding-top:1em;
+}
+h3 {
+	font-weight: 300;
+	padding-top:1.2em;
+	padding-bottom:.8em;
+}
+/***********************************
+
+			Modifications
+
+***********************************/
+#spine .spine-actions>ul li.spine-search-tab {
+	display:none;
+}
+/***********************************
+
+			Page specific
+
+***********************************/
+
+/* Home */
+
+body.home .article-header,
+body.home .main-header,
+body.home .close-header-search,
+.header-search-wrapper .search-label {
+	display:none;
+}
+body.home .header-search-wrapper {
+	height:210px;
+	width:100%;
+	margin-bottom:1em;
+}
+/***********************************
+
+			Search
+
+***********************************/
+.header-search-wrapper .radio-rapper {
+	width:100%;
+	margin-bottom:1.5em;
+	margin-top:2em;	
+	white-space: nowrap;
+}
+.header-search-input-wrapper input.radio {
+	display:inline-block;
+	vertical-align: middle;
+	cursor:pointer;
+}
+.header-search-wrapper .radio-rapper label {
+	font-weight:300;
+	font-size:1.4em;
+	font-family: "Open Sans";
+	vertical-align: middle;
+	margin-right:1em;
+}.header-search-wrapper .radio-rapper label:last-of-type {
+	margin-right:0;
+}
+.header-search-input-wrapper input.header-search-input {
+	border-radius: 0;
+	width:calc(100% - 90px);
+	height:80px;
+	padding:25px;
+	font-size:3em;
+	font-weight:200;
+	font-family: "Open Sans";
+}
+.si-dropdown {
+	font-family: Spine-Icons;
+	font-size:1.3em;
+	color:#d7dadb;
+	width:20px;
+	float: right;
+	margin-right:90px;
+}
+.si-dropdown:hover {
+	color:#8d959a;
+	cursor: pointer;
+}
+/***********************************
+
+			Utilities
+
+***********************************/
+.gray-bg {
+	background-color:#e4e4e4;
+}
+.pad-top {
+	padding-top:2em;
+}
+.pad-bottom {
+	padding-bottom:3em;
+}
+/***********************************
+
+			Media Queries
+
+***********************************/
+@media screen and (min-width: 990px) {
+	#spine.cropped {
+		left:10% !important;
+	}
+}
