@@ -1,10 +1,14 @@
+	<div class="parent-stretch">
+		<section class="single row">
+			<div class="column one">
+				<div class="search-label">Search</div>
+			</div>
+		</section>
+	</div>
 	<!-- Search interface, hidden by default until interaction in header -->
 	<div class="header-search-wrapper header-search-wrapper-hide">
-		<section class="side-left row" id="search-modal">
+		<section class="single row" id="search-modal">
 			<div class="column one">
-				&nbsp;
-			</div>
-			<div class="column two">
 				<div class="header-search-input-wrapper">
 					<form method="get" action="https://search.wsu.edu/Default.aspx">
 						<div class="radio-rapper">
@@ -17,16 +21,14 @@
 
 						<input type="text" value="" name="q" placeholder="Search" class="header-search-input" />
 					</form>
-					<div class="si-dropdown">&#x25BE;</div>
+					
 				</div>
 			</div>
-		</section>
-		<section class="side-left row common-searches">
-			<div class="column one">
-				&nbsp;
-			</div>
-			<div class="column two">
+			<div class="column one common-searches">
 				<div class="quick-links-label">Common Searches</div>
 			</div>
 		</section>
+
+		<div class="si-dropdown">&#x25BE;</div>
+		<div class="close-header-search">x</div>
 	</div>
