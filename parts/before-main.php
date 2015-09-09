@@ -21,5 +21,12 @@
 				</div>
 			</div>
 		</section>
-		<div class="close-header-search">x</div>
+		<section class="side-left row common-searches">
+			<div class="column one">
+				&nbsp;
+			</div>
+			<div class="column two">
+				<div class="quick-links-label">Common Searches</div>
+			</div>
+		</section>
 	</div>
