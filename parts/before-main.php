@@ -1,3 +1,4 @@
+<header>
 	<div class="parent-stretch">
 		<section class="single row">
 			<div class="column one">
@@ -28,7 +29,8 @@
 				<div class="quick-links-label">Common Searches</div>
 			</div>
 		</section>
-
+<!-- Toggle and close -->
 		<div class="si-dropdown">&#x25BE;</div>
 		<div class="close-header-search">x</div>
 	</div>
+</header>
