@@ -180,10 +180,11 @@ body.home #spine #glue:before {
 	padding-bottom:1.5em;
 }
 .header-search-wrapper .radio-rapper {
-	width:100%;
+	width:245px;
 	margin-bottom:1.5em;
 	margin-top:2em;	
 	white-space: nowrap;
+	display:inline-block;
 }
 .header-search-input-wrapper input.radio {
 	display:inline-block;
@@ -256,7 +257,13 @@ body.archive .header-search-wrapper {
 			Media Queries
 
 ***********************************/
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 490px) {
+	.header-search-wrapper .radio-rapper {
+		width:100%;
+		display: block;
+	}
+}
+@media screen and (max-width: 791px) {
 	.main-header .header-group {
 		left:0;
 	}
@@ -269,6 +276,9 @@ body.archive .header-search-wrapper {
 	#jacket #binder .header-search-wrapper  section.single.row {
     	padding-left: 198px;
     	margin-left: 4em;
+	}
+	#jacket #binder .header-search-wrapper section.single.row .radio-rapper {
+		width:34%;
 	}
 }
 @media screen and (min-width: 990px) {

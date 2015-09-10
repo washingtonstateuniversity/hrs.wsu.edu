@@ -14,8 +14,7 @@
 					<div class="header-search-input-wrapper">
 						<form method="get" action="https://search.wsu.edu/Default.aspx">
 							<div class="radio-rapper">
-								<input type="radio" name="searchRadio" class="radio"> <label>Search WSU HR Site</label> <input type="radio" name="searchRadio" class="radio"> <label>Search WSU Forms</label> <input type="radio" name="searchRadio" class="radio"> <label>Search WSU Jobs</label>
-							</div>
+								<input type="radio" name="searchRadio" class="radio"> <label>Search WSU HR Site</label></div><div class="radio-rapper"> <input type="radio" name="searchRadio" class="radio"> <label>Search WSU Forms</label> </div> <div class="radio-rapper"><input type="radio" name="searchRadio" class="radio"> <label>Search WSU Jobs</label> </div>
 							<input name="cx" value="002970099942160159670:yqxxz06m1b0" type="hidden">
 							<input name="cof" value="FORID:11" type="hidden">
 							<input name="sa" value="Search" type="hidden">
