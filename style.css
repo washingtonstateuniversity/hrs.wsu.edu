@@ -46,6 +46,14 @@ p {
     font-size: 1.1em;
     font-weight: 300;
 }
+main ul,
+main ol {
+
+}
+main ul li,
+main ol li {
+	
+}
 /***********************************
 
 			Modifications
@@ -58,6 +66,7 @@ p {
 	display:none;
 }
 .main-header {
+	height:inherit;
 	background-color:transparent;
 }
 .main-header .header-group {
