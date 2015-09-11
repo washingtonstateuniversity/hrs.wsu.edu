@@ -262,6 +262,12 @@ body.archive .header-search-wrapper {
 		width:100%;
 		display: block;
 	}
+	body.home #jacket #binder .si-dropdown {
+		margin-right:20px;
+	}
+	.header-search-input-wrapper input.header-search-input {
+		width:calc(100% - 50px);
+	}
 }
 @media screen and (max-width: 791px) {
 	.main-header .header-group {
@@ -270,6 +276,7 @@ body.archive .header-search-wrapper {
 	#jacket #binder .header-search-wrapper  section.single.row {
     	padding-left: 0;
     	margin-left: 2em;
+    	margin-top:50px;
 	}
 }
 @media screen (min-width:791px) and (max-width: 990px) {
