@@ -29,7 +29,7 @@ $hrs_common_search_args = array(
 					<div class="header-search-input-wrapper">
 						<form method="get" action="https://search.wsu.edu/Default.aspx">
 							<div class="radio-rapper">
-								<input type="radio" name="searchRadio" class="radio"> <label>Search WSU HR Site</label></div><div class="radio-rapper"> <input type="radio" name="searchRadio" class="radio"> <label>Search WSU Forms</label> </div> <div class="radio-rapper"><input type="radio" name="searchRadio" class="radio"> <label>Search WSU Jobs</label> </div>
+								<input type="radio" name="searchRadio" class="radio"> <label>Search WSU HR Site</label></div><div class="radio-rapper"> <input type="radio" name="searchRadio" class="radio"> <label>Search WSU Forms</label> </div> <div class="radio-rapper"><label><a href="https://www.wsujobs.com/">Search WSU Jobs</a></label> </div>
 							<input name="cx" value="002970099942160159670:yqxxz06m1b0" type="hidden">
 							<input name="cof" value="FORID:11" type="hidden">
 							<input name="sa" value="Search" type="hidden">
@@ -45,7 +45,7 @@ $hrs_common_search_args = array(
 				</div>
 			</section>
 			<!-- Toggle and close -->
-			<div class="si-dropdown">&#x25BE;</div>
+			<div class="si-dropdown common-searches-hide">&#x25BE;</div>
 			<div class="close-header-search">x</div>
 		</div>
 	</div>

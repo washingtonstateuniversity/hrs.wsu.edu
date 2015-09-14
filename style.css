@@ -219,12 +219,11 @@ body.home #spine #glue:before {
 
 body.page .si-dropdown,
 body.blog .si-dropdown,
-body.archive .si-dropdown {
+body.archive .si-dropdown,
+body.error404 .si-dropdown {
 	display:none;
 }
-body.page .header-search-wrapper,
-body.blog .header-search-wrapper,
-body.archive .header-search-wrapper {
+.header-search-wrapper {
 	background: #e4e4e4;
 }
 /* - closing Xs - */
@@ -243,7 +242,40 @@ body.archive .header-search-wrapper {
 .close-header-search:hover{
 	color: #c60c30;
 }
+/***********************************
 
+			Footer
+
+***********************************/
+footer.parent-foot {
+	width:100%;
+	display:block;
+	background-color:#e4e4e4;
+	padding-top:1em;
+	font-family:"Open Sans";
+}
+footer.parent-foot ul.footer-utility {
+	padding-left:20%;
+}
+footer.parent-foot .site-ref {
+	width:100%;
+	display:block;
+	background-color:#981e32;
+}
+footer.parent-foot .site-ref ul {
+	margin:0;
+	padding:0;
+	text-align: center;
+	padding:.8em 0;
+}
+footer.parent-foot .site-ref ul li {
+	display: inline-block;
+	margin-right:1.2em;
+	padding:0;
+}
+footer.parent-foot .site-ref ul li a {
+	color:#fff;
+}
 /***********************************
 
 			Utilities
