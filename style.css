@@ -54,6 +54,12 @@ main ul li,
 main ol li {
 	
 }
+main a:hover {
+	-webkit-transition: color .6s ease-out;
+	-moz-transition: color .6s ease-out;
+	-o-transition: color .6s ease-out;
+	transition: color .6s ease-out;
+}
 /***********************************
 
 			Modifications
@@ -138,6 +144,10 @@ body.home #spine #glue:before {
 }
 body.home footer.parent-foot {
 	width:100%;
+	border-left:none;
+}
+body.home footer.parent-foot ul.footer-utility {
+	padding-left:20%;
 }
 /***********************************
 
@@ -260,9 +270,25 @@ footer.parent-foot {
 	background-color:#e4e4e4;
 	padding-top:1em;
 	font-family:"Open Sans";
+	border-left:1px solid #efefef;
 }
 footer.parent-foot ul.footer-utility {
-	padding-left:20%;
+	padding-left:6%;
+	-moz-column-count: 3;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 20px;
+    column-count: 3;
+    column-gap: 20px;
+}
+/* Every IE but IE6 */
+footer.parent-foot ul.footer-utility li {
+	width/**/: 25%;
+    float/**/: left
+}
+/* End IE */
+footer.parent-foot ul.footer-utility li {
+	list-style: none;
 }
 footer.parent-foot .site-ref {
 	display:block;
@@ -278,9 +304,29 @@ footer.parent-foot .site-ref ul li {
 	display: inline-block;
 	margin-right:1.2em;
 	padding:0;
+	list-style: none;
+}
+footer.parent-foot .site-ref ul li:after {
+	display:inline-block;
+	content:"|";
+	color:#fff;
+	margin-left:1em;
+}
+footer.parent-foot .site-ref ul li:last-child:after{
+	display:none;
 }
 footer.parent-foot .site-ref ul li a {
 	color:#fff;
+}
+footer.parent-foot .site-ref ul li a:hover {
+	color:black;
+}
+footer.parent-foot ul.footer-utility li a:hover,
+footer.parent-foot .site-ref ul li a:hover  {
+	-webkit-transition: color .6s ease-out;
+	-moz-transition: color .6s ease-out;
+	-o-transition: color .6s ease-out;
+	transition: color .6s ease-out;
 }
 /***********************************
 
