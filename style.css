@@ -281,11 +281,7 @@ footer.parent-foot ul.footer-utility {
     column-count: 3;
     column-gap: 20px;
 }
-/* Every IE but IE6 */
-footer.parent-foot ul.footer-utility li {
-	width/**/: 25%;
-    float/**/: left
-}
+
 /* End IE */
 footer.parent-foot ul.footer-utility li {
 	list-style: none;
