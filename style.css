@@ -212,7 +212,7 @@ body.home #spine #glue:before {
 	font-family: "Open Sans";
 }
 
-.common-searches-hide,
+.row .common-searches-hide,
 .header-search-wrapper-hide {
 	display: none;
 }
