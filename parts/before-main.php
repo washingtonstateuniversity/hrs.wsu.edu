@@ -1,3 +1,18 @@
+<?php
+$hrs_common_search_args = array(
+	'theme_location'  => 'hrs-common-search',
+	'menu'            => 'hrs-common-search',
+	'container'       => 'div',
+	'container_class' => false,
+	'container_id'    => 'hrs-common-search',
+	'menu_class'      => null,
+	'menu_id'         => null,
+	'items_wrap'      => '<ul>%3$s</ul>',
+	'depth'           => 2,
+);
+
+?>
+
 <header>
 	<div class="parent-stretch">
 		<section class="single row">
@@ -8,7 +23,7 @@
 	</div>
 	<div class="header-drawer-wrapper">
 	<!-- Search interface, hidden by default until interaction in header -->
-		<div class="header-search-wrapper header-search-wrapper-hide">
+		<div class="header-search-wrapper <?php if ( is_front_page() ) : ?>header-search-wrapper-hide<?php endif; ?>">
 			<section class="single row" id="search-modal">
 				<div class="column one">
 					<div class="header-search-input-wrapper">
@@ -26,6 +41,7 @@
 				</div>
 				<div class="column one common-searches">
 					<div class="quick-links-label">Common Searches</div>
+					<?php wp_nav_menu( $hrs_common_search_args ); ?>
 				</div>
 			</section>
 			<!-- Toggle and close -->

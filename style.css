@@ -211,6 +211,12 @@ body.home #spine #glue:before {
 	font-weight:200;
 	font-family: "Open Sans";
 }
+
+.common-searches-hide,
+.header-search-wrapper-hide {
+	display: none;
+}
+
 body.page .si-dropdown,
 body.blog .si-dropdown,
 body.archive .si-dropdown {
