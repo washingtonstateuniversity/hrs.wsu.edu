@@ -5,7 +5,7 @@ add_action( 'wp_enqueue_scripts', 'hrs_enqueue_scripts');
  * Enqueue custom scripting in child theme.
  */
 function hrs_enqueue_scripts() {
-	wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), spine_get_script_version(), true );
+	wp_enqueue_script( 'hrs-custom', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), spine_get_script_version(), true );
 
 }
 /*
