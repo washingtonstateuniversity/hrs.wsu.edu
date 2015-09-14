@@ -39,7 +39,7 @@ $hrs_common_search_args = array(
 					
 					</div>
 				</div>
-				<div class="column one common-searches">
+				<div class="column one common-searches <?php if ( is_front_page() ) : ?>common-searches-hide<?php endif; ?>">
 					<div class="quick-links-label">Common Searches</div>
 					<?php wp_nav_menu( $hrs_common_search_args ); ?>
 				</div>
