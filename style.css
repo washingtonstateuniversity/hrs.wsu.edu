@@ -93,7 +93,10 @@ main ol li {
 ***********************************/
 
 /* Home */
-
+body.home.page #binder.spineless.fluid main {
+	margin:0;
+	width:100% !important;
+}
 body.home .article-header,
 body.home .main-header,
 body.home .close-header-search,
@@ -132,6 +135,9 @@ body.home #jacket #binder h3 {
 body.home main,
 body.home #spine #glue:before {
 	border:none;
+}
+body.home footer.parent-foot {
+	width:100%;
 }
 /***********************************
 
@@ -248,8 +254,9 @@ body.error404 .si-dropdown {
 
 ***********************************/
 footer.parent-foot {
-	width:100%;
+	width:calc(100vw - 213px);
 	display:block;
+	float: right;
 	background-color:#e4e4e4;
 	padding-top:1em;
 	font-family:"Open Sans";
@@ -258,12 +265,11 @@ footer.parent-foot ul.footer-utility {
 	padding-left:20%;
 }
 footer.parent-foot .site-ref {
-	width:100%;
 	display:block;
 	background-color:#981e32;
 }
 footer.parent-foot .site-ref ul {
-	margin:0;
+	margin:auto;
 	padding:0;
 	text-align: center;
 	padding:.8em 0;
