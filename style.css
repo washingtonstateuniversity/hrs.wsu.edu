@@ -71,6 +71,9 @@ main a:hover {
 #spine .spine-actions>ul li.spine-search-tab {
 	display:none;
 }
+#spine .spine-actions>ul li {
+	width:33%;
+}
 .main-header {
 	height:inherit;
 	background-color:transparent;
@@ -145,9 +148,6 @@ body.home #spine #glue:before {
 body.home footer.parent-foot {
 	width:100%;
 	border-left:none;
-}
-body.home footer.parent-foot ul.footer-utility {
-	padding-left:20%;
 }
 /***********************************
 
@@ -279,7 +279,9 @@ footer.parent-foot {
 	border-left:1px solid #efefef;
 }
 footer.parent-foot ul.footer-utility {
-	padding-left:6%;
+	width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 	-moz-column-count: 3;
     -moz-column-gap: 20px;
     -webkit-column-count: 3;
