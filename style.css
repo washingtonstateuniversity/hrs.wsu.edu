@@ -242,6 +242,12 @@ body.error404 .si-dropdown {
 .header-search-wrapper {
 	background: #e4e4e4;
 }
+.header-search-wrapper .common-searches ul,
+.header-search-wrapper .common-searches ul li {
+	list-style: none;
+	margin-left:0;
+	padding-left:0;
+}
 /* - closing Xs - */
 .close-header-drawer,
 .close-header-search {
@@ -268,7 +274,7 @@ footer.parent-foot {
 	display:block;
 	float: right;
 	background-color:#e4e4e4;
-	padding-top:1em;
+	padding-top:2em;
 	font-family:"Open Sans";
 	border-left:1px solid #efefef;
 }
@@ -285,6 +291,7 @@ footer.parent-foot ul.footer-utility {
 /* End IE */
 footer.parent-foot ul.footer-utility li {
 	list-style: none;
+	padding-bottom: 1.4em;
 }
 footer.parent-foot .site-ref {
 	display:block;
