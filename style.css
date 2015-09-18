@@ -433,7 +433,7 @@ footer.parent-foot .site-ref ul li a:hover  {
 		margin-bottom:1em;
 	}
 }
-@media screen and (max-width: 791px) {
+@media screen and (max-width: 790px) {
 	.main-header .header-group {
 		left:0;
 	}
@@ -457,13 +457,20 @@ footer.parent-foot .site-ref ul li a:hover  {
 		display:none;
 	}
 }
-@media screen (min-width:791px) and (max-width: 990px) {
+@media only screen and (min-width: 791px) and (max-width: 990px) {
 	#jacket #binder .header-search-wrapper  section.single.row {
     	padding-left: 198px;
     	margin-left: 4em;
 	}
 	#jacket #binder .header-search-wrapper section.single.row .radio-rapper {
 		width:34%;
+	}
+	body.home #spine #glue.spine-glue {
+		min-height:0 !important;
+	}
+	body.home #spine .spine-sitenav,
+	body.home #spine footer {
+		display:none;
 	}
 }
 @media screen and (min-width: 990px) {
