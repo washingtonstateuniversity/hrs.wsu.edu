@@ -24,3 +24,7 @@
 		}
 	});
 }(jQuery,window));
+
+jQuery(document).ready(function($){
+    $( "#tabs" ).tabs();
+  });
