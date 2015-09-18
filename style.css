@@ -49,17 +49,23 @@ p {
 }
 main ul,
 main ol {
-
+	padding-bottom: 1.4em;
 }
 main ul li,
 main ol li {
-	
+	line-height: 1.8em;
+    font-size: 1.1em;
+    font-weight: 300;
 }
 main a:hover {
 	-webkit-transition: color .6s ease-out;
 	-moz-transition: color .6s ease-out;
 	-o-transition: color .6s ease-out;
 	transition: color .6s ease-out;
+}
+hr {
+    margin-top: 3em;
+    margin-bottom: 3em;
 }
 /***********************************
 
