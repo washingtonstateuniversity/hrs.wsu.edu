@@ -372,7 +372,8 @@ a.button {
  
 }
 a.button:hover {
-                background: #c60c30;;
+	background: #c60c30;
+	color:#fff;
 }
 .section-wrapper-has-background {
     min-height: 600px !important;
