@@ -472,6 +472,61 @@ footer.parent-foot .site-ref ul li a:hover  {
 	body.home #spine footer {
 		display:none;
 	}
+	body.home #spine.cropped {
+		height: 198px !important;
+		min-height: 198px !important;
+		top: 0 !important;
+		left: auto !important;
+	}
+	body.home #spine.cropped #glue {
+		width: 198px;
+		height: 198px !important;
+		min-height: 198px !important;
+	}
+	body.home #spine.cropped #glue:before {
+		width: 198px;
+	}
+	body.home #spine.cropped #glue nav,
+	body.home #spine.cropped #glue footer {
+		display: none;
+	}
+	body.home #spine.cropped.bleed #glue:before {
+		left: 0px;
+	}
+	body.home #spine.cropped.shelved button#shelve,
+	body.home #spine.cropped.unshelved button#shelve {
+		display:none;
+	}
+		/* #### Cropped and Scrolled */
+	body.home #spine.cropped.skimmed:not(.unshelved) {
+		left: 0 !important;
+		top: 0 !important;
+		width: 100% !important;
+		height: 50px !important;
+		min-height: 0 !important;
+	}
+	body.home #spine.cropped.skimmed:not(.unshelved) #glue,
+	body.home #spine.cropped.skimmed:not(.unshelved) #glue:before {
+		min-height: 0 !important;
+		height: 50px !important;
+		width: 100% !important;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	body.home #spine.cropped.skimmed:not(.unshelved) #glue #wsu-signature {
+		background-position: center 12px;
+		background-size: auto 30px;
+		height: 49px;
+		pointer-events: none;
+		cursor: default;
+	}
+	body.home #spine.cropped.skimmed:not(.unshelved) #glue #wsu-actions {
+		width: 198px;
+		margin-top: -40px;
+	}
+	body.home #spine.cropped.skimmed #wsu-signature {
+		background-image:url(https://repo.wsu.edu/spine/develop/marks/wsu-signature-horizontal.svg);
+	}
 }
 @media screen and (min-width: 990px) {
 	#spine.cropped {
