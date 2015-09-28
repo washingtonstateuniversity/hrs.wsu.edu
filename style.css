@@ -437,7 +437,7 @@ a.button:hover {
 		display: block;
 	}
 	body.home #jacket #binder .si-dropdown {
-		margin-right:20px;
+		margin-right:20px !important;
 	}
 	.header-search-input-wrapper input.header-search-input {
 		width:calc(100% - 50px);
@@ -491,7 +491,7 @@ a.button:hover {
 		margin-top:40px;
 	}
 	body.home #jacket #binder .si-dropdown {
-		margin-right:30px;
+		margin-right:60px;
 	}
 }
 @media only screen and (min-width: 791px) and (max-width: 990px) {
