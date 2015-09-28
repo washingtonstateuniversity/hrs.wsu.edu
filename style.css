@@ -484,14 +484,23 @@ a.button:hover {
 	footer.parent-foot .site-ref ul li:after {
 		display:none;
 	}
+	#jacket #binder .header-search-wrapper section.single.row .radio-rapper:last-of-type {
+		margin-top:0;
+	}
+	body.home #jacket #binder .header-search-wrapper {
+		margin-top:40px;
+	}
+	body.home #jacket #binder .si-dropdown {
+		margin-right:30px;
+	}
 }
 @media only screen and (min-width: 791px) and (max-width: 990px) {
 	#jacket #binder .header-search-wrapper  section.single.row {
     	padding-left: 198px;
     	margin-left: 4em;
 	}
-	#jacket #binder .header-search-wrapper section.single.row .radio-rapper {
-		width:34%;
+	#jacket #binder .header-search-wrapper section.single.row .radio-rapper:last-of-type {
+		margin-top:0;
 	}
 	body.home #spine #glue.spine-glue {
 		min-height:0 !important;
@@ -555,11 +564,11 @@ a.button:hover {
 	body.home #spine.cropped.skimmed #wsu-signature {
 		background-image:url(https://repo.wsu.edu/spine/develop/marks/wsu-signature-horizontal.svg);
 	}
-}
-@media screen and (min-width: 990px) {
-	#spine.cropped {
-		left:10% !important;
+	body.home #jacket #binder .si-dropdown {
+		margin-right:30px;
 	}
+}
+@media screen and (min-width: 990px)  {
 	body.home #jacket #binder .header-search-wrapper  section.single.row {
 	    left:120px;
 	    margin-right:90px;
@@ -567,5 +576,15 @@ a.button:hover {
 	body.home #jacket #binder .header-search-input-wrapper input.header-search-input {
 		width: calc(100% - 290px);
 		margin-right:90px;
+	}
+}
+@media only screen and (min-width: 990px) and (max-width: 1699px) { 
+	#spine.cropped {
+		left:10% !important;
+	}
+}
+@media only screen and (min-width: 1700px) {
+	#spine.cropped {
+		left:8% !important;
 	}
 }
