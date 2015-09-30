@@ -53,10 +53,15 @@ main ol {
 	padding-bottom: 1.4em;
 }
 main ul li,
-main ol li {
+main ol li,
+main ul li ul li,
+main ol li ol li {
 	line-height: 1.6em;
     font-size: 1.1em;
     font-weight: 300;
+}
+main ul li ul li {
+	list-style-type: circle;
 }
 main a:hover {
 	-webkit-transition: color .6s ease-out;
@@ -210,6 +215,9 @@ body.home footer.parent-foot {
 	white-space: nowrap;
 	display:inline-block;
 }
+.header-search-wrapper .radio-rapper:last-of-type {
+	margin-left:23px;
+}
 .header-search-input-wrapper input.radio {
 	display:inline-block;
 	vertical-align: middle;
@@ -234,6 +242,10 @@ body.home footer.parent-foot {
 	font-size:3em;
 	font-weight:200;
 	font-family: "Open Sans";
+	/* Fixes Firefox input text cut off */
+	padding-top: 4px;
+	padding-bottom: 4px;
+	/**/
 }
 
 .row .common-searches-hide,
