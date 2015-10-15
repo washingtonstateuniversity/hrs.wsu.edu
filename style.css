@@ -13,14 +13,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	box-sizing: border-box;
 }
 html {
-	background-color:#fff;
+	min-height:100%;
+	background-color:#E4E4E4;
 }
 html main {
+	background-color:#fff;
 	color:#363636;
 	border-left: 1px solid #efefef;
-	padding-bottom:5em;
+	max-width:990px;
+	min-height:100%;
 }
-.main-header sup,
+html main div.page {
+	min-height:80vh;
+}
 h1 {
 	font-weight:600;
 	text-transform: uppercase;
@@ -88,24 +93,6 @@ hr {
 	width:33%;
 }
 .main-header {
-	height:inherit;
-	background-color:transparent;
-}
-.main-header .header-group {
-	position:relative;
-	max-width:1980px;
-	left: calc(100vw - 810px);
-}
-.main-header sup,
-.main-header sup a {
-	color:#363636;
-	font-size:2rem;
-}
-.main-header a:hover,
-.main-header a:focus {
-	color:#981E32;
-}
-.main-header sub {
 	display:none;
 }
 /***********************************
@@ -117,7 +104,7 @@ hr {
 /* Home */
 body.home.page #binder.spineless.fluid main {
 	margin:0;
-	width:100% !important;
+	min-width:100% !important;
 }
 body.home .article-header,
 body.home .main-header,
@@ -171,6 +158,19 @@ body.home footer.parent-foot {
 	background: #e4e4e4;
 	border-top:5px solid #981e32;
 }
+.parent-stretch .single.row .column {
+	max-width:1188px;
+	text-align: right;
+}
+.parent-stretch header {
+	display:inline-block;
+	color:#747474;
+	text-transform: uppercase;
+	padding-right:1em;
+	margin-right:1em;
+	border-right:1px solid #747474;
+	font-size:1.1em;
+}
 .parent-stretch .search-label {
 	text-align: right;
 	padding-right: 35px;
@@ -179,6 +179,7 @@ body.home footer.parent-foot {
     transition: color .3s ease;
     padding-top:1em;
     padding-bottom:1em;
+    display: inline-block;
 }
 .parent-stretch .search-label:after {
 	font-weight: 300;
@@ -198,10 +199,14 @@ body.home footer.parent-foot {
 			Search
 
 ***********************************/
+/*.header-search-wrapper {
+	position:absolute;
+	z-index: 100000;
+}*/
 
 .header-search-wrapper  section.single.row {
-    padding-left: 198px;
-    margin-left: 4em;
+    padding-left: 78px;
+    margin-left: 0;
 }
 .header-search-wrapper .quick-links-label {
 	font-size:1.4rem;
@@ -261,6 +266,7 @@ body.error404 .si-dropdown {
 }
 .header-search-wrapper {
 	background: #e4e4e4;
+	max-width:1188px;
 }
 .header-search-wrapper .common-searches ul,
 .header-search-wrapper .common-searches ul li {
@@ -290,12 +296,15 @@ body.error404 .si-dropdown {
 
 ***********************************/
 footer.parent-foot {
-	width:calc(100vw - 213px);
+	width:989px;
+	margin-bottom:0;
+	margin-left:0;
+	padding-left:0;
 	display:block;
-	float: right;
-	background-color:#e4e4e4;
+	background-color:#fff;
 	font-family:"Open Sans";
-	border-left:1px solid #efefef;
+	border-top:1px solid #efefef;
+	bottom:0;
 }
 footer.parent-foot ul.footer-utility {
 	width: 90%;

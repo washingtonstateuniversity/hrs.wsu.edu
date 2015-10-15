@@ -17,7 +17,10 @@ $hrs_common_search_args = array(
 	<div class="parent-stretch">
 		<section class="single row">
 			<div class="column one">
-				<div class="search-label">Search</div>
+				<header>
+					Human Resource Services
+				</header>
+					<div class="search-label">Search</div>
 			</div>
 		</section>
 	</div>
