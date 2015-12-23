@@ -12,7 +12,6 @@ $hrs_common_search_args = array(
 );
 
 ?>
-
 <header>
 	<div class="parent-stretch">
 		<section class="single row">
@@ -26,7 +25,7 @@ $hrs_common_search_args = array(
 	</div>
 	<div class="header-drawer-wrapper">
 	<!-- Search interface, hidden by default until interaction in header -->
-		<div class="header-search-wrapper <?php if ( ! is_front_page() ) : ?>header-search-wrapper-hide<?php endif; ?>">
+		<div class="header-search-wrapper header-search-wrapper-hide">
 			<section class="single row" id="search-modal">
 				<div class="column one">
 					<div class="header-search-input-wrapper">

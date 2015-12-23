@@ -14,7 +14,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 html {
 	min-height:100%;
-	background-color:#E4E4E4;
+	background-color:#eaeaea;
+	background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cream_pixels.png);
+	background-position: fixed;
+	background-repeat: repeat;
 }
 html main {
 	background-color:#fff;
@@ -22,6 +25,7 @@ html main {
 	border-left: 1px solid #efefef;
 	max-width:990px;
 	min-height:100%;
+
 }
 html main div.page {
 	min-height:80vh;
@@ -63,7 +67,7 @@ main ul li ul li,
 main ol li ol li {
 	line-height: 1.6em;
     font-size: 1.1em;
-    font-weight: 300;
+    font-weight: 400;
 }
 main ul li ul li {
 	list-style-type: circle;
@@ -106,23 +110,8 @@ body.home.page #binder.spineless.fluid main {
 	margin:0;
 	min-width:100% !important;
 }
-body.home .article-header,
-body.home .main-header,
-body.home .close-header-search,
-body.home .parent-stretch,
-.header-search-wrapper .search-label {
-	display:none;
-}
-body.home #jacket #binder .header-search-wrapper {
-	width:100%;
-	margin-bottom:2.2em;
-	background-color: #fff;
-	padding:0;
-	display:block;
-	border-top:none;
-}
 
-body.home #jacket #binder .si-dropdown {
+/*body.home #jacket #binder .si-dropdown {
 	font-family: Spine-Icons;
 	font-size:1.3em;
 	color:#d7dadb;
@@ -135,7 +124,7 @@ body.home #jacket #binder .si-dropdown:hover {
 	color:#c60c30;
 	cursor: pointer;
 	transition: color .3s ease;
-}
+}*/
 body.home #jacket #binder h3 {
 	font-weight: 300;
 	padding-top:1.2em;
@@ -149,13 +138,86 @@ body.home footer.parent-foot {
 	width:100%;
 	border-left:none;
 }
+body.home .h1-header {
+	height:130px;
+}
+body.home .h1-header h1{
+	float:right;
+	padding-right:8%;
+	padding-top: 6%;
+}
+body.home .spacing-loose .single.gutter.builder-section-banner .column:not(.gutterless) {
+	padding:0;
+}
+body.home .builder-section-banner .builder-banner-inner-title {
+	width:70%;
+	margin-top:45px;
+	background-color:#4d4d4d;
+	padding:1em 1em 1em 2em;
+}
+body.home .builder-section-banner .builder-banner-inner-content {
+	display:block;
+	background-color:#981e32;
+	text-align: center;
+	text-shadow:none;
+	width:inherit;
+	max-width: 25%;
+}
+body.home .content-position-left .builder-banner-inner-content:hover {
+	background-color:#c60c30;
+}
+body.home .builder-section-banner .builder-banner-inner-content p {
+	padding:0;
+	margin:0;
+}	
+body.home section.home-nav{
+background-color:#eaeaea;
+	background-image:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cream_pixels.png);
+	background-position: fixed;
+	background-repeat: repeat;
+}
+body.home section.home-nav .column ul {
+	display: flex;
+	list-style: none;
+	padding:2em 0;
+}
+body.home section.home-nav .column ul li {
+	flex:1;
+	margin-top:0;
+	margin-bottom:0;
+	padding-top:0;
+	padding-bottom:0;
+	text-align: center;
+	border-right:solid 1px #ddd;
+}
+body.home section.home-nav .column ul,
+body.home section.home-nav .column ul li {
+	box-sizing: border-box;
+}
+body.home section.home-nav .column ul li:last-of-type {
+	border-right:0;
+}
+@media screen and (min-width: 800px) {
+	.content-position-left .builder-banner-content {
+		padding:0;
+		font-size:1.2em;
+	}
+	body.home .builder-section-banner .builder-banner-inner-title {
+		width:60%;
+	}
+	body.home .builder-section-banner .builder-banner-inner-content {
+		margin-top:25px;
+	}
+}
 /***********************************
 
 			Parent Stretch
 
 ***********************************/
 .parent-stretch {
-	background: #e4e4e4;
+	background: #eaeaea;
+	background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cream_pixels.png);
+	background-position: fixed;
 	border-top:5px solid #981e32;
 }
 .parent-stretch .single.row .column {
@@ -164,11 +226,11 @@ body.home footer.parent-foot {
 }
 .parent-stretch header {
 	display:inline-block;
-	color:#747474;
+	color:#5D5D5D;
 	text-transform: uppercase;
 	padding-right:1em;
 	margin-right:1em;
-	border-right:1px solid #747474;
+	border-right:1px solid #5D5D5D;
 	font-size:1.1em;
 }
 .parent-stretch .search-label {
@@ -214,11 +276,12 @@ body.home footer.parent-foot {
 	padding-bottom:1.5em;
 }
 .header-search-wrapper .radio-rapper {
-	width:245px;
+	/*width:245px;
 	margin-bottom:1.5em;
 	margin-top:2em;	
 	white-space: nowrap;
-	display:inline-block;
+	display:inline-block;*/
+	display:none;
 }
 .header-search-wrapper .radio-rapper:last-of-type {
 	margin-left:23px;
@@ -241,7 +304,8 @@ body.home footer.parent-foot {
 }
 .header-search-input-wrapper input.header-search-input {
 	border-radius: 0;
-	width:calc(100% - 90px);
+	max-width: 100%;
+    min-width: 80%;
 	height:80px;
 	padding:25px;
 	font-size:3em;
@@ -253,26 +317,28 @@ body.home footer.parent-foot {
 	/**/
 }
 
-.row .common-searches-hide,
-.header-search-wrapper-hide {
-	display: none;
-}
-
-body.page .si-dropdown,
-body.blog .si-dropdown,
-body.archive .si-dropdown,
-body.error404 .si-dropdown {
-	display:none;
+.home .header-search-wrapper {
+	max-width:100vw;
 }
 .header-search-wrapper {
-	background: #e4e4e4;
+	background: #eaeaea;
 	max-width:1188px;
+	background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cream_pixels.png);
 }
 .header-search-wrapper .common-searches ul,
 .header-search-wrapper .common-searches ul li {
 	list-style: none;
+	font-weight:400;
 	margin-left:0;
 	padding-left:0;
+}
+.header-search-wrapper input[type=text],
+.header-search-wrapper input[type=password],
+.header-search-wrapper input[type=email],
+.header-search-wrapper select,
+.header-search-wrapper textarea {
+    background: #5D5D5D;
+    color:#fff;
 }
 /* - closing Xs - */
 .close-header-drawer,
@@ -281,7 +347,7 @@ body.error404 .si-dropdown {
 	padding-right:1em;
 	padding-bottom:1em;
 	color: #981e32;
-	font-size: 1.2rem;
+	font-size: 2rem;
 	font-weight: 300;
 	cursor: pointer;
 	transition: color .3s ease;
@@ -402,6 +468,10 @@ a.button:hover {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.single.gutter section.builder-section-banner .column:not(.gutterless) {
+	padding-left:0;
+	padding-right:0;
+}
 /***********************************
 
 			Plugins
@@ -449,6 +519,17 @@ a.button:hover {
 }
 /***********************************
 
+			Displays
+
+***********************************/
+body.home .parent-stretch .single.row .column header,
+.header-search-wrapper .search-label,
+.si-dropdown,
+.header-search-wrapper-hide {
+	display: none;
+}
+/***********************************
+
 			Media Queries
 
 ***********************************/
@@ -457,11 +538,17 @@ a.button:hover {
 		width:100%;
 		display: block;
 	}
-	body.home #jacket #binder .si-dropdown {
-		margin-right:20px !important;
-	}
 	.header-search-input-wrapper input.header-search-input {
 		width:calc(100% - 50px);
+	}
+	.parent-stretch .single.row .column {
+		text-align: center;
+	}
+	.parent-stretch header {
+		font-size: .95em;
+	}
+	.parent-stretch .search-label {
+		padding-right:0;
 	}
 }
 @media screen and (max-width: 690px) {
@@ -482,9 +569,6 @@ a.button:hover {
 @media screen and (max-width: 790px) {
 	.main-header .header-group {
 		left:0;
-	}
-	.parent-stretch {
-		margin-top:51px;
 	}
 	#jacket #binder .header-search-wrapper  section.single.row {
     	padding-left: 0;
@@ -510,9 +594,6 @@ a.button:hover {
 	}
 	body.home #jacket #binder .header-search-wrapper {
 		margin-top:40px;
-	}
-	body.home #jacket #binder .si-dropdown {
-		margin-right:60px;
 	}
 }
 @media only screen and (min-width: 791px) and (max-width: 990px) {
@@ -585,18 +666,17 @@ a.button:hover {
 	body.home #spine.cropped.skimmed #wsu-signature {
 		background-image:url(https://repo.wsu.edu/spine/develop/marks/wsu-signature-horizontal.svg);
 	}
-	body.home #jacket #binder .si-dropdown {
-		margin-right:30px;
-	}
 }
 @media screen and (min-width: 990px)  {
 	body.home #jacket #binder .header-search-wrapper  section.single.row {
-	    left:120px;
-	    margin-right:90px;
+	    left:350px;
+	    max-width: calc(100vw - 24%);
 	}
-	body.home #jacket #binder .header-search-input-wrapper input.header-search-input {
-		width: calc(100% - 290px);
-		margin-right:90px;
+	body.home .parent-stretch .single.row .column {
+		max-width:90%;
+	}
+	body.home .close-header-search {
+		margin-right:10%;
 	}
 }
 @media only screen and (min-width: 990px) and (max-width: 1699px) { 
@@ -609,3 +689,54 @@ a.button:hover {
 		left:8% !important;
 	}
 }
+
+
+div.tabs { 
+  float: none;
+  list-style: none;
+  position: relative;
+  margin: 0 0 50px 0;
+  padding:0;
+  text-align: left;
+  clear:right;
+  width:100%;
+ }
+.tabs div.tab-area {
+    display: inline-block; 
+    width: calc(50% - 2px);
+  }
+ 
+.tabs input[type="radio"] {
+     display: none;
+  }
+.tabs label {
+    text-align: center;
+    display: block;
+    padding: 21px;
+    margin-top:0;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+}
+.tabs label:hover {
+    background:gray;
+}
+.tab-content{
+	padding:5%;
+    z-index: 2;
+    display: none; 
+    overflow: hidden;
+    width: 100%;
+    padding-top:25px;
+    position: absolute;
+    top: 53px;
+    left:0;
+  }
+  [id^="tab"]:checked {
+  	
+  }
+ [id^="tab"]:checked ~ [id^="tab-content"] {
+    display: block;
+  }
