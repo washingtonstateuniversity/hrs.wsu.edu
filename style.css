@@ -14,10 +14,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 html {
 	min-height:100%;
-	background-color:#eaeaea;
-	background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cream_pixels.png);
-	background-position: fixed;
-	background-repeat: repeat;
 }
 html main {
 	background-color:#fff;
@@ -101,6 +97,21 @@ hr {
 }
 /***********************************
 
+			Background
+
+***********************************/
+html,
+.parent-stretch,
+.header-search-wrapper,
+body.home section.home-nav,
+body.home footer.parent-foot {
+	background-color:#eaeaea;
+	background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cream_pixels.png);
+	background-position: fixed;
+	background-repeat: repeat;
+	}
+/***********************************
+
 			Page specific
 
 ***********************************/
@@ -169,12 +180,9 @@ body.home .content-position-left .builder-banner-inner-content:hover {
 body.home .builder-section-banner .builder-banner-inner-content p {
 	padding:0;
 	margin:0;
-}	
-body.home section.home-nav{
-background-color:#eaeaea;
-	background-image:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cream_pixels.png);
-	background-position: fixed;
-	background-repeat: repeat;
+}
+body.home section.home-nav {
+	border-bottom: 4px solid #981E32;
 }
 body.home section.home-nav .column ul {
 	display: flex;
@@ -197,6 +205,18 @@ body.home section.home-nav .column ul li {
 body.home section.home-nav .column ul li:last-of-type {
 	border-right:0;
 }
+body.home section .column.home-tabs h5 {
+	width:80%;
+	font-weight:400;
+	vertical-align: bottom;
+    height: 70px;
+	border-bottom:1px solid #5e6a71;
+	margin-bottom:1em;
+}
+body.home section .column.home-tabs ul {
+	list-style: none;
+	padding-left:0;
+}
 @media screen and (min-width: 800px) {
 	.content-position-left .builder-banner-content {
 		padding:0;
@@ -215,9 +235,6 @@ body.home section.home-nav .column ul li:last-of-type {
 
 ***********************************/
 .parent-stretch {
-	background: #eaeaea;
-	background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cream_pixels.png);
-	background-position: fixed;
 	border-top:5px solid #981e32;
 }
 .parent-stretch .single.row .column {
@@ -321,9 +338,7 @@ body.home section.home-nav .column ul li:last-of-type {
 	max-width:100vw;
 }
 .header-search-wrapper {
-	background: #eaeaea;
 	max-width:1188px;
-	background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cream_pixels.png);
 }
 .header-search-wrapper .common-searches ul,
 .header-search-wrapper .common-searches ul li {
@@ -472,6 +487,63 @@ a.button:hover {
 	padding-left:0;
 	padding-right:0;
 }
+.nested-halves {
+	width: 100%;
+	display: inline-block;
+	text-align: top;
+	clear: both;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.nested-halves .nested-one {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-right: 1%;
+}
+
+.nested-halves .nested-two {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-left: 1%;
+}
+
+.nested-thirds {
+	width: 100%;
+	display: inline-block;
+	text-align: top;
+	clear: both;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.nested-thirds .nested-one {
+	display: block;
+	width: 32%;
+	float: left;
+	padding-right: 1%;
+}
+
+.nested-thirds .nested-two {
+	display: block;
+	width: 32%;
+	float: left;
+	padding-right: 1%;
+}
+
+.nested-thirds .nested-three {
+	display: block;
+	width: 32%;
+	float: left;
+	padding-right: 1%;
+}
+
+.nested-gutter {
+	padding-left: 1%;
+	padding-right: 1%;
+}
 /***********************************
 
 			Plugins
@@ -595,6 +667,30 @@ body.home .parent-stretch .single.row .column header,
 	body.home #jacket #binder .header-search-wrapper {
 		margin-top:40px;
 	}
+	.nested-thirds .nested-one,
+	.nested-thirds .nested-two,
+	.nested-thirds .nested-three {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+	
+	.nested-halves .nested-one,
+	.nested-halves .nested-two,
+	.nested-halves .nested-three {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+	.nested-one {
+		display: block;
+		width: 100%;
+		clear: both;
+	}
+	
+	.nested-two {
+		display: block;
+		width: 100%;
+		clear: both;
+	}
 }
 @media only screen and (min-width: 791px) and (max-width: 990px) {
 	#jacket #binder .header-search-wrapper  section.single.row {
@@ -692,14 +788,16 @@ body.home .parent-stretch .single.row .column header,
 
 
 div.tabs { 
-  float: none;
-  list-style: none;
-  position: relative;
-  margin: 0 0 50px 0;
-  padding:0;
-  text-align: left;
-  clear:right;
-  width:100%;
+	float: none;
+	list-style: none;
+	position: relative;
+	margin: 0 0 50px 0;
+	padding:0;
+	text-align: left;
+	clear:right;
+	width:100%;
+	height: 100%;
+	min-height: 400px;
  }
 .tabs div.tab-area {
     display: inline-block; 
@@ -719,24 +817,24 @@ div.tabs {
     text-transform: uppercase;
     cursor: pointer;
     position: relative;
+    background-color:#F0F0F0;
 }
 .tabs label:hover {
-    background:gray;
+    color:#981E32;
 }
 .tab-content{
-	padding:5%;
+	padding:70px 8%;
     z-index: 2;
     display: none; 
     overflow: hidden;
     width: 100%;
-    padding-top:25px;
     position: absolute;
     top: 53px;
     left:0;
   }
-  [id^="tab"]:checked {
-  	
-  }
+ [id^="tab"]:checked ~ label {
+    background: white;
+}
  [id^="tab"]:checked ~ [id^="tab-content"] {
     display: block;
   }
