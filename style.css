@@ -206,14 +206,14 @@ body.home section.home-nav .column ul li {
 body.home section.home-nav .column ul li:last-of-type {
 	border-right:0;
 }
-body.home section .column.home-tabs h5 {
+body.home section .column.tabbed h5 {
 	font-weight:400;
 	vertical-align: bottom;
-    height: 50px;
+    height: 70px;
 	border-bottom:1px solid #5e6a71;
 	margin-bottom:1.4em;
 }
-body.home section .column.home-tabs ul {
+body.home section .column.tabbed ul {
 	list-style: none;
 	padding-left:0;
 }
@@ -538,45 +538,38 @@ a.button:hover {
 			Plugins
 
 ***********************************/
-#tabs {
-	display: block;
+.tabbed ul.tabbed-tabs {
+	display: flex;
+	padding:0;
+}
+.tabbed ul li.tabbed-tab {
+	flex:1;
+	text-align: center;
+    display: block;
+    padding: 21px;
+    margin-top:0;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    background-color:#F0F0F0;
+}
+.tabbed ul li.tabbed-tab a {
+	display:block;
 	width:100%;
+	height:100%;
+	outline:0;
+	color:#363636;
 }
-#tabs ul {
-	width:calc(60% - 60px);
-	float:left;
-	-moz-column-count: 2;
-    -moz-column-gap: 30px;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 30px;
-    column-count: 2;
-    column-gap: 30px;
-    margin-left:0;
-    margin-right:1em;
-    padding-left:0;
-    padding-right:0;
+.tabbed ul li.tabbed-tab a:hover {
+	color:#981E32;
 }
-#tabs ul li {
-	list-style: none;
-	padding-bottom:0;
-	margin-bottom:1.1em;
-	margin-right:0;
-	margin-left:0;
-	outline: 0;
-	border-bottom: 3px solid transparent;
-    box-shadow: inset 0 -5px 0 transparent;
+.tabbed ul li.tabbed-tab.ui-tabs-active {
+	background: white;
 }
-#tabs ul li a:focus,
-#tabs ul li.ui-tabs-active.ui-state-active {
-	border-bottom: 3px solid #dddddd;
-    box-shadow: inset 0 -5px 0 #dddddd;
-    outline: 0;
-}
-#tabs div {
-	display: inline-block;
-	width:40%;
-	border-left:1px solid #dddddd;
-	padding-left:2em;
+.tabbed .ui-tabs-panel {
+	padding:8%;
 }
 /***********************************
 
@@ -632,23 +625,6 @@ body.home .parent-stretch .single.row .column header,
 	body.home section.home-nav .column ul li:first-of-type {
 		border-top:none;
 	}
-	body.home div.tabs {
-		display:block;
-	}
-	body.home .tabs div.tab-area {
-		width:100%;
-	}
-	body.home .tab-content {
-		position:relative;
-		overflow: auto;
-		display:block;
-		top:0;
-		padding-top:15px;
-		padding-bottom:0;
-	}
-	body.home [id^="tab"]:checked ~ label {
-		background-color: #F0F0F0;
-	}
 	footer.parent-foot ul.footer-utility {
   		-moz-column-count: 1;
    		-moz-column-gap: 20px;
@@ -668,21 +644,6 @@ body.home .parent-stretch .single.row .column header,
 		display:block;
 		width:100%;
 		height:100%;
-	}
-}
-@media screen and (max-width: 690px) {
-	#tabs ul {
-		display:none;
-	}
-	#tabs div,
-	.ui-tabs-panel,
-	.ui-widget-content {
-		float:none;
-		width:100%;
-		display:block !important;
-		padding-left:0;
-		border-left:none;
-		margin-bottom:1em;
 	}
 }
 @media screen and (max-width: 790px) {
@@ -729,9 +690,6 @@ body.home .parent-stretch .single.row .column header,
 	body.home .spacing-loose .single.gutter.home-nav .column:not(.gutterless) {
 		padding-left:0;
 		padding-right:0;
-	}
-	body.home div.tabs {
-		min-height:1080px;
 	}
 	.nested-thirds .nested-one,
 	.nested-thirds .nested-two,
@@ -828,9 +786,6 @@ body.home .parent-stretch .single.row .column header,
 	body.home #spine.cropped.skimmed #wsu-signature {
 		background-image:url(https://repo.wsu.edu/spine/develop/marks/wsu-signature-horizontal.svg);
 	}
-	body.home section .column.home-tabs h5 { 
-		height:70px;
-	}
 }
 @media screen and (min-width: 990px)  {
 	body.home #jacket #binder .header-search-wrapper  section.single.row {
@@ -880,58 +835,3 @@ body.home .parent-stretch .single.row .column header,
 		margin-top:25px;
 	}
 }
-div.tabs { 
-	float: none;
-	list-style: none;
-	position: relative;
-	margin: 0 0 50px 0;
-	padding:0;
-	text-align: left;
-	clear:right;
-	width:100%;
-	height: 100%;
-	min-height: 400px;
-	display: flex;
- }
-.tabs div.tab-area {
-    flex:1;
-    -webkit-flex: 1; /* Safari 6.1+ */
-    -ms-flex: 1; /* IE 10 */ 
-    flex: 1;
-    width: calc(50% - 2px);
-  }
- 
-.tabs input[type="radio"] {
-     display: none;
-  }
-.tabs label {
-    text-align: center;
-    display: block;
-    padding: 21px;
-    margin-top:0;
-    font-size: 20px;
-    font-weight: normal;
-    text-transform: uppercase;
-    cursor: pointer;
-    position: relative;
-    background-color:#F0F0F0;
-}
-.tabs label:hover {
-    color:#981E32;
-}
-.tab-content{
-	padding:70px 5%;
-    z-index: 2;
-    display: none; 
-    overflow: hidden;
-    width: 100%;
-    position: absolute;
-    top: 53px;
-    left:0;
-  }
- [id^="tab"]:checked ~ label {
-    background: white;
-}
- [id^="tab"]:checked ~ [id^="tab-content"] {
-    display: block;
-  }
