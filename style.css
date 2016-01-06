@@ -554,6 +554,7 @@ a.button:hover {
     cursor: pointer;
     position: relative;
     background-color:#F0F0F0;
+    outline:0;
 }
 .tabbed ul li.tabbed-tab a {
 	display:block;
@@ -561,6 +562,7 @@ a.button:hover {
 	height:100%;
 	outline:0;
 	color:#363636;
+	outline:0;
 }
 .tabbed ul li.tabbed-tab a:hover {
 	color:#981E32;
@@ -789,7 +791,7 @@ body.home .parent-stretch .single.row .column header,
 }
 @media screen and (min-width: 990px)  {
 	body.home #jacket #binder .header-search-wrapper  section.single.row {
-	    left:350px;
+	    left:300px;
 	    max-width: calc(100vw - 24%);
 	}
 	body.home .parent-stretch .single.row .column {
