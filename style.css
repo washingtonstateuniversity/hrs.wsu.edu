@@ -17,7 +17,7 @@ html {
 }
 html main {
 	background-color:#fff;
-	color:#363636;
+	color:#4a4a4a;
 	border-left: 1px solid #efefef;
 	max-width:990px;
 	min-height:100%;
@@ -30,32 +30,57 @@ h1 {
 	font-weight:600;
 	text-transform: uppercase;
 	padding-top:1em;
+	padding-bottom:1em;
+	width: 60%;
 }
 h2 {
+	font-size:1.6rem;
 	font-weight:600;
 	text-transform: uppercase;
-	padding-bottom:2em;
+	padding-bottom:1.5em;
+}
+.side-right h2 {
+	width:50%;
+}
+hr + h2 {
+	padding-top:1.5em;
 }
 h3 {
+	font-size:1.6rem;
 	font-weight: 300;
 	padding-top:1.2em;
 	padding-bottom:1.4em;
 }
+h2 + h3 {
+	padding-top:0;
+}
 .quick-links-label,
 h4 {
+	font-size: 1.2rem;
 	color:#363636;
-	font-weight:300;
+	font-weight:400;
+}
+h5 {
+
+	font-size:1rem;
+}
+h4 + h5 {
+	padding-top:2em;
+}
+h5 + ul {
+	padding-top:1.2em;
 }
 p {
+	font-weight: 400;
     margin: 0;
     padding-bottom: 1.4em;
     line-height: 1.8em;
     font-size: 1.1em;
-    font-weight: 300;
 }
 main ul,
 main ol {
 	padding-bottom: 1.4em;
+	padding-left:2.4em;
 }
 main ul li,
 main ol li,
@@ -64,9 +89,18 @@ main ol li ol li {
 	line-height: 1.6em;
     font-size: 1.1em;
     font-weight: 400;
+    padding-bottom:.9em;
 }
+main ul li,
 main ul li ul li {
-	list-style-type: circle;
+	list-style: none;
+}
+main ul li:before {
+	content:'■';
+	padding-right:.8em;
+	width:4px;
+	height:4px;
+	color:#5D5D5D;
 }
 main a:hover {
 	-webkit-transition: color .6s ease-out;
@@ -75,8 +109,22 @@ main a:hover {
 	transition: color .6s ease-out;
 }
 hr {
-    margin-top: 3em;
-    margin-bottom: 3em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+hr::after {
+	content:'';
+	display:block;
+	height:10px;
+	width:10px;
+	background:#5D5D5D;
+	/*background:#981E32;*/
+}
+.two aside {
+	font-size:90%;
+}
+.two aside h3 {
+	padding-top:0;
 }
 /***********************************
 
@@ -148,6 +196,9 @@ body.home #spine #glue:before {
 body.home footer.parent-foot {
 	width:100%;
 	border-left:none;
+}
+body.home h1 {
+	width:100%;
 }
 body.home .h1-header {
 	height:130px;
@@ -425,7 +476,7 @@ footer.parent-foot .site-ref ul li a {
 	color:#fff;
 }
 footer.parent-foot .site-ref ul li a:hover {
-	color:black;
+	color:#ccc;
 }
 footer.parent-foot ul.footer-utility li a:hover,
 footer.parent-foot .site-ref ul li a:hover  {
@@ -532,6 +583,22 @@ a.button:hover {
 .nested-gutter {
 	padding-left: 1%;
 	padding-right: 1%;
+}
+.nested-one,
+.nested-two,
+.nested-three {
+	padding-top: 1%;
+    padding-bottom: 1%;
+}
+.fixed {
+	position: fixed;
+	top: 50px;
+	margin-top: 0;
+	z-index: 1;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
 }
 /***********************************
 
@@ -804,6 +871,9 @@ body.home .parent-stretch .single.row .column header,
 @media only screen and (min-width: 990px) and (max-width: 1699px) { 
 	#spine.cropped {
 		left:10% !important;
+	}
+	.fixed {
+		position: relative !important;
 	}
 }
 @media only screen and (min-width: 1700px) {
