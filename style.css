@@ -197,9 +197,6 @@ body.home footer.parent-foot {
 	width:100%;
 	border-left:none;
 }
-body.home h1 {
-	width:100%;
-}
 body.home .h1-header {
 	height:130px;
 }
@@ -207,6 +204,7 @@ body.home .h1-header h1{
 	float:right;
 	padding-right:8%;
 	padding-top: 6%;
+	width: 50%;
 }
 body.home .spacing-loose .single.gutter.builder-section-banner .column:not(.gutterless) {
 	padding:0;
@@ -256,6 +254,10 @@ body.home section.home-nav .column ul li {
 }
 body.home section.home-nav .column ul li:last-of-type {
 	border-right:0;
+}
+body.home section.home-nav .column ul li::before {
+	content:'';
+	padding-right:0;
 }
 body.home section .column.tabbed h5 {
 	font-weight:400;
@@ -447,6 +449,10 @@ footer.parent-foot ul.footer-utility li {
 	float: left;
     margin-right: 20%;
 }
+footer.parent-foot ul.footer-utility li::before {
+	content:'';
+	padding-right:0;
+}
 footer.parent-foot .site-ref {
 	display:block;
 	background-color:#981e32;
@@ -622,6 +628,9 @@ a.button:hover {
     position: relative;
     background-color:#F0F0F0;
     outline:0;
+}.tabbed ul li::before {
+	content:'';
+	padding-right:0;
 }
 .tabbed ul li.tabbed-tab a {
 	display:block;
