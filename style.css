@@ -469,6 +469,10 @@ footer.parent-foot .site-ref ul li {
 	padding:0;
 	list-style: none;
 }
+footer.parent-foot .site-ref ul li::before {
+	content:'';
+	padding-right:0;
+}
 footer.parent-foot .site-ref ul li:after {
 	display:inline-block;
 	content:"|";
