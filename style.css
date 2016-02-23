@@ -96,7 +96,7 @@ main ul li ul li {
 	list-style: none;
 }
 main ul li:before {
-	content:'■';
+	content:'\025fc';
 	padding-right:.8em;
 	width:4px;
 	height:4px;
