@@ -204,7 +204,7 @@ body.home .h1-header h1{
 	float:right;
 	padding-right:8%;
 	padding-top: 6%;
-	width: 50%;
+	width: 60%;
 }
 body.home .spacing-loose .single.gutter.builder-section-banner .column:not(.gutterless) {
 	padding:0;
@@ -738,6 +738,10 @@ body.home .parent-stretch .single.row .column header,
 	body.home .h1-header {
 		height:inherit;
 	}
+	body.home .h1-header h1 {
+		float: left;
+    	width: 100%;
+	}
 	#jacket #binder .header-search-wrapper  section.single.row {
     	padding-left: 0;
     	margin-left: 2em;
@@ -867,6 +871,10 @@ body.home .parent-stretch .single.row .column header,
 	}
 	body.home #spine.cropped.skimmed #wsu-signature {
 		background-image:url(https://repo.wsu.edu/spine/develop/marks/wsu-signature-horizontal.svg);
+	}
+	body.home .h1-header h1 {
+    	width: 75%;
+    	padding-right:0;
 	}
 }
 @media screen and (min-width: 990px)  {
