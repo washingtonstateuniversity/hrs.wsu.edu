@@ -1,9 +1,9 @@
 {
-  "name": "wsuwp-spine-child-theme-skeleton",
-  "version": "0.0.1",
+  "name": "hrs.wsu.edu",
+  "version": "0.3.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/washingtonstateuniversity/wsuwp-spine-child-theme-skeleton"
+    "url": "https://github.com/washingtonstateuniversity/hrs.wsu.edu"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
