@@ -2,7 +2,9 @@
   "name": "washingtonstateuniversity/hrs.wsu.edu",
   "authors": [
     {
-      "name": "Washington State University",
+      "name": "Washington State University"
+    },
+    {
       "name": "Adam Turner"
     }
   ],
