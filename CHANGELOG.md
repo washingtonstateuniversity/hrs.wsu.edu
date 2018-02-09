@@ -20,8 +20,20 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ## (unreleased)
 
+### Fixed
+
+- Incorrect version number target for postcss-cli in package.json.
+- Duplicate name fields in composer.json.
+
+### Changed
+
+- Update composer.json with newer versions of php_codesniffer and wpcs.
+- Update package.json with HRS child theme details.
+- Update package.json with HRS child theme dev dependencies.
+
 ### Added
 
+- NPM script to run php codesniffer.
 - Screenshot file.
 - phpcs.ruleset.xml file.
 - package.json file.

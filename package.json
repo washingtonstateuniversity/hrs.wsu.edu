@@ -26,12 +26,12 @@
   },
   "scripts": {
     "clean": "",
-    "test": "",
-    "phpcs": "vendor/bin/phpcs --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php template-parts/**/*.php",
+    "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php",
     "lintjs": "",
     "lintscss": "",
     "scss": "",
     "build:css": "",
-    "build:js": ""
+    "build:js": "",
+    "test": "npm run phpcs -s"
   }
 }
