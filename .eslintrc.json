@@ -1,6 +1,3 @@
 {
-    "extends": "wordpress",
-    "plugins": [
-        "wordpress"
-    ]
+    "extends": "wordpress"
 }

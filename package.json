@@ -20,18 +20,17 @@
     "node-sass": "^4.7.2",
     "postcss-cli": "^5.0.0",
     "eslint": "^4.17.0",
-    "eslint-plugin-wordpress": "^0.1.0",
     "eslint-config-wordpress": "^2.0.0",
     "uglify-js": "^3.3.10"
   },
   "scripts": {
     "clean": "",
-    "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php",
-    "lintjs": "",
+    "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php || true",
+    "lintjs": "eslint src/assets/js/** || true",
     "lintscss": "",
     "scss": "",
     "build:css": "",
     "build:js": "",
-    "test": "npm run phpcs -s"
+    "test": "npm run phpcs"
   }
 }
