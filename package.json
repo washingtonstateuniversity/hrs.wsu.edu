@@ -18,7 +18,7 @@
     "autoprefixer": "^7.1.2",
     "stylelint": "^8.0.0",
     "node-sass": "^4.7.2",
-    "postcss-cli": "^6.0.17",
+    "postcss-cli": "^5.0.0",
     "eslint": "^4.17.0",
     "eslint-plugin-wordpress": "^0.1.0",
     "eslint-config-wordpress": "^2.0.0",
@@ -32,6 +32,6 @@
     "lintscss": "",
     "scss": "",
     "build:css": "",
-    "build:js": "",
+    "build:js": ""
   }
 }
