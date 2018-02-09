@@ -1,0 +1,6 @@
+{
+    "extends": "wordpress",
+    "plugins": [
+        "wordpress"
+    ]
+}
