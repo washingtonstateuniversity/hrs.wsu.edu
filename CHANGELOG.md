@@ -27,12 +27,15 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Remove eslint-plugin-wordpress call from eslintrc config file.
 - Update composer.json with newer versions of php_codesniffer and wpcs.
 - Update package.json with HRS child theme details.
 - Update package.json with HRS child theme dev dependencies.
 
 ### Added
 
+- NPM script to run eslint on source js files for js linting andn coding standards.
+- Eslint config file (`.eslintrc.json`).
 - NPM script to run php codesniffer.
 - Screenshot file.
 - phpcs.ruleset.xml file.
@@ -43,6 +46,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - License file.
 - .editorconfig file
 - Up-to-date changelog.
+
+### Removed
+
+- Broken eslint-plugin-wordpress npm dependency.
 
 ## 0.3.1 (2018-01-29)
 
