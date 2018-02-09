@@ -21,7 +21,8 @@
     "postcss-cli": "^6.0.17",
     "eslint": "^4.17.0",
     "eslint-plugin-wordpress": "^0.1.0",
-    "eslint-config-wordpress": "^2.0.0"
+    "eslint-config-wordpress": "^2.0.0",
+    "uglify-js": "^3.3.10"
   },
   "scripts": {
     "test": ""
