@@ -34,8 +34,8 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
-- NPM script to run eslint on source js files for js linting andn coding standards.
-- Eslint config file (`.eslintrc.json`).
+- NPM script to run eslint on source js files for js linting and coding standards.
+- Eslint config file (`.eslintrc.json`) with rules to enforce WP coding standards.
 - NPM script to run php codesniffer.
 - Screenshot file.
 - phpcs.ruleset.xml file.
