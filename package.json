@@ -15,6 +15,7 @@
   "devDependencies": {
     "rimraf": "^2.6.2",
     "mkdirp": "^0.5.1",
+    "cpx": "^1.5.0",
     "autoprefixer": "^7.1.2",
     "stylelint": "^8.0.0",
     "node-sass": "^4.7.2",
@@ -24,13 +25,14 @@
     "uglify-js": "^3.3.10"
   },
   "scripts": {
-    "clean": "rimraf assets/{css/*,images/*,js/}",
+    "clean": "rimraf assets/{css/,images/*,js/}",
     "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php || true",
     "lintjs": "eslint src/assets/js/**",
     "uglify": "mkdirp assets/js && uglifyjs src/assets/js/*.js -o assets/js/custom.js -m --source-map && uglifyjs src/assets/js/*.js -o assets/js/custom.min.js -m -c",
     "lintscss": "stylelint \"src/assets/scss/**/*.scss\"",
-    "sass": "",
-    "build:css": "",
+    "sass": "node-sass --source-map true --output-style compressed src/assets/scss -o assets/css && node-sass --output-style expanded src/assets/scss/style.scss -o assets/css/tmp",
+    "postsass": "postcss assets/css/*.css --use autoprefixer --replace && postcss assets/css/tmp/style.css -u autoprefixer -d ./ && rimraf assets/css/tmp",
+    "build:css": "npm run lintscss -s && npm run sass -s",
     "build:js": "npm run lintjs -s && npm run uglify -s",
     "test": ""
   }

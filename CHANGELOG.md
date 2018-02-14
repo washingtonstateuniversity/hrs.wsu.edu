@@ -27,6 +27,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Add package to npm to handle copying files cross-platform.
 - Remove eslint-plugin-wordpress call from eslintrc config file.
 - Update composer.json with newer versions of php_codesniffer and wpcs.
 - Update package.json with HRS child theme details.
@@ -34,6 +35,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- NPM script for processing scss into css, with minified and human readable versions.
 - NPM script for stylelint to lint scss files.
 - NPM script for uglifyjs to mangle and compress (and concatenate) js files.
 - NPM script to run eslint on source js files for js linting and coding standards.
