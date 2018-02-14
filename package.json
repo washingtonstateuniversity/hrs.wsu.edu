@@ -28,7 +28,7 @@
     "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php || true",
     "lintjs": "eslint src/assets/js/**",
     "uglify": "mkdirp assets/js && uglifyjs src/assets/js/*.js -o assets/js/custom.js -m --source-map && uglifyjs src/assets/js/*.js -o assets/js/custom.min.js -m -c",
-    "lintcss": "",
+    "lintscss": "stylelint \"src/assets/scss/**/*.scss\"",
     "sass": "",
     "build:css": "",
     "build:js": "npm run lintjs -s && npm run uglify -s",
