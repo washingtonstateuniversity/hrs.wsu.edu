@@ -34,6 +34,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- NPM script for uglifyjs to mangle and compress (and concatenate) js files.
 - NPM script to run eslint on source js files for js linting and coding standards.
 - Eslint config file (`.eslintrc.json`) with rules to enforce WP coding standards.
 - NPM script to run php codesniffer.
