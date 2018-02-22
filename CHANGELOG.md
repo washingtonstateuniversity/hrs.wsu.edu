@@ -36,6 +36,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Start installation instructions in the readme file.
 - Use browserslist in package.json to specify target browsers for autoprefixer (and for potential future use of eslint-plugin-compat for ESLint and stylelint-no-unsupported-browser-features for Stylelint).
 - NPM method to minify css rather than rely on Sass's compress flag, which doesn't do as good a job.
 - NPM script for processing scss into css, with minified and human readable versions.
