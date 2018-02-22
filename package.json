@@ -12,6 +12,11 @@
     }
   ],
   "license": "GPL-2.0+",
+  "browserslist": [
+    "> 1%",
+    "ie 8-11",
+    "Firefox ESR"
+  ],
   "devDependencies": {
     "rimraf": "^2.6.2",
     "mkdirp": "^0.5.1",
