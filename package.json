@@ -20,6 +20,7 @@
     "stylelint": "^8.0.0",
     "node-sass": "^4.7.2",
     "postcss-cli": "^5.0.0",
+    "cssnano": "^3.10.0",
     "eslint": "^4.17.0",
     "eslint-config-wordpress": "^2.0.0",
     "uglify-js": "^3.3.10"
@@ -30,8 +31,8 @@
     "lintjs": "eslint src/assets/js/**",
     "uglify": "mkdirp assets/js && uglifyjs src/assets/js/*.js -o assets/js/custom.js -m --source-map && uglifyjs src/assets/js/*.js -o assets/js/custom.min.js -m -c",
     "lintscss": "stylelint \"src/assets/scss/**/*.scss\"",
-    "sass": "node-sass --source-map true --output-style compressed src/assets/scss -o assets/css && node-sass --output-style expanded src/assets/scss/style.scss -o assets/css/tmp",
-    "postsass": "postcss assets/css/*.css --use autoprefixer --replace && postcss assets/css/tmp/style.css -u autoprefixer -d ./ && rimraf assets/css/tmp",
+    "sass": "node-sass --output-style expanded src/assets/scss -o assets/css",
+    "postsass": "postcss assets/css/style.css -u autoprefixer -o ./style.css && postcss assets/css/*.css --map --use autoprefixer --use cssnano --replace",
     "build:css": "npm run lintscss -s && npm run sass -s",
     "build:js": "npm run lintjs -s && npm run uglify -s",
     "test": ""

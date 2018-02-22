@@ -27,6 +27,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- NPM scripts for sass to css processing and autoprefixing to include minification.
 - Add package to npm to handle copying files cross-platform.
 - Remove eslint-plugin-wordpress call from eslintrc config file.
 - Update composer.json with newer versions of php_codesniffer and wpcs.
@@ -35,6 +36,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- NPM method to minify css rather than rely on Sass's compress flag, which doesn't do as good a job.
 - NPM script for processing scss into css, with minified and human readable versions.
 - NPM script for stylelint to lint scss files.
 - NPM script for uglifyjs to mangle and compress (and concatenate) js files.
