@@ -5,7 +5,7 @@ Author: WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: spine
-Version: 0.3.1
+Version: 0.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -336,7 +336,7 @@ body.home section .column.tabbed ul {
 .header-search-wrapper .radio-rapper {
 	/*width:245px;
 	margin-bottom:1.5em;
-	margin-top:2em;	
+	margin-top:2em;
 	white-space: nowrap;
 	display:inline-block;*/
 	display:none;
@@ -522,7 +522,7 @@ a.button {
     text-align: center;
     padding: 1rem 0 .75rem;
     transition: background .3s ease;
- 
+
 }
 a.button:hover {
 	background: #c60c30;
@@ -715,7 +715,7 @@ body.home .parent-stretch .single.row .column header,
     	column-count: 1;
    		column-gap: 20px;
 	}
-	footer.parent-foot ul.footer-utility li { 
+	footer.parent-foot ul.footer-utility li {
 		display:block;
 		width:100%;
 		float: none;
@@ -783,7 +783,7 @@ body.home .parent-stretch .single.row .column header,
 		width: 100%;
 		margin-bottom: 1em;
 	}
-	
+
 	.nested-halves .nested-one,
 	.nested-halves .nested-two,
 	.nested-halves .nested-three {
@@ -795,7 +795,7 @@ body.home .parent-stretch .single.row .column header,
 		width: 100%;
 		clear: both;
 	}
-	
+
 	.nested-two {
 		display: block;
 		width: 100%;
@@ -889,7 +889,7 @@ body.home .parent-stretch .single.row .column header,
 		margin-right:10%;
 	}
 }
-@media only screen and (min-width: 990px) and (max-width: 1699px) { 
+@media only screen and (min-width: 990px) and (max-width: 1699px) {
 	#spine.cropped {
 		left:10% !important;
 	}
