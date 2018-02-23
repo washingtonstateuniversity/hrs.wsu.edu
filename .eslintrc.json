@@ -1,0 +1,24 @@
+{
+    "extends": "wordpress",
+    "rules": {
+      "no-mixed-spaces-and-tabs": "error",
+      "indent": ["error", "tab"],
+      "max-len": ["warn", { "code": 100 }],
+      "space-in-parens": ["error", "always", { "exceptions": ["empty"]}],
+      "semi-spacing": ["error", {"before": false, "after": true}],
+      "semi-style": ["error", "last"],
+      "no-bitwise": "error",
+      "eqeqeq": "error",
+      "guard-for-in": "error",
+      "no-caller": "error",
+      "no-irregular-whitespace": "error",
+      "no-undef": "error",
+      "no-unused-vars": "error",
+      "capitalized-comments": ["warn", "always"],
+      "lines-around-comment": ["warn", { "beforeBlockComment": true, "beforeLineComment": true }]
+    },
+    "env": {
+      "browser": true,
+      "jquery": true
+    }
+}

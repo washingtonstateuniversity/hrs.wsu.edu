@@ -1,0 +1,45 @@
+{
+  "name": "hrs.wsu.edu",
+  "version": "0.3.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/washingtonstateuniversity/hrs.wsu.edu"
+  },
+  "author": "washingtonstateuniversity",
+  "contributors": [
+    {
+      "name": "Adam Turner"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "browserslist": [
+    "> 1%",
+    "ie 8-11",
+    "Firefox ESR"
+  ],
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "mkdirp": "^0.5.1",
+    "cpx": "^1.5.0",
+    "autoprefixer": "^7.1.2",
+    "stylelint": "^8.0.0",
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^5.0.0",
+    "cssnano": "^3.10.0",
+    "eslint": "^4.17.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "uglify-js": "^3.3.10"
+  },
+  "scripts": {
+    "clean": "rimraf assets/{css/,images/*,js/}",
+    "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php || true",
+    "lintjs": "eslint src/assets/js/**",
+    "uglify": "mkdirp assets/js && uglifyjs src/assets/js/*.js -o assets/js/custom.js -m --source-map && uglifyjs src/assets/js/*.js -o assets/js/custom.min.js -m -c",
+    "lintscss": "stylelint \"src/assets/scss/**/*.scss\"",
+    "sass": "node-sass --output-style expanded src/assets/scss -o assets/css",
+    "postsass": "postcss assets/css/style.css -u autoprefixer -o ./style.css && postcss assets/css/*.css --map --use autoprefixer --use cssnano --replace",
+    "build:css": "npm run lintscss -s && npm run sass -s",
+    "build:js": "npm run lintjs -s && npm run uglify -s",
+    "test": ""
+  }
+}
