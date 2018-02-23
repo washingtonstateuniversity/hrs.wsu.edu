@@ -18,6 +18,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.5.0 (unreleased)
+
+### Added
+
+- Basic SVG minification build process using the svgo npm package.
+
 ## 0.4.0 (2018-02-22)
 
 ### Fixed
