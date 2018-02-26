@@ -18,6 +18,20 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.6.0 (unreleased)
+
+### Added
+
+- Create build task to copy (@todo and possibly compress) images from `src/assets/images/` to `assets/images/`.
+
+### Changed
+
+- Move cream_pixels.png from `assets/` to `src/assets/images/`.
+
+### Removed
+
+- Delete empty template-parts/ directory because we don't need it for now.
+
 ## 0.5.0 (2018-02-22)
 
 ### Added
