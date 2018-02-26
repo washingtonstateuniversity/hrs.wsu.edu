@@ -26,6 +26,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Update paths to cream_pixels.png image asset.
 - Move cream_pixels.png from `assets/` to `src/assets/images/`.
 
 ### Removed
