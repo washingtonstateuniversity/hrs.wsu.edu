@@ -8,6 +8,16 @@
 $hrs_child_theme_version = '0.7.0';
 
 /**
+ * Removes child theme style call from parent theme.
+ *
+ * @since 0.7.0
+ */
+function hrs_dequeue_styles() {
+	wp_dequeue_style( 'spine-theme-child' );
+}
+add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
+
+/**
  * Creates a script version.
  *
  * @since 0.7.0
