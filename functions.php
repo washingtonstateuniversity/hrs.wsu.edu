@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Tracks HRS Child Theme Version
+ *
+ * @since 0.7.0
+ */
+$hrs_child_theme_version = '0.7.0';
+
 add_action( 'wp_enqueue_scripts', 'hrs_enqueue_scripts');
 /*
  * Enqueue custom scripting in child theme.
