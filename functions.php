@@ -7,6 +7,19 @@
  */
 $hrs_child_theme_version = '0.7.0';
 
+/**
+ * Creates a script version.
+ *
+ * @since 0.7.0
+ */
+function hrs_get_script_version() {
+	global $hrs_child_theme_version;
+
+	$script_version = $hrs_child_theme_version;
+
+	return $script_version;
+}
+
 add_action( 'wp_enqueue_scripts', 'hrs_enqueue_scripts');
 /*
  * Enqueue custom scripting in child theme.
