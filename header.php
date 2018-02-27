@@ -25,7 +25,7 @@
 
 	<!-- COMPATIBILITY -->
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<!--[if lt IE 10]><script src="http://hrs.wsu.dev/wp-content/themes/hrs/js/custom.js"></script>
+	<!--[if lt IE 10]><script src="http://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu/assets/js/custom.min.js"></script>
 	[endif]-->
 
 	<noscript><style>#spine #spine-sitenav ul ul li { display: block !important; }</style></noscript>
