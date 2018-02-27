@@ -18,6 +18,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.7.0 (unreleased)
+
+### Changed
+
+- Include composer.lock in version control.
+
 ## 0.6.0 (2018-02-27)
 
 ### Added
