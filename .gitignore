@@ -122,7 +122,6 @@ bin/deploy.sh
 node_modules
 /npm-debug.log
 *.codekit
-composer.lock
 vendor
 /jsdoc
 
