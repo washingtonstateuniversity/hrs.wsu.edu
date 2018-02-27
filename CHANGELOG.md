@@ -22,6 +22,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Enqueue child theme stylesheet with path to minified version.
 - Dequeue child theme stylesheet.
 
 ### Added

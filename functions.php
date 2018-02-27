@@ -8,6 +8,16 @@
 $hrs_child_theme_version = '0.7.0';
 
 /**
+ * Add HRS Child Theme stylesheet.
+ *
+ * @since 0.7.0
+ */
+function hrs_enqueue_styles() {
+	wp_enqueue_style( 'hrs-child-theme', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'wsu-spine' ), hrs_get_script_version() );
+}
+add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles' );
+
+/**
  * Removes child theme style call from parent theme.
  *
  * @since 0.7.0
