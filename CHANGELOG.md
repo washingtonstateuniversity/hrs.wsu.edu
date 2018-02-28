@@ -4,7 +4,7 @@ Author: WSU Web Communications
 
 Author: Adam Turner
 
-URI: https://github.com/washingtonstateuniversity/wsuwp-hrs-news/
+URI: https://github.com/washingtonstateuniversity/hrs.wsu.edu/
 
 This document details all notable changes to the WSU HRS Child Theme. Uses [Semantic Versioning](http://semver.org/) (as of v0.3.1).
 
@@ -19,6 +19,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Deprecated (for once-stable features removed in upcoming releases)
 ### Removed (for deprecated features removed in this release)
 -->
+
+## 0.7.1 (2018-02-28)
+
+### Fixed
+
+- Changelog formatting and URI.
 
 ## 0.7.0 (2018-02-28)
 
