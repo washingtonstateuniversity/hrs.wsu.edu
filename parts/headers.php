@@ -17,7 +17,7 @@ $hrs_common_search_args = array(
 		<section class="single row">
 			<div class="column one">
 				<header>
-					Human Resource Services
+					<div id="hr-header"><a href="http://hrs.wsu.edu">Human Resource Services</a></div>
 				</header>
 					<div class="search-label">Search</div>
 			</div>
@@ -38,7 +38,7 @@ $hrs_common_search_args = array(
 							<label class="search-label" for="header-search">Search</label>
 							<input type="text" value="" name="q" placeholder="Search" class="header-search-input" />
 						</form>
-					
+
 					</div>
 				</div>
 				<div class="column one common-searches <?php if ( is_front_page() ) : ?>common-searches-hide<?php endif; ?>">
