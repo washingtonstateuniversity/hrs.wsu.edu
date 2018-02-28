@@ -68,3 +68,16 @@ function remove_lostpassword_text ( $text ) {
                 return $text;
          }
 add_filter( 'gettext', 'remove_lostpassword_text' );
+
+
+/** Changes to login page**/
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(http://hrs.wsu.edu/wp-content/uploads/2016/09/new-logo.png);
+        }
+    </style>
+<?php }
+
+
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
