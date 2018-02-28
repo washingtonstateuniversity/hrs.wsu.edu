@@ -18,6 +18,19 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.7.0 (unreleased)
+
+### Changed
+
+- Correct theme URI and add author in stylesheet header content.
+- Enqueue child theme stylesheet with path to minified version.
+- Dequeue child theme stylesheet.
+
+### Added
+
+- Warning message about editing SCSS files vs. CSS files.
+- Method to retrieve current HRS Child Theme version.
+
 ## 0.6.0 (2018-02-27)
 
 ### Added
