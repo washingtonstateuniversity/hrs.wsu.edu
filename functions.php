@@ -40,6 +40,8 @@ function hrs_get_script_version() {
 	return $script_version;
 }
 
+add_filter( 'spine_enable_builder_module', '__return_true' );
+
 add_action( 'wp_enqueue_scripts', 'hrs_enqueue_scripts');
 /*
  * Enqueue custom scripting in child theme.
