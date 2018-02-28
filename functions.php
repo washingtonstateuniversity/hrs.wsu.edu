@@ -60,3 +60,11 @@ function hrs_html_support() {
 	add_theme_support( 'html5', array( 'header-search-input' ) );
 	register_nav_menu( 'hrs-common-search', 'Common Search' );
 }
+
+/** Remove lost password **/
+
+function remove_lostpassword_text ( $text ) {
+         if ($text == 'Lost your password?'){$text = '';}
+                return $text;
+         }
+add_filter( 'gettext', 'remove_lostpassword_text' );
