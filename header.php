@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta charset="UTF-8" />
 	<title><?php echo esc_html( spine_get_title() ); ?></title>
 
 	<!-- FAVICON -->
