@@ -1,7 +1,9 @@
 # Changelog: WSU HRS Child Theme
 
 Author: WSU Web Communications
+
 Author: Adam Turner
+
 URI: https://github.com/washingtonstateuniversity/wsuwp-hrs-news/
 
 This document details all notable changes to the WSU HRS Child Theme. Uses [Semantic Versioning](http://semver.org/) (as of v0.3.1).
