@@ -5,7 +5,7 @@
  *
  * @since 0.7.0
  */
-$hrs_child_theme_version = '0.7.1';
+$hrs_child_theme_version = '0.8.0';
 
 /**
  * Add HRS Child Theme stylesheet.
@@ -40,6 +40,8 @@ function hrs_get_script_version() {
 	return $script_version;
 }
 
+add_filter( 'spine_enable_builder_module', '__return_true' );
+
 add_action( 'wp_enqueue_scripts', 'hrs_enqueue_scripts');
 /*
  * Enqueue custom scripting in child theme.
@@ -58,3 +60,34 @@ function hrs_html_support() {
 	add_theme_support( 'html5', array( 'header-search-input' ) );
 	register_nav_menu( 'hrs-common-search', 'Common Search' );
 }
+
+/** Remove lost password **/
+
+function remove_lostpassword_text ( $text ) {
+         if ($text == 'Lost your password?'){$text = '';}
+                return $text;
+         }
+add_filter( 'gettext', 'remove_lostpassword_text' );
+
+
+/** Changes to login page**/
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(http://hrs.wsu.edu/wp-content/uploads/2016/09/new-logo.png);
+        }
+    </style>
+<?php }
+
+
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Human Resource Services';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );

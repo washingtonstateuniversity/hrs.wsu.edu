@@ -20,6 +20,19 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.8.0 (2018-02-28)
+
+### Changed
+
+- Updating full HRS Child Theme with the changes made out of version control over the past 2 years.
+    - Update original header template part with previously untracked changes.
+    - Update functions file with previously untracked changes.
+	- Update header.php with previously untracked changes.
+
+### Added
+
+- Homepage background gray patchwork tile.
+
 ## 0.7.1 (2018-02-28)
 
 ### Fixed
