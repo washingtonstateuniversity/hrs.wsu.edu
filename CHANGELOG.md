@@ -36,7 +36,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - NPM script for cumulative lint and code standards testing, run: `npm test`.
 - Homepage background gray patchwork tile.
 
-## Removed
+### Removed
 
 - Unused css3-multi-column.js file.
 
