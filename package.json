@@ -43,6 +43,6 @@
     "build:css": "npm run lintscss -s && npm run sass -s",
     "build:js": "npm run lintjs -s && npm run uglify -s",
     "build:images": "npm run svgo -s && cpx \"src/assets/images/*.{png,jpg,gif}\" assets/images/ --update",
-    "test": ""
+    "test": "npm run phpcs -s && npm run lintjs -s && npm run lintscss -s"
   }
 }
