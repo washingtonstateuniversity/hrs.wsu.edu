@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Refactor JS so that it passes eslint testing.
 - Refactor PHP so that it passes phpcs testing.
 - Include PHP in the `parts/` directory in phpcs testing.
 - Updating full HRS Child Theme with the changes made out of version control over the past 2 years.
