@@ -24,9 +24,9 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
-- Refactor SCSS so that it passes stylelint testing. Fixes #20
-- Refactor JS so that it passes eslint testing. Fixes #14
-- Refactor PHP so that it passes phpcs testing. Fixes #15
+- Refactor SCSS so that it passes stylelint testing. Fixes [#16](issues/16)
+- Refactor JS so that it passes eslint testing. Fixes [#14](issues/14)
+- Refactor PHP so that it passes phpcs testing. Fixes [#15](issues/15)
 - Include PHP in the `parts/` directory in phpcs testing.
 - Updating full HRS Child Theme with the changes made out of version control over the past 2 years.
     - Update original header template part with previously untracked changes.
