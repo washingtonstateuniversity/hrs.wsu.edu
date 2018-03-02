@@ -33,7 +33,7 @@
   },
   "scripts": {
     "clean": "rimraf assets/{css/,images/,js/}",
-    "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php parts/ || true",
+    "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php parts/",
     "lintjs": "eslint src/assets/js/**",
     "uglify": "mkdirp assets/js && uglifyjs src/assets/js/*.js -o assets/js/custom.js -m --source-map && uglifyjs src/assets/js/*.js -o assets/js/custom.min.js -m -c",
     "lintscss": "stylelint \"src/assets/scss/**/*.scss\"",
@@ -43,6 +43,8 @@
     "build:css": "npm run lintscss -s && npm run sass -s",
     "build:js": "npm run lintjs -s && npm run uglify -s",
     "build:images": "npm run svgo -s && cpx \"src/assets/images/*.{png,jpg,gif}\" assets/images/ --update",
-    "test": "npm run phpcs -s && npm run lintjs -s && npm run lintscss -s"
+    "test": "npm run phpcs -s && npm run lintjs -s && npm run lintscss -s",
+    "prebuild": "npm run clean && npm run phpcs",
+    "build": "npm run build:css && npm run build:js && npm run build:images"
   }
 }

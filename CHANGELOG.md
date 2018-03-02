@@ -35,7 +35,8 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
-- NPM script for cumulative lint and code standards testing, run: `npm test`. Closes #12
+- NPM scripts for complete build task. Closes [#11](https://github.com/washingtonstateuniversity/hrs.wsu.edu/issues/15)
+- NPM script for cumulative lint and code standards testing, run: `npm test`. Closes [#12](https://github.com/washingtonstateuniversity/hrs.wsu.edu/issues/12)
 - Homepage background gray patchwork tile.
 
 ### Removed
