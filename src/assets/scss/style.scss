@@ -5,18 +5,29 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: spine
-Version: 0.8.0
+Version: 0.8.0~1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 @import "partials/notice";
 
-
 /**
- * 1.0 Globals (globals/)
+ * 1.0 Globals
  *
+ * The global css rules for all elements that are universal across the site, no
+ * matter the page or the viewing device. This includes defining variables for
+ * color and typograpy rules as well as defining standard rules for things like
+ * lists, images, and links.
  *
+ *     - 1.1 Colors
+ *     - 1.2 Typography
+ *     - 1.3 Lists
+ *     - 1.4 Links
+ *     - 1.5 Images
+ *     - 1.6 Utility
+ *
+ * @since 0.8.0
  */
 
 * {
@@ -64,12 +75,19 @@ hr:after {
 }
 
 /**
- * _colors.scss
+ * 1.1 Colors (_colors.scss)
+ *
+ * Defines the variables for the site-wide brand colors, as well as common
+ * elements where they are used, such as `$link-color`.
+ *
+ * @since 0.8.0
  */
 
 
 /**
- * _typography.scss
+ * 1.2 Typography (_typography.scss)
+ *
+ * @since 0.8.0
  */
 
 h1 {
@@ -142,7 +160,9 @@ p {
 }
 
 /**
- * _lists.scss
+ * 1.3 Lists (_lists.scss)
+ *
+ * @since 0.8.0
  */
 
 main ul,
@@ -175,7 +195,9 @@ main ul li:before {
 }
 
 /**
- * Links (_links.scss)
+ * 1.4 Links (_links.scss)
+ *
+ * @since 0.8.0
  */
 
 main a:hover {
@@ -183,12 +205,20 @@ main a:hover {
 }
 
 /**
- * _images.scss
+ * 1.5 Images (_images.scss)
+ *
+ * @since 0.8.0
  */
 
 
 /**
- * Utility (_utility.scss)
+ * 1.6 Utility (_utility.scss)
+ *
+ * These styles establish some non-semantic utility classes for limited use in
+ * situations requiring one-off styling, such as `align{dir}` for embedded
+ * media. Try to minimize the use of these as much as reasonable.
+ *
+ * @since 0.8.0
  */
 
 .fixed {
@@ -217,15 +247,11 @@ main a:hover {
  */
 
 /**
- * 2.1 Notice (_notice.scss)
+ * 2.1 Sass Mixins (_mixins.scss)
  */
 
 /**
- * 2.2 Sass Mixins (_mixins.scss)
- */
-
-/**
- * 2.3 Spine (_spine.scss)
+ * 2.2 Spine (_spine.scss)
  */
 
 #spine #glue:before {
@@ -247,7 +273,7 @@ main a:hover {
 }
 
 /**
- * 2.4 Print (_print.scss)
+ * 2.3 Print (_print.scss)
  */
 
 
@@ -811,7 +837,7 @@ body.home .parent-stretch .single.row .column header,
 
 /**
  * MEDIA QUERIES
- * @todo Update break point definitions
+ * @todo Update break point definitions -- all in ems and min-width, not max
  * @todo Determine how best to organize these
  */
 
