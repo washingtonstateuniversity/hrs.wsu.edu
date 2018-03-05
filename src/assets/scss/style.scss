@@ -10,7 +10,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-@import "notice";
+@import "partials/notice";
 
 
 /**
@@ -18,6 +18,50 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
  *
  */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100%;
+
+	main {
+		background-color: #fff;
+		color: #4a4a4a;
+		border-left: 1px solid #efefef;
+		max-width: 990px;
+		min-height: 100%;
+
+		div.page {
+			min-height: 80vh;
+		}
+	}
+}
+
+html,
+.parent-stretch,
+.header-search-wrapper,
+body.home section.home-nav,
+body.home footer.parent-foot {
+	background-color: #eaeaea;
+	background-image: url(assets/images/cream_pixels.png);
+	background-position: fixed;
+	background-repeat: repeat;
+}
+
+hr {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+hr:after {
+	content: "";
+	display: block;
+	height: 10px;
+	width: 10px;
+	background: #5d5d5d;
+}
 
 /**
  * _colors.scss
@@ -27,68 +71,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /**
  * _typography.scss
  */
-
-
-/**
- * _lists.scss
- */
-
-
-/**
- * _images.scss
- */
-
-
-/**
- * 2.0 Partials (partials/)
- *     _notice.scss
- *     _mixins.scss
- *     _print.scss
- */
-
-
-/**
- * 3.0 Modules (modules/)
- *     _buttons.scss
- *     _tables.scss
- *     _forms.scss
- */
-
-
-/**
- * 4.0 Breakpoints (breakpoints/)
- *     _base.scss
- *     ...
- */
-
-
-/**
- * Pages (pages/)
- *     _home.scss
- */
-
-
-
-
-* {
-	box-sizing: border-box;
-}
-
-html {
-	min-height: 100%;
-}
-
-html main {
-	background-color: #fff;
-	color: #4a4a4a;
-	border-left: 1px solid #efefef;
-	max-width: 990px;
-	min-height: 100%;
-}
-
-html main div.page {
-	min-height: 80vh;
-}
 
 h1 {
 	font-weight: 600;
@@ -151,6 +133,18 @@ p {
 	font-size: 1.1em;
 }
 
+.two aside {
+	font-size: 90%;
+}
+
+.two aside h3 {
+	padding-top: 0;
+}
+
+/**
+ * _lists.scss
+ */
+
 main ul,
 main ol {
 	padding-bottom: 1.4em;
@@ -180,34 +174,35 @@ main ul li:before {
 	color: #5d5d5d;
 }
 
+/**
+ * Links (_links.scss)
+ */
+
 main a:hover {
 	transition: color .6s ease-out;
 }
 
-hr {
-	margin-top: 2em;
-	margin-bottom: 2em;
-}
+/**
+ * _images.scss
+ */
 
-hr:after {
-	content: "";
-	display: block;
-	height: 10px;
-	width: 10px;
-	background: #5d5d5d;
-}
 
-.two aside {
-	font-size: 90%;
-}
+/**
+ * 2.0 Partials (partials/)
+ *
+ */
 
-.two aside h3 {
-	padding-top: 0;
-}
+/**
+ * 2.1 Notice (_notice.scss)
+ */
 
-/***********************************
-			Modifications
-***********************************/
+/**
+ * 2.2 Sass Mixins (_mixins.scss)
+ */
+
+/**
+ * 2.3 Spine (_spine.scss)
+ */
 
 #spine #glue:before {
 	border-right: 1px solid #efefef;
@@ -227,20 +222,200 @@ hr:after {
 	display: none;
 }
 
-/***********************************
-			Background
-***********************************/
+/**
+ * 2.4 Print (_print.scss)
+ */
 
-html,
-.parent-stretch,
-.header-search-wrapper,
-body.home section.home-nav,
-body.home footer.parent-foot {
-	background-color: #eaeaea;
-	background-image: url(assets/images/cream_pixels.png);
-	background-position: fixed;
-	background-repeat: repeat;
+
+/**
+ * 3.0 Modules (modules/)
+ *
+ */
+
+/**
+ * 3.1 Buttons (_buttons.scss)
+ */
+
+/**
+ * 3.2 Tables (_tables.scss)
+ */
+
+/**
+ * 3.3 Forms (_forms.scss)
+ */
+
+/**
+ * 3.4 Search (_search.scss)
+ */
+
+/*
+.header-search-wrapper {
+	position: absolute;
+	z-index: 100000;
 }
+*/
+
+.header-search-wrapper  section.single.row {
+	padding-left: 78px;
+	margin-left: 0;
+}
+
+.header-search-wrapper .quick-links-label {
+	font-size: 1.4rem;
+	padding-top: 1.2em;
+	padding-bottom: 1.5em;
+}
+
+.header-search-wrapper .radio-rapper {
+	display: none;
+}
+
+.header-search-wrapper .radio-rapper:last-of-type {
+	margin-left: 23px;
+}
+
+.header-search-input-wrapper input.radio {
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.header-search-wrapper .radio-rapper label {
+	font-weight: 300;
+	font-size: 1.4em;
+	font-family: "Open Sans", sans-serif;
+	color: #363636;
+	vertical-align: middle;
+	margin-right: 1em;
+}
+
+.header-search-wrapper .radio-rapper label:last-of-type {
+	margin-right: 0;
+}
+
+.header-search-input-wrapper input.header-search-input {
+	border-radius: 0;
+	max-width: 100%;
+	min-width: 80%;
+	height: 80px;
+	padding: 25px;
+	font-size: 3em;
+	font-weight: 200;
+	font-family: "Open Sans", sans-serif;
+	padding-top: 4px; /* Fixes Firefox input text cut off */
+	padding-bottom: 4px; /* Fixes Firefox input text cut off */
+}
+
+.home .header-search-wrapper {
+	max-width: 100vw;
+}
+
+.header-search-wrapper {
+	max-width: 1188px;
+}
+
+.header-search-wrapper .common-searches ul,
+.header-search-wrapper .common-searches ul li {
+	list-style: none;
+	font-weight: 400;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.header-search-wrapper input[type="text"],
+.header-search-wrapper input[type="password"],
+.header-search-wrapper input[type="email"],
+.header-search-wrapper select,
+.header-search-wrapper textarea {
+	background: #5d5d5d;
+	color: #fff;
+}
+
+/* Closing "X" */
+.close-header-drawer,
+.close-header-search {
+	text-align: right;
+	padding-right: 1em;
+	padding-bottom: 1em;
+	color: #981e32;
+	font-size: 2rem;
+	font-weight: 300;
+	cursor: pointer;
+	transition: color .3s ease;
+}
+
+.close-header-drawer:hover,
+.close-header-search:hover {
+	color: #c60c30;
+}
+
+/**
+ * 3.5 Headers (_headers.scss)
+ */
+
+/* Global Header */
+.parent-stretch {
+	border-top: 5px solid #981e32;
+}
+
+.parent-stretch .single.row .column {
+	max-width: 1188px;
+	text-align: right;
+}
+
+.parent-stretch header {
+	display: inline-block;
+	color: #5d5d5d;
+	text-transform: uppercase;
+	padding-right: 1em;
+	margin-right: 1em;
+	border-right: 1px solid #5d5d5d;
+	font-size: 1.1em;
+}
+
+.parent-stretch .search-label {
+	text-align: right;
+	padding-right: 35px;
+	font-size: 1.2rem;
+	color: #981e32;
+	transition: color .3s ease;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	display: inline-block;
+}
+
+.parent-stretch .search-label:after {
+	font-weight: 300;
+	content: "$";
+	font-family: Spine-Icons;
+	position: relative;
+	top: .125rem;
+	margin-left: .8em;
+}
+
+.parent-stretch .search-label:hover,
+.parent-stretch .search-label:focus {
+	color: #c60c30;
+	cursor: pointer;
+}
+
+/**
+ * 3.6 Footers (_footers.scss)
+ */
+
+
+/**
+ * 4.0 Breakpoints (breakpoints/)
+ *     _base.scss
+ *     ...
+ */
+
+
+/**
+ * Pages (pages/)
+ *     _home.scss
+ */
+
 
 /***********************************
 			Page specific
@@ -374,159 +549,6 @@ body.home section .column.tabbed ul {
 	padding-left: 0;
 }
 
-/***********************************
-			Parent Stretch
-***********************************/
-
-.parent-stretch {
-	border-top: 5px solid #981e32;
-}
-
-.parent-stretch .single.row .column {
-	max-width: 1188px;
-	text-align: right;
-}
-
-.parent-stretch header {
-	display: inline-block;
-	color: #5d5d5d;
-	text-transform: uppercase;
-	padding-right: 1em;
-	margin-right: 1em;
-	border-right: 1px solid #5d5d5d;
-	font-size: 1.1em;
-}
-
-.parent-stretch .search-label {
-	text-align: right;
-	padding-right: 35px;
-	font-size: 1.2rem;
-	color: #981e32;
-	transition: color .3s ease;
-	padding-top: 1em;
-	padding-bottom: 1em;
-	display: inline-block;
-}
-
-.parent-stretch .search-label:after {
-	font-weight: 300;
-	content: "$";
-	font-family: Spine-Icons;
-	position: relative;
-	top: .125rem;
-	margin-left: .8em;
-}
-
-.parent-stretch .search-label:hover,
-.parent-stretch .search-label:focus {
-	color: #c60c30;
-	cursor: pointer;
-}
-
-/***********************************
-			Search
-***********************************/
-
-/*
-.header-search-wrapper {
-	position: absolute;
-	z-index: 100000;
-}
-*/
-
-.header-search-wrapper  section.single.row {
-	padding-left: 78px;
-	margin-left: 0;
-}
-
-.header-search-wrapper .quick-links-label {
-	font-size: 1.4rem;
-	padding-top: 1.2em;
-	padding-bottom: 1.5em;
-}
-
-.header-search-wrapper .radio-rapper {
-	display: none;
-}
-
-.header-search-wrapper .radio-rapper:last-of-type {
-	margin-left: 23px;
-}
-
-.header-search-input-wrapper input.radio {
-	display: inline-block;
-	vertical-align: middle;
-	cursor: pointer;
-}
-
-.header-search-wrapper .radio-rapper label {
-	font-weight: 300;
-	font-size: 1.4em;
-	font-family: "Open Sans", sans-serif;
-	color: #363636;
-	vertical-align: middle;
-	margin-right: 1em;
-}
-
-.header-search-wrapper .radio-rapper label:last-of-type {
-	margin-right: 0;
-}
-
-.header-search-input-wrapper input.header-search-input {
-	border-radius: 0;
-	max-width: 100%;
-	min-width: 80%;
-	height: 80px;
-	padding: 25px;
-	font-size: 3em;
-	font-weight: 200;
-	font-family: "Open Sans", sans-serif;
-	padding-top: 4px; /* Fixes Firefox input text cut off */
-	padding-bottom: 4px; /* Fixes Firefox input text cut off */
-}
-
-.home .header-search-wrapper {
-	max-width: 100vw;
-}
-
-.header-search-wrapper {
-	max-width: 1188px;
-}
-
-.header-search-wrapper .common-searches ul,
-.header-search-wrapper .common-searches ul li {
-	list-style: none;
-	font-weight: 400;
-	margin-left: 0;
-	padding-left: 0;
-}
-
-.header-search-wrapper input[type="text"],
-.header-search-wrapper input[type="password"],
-.header-search-wrapper input[type="email"],
-.header-search-wrapper select,
-.header-search-wrapper textarea {
-	background: #5d5d5d;
-	color: #fff;
-}
-
-/* Closing "X" */
-.close-header-drawer,
-.close-header-search {
-	text-align: right;
-	padding-right: 1em;
-	padding-bottom: 1em;
-	color: #981e32;
-	font-size: 2rem;
-	font-weight: 300;
-	cursor: pointer;
-	transition: color .3s ease;
-}
-
-.close-header-drawer:hover,
-.close-header-search:hover {
-	color: #c60c30;
-}
 
 /***********************************
 			Footer
