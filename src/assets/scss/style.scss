@@ -188,6 +188,30 @@ main a:hover {
 
 
 /**
+ * Utility (_utility.scss)
+ */
+
+.fixed {
+	position: fixed;
+	top: 50px;
+	margin-top: 0;
+	z-index: 1;
+	transition: all .3s ease-out;
+}
+
+.gray-bg {
+	background-color: #e4e4e4;
+}
+
+.pad-top {
+	padding-top: 2em;
+}
+
+.pad-bottom {
+	padding-bottom: 3em;
+}
+
+/**
  * 2.0 Partials (partials/)
  *
  */
@@ -505,11 +529,101 @@ footer.parent-foot .site-ref ul li a:hover {
 }
 
 /**
+ * 3.7 Banners
+ */
+
+.section-wrapper-has-background {
+	min-height: 600px !important;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.single.gutter section.builder-section-banner .column:not(.gutterless) {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/**
  * 4.0 Breakpoints (breakpoints/)
  *     _base.scss
  *     ...
  */
 
+/**
+ * 4.1 Base (_base.scss)
+ */
+
+body.home .parent-stretch .single.row .column header,
+.header-search-wrapper .search-label,
+.si-dropdown,
+.header-search-wrapper-hide {
+	display: none;
+}
+
+.nested-halves {
+	width: 100%;
+	display: inline-block;
+	text-align: top;
+	clear: both;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.nested-halves .nested-one {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-right: 1%;
+}
+
+.nested-halves .nested-two {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-left: 1%;
+}
+
+.nested-thirds {
+	width: 100%;
+	display: inline-block;
+	text-align: top;
+	clear: both;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.nested-thirds .nested-one {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-two {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-three {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+}
+
+.nested-gutter {
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.nested-one,
+.nested-two,
+.nested-three {
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
 
 /**
  * Pages (pages/)
@@ -648,106 +762,6 @@ body.home section .column.tabbed ul {
 }
 
 /***********************************
-			Utilities
-***********************************/
-
-.gray-bg {
-	background-color: #e4e4e4;
-}
-
-.pad-top {
-	padding-top: 2em;
-}
-
-.pad-bottom {
-	padding-bottom: 3em;
-}
-
-.section-wrapper-has-background {
-	min-height: 600px !important;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.single.gutter section.builder-section-banner .column:not(.gutterless) {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.nested-halves {
-	width: 100%;
-	display: inline-block;
-	text-align: top;
-	clear: both;
-	padding-top: 0;
-	margin-top: 0;
-}
-
-.nested-halves .nested-one {
-	display: block;
-	width: 49%;
-	float: left;
-	padding-right: 1%;
-}
-
-.nested-halves .nested-two {
-	display: block;
-	width: 49%;
-	float: left;
-	padding-left: 1%;
-}
-
-.nested-thirds {
-	width: 100%;
-	display: inline-block;
-	text-align: top;
-	clear: both;
-	padding-top: 0;
-	margin-top: 0;
-}
-
-.nested-thirds .nested-one {
-	display: block;
-	width: 33.33333333333333%;
-	float: left;
-	padding-right: 4%;
-}
-
-.nested-thirds .nested-two {
-	display: block;
-	width: 33.33333333333333%;
-	float: left;
-	padding-right: 4%;
-}
-
-.nested-thirds .nested-three {
-	display: block;
-	width: 33.33333333333333%;
-	float: left;
-}
-
-.nested-gutter {
-	padding-left: 1%;
-	padding-right: 1%;
-}
-
-.nested-one,
-.nested-two,
-.nested-three {
-	padding-top: 1%;
-	padding-bottom: 1%;
-}
-
-.fixed {
-	position: fixed;
-	top: 50px;
-	margin-top: 0;
-	z-index: 1;
-	transition: all .3s ease-out;
-}
-
-/***********************************
 			Plugins
 ***********************************/
 
@@ -796,16 +810,6 @@ body.home section .column.tabbed ul {
 	padding: 3% 8%;
 }
 
-/***********************************
-			Displays
-***********************************/
-
-body.home .parent-stretch .single.row .column header,
-.header-search-wrapper .search-label,
-.si-dropdown,
-.header-search-wrapper-hide {
-	display: none;
-}
 
 /***********************************
 			Media Queries
