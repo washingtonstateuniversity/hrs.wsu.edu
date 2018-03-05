@@ -544,132 +544,6 @@ footer.parent-foot .site-ref ul li a:hover {
 	padding-right: 0;
 }
 
-/**
- * 4.0 Breakpoints (breakpoints/)
- *     _base.scss
- *     ...
- */
-
-/**
- * 4.1 Base (_base.scss)
- */
-
-body.home .parent-stretch .single.row .column header,
-.header-search-wrapper .search-label,
-.si-dropdown,
-.header-search-wrapper-hide {
-	display: none;
-}
-
-.nested-halves {
-	width: 100%;
-	display: inline-block;
-	text-align: top;
-	clear: both;
-	padding-top: 0;
-	margin-top: 0;
-}
-
-.nested-halves .nested-one {
-	display: block;
-	width: 49%;
-	float: left;
-	padding-right: 1%;
-}
-
-.nested-halves .nested-two {
-	display: block;
-	width: 49%;
-	float: left;
-	padding-left: 1%;
-}
-
-.nested-thirds {
-	width: 100%;
-	display: inline-block;
-	text-align: top;
-	clear: both;
-	padding-top: 0;
-	margin-top: 0;
-}
-
-.nested-thirds .nested-one {
-	display: block;
-	width: 33.33333333333333%;
-	float: left;
-	padding-right: 4%;
-}
-
-.nested-thirds .nested-two {
-	display: block;
-	width: 33.33333333333333%;
-	float: left;
-	padding-right: 4%;
-}
-
-.nested-thirds .nested-three {
-	display: block;
-	width: 33.33333333333333%;
-	float: left;
-}
-
-.nested-gutter {
-	padding-left: 1%;
-	padding-right: 1%;
-}
-
-.nested-one,
-.nested-two,
-.nested-three {
-	padding-top: 1%;
-	padding-bottom: 1%;
-}
-
-/* Tabbed Layout */
-.tabbed ul.tabbed-tabs {
-	display: flex;
-	padding: 0;
-}
-
-.tabbed ul li.tabbed-tab {
-	flex: 1;
-	text-align: center;
-	display: block;
-	padding: 21px;
-	margin-top: 0;
-	font-size: 20px;
-	font-weight: 400;
-	text-transform: uppercase;
-	cursor: pointer;
-	position: relative;
-	background-color: #f0f0f0;
-	outline: 0;
-}
-
-.tabbed ul li:before {
-	content: "";
-	padding-right: 0;
-}
-
-.tabbed ul li.tabbed-tab a {
-	display: block;
-	width: 100%;
-	height: 100%;
-	outline: 0;
-	color: #363636;
-}
-
-.tabbed ul li.tabbed-tab a:hover {
-	color: #981e32;
-}
-
-.tabbed ul li.tabbed-tab.ui-tabs-active {
-	background: #fff;
-}
-
-.tabbed .ui-tabs-panel {
-	padding: 3% 8%;
-}
 
 /**
  * Pages (pages/)
@@ -808,9 +682,138 @@ body.home section .column.tabbed ul {
 }
 
 
-/***********************************
-			Media Queries
-***********************************/
+/**
+ * 4.0 Breakpoints (breakpoints/)
+ *     _base.scss
+ *     ...
+ */
+
+/**
+ * 4.1 Base (_base.scss)
+ */
+
+body.home .parent-stretch .single.row .column header,
+.header-search-wrapper .search-label,
+.si-dropdown,
+.header-search-wrapper-hide {
+	display: none;
+}
+
+.nested-halves {
+	width: 100%;
+	display: inline-block;
+	text-align: top;
+	clear: both;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.nested-halves .nested-one {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-right: 1%;
+}
+
+.nested-halves .nested-two {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-left: 1%;
+}
+
+.nested-thirds {
+	width: 100%;
+	display: inline-block;
+	text-align: top;
+	clear: both;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.nested-thirds .nested-one {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-two {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-three {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+}
+
+.nested-gutter {
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.nested-one,
+.nested-two,
+.nested-three {
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+/* Tabbed Layout */
+.tabbed ul.tabbed-tabs {
+	display: flex;
+	padding: 0;
+}
+
+.tabbed ul li.tabbed-tab {
+	flex: 1;
+	text-align: center;
+	display: block;
+	padding: 21px;
+	margin-top: 0;
+	font-size: 20px;
+	font-weight: 400;
+	text-transform: uppercase;
+	cursor: pointer;
+	position: relative;
+	background-color: #f0f0f0;
+	outline: 0;
+}
+
+.tabbed ul li:before {
+	content: "";
+	padding-right: 0;
+}
+
+.tabbed ul li.tabbed-tab a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	outline: 0;
+	color: #363636;
+}
+
+.tabbed ul li.tabbed-tab a:hover {
+	color: #981e32;
+}
+
+.tabbed ul li.tabbed-tab.ui-tabs-active {
+	background: #fff;
+}
+
+.tabbed .ui-tabs-panel {
+	padding: 3% 8%;
+}
+
+/**
+ * MEDIA QUERIES
+ * @todo Update break point definitions
+ * @todo Determine how best to organize these
+ */
 
 @media screen and (max-width: 490px) {
 
