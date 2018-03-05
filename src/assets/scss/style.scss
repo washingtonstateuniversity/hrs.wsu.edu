@@ -236,6 +236,26 @@ main a:hover {
  * 3.1 Buttons (_buttons.scss)
  */
 
+a.button {
+	display: block;
+	background: #981e32;
+	color: #fff;
+	border: none;
+	box-shadow: none;
+	font-weight: 700;
+	width: 30%;
+	box-sizing: border-box;
+	margin: 0;
+	text-align: center;
+	padding: 1rem 0 .75rem;
+	transition: background-color .3s ease;
+}
+
+a.button:hover {
+	background: #c60c30;
+	color: #fff;
+}
+
 /**
  * 3.2 Tables (_tables.scss)
  */
@@ -641,26 +661,6 @@ body.home section .column.tabbed ul {
 
 .pad-bottom {
 	padding-bottom: 3em;
-}
-
-a.button {
-	display: block;
-	background: #981e32;
-	color: #fff;
-	border: none;
-	box-shadow: none;
-	font-weight: 700;
-	width: 30%;
-	box-sizing: border-box;
-	margin: 0;
-	text-align: center;
-	padding: 1rem 0 .75rem;
-	transition: background-color .3s ease;
-}
-
-a.button:hover {
-	background: #c60c30;
-	color: #fff;
 }
 
 .section-wrapper-has-background {
