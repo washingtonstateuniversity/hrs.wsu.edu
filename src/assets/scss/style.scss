@@ -403,6 +403,86 @@ main a:hover {
  * 3.6 Footers (_footers.scss)
  */
 
+footer.parent-foot {
+	width: 989px;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding-left: 0;
+	display: block;
+	background-color: #fff;
+	font-family: "Open Sans", sans-serif;
+	border-top: 1px solid #efefef;
+	bottom: 0;
+}
+
+footer.parent-foot ul.footer-utility {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 4em;
+	padding-bottom: 3em;
+	column-count: 3;
+	column-gap: 20px;
+}
+
+footer.parent-foot ul.footer-utility li {
+	list-style: none;
+	padding-bottom: 1.4em;
+	float: left;
+	margin-right: 20%;
+}
+
+footer.parent-foot ul.footer-utility li:before {
+	content: "";
+	padding-right: 0;
+}
+
+footer.parent-foot .site-ref {
+	display: block;
+	background-color: #981e32;
+}
+
+footer.parent-foot .site-ref ul {
+	margin: auto;
+	text-align: center;
+	padding: .8em 0;
+}
+
+footer.parent-foot .site-ref ul li {
+	display: inline-block;
+	margin-right: 1.2em;
+	padding: 0;
+	list-style: none;
+}
+
+footer.parent-foot .site-ref ul li:before {
+	content: "";
+	padding-right: 0;
+}
+
+footer.parent-foot .site-ref ul li:after {
+	display: inline-block;
+	content: "|";
+	color: #fff;
+	margin-left: 1em;
+}
+
+footer.parent-foot .site-ref ul li:last-child:after {
+	display: none;
+}
+
+footer.parent-foot .site-ref ul li a {
+	color: #fff;
+}
+
+footer.parent-foot .site-ref ul li a:hover {
+	color: #ccc;
+}
+
+footer.parent-foot ul.footer-utility li a:hover,
+footer.parent-foot .site-ref ul li a:hover {
+	transition: color .6s ease-out;
+}
 
 /**
  * 4.0 Breakpoints (breakpoints/)
@@ -416,12 +496,10 @@ main a:hover {
  *     _home.scss
  */
 
+/**
+ * Home (_home.scss)
+ */
 
-/***********************************
-			Page specific
-***********************************/
-
-/* Home */
 body.home.page #binder.spineless.fluid main {
 	margin: 0;
 	min-width: 100% !important;
@@ -547,92 +625,6 @@ body.home section .column.tabbed h5 {
 body.home section .column.tabbed ul {
 	list-style: none;
 	padding-left: 0;
-}
-
-
-/***********************************
-			Footer
-***********************************/
-
-footer.parent-foot {
-	width: 989px;
-	margin-bottom: 0;
-	margin-left: 0;
-	padding-left: 0;
-	display: block;
-	background-color: #fff;
-	font-family: "Open Sans", sans-serif;
-	border-top: 1px solid #efefef;
-	bottom: 0;
-}
-
-footer.parent-foot ul.footer-utility {
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 4em;
-	padding-bottom: 3em;
-	column-count: 3;
-	column-gap: 20px;
-}
-
-footer.parent-foot ul.footer-utility li {
-	list-style: none;
-	padding-bottom: 1.4em;
-	float: left;
-	margin-right: 20%;
-}
-
-footer.parent-foot ul.footer-utility li:before {
-	content: "";
-	padding-right: 0;
-}
-
-footer.parent-foot .site-ref {
-	display: block;
-	background-color: #981e32;
-}
-
-footer.parent-foot .site-ref ul {
-	margin: auto;
-	text-align: center;
-	padding: .8em 0;
-}
-
-footer.parent-foot .site-ref ul li {
-	display: inline-block;
-	margin-right: 1.2em;
-	padding: 0;
-	list-style: none;
-}
-
-footer.parent-foot .site-ref ul li:before {
-	content: "";
-	padding-right: 0;
-}
-
-footer.parent-foot .site-ref ul li:after {
-	display: inline-block;
-	content: "|";
-	color: #fff;
-	margin-left: 1em;
-}
-
-footer.parent-foot .site-ref ul li:last-child:after {
-	display: none;
-}
-
-footer.parent-foot .site-ref ul li a {
-	color: #fff;
-}
-
-footer.parent-foot .site-ref ul li a:hover {
-	color: #ccc;
-}
-
-footer.parent-foot ul.footer-utility li a:hover,
-footer.parent-foot .site-ref ul li a:hover {
-	transition: color .6s ease-out;
 }
 
 /***********************************
