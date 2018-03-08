@@ -101,7 +101,8 @@ h1 {
 	width: 80%;
 }
 
-h2 {
+h2,
+.h2 {
 	color: #363636;
 	font-size: 1.5rem;
 	font-weight: 500;
@@ -247,6 +248,19 @@ main a {
  *
  * @since 0.8.0
  */
+
+ .screen-reader-text {
+   border: 0;
+   clip: rect(1px, 1px, 1px, 1px);
+   clip-path: inset(50%);
+   height: 1px;
+   margin: -1px;
+   overflow: hidden;
+   padding: 0;
+   position: absolute !important;
+   width: 1px;
+   word-wrap: normal !important;
+ }
 
 .fixed {
 	position: fixed;
