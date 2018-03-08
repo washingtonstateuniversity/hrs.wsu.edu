@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: spine
-Version: 0.8.0~1
+Version: 0.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -64,14 +64,18 @@ body.home footer.parent-foot {
 hr {
 	margin-top: 2em;
 	margin-bottom: 2em;
-}
 
-hr:after {
-	content: "";
-	display: block;
-	height: 10px;
-	width: 10px;
-	background: #5d5d5d;
+	&:after {
+		content: "";
+		display: block;
+		height: 10px;
+		width: 10px;
+		background: #5d5d5d;
+	}
+
+	+ h2 {
+		padding-top: 1.5em;
+	}
 }
 
 /**
@@ -83,7 +87,6 @@ hr:after {
  * @since 0.8.0
  */
 
-
 /**
  * 1.2 Typography (_typography.scss)
  *
@@ -94,49 +97,61 @@ h1 {
 	font-weight: 600;
 	text-transform: uppercase;
 	padding-top: 1em;
-	padding-bottom: 1em;
-	width: 60%;
+	padding-bottom: .75em;
+	width: 80%;
 }
 
 h2 {
-	font-size: 1.6rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	padding-bottom: 1.5em;
-}
+	color: #363636;
+	font-size: 1.5rem;
+	font-weight: 500;
 
-.side-right h2 {
-	width: 50%;
-}
+	header & {
+		font-size: 2.1em;
+		font-weight: 600;
+		padding-top: 1em;
+		padding-bottom: .75em;
+		text-transform: uppercase;
+		width: 80%;
+	}
 
-hr + h2 {
-	padding-top: 1.5em;
+	.side-right & {
+		width: 85%;
+	}
+
+	+ h3 {
+		padding-top: 0;
+	}
 }
 
 h3 {
-	font-size: 1.6rem;
+	font-size: 1rem;
 	font-weight: 300;
 	padding-top: 1.2em;
 	padding-bottom: 1.4em;
 }
 
-h2 + h3 {
-	padding-top: 0;
-}
-
-.quick-links-label,
 h4 {
 	font-size: 1.2rem;
 	color: #363636;
 	font-weight: 400;
+
+	+ h5 {
+		padding-top: 2em;
+		padding-bottom: 1.2em;
+	}
 }
 
+h2 + ul,
+h2 + p,
+h4 + ul,
+h4 + p {
+	padding-top: 1em;
+}
+
+.quick-links-label,
 h5 {
 	font-size: 1rem;
-}
-
-h4 + h5 {
-	padding-top: 2em;
 }
 
 h5 + ul {
@@ -146,17 +161,17 @@ h5 + ul {
 p {
 	font-weight: 400;
 	margin: 0;
-	padding-bottom: 1.4em;
+	padding-bottom: 1em;
 	line-height: 1.8em;
 	font-size: 1.1em;
 }
 
 .two aside {
 	font-size: 90%;
-}
 
-.two aside h3 {
-	padding-top: 0;
+	h3 {
+		padding-top: 0;
+	}
 }
 
 /**
@@ -167,31 +182,39 @@ p {
 
 main ul,
 main ol {
-	padding-bottom: 1.4em;
-	padding-left: 2.4em;
-}
-
-main ul li,
-main ol li,
-main ul li ul li,
-main ol li ol li {
-	line-height: 1.6em;
 	font-size: 1.1em;
 	font-weight: 400;
-	padding-bottom: .9em;
+	line-height: 1.8em;
+	margin: 0;
+	padding-bottom: 1em;
+	padding-left: 2.4em;
+
+	ul,
+	ol,
+	li ol {
+		font-size: 1em;
+		padding-bottom: 1em;
+	}
+
+	li:first-child {
+		padding-top: 15px;
+	}
+}
+
+main li {
+	padding-bottom: 1.2em;
 }
 
 main ul li,
 main ul li ul li {
-	list-style: none;
+	list-style-position: outside;
 }
 
 main ul li:before {
-	content: "\025fc";
+	color: #5d5d5d;
+	height: 4px;
 	padding-right: .8em;
 	width: 4px;
-	height: 4px;
-	color: #5d5d5d;
 }
 
 /**
@@ -200,8 +223,12 @@ main ul li:before {
  * @since 0.8.0
  */
 
-main a:hover {
-	transition: color .6s ease-out;
+main a {
+
+	&:hover,
+	&:focus {
+		transition: color .6s ease-out;
+	}
 }
 
 /**
@@ -233,9 +260,7 @@ main a:hover {
 	background-color: #e4e4e4;
 }
 
-.pad-top {
-	padding-top: 2em;
-}
+.pad-top {}
 
 .pad-bottom {
 	padding-bottom: 3em;
@@ -254,22 +279,19 @@ main a:hover {
  * 2.2 Spine (_spine.scss)
  */
 
-#spine #glue:before {
-	border-right: 1px solid #efefef;
-}
-
-/*
-#spine .spine-actions>ul li.spine-search-tab {
-	display: none;
-}
-*/
-
-#spine .spine-actions > ul li {
-	width: 33%;
-}
-
 .main-header {
 	display: none;
+}
+
+#spine {
+
+	#glue:before {
+		border-right: 1px solid #efefef;
+	}
+
+	.spine-actions > ul li {
+		width: 33%;
+	}
 }
 
 /**
@@ -318,13 +340,6 @@ a.button:hover {
  * 3.4 Search (_search.scss)
  */
 
-/*
-.header-search-wrapper {
-	position: absolute;
-	z-index: 100000;
-}
-*/
-
 .header-search-wrapper  section.single.row {
 	padding-left: 78px;
 	margin-left: 0;
@@ -367,7 +382,7 @@ a.button:hover {
 	border-radius: 0;
 	max-width: 100%;
 	min-width: 80%;
-	height: 80px;
+	height: 70px;
 	padding: 25px;
 	font-size: 3em;
 	font-weight: 200;
@@ -397,8 +412,7 @@ a.button:hover {
 .header-search-wrapper input[type="email"],
 .header-search-wrapper select,
 .header-search-wrapper textarea {
-	background: #5d5d5d;
-	color: #fff;
+	background: #fff;
 }
 
 /* Closing "X" */
@@ -455,8 +469,8 @@ a.button:hover {
 }
 
 .parent-stretch .search-label:after {
-	font-weight: 300;
 	content: "$";
+	font-weight: 300;
 	font-family: Spine-Icons;
 	position: relative;
 	top: .125rem;
@@ -485,6 +499,10 @@ footer.parent-foot {
 	bottom: 0;
 }
 
+footer.parent-foot ul li {
+	padding-top: 5px;
+}
+
 footer.parent-foot ul.footer-utility {
 	width: 90%;
 	margin-left: auto;
@@ -498,7 +516,6 @@ footer.parent-foot ul.footer-utility {
 footer.parent-foot ul.footer-utility li {
 	list-style: none;
 	padding-bottom: 1.4em;
-	float: left;
 	margin-right: 20%;
 }
 
@@ -572,36 +589,18 @@ footer.parent-foot .site-ref ul li a:hover {
 
 
 /**
- * Pages (pages/)
+ * 4.0 Pages (pages/)
  *     _home.scss
  */
 
 /**
- * Home (_home.scss)
+ * 4.1 Home (_home.scss)
  */
 
 body.home.page #binder.spineless.fluid main {
 	margin: 0;
 	min-width: 100% !important;
 }
-
-/*
-body.home #jacket #binder .si-dropdown {
-	font-family: Spine-Icons;
-	font-size: 1.3em;
-	color: #d7dadb;
-	width: 20px;
-	float: right;
-	margin-right: 110px;
-	display: block;
-}
-
-body.home #jacket #binder .si-dropdown: hover {
-	color: #c60c30;
-	cursor: pointer;
-	transition: color .3s ease;
-}
-*/
 
 body.home #jacket #binder h3 {
 	font-weight: 300;
@@ -625,6 +624,7 @@ body.home .h1-header {
 
 body.home .h1-header h1 {
 	float: right;
+	margin-bottom: 25px;
 	padding-right: 8%;
 	padding-top: 6%;
 	width: 60%;
@@ -635,10 +635,10 @@ body.home .spacing-loose .single.gutter.builder-section-banner .column:not(.gutt
 }
 
 body.home .builder-section-banner .builder-banner-inner-title {
-	width: 70%;
-	margin-top: 45px;
 	background-color: #363636;
+	margin-top: 45px;
 	padding: 1em 1em 1em 2em;
+	width: 70%;
 }
 
 body.home .builder-section-banner .builder-banner-inner-content {
@@ -659,13 +659,13 @@ body.home .builder-section-banner .builder-banner-inner-content p {
 }
 
 body.home section.home-nav {
-	border-bottom: 4px solid #981e32;
+	border-top: 1px solid #b5babe;
 }
 
 body.home section.home-nav .column ul {
 	display: flex;
 	list-style: none;
-	padding: 2em 0;
+	padding: 1.5em 0;
 }
 
 body.home section.home-nav .column ul li {
@@ -704,7 +704,7 @@ body.home section .column.tabbed h5 {
 
 body.home section .column.tabbed ul {
 	list-style: none;
-	padding-left: 0;
+	padding-left: 0 !important;
 }
 
 
@@ -843,15 +843,7 @@ body.home .parent-stretch .single.row .column header,
 
 @media screen and (max-width: 490px) {
 
-	.header-search-wrapper .radio-rapper {
-		width: 100%;
-		display: block;
-	}
-
-	.header-search-input-wrapper input.header-search-input {
-		width: calc(100% - 50px);
-	}
-
+	/* Global Header */
 	.parent-stretch .single.row .column {
 		padding-right: 25px;
 	}
@@ -864,6 +856,37 @@ body.home .parent-stretch .single.row .column header,
 		padding-right: 0;
 	}
 
+	/* Search form */
+	.header-search-wrapper .radio-rapper {
+		width: 100%;
+		display: block;
+	}
+
+	.header-search-input-wrapper input.header-search-input {
+		width: calc(100% - 50px);
+	}
+
+	/* Footers: Global Footer */
+	footer.parent-foot ul.footer-utility {
+		column-count: 1;
+		column-gap: 20px;
+	}
+
+	footer.parent-foot ul.footer-utility li {
+		display: block;
+		width: 100%;
+		float: none;
+		border-top: 1px solid #ddd;
+		padding-top: .8em;
+	}
+
+	footer.parent-foot ul.footer-utility li a {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	/* Pages: Home */
 	body.home .builder-section-banner .builder-banner-inner-title {
 		width: 100%;
 	}
@@ -890,29 +913,11 @@ body.home .parent-stretch .single.row .column header,
 		border-top: none;
 	}
 
-	footer.parent-foot ul.footer-utility {
-		column-count: 1;
-		column-gap: 20px;
-	}
-
-	footer.parent-foot ul.footer-utility li {
-		display: block;
-		width: 100%;
-		float: none;
-		border-top: 1px solid #ddd;
-		padding-top: .8em;
-	}
-
-	footer.parent-foot ul.footer-utility li a {
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
 }
 
 @media screen and (max-width: 790px) {
 
+	/* Headers: Global Header */
 	.parent-stretch {
 		margin-top: 50px;
 	}
@@ -921,21 +926,7 @@ body.home .parent-stretch .single.row .column header,
 		left: 0;
 	}
 
-	body.home .h1-header {
-		height: inherit;
-	}
-
-	body.home .h1-header h1 {
-		float: left;
-		width: 100%;
-	}
-
-	#jacket #binder .header-search-wrapper section.single.row {
-		padding-left: 0;
-		margin-left: 2em;
-		margin-top: 0;
-	}
-
+	/* Search */
 	.header-search-input-wrapper input.header-search-input {
 		margin-top: 20px;
 	}
@@ -944,6 +935,17 @@ body.home .parent-stretch .single.row .column header,
 		padding-bottom: 1em;
 	}
 
+	#jacket #binder .header-search-wrapper section.single.row {
+		padding-left: 0;
+		margin-left: 2em;
+		margin-top: 0;
+	}
+
+	#jacket #binder .header-search-wrapper section.single.row .radio-rapper:last-of-type {
+		margin-top: 0;
+	}
+
+	/* Footers: Global Footer */
 	footer.parent-foot {
 		width: 100%;
 	}
@@ -962,8 +964,14 @@ body.home .parent-stretch .single.row .column header,
 		display: none;
 	}
 
-	#jacket #binder .header-search-wrapper section.single.row .radio-rapper:last-of-type {
-		margin-top: 0;
+	/* Pages: Home */
+	body.home .h1-header {
+		height: inherit;
+	}
+
+	body.home .h1-header h1 {
+		float: left;
+		width: 100%;
 	}
 
 	body.home #jacket #binder .header-search-wrapper {
@@ -975,6 +983,9 @@ body.home .parent-stretch .single.row .column header,
 		padding-right: 0;
 	}
 
+	.nested-halves .nested-one,
+	.nested-halves .nested-two,
+	.nested-halves .nested-three,
 	.nested-thirds .nested-one,
 	.nested-thirds .nested-two,
 	.nested-thirds .nested-three {
@@ -982,19 +993,7 @@ body.home .parent-stretch .single.row .column header,
 		margin-bottom: 1em;
 	}
 
-	.nested-halves .nested-one,
-	.nested-halves .nested-two,
-	.nested-halves .nested-three {
-		width: 100%;
-		margin-bottom: 1em;
-	}
-
-	.nested-one {
-		display: block;
-		width: 100%;
-		clear: both;
-	}
-
+	.nested-one,
 	.nested-two {
 		display: block;
 		width: 100%;
@@ -1054,7 +1053,7 @@ body.home .parent-stretch .single.row .column header,
 		display: none;
 	}
 
-	/* #### Cropped and Scrolled */
+	/* Cropped and Scrolled */
 	body.home #spine.cropped.skimmed:not(.unshelved) {
 		left: 0 !important;
 		top: 0 !important;
@@ -1086,7 +1085,7 @@ body.home .parent-stretch .single.row .column header,
 	}
 
 	body.home #spine.cropped.skimmed #wsu-signature {
-		background-image: url(https://repo.wsu.edu/spine/develop/marks/wsu-signature-horizontal.svg);
+		background-image: url(https://repo.wsu.edu/spine/2/marks/wsu-signature-horizontal.svg);
 	}
 
 	body.home .h1-header h1 {

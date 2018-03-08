@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Update stylesheet with changes from prior 2 years of untracked changes.
 - Update NPM dependency versions (with nonbreaking change in compressed variable placeholder names).
 
 ## 0.8.0 (2018-03-02)
