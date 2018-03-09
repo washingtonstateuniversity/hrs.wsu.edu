@@ -238,6 +238,78 @@ main a {
  * @since 0.8.0
  */
 
+/* Social media icons */
+.socialicons {
+	background: url(http://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/cream_pixels.png);
+	padding-top: 1em;
+}
+
+.socialicons img:hover,
+.socialicons img:focus {
+	opacity: .7;
+}
+
+/* Default HRS Gallery Styles */
+/* @todo Make these the standard default gallery styles if not already after update */
+.hrs-gallery {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	margin: auto;
+}
+
+.hrs-gallery .gallery-item {
+	box-sizing: border-box;
+	padding: 1rem;
+    margin: 0;
+    float: inherit;
+	text-align: center;
+}
+
+.hrs-gallery .gallery-columns-1 .gallery-item {
+	width: 100%;
+}
+
+.hrs-gallery .gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+
+.hrs-gallery .gallery-columns-3 .gallery-item {
+	width: 33.333333%;
+}
+
+.hrs-gallery .gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+
+.hrs-gallery .gallery-columns-5 .gallery-item {
+	width: 20%;
+}
+
+.hrs-gallery .gallery-columns-6 .gallery-item {
+	width: 16.66%;
+}
+
+.hrs-gallery .gallery-columns-7 .gallery-item {
+	width: 14.28%;
+}
+
+.hrs-gallery .gallery-columns-8 .gallery-item {
+	width: 12.5%;
+}
+
+.hrs-gallery .gallery-columns-9 .gallery-item {
+	width: 11.11%;
+}
+
+.hrs-gallery img {
+	border: 0;
+	box-sizing: border-box;
+	display: block;
+	margin: 0 auto;
+}
 
 /**
  * 1.6 Utility (_utility.scss)
@@ -965,6 +1037,29 @@ body.home .parent-stretch .single.row .column header,
 		border-top: none;
 	}
 
+}
+
+@media only screen and (max-width: 520px) {
+
+	.hrs-gallery.gallery-columns-1 .gallery-item,
+	.hrs-gallery.gallery-columns-2 .gallery-item,
+	.hrs-gallery.gallery-columns-3 .gallery-item,
+	.hrs-gallery.gallery-columns-4 .gallery-item,
+	.hrs-gallery.gallery-columns-5 .gallery-item,
+	.hrs-gallery.gallery-columns-6 .gallery-item,
+	.hrs-gallery.gallery-columns-7 .gallery-item,
+	.hrs-gallery.gallery-columns-8 .gallery-item,
+	.hrs-gallery.gallery-columns-9 .gallery-item {
+		width: 50%;
+	}
+
+	.hrs-gallery .gallery-item:nth-child(odd) {
+		padding-left: 0;
+	}
+
+	.hrs-gallery .gallery-item:nth-child(even) {
+		padding-right: 0;
+	}
 }
 
 @media screen and (max-width: 790px) {
