@@ -249,18 +249,18 @@ main a {
  * @since 0.8.0
  */
 
- .screen-reader-text {
-   border: 0;
-   clip: rect(1px, 1px, 1px, 1px);
-   clip-path: inset(50%);
-   height: 1px;
-   margin: -1px;
-   overflow: hidden;
-   padding: 0;
-   position: absolute !important;
-   width: 1px;
-   word-wrap: normal !important;
- }
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
 
 .fixed {
 	position: fixed;
@@ -420,11 +420,11 @@ a.button:hover {
 }
 
 #hrs-common-search li {
-	padding-bottom: 0.5em;
+	padding-bottom: .5em;
 }
 
 .common-searches ul li:first-child {
-	padding-top: 0px;
+	padding-top: 0;
 }
 
 .header-search-wrapper input[type="text"],
@@ -483,7 +483,7 @@ a.button:hover {
 /* Global Header */
 .parent-stretch {
 	background: none !important;
-	background-color: #444444 !important;
+	background-color: #444 !important;
 	border-top: 5px solid #981e32;
 }
 
