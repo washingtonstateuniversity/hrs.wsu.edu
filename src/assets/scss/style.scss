@@ -249,22 +249,23 @@ main a {
 	opacity: .7;
 }
 
-/* Default HRS Gallery Styles */
-/* @todo Make these the standard default gallery styles if not already after update */
+/*
+ * Default HRS Gallery Styles
+ *
+ * @todo Make the standard gallery styles if not already
+ */
+
 .hrs-gallery {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	margin: auto;
 }
 
 .hrs-gallery .gallery-item {
 	box-sizing: border-box;
 	padding: 1rem;
-    margin: 0;
-    float: inherit;
+	margin: 0;
+	float: inherit;
 	text-align: center;
 }
 
