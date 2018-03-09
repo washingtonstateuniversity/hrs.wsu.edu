@@ -354,15 +354,36 @@ a.button:hover {
  * 3.4 Search (_search.scss)
  */
 
-.header-search-wrapper  section.single.row {
+.menu-quick-links-search-container li {
+	float: left !important;
+	width: 50% !important;
+}
+
+.header-search-wrapper {
+	background-color: #dbdbdb !important;
+	max-width: 1188px;
+}
+
+.home .header-search-wrapper {
+	max-width: 100vw;
+}
+
+.header-search-wrapper section.single.row {
 	padding-left: 78px;
 	margin-left: 0;
+}
+
+.header-search-a-z-wrapper {
+	clear: both;
+	float: right;
+	padding-top: 10px;
+	padding-right: 100px;
 }
 
 .header-search-wrapper .quick-links-label {
 	font-size: 1.4rem;
 	padding-top: 1.2em;
-	padding-bottom: 1.5em;
+	padding-bottom: .8em;
 }
 
 .header-search-wrapper .radio-rapper {
@@ -371,12 +392,6 @@ a.button:hover {
 
 .header-search-wrapper .radio-rapper:last-of-type {
 	margin-left: 23px;
-}
-
-.header-search-input-wrapper input.radio {
-	display: inline-block;
-	vertical-align: middle;
-	cursor: pointer;
 }
 
 .header-search-wrapper .radio-rapper label {
@@ -392,27 +407,6 @@ a.button:hover {
 	margin-right: 0;
 }
 
-.header-search-input-wrapper input.header-search-input {
-	border-radius: 0;
-	max-width: 100%;
-	min-width: 80%;
-	height: 70px;
-	padding: 25px;
-	font-size: 3em;
-	font-weight: 200;
-	font-family: "Open Sans", sans-serif;
-	padding-top: 4px; /* Fixes Firefox input text cut off */
-	padding-bottom: 4px; /* Fixes Firefox input text cut off */
-}
-
-.home .header-search-wrapper {
-	max-width: 100vw;
-}
-
-.header-search-wrapper {
-	max-width: 1188px;
-}
-
 .header-search-wrapper .common-searches ul,
 .header-search-wrapper .common-searches ul li {
 	list-style: none;
@@ -421,12 +415,47 @@ a.button:hover {
 	padding-left: 0;
 }
 
+.header-search-wrapper .common-searches ul {
+	column-count: 2;
+}
+
+#hrs-common-search li {
+	padding-bottom: 0.5em;
+}
+
+.common-searches ul li:first-child {
+	padding-top: 0px;
+}
+
 .header-search-wrapper input[type="text"],
 .header-search-wrapper input[type="password"],
 .header-search-wrapper input[type="email"],
 .header-search-wrapper select,
 .header-search-wrapper textarea {
 	background: #fff;
+}
+
+.header-search-input-wrapper input.radio {
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.header-search-input-wrapper input.header-search-input {
+	border-radius: 0;
+	float: right;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1.75em;
+	font-weight: 300;
+	height: 50px;
+	max-width: 60%;
+	min-width: 50%;
+	margin-left: 100px;
+	margin-top: 50px;
+	margin-right: 100px;
+	padding: 25px;
+	padding-top: 4px; /* Fixes Firefox input text cut off */
+	padding-bottom: 4px; /* Fixes Firefox input text cut off */
 }
 
 /* Closing "X" */
@@ -453,6 +482,8 @@ a.button:hover {
 
 /* Global Header */
 .parent-stretch {
+	background: none !important;
+	background-color: #444444 !important;
 	border-top: 5px solid #981e32;
 }
 
@@ -866,11 +897,18 @@ body.home .parent-stretch .single.row .column header,
 		font-size: .95em;
 	}
 
+	/* Search form */
 	.parent-stretch .search-label {
+		color: #eff0f1;
 		padding-right: 0;
+		transition: color .5s ease !important;
 	}
 
-	/* Search form */
+	.header-search-wrapper {
+		background: none !important;
+		background-color: #eaeaea;
+	}
+
 	.header-search-wrapper .radio-rapper {
 		width: 100%;
 		display: block;
