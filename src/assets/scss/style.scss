@@ -905,6 +905,28 @@ body.home .parent-stretch .single.row .column header,
 .nested-three {
 	padding-top: 1%;
 	padding-bottom: 1%;
+
+	h5 {
+		background: #981e32;
+		border-bottom: none !important;
+		border-left: 4px solid #981e32;
+
+		a {
+			color: #fff !important;
+
+			&:hover,
+			&:focus {
+				color: #b5babe !important;
+				transition: color .5s ease !important;
+			}
+		}
+	}
+
+	ul {
+		background-color: #fff;
+		border-radius: 5px;
+		padding-left: 10px;
+	}
 }
 
 /* Tabbed Layout */
