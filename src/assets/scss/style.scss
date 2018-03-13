@@ -2239,6 +2239,22 @@ body.home .parent-stretch .single.row .column header,
 
 }
 
+@media only screen and (min-width: 990px) and (max-width: 1699px) {
+
+	#spine.cropped {
+		left: 10% !important;
+	}
+
+}
+
+@media only screen and (min-width: 1700px) {
+
+	#spine.cropped {
+		left: 8% !important;
+	}
+
+}
+
 /**
  * Deprecated
  */
@@ -2411,20 +2427,8 @@ a.button:hover {
 
 @media only screen and (min-width: 990px) and (max-width: 1699px) {
 
-	#spine.cropped {
-		left: 10% !important;
-	}
-
 	.fixed {
 		position: relative !important;
-	}
-
-}
-
-@media only screen and (min-width: 1700px) {
-
-	#spine.cropped {
-		left: 8% !important;
 	}
 
 }
