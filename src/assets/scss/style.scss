@@ -243,6 +243,24 @@ main ul li:before {
 	width: 4px;
 }
 
+ul.inline,
+ol.inline {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+ul.inline li,
+ol.inline li {
+	display: inline-block;
+	line-height: 1.4;
+	margin-right: 1.5rem;
+}
+
+ul.inline li:last-child,
+ol.inline li:last-child {
+	margin-right: 0;
+}
+
 /**
  * 1.4 Links (_links.scss)
  *
