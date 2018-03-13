@@ -425,6 +425,38 @@ a {
 }
 
 /**
+ * Embeds
+ */
+
+/*
+ * A flexible youtube embed container (default 16x9 aspect ratio)
+ * Following techinque from Rachel McCollin's {@see http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-responsive-design/}
+ * Which is itself based on Thierry Koblenz's {@see http://alistapart.com/article/creating-intrinsic-ratios-for-video}
+ */
+
+.embed-youtube {
+	height: 0;
+	margin-bottom: 1.4em;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+
+	iframe,
+	object,
+	embed {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.youtube-4x3 {
+	padding-bottom: 75%;
+}
+
+/**
  * 1.6 Utility (_utility.scss)
  *
  * These styles establish some non-semantic utility classes for limited use in
