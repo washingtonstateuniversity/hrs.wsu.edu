@@ -651,6 +651,35 @@ input[type="submit"].hrs-button-white {
  * 3.2 Tables (_tables.scss)
  */
 
+.tablepress-manual-contacts td.column-3,
+.tablepress-hrs-contacts td.column-3 {
+	white-space: nowrap;
+}
+
+.caldera-grid .hrs-caldera-table td,
+.caldera-grid .hrs-caldera-table th {
+	padding: 8px;
+}
+
+/* Labor relation table */
+.tablepress-id-31 .column-1 {
+	width: 450px !important;
+}
+
+.tablepress-id-7 .column-1 {
+	width: 500px !important;
+}
+
+.tablepress-id-31 .column-2,
+.tablepress-id-7 .column-2 {
+	width: 150px !important;
+}
+
+.tablepress-id-31 .column-3,
+.tablepress-id-7 .column-3 {
+	width: 100px !important;
+}
+
 /**
  * 3.3 Forms (_forms.scss)
  */
@@ -805,6 +834,11 @@ input[type="submit"].hrs-button-white {
 	margin-right: 1em;
 	border-right: 1px solid #5d5d5d;
 	font-size: 1.1em;
+}
+
+#hr-header a:hover {
+	color: #981e32 !important;
+	transition: color .3s ease !important;
 }
 
 .parent-stretch .search-label {
@@ -1214,6 +1248,47 @@ body.home .parent-stretch .single.row .column header,
 		background-color: #fff;
 		border-radius: 5px;
 		padding-left: 10px;
+	}
+}
+
+/* Responsive Tables */
+@media only screen and (max-width: 37.5em) {
+
+	.tablepress-manual-contacts,
+	.tablepress-hrs-contacts {
+		display: block;
+		text-align: left;
+
+		caption,
+		tbody,
+		tr,
+		th,
+		td {
+			display: block;
+			text-align: left;
+		}
+
+		thead,
+		th:empty,
+		td:empty {
+			display: none;
+			visibility: hidden;
+		}
+
+		tbody tr {
+			margin-bottom: 1.4rem;
+		}
+
+		tbody td,
+		tfoot th {
+			border: none;
+			line-height: 1.4;
+			padding: 4px 8px;
+		}
+
+		.column-1 {
+			font-weight: 700;
+		}
 	}
 }
 
@@ -1860,4 +1935,19 @@ a.button:hover {
 		box-shadow: 9px 10px 5px #888;
 		color: #fff;
 	}
+}
+
+#color-table tr:nth-child(even) {
+	background: #f7f6f3;
+	padding: 5px;
+}
+
+#color-table tr:nth-child(odd) {
+	background: #fff;
+	padding: 5px;
+}
+
+#color-table tr:first-child {
+	background: #717171;
+	color: #fff;
 }
