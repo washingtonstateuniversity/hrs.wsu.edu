@@ -214,7 +214,7 @@ main ul,
 main ol {
 	font-size: 1.1em;
 	font-weight: 400;
-	line-height: 1.8em;
+	line-height: 1.8;
 	margin: 0;
 	padding-bottom: 1em;
 	padding-left: 2.4em;
@@ -225,26 +225,10 @@ main ol {
 		font-size: 1em;
 		padding-bottom: 1em;
 	}
-
-	li:first-child {
-		padding-top: 15px;
-	}
 }
 
 main li {
 	padding-bottom: 1.2em;
-}
-
-main ul li,
-main ul li ul li {
-	list-style-position: outside;
-}
-
-main ul li:before {
-	color: #5d5d5d;
-	height: 4px;
-	padding-right: .8em;
-	width: 4px;
 }
 
 ul.inline,
@@ -1264,18 +1248,10 @@ body.home section.home-nav .column ul li:before {
 }
 
 body.home section .column.tabbed h5 {
-	font-weight: 400;
-	vertical-align: bottom;
-	height: 35px !important;
-	border-bottom: 1px solid #5e6a71;
 	border-radius: 3px;
+	line-height: 1.4;
 	margin-bottom: 1.4em;
 	padding: 10px;
-}
-
-body.home section .column.tabbed ul {
-	list-style: none;
-	padding-left: 0 !important;
 }
 
 
@@ -1677,10 +1653,7 @@ body.home .parent-stretch .single.row .column header,
 .nested-thirds {
 	width: 100%;
 	display: inline-block;
-	text-align: top;
 	clear: both;
-	padding-top: 0;
-	margin-top: 0;
 }
 
 .nested-thirds .nested-one {
@@ -1711,21 +1684,16 @@ body.home .parent-stretch .single.row .column header,
 .nested-one,
 .nested-two,
 .nested-three {
-	padding-top: 1%;
-	padding-bottom: 1%;
 
 	h5 {
 		background: #981e32;
-		border-bottom: none !important;
-		border-left: 4px solid #981e32;
 
 		a {
-			color: #fff !important;
+			color: #fff;
 
 			&:hover,
 			&:focus {
-				color: #b5babe !important;
-				transition: color .5s ease !important;
+				color: #b5babe;
 			}
 		}
 	}
@@ -1733,7 +1701,6 @@ body.home .parent-stretch .single.row .column header,
 	ul {
 		background-color: #fff;
 		border-radius: 5px;
-		padding-left: 10px;
 	}
 }
 
@@ -1801,11 +1768,6 @@ body.home .parent-stretch .single.row .column header,
 
 .tabbed ul li.tabbed-tab {
 	display: none;
-}
-
-.tabbed ul li:before {
-	content: "";
-	padding-right: 0;
 }
 
 .tabbed ul li.tabbed-tab a {
