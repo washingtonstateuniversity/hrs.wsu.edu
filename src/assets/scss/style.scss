@@ -15,22 +15,27 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /**
  * Table of Contents
  *
- * - 1.0 Globals
- *     - 1.1 Colors
- *     - 1.2 Typography
- *     - 1.3 Lists
- *     - 1.4 Links
- *     - 1.5 Utility
- * - 2.0 Mixins
- * - 3.0 Modules
- *     - 3.1 Buttons [might be a mixin]
- *     - 3.2 Asides
- *     - 3.3 Callouts
- * - 4.0 Partials
- *     - 4.1 Images
- *     - 4.2 Embeds
- * - 5.0 Layouts
- * - 6.0 Templates
+ * 1.0 Globals
+ *     1.1 Colors
+ *     1.2 Typography
+ *     1.3 Lists
+ *     1.4 Links
+ *     1.5 Utility
+ * 2.0 Elements
+ *     3.1 Buttons
+ *     3.2 Images
+ *     3.3 Embeds
+ * 3.0 Components
+ *     4.1 Search
+ *     4.2 Notifications
+ *     4.3 Asides
+ *     4.4 Pagination
+ *     4.5 Tags
+ * 4.0 Layouts
+ * 5.0 Templates
+ * 6.0 Pages
+ * 7.0 Breakpoints
+ * 8.0 Deprecated
  */
 
 /**
@@ -479,24 +484,62 @@ a {
  * 4.1 Buttons (_buttons.scss)
  */
 
-a.button {
-	display: block;
-	background: #981e32;
-	color: #fff;
-	border: none;
+.hrs-button,
+button.hrs-button,
+input[type="button"].hrs-button,
+input[type="reset"].hrs-button,
+input[type="submit"].hrs-button {
+	background: #464e54;
+	border: 1px solid transparent;
 	box-shadow: none;
-	font-weight: 700;
-	width: 30%;
-	box-sizing: border-box;
-	margin: 0;
+	color: #fff;
+	display: inline-block;
+	font-size: .9em;
+	font-weight: 600;
+	line-height: 1.4;
+	min-width: 120px;
+	padding: .75rem 1.25rem;
 	text-align: center;
-	padding: 1rem 0 .75rem;
 	transition: background-color .3s ease;
+
+	&:hover,
+	&:focus {
+		background: #eff0f1;
+		border: 1px solid #464e54;
+		color: #464e54;
+	}
 }
 
-a.button:hover {
-	background: #c60c30;
-	color: #fff;
+.hrs-button-priority,
+button.hrs-button-priority,
+input[type="button"].hrs-button-priority,
+input[type="reset"].hrs-button-priority,
+input[type="submit"].hrs-button-priority {
+	background: #981e32;
+
+	&:hover,
+	&:focus {
+		background: #eff0f1;
+		border: 1px solid #981e32;
+		color: #981e32;
+	}
+}
+
+.hrs-button-white,
+button.hrs-button-white,
+input[type="button"].hrs-button-white,
+input[type="reset"].hrs-button-white,
+input[type="submit"].hrs-button-white {
+	background: #eff0f1;
+	border: 1px solid #464e54;
+	color: #464e54;
+
+	&:hover,
+	&:focus {
+		background: #464e54;
+		border: 1px solid transparent;
+		color: #fff;
+	}
 }
 
 /**
@@ -1703,4 +1746,118 @@ body.home .parent-stretch .single.row .column header,
 		font-size: 2rem;
 	}
 
+}
+
+/**
+ * Deprecated
+ */
+
+a.button {
+	background: #981e32;
+	border: none;
+	box-sizing: border-box;
+	box-shadow: none;
+	color: #fff;
+	display: block;
+	font-weight: 700;
+	margin: 0;
+	padding: 1rem 0 .75rem;
+	text-align: center;
+	transition: background-color .3s ease;
+	width: 30%;
+}
+
+a.button:hover {
+	background: #c60c30;
+	color: #fff;
+}
+
+#button_holder a {
+	color: #fff;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+#buttonholder:after {
+	clear: both;
+}
+
+.new_button {
+	background: #c92f2f;
+	background: linear-gradient(to top, #852b2b, #c92f2f);
+	border-radius: 8px;
+	border-top: 1px solid #696969;
+	box-shadow: #000 0 1px 0;
+	color: #fff;
+	display: inline-block !important;
+	font-size: 16px;
+	height: 75px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 5px 20px 20px 0;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+	vertical-align: center;
+	width: 125px;
+
+	&:hover,
+	&:focus {
+		background: #981e32;
+		border-top-color: #690000;
+		box-shadow: 9px 10px 5px #888;
+		color: #fff;
+	}
+}
+
+.new_button_back {
+	background: #c92f2f;
+	background: linear-gradient(to top, #852b2b, #c92f2f);
+	border-radius: 8px;
+	box-shadow: #000 0 1px 0;
+	border-top: 1px solid #696969;
+	color: #fff;
+	font-size: 16px;
+	height: 35px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	padding: 5px 20px 20px 0;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+	vertical-align: center;
+	width: 75px;
+}
+
+.new_button_benefits {
+	background: #c92f2f;
+	background: linear-gradient(to top, #852b2b, #c92f2f);
+	border-radius: 8px;
+	border-top: 1px solid #696969;
+	box-shadow: #000 0 1px 0;
+	color: #fff;
+	float: left !important;
+	font-size: 16px;
+	height: 35px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	padding: 5px 20px 20px 0;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+	vertical-align: center;
+	width: 175px;
+
+	&:hover,
+	&:focus {
+		background: #981e32;
+		border-top-color: #690000;
+		box-shadow: 9px 10px 5px #888;
+		color: #fff;
+	}
 }
