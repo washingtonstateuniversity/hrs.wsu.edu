@@ -65,7 +65,6 @@ html {
 	main {
 		background-color: #fff;
 		color: #4a4a4a;
-		border-left: 1px solid #efefef;
 		max-width: 990px;
 		min-height: 100%;
 
@@ -509,38 +508,6 @@ a {
 
 
 /**
- * 3.2 Spine (_spine.scss)
- */
-
-.main-header {
-	display: none;
-}
-
-#spine {
-
-	#glue:before {
-		border-right: 1px solid #efefef;
-	}
-
-	.spine-actions > ul li {
-		width: 33%;
-	}
-
-	.spine-navigation {
-		padding-bottom: 66px !important;
-	}
-
-	&.crimson .spine-sitenav {
-
-		li.dogeared > a
-		a:hover,
-		a:focus {
-			cursor: pointer !important;
-		}
-	}
-}
-
-/**
  * 3.3 Print (_print.scss)
  */
 
@@ -894,8 +861,7 @@ input[type="submit"].hrs-button-white {
 
 /* Global Header */
 .parent-stretch {
-	background: none !important;
-	background-color: #444 !important;
+	background: #444;
 	border-top: 5px solid #981e32;
 }
 
@@ -1970,11 +1936,6 @@ body.home .parent-stretch .single.row .column header,
 
 @media screen and (max-width: 790px) {
 
-	/* Headers: Global Header */
-	.parent-stretch {
-		margin-top: 50px;
-	}
-
 	.main-header .header-group {
 		left: 0;
 	}
@@ -2165,26 +2126,6 @@ body.home .parent-stretch .single.row .column header,
 
 }
 
-@media only screen and (min-width: 990px) and (max-width: 1699px) {
-
-	#spine.cropped {
-		left: 10% !important;
-	}
-
-	.fixed {
-		position: relative !important;
-	}
-
-}
-
-@media only screen and (min-width: 1700px) {
-
-	#spine.cropped {
-		left: 8% !important;
-	}
-
-}
-
 @media screen and (max-width: 1530px) {
 
 	.header-search-input-wrapper input.header-search-input {
@@ -2199,14 +2140,6 @@ body.home .parent-stretch .single.row .column header,
 	.header-search-input-wrapper input.header-search-input {
 		max-width: 60%;
 		min-width: 60%;
-	}
-
-}
-
-@media screen and (max-width: 790px) {
-
-	.parent-stretch {
-		margin-top: none !important;
 	}
 
 }
@@ -2294,14 +2227,6 @@ body.home .parent-stretch .single.row .column header,
 		max-width: 55%;
 		margin-left: 15%;
 		margin-top: 25px;
-	}
-
-}
-
-@media screen and (max-width: 989px) {
-
-	.spine-mobile #glue {
-		display: none !important;
 	}
 
 }
@@ -2442,3 +2367,65 @@ a.button:hover {
 	background: #717171;
 	color: #fff;
 }
+
+/**
+ * 3.2 Spine (_spine.scss)
+ */
+
+/* Not sure what this is supposed to target.
+.main-header {
+	display: none;
+}
+
+#spine {
+
+	#glue:before {
+		border-right: 1px solid #efefef;
+	}
+
+	.spine-actions > ul li {
+		width: 33%;
+	}
+
+	.spine-navigation {
+		padding-bottom: 66px !important;
+	}
+
+	&.crimson .spine-sitenav {
+
+		li.dogeared > a
+		a:hover,
+		a:focus {
+			cursor: pointer !important;
+		}
+	}
+}
+
+@media screen and (max-width: 989px) {
+
+	.spine-mobile #glue {
+		display: none !important;
+	}
+
+}
+
+@media only screen and (min-width: 990px) and (max-width: 1699px) {
+
+	#spine.cropped {
+		left: 10% !important;
+	}
+
+	.fixed {
+		position: relative !important;
+	}
+
+}
+
+@media only screen and (min-width: 1700px) {
+
+	#spine.cropped {
+		left: 8% !important;
+	}
+
+}
+*/
