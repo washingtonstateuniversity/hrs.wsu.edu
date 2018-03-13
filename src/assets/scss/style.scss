@@ -466,6 +466,25 @@ a {
  * @since 0.8.0
  */
 
+
+.textaligncenter {
+	text-align: center;
+}
+
+/*
+ * Must be contained within a relatively positioned element.
+ * @todo convert this to a @content @mixin.
+ */
+
+.abs-center {
+	margin: 0 -50% 0 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 0;
+	transform: translate(-50%, -50%);
+}
+
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
