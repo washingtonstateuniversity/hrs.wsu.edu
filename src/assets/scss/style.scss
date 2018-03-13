@@ -737,6 +737,10 @@ input[type="submit"].hrs-button-white {
  * 3.2 Tables (_tables.scss)
  */
 
+.tablepress-manual-contacts .column-1 {
+	width: 497px;
+}
+
 .tablepress-manual-contacts td.column-3,
 .tablepress-hrs-contacts td.column-3 {
 	white-space: nowrap;
@@ -764,6 +768,10 @@ input[type="submit"].hrs-button-white {
 .tablepress-id-31 .column-3,
 .tablepress-id-7 .column-3 {
 	width: 100px !important;
+}
+
+.tablepress.hrs-4-of-5 td.column-1 {
+	width: 30%;
 }
 
 /**
@@ -1062,6 +1070,37 @@ footer.parent-foot .site-ref ul li a:hover {
 	padding-right: 0;
 }
 
+
+/**
+ * X.0 Templates
+ */
+
+/**
+ * X.1 Articles
+ */
+
+/*Hides the author name and date when users search pages on 404 page*/
+.article-author {
+	display: none !important;
+}
+
+/*
+ * Hides published date for page
+ * @todo Make this more specific to pages, and verify necessity for `!important`
+ */
+
+.article-date {
+	display: none !important;
+}
+
+/*
+ * Show article date for news posts
+ * @todo Remove `!important` after default `.article-date` style is corrected
+ */
+
+.hrs_news .article-date {
+	display: inline !important;
+}
 
 /**
  * 4.0 Pages (pages/)
@@ -1404,6 +1443,10 @@ body.home .parent-stretch .single.row .column header,
 	outline: 0;
 }
 
+.tabbed ul li.tabbed-tab {
+	display: none;
+}
+
 .tabbed ul li:before {
 	content: "";
 	padding-right: 0;
@@ -1426,6 +1469,7 @@ body.home .parent-stretch .single.row .column header,
 }
 
 .tabbed .ui-tabs-panel {
+	background: url(https://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/gray-tile.jpg) !important;
 	padding: 3% 8%;
 }
 
@@ -1869,6 +1913,38 @@ body.home .parent-stretch .single.row .column header,
 		padding-left: 10px !important;
 	}
 
+}
+
+@media only screen and (min-width: 640px) {
+
+	.hrs-two-col {
+		width: 47%;
+		clear: none !important;
+	}
+
+	.hrs-1-of-4 {
+		width: 23%;
+	}
+
+	.hrs-1-of-5 {
+		width: 20%;
+	}
+
+	.hrs-2-of-5 {
+		width: 40%;
+	}
+
+	.hrs-3-of-5 {
+		width: 60%;
+	}
+
+	.hrs-4-of-5 {
+		width: 80%;
+	}
+
+	.gform_wrapper .gfield_error.hrs-two-col {
+		width: 47%;
+	}
 }
 
 @media screen and (min-width: 800px) {
