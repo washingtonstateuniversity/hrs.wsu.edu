@@ -931,12 +931,11 @@ input[type="submit"].hrs-button-white {
 }
 
 #hr-header a {
-	color: #eff0f1 !important;
+	color: #eff0f1;
 
 	&:hover,
 	&:focus {
-		color: #981e32 !important;
-		transition: color .3s ease !important;
+		color: #c60c30;
 	}
 }
 
