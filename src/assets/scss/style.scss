@@ -1105,6 +1105,8 @@ footer.parent-foot .site-ref ul li a:hover {
 /**
  * 4.0 Pages (pages/)
  *     _home.scss
+ *
+ * @todo Try to fold more of these into the standard styles.
  */
 
 /**
@@ -1275,6 +1277,361 @@ body.home section .column.tabbed h5 {
 body.home section .column.tabbed ul {
 	list-style: none;
 	padding-left: 0 !important;
+}
+
+
+/*
+ * 4.2 Benefits
+ */
+
+.hrs-benefits-new-employees .column {
+	padding: 0 1rem !important;
+}
+
+.hrs-benefits-new-employees header h2,
+.hrs-benefits-new-employees h2 {
+	font-weight: 700;
+	width: 100%;
+}
+
+.hrs-benefits-new-employees h4 {
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+.hrs-benefits-new-employees .benefits,
+.hrs-benefits-new-employees .resources {
+	background-size: 100% 100%;
+	color: #fff;
+	min-height: 300px;
+	text-align: center;
+}
+
+.hrs-benefits-new-employees .benefits {
+	background: url(http://hrs.wsu.edu/wp-content/uploads/2017/09/Clouds_over_a_Harvested_Wheat_Field_darken.jpg) no-repeat bottom center;
+}
+
+.hrs-benefits-new-employees .resources {
+	background: url(http://hrs.wsu.edu/wp-content/uploads/2017/09/tri-cities-campus-above_darker.jpg) no-repeat bottom center;
+}
+
+.hrs-benefits-new-employees .benefits header h2,
+.hrs-benefits-new-employees .resources header h2 {
+	color: #fff;
+}
+
+.hrs-benefits-new-employees .orientation,
+.hrs-benefits-new-employees .deadlines {
+	text-align: center;
+}
+
+.hrs-benefits-new-employees .orientation img,
+.hrs-benefits-new-employees .deadlines img {
+	margin-top: 1rem;
+	margin-bottom: -.8rem;
+}
+
+.tablepress.hrs-medical-premium-changes-2018 tbody {
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+
+.tablepress.hrs-medical-premium-changes-2018 tbody td {
+	border-right: 1px solid #ddd;
+}
+
+.tablepress.hrs-medical-premium-changes-2018 tbody td:not(.column-1) {
+	text-align: center;
+	width: 9%;
+}
+
+/* the 2018 columns */
+.tablepress.hrs-medical-premium-changes-2018 tr .column-3,
+.tablepress.hrs-medical-premium-changes-2018 tr .column-5,
+.tablepress.hrs-medical-premium-changes-2018 tr .column-7,
+.tablepress.hrs-medical-premium-changes-2018 tr .column-9 {
+	background-color: #eee;
+	font-weight: 700;
+}
+
+.tablepress.hrs-medical-premium-changes-2018 .row-1 td {
+	color: #fff;
+	background-color: #981e32;
+	font-weight: 700;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.tablepress.hrs-medical-premium-changes-2018 .row-2 td {
+	color: #fff;
+	background-color: #2a3033;
+	text-align: center;
+}
+
+.tablepress.hrs-medical-premium-changes-2018 .row-3 .column-1,
+.tablepress.hrs-medical-premium-changes-2018 .row-8 .column-1,
+.tablepress.hrs-medical-premium-changes-2018 .row-12 .column-1 {
+	background-color: #d7dadb;
+	font-weight: 700;
+}
+
+/*
+ * 4.3 HRS News
+ *
+ * @todo Converting to standard posts
+ */
+
+.post-type-archive-hrs_news .news-nav {
+	border-top: 2px solid #aec7cb;
+	border-right: 8px solid #fff;
+	border-bottom: 2px solid #aec7cb;
+	border-left: 8px solid #fff;
+	list-style-type: none;
+	margin: 1.5em 0;
+	padding: 0 0 0 1em;
+}
+
+.post-type-archive-hrs_news .nav-links {
+	text-align: center;
+}
+
+.single-hrs_news .nav-links a,
+.post-type-archive-hrs_news .nav-links .page-numbers {
+	margin: 0 .25em;
+	padding: .75em 1em;
+}
+
+.post-type-archive-hrs_news .nav-links .current {
+	background: #eff0f1;
+	border: 1px solid #464e54;
+}
+
+.single-hrs_news .nav-links a,
+.post-type-archive-hrs_news .nav-links a {
+	transition: color .3s ease-out, background-color .3s ease-out;
+}
+
+.single-hrs_news .nav-links a:hover,
+.post-type-archive-hrs_news .nav-links a:hover,
+.post-type-archive-hrs_news .nav-links a:focus {
+	background: #981e32;
+	border: 1px solid transparent;
+	color: #fff;
+}
+
+.single-hrs_news .nav-previous,
+.single-hrs_news .nav-next {
+	display: inline-block;
+	width: 50%;
+}
+
+.single-hrs_news .nav-next {
+	float: right;
+	text-align: right;
+}
+
+.post-type-archive-hrs_news article footer,
+.single-hrs_news article footer {
+	border-top: none;
+	border-bottom: 1px rgba(127, 127, 127, .2) solid;
+}
+
+.hrs_news h3 {
+	line-height: 1.4;
+	padding-bottom: .5em;
+}
+
+.hrs_news h3 > a {
+	border-left: 8px solid;
+	padding-left: .5em;
+}
+
+.hrs_news .hrs-news-unit {
+	font-size: 1em;
+	padding-bottom: 0;
+}
+
+.hrs_news .article-summary,
+.hrs_news .article-body {
+	margin-top: 1.4em;
+}
+
+.hrs_news p {
+	font-size: 1.2em;
+	line-height: 1.5;
+}
+
+/*
+ * 4.4 Recruitment
+ */
+
+.hrs-app-instructions {
+	margin-top: 2em;
+}
+
+.hrs-app-instructions .circle-icon-holder {
+	background: #4f868e;
+	border: 5px solid #fff;
+	border-radius: 100%;
+	height: 70px;
+	margin: 0 auto -30px;
+	overflow: hidden;
+	position: relative;
+	top: -35px;
+	width: 70px;
+}
+
+.hrs-app-instructions .job-search {
+	background: #4f868e;
+	color: #fff;
+}
+
+.hrs-app-instructions .job-search h2 {
+	color: #eff0f1;
+	text-align: center;
+}
+
+.hrs-open-enrollment ul.inline li {
+	margin-right: 1%;
+}
+
+.hrs-open-enrollment .inline .hrs-button {
+	min-width: 90px;
+	min-height: 83px;
+	padding: .75em;
+	vertical-align: top;
+}
+
+@media only screen and (max-width: 365px) {
+
+	.hrs-open-enrollment ul.inline li {
+		display: block;
+		margin-right: 0;
+	}
+
+	.hrs-open-enrollment .inline .hrs-button {
+		width: 100%;
+	}
+
+}
+
+@media only screen and (min-width: 365px) and (max-width: 640px) {
+
+	.hrs-open-enrollment .inline .hrs-button {
+		max-width: 135px;
+	}
+
+}
+
+@media only screen and (min-width: 700px) and (max-width: 790px) {
+
+	.hrs-open-enrollment .inline .hrs-button {
+		font-size: .7em;
+	}
+
+}
+
+/*
+ * 4.5 Spokane and Tri-Cities
+ */
+
+.page-tricities .builder-banner-inner-title,
+.page-spokane .builder-banner-inner-title {
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, .9);
+	color: #981e32;
+	font-size: 3.4rem;
+	font-weight: 600;
+	left: 50%;
+	padding: .3rem 1.3rem;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.page-tricities .hrs-button-big,
+.page-spokane .hrs-button-big {
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.page-tricities .hrs-button-big a,
+.page-spokane .hrs-button-big a {
+	background: #981e32;
+	border: medium none;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+	box-sizing: border-box;
+	color: #fff;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 1rem 2rem;
+	text-align: center;
+	text-transform: uppercase;
+	transition: background-color .2s ease;
+}
+
+@media only screen and (min-width: 800px) {
+
+	.page-tricities .hrs-button-big a,
+	.page-spokane .hrs-button-big a {
+		padding: 2rem 4rem;
+	}
+
+}
+
+.page-tricities .hrs-button-big a:hover,
+.page-spokane .hrs-button-big a:hover {
+	background: #464e54;
+}
+
+.page-tricities .hrs-button-menu ul,
+.page-spokane .hrs-button-menu ul {
+	list-style-type: none;
+	padding: 1rem 0 0;
+	text-align: center;
+}
+
+.page-tricities .hrs-button-menu ul li,
+.page-spokane .hrs-button-menu ul li {
+	margin-bottom: .5rem;
+	padding: 0;
+}
+
+.page-tricities h2.blue-text,
+.page-spokane h2.blue-text {
+	font-size: 2rem;
+	padding-top: 0;
+}
+
+.page-tricities .hrs-nav-modules .column,
+.page-spokane .hrs-nav-modules .column {
+	text-align: center;
+}
+
+.page-tricities .hrs-nav-modules .column a:hover img,
+.page-tricities .hrs-nav-modules .column a:focus img,
+.page-spokane .hrs-nav-modules .column a:hover img,
+.page-spokane .hrs-nav-modules .column a:focus img {
+	opacity: .7;
+}
+
+.page-tricities .hrs-nav-modules h3,
+.page-spokane .hrs-nav-modules h3 {
+	font-size: 1.2rem;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: .5rem;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+.page-tricities .hrs-nav-modules p,
+.page-spokane .hrs-nav-modules p {
+	line-height: 1.5;
+	font-size: 1.1rem;
+	font-weight: 400;
 }
 
 
