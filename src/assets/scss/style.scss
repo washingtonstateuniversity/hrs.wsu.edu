@@ -941,14 +941,14 @@ input[type="submit"].hrs-button-white {
 }
 
 .parent-stretch .search-label {
-	text-align: right;
-	padding-right: 35px;
-	font-size: 1.2rem;
-	color: #981e32;
-	transition: color .3s ease;
-	padding-top: 1em;
-	padding-bottom: 1em;
+	color: #eff0f1;
 	display: inline-block;
+	font-size: 1.2rem;
+	padding-top: 1em;
+	padding-right: 35px;
+	padding-bottom: 1em;
+	text-align: right;
+	transition: color .3s ease;
 }
 
 .parent-stretch .search-label:after {
@@ -1849,9 +1849,7 @@ body.home .parent-stretch .single.row .column header,
 
 	/* Search form */
 	.parent-stretch .search-label {
-		color: #eff0f1;
 		padding-right: 0;
-		transition: color .5s ease !important;
 	}
 
 	.header-search-wrapper {
