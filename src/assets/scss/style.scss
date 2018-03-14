@@ -77,238 +77,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * 1.1 Foundation
  */
 
-/*
- * 1.2 Colors
- */
-
-/*
- * 1.3 Typography
- */
-
-/*
- * 1.4 Links
- */
-
-/*
- * 1.5 Lists
- */
-
-/*
- * 1.6 Utility
- */
-
-
-/*
- * 2.0 Elements
- *
- * CSS rules for small, elemental bits of HTML. These pieces make up the
- * building blocks of larger components (buttons as parts of forms, tags as
- * parts of article meta). Try to keep these styles agnostic and general. They
- * can be built upon in other sections as needed; these should form the
- * skeletons.
- *
- *     - 2.1 Buttons
- *     - 2.2 Embeds
- *     - 2.3 Images
- *     - 2.4 Tags
- *
- * @since 0.9.0
- */
-
-/*
- * 2.1 Buttons
- */
-
-/*
- * 2.2 Embeds
- */
-
-/*
- * 2.3 Images
- */
-
-/*
- * 2.4 Tags
- */
-
-/*
- * 3.0 Components
- *
- * CSS rules for larger modular components. Components should be made up of
- * individual Elements and should be designed with a focus on being reused
- * around the site.
- *
- *     - 3.1 Asides
- *     - 3.2 Notifications
- *     - 3.3 Pagination
- *     - 3.4 Search
- *     - 3.5 Forms
- *     - 3.6 Tables
- *     - 3.7 Article Meta
- *
- * @since 0.9.0
- */
-
-/*
- * 3.1 Asides
- */
-
-/*
- * 3.2 Notifications
- */
-
-/*
- * 3.3 Pagination
- */
-
-/*
- * 3.4 Search
- */
-
-/*
- * 3.5 Forms
- */
-
-/*
- * 3.6 Tables
- */
-
-/*
- * 3.7 Article Meta
- */
-
-
-/*
- * 4.0 Layouts
- *
- * Rules defining different layout patterns for use anywhere on the site.
- *
- *     - 4.1 Cards
- *     - 4.2 Columns
- *     - 4.3 Grids
- *
- * @since 0.9.0
- */
-
-/*
- * 4.1 Cards
- */
-
-/*
- * 4.2 Columns
- */
-
-/*
- * 4.3 Grids
- */
-
-
-/*
- * 5.0 Templates
- *
- * Template-specific rules for specific page styles. These generally align with
- * theme templates and template parts, and should be made up of Elements,
- * Components, and Layouts.
- *
- *     - 5.1 Header
- *     - 5.2 Footer
- *     - 5.3 Articles
- *     - 5.4 Archives
- *     - 5.4 Multi-part Pages
- *
- * @since 0.9.0
- */
-
-/*
- * 5.1 Header
- */
-
-/*
- * 5.2 Footer
- */
-
-/*
- * 5.3 Articles
- */
-
-/*
- * 5.4 Archives
- */
-
-/*
- * 5.4 Multi-part Pages
- */
-
-
-/*
- * 6.0 Pages
- *
- * A section for CSS rules targeting specific individual pages. These should be
- * used sparingly and only for unique pages such as the homepage.
- *
- *     - 6.1 Homepage
- *
- * @since 0.9.0
- */
-
-/*
- * 6.1 Homepage
- */
-
-
-/*
- * 7.0 Breakpoints
- *
- * All previous styles should be fluid, responsive, and otherwise target the
- * smallest standard viewport size (i.e., mobile devices). This section provides
- * adjustments to take advantage of additional screen space on larger viewports
- * and fix items that may no longer be ideal at larger screen sizes.
- *
- *     - 7.1 Small
- *     - 7.2 Medium
- *     - 7.3 Large
- *     - 7.4 Massive
- *
- * @since 0.9.0
- */
-
-/*
- * 7.1 Small
- */
-
-/*
- * 7.2 Medium
- */
-
-/*
- * 7.3 Large
- */
-
-/*
- * 7.4 Massive
- */
-
-
-/*
- * 8.0 Deprecated
- *
- * These styles or selectors have been deprecated and will be removed from
- * future versions. Stop targeting these rules and update any markup that relies
- * on these styles.
- *
- * @since 0.9.0
- */
-
-
-/*******************************************************************************
-********************************************************************************
-********************************************************************************
-********************************************************************************
-********************************************************************************
- * 1.0 Globals
- * @since 0.8.0
- */
-
 * {
 	box-sizing: border-box;
 }
@@ -339,40 +107,19 @@ body.home footer.parent-foot {
 	background-repeat: repeat;
 }
 
-hr {
-	margin-top: 2em;
-	margin-bottom: 2em;
-
-	&:after {
-		content: "";
-		display: block;
-		height: 10px;
-		width: 10px;
-		background: #5d5d5d;
-	}
-
-	&:after {
-		display: none !important;
-	}
-
-	+ h2 {
-		padding-top: 1.5em;
-	}
+body.home .parent-stretch .single.row .column header,
+.header-search-wrapper .search-label,
+.si-dropdown,
+.header-search-wrapper-hide {
+	display: none;
 }
 
-/**
- * 1.1 Colors (_colors.scss)
- *
- * Defines the variables for the site-wide brand colors, as well as common
- * elements where they are used, such as `$link-color`.
- *
- * @since 0.8.0
+/*
+ * 1.2 Colors
  */
 
-/**
- * 1.2 Typography (_typography.scss)
- *
- * @since 0.8.0
+/*
+ * 1.3 Typography
  */
 
 h1 {
@@ -457,10 +204,48 @@ p {
 	}
 }
 
-/**
- * 1.3 Lists (_lists.scss)
- *
- * @since 0.8.0
+hr {
+	margin-top: 2em;
+	margin-bottom: 2em;
+
+	&:after {
+		content: "";
+		display: block;
+		height: 10px;
+		width: 10px;
+		background: #5d5d5d;
+	}
+
+	&:after {
+		display: none !important;
+	}
+
+	+ h2 {
+		padding-top: 1.5em;
+	}
+}
+
+/*
+ * 1.4 Links
+ */
+
+main a {
+
+	&:hover,
+	&:focus {
+		transition: color .6s ease-out;
+	}
+}
+
+a {
+
+	h1 & {
+		color: #363636 !important;
+	}
+}
+
+/*
+ * 1.5 Lists
  */
 
 main ul,
@@ -502,43 +287,172 @@ ol.inline li:last-child {
 	margin-right: 0;
 }
 
-/**
- * 1.4 Links (_links.scss)
- *
- * @since 0.8.0
+/*
+ * 1.6 Utility
  */
 
-main a {
+.textaligncenter {
+	text-align: center;
+}
+
+/* Must be contained within a relatively positioned element. */
+.abs-center {
+	margin: 0 -50% 0 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 0;
+	transform: translate(-50%, -50%);
+}
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.fixed {
+	position: fixed;
+	top: 50px;
+	margin-top: 0;
+	z-index: 1;
+	transition: all .3s ease-out;
+}
+
+.gray-bg {
+	background-color: #e4e4e4;
+}
+
+.pad-top .column {
+	padding-top: 0 !important;
+}
+
+.pad-bottom {
+	padding-bottom: 3em;
+}
+
+
+/*
+ * 2.0 Elements
+ *
+ * CSS rules for small, elemental bits of HTML. These pieces make up the
+ * building blocks of larger components (buttons as parts of forms, tags as
+ * parts of article meta). Try to keep these styles agnostic and general. They
+ * can be built upon in other sections as needed; these should form the
+ * skeletons.
+ *
+ *     - 2.1 Buttons
+ *     - 2.2 Embeds
+ *     - 2.3 Images
+ *     - 2.4 Tags
+ *
+ * @since 0.9.0
+ */
+
+/*
+ * 2.1 Buttons
+ */
+
+.hrs-button,
+button.hrs-button,
+input[type="button"].hrs-button,
+input[type="reset"].hrs-button,
+input[type="submit"].hrs-button {
+	background: #464e54;
+	border: 1px solid transparent;
+	box-shadow: none;
+	color: #fff;
+	display: inline-block;
+	font-size: .9em;
+	font-weight: 600;
+	line-height: 1.4;
+	min-width: 120px;
+	padding: .75rem 1.25rem;
+	text-align: center;
+	transition: background-color .3s ease;
 
 	&:hover,
 	&:focus {
-		transition: color .6s ease-out;
+		background: #eff0f1;
+		border: 1px solid #464e54;
+		color: #464e54;
 	}
 }
 
-a {
+.hrs-button-priority,
+button.hrs-button-priority,
+input[type="button"].hrs-button-priority,
+input[type="reset"].hrs-button-priority,
+input[type="submit"].hrs-button-priority {
+	background: #981e32;
 
-	h1 & {
-		color: #363636 !important;
+	&:hover,
+	&:focus {
+		background: #eff0f1;
+		border: 1px solid #981e32;
+		color: #981e32;
 	}
 }
 
-/**
- * 1.5 Images (_images.scss)
- *
- * @since 0.8.0
+.hrs-button-white,
+button.hrs-button-white,
+input[type="button"].hrs-button-white,
+input[type="reset"].hrs-button-white,
+input[type="submit"].hrs-button-white {
+	background: #eff0f1;
+	border: 1px solid #464e54;
+	color: #464e54;
+
+	&:hover,
+	&:focus {
+		background: #464e54;
+		border: 1px solid transparent;
+		color: #fff;
+	}
+}
+
+/*
+ * 2.2 Embeds
  */
 
-/* Social media icons */
-.socialicons {
-	background: url(http://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/cream_pixels.png);
-	padding-top: 1em;
+/*
+ * A flexible youtube embed container (default 16x9 aspect ratio)
+ * Following techinque from Rachel McCollin's {@see http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-responsive-design/}
+ * Which is itself based on Thierry Koblenz's {@see http://alistapart.com/article/creating-intrinsic-ratios-for-video}
+ */
+
+.embed-youtube {
+	height: 0;
+	margin-bottom: 1.4em;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+
+	iframe,
+	object,
+	embed {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
 }
 
-.socialicons img:hover,
-.socialicons img:focus {
-	opacity: .7;
+.youtube-4x3 {
+	padding-bottom: 75%;
 }
+
+/*
+ * 2.3 Images
+ */
 
 /* Builder: Banner */
 .builder-section-banner .cycle-prev,
@@ -603,6 +517,18 @@ a {
 	line-height: 1.5;
 }
 
+.section-wrapper-has-background {
+	min-height: 600px !important;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.single.gutter section.builder-section-banner .column:not(.gutterless) {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 /* Default HRS Gallery */
 .hrs-gallery {
 	display: flex;
@@ -661,173 +587,48 @@ a {
 	margin: 0 auto;
 }
 
-/**
- * Embeds
- */
-
-/*
- * A flexible youtube embed container (default 16x9 aspect ratio)
- * Following techinque from Rachel McCollin's {@see http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-responsive-design/}
- * Which is itself based on Thierry Koblenz's {@see http://alistapart.com/article/creating-intrinsic-ratios-for-video}
- */
-
-.embed-youtube {
-	height: 0;
-	margin-bottom: 1.4em;
-	overflow: hidden;
-	padding-bottom: 56.25%;
-	position: relative;
-
-	iframe,
-	object,
-	embed {
-		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
-	}
+/* Social media icons */
+.socialicons {
+	background: url(http://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/cream_pixels.png);
+	padding-top: 1em;
 }
 
-.youtube-4x3 {
-	padding-bottom: 75%;
-}
-
-/**
- * 1.6 Utility (_utility.scss)
- *
- * These styles establish some non-semantic utility classes for limited use in
- * situations requiring one-off styling, such as `align{dir}` for embedded
- * media. Try to minimize the use of these as much as reasonable.
- *
- * @since 0.8.0
- */
-
-
-.textaligncenter {
-	text-align: center;
+.socialicons img:hover,
+.socialicons img:focus {
+	opacity: .7;
 }
 
 /*
- * Must be contained within a relatively positioned element.
- * @todo convert this to a @content @mixin.
+ * 2.4 Tags
  */
 
-.abs-center {
-	margin: 0 -50% 0 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	padding: 0;
-	transform: translate(-50%, -50%);
-}
 
-.screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
-}
-
-.fixed {
-	position: fixed;
-	top: 50px;
-	margin-top: 0;
-	z-index: 1;
-	transition: all .3s ease-out;
-}
-
-.gray-bg {
-	background-color: #e4e4e4;
-}
-
-.pad-top .column {
-	padding-top: 0 !important;
-}
-
-.pad-bottom {
-	padding-bottom: 3em;
-}
-
-
-/**
- * 4.0 Modules (modules/)
+/*
+ * 3.0 Components
  *
+ * CSS rules for larger modular components. Components should be made up of
+ * individual Elements and should be designed with a focus on being reused
+ * around the site.
+ *
+ *     - 3.1 Asides
+ *     - 3.2 Notifications
+ *     - 3.3 Pagination
+ *     - 3.4 Search
+ *     - 3.5 Forms
+ *     - 3.6 Tables
+ *     - 3.7 Article Meta
+ *
+ * @since 0.9.0
  */
 
-/**
- * 4.1 Buttons (_buttons.scss)
+/*
+ * 3.1 Asides
  */
 
-.hrs-button,
-button.hrs-button,
-input[type="button"].hrs-button,
-input[type="reset"].hrs-button,
-input[type="submit"].hrs-button {
-	background: #464e54;
-	border: 1px solid transparent;
-	box-shadow: none;
-	color: #fff;
-	display: inline-block;
-	font-size: .9em;
-	font-weight: 600;
-	line-height: 1.4;
-	min-width: 120px;
-	padding: .75rem 1.25rem;
-	text-align: center;
-	transition: background-color .3s ease;
-
-	&:hover,
-	&:focus {
-		background: #eff0f1;
-		border: 1px solid #464e54;
-		color: #464e54;
-	}
-}
-
-.hrs-button-priority,
-button.hrs-button-priority,
-input[type="button"].hrs-button-priority,
-input[type="reset"].hrs-button-priority,
-input[type="submit"].hrs-button-priority {
-	background: #981e32;
-
-	&:hover,
-	&:focus {
-		background: #eff0f1;
-		border: 1px solid #981e32;
-		color: #981e32;
-	}
-}
-
-.hrs-button-white,
-button.hrs-button-white,
-input[type="button"].hrs-button-white,
-input[type="reset"].hrs-button-white,
-input[type="submit"].hrs-button-white {
-	background: #eff0f1;
-	border: 1px solid #464e54;
-	color: #464e54;
-
-	&:hover,
-	&:focus {
-		background: #464e54;
-		border: 1px solid transparent;
-		color: #fff;
-	}
-}
-
-/**
- * Asides and Callouts
+/*
+ * 3.2 Notifications
  */
 
-/* A default callout box for displaying notices on HRS site */
 .hrs-callout {
 	border: 2px solid #a9a9a9;
 	border-radius: 3px;
@@ -928,53 +729,12 @@ input[type="submit"].hrs-button-white {
 	transform: translate(-50%, -50%);
 }
 
-/**
- * 3.2 Tables (_tables.scss)
+/*
+ * 3.3 Pagination
  */
 
-.tablepress-manual-contacts .column-1 {
-	width: 497px;
-}
-
-.tablepress-manual-contacts td.column-3,
-.tablepress-hrs-contacts td.column-3 {
-	white-space: nowrap;
-}
-
-.caldera-grid .hrs-caldera-table td,
-.caldera-grid .hrs-caldera-table th {
-	padding: 8px;
-}
-
-/* Labor relation table */
-.tablepress-id-31 .column-1 {
-	width: 450px !important;
-}
-
-.tablepress-id-7 .column-1 {
-	width: 500px !important;
-}
-
-.tablepress-id-31 .column-2,
-.tablepress-id-7 .column-2 {
-	width: 150px !important;
-}
-
-.tablepress-id-31 .column-3,
-.tablepress-id-7 .column-3 {
-	width: 100px !important;
-}
-
-.tablepress.hrs-4-of-5 td.column-1 {
-	width: 30%;
-}
-
-/**
- * 3.3 Forms (_forms.scss)
- */
-
-/**
- * 3.4 Search (_search.scss)
+/*
+ * 3.4 Search
  */
 
 .menu-quick-links-search-container li {
@@ -1099,11 +859,228 @@ input[type="submit"].hrs-button-white {
 	color: #c60c30;
 }
 
-/**
- * 3.5 Headers (_headers.scss)
+/*
+ * 3.5 Forms
  */
 
-/* Global Header */
+/*
+ * 3.6 Tables
+ */
+
+.tablepress-manual-contacts .column-1 {
+	width: 497px;
+}
+
+.tablepress-manual-contacts td.column-3,
+.tablepress-hrs-contacts td.column-3 {
+	white-space: nowrap;
+}
+
+.caldera-grid .hrs-caldera-table td,
+.caldera-grid .hrs-caldera-table th {
+	padding: 8px;
+}
+
+/* Labor relation table */
+.tablepress-id-31 .column-1 {
+	width: 450px !important;
+}
+
+.tablepress-id-7 .column-1 {
+	width: 500px !important;
+}
+
+.tablepress-id-31 .column-2,
+.tablepress-id-7 .column-2 {
+	width: 150px !important;
+}
+
+.tablepress-id-31 .column-3,
+.tablepress-id-7 .column-3 {
+	width: 100px !important;
+}
+
+.tablepress.hrs-4-of-5 td.column-1 {
+	width: 30%;
+}
+
+/*
+ * 3.7 Article Meta
+ */
+
+
+/*
+ * 4.0 Layouts
+ *
+ * Rules defining different layout patterns for use anywhere on the site.
+ *
+ *     - 4.1 Cards
+ *     - 4.2 Columns
+ *     - 4.3 Grids
+ *     - 4.4 Tabs
+ *
+ * @since 0.9.0
+ */
+
+/*
+ * 4.1 Cards
+ */
+
+/*
+ * 4.2 Columns
+ */
+
+.nested-halves {
+	width: 100%;
+	display: inline-block;
+	text-align: top;
+	clear: both;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.nested-halves .nested-one {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-right: 1%;
+}
+
+.nested-halves .nested-two {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-left: 1%;
+}
+
+.nested-thirds {
+	width: 100%;
+	display: inline-block;
+	clear: both;
+}
+
+.nested-thirds .nested-one {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-two {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-three {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+}
+
+.nested-gutter {
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.nested-one,
+.nested-two,
+.nested-three {
+
+	h5 {
+		background: #981e32;
+
+		a {
+			color: #fff;
+
+			&:hover,
+			&:focus {
+				color: #b5babe;
+			}
+		}
+	}
+
+	ul {
+		background-color: #fff;
+		border-radius: 5px;
+	}
+}
+
+/*
+ * 4.3 Grids
+ */
+
+/*
+ * 4.4 Tabs
+ */
+
+.tabbed ul.tabbed-tabs {
+	display: flex;
+	padding: 0;
+}
+
+.tabbed ul li.tabbed-tab {
+	flex: 1;
+	text-align: center;
+	display: block;
+	padding: 21px;
+	margin-top: 0;
+	font-size: 20px;
+	font-weight: 400;
+	text-transform: uppercase;
+	cursor: pointer;
+	position: relative;
+	background-color: #f0f0f0;
+	outline: 0;
+}
+
+.tabbed ul li.tabbed-tab {
+	display: none;
+}
+
+.tabbed ul li.tabbed-tab a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	outline: 0;
+	color: #363636;
+}
+
+.tabbed ul li.tabbed-tab a:hover {
+	color: #981e32;
+}
+
+.tabbed ul li.tabbed-tab.ui-tabs-active {
+	background: #fff;
+}
+
+.tabbed .ui-tabs-panel {
+	background: url(https://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/gray-tile.jpg) !important;
+	padding: 3% 8%;
+}
+
+
+/*
+ * 5.0 Templates
+ *
+ * Template-specific rules for specific page styles. These generally align with
+ * theme templates and template parts, and should be made up of Elements,
+ * Components, and Layouts.
+ *
+ *     - 5.1 Header
+ *     - 5.2 Footer
+ *     - 5.3 Articles
+ *     - 5.4 Archives
+ *     - 5.4 Multi-part Pages
+ *
+ * @since 0.9.0
+ */
+
+/*
+ * 5.1 Header
+ */
+
 .parent-stretch {
 	background: #444;
 	border-top: 5px solid #981e32;
@@ -1159,8 +1136,8 @@ input[type="submit"].hrs-button-white {
 	cursor: pointer;
 }
 
-/**
- * 3.6 Footers (_footers.scss)
+/*
+ * 5.2 Footer
  */
 
 footer.parent-foot {
@@ -1247,63 +1224,48 @@ footer.parent-foot .site-ref ul li a:hover {
 	transition: color .6s ease-out;
 }
 
-/**
- * 3.7 Banners
+/*
+ * 5.3 Articles
  */
 
-.section-wrapper-has-background {
-	min-height: 600px !important;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.single.gutter section.builder-section-banner .column:not(.gutterless) {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-
-/**
- * X.0 Templates
- */
-
-/**
- * X.1 Articles
- */
-
-/*Hides the author name and date when users search pages on 404 page*/
 .article-author {
 	display: none !important;
 }
-
-/*
- * Hides published date for page
- * @todo Make this more specific to pages, and verify necessity for `!important`
- */
 
 .article-date {
 	display: none !important;
 }
 
-/*
- * Show article date for news posts
- * @todo Remove `!important` after default `.article-date` style is corrected
- */
-
 .hrs_news .article-date {
 	display: inline !important;
 }
 
-/**
- * 4.0 Pages (pages/)
- *     _home.scss
- *
- * @todo Try to fold more of these into the standard styles.
+/*
+ * 5.4 Archives
  */
 
-/**
- * 4.1 Home (_home.scss)
+/*
+ * 5.4 Multi-part Pages
+ */
+
+
+/*
+ * 6.0 Pages
+ *
+ * A section for CSS rules targeting specific individual pages. These should be
+ * used sparingly and only for unique pages such as the homepage.
+ *
+ *     - 6.1 Homepage
+ *     - 6.2 Benefits
+ *     - 6.3 HRS News
+ *     - 6.4 Recruitment
+ *     - 6.5 Spokane and Tri-Cities
+ *
+ * @since 0.9.0
+ */
+
+/*
+ * 6.1 Homepage
  */
 
 body.home.page #binder.spineless.fluid main {
@@ -1464,9 +1426,8 @@ body.home section .column.tabbed h5 {
 	padding: 10px;
 }
 
-
 /*
- * 4.2 Benefits
+ * 6.2 Benefits
  */
 
 .hrs-benefits-new-employees .column {
@@ -1530,7 +1491,7 @@ body.home section .column.tabbed h5 {
 	width: 9%;
 }
 
-/* the 2018 columns */
+/* The 2018 columns */
 .tablepress.hrs-medical-premium-changes-2018 tr .column-3,
 .tablepress.hrs-medical-premium-changes-2018 tr .column-5,
 .tablepress.hrs-medical-premium-changes-2018 tr .column-7,
@@ -1561,9 +1522,7 @@ body.home section .column.tabbed h5 {
 }
 
 /*
- * 4.3 HRS News
- *
- * @todo Converting to standard posts
+ * 6.3 HRS News
  */
 
 .post-type-archive-hrs_news .news-nav {
@@ -1647,7 +1606,7 @@ body.home section .column.tabbed h5 {
 }
 
 /*
- * 4.4 Recruitment
+ * 6.4 Recruitment
  */
 
 .hrs-app-instructions {
@@ -1687,37 +1646,8 @@ body.home section .column.tabbed h5 {
 	vertical-align: top;
 }
 
-@media only screen and (max-width: 365px) {
-
-	.hrs-open-enrollment ul.inline li {
-		display: block;
-		margin-right: 0;
-	}
-
-	.hrs-open-enrollment .inline .hrs-button {
-		width: 100%;
-	}
-
-}
-
-@media only screen and (min-width: 365px) and (max-width: 640px) {
-
-	.hrs-open-enrollment .inline .hrs-button {
-		max-width: 135px;
-	}
-
-}
-
-@media only screen and (min-width: 700px) and (max-width: 790px) {
-
-	.hrs-open-enrollment .inline .hrs-button {
-		font-size: .7em;
-	}
-
-}
-
 /*
- * 4.5 Spokane and Tri-Cities
+ * 6.5 Spokane and Tri-Cities
  */
 
 .page-tricities .builder-banner-inner-title,
@@ -1755,15 +1685,6 @@ body.home section .column.tabbed h5 {
 	text-align: center;
 	text-transform: uppercase;
 	transition: background-color .2s ease;
-}
-
-@media only screen and (min-width: 800px) {
-
-	.page-tricities .hrs-button-big a,
-	.page-spokane .hrs-button-big a {
-		padding: 2rem 4rem;
-	}
-
 }
 
 .page-tricities .hrs-button-big a:hover,
@@ -1820,101 +1741,23 @@ body.home section .column.tabbed h5 {
 }
 
 
-/**
- * 4.0 Breakpoints (breakpoints/)
- *     _base.scss
- *     ...
+/*
+ * 7.0 Breakpoints
+ *
+ * All previous styles should be fluid, responsive, and otherwise target the
+ * smallest standard viewport size (i.e., mobile devices). This section provides
+ * adjustments to take advantage of additional screen space on larger viewports
+ * and fix items that may no longer be ideal at larger screen sizes.
+ *
+ *     - 7.1 Small
+ *     - 7.2 Medium
+ *     - 7.3 Large
+ *     - 7.4 Massive
+ *
+ * @since 0.9.0
  */
 
-/**
- * 4.1 Base (_base.scss)
- */
 
-body.home .parent-stretch .single.row .column header,
-.header-search-wrapper .search-label,
-.si-dropdown,
-.header-search-wrapper-hide {
-	display: none;
-}
-
-.nested-halves {
-	width: 100%;
-	display: inline-block;
-	text-align: top;
-	clear: both;
-	padding-top: 0;
-	margin-top: 0;
-}
-
-.nested-halves .nested-one {
-	display: block;
-	width: 49%;
-	float: left;
-	padding-right: 1%;
-}
-
-.nested-halves .nested-two {
-	display: block;
-	width: 49%;
-	float: left;
-	padding-left: 1%;
-}
-
-.nested-thirds {
-	width: 100%;
-	display: inline-block;
-	clear: both;
-}
-
-.nested-thirds .nested-one {
-	display: block;
-	width: 33.33333333333333%;
-	float: left;
-	padding-right: 4%;
-}
-
-.nested-thirds .nested-two {
-	display: block;
-	width: 33.33333333333333%;
-	float: left;
-	padding-right: 4%;
-}
-
-.nested-thirds .nested-three {
-	display: block;
-	width: 33.33333333333333%;
-	float: left;
-}
-
-.nested-gutter {
-	padding-left: 1%;
-	padding-right: 1%;
-}
-
-.nested-one,
-.nested-two,
-.nested-three {
-
-	h5 {
-		background: #981e32;
-
-		a {
-			color: #fff;
-
-			&:hover,
-			&:focus {
-				color: #b5babe;
-			}
-		}
-	}
-
-	ul {
-		background-color: #fff;
-		border-radius: 5px;
-	}
-}
-
-/* Responsive Tables */
 @media only screen and (max-width: 37.5em) {
 
 	.tablepress-manual-contacts,
@@ -1955,57 +1798,42 @@ body.home .parent-stretch .single.row .column header,
 	}
 }
 
-/* Tabbed Layout */
-.tabbed ul.tabbed-tabs {
-	display: flex;
-	padding: 0;
+@media only screen and (max-width: 365px) {
+
+	.hrs-open-enrollment ul.inline li {
+		display: block;
+		margin-right: 0;
+	}
+
+	.hrs-open-enrollment .inline .hrs-button {
+		width: 100%;
+	}
 }
 
-.tabbed ul li.tabbed-tab {
-	flex: 1;
-	text-align: center;
-	display: block;
-	padding: 21px;
-	margin-top: 0;
-	font-size: 20px;
-	font-weight: 400;
-	text-transform: uppercase;
-	cursor: pointer;
-	position: relative;
-	background-color: #f0f0f0;
-	outline: 0;
+@media only screen and (min-width: 365px) and (max-width: 640px) {
+
+	.hrs-open-enrollment .inline .hrs-button {
+		max-width: 135px;
+	}
+
 }
 
-.tabbed ul li.tabbed-tab {
-	display: none;
+@media only screen and (min-width: 700px) and (max-width: 790px) {
+
+	.hrs-open-enrollment .inline .hrs-button {
+		font-size: .7em;
+	}
+
 }
 
-.tabbed ul li.tabbed-tab a {
-	display: block;
-	width: 100%;
-	height: 100%;
-	outline: 0;
-	color: #363636;
-}
+@media only screen and (min-width: 800px) {
 
-.tabbed ul li.tabbed-tab a:hover {
-	color: #981e32;
-}
+	.page-tricities .hrs-button-big a,
+	.page-spokane .hrs-button-big a {
+		padding: 2rem 4rem;
+	}
 
-.tabbed ul li.tabbed-tab.ui-tabs-active {
-	background: #fff;
 }
-
-.tabbed .ui-tabs-panel {
-	background: url(https://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/gray-tile.jpg) !important;
-	padding: 3% 8%;
-}
-
-/**
- * MEDIA QUERIES
- * @todo Update break point definitions -- all in ems and min-width, not max
- * @todo Determine how best to organize these
- */
 
 @media screen and (max-width: 490px) {
 
@@ -2499,8 +2327,32 @@ body.home .parent-stretch .single.row .column header,
 
 }
 
-/**
- * Deprecated
+
+/*
+ * 7.1 Small
+ */
+
+/*
+ * 7.2 Medium
+ */
+
+/*
+ * 7.3 Large
+ */
+
+/*
+ * 7.4 Massive
+ */
+
+
+/*
+ * 8.0 Deprecated
+ *
+ * These styles or selectors have been deprecated and will be removed from
+ * future versions. Stop targeting these rules and update any markup that relies
+ * on these styles.
+ *
+ * @since 0.9.0
  */
 
 a.button {
