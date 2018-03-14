@@ -1,0 +1,304 @@
+/**
+ * 3.0 Components
+ *
+ * CSS rules for larger modular components. Components should be made up of
+ * individual Elements and should be designed with a focus on being reused
+ * around the site.
+ *
+ *     - 3.1 Asides
+ *     - 3.2 Notifications
+ *     - 3.3 Pagination
+ *     - 3.4 Search
+ *     - 3.5 Forms
+ *     - 3.6 Tables
+ *     - 3.7 Article Meta
+ *
+ * @since 0.9.0
+ */
+
+/**
+ * 3.1 Asides
+ */
+
+/**
+ * 3.2 Notifications
+ */
+
+.hrs-callout {
+	border: 2px solid #a9a9a9;
+	border-radius: 3px;
+	padding: 1em 1.5em 0;
+}
+
+.hrs-priority-positive {
+	background-color: #d3e1e3;
+	border-color: #aec7cb;
+}
+
+.hrs-priority-caution {
+	background-color: #f1e4c4;
+	border-color: #e5cd93;
+}
+
+.hrs-priority-negative {
+	background-color: #eddccc;
+	border-color: #ddbea1;
+}
+
+.hrs-priority-neutral {
+	background-color: #eff0f1;
+}
+
+/* HRS Banner Callouts */
+.hrs-callout-banner {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	margin: 1.4rem 0;
+	text-align: center;
+}
+
+.hrs-banner-careers {
+	background-image: url(http://hrsdev.hrs.wsu.edu/wp-content/uploads/2016/02/large-1024x347.jpg);
+}
+
+.hrs-banner-careers header h2 {
+	color: #fff;
+	width: 100%;
+}
+
+.hrs-callout-gallery {
+	margin: 1.4rem auto;
+	position: relative;
+}
+
+.hrs-callout-gallery h3 {
+	font-size: 1.1rem;
+	left: 50%;
+	margin-right: -50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 99;
+}
+
+.hrs-callout-gallery h3 a.hrs-button {
+	font-weight: 400;
+	line-height: 1.4;
+	padding: .3rem .7rem;
+	text-transform: none;
+	width: 100%;
+}
+
+.hrs-callout-gallery h3 a.hrs-button-priority {
+	background: rgba(152, 30, 50, .8);
+}
+
+.hrs-callout-gallery h3 a.hrs-button-priority:hover,
+.hrs-callout-gallery h3 a.hrs-button-priority:focus {
+	background-color: #fff;
+	color: rgb(152, 30, 50);
+}
+
+.hrs-callout-gallery div.gallery-columns-3 {
+	max-width: 600px;
+}
+
+.hrs-callout-gallery div.gallery-columns-3 .gallery-item {
+	max-width: 33%;
+	margin: 0 0 -.5em 0;
+	position: relative;
+}
+
+.hrs-callout-gallery .gallery img {
+	border: none;
+}
+
+.hrs-callout-gallery .gallery .gallery-caption {
+	color: #fff;
+	left: 50%;
+	margin-right: -50%;
+	margin-left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/**
+ * 3.3 Pagination
+ */
+
+/**
+ * 3.4 Search
+ */
+
+.menu-quick-links-search-container li {
+	float: left !important;
+	width: 50% !important;
+}
+
+.header-search-wrapper {
+	background-color: #dbdbdb !important;
+	max-width: 1188px;
+}
+
+.home .header-search-wrapper {
+	max-width: 100vw;
+}
+
+.header-search-wrapper section.single.row {
+	padding-left: 78px;
+	margin-left: 0;
+}
+
+.header-search-a-z-wrapper {
+	clear: both;
+	float: right;
+	padding-top: 10px;
+	padding-right: 100px;
+}
+
+.header-search-wrapper .quick-links-label {
+	font-size: 1.4rem;
+	padding-top: 1.2em;
+	padding-bottom: .8em;
+}
+
+.header-search-wrapper .radio-rapper {
+	display: none;
+}
+
+.header-search-wrapper .radio-rapper:last-of-type {
+	margin-left: 23px;
+}
+
+.header-search-wrapper .radio-rapper label {
+	font-weight: 300;
+	font-size: 1.4em;
+	font-family: "Open Sans", sans-serif;
+	color: #363636;
+	vertical-align: middle;
+	margin-right: 1em;
+}
+
+.header-search-wrapper .radio-rapper label:last-of-type {
+	margin-right: 0;
+}
+
+.header-search-wrapper .common-searches ul,
+.header-search-wrapper .common-searches ul li {
+	list-style: none;
+	font-weight: 400;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.header-search-wrapper .common-searches ul {
+	column-count: 2;
+}
+
+#hrs-common-search li {
+	padding-bottom: .5em;
+}
+
+.common-searches ul li:first-child {
+	padding-top: 0;
+}
+
+.header-search-wrapper input[type="text"],
+.header-search-wrapper input[type="password"],
+.header-search-wrapper input[type="email"],
+.header-search-wrapper select,
+.header-search-wrapper textarea {
+	background: #fff;
+}
+
+.header-search-input-wrapper input.radio {
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.header-search-input-wrapper input.header-search-input {
+	border-radius: 0;
+	float: right;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1.75em;
+	font-weight: 300;
+	height: 50px;
+	max-width: 60%;
+	min-width: 50%;
+	margin-left: 100px;
+	margin-top: 50px;
+	margin-right: 100px;
+	padding: 25px;
+	padding-top: 4px; /* Fixes Firefox input text cut off */
+	padding-bottom: 4px; /* Fixes Firefox input text cut off */
+}
+
+/* Closing "X" */
+.close-header-drawer,
+.close-header-search {
+	text-align: right;
+	padding-right: 1em;
+	padding-bottom: 1em;
+	color: #981e32;
+	font-size: 2rem;
+	font-weight: 300;
+	cursor: pointer;
+	transition: color .3s ease;
+}
+
+.close-header-drawer:hover,
+.close-header-search:hover {
+	color: #c60c30;
+}
+
+/**
+ * 3.5 Forms
+ */
+
+/**
+ * 3.6 Tables
+ */
+
+.tablepress-manual-contacts .column-1 {
+	width: 497px;
+}
+
+.tablepress-manual-contacts td.column-3,
+.tablepress-hrs-contacts td.column-3 {
+	white-space: nowrap;
+}
+
+.caldera-grid .hrs-caldera-table td,
+.caldera-grid .hrs-caldera-table th {
+	padding: 8px;
+}
+
+/* Labor relation table */
+.tablepress-id-31 .column-1 {
+	width: 450px !important;
+}
+
+.tablepress-id-7 .column-1 {
+	width: 500px !important;
+}
+
+.tablepress-id-31 .column-2,
+.tablepress-id-7 .column-2 {
+	width: 150px !important;
+}
+
+.tablepress-id-31 .column-3,
+.tablepress-id-7 .column-3 {
+	width: 100px !important;
+}
+
+.tablepress.hrs-4-of-5 td.column-1 {
+	width: 30%;
+}
+
+/**
+ * 3.7 Article Meta
+ */
