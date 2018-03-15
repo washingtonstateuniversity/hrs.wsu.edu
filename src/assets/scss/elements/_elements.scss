@@ -1,0 +1,262 @@
+/**
+ * 2.0 Elements
+ *
+ * CSS rules for small, elemental bits of HTML. These pieces make up the
+ * building blocks of larger components (buttons as parts of forms, tags as
+ * parts of article meta). Try to keep these styles agnostic and general. They
+ * can be built upon in other sections as needed; these should form the
+ * skeletons.
+ *
+ *     - 2.1 Buttons
+ *     - 2.2 Embeds
+ *     - 2.3 Images
+ *     - 2.4 Tags
+ *
+ * @since 0.9.0
+ */
+
+/**
+ * 2.1 Buttons
+ */
+
+.hrs-button,
+button.hrs-button,
+input[type="button"].hrs-button,
+input[type="reset"].hrs-button,
+input[type="submit"].hrs-button {
+	background: #464e54;
+	border: 1px solid transparent;
+	box-shadow: none;
+	color: #fff;
+	display: inline-block;
+	font-size: .9em;
+	font-weight: 600;
+	line-height: 1.4;
+	min-width: 120px;
+	padding: .75rem 1.25rem;
+	text-align: center;
+	transition: background-color .3s ease;
+
+	&:hover,
+	&:focus {
+		background: #eff0f1;
+		border: 1px solid #464e54;
+		color: #464e54;
+	}
+}
+
+.hrs-button-priority,
+button.hrs-button-priority,
+input[type="button"].hrs-button-priority,
+input[type="reset"].hrs-button-priority,
+input[type="submit"].hrs-button-priority {
+	background: #981e32;
+
+	&:hover,
+	&:focus {
+		background: #eff0f1;
+		border: 1px solid #981e32;
+		color: #981e32;
+	}
+}
+
+.hrs-button-white,
+button.hrs-button-white,
+input[type="button"].hrs-button-white,
+input[type="reset"].hrs-button-white,
+input[type="submit"].hrs-button-white {
+	background: #eff0f1;
+	border: 1px solid #464e54;
+	color: #464e54;
+
+	&:hover,
+	&:focus {
+		background: #464e54;
+		border: 1px solid transparent;
+		color: #fff;
+	}
+}
+
+/**
+ * 2.2 Embeds
+ */
+
+/*
+ * A flexible youtube embed container (default 16x9 aspect ratio)
+ * Following techinque from Rachel McCollin's {@see http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-responsive-design/}
+ * Which is itself based on Thierry Koblenz's {@see http://alistapart.com/article/creating-intrinsic-ratios-for-video}
+ */
+
+.embed-youtube {
+	height: 0;
+	margin-bottom: 1.4em;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+
+	iframe,
+	object,
+	embed {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.youtube-4x3 {
+	padding-bottom: 75%;
+}
+
+/**
+ * 2.3 Images
+ */
+
+/* Builder: Banner */
+.builder-section-banner .cycle-prev,
+.builder-section-banner .cycle-next {
+	top: 90%;
+}
+
+/* Centered layout ("content position: none") */
+.content-position-none .builder-banner-content {
+	text-align: center;
+	width: 100%;
+}
+
+/* Left-aligned layout (content-position: left) */
+.builder-banner-slide.content-position-left {
+	background-position: center right;
+}
+
+.builder-banner-slide.content-position-right {
+	background-position: center left;
+}
+
+.builder-section-banner .content-position-left .builder-banner-content,
+.builder-section-banner .content-position-right .builder-banner-content {
+	font-size: 1.3rem;
+	padding: 0;
+	bottom: 0;
+	height: auto;
+	min-height: 60%;
+	width: 100%;
+}
+
+.builder-section-banner .content-position-left .builder-banner-content:after,
+.builder-section-banner .content-position-right .builder-banner-content:after {
+	display: none;
+}
+
+.builder-section-banner .content-position-left .builder-banner-inner-title,
+.builder-section-banner .content-position-right .builder-banner-inner-title {
+	color: #981e32;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, .9);
+	font-weight: 600;
+	width: 100%;
+	padding: 1rem;
+}
+
+.builder-section-banner .content-position-left .builder-banner-inner-content,
+.builder-section-banner .content-position-right .builder-banner-inner-content {
+	color: #2a3033;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, .9);
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.builder-section-banner .content-position-left .builder-banner-inner-content p,
+.builder-section-banner .content-position-right .builder-banner-inner-content p {
+	font-size: .7em;
+	padding: 0 1rem 1rem;
+	line-height: 1.5;
+}
+
+.section-wrapper-has-background {
+	min-height: 600px !important;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.single.gutter section.builder-section-banner .column:not(.gutterless) {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* Default HRS Gallery */
+.hrs-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+}
+
+.hrs-gallery .gallery-item {
+	box-sizing: border-box;
+	padding: 1rem;
+	margin: 0;
+	float: inherit;
+	text-align: center;
+}
+
+.hrs-gallery .gallery-columns-1 .gallery-item {
+	width: 100%;
+}
+
+.hrs-gallery .gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+
+.hrs-gallery .gallery-columns-3 .gallery-item {
+	width: 33.333333%;
+}
+
+.hrs-gallery .gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+
+.hrs-gallery .gallery-columns-5 .gallery-item {
+	width: 20%;
+}
+
+.hrs-gallery .gallery-columns-6 .gallery-item {
+	width: 16.66%;
+}
+
+.hrs-gallery .gallery-columns-7 .gallery-item {
+	width: 14.28%;
+}
+
+.hrs-gallery .gallery-columns-8 .gallery-item {
+	width: 12.5%;
+}
+
+.hrs-gallery .gallery-columns-9 .gallery-item {
+	width: 11.11%;
+}
+
+.hrs-gallery img {
+	border: 0;
+	box-sizing: border-box;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Social media icons */
+.socialicons {
+	background: url(http://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/cream_pixels.png);
+	padding-top: 1em;
+}
+
+.socialicons img:hover,
+.socialicons img:focus {
+	opacity: .7;
+}
+
+/**
+ * 2.4 Tags
+ */

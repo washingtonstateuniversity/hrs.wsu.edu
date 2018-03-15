@@ -1,0 +1,184 @@
+/**
+ * 8.0 Deprecated
+ *
+ * These styles or selectors have been deprecated and will be removed from
+ * future versions. Stop targeting these rules and update any markup that relies
+ * on these styles.
+ *
+ * @since 0.9.0
+ */
+
+a.button {
+	background: #981e32;
+	border: none;
+	box-sizing: border-box;
+	box-shadow: none;
+	color: #fff;
+	display: block;
+	font-weight: 700;
+	margin: 0;
+	padding: 1rem 0 .75rem;
+	text-align: center;
+	transition: background-color .3s ease;
+	width: 30%;
+}
+
+a.button:hover {
+	background: #c60c30;
+	color: #fff;
+}
+
+#button_holder a {
+	color: #fff;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+#buttonholder:after {
+	clear: both;
+}
+
+.new_button {
+	background: #c92f2f;
+	background: linear-gradient(to top, #852b2b, #c92f2f);
+	border-radius: 8px;
+	border-top: 1px solid #696969;
+	box-shadow: #000 0 1px 0;
+	color: #fff;
+	display: inline-block !important;
+	font-size: 16px;
+	height: 75px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 5px 20px 20px 0;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+	vertical-align: center;
+	width: 125px;
+
+	&:hover,
+	&:focus {
+		background: #981e32;
+		border-top-color: #690000;
+		box-shadow: 9px 10px 5px #888;
+		color: #fff;
+	}
+}
+
+.new_button_back {
+	background: #c92f2f;
+	background: linear-gradient(to top, #852b2b, #c92f2f);
+	border-radius: 8px;
+	box-shadow: #000 0 1px 0;
+	border-top: 1px solid #696969;
+	color: #fff;
+	font-size: 16px;
+	height: 35px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	padding: 5px 20px 20px 0;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+	vertical-align: center;
+	width: 75px;
+}
+
+.new_button_benefits {
+	background: #c92f2f;
+	background: linear-gradient(to top, #852b2b, #c92f2f);
+	border-radius: 8px;
+	border-top: 1px solid #696969;
+	box-shadow: #000 0 1px 0;
+	color: #fff;
+	float: left !important;
+	font-size: 16px;
+	height: 35px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	padding: 5px 20px 20px 0;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+	vertical-align: center;
+	width: 175px;
+
+	&:hover,
+	&:focus {
+		background: #981e32;
+		border-top-color: #690000;
+		box-shadow: 9px 10px 5px #888;
+		color: #fff;
+	}
+}
+
+#color-table tr:nth-child(even) {
+	background: #f7f6f3;
+	padding: 5px;
+}
+
+#color-table tr:nth-child(odd) {
+	background: #fff;
+	padding: 5px;
+}
+
+#color-table tr:first-child {
+	background: #717171;
+	color: #fff;
+}
+
+/**
+ * Spine (_spine.scss)
+ */
+
+/* Not sure what this is supposed to target.
+.main-header {
+	display: none;
+}
+
+#spine {
+
+	#glue:before {
+		border-right: 1px solid #efefef;
+	}
+
+	.spine-actions > ul li {
+		width: 33%;
+	}
+
+	.spine-navigation {
+		padding-bottom: 66px !important;
+	}
+
+	&.crimson .spine-sitenav {
+
+		li.dogeared > a
+		a:hover,
+		a:focus {
+			cursor: pointer !important;
+		}
+	}
+}
+
+@media screen and (max-width: 989px) {
+
+	.spine-mobile #glue {
+		display: none !important;
+	}
+
+}
+
+@media only screen and (min-width: 990px) and (max-width: 1699px) {
+
+	.fixed {
+		position: relative !important;
+	}
+
+}
+*/

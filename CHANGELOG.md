@@ -20,11 +20,29 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## (unreleased)
+## 0.9.0 (2018-03-14)
+
+### Fixed
+
+- Clean up styles on global header.
+- Spine mobile menu by deprecating old Spine style overrides.
+- Clean out unneeded styles for the homepage bulleted lists.
+- Fixed search label text color from red-on-gray to white-on-gray.
+- Match global header title style to search label text.
 
 ### Changed
 
+- Broke up Sass files based on new organization scheme; moved into separate subdirectories.
+- Created new CSS organization scheme to flow from globals to elements to components to layouts to templates to pages.
+- Update stylesheet with changes from prior 2 years of untracked changes.
+- Add .yml extension to .stylelintrc for more reliable syntax detection.
+- Update .stylelintrc to exclude comments with URLs from line length limits.
 - Update NPM dependency versions (with nonbreaking change in compressed variable placeholder names).
+
+### Deprecated
+
+- Spine style overrides.
+- Old button styles.
 
 ## 0.8.0 (2018-03-02)
 
