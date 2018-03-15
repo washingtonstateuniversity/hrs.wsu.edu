@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## (unreleased)
+
+### Changed
+
+- Remove extra css source-map from the reference style.css file at root.
+
 ## 0.9.0 (2018-03-14)
 
 ### Fixed
