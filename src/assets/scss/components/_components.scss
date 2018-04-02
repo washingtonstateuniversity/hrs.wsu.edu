@@ -5,23 +5,74 @@
  * individual Elements and should be designed with a focus on being reused
  * around the site.
  *
- *     - 3.1 Asides
- *     - 3.2 Notifications
- *     - 3.3 Pagination
- *     - 3.4 Search
- *     - 3.5 Forms
- *     - 3.6 Tables
- *     - 3.7 Article Meta
+ *     - 3.1 Cards
+ *     - 3.2 Data Tables
+ *     - 3.3 Dialogs
+ *     - 3.4 Forms
+ *     - 3.5 Grid Lists
+ *     - 3.6 Modules
+ *     - 3.7 Notifications
+ *     - 3.8 Pagination
+ *     - 3.9 Row Lists
+ *     - 3.10 Search
  *
  * @since 0.9.0
  */
 
 /**
- * 3.1 Asides
+ * 3.1 Cards
  */
 
+.recent-articles {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	grid-auto-rows: minmax(4rem, auto);
+	grid-gap: 1.5rem 2rem;
+}
+
 /**
- * 3.2 Notifications
+ * 3.2 Data Tables
+ */
+
+.tablepress-manual-contacts .column-1 {
+	width: 497px;
+}
+
+.tablepress-manual-contacts td.column-3,
+.tablepress-hrs-contacts td.column-3 {
+	white-space: nowrap;
+}
+
+.caldera-grid .hrs-caldera-table td,
+.caldera-grid .hrs-caldera-table th {
+	padding: 8px;
+}
+
+/* Labor relation table */
+.tablepress-id-31 .column-1 {
+	width: 450px !important;
+}
+
+.tablepress-id-7 .column-1 {
+	width: 500px !important;
+}
+
+.tablepress-id-31 .column-2,
+.tablepress-id-7 .column-2 {
+	width: 150px !important;
+}
+
+.tablepress-id-31 .column-3,
+.tablepress-id-7 .column-3 {
+	width: 100px !important;
+}
+
+.tablepress.hrs-4-of-5 td.column-1 {
+	width: 30%;
+}
+
+/**
+ * 3.7 Notifications
  */
 
 .hrs-callout {
@@ -125,11 +176,11 @@
 }
 
 /**
- * 3.3 Pagination
+ * 3.8 Pagination
  */
 
 /**
- * 3.4 Search
+ * 3.10 Search
  */
 
 .menu-quick-links-search-container li {
@@ -253,52 +304,3 @@
 .close-header-search:hover {
 	color: #c60c30;
 }
-
-/**
- * 3.5 Forms
- */
-
-/**
- * 3.6 Tables
- */
-
-.tablepress-manual-contacts .column-1 {
-	width: 497px;
-}
-
-.tablepress-manual-contacts td.column-3,
-.tablepress-hrs-contacts td.column-3 {
-	white-space: nowrap;
-}
-
-.caldera-grid .hrs-caldera-table td,
-.caldera-grid .hrs-caldera-table th {
-	padding: 8px;
-}
-
-/* Labor relation table */
-.tablepress-id-31 .column-1 {
-	width: 450px !important;
-}
-
-.tablepress-id-7 .column-1 {
-	width: 500px !important;
-}
-
-.tablepress-id-31 .column-2,
-.tablepress-id-7 .column-2 {
-	width: 150px !important;
-}
-
-.tablepress-id-31 .column-3,
-.tablepress-id-7 .column-3 {
-	width: 100px !important;
-}
-
-.tablepress.hrs-4-of-5 td.column-1 {
-	width: 30%;
-}
-
-/**
- * 3.7 Article Meta
- */

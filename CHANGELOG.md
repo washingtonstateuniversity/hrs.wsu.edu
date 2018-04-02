@@ -24,7 +24,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Reorder style table of contents to match the pattern library
 - Remove extra css source-map from the reference style.css file at root.
+
+### Added
+
+- Styles for a standard "Card" component using a grid layout.
 
 ## 0.9.0 (2018-03-14)
 

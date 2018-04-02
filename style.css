@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: spine
-Version: 0.9.0
+Version: 0.10.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -44,12 +44,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *     2.3 Embeds
  *
  * 3.0 Components
- *     3.1 Search
- *     3.2 Notifications
- *     3.3 Asides
- *     3.4 Pagination
- *     3.5 Tables
- *     3.6 Tags
+ *     3.1 Cards
+ *     3.2 Data Tables
+ *     3.3 Dialogs
+ *     3.4 Forms
+ *     3.5 Grid lists
+ *     3.6 Modules
+ *     3.7 Notifications
+ *     3.8 Pagination
+ *     3.9 Row Lists
+ *     3.10 Search
  *
  * 4.0 Layouts
  *     4.1 Columns
@@ -357,9 +361,8 @@ ol.inline li:last-child {
  * skeletons.
  *
  *     - 2.1 Buttons
- *     - 2.2 Embeds
+ *     - 2.2 Embedded Content
  *     - 2.3 Images
- *     - 2.4 Tags
  *
  * @since 0.9.0
  */
@@ -446,7 +449,7 @@ input[type="submit"].hrs-button-white:focus {
 }
 
 /**
- * 2.2 Embeds
+ * 2.2 Embedded Content
  */
 /*
  * A flexible youtube embed container (default 16x9 aspect ratio)
@@ -478,6 +481,10 @@ input[type="submit"].hrs-button-white:focus {
 /**
  * 2.3 Images
  */
+figure img {
+  width: 100%;
+}
+
 /* Builder: Banner */
 .builder-section-banner .cycle-prev,
 .builder-section-banner .cycle-next {
@@ -624,9 +631,6 @@ input[type="submit"].hrs-button-white:focus {
   opacity: .7;
 }
 
-/**
- * 2.4 Tags
- */
 /* Components */
 /**
  * 3.0 Components
@@ -635,21 +639,71 @@ input[type="submit"].hrs-button-white:focus {
  * individual Elements and should be designed with a focus on being reused
  * around the site.
  *
- *     - 3.1 Asides
- *     - 3.2 Notifications
- *     - 3.3 Pagination
- *     - 3.4 Search
- *     - 3.5 Forms
- *     - 3.6 Tables
- *     - 3.7 Article Meta
+ *     - 3.1 Cards
+ *     - 3.2 Data Tables
+ *     - 3.3 Dialogs
+ *     - 3.4 Forms
+ *     - 3.5 Grid Lists
+ *     - 3.6 Modules
+ *     - 3.7 Notifications
+ *     - 3.8 Pagination
+ *     - 3.9 Row Lists
+ *     - 3.10 Search
  *
  * @since 0.9.0
  */
 /**
- * 3.1 Asides
+ * 3.1 Cards
  */
+.recent-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: minmax(4rem, auto);
+  grid-gap: 1.5rem 2rem;
+}
+
 /**
- * 3.2 Notifications
+ * 3.2 Data Tables
+ */
+.tablepress-manual-contacts .column-1 {
+  width: 497px;
+}
+
+.tablepress-manual-contacts td.column-3,
+.tablepress-hrs-contacts td.column-3 {
+  white-space: nowrap;
+}
+
+.caldera-grid .hrs-caldera-table td,
+.caldera-grid .hrs-caldera-table th {
+  padding: 8px;
+}
+
+/* Labor relation table */
+.tablepress-id-31 .column-1 {
+  width: 450px !important;
+}
+
+.tablepress-id-7 .column-1 {
+  width: 500px !important;
+}
+
+.tablepress-id-31 .column-2,
+.tablepress-id-7 .column-2 {
+  width: 150px !important;
+}
+
+.tablepress-id-31 .column-3,
+.tablepress-id-7 .column-3 {
+  width: 100px !important;
+}
+
+.tablepress.hrs-4-of-5 td.column-1 {
+  width: 30%;
+}
+
+/**
+ * 3.7 Notifications
  */
 .hrs-callout {
   border: 2px solid #a9a9a9;
@@ -754,10 +808,10 @@ input[type="submit"].hrs-button-white:focus {
 }
 
 /**
- * 3.3 Pagination
+ * 3.8 Pagination
  */
 /**
- * 3.4 Search
+ * 3.10 Search
  */
 .menu-quick-links-search-container li {
   float: left !important;
@@ -884,52 +938,6 @@ input[type="submit"].hrs-button-white:focus {
   color: #c60c30;
 }
 
-/**
- * 3.5 Forms
- */
-/**
- * 3.6 Tables
- */
-.tablepress-manual-contacts .column-1 {
-  width: 497px;
-}
-
-.tablepress-manual-contacts td.column-3,
-.tablepress-hrs-contacts td.column-3 {
-  white-space: nowrap;
-}
-
-.caldera-grid .hrs-caldera-table td,
-.caldera-grid .hrs-caldera-table th {
-  padding: 8px;
-}
-
-/* Labor relation table */
-.tablepress-id-31 .column-1 {
-  width: 450px !important;
-}
-
-.tablepress-id-7 .column-1 {
-  width: 500px !important;
-}
-
-.tablepress-id-31 .column-2,
-.tablepress-id-7 .column-2 {
-  width: 150px !important;
-}
-
-.tablepress-id-31 .column-3,
-.tablepress-id-7 .column-3 {
-  width: 100px !important;
-}
-
-.tablepress.hrs-4-of-5 td.column-1 {
-  width: 30%;
-}
-
-/**
- * 3.7 Article Meta
- */
 /* Layouts */
 /**
  * 4.0 Layouts
