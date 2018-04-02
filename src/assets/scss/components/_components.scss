@@ -72,6 +72,21 @@
 }
 
 /**
+ * 3.4 Forms
+ */
+
+/* Add "number" type to the Spine `input[type=$]` styles */
+input[type="number"] {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	color: #767676;
+	margin: 0;
+	padding: 6px 4px;
+	outline: 0;
+}
+
+/**
  * 3.7 Notifications
  */
 

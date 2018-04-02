@@ -29,6 +29,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Add "number" type to the Spine `input[type=$]` style.
 - Styles for a standard "Card" component using a grid layout.
 
 ## 0.9.0 (2018-03-14)
