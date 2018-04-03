@@ -144,29 +144,38 @@ input[type="number"] {
  * 3.7 Notifications
  */
 
-.hrs-callout {
-	border: 2px solid #a9a9a9;
-	border-radius: 3px;
-	padding: 1em 1.5em 0;
+/* @todo Replace .hrs-callout classes with .notification classes */
+%notification {
+	margin: 1.5em auto;
+	padding: 1em 1.5em;
+
+	p {
+		padding: 0;
+	}
 }
 
-.hrs-priority-positive {
-	background-color: #d3e1e3;
-	border-color: #aec7cb;
+.notification {
+	@extend %notification;
+	border: 5px solid $brand-gray;
+	border-left: 21px solid $brand-gray;
 }
 
-.hrs-priority-caution {
-	background-color: #f1e4c4;
-	border-color: #e5cd93;
+.positive-notification {
+	@extend %notification;
+	border: 5px solid $accent-blue;
+	border-left: 21px solid $accent-blue;
 }
 
-.hrs-priority-negative {
-	background-color: #eddccc;
-	border-color: #ddbea1;
+.caution-notification {
+	@extend %notification;
+	border: 5px solid $accent-yellow;
+	border-left: 21px solid $accent-yellow;
 }
 
-.hrs-priority-neutral {
-	background-color: #eff0f1;
+.warning-notification {
+	@extend %notification;
+	border: 5px solid $accent-orange;
+	border-left: 21px solid $accent-orange;
 }
 
 /* HRS Banner Callouts */

@@ -133,6 +133,32 @@ a.button:hover {
 	color: #fff;
 }
 
+/* Replaced with the `notification` component */
+.hrs-callout {
+	border: 2px solid #a9a9a9;
+	border-radius: 3px;
+	padding: 1em 1.5em 0;
+}
+
+.hrs-priority-positive {
+	background-color: #d3e1e3;
+	border-color: #aec7cb;
+}
+
+.hrs-priority-caution {
+	background-color: #f1e4c4;
+	border-color: #e5cd93;
+}
+
+.hrs-priority-negative {
+	background-color: #eddccc;
+	border-color: #ddbea1;
+}
+
+.hrs-priority-neutral {
+	background-color: #eff0f1;
+}
+
 /**
  * Spine (_spine.scss)
  */
