@@ -770,29 +770,34 @@ input[type="number"] {
 /**
  * 3.7 Notifications
  */
-.hrs-callout {
-  border: 2px solid #a9a9a9;
-  border-radius: 3px;
-  padding: 1em 1.5em 0;
+/* @todo Replace .hrs-callout classes with .notification classes */
+.notification, .positive-notification, .caution-notification, .warning-notification {
+  margin: 1.5em auto;
+  padding: 1em 1.5em;
 }
 
-.hrs-priority-positive {
-  background-color: #d3e1e3;
-  border-color: #aec7cb;
+.notification p, .positive-notification p, .caution-notification p, .warning-notification p {
+  padding: 0;
 }
 
-.hrs-priority-caution {
-  background-color: #f1e4c4;
-  border-color: #e5cd93;
+.notification {
+  border: 5px solid #5e6a71;
+  border-left: 21px solid #5e6a71;
 }
 
-.hrs-priority-negative {
-  background-color: #eddccc;
-  border-color: #ddbea1;
+.positive-notification {
+  border: 5px solid #00a5bd;
+  border-left: 21px solid #00a5bd;
 }
 
-.hrs-priority-neutral {
-  background-color: #eff0f1;
+.caution-notification {
+  border: 5px solid #ffb81c;
+  border-left: 21px solid #ffb81c;
+}
+
+.warning-notification {
+  border: 5px solid #f6861f;
+  border-left: 21px solid #f6861f;
 }
 
 /* HRS Banner Callouts */
@@ -2454,6 +2459,32 @@ a.button:hover {
 #color-table tr:first-child {
   background: #717171;
   color: #fff;
+}
+
+/* Replaced with the `notification` component */
+.hrs-callout {
+  border: 2px solid #a9a9a9;
+  border-radius: 3px;
+  padding: 1em 1.5em 0;
+}
+
+.hrs-priority-positive {
+  background-color: #d3e1e3;
+  border-color: #aec7cb;
+}
+
+.hrs-priority-caution {
+  background-color: #f1e4c4;
+  border-color: #e5cd93;
+}
+
+.hrs-priority-negative {
+  background-color: #eddccc;
+  border-color: #ddbea1;
+}
+
+.hrs-priority-neutral {
+  background-color: #eff0f1;
 }
 
 /**

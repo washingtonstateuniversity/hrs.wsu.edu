@@ -24,12 +24,14 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Rename callout styles to notifications and restyle them.
 - Update stylelint config to allow Sass `@extend` rule and not require spaces before at-rules while in blocks.
 - Reorder style table of contents to match the pattern library
 - Remove extra css source-map from the reference style.css file at root.
 
 ### Added
 
+- A global `_variables.scss` file for storing Sass variables, started with colors.
 - Basic styles for a Module component.
 - Add "number" type to the Spine `input[type=$]` style.
 - Styles for a standard "Card" component using a grid layout.
