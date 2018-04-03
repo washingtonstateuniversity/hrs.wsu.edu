@@ -721,39 +721,36 @@ input[type="number"] {
  */
 /* adjust all of the module sizes to match the vertical rhythm */
 .module, .action-module, .alert-module {
-  border: 1px solid #e6e8e9;
+  border: 11px solid #981e32;
   margin: 1.5rem auto;
   padding: 1.5rem 2rem;
 }
 
 .module-title {
-  color: #981e32;
-  /* crimson */
-  border-bottom: 4px solid #e6e8e9;
+  border-bottom: 4px solid #eff0f1;
   font-size: 1.8em;
   /* whatever the standard h3 size is */
   margin: 0 0 .5em;
   padding: 0 0 .25em;
 }
 
-.module {
-  background-color: #f8f8f9;
+.module .module-title {
+  color: #981e32;
 }
 
 .action-module {
-  background-color: #2a3033;
-  color: #f8f8f9;
+  background-color: #00a5bd;
+  border-color: #006271;
   text-align: center;
 }
 
 .action-module .module-title {
-  color: #fff;
-  border-bottom-color: #394246;
+  border-bottom-color: #008fa4;
   font-size: 3em;
 }
 
 .alert-module {
-  background-color: #f8f8f9;
+  border-color: #981e32;
   min-width: 300px;
   text-align: center;
   width: 80%;
@@ -765,6 +762,30 @@ input[type="number"] {
 
 .alert-module svg {
   fill: #981e32;
+}
+
+.alert-module.positive {
+  border-color: #ada400;
+}
+
+.alert-module.positive svg {
+  fill: #ada400;
+}
+
+.alert-module.caution {
+  border-color: #ffb81c;
+}
+
+.alert-module.caution svg {
+  fill: #ffb81c;
+}
+
+.alert-module.warning {
+  border-color: #f6861f;
+}
+
+.alert-module.warning svg {
+  fill: #f6861f;
 }
 
 /**

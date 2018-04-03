@@ -91,42 +91,43 @@ input[type="number"] {
  */
 
 /* adjust all of the module sizes to match the vertical rhythm */
-%module-shared {
-	border: 1px solid #e6e8e9;
+%module {
+	border: 11px solid $brand-crimson;
 	margin: 1.5rem auto;
 	padding: 1.5rem 2rem;
 }
 
 .module-title {
-	color: #981e32; /* crimson */
-	border-bottom: 4px solid #e6e8e9;
+	border-bottom: 4px solid $neutral-light;
 	font-size: 1.8em; /* whatever the standard h3 size is */
 	margin: 0 0 .5em;
 	padding: 0 0 .25em;
 }
 
 .module {
-	@extend %module-shared;
-	background-color: #f8f8f9;
+	@extend %module;
+
+	.module-title {
+		color: $brand-crimson;
+	}
 }
 
 .action-module {
-	@extend %module-shared;
-	background-color: #2a3033;
-	color: #f8f8f9;
+	@extend %module;
+	background-color: $accent-blue;
+	border-color: darken($accent-blue, 15%);
 	text-align: center;
 
 	.module-title {
-		color: #fff;
-		border-bottom-color: #394246;
+		border-bottom-color: darken($accent-blue, 5%);
 		font-size: 3em;
 	}
 
 }
 
 .alert-module {
-	@extend %module-shared;
-	background-color: #f8f8f9;
+	@extend %module;
+	border-color: $brand-crimson;
 	min-width: 300px;
 	text-align: center;
 	width: 80%;
@@ -136,7 +137,31 @@ input[type="number"] {
 	}
 
 	svg {
-		fill: #981e32;
+		fill: $brand-crimson;
+	}
+
+	&.positive {
+		border-color: $accent-green;
+
+		svg {
+			fill: $accent-green;
+		}
+	}
+
+	&.caution {
+		border-color: $accent-yellow;
+
+		svg {
+			fill: $accent-yellow;
+		}
+	}
+
+	&.warning {
+		border-color: $accent-orange;
+
+		svg {
+			fill: $accent-orange;
+		}
 	}
 }
 
