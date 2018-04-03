@@ -716,6 +716,57 @@ input[type="number"] {
   outline: 0;
 }
 
+/*
+ * 3.6 Modules
+ */
+/* adjust all of the module sizes to match the vertical rhythm */
+.module, .action-module, .alert-module {
+  border: 1px solid #e6e8e9;
+  margin: 1.5rem auto;
+  padding: 1.5rem 2rem;
+}
+
+.module-title {
+  color: #981e32;
+  /* crimson */
+  border-bottom: 4px solid #e6e8e9;
+  font-size: 1.8em;
+  /* whatever the standard h3 size is */
+  margin: 0 0 .5em;
+  padding: 0 0 .25em;
+}
+
+.module {
+  background-color: #f8f8f9;
+}
+
+.action-module {
+  background-color: #2a3033;
+  color: #f8f8f9;
+  text-align: center;
+}
+
+.action-module .module-title {
+  color: #fff;
+  border-bottom-color: #394246;
+  font-size: 3em;
+}
+
+.alert-module {
+  background-color: #f8f8f9;
+  min-width: 300px;
+  text-align: center;
+  width: 80%;
+}
+
+.alert-module .module-title {
+  font-size: 3em;
+}
+
+.alert-module svg {
+  fill: #981e32;
+}
+
 /**
  * 3.7 Notifications
  */

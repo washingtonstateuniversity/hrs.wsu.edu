@@ -86,6 +86,60 @@ input[type="number"] {
 	outline: 0;
 }
 
+/*
+ * 3.6 Modules
+ */
+
+/* adjust all of the module sizes to match the vertical rhythm */
+%module-shared {
+	border: 1px solid #e6e8e9;
+	margin: 1.5rem auto;
+	padding: 1.5rem 2rem;
+}
+
+.module-title {
+	color: #981e32; /* crimson */
+	border-bottom: 4px solid #e6e8e9;
+	font-size: 1.8em; /* whatever the standard h3 size is */
+	margin: 0 0 .5em;
+	padding: 0 0 .25em;
+}
+
+.module {
+	@extend %module-shared;
+	background-color: #f8f8f9;
+}
+
+.action-module {
+	@extend %module-shared;
+	background-color: #2a3033;
+	color: #f8f8f9;
+	text-align: center;
+
+	.module-title {
+		color: #fff;
+		border-bottom-color: #394246;
+		font-size: 3em;
+	}
+
+}
+
+.alert-module {
+	@extend %module-shared;
+	background-color: #f8f8f9;
+	min-width: 300px;
+	text-align: center;
+	width: 80%;
+
+	.module-title {
+		font-size: 3em;
+	}
+
+	svg {
+		fill: #981e32;
+	}
+}
+
 /**
  * 3.7 Notifications
  */
