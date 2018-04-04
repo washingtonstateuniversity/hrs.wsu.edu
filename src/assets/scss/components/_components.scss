@@ -283,6 +283,56 @@ input[type="number"] {
  */
 
 /**
+ * 3.9 Row Lists
+ *
+ * @todo Adjust these styles to be more agnostic of markup?
+ */
+
+%row-list {
+
+	article {
+		display: flex;
+		align-items: center;
+		margin: 0 0 1.5rem;
+	}
+
+	.article-image {
+		align-self: flex-start;
+		flex: 0 0 100px;
+		line-height: 0;
+		margin-right: 1rem;
+	}
+
+	.row-item-content {
+		flex: 1 1 auto;
+	}
+
+	.article-header {
+		align-items: center;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+
+	.article-title {
+		font-size: 1.5rem;
+		padding: 0;
+		margin: 0;
+	}
+
+	p {
+		padding: .5em 0 0;
+		font-size: 1rem;
+		line-height: 1.2;
+	}
+
+}
+
+.articles-list {
+	@extend %row-list;
+}
+
+/**
  * 3.10 Search
  */
 

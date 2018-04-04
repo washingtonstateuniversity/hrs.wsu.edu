@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Removed the global `display: none!important` rule from `.article-date` fields. If it is needed for a specific subset of pages we can add it back in a less global fashion.
 - Rename callout styles to notifications and restyle them.
 - Update stylelint config to allow Sass `@extend` rule and not require spaces before at-rules while in blocks.
 - Reorder style table of contents to match the pattern library
@@ -31,6 +32,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Basic styles for Grid Lists components.
 - A global `_variables.scss` file for storing Sass variables, started with colors.
 - Basic styles for a Module component.
 - Add "number" type to the Spine `input[type=$]` style.

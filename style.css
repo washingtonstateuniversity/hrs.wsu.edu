@@ -902,6 +902,56 @@ input[type="number"] {
  * 3.8 Pagination
  */
 /**
+ * 3.9 Row Lists
+ *
+ * @todo Adjust these styles to be more agnostic of markup?
+ */
+.articles-list article {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  margin: 0 0 1.5rem;
+}
+
+.articles-list .article-image {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-flex: 0 0 100px;
+      flex: 0 0 100px;
+  line-height: 0;
+  margin-right: 1rem;
+}
+
+.articles-list .row-item-content {
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+}
+
+.articles-list .article-header {
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+.articles-list .article-title {
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.articles-list p {
+  padding: .5em 0 0;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+/**
  * 3.10 Search
  */
 .menu-quick-links-search-container li {
@@ -966,8 +1016,7 @@ input[type="number"] {
 }
 
 .header-search-wrapper .common-searches ul {
-  -webkit-column-count: 2;
-          column-count: 2;
+  column-count: 2;
 }
 
 #hrs-common-search li {
@@ -1280,10 +1329,8 @@ footer.parent-foot ul.footer-utility {
   margin-right: auto;
   padding-top: 4em;
   padding-bottom: 3em;
-  -webkit-column-count: 3;
-          column-count: 3;
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
+  column-count: 3;
+  column-gap: 20px;
 }
 
 footer.parent-foot ul.footer-utility li {
@@ -1352,7 +1399,7 @@ footer.parent-foot .site-ref ul li a:hover {
 }
 
 .article-date {
-  display: none !important;
+  color: #6f7f87;
 }
 
 .hrs_news .article-date {
@@ -1965,10 +2012,8 @@ body.home section .column.tabbed h5 {
   }
   /* Footers: Global Footer */
   footer.parent-foot ul.footer-utility {
-    -webkit-column-count: 1;
-            column-count: 1;
-    -webkit-column-gap: 20px;
-            column-gap: 20px;
+    column-count: 1;
+    column-gap: 20px;
   }
   footer.parent-foot ul.footer-utility li {
     display: block;
