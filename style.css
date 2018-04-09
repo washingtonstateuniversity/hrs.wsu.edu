@@ -142,18 +142,6 @@ html main div.page {
   word-wrap: normal !important;
 }
 
-.fixed {
-  position: fixed;
-  top: 50px;
-  margin-top: 0;
-  z-index: 1;
-  transition: all .3s ease-out;
-}
-
-.gray-bg {
-  background-color: #e4e4e4;
-}
-
 /* Elements */
 /**
  * 2.0 Elements
@@ -2237,6 +2225,23 @@ ol.inline li {
 ul.inline li:last-child,
 ol.inline li:last-child {
   margin-right: 0;
+}
+
+/**
+ * Deprecated Utility Styles
+ *
+ * @since 0.11.0
+ */
+.fixed {
+  position: fixed;
+  top: 50px;
+  margin-top: 0;
+  z-index: 1;
+  transition: all .3s ease-out;
+}
+
+.gray-bg {
+  background-color: #e4e4e4;
 }
 
 /**

@@ -90,15 +90,3 @@ html {
 	width: 1px;
 	word-wrap: normal !important;
 }
-
-.fixed {
-	position: fixed;
-	top: 50px;
-	margin-top: 0;
-	z-index: 1;
-	transition: all .3s ease-out;
-}
-
-.gray-bg {
-	background-color: #e4e4e4;
-}

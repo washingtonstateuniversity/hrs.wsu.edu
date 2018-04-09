@@ -40,6 +40,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Deprecated
 
+- `.fixed` and `.gray-bg` styles targeting unknown site elements.
 - Inline list styles using `inline` class. Replace with flexbox as needed.
 
 ## 0.10.1 (2018-04-09)
