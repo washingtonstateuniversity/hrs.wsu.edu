@@ -30,6 +30,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Change `abs-center` class into a scss mixin called `center-middle` that targets the container.
 - Do not need to set all elements to `border-box` since Spine parents already sets relevant elements.
 - Remove unneeded `<hr>` styles.
 

@@ -128,17 +128,6 @@ html main div.page {
   text-align: center;
 }
 
-/* Must be contained within a relatively positioned element. */
-.abs-center {
-  margin: 0 -50% 0 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 0;
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-}
-
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
