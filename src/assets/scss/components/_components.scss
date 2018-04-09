@@ -336,6 +336,13 @@ input[type="number"] {
  * 3.10 Search
  */
 
+body.home .parent-stretch .single.row .column header,
+.header-search-wrapper .search-label,
+.si-dropdown,
+.header-search-wrapper-hide {
+	display: none;
+}
+
 .menu-quick-links-search-container li {
 	float: left !important;
 	width: 50% !important;

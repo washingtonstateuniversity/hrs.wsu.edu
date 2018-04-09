@@ -22,8 +22,13 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ## (unreleased)
 
+### Fixed
+
+- Point HRS child theme to the correct Spine parent theme directory.
+
 ### Changed
 
+- Remove some extraneous styles on the `HTML` and `body` elements.
 - Removed the global `display: none!important` rule from `.article-date` fields. If it is needed for a specific subset of pages we can add it back in a less global fashion.
 - Rename callout styles to notifications and restyle them.
 - Update stylelint config to allow Sass `@extend` rule and not require spaces before at-rules while in blocks.
