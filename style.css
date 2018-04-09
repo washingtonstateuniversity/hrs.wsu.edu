@@ -154,14 +154,6 @@ html main div.page {
   background-color: #e4e4e4;
 }
 
-.pad-top .column {
-  padding-top: 0 !important;
-}
-
-.pad-bottom {
-  padding-bottom: 3em;
-}
-
 /* Elements */
 /**
  * 2.0 Elements
