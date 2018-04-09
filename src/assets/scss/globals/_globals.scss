@@ -55,20 +55,6 @@ html {
  * 1.4 Links
  */
 
-main a {
-
-	&:hover,
-	&:focus {
-		transition: color .6s ease-out;
-	}
-}
-
-a {
-
-	h1 & {
-		color: #363636 !important;
-	}
-}
 
 /**
  * 1.5 Lists

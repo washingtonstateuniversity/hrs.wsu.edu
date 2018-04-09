@@ -122,14 +122,6 @@ html main div.page {
 /**
  * 1.4 Links
  */
-main a:hover, main a:focus {
-  transition: color .6s ease-out;
-}
-
-h1 a {
-  color: #363636 !important;
-}
-
 /**
  * 1.5 Lists
  */
