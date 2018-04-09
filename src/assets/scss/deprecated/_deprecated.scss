@@ -9,6 +9,25 @@
  */
 
 /**
+ * Deprecated Foundation Styles
+ *
+ * @since 0.11.0
+ */
+
+/* We don't use a background or background image so we probably don't need */
+html {
+	min-height: 100%;
+
+	main {
+		min-height: 100%;
+
+		div.page {
+			min-height: 80vh;
+		}
+	}
+}
+
+/**
  * Deprecated List Styles
  *
  * @since 0.11.0

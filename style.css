@@ -92,18 +92,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /**
  * 1.1 Foundation
  */
-html {
-  min-height: 100%;
-}
-
-html main {
-  min-height: 100%;
-}
-
-html main div.page {
-  min-height: 80vh;
-}
-
 /**
  * 1.2 Typography
  */
@@ -2204,6 +2192,24 @@ body.home section .column.tabbed h5 {
  *
  * @since 0.9.0
  */
+/**
+ * Deprecated Foundation Styles
+ *
+ * @since 0.11.0
+ */
+/* We don't use a background or background image so we probably don't need */
+html {
+  min-height: 100%;
+}
+
+html main {
+  min-height: 100%;
+}
+
+html main div.page {
+  min-height: 80vh;
+}
+
 /**
  * Deprecated List Styles
  *
