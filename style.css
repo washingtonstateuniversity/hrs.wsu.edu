@@ -95,14 +95,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /**
  * 1.2 Typography
  */
-.two aside {
-  font-size: 90%;
-}
-
-.two aside h3 {
-  padding-top: 0;
-}
-
 /**
  * 1.4 Links
  */
@@ -2208,6 +2200,19 @@ html main {
 
 html main div.page {
   min-height: 80vh;
+}
+
+/**
+ * Deprecated Typography Styles
+ *
+ * @since 0.11.0
+ */
+.two aside {
+  font-size: 90%;
+}
+
+.two aside h3 {
+  padding-top: 0;
 }
 
 /**

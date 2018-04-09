@@ -41,6 +41,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Deprecated
 
+- Font size adjustment on `.two` elements.
 - 100% height styles on `html` and `body` probably not needed.
 - `.fixed` and `.gray-bg` styles targeting unknown site elements.
 - Inline list styles using `inline` class. Replace with flexbox as needed.
