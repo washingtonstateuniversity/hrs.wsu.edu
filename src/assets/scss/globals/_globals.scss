@@ -42,96 +42,6 @@ html {
  * 1.2 Typography
  */
 
-/*
-h1 {
-	font-weight: 600;
-	text-transform: uppercase;
-	padding-top: 1em;
-	padding-bottom: .75em;
-	width: 80%;
-}
-*/
-
-/*
-h2,
-.h2 {
-	color: #363636;
-	font-size: 1.5rem;
-	font-weight: 500;
-
-	header & {
-		font-size: 2.1em;
-		font-weight: 600;
-		padding-top: 1em;
-		padding-bottom: .75em;
-		text-transform: uppercase;
-		width: 80%;
-	}
-
-	.side-right & {
-		width: 85%;
-	}
-
-	+ h3 {
-		padding-top: 0;
-	}
-}
-*/
-
-/*
-h3 {
-	font-size: 1rem;
-	font-weight: 300;
-	padding-top: 1.2em;
-	padding-bottom: 1.4em;
-}
-*/
-
-/*
-h4 {
-	font-size: 1.2rem;
-	color: #363636;
-	font-weight: 400;
-
-	+ h5 {
-		padding-top: 2em;
-		padding-bottom: 1.2em;
-	}
-}
-*/
-
-/*
-h2 + ul,
-h2 + p,
-h4 + ul,
-h4 + p {
-	padding-top: 1em;
-}
-*/
-
-/*
-.quick-links-label,
-h5 {
-	font-size: 1rem;
-}
-*/
-
-/*
-h5 + ul {
-	padding-top: 1.2em;
-}
-*/
-
-/*
-p {
-	font-weight: 400;
-	margin: 0;
-	padding-bottom: 1em;
-	line-height: 1.8em;
-	font-size: 1.1em;
-}
-*/
-
 .two aside {
 	font-size: 90%;
 
@@ -140,26 +50,6 @@ p {
 	}
 }
 
-hr {
-	margin-top: 2em;
-	margin-bottom: 2em;
-
-	&:after {
-		content: "";
-		display: block;
-		height: 10px;
-		width: 10px;
-		background: #5d5d5d;
-	}
-
-	&:after {
-		display: none !important;
-	}
-
-	+ h2 {
-		padding-top: 1.5em;
-	}
-}
 
 /**
  * 1.4 Links
