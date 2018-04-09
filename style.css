@@ -92,10 +92,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /**
  * 1.1 Foundation
  */
-* {
-  box-sizing: border-box;
-}
-
 html {
   min-height: 100%;
 }

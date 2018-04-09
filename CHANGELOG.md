@@ -24,11 +24,13 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
-- Increase link rest-to-hover contrast .
+- Increase link rest-to-hover contrast.
+- Adjust link styles for headings to be a little less obtrusive.
 - Move mobile-only styles to "base" and larger-width adjustments into media queries as needed (essentially reverse the current setup).
 
 ### Changed
 
+- Do not need to set all elements to `border-box` since Spine parents already sets relevant elements.
 - Remove unneeded `<hr>` styles.
 
 ## 0.10.1 (2018-04-09)
