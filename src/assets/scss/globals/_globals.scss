@@ -56,46 +56,6 @@ html {
  * 1.5 Lists
  */
 
-/*
-main ul,
-main ol {
-	font-size: 1.1em;
-	font-weight: 400;
-	line-height: 1.8;
-	margin: 0;
-	padding-bottom: 1em;
-	padding-left: 2.4em;
-
-	ul,
-	ol,
-	li ol {
-		font-size: 1em;
-		padding-bottom: 1em;
-	}
-}
-
-main li {
-	padding-bottom: 1.2em;
-}
-*/
-
-ul.inline,
-ol.inline {
-	padding-right: 0;
-	padding-left: 0;
-}
-
-ul.inline li,
-ol.inline li {
-	display: inline-block;
-	line-height: 1.4;
-	margin-right: 1.5rem;
-}
-
-ul.inline li:last-child,
-ol.inline li:last-child {
-	margin-right: 0;
-}
 
 /**
  * 1.6 Utility
