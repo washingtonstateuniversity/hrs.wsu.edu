@@ -21,6 +21,17 @@
  * 1.1 Foundation
  */
 
+main {
+
+	* {
+		box-sizing: border-box;
+
+		&:before,
+		&:after {
+			box-sizing: border-box;
+		}
+	}
+}
 
 /**
  * 1.2 Typography

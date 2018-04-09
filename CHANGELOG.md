@@ -34,6 +34,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Alphabetize utility styles.
 - Change `abs-center` class into a scss mixin called `center-middle` that targets the container.
 
+### Added
+
+- Border-box style on all `main` elements.
+
 ### Removed
 
 - Do not override padding styles of the main parent theme (yet).
