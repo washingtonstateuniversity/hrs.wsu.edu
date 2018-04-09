@@ -61,19 +61,15 @@ html {
  * 1.6 Utility
  */
 
-.textaligncenter {
-	text-align: center;
-}
-
 %center-middle {
 	position: relative;
 
 	> *:first-child {
+		left: 50%;
 		margin: 0 -50% 0 0;
+		padding: 0;
 		position: absolute;
 		top: 50%;
-		left: 50%;
-		padding: 0;
 		transform: translate(-50%, -50%);
 	}
 }
@@ -89,4 +85,8 @@ html {
 	position: absolute !important;
 	width: 1px;
 	word-wrap: normal !important;
+}
+
+.textaligncenter {
+	text-align: center;
 }
