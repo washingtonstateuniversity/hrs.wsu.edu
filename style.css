@@ -345,6 +345,79 @@ a.button:hover {
 }
 
 /**
+ * Deprecated Builder Banner Styles
+ *
+ * @since 0.11.0
+ */
+/* Builder: Banner */
+.builder-section-banner .cycle-prev,
+.builder-section-banner .cycle-next {
+  top: 90%;
+}
+
+/* Centered layout ("content position: none") */
+.content-position-none .builder-banner-content {
+  text-align: center;
+  width: 100%;
+}
+
+/* Left-aligned layout (content-position: left) */
+.builder-banner-slide.content-position-left {
+  background-position: center right;
+}
+
+.builder-banner-slide.content-position-right {
+  background-position: center left;
+}
+
+.builder-section-banner .content-position-left .builder-banner-content,
+.builder-section-banner .content-position-right .builder-banner-content {
+  font-size: 1.3rem;
+  padding: 0;
+  bottom: 0;
+  height: auto;
+  min-height: 60%;
+  width: 100%;
+}
+
+.builder-section-banner .content-position-left .builder-banner-content:after,
+.builder-section-banner .content-position-right .builder-banner-content:after {
+  display: none;
+}
+
+.builder-section-banner .content-position-left .builder-banner-inner-title,
+.builder-section-banner .content-position-right .builder-banner-inner-title {
+  color: #981e32;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  width: 100%;
+  padding: 1rem;
+}
+
+.builder-section-banner .content-position-left .builder-banner-inner-content,
+.builder-section-banner .content-position-right .builder-banner-inner-content {
+  color: #2a3033;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.builder-section-banner .content-position-left .builder-banner-inner-content p,
+.builder-section-banner .content-position-right .builder-banner-inner-content p {
+  font-size: .7em;
+  padding: 0 1rem 1rem;
+  line-height: 1.5;
+}
+
+.single.gutter section.builder-section-banner .column:not(.gutterless) {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/**
  * Deprecated Callout Styles
  *
  * Replaced with the `notification` component.
@@ -576,79 +649,11 @@ figure img {
   width: 100%;
 }
 
-/* Builder: Banner */
-.builder-section-banner .cycle-prev,
-.builder-section-banner .cycle-next {
-  top: 90%;
-}
-
-/* Centered layout ("content position: none") */
-.content-position-none .builder-banner-content {
-  text-align: center;
-  width: 100%;
-}
-
-/* Left-aligned layout (content-position: left) */
-.builder-banner-slide.content-position-left {
-  background-position: center right;
-}
-
-.builder-banner-slide.content-position-right {
-  background-position: center left;
-}
-
-.builder-section-banner .content-position-left .builder-banner-content,
-.builder-section-banner .content-position-right .builder-banner-content {
-  font-size: 1.3rem;
-  padding: 0;
-  bottom: 0;
-  height: auto;
-  min-height: 60%;
-  width: 100%;
-}
-
-.builder-section-banner .content-position-left .builder-banner-content:after,
-.builder-section-banner .content-position-right .builder-banner-content:after {
-  display: none;
-}
-
-.builder-section-banner .content-position-left .builder-banner-inner-title,
-.builder-section-banner .content-position-right .builder-banner-inner-title {
-  color: #981e32;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.9);
-  font-weight: 600;
-  width: 100%;
-  padding: 1rem;
-}
-
-.builder-section-banner .content-position-left .builder-banner-inner-content,
-.builder-section-banner .content-position-right .builder-banner-inner-content {
-  color: #2a3033;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.builder-section-banner .content-position-left .builder-banner-inner-content p,
-.builder-section-banner .content-position-right .builder-banner-inner-content p {
-  font-size: .7em;
-  padding: 0 1rem 1rem;
-  line-height: 1.5;
-}
-
 .section-wrapper-has-background {
   min-height: 600px !important;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.single.gutter section.builder-section-banner .column:not(.gutterless) {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 /* Default HRS Gallery */
@@ -733,6 +738,7 @@ figure img {
  *     - 3.1 Cards
  *     - 3.2 Data Tables
  *     - 3.3 Dialogs
+ *     - 3.4 Figures
  *     - 3.4 Forms
  *     - 3.5 Grid Lists
  *     - 3.6 Modules
@@ -793,6 +799,9 @@ figure img {
   width: 30%;
 }
 
+/**
+ * Figures
+ */
 /**
  * 3.4 Forms
  */
