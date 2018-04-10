@@ -94,64 +94,6 @@ main {
 	}
 }
 
-.hrs-button,
-button.hrs-button,
-input[type="button"].hrs-button,
-input[type="reset"].hrs-button,
-input[type="submit"].hrs-button {
-	background: #464e54;
-	border: 1px solid transparent;
-	box-shadow: none;
-	color: #fff;
-	display: inline-block;
-	font-size: .9em;
-	font-weight: 600;
-	line-height: 1.4;
-	min-width: 120px;
-	padding: .75rem 1.25rem;
-	text-align: center;
-	transition: background-color .3s ease;
-
-	&:hover,
-	&:focus {
-		background: #eff0f1;
-		border: 1px solid #464e54;
-		color: #464e54;
-	}
-}
-
-.hrs-button-priority,
-button.hrs-button-priority,
-input[type="button"].hrs-button-priority,
-input[type="reset"].hrs-button-priority,
-input[type="submit"].hrs-button-priority {
-	background: #981e32;
-
-	&:hover,
-	&:focus {
-		background: #eff0f1;
-		border: 1px solid #981e32;
-		color: #981e32;
-	}
-}
-
-.hrs-button-white,
-button.hrs-button-white,
-input[type="button"].hrs-button-white,
-input[type="reset"].hrs-button-white,
-input[type="submit"].hrs-button-white {
-	background: #eff0f1;
-	border: 1px solid #464e54;
-	color: #464e54;
-
-	&:hover,
-	&:focus {
-		background: #464e54;
-		border: 1px solid transparent;
-		color: #fff;
-	}
-}
-
 /**
  * 2.2 Embedded Content
  */

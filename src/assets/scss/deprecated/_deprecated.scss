@@ -115,6 +115,19 @@ a.button:hover {
 }
 */
 
+.hrs-button,
+button.hrs-button,
+input[type="button"].hrs-button,
+input[type="reset"].hrs-button,
+input[type="submit"].hrs-button {
+	@extend %button;
+}
+
+.hrs-button-white,
+button.hrs-button-white {
+	@extend .button-secondary;
+}
+
 #button_holder a {
 	color: #fff;
 	text-decoration: none;

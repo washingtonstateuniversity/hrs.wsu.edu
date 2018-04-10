@@ -446,10 +446,14 @@ a.button:hover {
  * 2.1 Buttons
  */
 /* Mixin for the standard button. */
-main .button,
+.hrs-button,
+button.hrs-button,
+input.hrs-button[type="button"],
+input.hrs-button[type="reset"],
+input.hrs-button[type="submit"], main .button,
 main button,
 main input[type="button"],
-main input[type="submit"], main .button-secondary,
+main input[type="submit"], main .button-secondary, main .hrs-button-white,
 main input[type="reset"] {
   background: #981e32;
   border: 1px solid #981e32;
@@ -463,14 +467,20 @@ main input[type="reset"] {
   transition: all .3s ease;
 }
 
-main .button:hover,
+.hrs-button:hover,
+input.hrs-button:hover[type="button"],
+input.hrs-button:hover[type="reset"],
+input.hrs-button:hover[type="submit"], main .button:hover,
 main button:hover,
 main input:hover[type="button"],
-main input:hover[type="submit"], main .button-secondary:hover,
-main input:hover[type="reset"], main .button:focus,
+main input:hover[type="submit"], main .button-secondary:hover, main .hrs-button-white:hover,
+main input:hover[type="reset"], .hrs-button:focus,
+input.hrs-button:focus[type="button"],
+input.hrs-button:focus[type="reset"],
+input.hrs-button:focus[type="submit"], main .button:focus,
 main button:focus,
 main input:focus[type="button"],
-main input:focus[type="submit"], main .button-secondary:focus,
+main input:focus[type="submit"], main .button-secondary:focus, main .hrs-button-white:focus,
 main input:focus[type="reset"] {
   background: #fff;
   border: 1px solid #c60c30;
@@ -478,10 +488,13 @@ main input:focus[type="reset"] {
   color: #981e32;
 }
 
-main .button:active,
+.hrs-button:active,
+input.hrs-button:active[type="button"],
+input.hrs-button:active[type="reset"],
+input.hrs-button:active[type="submit"], main .button:active,
 main button:active,
 main input:active[type="button"],
-main input:active[type="submit"], main .button-secondary:active,
+main input:active[type="submit"], main .button-secondary:active, main .hrs-button-white:active,
 main input:active[type="reset"] {
   background: #eff0f1;
   border: 1px solid #2a3033;
@@ -489,20 +502,20 @@ main input:active[type="reset"] {
   outline-width: 0;
 }
 
-main .button-secondary,
+main .button-secondary, main .hrs-button-white,
 main input[type="reset"] {
   background: #fff;
   color: #981e32;
 }
 
-main .button-secondary:hover, main .button-secondary:focus,
+main .button-secondary:hover, main .hrs-button-white:hover, main .button-secondary:focus, main .hrs-button-white:focus,
 main input[type="reset"]:hover,
 main input[type="reset"]:focus {
   background: #981e32;
   color: #fff;
 }
 
-main .button-secondary:active,
+main .button-secondary:active, main .hrs-button-white:active,
 main input[type="reset"]:active {
   background: #6d1624;
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
@@ -524,85 +537,6 @@ main .button-flat:hover, main .button-flat:focus {
 
 main .button-flat:active {
   background: #475055;
-}
-
-.hrs-button,
-button.hrs-button,
-input[type="button"].hrs-button,
-input[type="reset"].hrs-button,
-input[type="submit"].hrs-button {
-  background: #464e54;
-  border: 1px solid transparent;
-  box-shadow: none;
-  color: #fff;
-  display: inline-block;
-  font-size: .9em;
-  font-weight: 600;
-  line-height: 1.4;
-  min-width: 120px;
-  padding: .75rem 1.25rem;
-  text-align: center;
-  transition: background-color .3s ease;
-}
-
-.hrs-button:hover, .hrs-button:focus,
-button.hrs-button:hover,
-button.hrs-button:focus,
-input[type="button"].hrs-button:hover,
-input[type="button"].hrs-button:focus,
-input[type="reset"].hrs-button:hover,
-input[type="reset"].hrs-button:focus,
-input[type="submit"].hrs-button:hover,
-input[type="submit"].hrs-button:focus {
-  background: #eff0f1;
-  border: 1px solid #464e54;
-  color: #464e54;
-}
-
-.hrs-button-priority,
-button.hrs-button-priority,
-input[type="button"].hrs-button-priority,
-input[type="reset"].hrs-button-priority,
-input[type="submit"].hrs-button-priority {
-  background: #981e32;
-}
-
-.hrs-button-priority:hover, .hrs-button-priority:focus,
-button.hrs-button-priority:hover,
-button.hrs-button-priority:focus,
-input[type="button"].hrs-button-priority:hover,
-input[type="button"].hrs-button-priority:focus,
-input[type="reset"].hrs-button-priority:hover,
-input[type="reset"].hrs-button-priority:focus,
-input[type="submit"].hrs-button-priority:hover,
-input[type="submit"].hrs-button-priority:focus {
-  background: #eff0f1;
-  border: 1px solid #981e32;
-  color: #981e32;
-}
-
-.hrs-button-white,
-button.hrs-button-white,
-input[type="button"].hrs-button-white,
-input[type="reset"].hrs-button-white,
-input[type="submit"].hrs-button-white {
-  background: #eff0f1;
-  border: 1px solid #464e54;
-  color: #464e54;
-}
-
-.hrs-button-white:hover, .hrs-button-white:focus,
-button.hrs-button-white:hover,
-button.hrs-button-white:focus,
-input[type="button"].hrs-button-white:hover,
-input[type="button"].hrs-button-white:focus,
-input[type="reset"].hrs-button-white:hover,
-input[type="reset"].hrs-button-white:focus,
-input[type="submit"].hrs-button-white:hover,
-input[type="submit"].hrs-button-white:focus {
-  background: #464e54;
-  border: 1px solid transparent;
-  color: #fff;
 }
 
 /**
