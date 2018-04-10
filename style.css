@@ -645,10 +645,6 @@ main .button-flat:active {
 /**
  * 2.3 Images
  */
-figure img {
-  width: 100%;
-}
-
 .section-wrapper-has-background {
   min-height: 600px !important;
   background-attachment: fixed;
@@ -802,6 +798,10 @@ figure img {
 /**
  * Figures
  */
+figure img {
+  width: 100%;
+}
+
 /**
  * 3.4 Forms
  */
