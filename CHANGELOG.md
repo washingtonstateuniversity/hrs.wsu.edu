@@ -30,6 +30,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Delay enqueuing HRS child theme styles until after all parent and plugin styles have loaded.
 - Convert image gallery styles into the Grid List mixin.
 - Move `figure` styles to Components.
 - Update button styles and organization.

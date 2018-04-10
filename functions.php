@@ -15,7 +15,7 @@ $hrs_child_theme_version = '0.10.1';
 function hrs_enqueue_styles() {
 	wp_enqueue_style( 'hrs-child-theme', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'wsu-spine' ), hrs_get_script_version() );
 }
-add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 
 /**
  * Removes child theme style call from parent theme.
