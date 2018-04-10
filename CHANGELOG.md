@@ -30,6 +30,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Update button styles and organization.
 - Move deprecated styles earlier in the stylesheet to allow for overriding.
 - Alphabetize utility styles.
 - Change `abs-center` class into a scss mixin called `center-middle` that targets the container.

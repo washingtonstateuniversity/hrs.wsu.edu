@@ -92,6 +92,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /**
  * 1.1 Foundation
  */
+main * {
+  box-sizing: border-box;
+}
+
+main *:before, main *:after {
+  box-sizing: border-box;
+}
+
 /**
  * 1.2 Typography
  */
@@ -208,26 +216,27 @@ ol.inline li:last-child {
  *
  * @since 0.9.0
  */
+/*
 a.button {
-  background: #981e32;
-  border: none;
-  box-sizing: border-box;
-  box-shadow: none;
-  color: #fff;
-  display: block;
-  font-weight: 700;
-  margin: 0;
-  padding: 1rem 0 .75rem;
-  text-align: center;
-  transition: background-color .3s ease;
-  width: 30%;
+	background: #981e32;
+	border: none;
+	box-sizing: border-box;
+	box-shadow: none;
+	color: #fff;
+	display: block;
+	font-weight: 700;
+	margin: 0;
+	padding: 1rem 0 .75rem;
+	text-align: center;
+	transition: background-color .3s ease;
+	width: 30%;
 }
 
 a.button:hover {
-  background: #c60c30;
-  color: #fff;
+	background: #c60c30;
+	color: #fff;
 }
-
+*/
 #button_holder a {
   color: #fff;
   text-decoration: none;
@@ -436,6 +445,87 @@ a.button:hover {
 /**
  * 2.1 Buttons
  */
+/* Mixin for the standard button. */
+main .button,
+main button,
+main input[type="button"],
+main input[type="submit"], main .button-secondary,
+main input[type="reset"] {
+  background: #981e32;
+  border: 1px solid #981e32;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  display: inline-block;
+  line-height: normal;
+  padding: .75rem 1.5rem;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+main .button:hover,
+main button:hover,
+main input:hover[type="button"],
+main input:hover[type="submit"], main .button-secondary:hover,
+main input:hover[type="reset"], main .button:focus,
+main button:focus,
+main input:focus[type="button"],
+main input:focus[type="submit"], main .button-secondary:focus,
+main input:focus[type="reset"] {
+  background: #fff;
+  border: 1px solid #c60c30;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  color: #981e32;
+}
+
+main .button:active,
+main button:active,
+main input:active[type="button"],
+main input:active[type="submit"], main .button-secondary:active,
+main input:active[type="reset"] {
+  background: #eff0f1;
+  border: 1px solid #2a3033;
+  box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
+  outline-width: 0;
+}
+
+main .button-secondary,
+main input[type="reset"] {
+  background: #fff;
+  color: #981e32;
+}
+
+main .button-secondary:hover, main .button-secondary:focus,
+main input[type="reset"]:hover,
+main input[type="reset"]:focus {
+  background: #981e32;
+  color: #fff;
+}
+
+main .button-secondary:active,
+main input[type="reset"]:active {
+  background: #6d1624;
+  box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+main .button-flat {
+  display: inline-block;
+  line-height: normal;
+  font-weight: 600;
+  padding: .75rem 1.5rem;
+  text-transform: uppercase;
+  transition: all .3s ease;
+}
+
+main .button-flat:hover, main .button-flat:focus {
+  background: #5e6a71;
+  color: #fff;
+}
+
+main .button-flat:active {
+  background: #475055;
+}
+
 .hrs-button,
 button.hrs-button,
 input[type="button"].hrs-button,
