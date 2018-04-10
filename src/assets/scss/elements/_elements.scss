@@ -133,6 +133,12 @@ main {
  * 2.3 Images
  */
 
+/* @TODO Delete .hrs-gallery, since it duplicates the default Spine gallery. */
+.gallery,
+.hrs-gallery {
+	@extend %grid-list;
+}
+
 .section-wrapper-has-background {
 	min-height: 600px !important;
 	background-attachment: fixed;

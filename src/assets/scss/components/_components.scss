@@ -102,66 +102,74 @@ input[type="number"] {
  * Grid Lists
  */
 
-/*
- * Default HRS Gallery
- *
- * @TODO Delete this, since it duplicates the default Spine gallery
- */
-
-.hrs-gallery {
+%grid-list {
 	display: flex;
 	flex-wrap: wrap;
 	margin: auto;
-
-	.gallery-item {
-		box-sizing: border-box;
-		padding: 1rem;
-		margin: 0;
-		float: inherit;
-		text-align: center;
-	}
-
-	.gallery-columns-1 .gallery-item {
-		width: 100%;
-	}
-
-	.gallery-columns-2 .gallery-item {
-		width: 50%;
-	}
-
-	.gallery-columns-3 .gallery-item {
-		width: 33.333333%;
-	}
-
-	.gallery-columns-4 .gallery-item {
-		width: 25%;
-	}
-
-	.gallery-columns-5 .gallery-item {
-		width: 20%;
-	}
-
-	.gallery-columns-6 .gallery-item {
-		width: 16.66%;
-	}
-
-	.gallery-columns-7 .gallery-item {
-		width: 14.28%;
-	}
-
-	.gallery-columns-8 .gallery-item {
-		width: 12.5%;
-	}
-
-	.gallery-columns-9 .gallery-item {
-		width: 11.11%;
-	}
 
 	img {
 		border: 0;
 		box-sizing: border-box;
 		display: block;
 		margin: 0 auto;
+	}
+
+	.grid-item,
+	.gallery-item {
+		box-sizing: border-box;
+		float: inherit;
+		margin: 0;
+		padding: 1rem;
+		text-align: center;
+	}
+}
+
+.grid-item,
+.gallery-item {
+
+	.grid-columns-1 &,
+	.gallery-columns-1 & {
+		width: (100% / 1);
+	}
+
+	.grid-columns-2 &,
+	.gallery-columns-2 & {
+		width: (100% / 2);
+	}
+
+	.grid-columns-3 &,
+	.gallery-columns-3 & {
+		width: (100% / 3);
+	}
+
+	.grid-columns-4 &,
+	.gallery-columns-4 & {
+		width: (100% / 4);
+	}
+
+	.grid-columns-5 &,
+	.gallery-columns-5 & {
+		width: (100% / 5);
+	}
+
+	.grid-columns-6 &,
+	.gallery-columns-6 & {
+		width: (100% / 6);
+	}
+
+	.grid-columns-7 &,
+	.gallery-columns-7 & {
+		width: (100% / 7);
+	}
+
+	.grid-columns-8 &,
+	.gallery-columns-8 & {
+		width: (100% / 8);
+	}
+
+	.grid-columns-9 &,
+	.gallery-columns-9 & {
+		width: (100% / 9);
 	}
 }
 
