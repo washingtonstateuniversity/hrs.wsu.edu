@@ -43,6 +43,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Removed
 
+- No longer setting `figure img` to 100% width.
 - Do not override padding styles of the main parent theme (yet).
 - Do not need to set all elements to `border-box` since Spine parents already sets relevant elements.
 - Remove unneeded `<hr>` styles.
