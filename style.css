@@ -776,8 +776,6 @@ input[type="number"] {
 .gallery .gallery-item,
 .hrs-gallery .gallery-item {
   box-sizing: border-box;
-  float: inherit;
-  margin: 0;
   padding: 1rem;
   text-align: center;
 }
