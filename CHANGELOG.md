@@ -47,6 +47,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Deprecated
 
+- Builder Banner styles.
 - Former `.hrs-button` button style classes (now style the same as default buttons).
 - Font size adjustment on `.two` elements.
 - 100% height styles on `html` and `body` probably not needed.
