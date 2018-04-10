@@ -30,6 +30,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Move image gallery styles to Components > Grid Lists.
 - Move `figure` styles to Components.
 - Update button styles and organization.
 - Move deprecated styles earlier in the stylesheet to allow for overriding.
