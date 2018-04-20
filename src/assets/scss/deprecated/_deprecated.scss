@@ -115,17 +115,18 @@ a.button:hover {
 }
 */
 
+/* @todo Deprecate class name, replace in markup. */
 .hrs-button,
 button.hrs-button,
 input[type="button"].hrs-button,
 input[type="reset"].hrs-button,
 input[type="submit"].hrs-button {
-	@extend %button;
+	@extend .button-cta;
 }
 
 .hrs-button-white,
 button.hrs-button-white {
-	@extend .button-secondary;
+	@extend .button;
 }
 
 #button_holder a {
@@ -347,6 +348,17 @@ button.hrs-button-white {
 
 .hrs-priority-neutral {
 	background-color: #eff0f1;
+}
+
+
+/**
+ * Deprecated Gallery Style
+ *
+ * @since 0.10.0
+ */
+
+.hrs-gallery {
+	@extend .gallery;
 }
 
 
