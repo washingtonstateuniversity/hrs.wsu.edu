@@ -22,14 +22,13 @@
  */
 
 main {
+	color: $text-color;
+	font: 400 18px/28px $sans-serif-fonts;
 
-	* {
+	*,
+	*:before,
+	*:after, {
 		box-sizing: border-box;
-
-		&:before,
-		&:after {
-			box-sizing: border-box;
-		}
 	}
 }
 
@@ -37,11 +36,45 @@ main {
  * 1.2 Typography
  */
 
+blockquote {
+	font-family: $sans-serif-fonts;
+}
 
 /**
  * 1.4 Links
  */
 
+main {
+
+	a {
+		border-bottom: 1px solid $nav-color-border;
+		color: $text-color;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all .3s ease;
+
+		&:hover,
+		&:focus {
+			color: $nav-color-hover;
+		}
+	}
+
+	figure > a {
+		border-bottom: none;
+		display: block;
+		position: relative;
+	}
+}
+
+.article-title a,
+.site-title a {
+	border-color: transparent;
+
+	&:hover,
+	&:focus {
+		border-color: currentColor;
+	}
+}
 
 /**
  * 1.5 Lists

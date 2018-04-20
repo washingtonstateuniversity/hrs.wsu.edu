@@ -30,6 +30,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Override Spine's blockquote font.
 - Tone down header link styles.
 - Restyle links to stand out more.
 - Switch to Source Sans Pro as primary site font.
@@ -43,6 +44,8 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Apply "Insider"-style links inside the `main` element, with adjustments for images and article titles.
+- Set base font color, weight, size, and family on `main` element.
 - Variables for the default font stack and some named color values.
 - Border-box style on all `main` elements.
 
