@@ -30,6 +30,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Just use the WordPress builtin "gallery" naming for all grid lists (get rid of "grid-list" mixin and references).
 - Override Spine's blockquote font.
 - Tone down header link styles.
 - Restyle links to stand out more.
@@ -44,6 +45,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Use nested grid and order to adjust the visual ordering of elements in `recent-articles` grids (logical ordering to promote the title; visual ordering moves the image back to the top).
 - Apply "Insider"-style links inside the `main` element, with adjustments for images and article titles.
 - Set base font color, weight, size, and family on `main` element.
 - Variables for the default font stack and some named color values.
