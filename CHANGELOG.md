@@ -25,14 +25,16 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Todo
 
 - Increase link rest-to-hover contrast.
-- Adjust link styles for headings to be a little less obtrusive.
 - Move mobile-only styles to "base" and larger-width adjustments into media queries as needed (essentially reverse the current setup).
+- Determine if we really need the `center-middle` utility class. If yes, look into using a grid with `Xvh` and `Xvh` column and row size to center instead.
 
 ### Changed
 
+- Tone down header link styles.
+- Restyle links to stand out more.
+- Switch to Source Sans Pro as primary site font.
 - Enqueue Source Sans Pro from Google Fonts.
 - Delay enqueuing HRS child theme styles until after all parent and plugin styles have loaded.
-- Convert image gallery styles into the Grid List mixin.
 - Move `figure` styles to Components.
 - Update button styles and organization.
 - Move deprecated styles earlier in the stylesheet to allow for overriding.
@@ -41,11 +43,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Variables for the default font stack and some named color values.
 - Border-box style on all `main` elements.
 
 ### Removed
 
-- No longer setting `figure img` to 100% width.
 - Do not override padding styles of the main parent theme (yet).
 - Do not need to set all elements to `border-box` since Spine parents already sets relevant elements.
 - Remove unneeded `<hr>` styles.

@@ -1,3 +1,8 @@
+/*
+ * @todo Settle on primary and secondary colors and rename
+ *       then also settle on the purpose of the secondary and
+ *       accent colors and rename them to match.
+ */
 $brand-crimson: #981e32;
 $brand-gray: #5e6a71;
 
@@ -14,5 +19,12 @@ $accent-yellow: #ffb81c;
 
 $neutral-dark: #2a3033;
 $neutral-light: #eff0f1;
+$dark-dark: #191919;
+
+$text-color: $dark-dark;
 
 $nav-color: $brand-crimson;
+$nav-color-border: #da1e00;
+$nav-color-hover: $accent-crimson;
+
+$sans-serif-fonts: "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
