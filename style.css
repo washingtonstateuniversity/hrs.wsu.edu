@@ -72,6 +72,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * 8.0 Deprecated
  */
 /* Globals */
+/*
+ * @todo Settle on primary and secondary colors and rename
+ *       then also settle on the purpose of the secondary and
+ *       accent colors and rename them to match.
+ */
 /**
  * 1.0 Globals
  *
@@ -92,20 +97,56 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /**
  * 1.1 Foundation
  */
-main * {
-  box-sizing: border-box;
+main {
+  color: #191919;
+  font: 400 18px/28px "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
 }
 
-main *:before, main *:after {
+main *,
+main *:before,
+main *:after {
   box-sizing: border-box;
 }
 
 /**
  * 1.2 Typography
  */
+blockquote {
+  font-family: "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
+}
+
 /**
  * 1.4 Links
  */
+main a {
+  border-bottom: 1px solid #da1e00;
+  color: #191919;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+main a:hover, main a:focus {
+  color: #c60c30;
+}
+
+main figure > a {
+  border-bottom: none;
+  display: block;
+  position: relative;
+}
+
+.article-title a,
+.site-title a {
+  border-color: transparent;
+}
+
+.article-title a:hover, .article-title a:focus,
+.site-title a:hover,
+.site-title a:focus {
+  border-color: currentColor;
+}
+
 /**
  * 1.5 Lists
  */
@@ -237,6 +278,7 @@ a.button:hover {
 	color: #fff;
 }
 */
+/* @todo Deprecate class name, replace in markup. */
 #button_holder a {
   color: #fff;
   text-decoration: none;
@@ -450,6 +492,11 @@ a.button:hover {
 }
 
 /**
+ * Deprecated Gallery Style
+ *
+ * @since 0.10.0
+ */
+/**
  * Deprecated Spine Overrides
  *
  * @since 0.9.0
@@ -518,98 +565,95 @@ a.button:hover {
 /**
  * 2.1 Buttons
  */
-/* Mixin for the standard button. */
-.hrs-button,
-button.hrs-button,
-input.hrs-button[type="button"],
-input.hrs-button[type="reset"],
-input.hrs-button[type="submit"], main .button,
+main .button, main .hrs-button-white, main .button-cta, main .hrs-button,
+main input.hrs-button[type="button"],
+main input.hrs-button[type="reset"],
+main input.hrs-button[type="submit"],
+main input[type="submit"],
 main button,
 main input[type="button"],
-main input[type="submit"], main .button-secondary, main .hrs-button-white,
 main input[type="reset"] {
-  background: #981e32;
+  background: #fff;
   border: 1px solid #981e32;
   border-radius: 3px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.1);
-  color: #fff;
+  color: #981e32;
   display: inline-block;
-  line-height: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
   padding: .75rem 1.5rem;
   text-decoration: none;
   transition: all .3s ease;
 }
 
-.hrs-button:hover,
-input.hrs-button:hover[type="button"],
-input.hrs-button:hover[type="reset"],
-input.hrs-button:hover[type="submit"], main .button:hover,
+main .button:hover, main .hrs-button-white:hover, main .button-cta:hover, main .hrs-button:hover,
+main input:hover[type="submit"], main .button:focus, main .hrs-button-white:focus, main .button-cta:focus, main .hrs-button:focus,
+main input:focus[type="submit"],
 main button:hover,
-main input:hover[type="button"],
-main input:hover[type="submit"], main .button-secondary:hover, main .hrs-button-white:hover,
-main input:hover[type="reset"], .hrs-button:focus,
-input.hrs-button:focus[type="button"],
-input.hrs-button:focus[type="reset"],
-input.hrs-button:focus[type="submit"], main .button:focus,
 main button:focus,
-main input:focus[type="button"],
-main input:focus[type="submit"], main .button-secondary:focus, main .hrs-button-white:focus,
-main input:focus[type="reset"] {
-  background: #fff;
-  border: 1px solid #c60c30;
+main input[type="button"]:hover,
+main input[type="button"]:focus,
+main input[type="reset"]:hover,
+main input[type="reset"]:focus {
+  background: #c60c30;
+  border: 1px solid #da1e00;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
-  color: #981e32;
+  color: #fff;
 }
 
-.hrs-button:active,
-input.hrs-button:active[type="button"],
-input.hrs-button:active[type="reset"],
-input.hrs-button:active[type="submit"], main .button:active,
+main .button:active, main .hrs-button-white:active, main .button-cta:active, main .hrs-button:active,
+main input:active[type="submit"],
 main button:active,
-main input:active[type="button"],
-main input:active[type="submit"], main .button-secondary:active, main .hrs-button-white:active,
-main input:active[type="reset"] {
-  background: #eff0f1;
+main input[type="button"]:active,
+main input[type="reset"]:active {
+  background: #6d1624;
   border: 1px solid #2a3033;
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
   outline-width: 0;
 }
 
-main .button-secondary, main .hrs-button-white,
-main input[type="reset"] {
-  background: #fff;
-  color: #981e32;
-}
-
-main .button-secondary:hover, main .hrs-button-white:hover, main .button-secondary:focus, main .hrs-button-white:focus,
-main input[type="reset"]:hover,
-main input[type="reset"]:focus {
+main .button-cta, main .hrs-button,
+main input.hrs-button[type="button"],
+main input.hrs-button[type="reset"],
+main input.hrs-button[type="submit"],
+main input[type="submit"] {
   background: #981e32;
   color: #fff;
 }
 
-main .button-secondary:active, main .hrs-button-white:active,
-main input[type="reset"]:active {
-  background: #6d1624;
-  box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
+main .button-cta:hover, main .hrs-button:hover, main .button-cta:focus, main .hrs-button:focus,
+main input[type="submit"]:hover,
+main input[type="submit"]:focus {
+  background: #fff;
+  color: #c60c30;
+}
+
+main .button-cta:active, main .hrs-button:active,
+main input[type="submit"]:active {
+  background: #eff0f1;
 }
 
 main .button-flat {
   display: inline-block;
-  line-height: normal;
-  font-weight: 600;
+  line-height: 1.5;
+  font-size: 1rem;
   padding: .75rem 1.5rem;
-  text-transform: uppercase;
+  text-decoration: underline;
   transition: all .3s ease;
+  color: #981e32;
+  border: none;
+  font-weight: 400;
 }
 
 main .button-flat:hover, main .button-flat:focus {
-  background: #5e6a71;
+  background: #c60c30;
   color: #fff;
 }
 
 main .button-flat:active {
-  background: #475055;
+  background: #6d1624;
+  box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
 }
 
 /**
@@ -645,7 +689,10 @@ main .button-flat:active {
 /**
  * 2.3 Images
  */
-/* @TODO Delete .hrs-gallery, since it duplicates the default Spine gallery. */
+figure img {
+  max-width: 100%;
+}
+
 .section-wrapper-has-background {
   min-height: 600px !important;
   background-attachment: fixed;
@@ -653,14 +700,13 @@ main .button-flat:active {
   background-size: cover;
 }
 
-/* Social media icons */
-.socialicons {
-  background: url(http://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/cream_pixels.png);
-  padding-top: 1em;
+/* Home page social media icons */
+.socialicons a {
+  border: none;
 }
 
-.socialicons img:hover,
-.socialicons img:focus {
+.socialicons a:hover img,
+.socialicons a:focus img {
   opacity: .7;
 }
 
@@ -694,6 +740,20 @@ main .button-flat:active {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-auto-rows: minmax(4rem, auto);
   grid-gap: 1.5rem 2rem;
+}
+
+.recent-articles article {
+  display: grid;
+}
+
+.recent-articles .article-image {
+  -ms-flex-order: -1;
+      order: -1;
+}
+
+.recent-articles .article-taxonomy {
+  -ms-flex-order: -2;
+      order: -2;
 }
 
 /**
@@ -756,8 +816,7 @@ input[type="number"] {
 /**
  * Grid Lists
  */
-.gallery,
-.hrs-gallery {
+.gallery, .hrs-gallery {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -772,83 +831,45 @@ input[type="number"] {
   margin: 0 auto;
 }
 
-.gallery .grid-item, .hrs-gallery .grid-item,
-.gallery .gallery-item,
-.hrs-gallery .gallery-item {
+.gallery .gallery-item, .hrs-gallery .gallery-item {
   box-sizing: border-box;
   padding: 1rem;
   text-align: center;
 }
 
-.grid-columns-1 .grid-item,
-.gallery-columns-1 .grid-item, .grid-columns-1
-.gallery-item,
-.gallery-columns-1
-.gallery-item {
+.gallery-columns-1 .gallery-item {
   width: 100%;
 }
 
-.grid-columns-2 .grid-item,
-.gallery-columns-2 .grid-item, .grid-columns-2
-.gallery-item,
-.gallery-columns-2
-.gallery-item {
+.gallery-columns-2 .gallery-item {
   width: 50%;
 }
 
-.grid-columns-3 .grid-item,
-.gallery-columns-3 .grid-item, .grid-columns-3
-.gallery-item,
-.gallery-columns-3
-.gallery-item {
+.gallery-columns-3 .gallery-item {
   width: 33.33333%;
 }
 
-.grid-columns-4 .grid-item,
-.gallery-columns-4 .grid-item, .grid-columns-4
-.gallery-item,
-.gallery-columns-4
-.gallery-item {
+.gallery-columns-4 .gallery-item {
   width: 25%;
 }
 
-.grid-columns-5 .grid-item,
-.gallery-columns-5 .grid-item, .grid-columns-5
-.gallery-item,
-.gallery-columns-5
-.gallery-item {
+.gallery-columns-5 .gallery-item {
   width: 20%;
 }
 
-.grid-columns-6 .grid-item,
-.gallery-columns-6 .grid-item, .grid-columns-6
-.gallery-item,
-.gallery-columns-6
-.gallery-item {
+.gallery-columns-6 .gallery-item {
   width: 16.66667%;
 }
 
-.grid-columns-7 .grid-item,
-.gallery-columns-7 .grid-item, .grid-columns-7
-.gallery-item,
-.gallery-columns-7
-.gallery-item {
+.gallery-columns-7 .gallery-item {
   width: 14.28571%;
 }
 
-.grid-columns-8 .grid-item,
-.gallery-columns-8 .grid-item, .grid-columns-8
-.gallery-item,
-.gallery-columns-8
-.gallery-item {
+.gallery-columns-8 .gallery-item {
   width: 12.5%;
 }
 
-.grid-columns-9 .grid-item,
-.gallery-columns-9 .grid-item, .grid-columns-9
-.gallery-item,
-.gallery-columns-9
-.gallery-item {
+.gallery-columns-9 .gallery-item {
   width: 11.11111%;
 }
 
@@ -1019,11 +1040,11 @@ input[type="number"] {
   position: relative;
 }
 
-.hrs-callout-gallery .gallery img {
+.hrs-callout-gallery .gallery img, .hrs-callout-gallery .hrs-gallery img {
   border: none;
 }
 
-.hrs-callout-gallery .gallery .gallery-caption {
+.hrs-callout-gallery .gallery .gallery-caption, .hrs-callout-gallery .hrs-gallery .gallery-caption {
   color: #fff;
   left: 50%;
   margin-right: -50%;
