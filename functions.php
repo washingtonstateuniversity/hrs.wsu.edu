@@ -14,6 +14,8 @@ $hrs_child_theme_version = '0.10.1';
  */
 function hrs_enqueue_styles() {
 	wp_enqueue_style( 'hrs-child-theme', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'wsu-spine' ), hrs_get_script_version() );
+	wp_enqueue_style( 'source_sans_pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i' );
+
 }
 add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 
