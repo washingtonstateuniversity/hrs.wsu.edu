@@ -19,78 +19,78 @@
  * 2.1 Buttons
  */
 
-/* Mixin for the standard button. */
-%button {
-	background: $brand-crimson;
-	border: 1px solid $brand-crimson;
-	border-radius: 3px;
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .1);
-	color: #fff;
-	display: inline-block;
-	line-height: normal;
-	padding: .75rem 1.5rem;
-	text-decoration: none;
-	transition: all .3s ease;
-
-	&:hover,
-	&:focus {
-		background: #fff;
-		border: 1px solid $accent-crimson;
-		box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1);
-		color: $brand-crimson;
-	}
-
-	&:active {
-		background: $neutral-light;
-		border: 1px solid $neutral-dark;
-		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
-		outline-width: 0;
-	}
-}
-
 main {
 
 	.button,
 	button,
 	input[type="button"],
-	input[type="submit"] {
-		@extend %button;
-	}
-
-	.button-secondary,
 	input[type="reset"] {
-		@extend %button;
 		background: #fff;
+		border: 1px solid $brand-crimson;
+		border-radius: 3px;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .1);
 		color: $brand-crimson;
+		display: inline-block;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.5;
+		padding: .75rem 1.5rem;
+		text-decoration: none;
+		transition: all .3s ease;
 
 		&:hover,
 		&:focus {
-			background: $brand-crimson;
+			background: $nav-color-hover;
+			border: 1px solid $nav-color-border;
+			box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1);
+			color: #fff;
+		}
+
+		&:active {
+			background: darken($brand-crimson, 10%);
+			border: 1px solid $neutral-dark;
+			box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
+			outline-width: 0;
+		}
+	}
+
+	.button-cta,
+	input[type="submit"] {
+		@extend .button;
+		background: $brand-crimson;
+		color: #fff;
+
+		&:hover,
+		&:focus {
+			background: #fff;
+			color: $accent-crimson;
+		}
+
+		&:active {
+			background: $neutral-light;
+		}
+	}
+
+	.button-flat {
+		display: inline-block;
+		line-height: 1.5;
+		font-size: 1rem;
+		padding: .75rem 1.5rem;
+		text-decoration: underline;
+		transition: all .3s ease;
+		color: $nav-color;
+		border: none;
+		font-weight: 400;
+
+		&:hover,
+		&:focus {
+			background: $accent-crimson;
 			color: #fff;
 		}
 
 		&:active {
 			background: darken($brand-crimson, 10%);
 			box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
-		}
-	}
-
-	.button-flat {
-		display: inline-block;
-		line-height: normal;
-		font-weight: 600;
-		padding: .75rem 1.5rem;
-		text-transform: uppercase;
-		transition: all .3s ease;
-
-		&:hover,
-		&:focus {
-			background: $brand-gray;
-			color: #fff;
-		}
-
-		&:active {
-			background: darken($brand-gray, 10%);
 		}
 	}
 }
@@ -133,10 +133,8 @@ main {
  * 2.3 Images
  */
 
-/* @TODO Delete .hrs-gallery, since it duplicates the default Spine gallery. */
-.gallery,
-.hrs-gallery {
-	@extend %grid-list;
+figure img {
+	max-width: 100%;
 }
 
 .section-wrapper-has-background {
@@ -146,13 +144,12 @@ main {
 	background-size: cover;
 }
 
-/* Social media icons */
-.socialicons {
-	background: url(http://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/cream_pixels.png);
-	padding-top: 1em;
-}
+/* Home page social media icons */
+.socialicons a {
+	border: none;
 
-.socialicons img:hover,
-.socialicons img:focus {
-	opacity: .7;
+	&:hover img,
+	&:focus img {
+		opacity: .7;
+	}
 }

@@ -30,6 +30,9 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Reverse primary and secondary button styles to make light version standard and dark version into a call-to-action variant.
+- Clean up button styles following link style updates.
+- Update `.socialicons` styles.
 - Just use the WordPress builtin "gallery" naming for all grid lists (get rid of "grid-list" mixin and references).
 - Override Spine's blockquote font.
 - Tone down header link styles.
@@ -53,12 +56,14 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Removed
 
+- Don't use a mixin for buttons. Redundant.
 - Do not override padding styles of the main parent theme (yet).
 - Do not need to set all elements to `border-box` since Spine parents already sets relevant elements.
 - Remove unneeded `<hr>` styles.
 
 ### Deprecated
 
+- Former `.hrs-gallery` element style class(es) to prefer the standard `.gallery` class.
 - Builder Banner styles.
 - Former `.hrs-button` button style classes (now style the same as default buttons).
 - Font size adjustment on `.two` elements.
