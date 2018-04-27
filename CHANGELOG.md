@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.10.2 (2018-04-27)
+
+### Fixed
+
+- Upgade npm hoek dependency to ~> 5.0.3 to fix vulnerability.
+
 ## 0.10.1 (2018-04-09)
 
 ### Fixed
