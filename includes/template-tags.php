@@ -41,3 +41,38 @@
  		return $awards;
  	}
  endif;
+
+ if ( ! function_exists( 'list_awards' ) ) :
+ 	/**
+ 	 * Document.
+ 	 *
+ 	 * @since 0.11.0
+ 	 */
+ 	function list_awards( $awards = '', $year = '' ) {
+ 		if ( ! $awards ) {
+ 			$awards = get_erdb_awards();
+ 		}
+
+ 		$item = '';
+ 		foreach ( $awards as $award ) {
+
+ 			if ( ! $year ) {
+ 				$item .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
+ 					'data:image/jpg;base64, ' . base64_encode( $award->image ),
+ 					$award->name,
+ 					$award->description
+ 				);
+ 			} else {
+ 				if ( $year === $award->year ) {
+ 					$item .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
+ 						'data:image/jpg;base64, ' . base64_encode( $award->image ),
+ 						$award->name,
+ 						$award->description
+ 					);
+ 				}
+ 			}
+ 		}
+
+ 		echo '<section class="articles-list">' . $item . '</section>';
+ 	}
+ endif;
