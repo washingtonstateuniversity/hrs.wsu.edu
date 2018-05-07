@@ -76,3 +76,29 @@
  		echo '<section class="articles-list">' . $item . '</section>';
  	}
  endif;
+
+ if ( ! function_exists( 'list_erdb_awards_by_year' ) ) :
+ 	/**
+ 	 * Document me.
+ 	 *
+ 	 * @since 0.11.0
+ 	 * @return
+ 	 */
+ 	function list_erdb_awards_by_year() {
+ 		$awards = get_erdb_awards();
+
+ 		$group_years = array();
+ 		foreach ( $awards as $award ) {
+ 			if ( ! in_array( $award->year, $group_years, true ) ) {
+ 				$group_years[] = $award->year;
+ 			}
+ 		}
+
+ 		foreach ( $group_years as $year ) {
+ 			$title = ( -1 === $year ) ? 'All' : $year;
+
+ 			echo '<h2>' . esc_attr__( $title ) . ' Year Awards</h2>';
+ 			list_awards( $awards, $year );
+ 		}
+ 	}
+ endif;
