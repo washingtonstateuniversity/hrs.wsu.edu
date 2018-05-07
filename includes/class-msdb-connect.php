@@ -148,4 +148,45 @@ class HRS_MSDB {
 		return false;
 	}
 
+
+	/**
+	 * Print SQL/DB error.
+	 *
+	 * @since 0.11.0
+	 *
+	 * @param string $str The error to display.
+	 * @return false|void False if showing of errors is disabled.
+	 */
+	public function print_error( $str = '' ) {
+
+		if ( ! $str ) {
+			$str = sqlsrv_errors();
+		}
+
+		if ( ! $this->show_errors ) {
+			return false;
+		}
+
+ 	    // Display errors.
+		if ( is_array( $str ) ) {
+			foreach ( $str as $err ) {
+				printf(
+					'<div id="error"><p class="wpdberror"><strong>%s</strong> [SQLSTATE %s]<br /><code>Code %s %s</code></p></div>',
+					__( 'WP HRS_MSDB error:' ),
+					$err['SQLSTATE'],
+					$err['code'],
+					htmlspecialchars( $err['message'] )
+				);
+			}
+		} else {
+			$str = htmlspecialchars( $str, ENT_QUOTES );
+			printf(
+				'<div id="error"><p class="wpdberror"><strong>%s</strong> <code>%s</code></p></div>',
+				__( 'WP HRS_MSDB database error:' ),
+				$str
+			);
+		}
+
+ 	}
+
 }
