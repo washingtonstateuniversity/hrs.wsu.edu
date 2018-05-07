@@ -148,6 +148,48 @@ class HRS_MSDB {
 		return false;
 	}
 
+	/**
+	 * Perform a MS SQL Server database query, using current DB connection.
+	 *
+	 * For the time being only handles SELECT queries.
+	 * More complex than it needs to be for now, in order to allow for easily
+	 * adapting this to allow for INSERT and DELETE queries in the future.
+	 *
+	 * @todo Check on the type of query, {@see /wp-includes/wp-db.php}.
+	 * @todo Include some filtering and checking first.
+	 *
+	 * @since 0.11.0
+	 *
+	 * @param string $query A database query.
+	 * @return int|bool Number of rows selected for select queries. Booleen
+	 *                  false on error.
+	 */
+	public function query( $query ) {
+		// Run the query.
+		$this->_do_query( $query );
+
+		// Catch errors.
+		if ( false === $this->result ) {
+			$this->print_error();
+		} else {
+			echo "<p>DEBUG: Query request successful! :)</p>";
+		}
+
+		$num_rows = 0;
+		if ( is_resource( $this->result ) ) {
+			while ( $row = sqlsrv_fetch_object( $this->result ) ) {
+				$this->last_result[ $num_rows ] = $row;
+				$num_rows++;
+			}
+
+			// Log the number of rows returned and return them.
+			// $this->num_rows = $num_rows;
+			$return_val = $num_rows;
+
+		}
+
+		return $return_val;
+	}
 
 	/**
 	 * Internal function performs an sqlsrv_query() call.
