@@ -204,6 +204,31 @@ class HRS_MSDB {
 		}
 	}
 
+	/**
+	 * Get results.
+	 *
+	 * Explain yourself.
+	 *
+	 * @todo Consider adding additional output formats, such as array.
+	 *
+	 * @since 0.11.0
+	 */
+	public function get_results( $query = null, $output = OBJECT ) {
+		if ( $query ) {
+			$this->query( $query );
+		} else {
+			return null;
+		}
+
+		if ( $output == OBJECT ) {
+			// Return an integer-keyed array of row objects.
+			return $this->last_result;
+		} elseif ( strtoupper( $output ) === OBJECT ) {
+			// Return an integer-keyed array of row objects.
+			return $this->last_result;
+		}
+		return null;
+	}
 
 	/**
 	 * Closes.
