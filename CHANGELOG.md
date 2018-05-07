@@ -24,7 +24,13 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Include the new `HRS_MSDB` class file in `functions.php`.
+- Add the new `includes/` and `templates/` directories to the npm PHPCS script.
 - Adjust row list component class names to be a little more element agnostic.
+
+### Added
+
+- New class `HRS_MSDB` that provides a variety of methods for connecting to and interacting with an SQL Server database.
 
 ## 0.10.1 (2018-04-09)
 
