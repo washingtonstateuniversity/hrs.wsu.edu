@@ -149,6 +149,29 @@ class HRS_MSDB {
 	}
 
 	/**
+	 * Closes.
+	 *
+	 * Explain yourself.
+	 *
+	 * @since 0.11.0
+	 */
+	public function close() {
+		if ( ! $this->dbh ) {
+			return false;
+		}
+
+		$closed = sqlsrv_close( $this->dbh );
+
+		if ( $closed ) {
+			$this->dbh = null;
+			$this->has_connected = false;
+			echo "<br>DEBUG: Connection to {$this->dbname} closed."; // DEBUGGING
+		}
+
+		return $closed;
+	}
+
+	/**
 	 * Cleans up request resources and close.
 	 *
 	 * Explain yourself.
