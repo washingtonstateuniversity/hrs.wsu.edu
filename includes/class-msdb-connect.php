@@ -307,16 +307,16 @@ class HRS_MSDB {
 				printf(
 					'<div id="error"><p class="wpdberror"><strong>%s</strong> [SQLSTATE %s]<br /><code>Code %s %s</code></p></div>',
 					__( 'WP HRS_MSDB error:' ),
-					$err['SQLSTATE'],
-					$err['code'],
-					htmlspecialchars( $err['message'] )
+					htmlspecialchars( $err['SQLSTATE'], ENT_QUOTES ),
+					htmlspecialchars( $err['code'], ENT_QUOTES ),
+					htmlspecialchars( $err['message'], ENT_QUOTES )
 				);
 			}
 		} else {
 			$str = htmlspecialchars( $str, ENT_QUOTES );
 			printf(
 				'<div id="error"><p class="wpdberror"><strong>%s</strong> <code>%s</code></p></div>',
-				__( 'WP HRS_MSDB database error:' ),
+				__( 'WP HRS_MSDB error:' ),
 				$str
 			);
 		}
