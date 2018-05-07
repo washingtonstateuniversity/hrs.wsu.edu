@@ -18,6 +18,11 @@
  */
 require_once 'includes/class-hrs-theme-setup.php';
 
+/**
+ * Adds Microsoft SQL Server database connection class.
+ */
+require_once 'includes/class-msdb-connect.php';
+
 add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 add_action( 'wp_head', 'hrs_noscript_styles' );
@@ -40,6 +45,7 @@ function hrs_get_theme_version() {
 }
 
 /**
+ * Add HRS Child Theme stylesheet.
  * Add HRS Child Theme stylesheets and scripts.
  *
  * @since 0.7.0
