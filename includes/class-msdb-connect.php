@@ -96,4 +96,24 @@ class HRS_MSDB {
 	 */
 	private $has_connected = false;
 
+	/**
+	 * ... constructor ...
+	 *
+	 * tell my story
+	 *
+	 * @since 0.11.0
+	 */
+	public function __construct( $dbuser, $dbpassword, $dbname, $dbhost ) {
+		if ( WP_DEBUG && WP_DEBUG_DISPLAY ) {
+			$this->show_errors = true;
+		}
+
+		$this->dbuser     = $dbuser;
+		$this->dbpassword = $dbpassword;
+		$this->dbname     = $dbname;
+		$this->dbhost     = $dbhost;
+
+		$this->msdb_connect();
+	}
+
 }
