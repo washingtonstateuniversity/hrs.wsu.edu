@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.11.0 (unreleased)
+
+### Changed
+
+- Adjust row list component class names to be a little more element agnostic.
+
 ## 0.10.1 (2018-04-09)
 
 ### Fixed

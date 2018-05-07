@@ -886,7 +886,8 @@ input[type="number"] {
  *
  * @todo Adjust these styles to be more agnostic of markup?
  */
-.articles-list article {
+.articles-list article,
+.articles-list .list-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -903,7 +904,7 @@ input[type="number"] {
   margin-right: 1rem;
 }
 
-.articles-list .row-item-content {
+.articles-list .list-content {
   -ms-flex: 1 1 auto;
       flex: 1 1 auto;
 }

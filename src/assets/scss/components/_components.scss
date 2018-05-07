@@ -290,7 +290,8 @@ input[type="number"] {
 
 %row-list {
 
-	article {
+	article,
+	.list-item {
 		display: flex;
 		align-items: center;
 		margin: 0 0 1.5rem;
@@ -303,7 +304,7 @@ input[type="number"] {
 		margin-right: 1rem;
 	}
 
-	.row-item-content {
+	.list-content {
 		flex: 1 1 auto;
 	}
 
