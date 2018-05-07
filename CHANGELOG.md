@@ -32,6 +32,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 - New class `HRS_MSDB` that provides a variety of methods for connecting to and interacting with an SQL Server database.
 
+## 0.10.2 (2018-04-27)
+
+### Fixed
+
+- Upgade npm hoek dependency to ~> 5.0.3 to fix vulnerability.
+
 ## 0.10.1 (2018-04-09)
 
 ### Fixed
