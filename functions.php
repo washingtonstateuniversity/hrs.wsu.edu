@@ -45,6 +45,11 @@ function hrs_get_theme_version() {
 }
 
 /**
+ * Adds custom template tags for the WSU HRS theme.
+ */
+require_once 'includes/template-tags.php';
+
+/**
  * Add HRS Child Theme stylesheet.
  * Add HRS Child Theme stylesheets and scripts.
  *
