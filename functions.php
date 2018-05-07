@@ -8,6 +8,11 @@
 $hrs_child_theme_version = '0.10.1';
 
 /**
+ * Adds Microsoft SQL Server database connection class.
+ */
+require_once 'includes/class-msdb-connect.php';
+
+/**
  * Add HRS Child Theme stylesheet.
  *
  * @since 0.7.0
