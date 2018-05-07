@@ -13,6 +13,11 @@ $hrs_child_theme_version = '0.10.2';
 require_once 'includes/class-msdb-connect.php';
 
 /**
+ * Adds custom template tags for the WSU HRS theme.
+ */
+require_once 'includes/template-tags.php';
+
+/**
  * Add HRS Child Theme stylesheet.
  *
  * @since 0.7.0
