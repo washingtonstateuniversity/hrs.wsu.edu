@@ -148,6 +148,21 @@ class HRS_MSDB {
 		return false;
 	}
 
+
+	/**
+	 * Internal function performs an sqlsrv_query() call.
+	 *
+	 * @see HRS_MSDB::query()
+	 *
+	 * @param string $query The query to run.
+	 */
+	private function _do_query( $query ) {
+		if ( ! empty( $this->dbh ) ) {
+			$this->result = sqlsrv_query( $this->dbh, $query );
+		}
+	}
+
+
 	/**
 	 * Closes.
 	 *
