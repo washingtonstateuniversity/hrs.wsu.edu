@@ -29,11 +29,11 @@ if ( ! function_exists( 'get_erdb_awards' ) ) :
 		$msdb = new HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
 		$awards = $msdb->get_results(
-			"
+			'
 			SELECT BinaryFile as image, GroupDescription as description, GroupName as name, GroupYear as year
 			FROM V_AwardViewer
 			ORDER BY GroupYear
-			"
+			'
 		);
 
 		$msdb->clean();
@@ -59,15 +59,15 @@ if ( ! function_exists( 'list_awards' ) ) :
 			if ( ! $year ) {
 				$item .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
 					'data:image/jpg;base64, ' . base64_encode( $award->image ),
-					$award->name,
-					$award->description
+					esc_html( wptexturize( $award->name ) ),
+					esc_html( wptexturize( $award->description ) )
 				);
 			} else {
 				if ( $year === $award->year ) {
 					$item .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
 						'data:image/jpg;base64, ' . base64_encode( $award->image ),
-						$award->name,
-						$award->description
+						esc_html( wptexturize( $award->name ) ),
+						esc_html( wptexturize( $award->description ) )
 					);
 				}
 			}
@@ -97,7 +97,7 @@ if ( ! function_exists( 'list_erdb_awards_by_year' ) ) :
 		foreach ( $group_years as $year ) {
 			$title = ( -1 === $year ) ? 'All' : $year;
 
-			echo '<h2>' . esc_attr__( $title ) . ' Year Awards</h2>';
+			echo '<h2>' . esc_attr( $title ) . ' Year Awards</h2>';
 			list_awards( $awards, $year );
 		}
 	}
