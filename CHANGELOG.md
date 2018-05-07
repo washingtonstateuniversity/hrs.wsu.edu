@@ -31,6 +31,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Template to handle presenting a list of awards from the Employee Recognition database.
 - Function in `template-tags.php` to print the lists of awards grouped by ER year.
 - Function in `template-tags.php` to print the results of a request to the ER DB awards table as lists of awards.
 - Function in `template-tags.php` that instantiates the HRS_MSDB class to open a new connection to the ER database, retrieve the contents of the awards table as an object, then close the connection and return the results.
