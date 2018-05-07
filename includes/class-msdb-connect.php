@@ -116,4 +116,36 @@ class HRS_MSDB {
 		$this->msdb_connect();
 	}
 
+	/**
+	 * Opens a connection.
+	 *
+	 * Explain yourself.
+	 *
+	 * @since 0.11.0
+	 *
+	 * @return bool True with a successful connection, false on failure.
+	 */
+	public function msdb_connect() {
+
+		$params = array(
+			"Database" => $this->dbname,
+			"Uid"      => $this->dbuser,
+			"PWD"      => $this->dbpassword
+		);
+
+		// Opens MS SQL connection using ODBC.
+		$this->dbh = sqlsrv_connect( $this->dbhost, $params );
+
+		if ( ! $this->dbh ) {
+			// Connection failed, so print errors and end.
+			$this->print_error();
+			return false;
+		} elseif ( $this->dbh ) {
+			$this->has_connected = true;
+			echo "<p>DEBUG: Connection successful! :)</p>"; // DEBUGGING
+			return true;
+		}
+		return false;
+	}
+
 }
