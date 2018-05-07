@@ -496,7 +496,8 @@ input[type="number"] {
 
 	.articles-list {
 
-		article {
+		article,
+		.list-item {
 			display: grid;
 			grid-template-columns: minmax(220px, 3fr) minmax(220px, 1fr);
 			grid-column-gap: 2rem;
@@ -515,7 +516,8 @@ input[type="number"] {
 
 	section:not(.features) .articles-list {
 
-		article {
+		article,
+		.list-item {
 			font-size: 1rem;
 			line-height: 1.5;
 			max-width: $large;

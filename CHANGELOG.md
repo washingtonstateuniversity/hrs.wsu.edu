@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.20.0~build-odbc-connections (unreleased)
+
+### Changed
+
+- Adjust row list component class names to be a little more element agnostic.
+
 ## 0.19.0 (2018-08-07)
 
 ### Changed
