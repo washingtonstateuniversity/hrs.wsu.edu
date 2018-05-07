@@ -148,6 +148,35 @@ class HRS_MSDB {
 		return false;
 	}
 
+	/**
+	 * Cleans up request resources and close.
+	 *
+	 * Explain yourself.
+	 *
+	 * @todo Break this out into two pieces: flush() and close().
+	 *
+	 * @since 0.11.0
+	 */
+	public function clean( $statements = array() ) {
+
+		// First free all resources for the specified statement(s).
+		if ( $statements ) {
+
+			foreach ( $statements as $statement ) {
+				sqlsrv_free_stmt( $statement );
+				echo "<br>DEBUG: Freed resources for {$statement} statement."; // DEBUGGING
+			}
+
+		} else {
+
+			sqlsrv_free_stmt( $this->result );
+
+		}
+
+		// Then close the connection.
+		$this->close();
+
+	}
 
 	/**
 	 * Print SQL/DB error.
