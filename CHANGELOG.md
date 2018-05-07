@@ -24,12 +24,17 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Include the new `template-tags.php` file in `functions.php`.
 - Include the new `HRS_MSDB` class file in `functions.php`.
 - Add the new `includes/` and `templates/` directories to the npm PHPCS script.
 - Adjust row list component class names to be a little more element agnostic.
 
 ### Added
 
+- Function in `template-tags.php` to print the lists of awards grouped by ER year.
+- Function in `template-tags.php` to print the results of a request to the ER DB awards table as lists of awards.
+- Function in `template-tags.php` that instantiates the HRS_MSDB class to open a new connection to the ER database, retrieve the contents of the awards table as an object, then close the connection and return the results.
+- New file `template-tags.php` in the `includes/` directory, to be used for custom template tags for the WSU HRS theme.
 - New class `HRS_MSDB` that provides a variety of methods for connecting to and interacting with an SQL Server database.
 
 ## 0.19.0 (2018-08-07)
