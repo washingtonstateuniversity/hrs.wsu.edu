@@ -185,7 +185,7 @@ class HRS_MSDB {
 			// If ext/hash is not present, compat.php's hash_hmac() does not support sha256.
 			$algo = function_exists( 'hash' ) ? 'sha256' : 'sha1';
 			// Old WP installs may not have AUTH_SALT defined.
-			$salt = defined( 'AUTH_SALT' ) && AUTH_SALT ? AUTH_SALT : (string) rand();
+			$salt        = defined( 'AUTH_SALT' ) && AUTH_SALT ? AUTH_SALT : (string) rand();
 			$placeholder = '{' . hash_hmac( $algo, uniqid( $salt, true ), $salt ) . '}';
 		}
 
@@ -233,8 +233,8 @@ class HRS_MSDB {
 	 * @param string      $query Query statement with sprintf()-like placeholders.
 	 * @param array|mixed $args  The array of variables to substitute into the query's placeholders
 	 *                           if being called with an array of arguments, or the first variable
-	 *							 to substitute into the query's placeholders if being called with
-	 *							 individual arguments.
+	 *                           to substitute into the query's placeholders if being called with
+	 *                           individual arguments.
 	 * @return string|void Sanitized query string, or void if there is no query to prepare.
 	 */
 	public function prepare( $query, $args ) {
@@ -252,7 +252,7 @@ class HRS_MSDB {
 
 		// If $args was passed as an array (as in vsprintf), move them up.
 		$passed_as_array = false;
-		if ( is_array( $args[0] ) && count( $args ) == 1 ) {
+		if ( is_array( $args[0] ) && count( $args ) === 1 ) {
 			$passed_as_array = true;
 			$args            = $args[0];
 		}
@@ -260,10 +260,9 @@ class HRS_MSDB {
 		foreach ( $args as $arg ) {
 			if ( ! is_scalar( $arg ) && ! is_null( $arg ) ) {
 				$this->print_error( sprintf(
-						'Unsupported value type (%s)',
-						gettype( $arg )
-					)
-				);
+					'Unsupported value type (%s)',
+					gettype( $arg )
+				) );
 			}
 		}
 
@@ -287,8 +286,8 @@ class HRS_MSDB {
 				 * or we were expecting multiple arguments in an array, throw a warning.
 				 */
 				$this->print_error(
-					/* translators: 1: number of placeholders, 2: number of arguments passed */
 					sprintf(
+						/* translators: 1: number of placeholders, 2: number of arguments passed */
 						__( 'The query does not contain the correct number of placeholders (%1$d) for the number of arguments passed (%2$d).' ),
 						$placeholders,
 						count( $args )
@@ -298,7 +297,7 @@ class HRS_MSDB {
 		}
 
 		array_walk( $args, array( $this, 'escape_by_ref' ) );
-		$query = @vsprintf( $query, $args );
+		$query = @vsprintf( $query, $args ); // phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
 
 		return $this->add_placeholder_escape( $query );
 	}
