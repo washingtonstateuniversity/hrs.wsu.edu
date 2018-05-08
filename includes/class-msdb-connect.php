@@ -30,7 +30,7 @@ class HRS_MSDB {
 	 * @since 0.11.0
 	 * @var bool
 	 */
-	var $show_errors = false;
+	private $show_errors = false;
 
 	/**
 	 * Results of the last query made.
@@ -38,7 +38,7 @@ class HRS_MSDB {
 	 * @since 0.11.0
 	 * @var array|null
 	 */
-	var $last_result;
+	private $last_result;
 
 	/**
 	 * SQL server result, either a resource or a booleen.
@@ -128,9 +128,9 @@ class HRS_MSDB {
 	public function msdb_connect() {
 
 		$params = array(
-			"Database" => $this->dbname,
-			"Uid"      => $this->dbuser,
-			"PWD"      => $this->dbpassword
+			'Database' => $this->dbname,
+			'Uid'      => $this->dbuser,
+			'PWD'      => $this->dbpassword,
 		);
 
 		// Opens MS SQL connection using ODBC.
@@ -142,7 +142,7 @@ class HRS_MSDB {
 			return false;
 		} elseif ( $this->dbh ) {
 			$this->has_connected = true;
-			echo "<p>DEBUG: Connection successful! :)</p>"; // DEBUGGING
+			echo '<p>DEBUG: Connection successful! :)</p>'; // DEBUGGING
 			return true;
 		}
 		return false;
@@ -166,17 +166,18 @@ class HRS_MSDB {
 	 */
 	public function query( $query ) {
 		// Run the query.
-		$this->_do_query( $query );
+		$this->do_query( $query );
 
 		// Catch errors.
 		if ( false === $this->result ) {
 			$this->print_error();
 		} else {
-			echo "<p>DEBUG: Query request successful! :)</p>";
+			echo '<p>DEBUG: Query request successful! :)</p>';
 		}
 
 		$num_rows = 0;
 		if ( is_resource( $this->result ) ) {
+			// phpcs:ignore WordPress.CodeAnalysis.AssignmentInCondition
 			while ( $row = sqlsrv_fetch_object( $this->result ) ) {
 				$this->last_result[ $num_rows ] = $row;
 				$num_rows++;
@@ -198,7 +199,7 @@ class HRS_MSDB {
 	 *
 	 * @param string $query The query to run.
 	 */
-	private function _do_query( $query ) {
+	private function do_query( $query ) {
 		if ( ! empty( $this->dbh ) ) {
 			$this->result = sqlsrv_query( $this->dbh, $query );
 		}
@@ -220,10 +221,10 @@ class HRS_MSDB {
 			return null;
 		}
 
-		if ( $output == OBJECT ) {
+		if ( OBJECT === $output ) {
 			// Return an integer-keyed array of row objects.
 			return $this->last_result;
-		} elseif ( strtoupper( $output ) === OBJECT ) {
+		} elseif ( OBJECT === strtoupper( $output ) ) {
 			// Return an integer-keyed array of row objects.
 			return $this->last_result;
 		}
@@ -245,9 +246,9 @@ class HRS_MSDB {
 		$closed = sqlsrv_close( $this->dbh );
 
 		if ( $closed ) {
-			$this->dbh = null;
+			$this->dbh           = null;
 			$this->has_connected = false;
-			echo "<br>DEBUG: Connection to {$this->dbname} closed."; // DEBUGGING
+			echo '<br>DEBUG: Connection to' . esc_html( $this->dbname ) . 'closed.'; // DEBUGGING
 		}
 
 		return $closed;
@@ -266,16 +267,12 @@ class HRS_MSDB {
 
 		// First free all resources for the specified statement(s).
 		if ( $statements ) {
-
 			foreach ( $statements as $statement ) {
 				sqlsrv_free_stmt( $statement );
-				echo "<br>DEBUG: Freed resources for {$statement} statement."; // DEBUGGING
+				echo '<br>DEBUG: Freed resources for' . esc_html( $statement ) . 'statement.'; // DEBUGGING
 			}
-
 		} else {
-
 			sqlsrv_free_stmt( $this->result );
-
 		}
 
 		// Then close the connection.
@@ -301,26 +298,25 @@ class HRS_MSDB {
 			return false;
 		}
 
- 	    // Display errors.
+		// Display errors.
 		if ( is_array( $str ) ) {
 			foreach ( $str as $err ) {
 				printf(
 					'<div id="error"><p class="wpdberror"><strong>%s</strong> [SQLSTATE %s]<br /><code>Code %s %s</code></p></div>',
-					__( 'WP HRS_MSDB error:' ),
-					htmlspecialchars( $err['SQLSTATE'], ENT_QUOTES ),
-					htmlspecialchars( $err['code'], ENT_QUOTES ),
-					htmlspecialchars( $err['message'], ENT_QUOTES )
+					esc_html__( 'WP HRS_MSDB error:' ),
+					esc_html( $err['SQLSTATE'] ),
+					esc_html( $err['code'] ),
+					esc_html( $err['message'] )
 				);
 			}
 		} else {
-			$str = htmlspecialchars( $str, ENT_QUOTES );
 			printf(
 				'<div id="error"><p class="wpdberror"><strong>%s</strong> <code>%s</code></p></div>',
-				__( 'WP HRS_MSDB error:' ),
-				$str
+				esc_html__( 'WP HRS_MSDB error:' ),
+				esc_html( $str )
 			);
 		}
 
- 	}
+	}
 
 }

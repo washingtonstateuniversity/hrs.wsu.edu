@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Add escaping functions and fix other PHPCS issues.
 - Include the new `template-tags.php` file in `functions.php`.
 - Include the new `HRS_MSDB` class file in `functions.php`.
 - Add the new `includes/` and `templates/` directories to the npm PHPCS script.
