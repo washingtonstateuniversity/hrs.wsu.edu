@@ -157,7 +157,7 @@ class HRS_MSDB {
 	 * @return string Escaped string.
 	 */
 	private function mssql_escape( $string ) {
-		$escaped = addslashes( $string ); // doesn't really protect against much
+		$escaped = str_replace( "'", "''", $string );
 
 		return $this->add_placeholder_escape( $escaped );
 	}
@@ -299,6 +299,8 @@ class HRS_MSDB {
 
 		array_walk( $args, array( $this, 'escape_by_ref' ) );
 		$query = @vsprintf( $query, $args );
+
+		var_dump($query);
 
 		return $this->add_placeholder_escape( $query );
 	}
