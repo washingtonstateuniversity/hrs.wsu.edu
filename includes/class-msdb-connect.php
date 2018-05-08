@@ -319,9 +319,13 @@ class HRS_MSDB {
 	 * @return int|bool Number of rows selected for select queries. Booleen
 	 *                  false on error.
 	 */
-	public function query( $query ) {
+	public function query( $query, $param = null ) {
 		// Run the query.
-		$this->do_query( $query );
+		if ( ! $param ) {
+			$this->do_query( $query );
+		} else {
+			$this->do_query( $query, $param );
+		}
 
 		// Catch errors.
 		if ( false === $this->result ) {
@@ -354,9 +358,13 @@ class HRS_MSDB {
 	 *
 	 * @param string $query The query to run.
 	 */
-	private function do_query( $query ) {
+	private function do_query( $query, $param = null ) {
 		if ( ! empty( $this->dbh ) ) {
-			$this->result = sqlsrv_query( $this->dbh, $query );
+			if ( ! $param ) {
+				$this->result = sqlsrv_query( $this->dbh, $query );
+			} else {
+				$this->result = sqlsrv_query( $this->dbh, $query, $param );
+			}
 		}
 	}
 
@@ -369,8 +377,10 @@ class HRS_MSDB {
 	 *
 	 * @since 0.11.0
 	 */
-	public function get_results( $query = null, $output = OBJECT ) {
-		if ( $query ) {
+	public function get_results( $query = null, $param = null, $output = OBJECT ) {
+		if ( $query && $param ) {
+			$this->query( $query, $param );
+		} elseif ( $query && ! $param ) {
 			$this->query( $query );
 		} else {
 			return null;

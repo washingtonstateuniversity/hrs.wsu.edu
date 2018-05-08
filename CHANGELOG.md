@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Modify `HRS_MSDB` query methods to allow SQL Server-style parameterized queries (@see http://php.net/manual/en/function.sqlsrv-query.php).
 - Add escaping functions and fix other PHPCS issues.
 - Include the new `template-tags.php` file in `functions.php`.
 - Include the new `HRS_MSDB` class file in `functions.php`.
