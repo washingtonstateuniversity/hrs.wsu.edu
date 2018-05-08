@@ -149,6 +149,161 @@ class HRS_MSDB {
 	}
 
 	/**
+	 * Real escape using ???
+	 *
+	 * @since 0.11.0
+	 *
+	 * @param string $string String to escape.
+	 * @return string Escaped string.
+	 */
+	private function mssql_escape( $string ) {
+		$escaped = addslashes( $string ); // doesn't really protect against much
+
+		return $this->add_placeholder_escape( $escaped );
+	}
+
+	/**
+	 * Escapes content by reference for insertion into the database.
+	 *
+	 * @since 0.11.0
+	 *
+	 * @param string $string String to escape.
+	 */
+	public function escape_by_ref( &$string ) {
+		if ( ! is_float( $string ) ) {
+			$string = $this->mssql_escape( $string );
+		}
+	}
+
+	/**
+	 * esCape
+	 */
+	public function placeholder_escape() {
+		static $placeholder;
+
+		if ( ! $placeholder ) {
+			// If ext/hash is not present, compat.php's hash_hmac() does not support sha256.
+			$algo = function_exists( 'hash' ) ? 'sha256' : 'sha1';
+			// Old WP installs may not have AUTH_SALT defined.
+			$salt = defined( 'AUTH_SALT' ) && AUTH_SALT ? AUTH_SALT : (string) rand();
+			$placeholder = '{' . hash_hmac( $algo, uniqid( $salt, true ), $salt ) . '}';
+		}
+
+		/*
+		 * Add the filter to remove the placeholder escaper. Uses priority 0, so that anything
+		 * else attached to this filter will recieve the query with the placeholder string removed.
+		 */
+		if ( ! has_filter( 'query', array( $this, 'remove_placeholder_escape' ) ) ) {
+			add_filter( 'query', array( $this, 'remove_placeholder_escape' ), 0 );
+		}
+
+		return $placeholder;
+	}
+
+	/**
+	 * escapee
+	 */
+	public function add_placeholder_escape( $query ) {
+		/*
+		 * To prevent returning anything that even vaguely resembles a placeholder,
+		 * we clobber every % we can find.
+		 */
+		return str_replace( '%', $this->placeholder_escape(), $query );
+	}
+
+	/**
+	 * unescapee
+	 *
+	 */
+	public function remove_placeholder_escape( $query ) {
+		return str_replace( $this->placeholder_escape(), '%', $query );
+	}
+
+	/**
+	 * Prepares a SQL Server query for safe execution.
+	 *
+	 * Essentially duplicates the $wpdb::prepare() method. Uses sprintf()-like
+	 * syntax and allows the following placeholders in the query string:
+	 *   %d (integer)
+	 *   %f (float)
+	 *   %s (string)
+	 *
+	 * @since 0.11.0
+	 *
+	 * @param string      $query Query statement with sprintf()-like placeholders.
+	 * @param array|mixed $args  The array of variables to substitute into the query's placeholders
+	 *                           if being called with an array of arguments, or the first variable
+	 *							 to substitute into the query's placeholders if being called with
+	 *							 individual arguments.
+	 * @return string|void Sanitized query string, or void if there is no query to prepare.
+	 */
+	public function prepare( $query, $args ) {
+		if ( is_null( $query ) ) {
+			return;
+		}
+
+		// This is not meant to be foolproof, but it will catch obviously incorrect usage.
+		if ( strpos( $query, '%' ) === false ) {
+			$this->print_error( 'The query argument of %s must have a placeholder.' );
+		}
+
+		$args = func_get_args();
+		array_shift( $args );
+
+		// If $args was passed as an array (as in vsprintf), move them up.
+		$passed_as_array = false;
+		if ( is_array( $args[0] ) && count( $args ) == 1 ) {
+			$passed_as_array = true;
+			$args            = $args[0];
+		}
+
+		foreach ( $args as $arg ) {
+			if ( ! is_scalar( $arg ) && ! is_null( $arg ) ) {
+				$this->print_error( sprintf(
+						'Unsupported value type (%s)',
+						gettype( $arg )
+					)
+				);
+			}
+		}
+
+		$allowed_format = '(?:[1-9][0-9]*[$])?[-+0-9]*(?: |0|\'.)?[-+0-9]*(?:\.[0-9]+)?';
+
+		$query = str_replace( "'%s'", '%s', $query ); // Strip any existing single quotes.
+		$query = str_replace( '"%s"', '%s', $query ); // Strip any existing double quotes.
+		$query = preg_replace( "/(?<!%)(%($allowed_format)?f)/", '%\\2F', $query ); // Force floats to be locale unaware.
+		$query = preg_replace( "/%(?:%|$|(?!($allowed_format)?[sdF]))/", '%%\\1', $query ); // Escape any unescaped percents.
+
+		$placeholders = preg_match_all( "/(^|[^%]|(%%)+)%($allowed_format)?[sdF]/", $query, $matches );
+
+		if ( count( $args ) !== $placeholders ) {
+			if ( 1 === $placeholders && $passed_as_array ) {
+				// If the passed query only expected one argument, but the wrong number of arguments were sent as an array, bail.
+				$this->print_error( 'The query only expected one placeholder, but an array of multiple placeholders was sent.' );
+				return;
+			} else {
+				/*
+				 * If we don't have the right number of placeholders, but they were passed as individual arguments,
+				 * or we were expecting multiple arguments in an array, throw a warning.
+				 */
+				$this->print_error(
+					/* translators: 1: number of placeholders, 2: number of arguments passed */
+					sprintf(
+						__( 'The query does not contain the correct number of placeholders (%1$d) for the number of arguments passed (%2$d).' ),
+						$placeholders,
+						count( $args )
+					)
+				);
+			}
+		}
+
+		array_walk( $args, array( $this, 'escape_by_ref' ) );
+		$query = @vsprintf( $query, $args );
+
+		return $this->add_placeholder_escape( $query );
+	}
+
+	/**
 	 * Perform a MS SQL Server database query, using current DB connection.
 	 *
 	 * For the time being only handles SELECT queries.

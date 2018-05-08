@@ -32,6 +32,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Functions to handle preparing SQL statements for SQL Server requests.
 - Template to handle presenting a list of awards from the Employee Recognition database.
 - Function in `template-tags.php` to print the lists of awards grouped by ER year.
 - Function in `template-tags.php` to print the results of a request to the ER DB awards table as lists of awards.

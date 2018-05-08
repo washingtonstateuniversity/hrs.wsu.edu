@@ -28,13 +28,14 @@ if ( ! function_exists( 'get_erdb_awards' ) ) :
 
 		$msdb = new HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
-		$awards = $msdb->get_results(
+		$awards = $msdb->get_results( $msdb->prepare(
 			'
 			SELECT BinaryFile as image, GroupDescription as description, GroupName as name, GroupYear as year
 			FROM V_AwardViewer
-			ORDER BY GroupYear
-			'
-		);
+			ORDER BY %s
+			',
+			array( 'GroupYear' )
+		) );
 
 		$msdb->clean();
 
