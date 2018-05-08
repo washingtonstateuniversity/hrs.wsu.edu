@@ -55,17 +55,16 @@ if ( ! function_exists( 'list_awards' ) ) :
 
 		$item = '';
 		foreach ( $awards as $award ) {
-
 			if ( ! $year ) {
 				$item .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
-					'data:image/jpg;base64, ' . base64_encode( $award->image ),
+					esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 					esc_html( wptexturize( $award->name ) ),
 					esc_html( wptexturize( $award->description ) )
 				);
 			} else {
 				if ( $year === $award->year ) {
 					$item .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
-						'data:image/jpg;base64, ' . base64_encode( $award->image ),
+						esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 						esc_html( wptexturize( $award->name ) ),
 						esc_html( wptexturize( $award->description ) )
 					);
@@ -73,7 +72,7 @@ if ( ! function_exists( 'list_awards' ) ) :
 			}
 		}
 
-		echo '<section class="articles-list">' . $item . '</section>';
+		echo '<section class="articles-list">' . $item . '</section>'; // WPCS: XSS ok.
 	}
 endif;
 
