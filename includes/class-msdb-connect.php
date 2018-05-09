@@ -142,7 +142,7 @@ class HRS_MSDB {
 			return false;
 		} elseif ( $this->dbh ) {
 			$this->has_connected = true;
-			echo '<p>DEBUG: Connection successful! :)</p>'; // DEBUGGING
+			echo '<!-- DEBUG: Connection successful! :) -->'; // DEBUGGING
 			return true;
 		}
 		return false;
@@ -330,7 +330,7 @@ class HRS_MSDB {
 		if ( false === $this->result ) {
 			$this->print_error();
 		} else {
-			echo '<p>DEBUG: Query request successful! :)</p>';
+			echo '<!-- DEBUG: Query request successful! :) -->'; // DEBUGGING
 		}
 
 		$num_rows = 0;
@@ -412,7 +412,7 @@ class HRS_MSDB {
 		if ( $closed ) {
 			$this->dbh           = null;
 			$this->has_connected = false;
-			echo '<br>DEBUG: Connection to' . esc_html( $this->dbname ) . 'closed.'; // DEBUGGING
+			echo '<!-- DEBUG: Connection to' . esc_html( $this->dbname ) . 'closed. -->'; // DEBUGGING
 		}
 
 		return $closed;
@@ -433,7 +433,7 @@ class HRS_MSDB {
 		if ( $statements ) {
 			foreach ( $statements as $statement ) {
 				sqlsrv_free_stmt( $statement );
-				echo '<br>DEBUG: Freed resources for' . esc_html( $statement ) . 'statement.'; // DEBUGGING
+				echo '<!-- DEBUG: Freed resources for' . esc_html( $statement ) . 'statement. -->'; // DEBUGGING
 			}
 		} else {
 			sqlsrv_free_stmt( $this->result );
