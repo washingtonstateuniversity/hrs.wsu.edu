@@ -43,28 +43,28 @@ if ( ! function_exists( 'get_erdb_awards' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'list_awards' ) ) :
+if ( ! function_exists( 'get_awards_list' ) ) :
 	/**
 	 * Document.
 	 *
 	 * @since 0.11.0
 	 */
-	function list_awards( $awards = '', $year = '' ) {
+	function get_awards_list( $awards = '', $year = '' ) {
 		if ( ! $awards ) {
 			$awards = get_erdb_awards();
 		}
 
-		$item = '';
+		$list = '';
 		foreach ( $awards as $award ) {
 			if ( ! $year ) {
-				$item .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
+				$list .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
 					esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 					esc_html( wptexturize( $award->name ) ),
 					esc_html( wptexturize( $award->description ) )
 				);
 			} else {
 				if ( $year === $award->year ) {
-					$item .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
+					$list .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
 						esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 						esc_html( wptexturize( $award->name ) ),
 						esc_html( wptexturize( $award->description ) )
@@ -73,7 +73,7 @@ if ( ! function_exists( 'list_awards' ) ) :
 			}
 		}
 
-		echo '<section class="articles-list">' . $item . '</section>'; // WPCS: XSS ok.
+		return $list;
 	}
 endif;
 
@@ -97,8 +97,10 @@ if ( ! function_exists( 'list_erdb_awards_by_year' ) ) :
 		foreach ( $group_years as $year ) {
 			$title = ( -1 === $year ) ? 'All' : $year;
 
-			echo '<h2>' . esc_attr( $title ) . ' Year Awards</h2>';
-			list_awards( $awards, $year );
+			printf( '<section class="articles-list"><h2>%s Year Awards</h2>%s</section>', // WPCS: XSS ok.
+				esc_attr( $title ),
+				get_awards_list( $awards, $year )
+			);
 		}
 	}
 endif;
