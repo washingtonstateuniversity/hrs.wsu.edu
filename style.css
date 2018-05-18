@@ -70,6 +70,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * 7.0 Breakpoints
  *
  * 8.0 Deprecated
+ *
+ * 9.0 Plugins
+ *     9.1 TablePress
  */
 /* Globals */
 /*
@@ -760,32 +763,32 @@ figure img {
 /**
  * 3.2 Data Tables
  */
-table,
-.tablepress {
+main table,
+main .tablepress {
   font-variant-numeric: lining-nums tabular-nums;
   margin-bottom: 1.5rem;
 }
 
-thead tr {
+main thead tr {
   border-bottom: 1px solid #839098;
 }
 
-td,
-th {
+main td,
+main th {
   padding: .5em .75em;
   text-align: left;
 }
 
-th.nums,
-td.nums {
+main th.nums,
+main td.nums {
   text-align: right;
 }
 
-th {
+main th {
   font-weight: 600;
 }
 
-.striped tbody tr:nth-child(odd) td {
+main .striped tbody tr:nth-child(odd) td {
   background: #eff0f1;
 }
 
@@ -796,11 +799,6 @@ th {
 .tablepress-manual-contacts td.column-3,
 .tablepress-hrs-contacts td.column-3 {
   white-space: nowrap;
-}
-
-.caldera-grid .hrs-caldera-table td,
-.caldera-grid .hrs-caldera-table th {
-  padding: 8px;
 }
 
 /* Labor relation table */
@@ -2588,4 +2586,30 @@ body.home section .column.tabbed h5 {
  */
 /**
  * 7.4 Massive
+ */
+/* Plugins */
+/**
+ * 9.0 Plugins
+ *
+ * Rules targeted to adjusting and overriding styles declared by plugins.
+ *
+ *     - 9.1 TablePress
+ *
+ * @since 0.11.0
+ */
+/**
+ * 9.1 TablePress
+ */
+.tablepress tfoot th,
+.tablepress thead th {
+  background-color: inherit;
+  vertical-align: inherit;
+}
+
+.tablepress thead th {
+  border-bottom: inherit;
+}
+
+/**
+ * 9.2 Caldera Forms
  */

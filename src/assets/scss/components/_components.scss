@@ -48,39 +48,42 @@
  * 3.2 Data Tables
  */
 
-table,
-.tablepress {
-	font-variant-numeric: lining-nums tabular-nums;
-	margin-bottom: 1.5rem;
-}
+main {
 
-thead tr {
-	border-bottom: 1px solid lighten($brand-gray, 15%);
-}
+	table,
+	.tablepress {
+		font-variant-numeric: lining-nums tabular-nums;
+		margin-bottom: 1.5rem;
+	}
 
-td,
-th {
-	padding: .5em .75em;
-	text-align: left;
-}
+	thead tr {
+		border-bottom: 1px solid lighten($brand-gray, 15%);
+	}
 
-th.nums,
-td.nums {
-	text-align: right;
-}
+	td,
+	th {
+		padding: .5em .75em;
+		text-align: left;
+	}
 
-th {
-	font-weight: 600;
-}
+	th.nums,
+	td.nums {
+		text-align: right;
+	}
 
-.striped {
+	th {
+		font-weight: 600;
+	}
 
-	tbody tr:nth-child(odd) td {
-		background: $neutral-light;
+	.striped {
+
+		tbody tr:nth-child(odd) td {
+			background: $neutral-light;
+		}
+
 	}
 
 }
-
 
 .tablepress-manual-contacts .column-1 {
 	width: 497px;
@@ -89,11 +92,6 @@ th {
 .tablepress-manual-contacts td.column-3,
 .tablepress-hrs-contacts td.column-3 {
 	white-space: nowrap;
-}
-
-.caldera-grid .hrs-caldera-table td,
-.caldera-grid .hrs-caldera-table th {
-	padding: 8px;
 }
 
 /* Labor relation table */

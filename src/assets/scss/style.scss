@@ -55,6 +55,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * 7.0 Breakpoints
  *
  * 8.0 Deprecated
+ *
+ * 9.0 Plugins
+ *     9.1 TablePress
  */
 
 /* Globals */
@@ -81,3 +84,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* Breakpoints */
 @import "breakpoints/breakpoints";
+
+/* Plugins */
+@import "plugins/plugins";
