@@ -48,6 +48,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Baseline data table styles.
 - Use nested grid and order to adjust the visual ordering of elements in `recent-articles` grids (logical ordering to promote the title; visual ordering moves the image back to the top).
 - Apply "Insider"-style links inside the `main` element, with adjustments for images and article titles.
 - Set base font color, weight, size, and family on `main` element.

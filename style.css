@@ -742,7 +742,8 @@ figure img {
   grid-gap: 1.5rem 2rem;
 }
 
-.recent-articles article {
+.recent-articles article,
+.recent-articles .card {
   display: grid;
 }
 
@@ -759,6 +760,35 @@ figure img {
 /**
  * 3.2 Data Tables
  */
+table,
+.tablepress {
+  font-variant-numeric: lining-nums tabular-nums;
+  margin-bottom: 1.5rem;
+}
+
+thead tr {
+  border-bottom: 1px solid #839098;
+}
+
+td,
+th {
+  padding: .5em .75em;
+  text-align: left;
+}
+
+th.nums,
+td.nums {
+  text-align: right;
+}
+
+th {
+  font-weight: 600;
+}
+
+.striped tbody tr:nth-child(odd) td {
+  background: #eff0f1;
+}
+
 .tablepress-manual-contacts .column-1 {
   width: 497px;
 }

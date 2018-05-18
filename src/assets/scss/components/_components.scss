@@ -48,6 +48,40 @@
  * 3.2 Data Tables
  */
 
+table,
+.tablepress {
+	font-variant-numeric: lining-nums tabular-nums;
+	margin-bottom: 1.5rem;
+}
+
+thead tr {
+	border-bottom: 1px solid lighten($brand-gray, 15%);
+}
+
+td,
+th {
+	padding: .5em .75em;
+	text-align: left;
+}
+
+th.nums,
+td.nums {
+	text-align: right;
+}
+
+th {
+	font-weight: 600;
+}
+
+.striped {
+
+	tbody tr:nth-child(odd) td {
+		background: $neutral-light;
+	}
+
+}
+
+
 .tablepress-manual-contacts .column-1 {
 	width: 497px;
 }
