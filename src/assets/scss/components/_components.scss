@@ -30,7 +30,8 @@
 	grid-auto-rows: minmax(4rem, auto);
 	grid-gap: 1.5rem 2rem;
 
-	article {
+	article,
+	.card {
 		display: grid;
 	}
 
