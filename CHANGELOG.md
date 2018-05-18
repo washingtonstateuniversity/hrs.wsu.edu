@@ -24,7 +24,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
-- Increase link rest-to-hover contrast.
 - Move mobile-only styles to "base" and larger-width adjustments into media queries as needed (essentially reverse the current setup).
 - Determine if we really need the `center-middle` utility class. If yes, look into using a grid with `Xvh` and `Xvh` column and row size to center instead.
 
