@@ -878,12 +878,17 @@ input[type="number"] {
 
 /*
  * 3.6 Modules
+ *
+ * @todo Adjust module styles and sizes when they are needed.
  */
-/* adjust all of the module sizes to match the vertical rhythm */
 .module, .action-module, .alert-module {
   border: 11px solid #981e32;
   margin: 1.5rem auto;
   padding: 1.5rem 2rem;
+}
+
+.module .module-title, .action-module .module-title, .alert-module .module-title {
+  color: #981e32;
 }
 
 .module-title {
@@ -892,10 +897,6 @@ input[type="number"] {
   /* whatever the standard h3 size is */
   margin: 0 0 .5em;
   padding: 0 0 .25em;
-}
-
-.module .module-title {
-  color: #981e32;
 }
 
 .action-module {

@@ -182,16 +182,20 @@ input[type="number"] {
 	}
 }
 
-
 /*
  * 3.6 Modules
+ *
+ * @todo Adjust module styles and sizes when they are needed.
  */
 
-/* adjust all of the module sizes to match the vertical rhythm */
-%module {
+.module {
 	border: 11px solid $brand-crimson;
 	margin: 1.5rem auto;
 	padding: 1.5rem 2rem;
+
+	.module-title {
+		color: $brand-crimson;
+	}
 }
 
 .module-title {
@@ -201,16 +205,8 @@ input[type="number"] {
 	padding: 0 0 .25em;
 }
 
-.module {
-	@extend %module;
-
-	.module-title {
-		color: $brand-crimson;
-	}
-}
-
 .action-module {
-	@extend %module;
+	@extend .module;
 	background-color: $accent-blue;
 	border-color: darken($accent-blue, 15%);
 	text-align: center;
@@ -223,7 +219,7 @@ input[type="number"] {
 }
 
 .alert-module {
-	@extend %module;
+	@extend .module;
 	border-color: $brand-crimson;
 	min-width: 300px;
 	text-align: center;
