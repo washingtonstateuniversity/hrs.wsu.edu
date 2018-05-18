@@ -692,10 +692,6 @@ main .button-flat:active {
 /**
  * 2.3 Images
  */
-figure img {
-  max-width: 100%;
-}
-
 .section-wrapper-has-background {
   min-height: 600px !important;
   background-attachment: fixed;
@@ -793,8 +789,19 @@ main .striped tbody tr:nth-child(odd) td {
 }
 
 /**
- * Figures
+ * 3.4 Figures
  */
+figure img {
+  max-width: 100%;
+}
+
+figcaption {
+  font-size: .85em;
+  letter-spacing: .02em;
+  line-height: normal;
+  padding: 0 .2em .75em;
+}
+
 /**
  * 3.4 Forms
  */

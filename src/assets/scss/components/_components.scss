@@ -85,14 +85,24 @@ main {
 
 }
 
-
 /**
- * Figures
+ * 3.4 Figures
  */
 
 figure {
+
+	img {
+		max-width: 100%;
+	}
+
 }
 
+figcaption {
+	font-size: .85em;
+	letter-spacing: .02em;
+	line-height: normal;
+	padding: 0 .2em .75em;
+}
 
 /**
  * 3.4 Forms
