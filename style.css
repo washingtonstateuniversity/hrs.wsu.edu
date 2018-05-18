@@ -2613,3 +2613,7 @@ body.home section .column.tabbed h5 {
 /**
  * 9.2 Caldera Forms
  */
+.caldera-grid td,
+.caldera-grid th {
+  padding: .5em .75em;
+}
