@@ -494,6 +494,83 @@ a.button:hover {
   background-color: #eff0f1;
 }
 
+/* HRS Banner Callouts */
+.hrs-callout-banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  margin: 1.4rem 0;
+  text-align: center;
+}
+
+.hrs-banner-careers {
+  background-image: url(http://hrsdev.hrs.wsu.edu/wp-content/uploads/2016/02/large-1024x347.jpg);
+}
+
+.hrs-banner-careers header h2 {
+  color: #fff;
+  width: 100%;
+}
+
+.hrs-callout-gallery {
+  margin: 1.4rem auto;
+  position: relative;
+}
+
+.hrs-callout-gallery h3 {
+  font-size: 1.1rem;
+  left: 50%;
+  margin-right: -50%;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
+.hrs-callout-gallery h3 a.hrs-button {
+  font-weight: 400;
+  line-height: 1.4;
+  padding: .3rem .7rem;
+  text-transform: none;
+  width: 100%;
+}
+
+.hrs-callout-gallery h3 a.hrs-button-priority {
+  background: rgba(152, 30, 50, 0.8);
+}
+
+.hrs-callout-gallery h3 a.hrs-button-priority:hover,
+.hrs-callout-gallery h3 a.hrs-button-priority:focus {
+  background-color: #fff;
+  color: #981e32;
+}
+
+.hrs-callout-gallery div.gallery-columns-3 {
+  max-width: 600px;
+}
+
+.hrs-callout-gallery div.gallery-columns-3 .gallery-item {
+  max-width: 33%;
+  margin: 0 0 -.5em 0;
+  position: relative;
+}
+
+.hrs-callout-gallery .gallery img, .hrs-callout-gallery .hrs-gallery img {
+  border: none;
+}
+
+.hrs-callout-gallery .gallery .gallery-caption, .hrs-callout-gallery .hrs-gallery .gallery-caption {
+  color: #fff;
+  left: 50%;
+  margin-right: -50%;
+  margin-left: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+
 /**
  * Deprecated Gallery Style
  *
@@ -951,20 +1028,18 @@ input[type="number"] {
 
 /**
  * 3.7 Notifications
+ *
+ * @todo Replace .hrs-callout classes with .notification classes.
  */
-/* @todo Replace .hrs-callout classes with .notification classes */
 .notification, .positive-notification, .caution-notification, .warning-notification {
+  border: 5px solid #5e6a71;
+  border-left: 21px solid #5e6a71;
   margin: 1.5em auto;
   padding: 1em 1.5em;
 }
 
 .notification p, .positive-notification p, .caution-notification p, .warning-notification p {
   padding: 0;
-}
-
-.notification {
-  border: 5px solid #5e6a71;
-  border-left: 21px solid #5e6a71;
 }
 
 .positive-notification {
@@ -980,83 +1055,6 @@ input[type="number"] {
 .warning-notification {
   border: 5px solid #f6861f;
   border-left: 21px solid #f6861f;
-}
-
-/* HRS Banner Callouts */
-.hrs-callout-banner {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
-  margin: 1.4rem 0;
-  text-align: center;
-}
-
-.hrs-banner-careers {
-  background-image: url(http://hrsdev.hrs.wsu.edu/wp-content/uploads/2016/02/large-1024x347.jpg);
-}
-
-.hrs-banner-careers header h2 {
-  color: #fff;
-  width: 100%;
-}
-
-.hrs-callout-gallery {
-  margin: 1.4rem auto;
-  position: relative;
-}
-
-.hrs-callout-gallery h3 {
-  font-size: 1.1rem;
-  left: 50%;
-  margin-right: -50%;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-  z-index: 99;
-}
-
-.hrs-callout-gallery h3 a.hrs-button {
-  font-weight: 400;
-  line-height: 1.4;
-  padding: .3rem .7rem;
-  text-transform: none;
-  width: 100%;
-}
-
-.hrs-callout-gallery h3 a.hrs-button-priority {
-  background: rgba(152, 30, 50, 0.8);
-}
-
-.hrs-callout-gallery h3 a.hrs-button-priority:hover,
-.hrs-callout-gallery h3 a.hrs-button-priority:focus {
-  background-color: #fff;
-  color: #981e32;
-}
-
-.hrs-callout-gallery div.gallery-columns-3 {
-  max-width: 600px;
-}
-
-.hrs-callout-gallery div.gallery-columns-3 .gallery-item {
-  max-width: 33%;
-  margin: 0 0 -.5em 0;
-  position: relative;
-}
-
-.hrs-callout-gallery .gallery img, .hrs-callout-gallery .hrs-gallery img {
-  border: none;
-}
-
-.hrs-callout-gallery .gallery .gallery-caption, .hrs-callout-gallery .hrs-gallery .gallery-caption {
-  color: #fff;
-  left: 50%;
-  margin-right: -50%;
-  margin-left: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
 }
 
 /**

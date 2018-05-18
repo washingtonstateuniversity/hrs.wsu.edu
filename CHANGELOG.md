@@ -65,6 +65,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Deprecated
 
+- Old callout styles.
 - Former `.hrs-gallery` element style class(es) to prefer the standard `.gallery` class.
 - Builder Banner styles.
 - Former `.hrs-button` button style classes (now style the same as default buttons).
