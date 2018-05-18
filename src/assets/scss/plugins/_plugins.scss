@@ -26,6 +26,38 @@
 
 }
 
+.tablepress-manual-contacts .column-1 {
+	width: 497px;
+}
+
+.tablepress-manual-contacts td.column-3,
+.tablepress-hrs-contacts td.column-3 {
+	white-space: nowrap;
+}
+
+/* Labor relation table */
+.tablepress-id-31 .column-1 {
+	width: 450px !important;
+}
+
+.tablepress-id-7 .column-1 {
+	width: 500px !important;
+}
+
+.tablepress-id-31 .column-2,
+.tablepress-id-7 .column-2 {
+	width: 150px !important;
+}
+
+.tablepress-id-31 .column-3,
+.tablepress-id-7 .column-3 {
+	width: 100px !important;
+}
+
+.tablepress.hrs-4-of-5 td.column-1 {
+	width: 30%;
+}
+
 /**
  * 9.2 Caldera Forms
  */
