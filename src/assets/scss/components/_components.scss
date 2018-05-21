@@ -335,16 +335,16 @@ input[type="number"] {
 	text-align: right;
 }
 
-
 /**
  * 3.9 Row Lists
  *
  * @todo Adjust these styles to be more agnostic of markup?
  */
 
-%row-list {
+.articles-list {
 
-	article {
+	article,
+	.list-item {
 		display: flex;
 		align-items: center;
 		margin: 0 0 1.5rem;
@@ -357,7 +357,7 @@ input[type="number"] {
 		margin-right: 1rem;
 	}
 
-	.row-item-content {
+	.list-content {
 		flex: 1 1 auto;
 	}
 
@@ -380,10 +380,6 @@ input[type="number"] {
 		line-height: 1.2;
 	}
 
-}
-
-.articles-list {
-	@extend %row-list;
 }
 
 /**
