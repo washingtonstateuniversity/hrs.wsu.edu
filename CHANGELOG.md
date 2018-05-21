@@ -29,6 +29,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Match pagination style selectors to Spine markup.
 - Reverse primary and secondary button styles to make light version standard and dark version into a call-to-action variant.
 - Clean up button styles following link style updates.
 - Update `.socialicons` styles.

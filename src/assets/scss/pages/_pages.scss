@@ -284,45 +284,6 @@ body.home section .column.tabbed h5 {
 	padding: 0 0 0 1em;
 }
 
-.post-type-archive-hrs_news .nav-links {
-	text-align: center;
-}
-
-.single-hrs_news .nav-links a,
-.post-type-archive-hrs_news .nav-links .page-numbers {
-	margin: 0 .25em;
-	padding: .75em 1em;
-}
-
-.post-type-archive-hrs_news .nav-links .current {
-	background: #eff0f1;
-	border: 1px solid #464e54;
-}
-
-.single-hrs_news .nav-links a,
-.post-type-archive-hrs_news .nav-links a {
-	transition: color .3s ease-out, background-color .3s ease-out;
-}
-
-.single-hrs_news .nav-links a:hover,
-.post-type-archive-hrs_news .nav-links a:hover,
-.post-type-archive-hrs_news .nav-links a:focus {
-	background: #981e32;
-	border: 1px solid transparent;
-	color: #fff;
-}
-
-.single-hrs_news .nav-previous,
-.single-hrs_news .nav-next {
-	display: inline-block;
-	width: 50%;
-}
-
-.single-hrs_news .nav-next {
-	float: right;
-	text-align: right;
-}
-
 .post-type-archive-hrs_news article footer,
 .single-hrs_news article footer {
 	border-top: none;

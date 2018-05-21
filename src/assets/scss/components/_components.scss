@@ -298,31 +298,30 @@ input[type="number"] {
  * 3.8 Pagination
  */
 
-.nav-links {
+.nav-links,
+.pager {
+	margin: 1.5rem 0;
 	text-align: center;
-}
 
-.nav-links a,
-.nav-links .page-numbers {
-	margin: 0 .25em;
-	padding: .75em 1em;
-}
+	a,
+	.page-numbers {
+		border: 1px solid transparent;
+		margin: 0 .25em;
+		padding: .75em 1em;
 
-.nav-links .current {
-	background: #eff0f1;
-	border: 1px solid #464e54;
-}
+		&:hover,
+		&:focus {
+			background: #981e32;
+			color: #fff;
+		}
 
-.nav-links a,
-.page-numbers a {
-	transition: color .3s ease-out, background-color .3s ease-out;
-}
+	}
 
-.nav-links a:hover,
-.page-numbers a:hover {
-	background: #981e32;
-	border: 1px solid transparent;
-	color: #fff;
+	.current {
+		background: #eff0f1;
+		border: 1px solid #464e54;
+	}
+
 }
 
 .nav-previous,
