@@ -387,12 +387,11 @@ input[type="number"] {
  */
 
 body.home .parent-stretch .single.row .column header,
-.header-search-wrapper .search-label,
-.si-dropdown,
-.header-search-wrapper-hide {
+.si-dropdown {
 	display: none;
 }
 
+/*
 .menu-quick-links-search-container li {
 	float: left !important;
 	width: 50% !important;
@@ -493,11 +492,10 @@ body.home .parent-stretch .single.row .column header,
 	margin-top: 50px;
 	margin-right: 100px;
 	padding: 25px;
-	padding-top: 4px; /* Fixes Firefox input text cut off */
-	padding-bottom: 4px; /* Fixes Firefox input text cut off */
+	padding-top: 4px; /* Fixes Firefox input text cut off
+	padding-bottom: 4px; /* Fixes Firefox input text cut off
 }
 
-/* Closing "X" */
 .close-header-drawer,
 .close-header-search {
 	text-align: right;
@@ -513,4 +511,23 @@ body.home .parent-stretch .single.row .column header,
 .close-header-drawer:hover,
 .close-header-search:hover {
 	color: #c60c30;
+}
+*/
+
+.search-menu {
+	background: $neutral-light;
+	box-shadow: 2px 3px 5px 1px rgba(20, 20, 20, .2);
+	position: absolute;
+	transform: translateY(-100vw);
+	transition-delay: .1s;
+	transition-duration: .3s;
+	transition-property: transform, top;
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	z-index: 999;
+
+	&.is-visible {
+		top: 87px;
+		transform: translateY(0);
+		z-index: 999;
+	}
 }
