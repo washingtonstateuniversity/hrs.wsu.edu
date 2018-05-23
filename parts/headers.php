@@ -18,21 +18,27 @@ $hrs_common_search_args = array(
 			<div class="column one">
 				<header>
 					<div id="hr-header"><a href="http://hrs.wsu.edu">Human Resource Services</a></div>
-					<form class="search-form" method="get" action="https://search.wsu.edu/Default.aspx" aria-expanded="false" aria-controls="search-menu">
-						<input name="cx" value="002970099942160159670:yqxxz06m1b0" type="hidden">
-						<input name="cof" value="FORID:11" type="hidden">
-						<input name="sa" value="Search" type="hidden">
-						<label class="screen-reader-text" for="s"><?php _e( 'Search', 'hrs-wsu-edu' ); ?></label>
-						<input class="header-search-input" id="s" type="search" name="q" placeholder="<?php _e( 'Search', 'hrs-wsu-edu' ); ?>" spellcheck="true" autocomplete="false" value="" />
-					</form>
-					<div class="search-menu" id="search-menu">
-						<span class="close-header-search close-search-menu">x</span>
-						<span class="search-a-z"><a href="http://index.wsu.edu/">WSU A-Z Index</a></span>
-						<div class="column one common-searches">
+
+					<div class="search">
+						<button class="search-toggle" aria-expanded="false" aria-controls="search-menu">Search</button>
+						<div id="search-menu" class="expandable">
+							<form class="search-form" method="get" action="https://search.wsu.edu/Default.aspx">
+								<input name="cx" value="002970099942160159670:yqxxz06m1b0" type="hidden">
+								<input name="cof" value="FORID:11" type="hidden">
+								<input name="sa" value="Search" type="hidden">
+								<label class="screen-reader-text" for="s"><?php _e( 'Search', 'hrs-wsu-edu' ); ?></label>
+								<input class="header-search-input" id="s" type="search" name="q" placeholder="<?php _e( 'Search', 'hrs-wsu-edu' ); ?>" spellcheck="true" autocomplete="false" value="" />
+							</form>
+
+							<span class="search-a-z"><a href="http://index.wsu.edu/">WSU A-Z Index</a></span>
+
 							<span class="quick-links-label">Common Searches</span>
 							<?php wp_nav_menu( $hrs_common_search_args ); ?>
+							<button class="button-flat close-search-menu">x</button>
+
 						</div>
 					</div>
+
 				</header>
 			</div>
 		</section>
