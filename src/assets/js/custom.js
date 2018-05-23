@@ -30,9 +30,7 @@
 	}
 
 	searchToggle.addEventListener( 'click', toggleSearchMenu, false );
-	searchCloser.addEventListener( 'click', toggleSearchMenu, false );
-	searchCloser.addEventListener( 'blur', toggleSearchMenu, false );
-
+	searchCloser.addEventListener( 'click', hideSearchMenu, false );
 	document.addEventListener( 'click', maybeHideSearchMenu, false );
 
 	document.addEventListener( 'keyup', function( e ) {
