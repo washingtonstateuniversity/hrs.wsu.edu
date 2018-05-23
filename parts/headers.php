@@ -2,11 +2,7 @@
 $hrs_common_search_args = array(
 	'theme_location'  => 'hrs-common-search',
 	'menu'            => 'hrs-common-search',
-	'container'       => 'div',
-	'container_class' => false,
-	'container_id'    => 'hrs-common-search',
-	'menu_class'      => null,
-	'menu_id'         => null,
+	'container'       => 'nav',
 	'items_wrap'      => '<ul>%3$s</ul>',
 	'depth'           => 2,
 );
@@ -27,14 +23,14 @@ $hrs_common_search_args = array(
 								<input name="cof" value="FORID:11" type="hidden">
 								<input name="sa" value="Search" type="hidden">
 								<label class="screen-reader-text" for="s"><?php _e( 'Search', 'hrs-wsu-edu' ); ?></label>
-								<input class="header-search-input" id="s" type="search" name="q" placeholder="<?php _e( 'Search', 'hrs-wsu-edu' ); ?>" spellcheck="true" autocomplete="false" value="" />
+								<input class="search-input" id="s" type="search" name="q" placeholder="<?php _e( 'Search', 'hrs-wsu-edu' ); ?>" spellcheck="true" autocomplete="false" value="" />
 							</form>
+							<div class="search-links">
+								<span class="search-links-title">Common Searches</span>
+								<?php wp_nav_menu( $hrs_common_search_args ); ?>
+							</div>
 
-							<span class="search-a-z"><a href="http://index.wsu.edu/">WSU A-Z Index</a></span>
-
-							<span class="quick-links-label">Common Searches</span>
-							<?php wp_nav_menu( $hrs_common_search_args ); ?>
-							<button class="button-flat close-search-menu">x</button>
+							<button class="screen-reader-text close-search-menu">Close menu</button>
 
 						</div>
 					</div>
