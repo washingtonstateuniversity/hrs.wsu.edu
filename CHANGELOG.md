@@ -24,11 +24,15 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
+- Get Babel processing working.
+- Style the search form and menu.
+- Set up no-js handling for the search form and menu.
 - Move mobile-only styles to "base" and larger-width adjustments into media queries as needed (essentially reverse the current setup).
 - Determine if we really need the `center-middle` utility class. If yes, look into using a grid with `Xvh` and `Xvh` column and row size to center instead.
 
 ### Changed
 
+- Convert theme JS from jQuery to ES6 and refactor search menu toggle controls.
 - Refactor header search menu markup to be more accessible.
 - Match pagination style selectors to Spine markup.
 - Reverse primary and secondary button styles to make light version standard and dark version into a call-to-action variant.
