@@ -626,6 +626,87 @@ a.button:hover {
 
 }
 */
+/**
+ * 4.2 Columns
+ *
+
+.nested-halves {
+	width: 100%;
+	display: inline-block;
+	text-align: top;
+	clear: both;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.nested-halves .nested-one {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-right: 1%;
+}
+
+.nested-halves .nested-two {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-left: 1%;
+}
+
+.nested-thirds {
+	width: 100%;
+	display: inline-block;
+	clear: both;
+}
+
+.nested-thirds .nested-one {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-two {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-three {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+}
+
+.nested-gutter {
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.nested-one,
+.nested-two,
+.nested-three {
+
+	h5 {
+		background: #981e32;
+
+		a {
+			color: #fff;
+
+			&:hover,
+			&:focus {
+				color: #b5babe;
+			}
+		}
+	}
+
+	ul {
+		background-color: #fff;
+		border-radius: 5px;
+	}
+}
+*/
 /* Elements */
 /**
  * 2.0 Elements
@@ -1233,153 +1314,13 @@ input[type="number"] {
  *
  * Rules defining different layout patterns for use anywhere on the site.
  *
- *     - 4.1 Cards
- *     - 4.2 Columns
- *     - 4.3 Grids
- *     - 4.4 Tabs
+ *     - 4.1 Grids
  *
  * @since 0.9.0
  */
 /**
- * 4.1 Cards
+ * 4.1 Grids
  */
-/**
- * 4.2 Columns
- */
-.nested-halves {
-  width: 100%;
-  display: inline-block;
-  text-align: top;
-  clear: both;
-  padding-top: 0;
-  margin-top: 0;
-}
-
-.nested-halves .nested-one {
-  display: block;
-  width: 49%;
-  float: left;
-  padding-right: 1%;
-}
-
-.nested-halves .nested-two {
-  display: block;
-  width: 49%;
-  float: left;
-  padding-left: 1%;
-}
-
-.nested-thirds {
-  width: 100%;
-  display: inline-block;
-  clear: both;
-}
-
-.nested-thirds .nested-one {
-  display: block;
-  width: 33.33333333333333%;
-  float: left;
-  padding-right: 4%;
-}
-
-.nested-thirds .nested-two {
-  display: block;
-  width: 33.33333333333333%;
-  float: left;
-  padding-right: 4%;
-}
-
-.nested-thirds .nested-three {
-  display: block;
-  width: 33.33333333333333%;
-  float: left;
-}
-
-.nested-gutter {
-  padding-left: 1%;
-  padding-right: 1%;
-}
-
-.nested-one h5,
-.nested-two h5,
-.nested-three h5 {
-  background: #981e32;
-}
-
-.nested-one h5 a,
-.nested-two h5 a,
-.nested-three h5 a {
-  color: #fff;
-}
-
-.nested-one h5 a:hover, .nested-one h5 a:focus,
-.nested-two h5 a:hover,
-.nested-two h5 a:focus,
-.nested-three h5 a:hover,
-.nested-three h5 a:focus {
-  color: #b5babe;
-}
-
-.nested-one ul,
-.nested-two ul,
-.nested-three ul {
-  background-color: #fff;
-  border-radius: 5px;
-}
-
-/**
- * 4.3 Grids
- */
-/**
- * 4.4 Tabs
- */
-.tabbed ul.tabbed-tabs {
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0;
-}
-
-.tabbed ul li.tabbed-tab {
-  -ms-flex: 1;
-      flex: 1;
-  text-align: center;
-  display: block;
-  padding: 21px;
-  margin-top: 0;
-  font-size: 20px;
-  font-weight: 400;
-  text-transform: uppercase;
-  cursor: pointer;
-  position: relative;
-  background-color: #f0f0f0;
-  outline: 0;
-}
-
-.tabbed ul li.tabbed-tab {
-  display: none;
-}
-
-.tabbed ul li.tabbed-tab a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  outline: 0;
-  color: #363636;
-}
-
-.tabbed ul li.tabbed-tab a:hover {
-  color: #981e32;
-}
-
-.tabbed ul li.tabbed-tab.ui-tabs-active {
-  background: #fff;
-}
-
-.tabbed .ui-tabs-panel {
-  background: url(https://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/gray-tile.jpg) !important;
-  padding: 3% 8%;
-}
-
 /* Templates */
 /**
  * 5.0 Templates
