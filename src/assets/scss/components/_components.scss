@@ -386,148 +386,73 @@ input[type="number"] {
  * 3.10 Search
  */
 
-body.home .parent-stretch .single.row .column header,
-.si-dropdown {
-	display: none;
-}
-
-/*
-.menu-quick-links-search-container li {
-	float: left !important;
-	width: 50% !important;
-}
-
-.header-search-wrapper {
-	background-color: #dbdbdb !important;
-	max-width: 1188px;
-}
-
-.home .header-search-wrapper {
-	max-width: 100vw;
-}
-
-.header-search-wrapper section.single.row {
-	padding-left: 78px;
-	margin-left: 0;
-}
-
-.header-search-a-z-wrapper {
-	clear: both;
-	float: right;
-	padding-top: 10px;
-	padding-right: 100px;
-}
-
-.header-search-wrapper .quick-links-label {
-	font-size: 1.4rem;
-	padding-top: 1.2em;
-	padding-bottom: .8em;
-}
-
-.header-search-wrapper .radio-rapper {
-	display: none;
-}
-
-.header-search-wrapper .radio-rapper:last-of-type {
-	margin-left: 23px;
-}
-
-.header-search-wrapper .radio-rapper label {
-	font-weight: 300;
-	font-size: 1.4em;
-	font-family: "Open Sans", sans-serif;
-	color: #363636;
-	vertical-align: middle;
-	margin-right: 1em;
-}
-
-.header-search-wrapper .radio-rapper label:last-of-type {
-	margin-right: 0;
-}
-
-.header-search-wrapper .common-searches ul,
-.header-search-wrapper .common-searches ul li {
-	list-style: none;
-	font-weight: 400;
-	margin-left: 0;
-	padding-left: 0;
-}
-
-.header-search-wrapper .common-searches ul {
-	column-count: 2;
-}
-
-#hrs-common-search li {
-	padding-bottom: .5em;
-}
-
-.common-searches ul li:first-child {
-	padding-top: 0;
-}
-
-.header-search-wrapper input[type="text"],
-.header-search-wrapper input[type="password"],
-.header-search-wrapper input[type="email"],
-.header-search-wrapper select,
-.header-search-wrapper textarea {
-	background: #fff;
-}
-
-.header-search-input-wrapper input.radio {
-	display: inline-block;
-	vertical-align: middle;
-	cursor: pointer;
-}
-
-.header-search-input-wrapper input.header-search-input {
-	border-radius: 0;
-	float: right;
-	font-family: "Open Sans", sans-serif;
-	font-size: 1.75em;
-	font-weight: 300;
-	height: 50px;
-	max-width: 60%;
-	min-width: 50%;
-	margin-left: 100px;
-	margin-top: 50px;
-	margin-right: 100px;
-	padding: 25px;
-	padding-top: 4px; /* Fixes Firefox input text cut off
-	padding-bottom: 4px; /* Fixes Firefox input text cut off
-}
-
-.close-header-drawer,
-.close-header-search {
-	text-align: right;
-	padding-right: 1em;
-	padding-bottom: 1em;
-	color: #981e32;
-	font-size: 2rem;
-	font-weight: 300;
-	cursor: pointer;
-	transition: color .3s ease;
-}
-
-.close-header-drawer:hover,
-.close-header-search:hover {
-	color: #c60c30;
-}
-*/
-
-.search-menu {
+#search-menu {
 	background: $neutral-light;
-	box-shadow: 2px 3px 5px 1px rgba(20, 20, 20, .2);
+	box-shadow: 2px 3px 5px 1px rgba(20, 20, 20, .12);
+	display: flex;
+	flex-flow: row wrap;
+	padding: 5.5rem 2rem 1.5rem;
 	position: absolute;
-	transform: translateY(-100vw);
+	top: 4.8rem;
+	transform: translateY(-100rem);
 	transition-delay: .1s;
 	transition-duration: .3s;
-	transition-property: transform, top;
+	transition-property: transform top;
 	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-	z-index: 999;
+	width: 100%;
+	z-index: 4;
 
 	&.is-visible {
-		top: 87px;
-		transform: translateY(0);
-		z-index: 999;
+		transform: translateY(-4.8rem);
 	}
+
+}
+
+.search-toggle[aria-expanded="true"] {
+	background: $neutral-dark;
+	border-color: $neutral-dark;
+	color: $neutral-light;
+}
+
+.search-form {
+	flex: 1 1 auto;
+}
+
+.search-input[type="search"] {
+	font-size: 1.75em;
+	width: 90%;
+}
+
+.search-links-title {
+	font-size: 2rem;
+	padding-top: .5rem;
+	padding-bottom: 1rem;
+}
+
+.search-links ul {
+	column-count: 2;
+	margin: 0 0 1rem;
+	padding: 0;
+
+	li {
+		line-height: 1.5;
+	}
+
+}
+
+.search-links {
+
+	a:after {
+		background: url(/wp-content/themes/hrs.wsu.edu/assets/images/icons/link.svg) no-repeat;
+		background-position: .1em;
+		background-size: 80%;
+		content: "";
+		display: inline-block;
+		fill: $neutral-dark;
+		height: 1em;
+		margin: .2em 0 -.05em .1em;
+		position: absolute;
+		width: 1em;
+	}
+
 }

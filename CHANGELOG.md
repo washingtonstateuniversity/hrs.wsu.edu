@@ -32,8 +32,9 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Restyle expandable search menu for a cleaner display and slide effect.
 - Convert theme JS from jQuery to ES6 and refactor search menu toggle controls.
-- Refactor header search menu markup to be more accessible.
+- Refactor header search menu markup to be more accessible and leaner.
 - Match pagination style selectors to Spine markup.
 - Reverse primary and secondary button styles to make light version standard and dark version into a call-to-action variant.
 - Clean up button styles following link style updates.
@@ -53,6 +54,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Icons image directory with a "link" SVG image.
 - Separate scss file `_plugins` for styles targeted to adjusting and overriding styles loaded by plugins such as TablePress.
 - Baseline data table styles.
 - Use nested grid and order to adjust the visual ordering of elements in `recent-articles` grids (logical ordering to promote the title; visual ordering moves the image back to the top).

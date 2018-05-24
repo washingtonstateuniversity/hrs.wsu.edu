@@ -18,8 +18,27 @@
  * 5.1 Header
  */
 
+.banner {
+
+	.column {
+		align-items: center;
+		border-top: 6px solid $brand-crimson;
+		display: flex;
+		justify-content: flex-end;
+		padding: 0 2rem;
+		z-index: 60;
+	}
+}
+
+.site-title {
+	border: none;
+	color: $brand-crimson;
+	font-size: 3rem;
+	margin: 1.5rem 2rem;
+}
+
+/*
 .parent-stretch {
-	background: #444;
 	border-top: 5px solid #981e32;
 }
 
@@ -46,7 +65,9 @@
 		color: #c60c30;
 	}
 }
+*/
 
+/*
 .parent-stretch .search-label {
 	color: #eff0f1;
 	display: inline-block;
@@ -72,6 +93,7 @@
 	color: #c60c30;
 	cursor: pointer;
 }
+*/
 
 /**
  * 5.2 Footer
