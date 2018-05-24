@@ -487,3 +487,85 @@ button.hrs-button-white {
 
 }
 */
+
+/**
+ * 4.2 Columns
+ *
+
+.nested-halves {
+	width: 100%;
+	display: inline-block;
+	text-align: top;
+	clear: both;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.nested-halves .nested-one {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-right: 1%;
+}
+
+.nested-halves .nested-two {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-left: 1%;
+}
+
+.nested-thirds {
+	width: 100%;
+	display: inline-block;
+	clear: both;
+}
+
+.nested-thirds .nested-one {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-two {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-three {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+}
+
+.nested-gutter {
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.nested-one,
+.nested-two,
+.nested-three {
+
+	h5 {
+		background: #981e32;
+
+		a {
+			color: #fff;
+
+			&:hover,
+			&:focus {
+				color: #b5babe;
+			}
+		}
+	}
+
+	ul {
+		background-color: #fff;
+		border-radius: 5px;
+	}
+}
+*/

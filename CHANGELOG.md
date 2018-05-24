@@ -65,6 +65,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Removed
 
+- Old tabbed content styles.
 - Don't use a mixin for buttons. Redundant.
 - Do not override padding styles of the main parent theme (yet).
 - Do not need to set all elements to `border-box` since Spine parents already sets relevant elements.
@@ -72,6 +73,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Deprecated
 
+- Old column layout using the `nested*` classes.
 - Old callout styles.
 - Former `.hrs-gallery` element style class(es) to prefer the standard `.gallery` class.
 - Builder Banner styles.
