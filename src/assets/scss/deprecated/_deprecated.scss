@@ -249,73 +249,63 @@ button.hrs-button-white {
  */
 
 /* Builder: Banner */
-.builder-section-banner .cycle-prev,
-.builder-section-banner .cycle-next {
-	top: 90%;
-}
+.builder-section-banner {
 
-/* Centered layout ("content position: none") */
-.content-position-none .builder-banner-content {
-	text-align: center;
-	width: 100%;
-}
+	/* All banners */
+	.builder-banner-content {
+		bottom: 0;
+		font-size: 1.3rem;
+		height: auto;
+		min-height: 60%;
+		padding: 0;
+		width: 100%;
+	}
 
-/* Left-aligned layout (content-position: left) */
-.builder-banner-slide.content-position-left {
-	background-position: center right;
-}
+	.builder-banner-content:after {
+		display: none;
+	}
 
-.builder-banner-slide.content-position-right {
-	background-position: center left;
-}
+	.builder-banner-inner-title {
+		background-color: #fff;
+		background-color: rgba(255, 255, 255, .9);
+		color: $brand-crimson;
+		font-weight: 600;
+		padding: 1rem;
+		width: 100%;
+	}
 
-.builder-section-banner .content-position-left .builder-banner-content,
-.builder-section-banner .content-position-right .builder-banner-content {
-	font-size: 1.3rem;
-	padding: 0;
-	bottom: 0;
-	height: auto;
-	min-height: 60%;
-	width: 100%;
-}
+	.builder-banner-inner-content {
 
-.builder-section-banner .content-position-left .builder-banner-content:after,
-.builder-section-banner .content-position-right .builder-banner-content:after {
-	display: none;
-}
+		p {
+			background-color: #fff;
+			background-color: rgba(255, 255, 255, .9);
+			color: $text-color;
+			margin: 0 auto;
+			width: 100%;
+			font-size: .7em;
+			line-height: 1.5;
+			padding: 0 1rem 1rem;
+		}
 
-.builder-section-banner .content-position-left .builder-banner-inner-title,
-.builder-section-banner .content-position-right .builder-banner-inner-title {
-	color: #981e32;
-	background-color: #fff;
-	background-color: rgba(255, 255, 255, .9);
-	font-weight: 600;
-	width: 100%;
-	padding: 1rem;
-}
+	}
 
-.builder-section-banner .content-position-left .builder-banner-inner-content,
-.builder-section-banner .content-position-right .builder-banner-inner-content {
-	color: #2a3033;
-	background-color: #fff;
-	background-color: rgba(255, 255, 255, .9);
-	width: 100%;
-	max-width: 100%;
-	margin: 0 auto;
-}
+	/* Centered layout ("content position: none") */
+	.content-position-none .builder-banner-content {
+		text-align: center;
+		width: 100%;
+	}
 
-.builder-section-banner .content-position-left .builder-banner-inner-content p,
-.builder-section-banner .content-position-right .builder-banner-inner-content p {
-	font-size: .7em;
-	padding: 0 1rem 1rem;
-	line-height: 1.5;
-}
+	/* Left-aligned layout (content-position: left) */
+	.content-position-left {
+		background-position: center right;
+	}
 
-.single.gutter section.builder-section-banner .column:not(.gutterless) {
-	padding-left: 0;
-	padding-right: 0;
-}
+	/* Right-aligned layout (content-position: right) */
+	.content-position-right {
+		background-position: center left;
+	}
 
+}
 
 /**
  * Deprecated Callout Styles

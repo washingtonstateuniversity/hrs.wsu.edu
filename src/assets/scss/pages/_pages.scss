@@ -38,7 +38,6 @@ body.home footer.parent-foot {
 	width: 100%;
 	border-left: none;
 }
-*/
 
 body.home .h1-header {
 	height: 130px;
@@ -67,7 +66,7 @@ body.home .h1-header h1 {
 	}
 }
 
-body.home .spacing-loose .single.gutter.builder-section-banner .column:not(.gutterless) {
+body.home .spacing-loose .builder-section-banner .column:not(.gutterless) {
 	padding: 0;
 }
 
@@ -95,7 +94,7 @@ body.home .builder-section-banner .builder-banner-inner-content p {
 	margin: 0;
 }
 
-body.home .builder-section-banner .content-position-none .builder-banner-inner-title {
+.builder-section-banner .content-position-none .builder-banner-inner-title {
 	color: #981e32;
 	background-color: #fff;
 	background-color: rgba(255, 255, 255, .9);
@@ -104,7 +103,7 @@ body.home .builder-section-banner .content-position-none .builder-banner-inner-t
 	padding: 1rem;
 }
 
-body.home .builder-section-banner .content-position-none .builder-banner-inner-content {
+.builder-section-banner .content-position-none .builder-banner-inner-content {
 	color: #2a3033;
 	background-color: #fff;
 	background-color: rgba(255, 255, 255, .9);
@@ -113,10 +112,11 @@ body.home .builder-section-banner .content-position-none .builder-banner-inner-c
 	margin: 0 auto;
 }
 
-body.home .builder-section-banner .content-position-none .builder-banner-inner-content p {
+.builder-section-banner .content-position-none .builder-banner-inner-content p {
 	font-size: 90%;
 	padding: 0 1rem 1rem;
 }
+*/
 
 .belowpicture {
 	background-color: #444;
