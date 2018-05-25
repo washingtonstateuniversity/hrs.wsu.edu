@@ -68,6 +68,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Removed
 
+- Old template styles for header, footer, and article author display.
 - Old tabbed content styles.
 - Don't use a mixin for buttons. Redundant.
 - Do not override padding styles of the main parent theme (yet).
