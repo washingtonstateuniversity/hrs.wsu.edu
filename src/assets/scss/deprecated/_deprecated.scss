@@ -289,6 +289,16 @@ button.hrs-button-white {
 
 }
 
+.banner-container {
+
+	/*
+	 * Make banner repsect other elements' z-index values.
+	 * Add this class to the Banner section classes on the edit post screen.
+	 */
+	z-index: 1;
+
+}
+
 /**
  * Deprecated Callout Styles
  *

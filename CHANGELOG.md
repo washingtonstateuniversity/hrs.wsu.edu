@@ -22,6 +22,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ## (unreleased)
 
+### Fixed
+
+- Add a container class for the deprecated Builder Banner tool that downgrades its z-index value to 1 to prevent it overlapping other elements.
+
 ### Todo
 
 - Get Babel processing working.

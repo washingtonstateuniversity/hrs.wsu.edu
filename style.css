@@ -439,6 +439,14 @@ a.button:hover {
   background-position: center left;
 }
 
+.banner-container {
+  /*
+	 * Make banner repsect other elements' z-index values.
+	 * Add this class to the Banner section classes on the edit post screen.
+	 */
+  z-index: 1;
+}
+
 /**
  * Deprecated Callout Styles
  *
@@ -1232,7 +1240,7 @@ input[type="number"] {
   transition-property: transform top;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
-  z-index: 4;
+  z-index: 200;
 }
 
 #search-menu.is-visible {
@@ -1326,7 +1334,7 @@ input[type="number"] {
   -ms-flex-pack: end;
       justify-content: flex-end;
   padding: 0 2rem;
-  z-index: 60;
+  z-index: 900;
 }
 
 .site-title {

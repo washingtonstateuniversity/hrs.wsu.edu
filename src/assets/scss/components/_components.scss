@@ -400,7 +400,7 @@ input[type="number"] {
 	transition-property: transform top;
 	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 	width: 100%;
-	z-index: 4;
+	z-index: 200;
 
 	&.is-visible {
 		transform: translateY(-4.8rem);
