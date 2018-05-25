@@ -32,6 +32,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Simplified Builder banner styles by reverting to base Spine styles with some adjustments.
 - Adjust site background colors.
 - Restyle site footer display.
 - Refactor `footers.php` template part for more organization.

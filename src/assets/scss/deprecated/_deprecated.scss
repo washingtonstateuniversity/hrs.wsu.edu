@@ -251,18 +251,8 @@ button.hrs-button-white {
 /* Builder: Banner */
 .builder-section-banner {
 
-	/* All banners */
 	.builder-banner-content {
-		bottom: 0;
-		font-size: 1.3rem;
-		height: auto;
-		min-height: 60%;
-		padding: 0;
-		width: 100%;
-	}
-
-	.builder-banner-content:after {
-		display: none;
+		border-top-width: 3.6rem;
 	}
 
 	.builder-banner-inner-title {
@@ -270,37 +260,29 @@ button.hrs-button-white {
 		background-color: rgba(255, 255, 255, .9);
 		color: $brand-crimson;
 		font-weight: 600;
-		padding: 1rem;
-		width: 100%;
+		padding: 1rem 2rem;
 	}
 
 	.builder-banner-inner-content {
+		justify-content: flex-start;
 
 		p {
 			background-color: #fff;
 			background-color: rgba(255, 255, 255, .9);
 			color: $text-color;
-			margin: 0 auto;
-			width: 100%;
-			font-size: .7em;
-			line-height: 1.5;
-			padding: 0 1rem 1rem;
+			padding: 1.5rem 2rem;
 		}
 
 	}
 
-	/* Centered layout ("content position: none") */
 	.content-position-none .builder-banner-content {
 		text-align: center;
-		width: 100%;
 	}
 
-	/* Left-aligned layout (content-position: left) */
 	.content-position-left {
 		background-position: center right;
 	}
 
-	/* Right-aligned layout (content-position: right) */
 	.content-position-right {
 		background-position: center left;
 	}

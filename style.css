@@ -403,24 +403,8 @@ a.button:hover {
  * @since 0.11.0
  */
 /* Builder: Banner */
-.builder-section-banner {
-  /* All banners */
-  /* Centered layout ("content position: none") */
-  /* Left-aligned layout (content-position: left) */
-  /* Right-aligned layout (content-position: right) */
-}
-
 .builder-section-banner .builder-banner-content {
-  bottom: 0;
-  font-size: 1.3rem;
-  height: auto;
-  min-height: 60%;
-  padding: 0;
-  width: 100%;
-}
-
-.builder-section-banner .builder-banner-content:after {
-  display: none;
+  border-top-width: 3.6rem;
 }
 
 .builder-section-banner .builder-banner-inner-title {
@@ -428,24 +412,23 @@ a.button:hover {
   background-color: rgba(255, 255, 255, 0.9);
   color: #981e32;
   font-weight: 600;
-  padding: 1rem;
-  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.builder-section-banner .builder-banner-inner-content {
+  -ms-flex-pack: start;
+      justify-content: flex-start;
 }
 
 .builder-section-banner .builder-banner-inner-content p {
   background-color: #fff;
   background-color: rgba(255, 255, 255, 0.9);
   color: #191919;
-  margin: 0 auto;
-  width: 100%;
-  font-size: .7em;
-  line-height: 1.5;
-  padding: 0 1rem 1rem;
+  padding: 1.5rem 2rem;
 }
 
 .builder-section-banner .content-position-none .builder-banner-content {
   text-align: center;
-  width: 100%;
 }
 
 .builder-section-banner .content-position-left {
