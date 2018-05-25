@@ -21,6 +21,10 @@
  * 1.1 Foundation
  */
 
+html {
+	background-color: #f2f2f2;
+}
+
 main {
 	color: $text-color;
 	font: 400 18px/28px $sans-serif-fonts;
@@ -29,6 +33,10 @@ main {
 	*:before,
 	*:after, {
 		box-sizing: border-box;
+	}
+
+	section {
+		background-color: lighten($neutral-light, 5%);
 	}
 }
 
