@@ -32,6 +32,9 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Adjust site background colors.
+- Restyle site footer display.
+- Refactor `footers.php` template part for more organization.
 - Restyle expandable search menu for a cleaner display and slide effect.
 - Convert theme JS from jQuery to ES6 and refactor search menu toggle controls.
 - Refactor header search menu markup to be more accessible and leaner.

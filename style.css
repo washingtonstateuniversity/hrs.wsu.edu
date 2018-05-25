@@ -100,6 +100,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /**
  * 1.1 Foundation
  */
+html {
+  background-color: #f2f2f2;
+}
+
 main {
   color: #191919;
   font: 400 18px/28px "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
@@ -109,6 +113,10 @@ main *,
 main *:before,
 main *:after {
   box-sizing: border-box;
+}
+
+main section {
+  background-color: #fdfdfd;
 }
 
 /**
@@ -1418,90 +1426,162 @@ input[type="number"] {
 /**
  * 5.2 Footer
  */
-footer.parent-foot {
-  width: 989px;
-  margin-bottom: 0;
-  margin-left: 0;
-  padding-left: 0;
-  display: block;
-  background-color: #fff;
-  font-family: "Open Sans", sans-serif;
-  border-top: 1px solid #efefef;
+.site-footer nav ul {
+  font-size: .9rem;
+  padding: 0;
+}
+
+.site-footer nav a {
+  border-bottom: none;
+}
+
+.footer-nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+}
+
+.footer-nav nav {
+  -ms-flex: 3 1 auto;
+      flex: 3 1 auto;
+  margin: 1.5rem 2rem;
+}
+
+.footer-nav .wsu-brand {
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  margin: 1.5rem 2rem;
+  position: relative;
+}
+
+.footer-nav .wsu-cougar-head {
   bottom: 0;
+  width: 100px;
+  height: auto;
+  position: absolute;
+  right: 0;
+}
+
+.footer-nav .footer-nav-title {
+  font-weight: 600;
+}
+
+.site-reference {
+  background: #981e32;
+  color: #fff;
+}
+
+.site-reference ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+
+.site-reference ul li {
+  padding: 0;
+}
+
+.site-reference a {
+  color: #fff;
+  display: block;
+  font-weight: 400;
+  padding: 1em .75em;
+}
+
+.site-reference a:hover, .site-reference a:focus {
+  color: #eff0f1;
+  text-decoration: underline;
+}
+
+/*
+footer.parent-foot {
+	width: 989px;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding-left: 0;
+	display: block;
+	background-color: #fff;
+	font-family: "Open Sans", sans-serif;
+	border-top: 1px solid #efefef;
+	bottom: 0;
 }
 
 footer.parent-foot ul li {
-  padding-top: 5px;
+	padding-top: 5px;
 }
 
 footer.parent-foot ul.footer-utility {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 4em;
-  padding-bottom: 3em;
-  column-count: 3;
-  column-gap: 20px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 4em;
+	padding-bottom: 3em;
+	column-count: 3;
+	column-gap: 20px;
 }
 
 footer.parent-foot ul.footer-utility li {
-  list-style: none;
-  padding-bottom: 1.4em;
-  margin-right: 20%;
+	list-style: none;
+	padding-bottom: 1.4em;
+	margin-right: 20%;
 }
 
 footer.parent-foot ul.footer-utility li:before {
-  content: "";
-  padding-right: 0;
+	content: "";
+	padding-right: 0;
 }
 
 footer.parent-foot .site-ref {
-  display: block;
-  background-color: #981e32;
+	display: block;
+	background-color: #981e32;
 }
 
 footer.parent-foot .site-ref ul {
-  margin: auto;
-  text-align: center;
-  padding: .8em 0;
+	margin: auto;
+	text-align: center;
+	padding: .8em 0;
 }
 
 footer.parent-foot .site-ref ul li {
-  display: inline-block;
-  margin-right: 1.2em;
-  padding: 0;
-  list-style: none;
+	display: inline-block;
+	margin-right: 1.2em;
+	padding: 0;
+	list-style: none;
 }
 
 footer.parent-foot .site-ref ul li:before {
-  content: "";
-  padding-right: 0;
+	content: "";
+	padding-right: 0;
 }
 
 footer.parent-foot .site-ref ul li:after {
-  display: inline-block;
-  content: "|";
-  color: #fff;
-  margin-left: 1em;
+	display: inline-block;
+	content: "|";
+	color: #fff;
+	margin-left: 1em;
 }
 
 footer.parent-foot .site-ref ul li:last-child:after {
-  display: none;
+	display: none;
 }
 
 footer.parent-foot .site-ref ul li a {
-  color: #fff;
+	color: #fff;
 }
 
 footer.parent-foot .site-ref ul li a:hover {
-  color: #ccc;
+	color: #ccc;
 }
 
 footer.parent-foot ul.footer-utility li a:hover,
 footer.parent-foot .site-ref ul li a:hover {
-  transition: color .6s ease-out;
+	transition: color .6s ease-out;
 }
-
+*/
 /**
  * 5.3 Articles
  */
@@ -1541,27 +1621,28 @@ footer.parent-foot .site-ref ul li a:hover {
 /**
  * 6.1 Homepage
  */
+/*
 body.home.page #binder.spineless.fluid main {
-  margin: 0;
-  min-width: 100% !important;
+	margin: 0;
+	min-width: 100% !important;
 }
 
 body.home #jacket #binder h3 {
-  font-weight: 300;
-  padding-top: 1.2em;
-  padding-bottom: .8em;
+	font-weight: 300;
+	padding-top: 1.2em;
+	padding-bottom: .8em;
 }
 
 body.home main,
 body.home #spine #glue:before {
-  border: none;
+	border: none;
 }
 
 body.home footer.parent-foot {
-  width: 100%;
-  border-left: none;
+	width: 100%;
+	border-left: none;
 }
-
+*/
 body.home .h1-header {
   height: 130px;
 }
