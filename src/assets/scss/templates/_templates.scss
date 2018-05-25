@@ -99,6 +99,80 @@
  * 5.2 Footer
  */
 
+.site-footer {
+
+	nav {
+
+		ul {
+			font-size: .9rem;
+			padding: 0;
+		}
+
+		a {
+			border-bottom: none;
+		}
+
+	}
+
+}
+
+.footer-nav {
+	display: flex;
+	flex-flow: row nowrap;
+
+	nav {
+		flex: 3 1 auto;
+		margin: 1.5rem 2rem;
+	}
+
+	.wsu-brand {
+		flex: 1 1 auto;
+		margin: 1.5rem 2rem;
+		position: relative;
+	}
+
+	.wsu-cougar-head {
+		bottom: 0;
+		width: 100px;
+		height: auto;
+		position: absolute;
+		right: 0;
+	}
+
+	.footer-nav-title {
+		font-weight: 600;
+	}
+}
+
+.site-reference {
+	background: $brand-crimson;
+	color: #fff;
+
+	ul {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-end;
+
+		li {
+			padding: 0;
+		}
+	}
+
+	a {
+		color: #fff;
+		display: block;
+		font-weight: 400;
+		padding: 1em .75em;
+
+		&:hover,
+		&:focus {
+			color: $neutral-light;
+			text-decoration: underline;
+		}
+	}
+}
+
+/*
 footer.parent-foot {
 	width: 989px;
 	margin-bottom: 0;
@@ -182,6 +256,7 @@ footer.parent-foot ul.footer-utility li a:hover,
 footer.parent-foot .site-ref ul li a:hover {
 	transition: color .6s ease-out;
 }
+*/
 
 /**
  * 5.3 Articles
