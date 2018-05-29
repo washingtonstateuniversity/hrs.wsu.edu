@@ -18,163 +18,78 @@
  */
 
 /*
-body.home.page #binder.spineless.fluid main {
-	margin: 0;
-	min-width: 100% !important;
-}
+ * Adust the seach menu width on the homepage to dodge the WSU banner.
+ *
+ * @todo At the WSU small-screen breakpoint, when the WSU banner moves, can
+ *       use full width; so set this only in a breakpoint above that.
+ */
 
-body.home #jacket #binder h3 {
-	font-weight: 300;
-	padding-top: 1.2em;
-	padding-bottom: .8em;
-}
-
-body.home main,
-body.home #spine #glue:before {
-	border: none;
-}
-
-body.home footer.parent-foot {
-	width: 100%;
-	border-left: none;
-}
-
-body.home .h1-header {
-	height: 130px;
-}
-
-body.home .h1-header h1 {
-	float: right;
-	margin-bottom: 25px;
-	padding-right: 8%;
-	padding-top: 2%;
+.home #search-menu {
+	right: 0;
 	width: 60%;
 }
 
-.abovepicture {
-	background: url(http://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/cream_pixels.png);
-	padding-bottom: 25px !important;
-	padding-top: 0;
-
-	a {
-
-		&:hover,
-		&:focus {
-			color: #981e32 !important;
-			transition: color .5s ease !important;
-		}
-	}
-}
-
-body.home .spacing-loose .builder-section-banner .column:not(.gutterless) {
-	padding: 0;
-}
-
-body.home .builder-section-banner .builder-banner-inner-title {
-	background-color: #363636;
-	margin-top: 45px;
-	padding: 1em 1em 1em 2em;
-	width: 70%;
-}
-
-body.home .builder-section-banner .builder-banner-inner-content {
+.home-main-subnav a,
+.home-detail-subnav h2 a {
+	background-color: $neutral-dark;
+	border-bottom: none;
+	border-right: 3px solid #fff;
+	color: #fff;
 	display: block;
-	background-color: #981e32;
-	text-align: center;
-	text-shadow: none;
-	width: inherit;
-}
+	padding: .9em;
 
-body.home .content-position-left .builder-banner-inner-content:hover {
-	background-color: #c60c30;
-}
-
-body.home .builder-section-banner .builder-banner-inner-content p {
-	padding: 0;
-	margin: 0;
-}
-
-.builder-section-banner .content-position-none .builder-banner-inner-title {
-	color: #981e32;
-	background-color: #fff;
-	background-color: rgba(255, 255, 255, .9);
-	font-weight: 600;
-	width: 100%;
-	padding: 1rem;
-}
-
-.builder-section-banner .content-position-none .builder-banner-inner-content {
-	color: #2a3033;
-	background-color: #fff;
-	background-color: rgba(255, 255, 255, .9);
-	width: 100%;
-	max-width: 100%;
-	margin: 0 auto;
-}
-
-.builder-section-banner .content-position-none .builder-banner-inner-content p {
-	font-size: 90%;
-	padding: 0 1rem 1rem;
-}
-*/
-
-.belowpicture {
-	background-color: #444;
-	color: #fff !important;
-
-	a {
-		color: #fff !important;
-		font-size: 1em;
-
-		&:hover,
-		&:focus {
-			color: #a0a5aa !important;
-		}
+	&:hover {
+		background: $nav-color-hover;
+		color: #fff;
 	}
+
 }
 
-body.home section.home-nav {
-	background: none !important;
-	border-top: none !important;
+/*
+ * @todo Base style should be flex column with no border. Change this to non-
+ *       mobile display.
+ */
+
+.home-main-subnav nav {
+
+	ul {
+		display: flex;
+		padding: 0;
+	}
+
+	li {
+		flex: 1 1 auto;
+		font-size: 1.2rem;
+		padding: 0;
+		text-align: center;
+	}
+
+	li:last-of-type a {
+		border-right: none;
+	}
+
 }
 
-body.home section.home-nav .column ul {
-	display: flex;
-	list-style: none;
-	padding: 1.5em 0;
-}
+.home-detail-subnav {
+	background-color: transparent;
 
-body.home section.home-nav .column ul li {
-	flex: 1;
-	margin-top: 0;
-	margin-bottom: 0;
-	padding-top: 0;
-	padding-bottom: 0;
-	padding-left: 1%;
-	padding-right: 1%;
-	text-align: center;
-	border-right: solid 1px #ddd;
-}
+	h2 {
+		padding: 0;
+	}
 
-body.home section.home-nav .column ul,
-body.home section.home-nav .column ul li {
-	box-sizing: border-box;
-}
+	h2 a {
+		background-color: $brand-crimson;
+		border-right: none;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+		font-size: 1.4rem;
+	}
 
-body.home section.home-nav .column ul li:last-of-type {
-	border-right: 0;
-}
+	ul {
+		background-color: $section-background-color;
+		padding: 1.5em 2em;
+	}
 
-body.home section.home-nav .column ul li:before {
-	content: "";
-	padding-right: 0;
-}
-
-body.home section .column.tabbed h5 {
-	border-radius: 3px;
-	line-height: 1.4;
-	margin-bottom: 1.4em;
-	padding: 10px;
 }
 
 /**

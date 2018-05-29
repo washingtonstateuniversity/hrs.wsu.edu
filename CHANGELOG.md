@@ -36,6 +36,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Updated CSS for home page to simplify and refresh appearance.
 - Simplified Builder banner styles by reverting to base Spine styles with some adjustments.
 - Adjust site background colors.
 - Restyle site footer display.
@@ -73,6 +74,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Removed
 
+- Many old homepage-only styles.
 - Many, many Builder banner styles.
 - Old template styles for header, footer, and article author display.
 - Old tabbed content styles.
