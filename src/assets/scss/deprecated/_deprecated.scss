@@ -129,6 +129,17 @@ button.hrs-button-white {
 	@extend .button;
 }
 
+.hrs-open-enrollment ul.inline li {
+	margin-right: 1%;
+}
+
+.hrs-open-enrollment .inline .hrs-button {
+	min-width: 90px;
+	min-height: 83px;
+	padding: .75em;
+	vertical-align: top;
+}
+
 #button_holder a {
 	color: #fff;
 	text-decoration: none;

@@ -290,6 +290,17 @@ a.button:hover {
 }
 */
 /* @todo Deprecate class name, replace in markup. */
+.hrs-open-enrollment ul.inline li {
+  margin-right: 1%;
+}
+
+.hrs-open-enrollment .inline .hrs-button {
+  min-width: 90px;
+  min-height: 83px;
+  padding: .75em;
+  vertical-align: top;
+}
+
 #button_holder a {
   color: #fff;
   text-decoration: none;
@@ -1597,17 +1608,6 @@ input[type="number"] {
 .home-detail-subnav ul {
   background-color: #fdfdfd;
   padding: 1.5em 2em;
-}
-
-.hrs-open-enrollment ul.inline li {
-  margin-right: 1%;
-}
-
-.hrs-open-enrollment .inline .hrs-button {
-  min-width: 90px;
-  min-height: 83px;
-  padding: .75em;
-  vertical-align: top;
 }
 
 /**
