@@ -86,6 +86,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Deprecated
 
+- Old (unused) experimental design for new application instructions page.
 - Old (unused) experimental layout for a new benefits page.
 - Old column layout using the `nested*` classes.
 - Old callout styles.
