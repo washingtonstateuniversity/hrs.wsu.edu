@@ -85,6 +85,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Deprecated
 
+- Old (unused) experimental layout for a new benefits page.
 - Old column layout using the `nested*` classes.
 - Old callout styles.
 - Former `.hrs-gallery` element style class(es) to prefer the standard `.gallery` class.
