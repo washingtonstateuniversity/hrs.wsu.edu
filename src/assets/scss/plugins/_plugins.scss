@@ -26,6 +26,7 @@
 
 }
 
+/* HRS Contacts adjustments */
 .tablepress-manual-contacts .column-1 {
 	width: 497px;
 }
@@ -35,7 +36,59 @@
 	white-space: nowrap;
 }
 
-/* Labor relation table */
+/* The 2018 Medical Premium Changes table */
+.hrs-medical-premium-changes-2018 {
+
+	tbody {
+		border-bottom: 1px solid #ddd;
+		border-left: 1px solid #ddd;
+	}
+
+	tbody td {
+		border-right: 1px solid #ddd;
+	}
+
+	tbody td:not(.column-1) {
+		text-align: center;
+		width: 9%;
+	}
+
+	/* The 2018 columns */
+	tr .column-3,
+	tr .column-5,
+	tr .column-7,
+	tr .column-9 {
+		background-color: #eee;
+		font-weight: 600;
+	}
+
+	.row-1 td {
+		background-color: $brand-crimson;
+		color: #fff;
+		font-weight: 600;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	.row-2 td {
+		background-color: #2a3033;
+		color: #fff;
+		text-align: center;
+	}
+
+	.row-3 .column-1,
+	.row-8 .column-1,
+	.row-12 .column-1 {
+		background-color: #d7dadb;
+		font-weight: 600;
+	}
+
+}
+
+/*
+ * @todo Update labor relations table to use a class
+ */
+
 .tablepress-id-31 .column-1 {
 	width: 450px !important;
 }
