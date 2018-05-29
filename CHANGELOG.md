@@ -74,6 +74,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Removed
 
+- Delete all HRS News styles in favor of standard posts.
 - Many old homepage-only styles.
 - Many, many Builder banner styles.
 - Old template styles for header, footer, and article author display.

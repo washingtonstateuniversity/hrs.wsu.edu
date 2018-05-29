@@ -93,51 +93,6 @@
 }
 
 /**
- * 6.3 HRS News
- */
-
-.post-type-archive-hrs_news .news-nav {
-	border-top: 2px solid #aec7cb;
-	border-right: 8px solid #fff;
-	border-bottom: 2px solid #aec7cb;
-	border-left: 8px solid #fff;
-	list-style-type: none;
-	margin: 1.5em 0;
-	padding: 0 0 0 1em;
-}
-
-.post-type-archive-hrs_news article footer,
-.single-hrs_news article footer {
-	border-top: none;
-	border-bottom: 1px rgba(127, 127, 127, .2) solid;
-}
-
-.hrs_news h3 {
-	line-height: 1.4;
-	padding-bottom: .5em;
-}
-
-.hrs_news h3 > a {
-	border-left: 8px solid;
-	padding-left: .5em;
-}
-
-.hrs_news .hrs-news-unit {
-	font-size: 1em;
-	padding-bottom: 0;
-}
-
-.hrs_news .article-summary,
-.hrs_news .article-body {
-	margin-top: 1.4em;
-}
-
-.hrs_news p {
-	font-size: 1.2em;
-	line-height: 1.5;
-}
-
-/**
  * 6.4 Recruitment
  */
 
