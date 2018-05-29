@@ -24,6 +24,7 @@
  * 3.1 Cards
  */
 
+.cards,
 .recent-articles {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

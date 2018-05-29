@@ -36,6 +36,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Simplified styling of Tri-Cities and Spokane landing pages.
 - Updated CSS for home page to simplify and refresh appearance.
 - Simplified Builder banner styles by reverting to base Spine styles with some adjustments.
 - Adjust site background colors.

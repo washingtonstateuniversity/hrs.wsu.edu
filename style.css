@@ -968,6 +968,7 @@ main .button-flat:active {
 /**
  * 3.1 Cards
  */
+.cards,
 .recent-articles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -975,16 +976,20 @@ main .button-flat:active {
   grid-gap: 1.5rem 2rem;
 }
 
+.cards article,
+.cards .card,
 .recent-articles article,
 .recent-articles .card {
   display: grid;
 }
 
+.cards .article-image,
 .recent-articles .article-image {
   -ms-flex-order: -1;
       order: -1;
 }
 
+.cards .article-taxonomy,
 .recent-articles .article-taxonomy {
   -ms-flex-order: -2;
       order: -2;
@@ -1530,15 +1535,14 @@ input[type="number"] {
  * used sparingly and only for unique pages such as the homepage.
  *
  *     - 6.1 Homepage
- *     - 6.2 Benefits
- *     - 6.3 HRS News
- *     - 6.4 Recruitment
- *     - 6.5 Spokane and Tri-Cities
+ *     - 6.2 Spokane and Tri-Cities
  *
  * @since 0.9.0
  */
 /**
  * 6.1 Homepage
+ *
+ * @since 0.11.0
  */
 /*
  * Adust the seach menu width on the homepage to dodge the WSU banner.
@@ -1612,96 +1616,90 @@ input[type="number"] {
 
 /**
  * 6.5 Spokane and Tri-Cities
+ *
+ * @since 0.11.0
  */
 .page-tricities .builder-banner-inner-title,
 .page-spokane .builder-banner-inner-title {
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #981e32;
-  font-size: 3.4rem;
-  font-weight: 600;
-  left: 50%;
-  padding: .3rem 1.3rem;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
+  font-size: 2.4rem;
+  margin: auto;
+  width: 400px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
+/*
 .page-tricities .hrs-button-big,
 .page-spokane .hrs-button-big {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  white-space: nowrap;
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+	text-align: center;
+	white-space: nowrap;
 }
 
 .page-tricities .hrs-button-big a,
 .page-spokane .hrs-button-big a {
-  background: #981e32;
-  border: medium none;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  box-sizing: border-box;
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: 1px;
-  padding: 1rem 2rem;
-  text-align: center;
-  text-transform: uppercase;
-  transition: background-color .2s ease;
+	background: #981e32;
+	border: medium none;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+	box-sizing: border-box;
+	color: #fff;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 1rem 2rem;
+	text-align: center;
+	text-transform: uppercase;
+	transition: background-color .2s ease;
 }
 
 .page-tricities .hrs-button-big a:hover,
 .page-spokane .hrs-button-big a:hover {
-  background: #464e54;
+	background: #464e54;
 }
 
 .page-tricities .hrs-button-menu ul,
 .page-spokane .hrs-button-menu ul {
-  list-style-type: none;
-  padding: 1rem 0 0;
-  text-align: center;
+	list-style-type: none;
+	padding: 1rem 0 0;
+	text-align: center;
 }
 
 .page-tricities .hrs-button-menu ul li,
 .page-spokane .hrs-button-menu ul li {
-  margin-bottom: .5rem;
-  padding: 0;
+	margin-bottom: .5rem;
+	padding: 0;
 }
 
 .page-tricities h2.blue-text,
 .page-spokane h2.blue-text {
-  font-size: 2rem;
-  padding-top: 0;
+	font-size: 2rem;
+	padding-top: 0;
 }
-
-.page-tricities .hrs-nav-modules .column,
-.page-spokane .hrs-nav-modules .column {
+*/
+.page-tricities .cards,
+.page-spokane .cards {
+  padding: 1.5rem 0;
   text-align: center;
 }
 
-.page-tricities .hrs-nav-modules .column a:hover img,
-.page-tricities .hrs-nav-modules .column a:focus img,
-.page-spokane .hrs-nav-modules .column a:hover img,
-.page-spokane .hrs-nav-modules .column a:focus img {
-  opacity: .7;
+.page-tricities .aligncenter,
+.page-spokane .aligncenter {
+  margin: auto;
 }
 
-.page-tricities .hrs-nav-modules h3,
-.page-spokane .hrs-nav-modules h3 {
-  font-size: 1.2rem;
+.page-tricities .article-title,
+.page-spokane .article-title {
+  font-size: 1.4rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: .5rem;
-  padding: 0;
-  text-transform: uppercase;
+  padding: .5rem 0;
 }
 
-.page-tricities .hrs-nav-modules p,
-.page-spokane .hrs-nav-modules p {
-  line-height: 1.5;
-  font-size: 1.1rem;
-  font-weight: 400;
+.page-tricities .article-image img:hover,
+.page-tricities .article-image img:focus,
+.page-spokane .article-image img:hover,
+.page-spokane .article-image img:focus {
+  opacity: .6;
 }
 
 /* Breakpoints */
