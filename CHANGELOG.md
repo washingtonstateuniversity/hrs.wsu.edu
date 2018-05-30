@@ -20,7 +20,15 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## (unreleased)
+## (next release)
+
+### Todo
+
+- Set up no-js handling for the search form and menu.
+- Get Babel processing working.
+- Determine if we really need the `center-middle` utility class. If yes, look into using a grid with `Xvh` and `Xvh` column and row size to center instead.
+
+## 0.11.0 (unreleased)
 
 ### Fixed
 
@@ -28,11 +36,8 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
-- Get Babel processing working.
-- Style the search form and menu.
-- Set up no-js handling for the search form and menu.
+- Style the search form and menu for homepage and mobile displays.
 - Move mobile-only styles to "base" and larger-width adjustments into media queries as needed (essentially reverse the current setup).
-- Determine if we really need the `center-middle` utility class. If yes, look into using a grid with `Xvh` and `Xvh` column and row size to center instead.
 
 ### Changed
 
