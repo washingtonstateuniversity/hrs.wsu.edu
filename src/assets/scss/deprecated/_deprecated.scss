@@ -137,6 +137,34 @@ button.hrs-button-white {
 	vertical-align: top;
 }
 
+@media only screen and (max-width: 365px) {
+
+	.hrs-open-enrollment ul.inline li {
+		display: block;
+		margin-right: 0;
+	}
+
+	.hrs-open-enrollment .inline .hrs-button {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 365px) and (max-width: 640px) {
+
+	.hrs-open-enrollment .inline .hrs-button {
+		max-width: 135px;
+	}
+
+}
+
+@media only screen and (min-width: 700px) and (max-width: 790px) {
+
+	.hrs-open-enrollment .inline .hrs-button {
+		font-size: .7em;
+	}
+
+}
+
 #button_holder a {
 	color: #fff;
 	text-decoration: none;
@@ -480,8 +508,42 @@ button.hrs-button-white {
 
 /**
  * 4.2 Columns
- *
+ */
 
+/* @todo Find any pages still using these and use something, else then delete.*/
+@media only screen and (min-width: 640px) {
+
+	.hrs-two-col {
+		width: 47%;
+		clear: none !important;
+	}
+
+	.hrs-1-of-4 {
+		width: 23%;
+	}
+
+	.hrs-1-of-5 {
+		width: 20%;
+	}
+
+	.hrs-2-of-5 {
+		width: 40%;
+	}
+
+	.hrs-3-of-5 {
+		width: 60%;
+	}
+
+	.hrs-4-of-5 {
+		width: 80%;
+	}
+
+	.gform_wrapper .gfield_error.hrs-two-col {
+		width: 47%;
+	}
+}
+
+/*
 .nested-halves {
 	width: 100%;
 	display: inline-block;

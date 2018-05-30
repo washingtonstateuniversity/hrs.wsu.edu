@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
+- Set up grid fallbacks.
 - Set up no-js handling for the search form and menu.
 - Get Babel processing working.
 - Determine if we really need the `center-middle` utility class. If yes, look into using a grid with `Xvh` and `Xvh` column and row size to center instead.
@@ -41,6 +42,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Incorporate breakpoint styles into main SCSS files for ease of development and since we aren't using stylesheet switching yet.
 - Switched from inline styles to flexbox for homepage social media links.
 - Simplified styling of Tri-Cities and Spokane landing pages.
 - Updated CSS for home page to simplify and refresh appearance.

@@ -15,6 +15,46 @@
  * @since 0.11.0
  */
 
+@media only screen and (max-width: 37.5em) {
+
+	.tablepress-manual-contacts,
+	.tablepress-hrs-contacts {
+		display: block;
+		text-align: left;
+
+		caption,
+		tbody,
+		tr,
+		th,
+		td {
+			display: block;
+			text-align: left;
+		}
+
+		thead,
+		th:empty,
+		td:empty {
+			display: none;
+			visibility: hidden;
+		}
+
+		tbody tr {
+			margin-bottom: 1.4rem;
+		}
+
+		tbody td,
+		tfoot th {
+			border: none;
+			line-height: 1.4;
+			padding: 4px 8px;
+		}
+
+		.column-1 {
+			font-weight: 700;
+		}
+	}
+}
+
 .tablepress {
 
 	tfoot th,
