@@ -79,18 +79,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Variables for the default font stack and some named color values.
 - Border-box style on all `main` elements.
 
-### Removed
-
-- Delete all HRS News styles in favor of standard posts.
-- Many old homepage-only styles.
-- Many, many Builder banner styles.
-- Old template styles for header, footer, and article author display.
-- Old tabbed content styles.
-- Don't use a mixin for buttons. Redundant.
-- Do not override padding styles of the main parent theme (yet).
-- Do not need to set all elements to `border-box` since Spine parents already sets relevant elements.
-- Remove unneeded `<hr>` styles.
-
 ### Deprecated
 
 - Old (unused) experimental design for new application instructions page.
@@ -104,6 +92,18 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - 100% height styles on `html` and `body` probably not needed.
 - `.fixed` and `.gray-bg` styles targeting unknown site elements.
 - Inline list styles using `inline` class. Replace with flexbox as needed.
+
+### Removed
+
+- Delete all HRS News styles in favor of standard posts.
+- Many old homepage-only styles.
+- Many, many Builder banner styles.
+- Old template styles for header, footer, and article author display.
+- Old tabbed content styles.
+- Don't use a mixin for buttons. Redundant.
+- Do not override padding styles of the main parent theme (yet).
+- Do not need to set all elements to `border-box` since Spine parents already sets relevant elements.
+- Remove unneeded `<hr>` styles.
 
 ## 0.10.1 (2018-04-09)
 
