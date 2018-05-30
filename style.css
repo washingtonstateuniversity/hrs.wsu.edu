@@ -933,14 +933,40 @@ main .button-flat:active {
   background-size: cover;
 }
 
-/* Home page social media icons */
-.socialicons a {
-  border: none;
+/*
+ * Home page social media icons.
+ *
+ * Over-specified to override Spine `display: block` rule on .column.
+ *
+ * @todo Move these from the page content editor to the theme template, using
+ *       settings for the social media account handles.
+ */
+.column.social-media-icons {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
 }
 
-.socialicons a:hover img,
-.socialicons a:focus img {
+.column.social-media-icons p {
+  line-height: 1;
+  padding: 0;
+}
+
+.column.social-media-icons a {
+  border: none;
+  padding-right: .75rem;
+}
+
+.column.social-media-icons a:hover img,
+.column.social-media-icons a:focus img {
   opacity: .7;
+}
+
+.column.social-media-icons img {
+  border-radius: 4px;
 }
 
 /* Components */
@@ -1629,54 +1655,6 @@ input[type="number"] {
   width: fit-content;
 }
 
-/*
-.page-tricities .hrs-button-big,
-.page-spokane .hrs-button-big {
-	margin-top: 3rem;
-	margin-bottom: 1rem;
-	text-align: center;
-	white-space: nowrap;
-}
-
-.page-tricities .hrs-button-big a,
-.page-spokane .hrs-button-big a {
-	background: #981e32;
-	border: medium none;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
-	box-sizing: border-box;
-	color: #fff;
-	font-weight: 700;
-	letter-spacing: 1px;
-	padding: 1rem 2rem;
-	text-align: center;
-	text-transform: uppercase;
-	transition: background-color .2s ease;
-}
-
-.page-tricities .hrs-button-big a:hover,
-.page-spokane .hrs-button-big a:hover {
-	background: #464e54;
-}
-
-.page-tricities .hrs-button-menu ul,
-.page-spokane .hrs-button-menu ul {
-	list-style-type: none;
-	padding: 1rem 0 0;
-	text-align: center;
-}
-
-.page-tricities .hrs-button-menu ul li,
-.page-spokane .hrs-button-menu ul li {
-	margin-bottom: .5rem;
-	padding: 0;
-}
-
-.page-tricities h2.blue-text,
-.page-spokane h2.blue-text {
-	font-size: 2rem;
-	padding-top: 0;
-}
-*/
 .page-tricities .cards,
 .page-spokane .cards {
   padding: 1.5rem 0;

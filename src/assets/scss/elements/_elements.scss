@@ -140,12 +140,36 @@ main {
 	background-size: cover;
 }
 
-/* Home page social media icons */
-.socialicons a {
-	border: none;
+/*
+ * Home page social media icons.
+ *
+ * Over-specified to override Spine `display: block` rule on .column.
+ *
+ * @todo Move these from the page content editor to the theme template, using
+ *       settings for the social media account handles.
+ */
 
-	&:hover img,
-	&:focus img {
-		opacity: .7;
+.column.social-media-icons {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+
+	p {
+		line-height: 1;
+		padding: 0;
+	}
+
+	a {
+		border: none;
+		padding-right: .75rem;
+
+		&:hover img,
+		&:focus img {
+			opacity: .7;
+		}
+	}
+
+	img {
+		border-radius: 4px;
 	}
 }
