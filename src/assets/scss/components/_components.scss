@@ -9,13 +9,13 @@
  *     - 3.2 Data Tables
  *     - 3.3 Dialogs
  *     - 3.4 Figures
- *     - 3.4 Forms
- *     - 3.5 Grid Lists
- *     - 3.6 Modules
- *     - 3.7 Notifications
- *     - 3.8 Pagination
- *     - 3.9 Row Lists
- *     - 3.10 Search
+ *     - 3.5 Forms
+ *     - 3.6 Grid Lists
+ *     - 3.7 Modules
+ *     - 3.8 Notifications
+ *     - 3.9 Pagination
+ *     - 3.10 Row Lists
+ *     - 3.11 Search
  *
  * @since 0.9.0
  */
@@ -83,8 +83,11 @@ main {
 		}
 
 	}
-
 }
+
+/**
+ * 3.3 Dialogs
+ */
 
 /**
  * 3.4 Figures
@@ -106,10 +109,10 @@ figcaption {
 }
 
 /**
- * 3.4 Forms
+ * 3.5 Forms
  */
 
-/* Add "number" type to the Spine `input[type=$]` styles */
+/* Adds "number" type to the Spine `input[type=$]` styles */
 input[type="number"] {
 	background: #fff;
 	border: 1px solid #ccc;
@@ -122,7 +125,7 @@ input[type="number"] {
 
 
 /**
- * Grid Lists
+ * 3.6 Grid Lists
  */
 
 .gallery {
@@ -184,7 +187,7 @@ input[type="number"] {
 }
 
 /*
- * 3.6 Modules
+ * 3.7 Modules
  *
  * @todo Adjust module styles and sizes when they are needed.
  */
@@ -216,7 +219,6 @@ input[type="number"] {
 		border-bottom-color: darken($accent-blue, 5%);
 		font-size: 3em;
 	}
-
 }
 
 .alert-module {
@@ -260,7 +262,7 @@ input[type="number"] {
 }
 
 /**
- * 3.7 Notifications
+ * 3.8 Notifications
  *
  * @todo Replace .hrs-callout classes with .notification classes.
  */
@@ -274,7 +276,6 @@ input[type="number"] {
 	p {
 		padding: 0;
 	}
-
 }
 
 .positive-notification {
@@ -296,7 +297,7 @@ input[type="number"] {
 }
 
 /**
- * 3.8 Pagination
+ * 3.9 Pagination
  */
 
 .nav-links,
@@ -315,14 +316,12 @@ input[type="number"] {
 			background: #981e32;
 			color: #fff;
 		}
-
 	}
 
 	.current {
 		background: #eff0f1;
 		border: 1px solid #464e54;
 	}
-
 }
 
 .nav-previous,
@@ -337,7 +336,7 @@ input[type="number"] {
 }
 
 /**
- * 3.9 Row Lists
+ * 3.10 Row Lists
  *
  * @todo Adjust these styles to be more agnostic of markup?
  */
@@ -380,11 +379,10 @@ input[type="number"] {
 		font-size: 1rem;
 		line-height: 1.2;
 	}
-
 }
 
 /**
- * 3.10 Search
+ * 3.11 Search
  */
 
 #search-menu {
@@ -406,7 +404,6 @@ input[type="number"] {
 	&.is-visible {
 		transform: translateY(-4.8rem);
 	}
-
 }
 
 .search-toggle[aria-expanded="true"] {
@@ -438,7 +435,6 @@ input[type="number"] {
 	li {
 		line-height: 1.5;
 	}
-
 }
 
 .search-links {

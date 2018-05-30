@@ -7,15 +7,17 @@
  *
  *     - 5.1 Header
  *     - 5.2 Footer
- *     - 5.3 Articles
- *     - 5.4 Archives
- *     - 5.4 Multi-part Pages
+ *     - 5.3 Article
+ *     - 5.4 Archive
+ *     - 5.4 Multi-part Page
  *
  * @since 0.9.0
  */
 
 /**
  * 5.1 Header
+ *
+ * @since 0.11.0
  */
 
 .banner {
@@ -28,6 +30,7 @@
 		padding: 0 2rem;
 		z-index: 900;
 	}
+
 }
 
 .site-title {
@@ -39,6 +42,8 @@
 
 /**
  * 5.2 Footer
+ *
+ * @since 0.11.0
  */
 
 .site-footer {
@@ -115,7 +120,7 @@
 }
 
 /**
- * 5.3 Articles
+ * 5.3 Article
  */
 
 .article-date {
@@ -123,11 +128,11 @@
 }
 
 /**
- * 5.4 Archives
+ * 5.4 Archive
  */
 
 .recent-articles {}
 
 /**
- * 5.4 Multi-part Pages
+ * 5.4 Multi-part Page
  */

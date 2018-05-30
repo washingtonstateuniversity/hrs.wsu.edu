@@ -1,15 +1,18 @@
 /**
- * 9.0 Plugins
+ * 7.0 Plugins
  *
  * Rules targeted to adjusting and overriding styles declared by plugins.
  *
- *     - 9.1 TablePress
+ *     - 7.1 TablePress
+ *     - 7.2 Caldera Forms
  *
  * @since 0.11.0
  */
 
 /**
- * 9.1 TablePress
+ * 7.1 TablePress
+ *
+ * @since 0.11.0
  */
 
 .tablepress {
@@ -82,7 +85,6 @@
 		background-color: #d7dadb;
 		font-weight: 600;
 	}
-
 }
 
 /*
@@ -112,7 +114,9 @@
 }
 
 /**
- * 9.2 Caldera Forms
+ * 7.2 Caldera Forms
+ *
+ * @since 0.11.0
  */
 
 .caldera-grid {

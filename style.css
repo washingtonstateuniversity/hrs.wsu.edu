@@ -30,52 +30,58 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*
  * Table of Contents
  *
+ * 0.0 Deprecated
+ *
  * 1.0 Globals
  *     1.1 Foundation
- *     1.2 Colors
- *     1.3 Typography
- *     1.4 Links
- *     1.5 Lists
- *     1.6 Utility
+ *     1.2 Typography
+ *     1.3 Links
+ *     1.4 Lists
+ *     1.5 Utility
+ *     1.6 Variables
  *
  * 2.0 Elements
  *     2.1 Buttons
- *     2.2 Images
- *     2.3 Embeds
+ *     2.2 Embedded Content
+ *     2.3 Images
  *
  * 3.0 Components
  *     3.1 Cards
  *     3.2 Data Tables
  *     3.3 Dialogs
- *     3.4 Forms
- *     3.5 Grid lists
- *     3.6 Modules
- *     3.7 Notifications
- *     3.8 Pagination
- *     3.9 Row Lists
- *     3.10 Search
+ *     3.4 Figures
+ *     3.5 Forms
+ *     3.6 Grid Lists
+ *     3.7 Modules
+ *     3.8 Notifications
+ *     3.9 Pagination
+ *     3.10 Row Lists
+ *     3.11 Search
  *
  * 4.0 Layouts
- *     4.1 Columns
+ *     4.1 n/a
  *
  * 5.0 Templates
- *     5.1 Articles
- *     5.2 Footer (Global)
- *     5.3 Header (Global)
- *     5.4 Print
+ *     5.1 Header
+ *     5.2 Footer
+ *     5.3 Article
+ *     5.4 Archive
+ *     5.4 Multi-part Page
  *
  * 6.0 Pages
  *     6.1 Homepage
+ *     6.2 Spokane and Tri-Cities
  *
- * 7.0 Breakpoints
+ * 7.0 Plugins
+ *     7.1 TablePress
+ *     7.2 Caldera Forms
  *
- * 8.0 Deprecated
- *
- * 9.0 Plugins
- *     9.1 TablePress
+ * 8.0 Breakpoints
  */
 /* Globals */
 /*
+ * 1.6 Variables
+ *
  * @todo Settle on primary and secondary colors and rename
  *       then also settle on the purpose of the secondary and
  *       accent colors and rename them to match.
@@ -127,7 +133,7 @@ blockquote {
 }
 
 /**
- * 1.4 Links
+ * 1.3 Links
  */
 main a {
   border-bottom: 1px solid #da1e00;
@@ -159,10 +165,10 @@ main figure > a {
 }
 
 /**
- * 1.5 Lists
+ * 1.4 Lists
  */
 /**
- * 1.6 Utility
+ * 1.5 Utility
  */
 .screen-reader-text {
   border: 0;
@@ -184,7 +190,7 @@ main figure > a {
 
 /* Deprecated */
 /**
- * 8.0 Deprecated
+ * 0.0 Deprecated
  *
  * These styles or selectors have been deprecated and will be removed from
  * future versions. Stop targeting these rules and update any markup that relies
@@ -994,13 +1000,13 @@ main .button-flat:active {
  *     - 3.2 Data Tables
  *     - 3.3 Dialogs
  *     - 3.4 Figures
- *     - 3.4 Forms
- *     - 3.5 Grid Lists
- *     - 3.6 Modules
- *     - 3.7 Notifications
- *     - 3.8 Pagination
- *     - 3.9 Row Lists
- *     - 3.10 Search
+ *     - 3.5 Forms
+ *     - 3.6 Grid Lists
+ *     - 3.7 Modules
+ *     - 3.8 Notifications
+ *     - 3.9 Pagination
+ *     - 3.10 Row Lists
+ *     - 3.11 Search
  *
  * @since 0.9.0
  */
@@ -1067,6 +1073,9 @@ main .striped tbody tr:nth-child(odd) td {
 }
 
 /**
+ * 3.3 Dialogs
+ */
+/**
  * 3.4 Figures
  */
 figure img {
@@ -1081,9 +1090,9 @@ figcaption {
 }
 
 /**
- * 3.4 Forms
+ * 3.5 Forms
  */
-/* Add "number" type to the Spine `input[type=$]` styles */
+/* Adds "number" type to the Spine `input[type=$]` styles */
 input[type="number"] {
   background: #fff;
   border: 1px solid #ccc;
@@ -1095,7 +1104,7 @@ input[type="number"] {
 }
 
 /**
- * Grid Lists
+ * 3.6 Grid Lists
  */
 .gallery {
   display: -ms-flexbox;
@@ -1155,7 +1164,7 @@ input[type="number"] {
 }
 
 /*
- * 3.6 Modules
+ * 3.7 Modules
  *
  * @todo Adjust module styles and sizes when they are needed.
  */
@@ -1228,7 +1237,7 @@ input[type="number"] {
 }
 
 /**
- * 3.7 Notifications
+ * 3.8 Notifications
  *
  * @todo Replace .hrs-callout classes with .notification classes.
  */
@@ -1259,7 +1268,7 @@ input[type="number"] {
 }
 
 /**
- * 3.8 Pagination
+ * 3.9 Pagination
  */
 .nav-links,
 .pager {
@@ -1305,7 +1314,7 @@ input[type="number"] {
 }
 
 /**
- * 3.9 Row Lists
+ * 3.10 Row Lists
  *
  * @todo Adjust these styles to be more agnostic of markup?
  */
@@ -1356,7 +1365,7 @@ input[type="number"] {
 }
 
 /**
- * 3.10 Search
+ * 3.11 Search
  */
 #search-menu {
   background: #eff0f1;
@@ -1434,12 +1443,12 @@ input[type="number"] {
  *
  * Rules defining different layout patterns for use anywhere on the site.
  *
- *     - 4.1 Grids
+ *     - 4.1 ???
  *
  * @since 0.9.0
  */
 /**
- * 4.1 Grids
+ * 4.1 ???
  */
 /* Templates */
 /**
@@ -1451,14 +1460,16 @@ input[type="number"] {
  *
  *     - 5.1 Header
  *     - 5.2 Footer
- *     - 5.3 Articles
- *     - 5.4 Archives
- *     - 5.4 Multi-part Pages
+ *     - 5.3 Article
+ *     - 5.4 Archive
+ *     - 5.4 Multi-part Page
  *
  * @since 0.9.0
  */
 /**
  * 5.1 Header
+ *
+ * @since 0.11.0
  */
 .banner .column {
   -ms-flex-align: center;
@@ -1481,6 +1492,8 @@ input[type="number"] {
 
 /**
  * 5.2 Footer
+ *
+ * @since 0.11.0
  */
 .site-footer nav ul {
   font-size: .9rem;
@@ -1554,17 +1567,17 @@ input[type="number"] {
 }
 
 /**
- * 5.3 Articles
+ * 5.3 Article
  */
 .article-date {
   color: #6f7f87;
 }
 
 /**
- * 5.4 Archives
+ * 5.4 Archive
  */
 /**
- * 5.4 Multi-part Pages
+ * 5.4 Multi-part Page
  */
 /* Pages */
 /**
@@ -1693,19 +1706,138 @@ input[type="number"] {
   opacity: .6;
 }
 
+/* Plugins */
+/**
+ * 7.0 Plugins
+ *
+ * Rules targeted to adjusting and overriding styles declared by plugins.
+ *
+ *     - 7.1 TablePress
+ *     - 7.2 Caldera Forms
+ *
+ * @since 0.11.0
+ */
+/**
+ * 7.1 TablePress
+ *
+ * @since 0.11.0
+ */
+.tablepress tfoot th,
+.tablepress thead th {
+  background-color: inherit;
+  vertical-align: inherit;
+}
+
+.tablepress thead th {
+  border-bottom: inherit;
+}
+
+/* HRS Contacts adjustments */
+.tablepress-manual-contacts .column-1 {
+  width: 497px;
+}
+
+.tablepress-manual-contacts td.column-3,
+.tablepress-hrs-contacts td.column-3 {
+  white-space: nowrap;
+}
+
+/* The 2018 Medical Premium Changes table */
+.hrs-medical-premium-changes-2018 {
+  /* The 2018 columns */
+}
+
+.hrs-medical-premium-changes-2018 tbody {
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+.hrs-medical-premium-changes-2018 tbody td {
+  border-right: 1px solid #ddd;
+}
+
+.hrs-medical-premium-changes-2018 tbody td:not(.column-1) {
+  text-align: center;
+  width: 9%;
+}
+
+.hrs-medical-premium-changes-2018 tr .column-3,
+.hrs-medical-premium-changes-2018 tr .column-5,
+.hrs-medical-premium-changes-2018 tr .column-7,
+.hrs-medical-premium-changes-2018 tr .column-9 {
+  background-color: #eee;
+  font-weight: 600;
+}
+
+.hrs-medical-premium-changes-2018 .row-1 td {
+  background-color: #981e32;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hrs-medical-premium-changes-2018 .row-2 td {
+  background-color: #2a3033;
+  color: #fff;
+  text-align: center;
+}
+
+.hrs-medical-premium-changes-2018 .row-3 .column-1,
+.hrs-medical-premium-changes-2018 .row-8 .column-1,
+.hrs-medical-premium-changes-2018 .row-12 .column-1 {
+  background-color: #d7dadb;
+  font-weight: 600;
+}
+
+/*
+ * @todo Update labor relations table to use a class
+ */
+.tablepress-id-31 .column-1 {
+  width: 450px !important;
+}
+
+.tablepress-id-7 .column-1 {
+  width: 500px !important;
+}
+
+.tablepress-id-31 .column-2,
+.tablepress-id-7 .column-2 {
+  width: 150px !important;
+}
+
+.tablepress-id-31 .column-3,
+.tablepress-id-7 .column-3 {
+  width: 100px !important;
+}
+
+.tablepress.hrs-4-of-5 td.column-1 {
+  width: 30%;
+}
+
+/**
+ * 7.2 Caldera Forms
+ *
+ * @since 0.11.0
+ */
+.caldera-grid td,
+.caldera-grid th {
+  padding: .5em .75em;
+}
+
 /* Breakpoints */
 /**
- * 7.0 Breakpoints
+ * 8.0 Breakpoints
  *
  * All previous styles should be fluid, responsive, and otherwise target the
  * smallest standard viewport size (i.e., mobile devices). This section provides
  * adjustments to take advantage of additional screen space on larger viewports
  * and fix items that may no longer be ideal at larger screen sizes.
  *
- *     - 7.1 Small
- *     - 7.2 Medium
- *     - 7.3 Large
- *     - 7.4 Massive
+ *     - 8.1 Small
+ *     - 8.2 Medium
+ *     - 8.3 Large
+ *     - 8.4 Massive
  *
  * @since 0.9.0
  */
@@ -2211,116 +2343,3 @@ input[type="number"] {
 /**
  * 7.4 Massive
  */
-/* Plugins */
-/**
- * 9.0 Plugins
- *
- * Rules targeted to adjusting and overriding styles declared by plugins.
- *
- *     - 9.1 TablePress
- *
- * @since 0.11.0
- */
-/**
- * 9.1 TablePress
- */
-.tablepress tfoot th,
-.tablepress thead th {
-  background-color: inherit;
-  vertical-align: inherit;
-}
-
-.tablepress thead th {
-  border-bottom: inherit;
-}
-
-/* HRS Contacts adjustments */
-.tablepress-manual-contacts .column-1 {
-  width: 497px;
-}
-
-.tablepress-manual-contacts td.column-3,
-.tablepress-hrs-contacts td.column-3 {
-  white-space: nowrap;
-}
-
-/* The 2018 Medical Premium Changes table */
-.hrs-medical-premium-changes-2018 {
-  /* The 2018 columns */
-}
-
-.hrs-medical-premium-changes-2018 tbody {
-  border-bottom: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-}
-
-.hrs-medical-premium-changes-2018 tbody td {
-  border-right: 1px solid #ddd;
-}
-
-.hrs-medical-premium-changes-2018 tbody td:not(.column-1) {
-  text-align: center;
-  width: 9%;
-}
-
-.hrs-medical-premium-changes-2018 tr .column-3,
-.hrs-medical-premium-changes-2018 tr .column-5,
-.hrs-medical-premium-changes-2018 tr .column-7,
-.hrs-medical-premium-changes-2018 tr .column-9 {
-  background-color: #eee;
-  font-weight: 600;
-}
-
-.hrs-medical-premium-changes-2018 .row-1 td {
-  background-color: #981e32;
-  color: #fff;
-  font-weight: 600;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.hrs-medical-premium-changes-2018 .row-2 td {
-  background-color: #2a3033;
-  color: #fff;
-  text-align: center;
-}
-
-.hrs-medical-premium-changes-2018 .row-3 .column-1,
-.hrs-medical-premium-changes-2018 .row-8 .column-1,
-.hrs-medical-premium-changes-2018 .row-12 .column-1 {
-  background-color: #d7dadb;
-  font-weight: 600;
-}
-
-/*
- * @todo Update labor relations table to use a class
- */
-.tablepress-id-31 .column-1 {
-  width: 450px !important;
-}
-
-.tablepress-id-7 .column-1 {
-  width: 500px !important;
-}
-
-.tablepress-id-31 .column-2,
-.tablepress-id-7 .column-2 {
-  width: 150px !important;
-}
-
-.tablepress-id-31 .column-3,
-.tablepress-id-7 .column-3 {
-  width: 100px !important;
-}
-
-.tablepress.hrs-4-of-5 td.column-1 {
-  width: 30%;
-}
-
-/**
- * 9.2 Caldera Forms
- */
-.caldera-grid td,
-.caldera-grid th {
-  padding: .5em .75em;
-}
