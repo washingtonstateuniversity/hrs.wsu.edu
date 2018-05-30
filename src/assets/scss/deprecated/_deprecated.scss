@@ -14,7 +14,7 @@
  * @since 0.11.0
  */
 
-/* We don't use a background or background image so we probably don't need */
+/* We don't use a background or background image so we probably don't need
 html {
 	min-height: 100%;
 
@@ -26,13 +26,12 @@ html {
 		}
 	}
 }
-
+*/
 
 /**
  * Deprecated Typography Styles
  *
  * @since 0.11.0
- */
 
 .two aside {
 	font-size: 90%;
@@ -41,13 +40,12 @@ html {
 		padding-top: 0;
 	}
 }
-
+ */
 
 /**
  * Deprecated List Styles
  *
  * @since 0.11.0
- */
 
 ul.inline,
 ol.inline {
@@ -66,13 +64,12 @@ ul.inline li:last-child,
 ol.inline li:last-child {
 	margin-right: 0;
 }
-
+ */
 
 /**
  * Deprecated Utility Styles
  *
  * @since 0.11.0
- */
 
 .fixed {
 	position: fixed;
@@ -85,7 +82,7 @@ ol.inline li:last-child {
 .gray-bg {
 	background-color: #e4e4e4;
 }
-
+ */
 
 /**
  * Deprecated Button Styles
@@ -115,7 +112,7 @@ a.button:hover {
 }
 */
 
-/* @todo Deprecate class name, replace in markup. */
+/* @todo Deprecate class name, replace in markup.
 .hrs-button,
 button.hrs-button,
 input[type="button"].hrs-button,
@@ -229,13 +226,12 @@ button.hrs-button-white {
 		color: #fff;
 	}
 }
-
+*/
 
 /**
  * Deprecated Table Styles
  *
  * @since 0.9.0
- */
 
 #color-table tr:nth-child(even) {
 	background: #f7f6f3;
@@ -251,7 +247,7 @@ button.hrs-button-white {
 	background: #717171;
 	color: #fff;
 }
-
+*/
 
 /**
  * Deprecated Builder Banner Styles
@@ -316,7 +312,6 @@ button.hrs-button-white {
  * Replaced with the `notification` component.
  *
  * @since 0.10.1
- */
 
 .hrs-callout {
 	border: 2px solid #a9a9a9;
@@ -342,8 +337,9 @@ button.hrs-button-white {
 .hrs-priority-neutral {
 	background-color: #eff0f1;
 }
+*/
 
-/* HRS Banner Callouts */
+/* HRS Banner Callouts
 .hrs-callout-banner {
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -417,17 +413,18 @@ button.hrs-button-white {
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
+*/
 
 /**
  * Deprecated Gallery Style
  *
  * @since 0.10.0
- */
+
 
 .hrs-gallery {
 	@extend .gallery;
 }
-
+*/
 
 /**
  * Deprecated Spine Overrides
