@@ -28,7 +28,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Get Babel processing working.
 - Determine if we really need the `center-middle` utility class. If yes, look into using a grid with `Xvh` and `Xvh` column and row size to center instead.
 
-## 0.11.0 (unreleased)
+## 0.11.1 (unreleased)
 
 ### Fixed
 
