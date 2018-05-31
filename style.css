@@ -1617,8 +1617,15 @@ input[type="number"] {
 .site-title {
   border: none;
   color: #981e32;
-  font-size: 1.5rem;
+  font-size: 1.5157em;
   margin: .75rem 1rem .75rem 0;
+}
+
+@media (min-width: 43em) {
+  .site-title {
+    font-size: 2em;
+    margin: 1rem 2rem;
+  }
 }
 
 @media (min-width: 61.875em) {
@@ -1626,7 +1633,7 @@ input[type="number"] {
     padding: 0 2rem;
   }
   .site-title {
-    font-size: 3rem;
+    font-size: 2.2974em;
     margin: 1.5rem 2rem;
   }
 }
