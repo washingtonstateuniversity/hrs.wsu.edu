@@ -73,6 +73,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- New array of font sizes following a 1.1487 scale.
 - Icons image directory with a "link" SVG image.
 - Separate scss file `_plugins` for styles targeted to adjusting and overriding styles loaded by plugins such as TablePress.
 - Baseline data table styles.

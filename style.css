@@ -96,13 +96,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @since 0.11.0
  */
-/* 16.0px */
-/* 32.0px */
-/* 28.8px */
-/* 25.6px */
-/* 22.4px */
-/* 19.2px */
-/* 16.0px */
+/*
+ * The font size steps.
+ *
+ * These use em units relative to the base context, which is 18px at desktop-
+ * sized screens and 16px at smaller-sized screens. As such, all of the font
+ * sizes adjust in proportion to each other.
+ *
+ * @since 0.11.0
+ */
+/* 16px small, 18px large */
 /**
  * 1.6.3 Breakpoints
  *
@@ -152,6 +155,31 @@ main section {
 /**
  * 1.2 Typography
  */
+h1 {
+  font-size: 2.639em;
+  padding-top: 0;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5157em;
+}
+
+h4 {
+  font-size: 1.1487em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.8706em;
+}
+
 blockquote {
   font-family: "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
 }
