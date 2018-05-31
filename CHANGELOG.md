@@ -42,6 +42,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Update all old media queries to use breakpoint variables and target small-screen as base wherever possible (given parent and plugin theme limitations).
 - Adjust site title sizes for better responsive display.
 - Switch gallery styles to use small-screen layout as the default with a media query to handle larger screens.
 - Incorporate breakpoint styles into main SCSS files for ease of development and since we aren't using stylesheet switching yet.
