@@ -37,4 +37,29 @@ $nav-color: $brand-crimson;
 $nav-color-border: #da1e00;
 $nav-color-hover: $accent-crimson;
 
+/**
+ * 1.6.4 Typography
+ *
+ * @since 0.11.0
+ */
+
 $sans-serif-fonts: "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
+
+$base-font-size: 1rem; /* 16.0px */
+$font-step: $base-font-size * 1.2;
+
+$h1: 2rem;             /* 32.0px */
+$h2: 1.8rem;           /* 28.8px */
+$h3: 1.6rem;           /* 25.6px */
+$h4: 1.4rem;           /* 22.4px */
+$h5: 1.2rem;           /* 19.2px */
+$h6: $base-font-size;  /* 16.0px */
+
+/**
+ * 1.6.3 Breakpoints
+ *
+ * @since 0.11.0
+ */
+
+$medium: 43em; /* 688px - Point where gallery columns all switch to 50% */
+$large: 61.875em; /* 990px - Point where Spine moves to fixed top position. */

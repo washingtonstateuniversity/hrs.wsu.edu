@@ -92,6 +92,25 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * @since 0.11.0
  */
 /**
+ * 1.6.4 Typography
+ *
+ * @since 0.11.0
+ */
+/* 16.0px */
+/* 32.0px */
+/* 28.8px */
+/* 25.6px */
+/* 22.4px */
+/* 19.2px */
+/* 16.0px */
+/**
+ * 1.6.3 Breakpoints
+ *
+ * @since 0.11.0
+ */
+/* 688px - Point where gallery columns all switch to 50% */
+/* 990px - Point where Spine moves to fixed top position. */
+/**
  * 1.0 Globals
  *
  * CSS rules for all elements that are universal across the site, no matter the
@@ -1466,6 +1485,10 @@ input[type="number"] {
       transform: translateY(-4.8rem);
 }
 
+.search-toggle {
+  padding: .5rem 1rem;
+}
+
 .search-toggle[aria-expanded="true"] {
   background: #2a3033;
   border-color: #2a3033;
@@ -1511,6 +1534,12 @@ input[type="number"] {
   width: 1em;
 }
 
+@media (min-width: 43em) {
+  .search-toggle {
+    padding: .75rem 1.5rem;
+  }
+}
+
 /* Layouts */
 /**
  * 4.0 Layouts
@@ -1553,15 +1582,25 @@ input[type="number"] {
   display: flex;
   -ms-flex-pack: end;
       justify-content: flex-end;
-  padding: 0 2rem;
+  padding: 0 1rem;
   z-index: 900;
 }
 
 .site-title {
   border: none;
   color: #981e32;
-  font-size: 3rem;
-  margin: 1.5rem 2rem;
+  font-size: 1.5rem;
+  margin: .75rem 1rem .75rem 0;
+}
+
+@media (min-width: 61.875em) {
+  .banner .column {
+    padding: 0 2rem;
+  }
+  .site-title {
+    font-size: 3rem;
+    margin: 1.5rem 2rem;
+  }
 }
 
 /**
@@ -1670,15 +1709,12 @@ input[type="number"] {
  *
  * @since 0.11.0
  */
-/*
- * Adust the seach menu width on the homepage to dodge the WSU banner.
- *
- * @todo At the WSU small-screen breakpoint, when the WSU banner moves, can
- *       use full width; so set this only in a breakpoint above that.
- */
-.home #search-menu {
-  right: 0;
-  width: 60%;
+/* Adust the seach menu width on the homepage to dodge the WSU banner. */
+@media (min-width: 61.875em) {
+  .home #search-menu {
+    right: 0;
+    width: 60%;
+  }
 }
 
 .home-main-subnav a,

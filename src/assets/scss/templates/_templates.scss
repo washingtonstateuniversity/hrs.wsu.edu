@@ -27,7 +27,7 @@
 		border-top: 6px solid $brand-crimson;
 		display: flex;
 		justify-content: flex-end;
-		padding: 0 2rem;
+		padding: 0 1rem;
 		z-index: 900;
 	}
 
@@ -36,8 +36,25 @@
 .site-title {
 	border: none;
 	color: $brand-crimson;
-	font-size: 3rem;
-	margin: 1.5rem 2rem;
+	font-size: 1.5rem;
+	margin: .75rem 1rem .75rem 0;
+}
+
+@media (min-width: $large) {
+
+	.banner {
+
+		.column {
+			padding: 0 2rem;
+		}
+
+	}
+
+	.site-title {
+		font-size: 3rem;
+		margin: 1.5rem 2rem;
+	}
+
 }
 
 /**

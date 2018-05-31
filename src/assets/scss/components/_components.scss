@@ -159,7 +159,7 @@ input[type="number"] {
 	width: 50%;
 }
 
-@media (max-width: 43em) {
+@media (max-width: $medium) {
 
 	.gallery-item:nth-child(odd) {
 		padding-left: 0;
@@ -171,7 +171,7 @@ input[type="number"] {
 
 }
 
-@media (min-width: 43em) {
+@media (min-width: $medium) {
 
 	.gallery-item {
 
@@ -433,6 +433,10 @@ input[type="number"] {
 	}
 }
 
+.search-toggle {
+	padding: .5rem 1rem;
+}
+
 .search-toggle[aria-expanded="true"] {
 	background: $neutral-dark;
 	border-color: $neutral-dark;
@@ -477,6 +481,14 @@ input[type="number"] {
 		margin: .2em 0 -.05em .1em;
 		position: absolute;
 		width: 1em;
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.search-toggle {
+		padding: .75rem 1.5rem;
 	}
 
 }

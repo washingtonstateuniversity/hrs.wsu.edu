@@ -16,16 +16,14 @@
  * @since 0.11.0
  */
 
-/*
- * Adust the seach menu width on the homepage to dodge the WSU banner.
- *
- * @todo At the WSU small-screen breakpoint, when the WSU banner moves, can
- *       use full width; so set this only in a breakpoint above that.
- */
+/* Adust the seach menu width on the homepage to dodge the WSU banner. */
+@media (min-width: $large) {
 
-.home #search-menu {
-	right: 0;
-	width: 60%;
+	.home #search-menu {
+		right: 0;
+		width: 60%;
+	}
+
 }
 
 .home-main-subnav a,
