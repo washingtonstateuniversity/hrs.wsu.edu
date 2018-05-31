@@ -1868,7 +1868,28 @@ input[type="number"] {
  *
  * @since 0.11.0
  */
-@media only screen and (max-width: 37.5em) {
+.tablepress tfoot th,
+.tablepress thead th {
+  background-color: inherit;
+  vertical-align: inherit;
+}
+
+.tablepress thead th {
+  border-bottom: inherit;
+}
+
+/* HRS Contacts adjustments */
+.tablepress-manual-contacts .column-1 {
+  width: 497px;
+}
+
+.tablepress-manual-contacts td.column-3,
+.tablepress-hrs-contacts td.column-3 {
+  white-space: nowrap;
+}
+
+/* Set by TablePress plugin, so use a "max-width" rule to override on small. */
+@media (max-width: 43em) {
   .tablepress-manual-contacts,
   .tablepress-hrs-contacts {
     display: block;
@@ -1912,26 +1933,6 @@ input[type="number"] {
   .tablepress-hrs-contacts .column-1 {
     font-weight: 700;
   }
-}
-
-.tablepress tfoot th,
-.tablepress thead th {
-  background-color: inherit;
-  vertical-align: inherit;
-}
-
-.tablepress thead th {
-  border-bottom: inherit;
-}
-
-/* HRS Contacts adjustments */
-.tablepress-manual-contacts .column-1 {
-  width: 497px;
-}
-
-.tablepress-manual-contacts td.column-3,
-.tablepress-hrs-contacts td.column-3 {
-  white-space: nowrap;
 }
 
 /* The 2018 Medical Premium Changes table */
