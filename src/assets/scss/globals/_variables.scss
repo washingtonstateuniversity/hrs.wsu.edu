@@ -50,7 +50,7 @@ $sans-serif-fonts: "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif
  *
  * These use em units relative to the base context, which is 18px at desktop-
  * sized screens and 16px at smaller-sized screens. As such, all of the font
- * sizes adjust in proportion to each other.
+ * sizes adjust in proportion to each other. Using a 1.125 ratio for the steps.
  *
  * @since 0.11.0
  */
@@ -58,13 +58,13 @@ $sans-serif-fonts: "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif
 $font-size-0: .7579em;
 $font-size-1: .8706em;
 $font-size-base: 1em; /* 16px small, 18px large */
-$font-size-2: 1.1487em;
-$font-size-3: 1.3195em;
-$font-size-4: 1.5157em;
-$font-size-5: 1.7511em;
-$font-size-6: 2em;
-$font-size-7: 2.2974em;
-$font-size-8: 2.639em;
+$font-size-2: 1.125em;
+$font-size-3: 1.266em;
+$font-size-4: 1.424em;
+$font-size-5: 1.602em;
+$font-size-6: 1.802em;
+$font-size-7: 2.027em;
+$font-size-8: 2.281em;
 
 /**
  * 1.6.3 Breakpoints
