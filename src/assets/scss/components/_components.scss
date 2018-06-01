@@ -105,7 +105,7 @@ figcaption {
 	font-size: .85em;
 	letter-spacing: .02em;
 	line-height: normal;
-	padding: .3em .75em;
+	padding: .3em .5em;
 }
 
 /**
@@ -220,35 +220,33 @@ input[type="number"] {
  */
 
 .module {
-	border: 11px solid $brand-crimson;
+	border: 8px solid $neutral-dark;
 	margin: 1.5rem auto;
+	max-width: 54.851em;
 	padding: 1.5rem 2rem;
 
 	.module-title {
-		color: $brand-crimson;
+		color: $neutral-dark;
 	}
 }
 
 .module-title {
 	border-bottom: 4px solid $neutral-light;
-	font-size: 1.8em; /* whatever the standard h3 size is */
+	font-size: $font-size-5;
 	margin: 0 0 .5em;
 	padding: 0 0 .25em;
 }
 
-.action-module {
+.module--cta {
 	@extend .module;
-	background-color: $accent-blue;
-	border-color: darken($accent-blue, 15%);
 	text-align: center;
 
 	.module-title {
-		border-bottom-color: darken($accent-blue, 5%);
-		font-size: 3em;
+		font-size: $font-size-7;
 	}
 }
 
-.alert-module {
+.module--alert {
 	@extend .module;
 	border-color: $brand-crimson;
 	min-width: 300px;

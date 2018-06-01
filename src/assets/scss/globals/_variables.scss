@@ -26,7 +26,7 @@ $accent-orange: #f6861f;
 $accent-blue: #00a5bd;
 $accent-yellow: #ffb81c;
 
-$neutral-dark: #2a3033;
+$neutral-dark: darken($brand-gray, 10%);
 $neutral-light: #eff0f1;
 $dark-dark: #191919;
 
@@ -55,9 +55,9 @@ $sans-serif-fonts: "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif
  * @since 0.11.0
  */
 
-$font-size-0: .7579em;
-$font-size-1: .8706em;
-$font-size-base: 1em; /* 16px small, 18px large */
+$font-size-0: .79em;
+$font-size-1: .889em;
+$font-size-base: 1em; /* 16px small || 18px large */
 $font-size-2: 1.125em;
 $font-size-3: 1.266em;
 $font-size-4: 1.424em;
@@ -72,6 +72,6 @@ $font-size-8: 2.281em;
  * @since 0.11.0
  */
 
-$small: 34em; /* 544px */
-$medium: 43em; /* 688px */
-$large: 61.875em; /* 990px */
+$small: 34em;     /* 544px @ 16px base */
+$medium: 43em;    /* 688px @ 16px base */
+$large: 61.875em; /* 990px @ 16px base */
