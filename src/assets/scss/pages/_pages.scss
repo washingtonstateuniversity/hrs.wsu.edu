@@ -16,12 +16,18 @@
  * @since 0.11.0
  */
 
-/* Adust the seach menu width on the homepage to dodge the WSU banner. */
 @media (min-width: $large) {
 
-	.home #search-menu {
-		right: 0;
-		width: 60%;
+	.home {
+
+		#spine.cropped:not(.skimmed) {
+			margin-left: 2rem;
+		}
+
+		#search-menu {
+			right: 0;
+			width: 60%;
+		}
 	}
 
 }
