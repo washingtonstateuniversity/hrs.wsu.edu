@@ -30,11 +30,6 @@
 }
 
 /* HRS Contacts adjustments */
-.tablepress-manual-contacts .column-1 {
-	width: 497px;
-}
-
-.tablepress-manual-contacts td.column-3,
 .tablepress-hrs-contacts td.column-3 {
 	white-space: nowrap;
 }
@@ -42,7 +37,6 @@
 /* Set by TablePress plugin, so use a "max-width" rule to override on small. */
 @media (max-width: $medium) {
 
-	.tablepress-manual-contacts,
 	.tablepress-hrs-contacts {
 		display: block;
 		text-align: left;
