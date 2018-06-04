@@ -22,7 +22,7 @@
  */
 
 html {
-	background-color: #f2f2f2;
+	background-color: $body-background-color;
 }
 
 main {
@@ -38,6 +38,14 @@ main {
 	section {
 		background-color: $section-background-color;
 	}
+}
+
+@media (min-width: $large) {
+
+	main section {
+		border-left: 8px solid $body-background-color;
+	}
+
 }
 
 /**

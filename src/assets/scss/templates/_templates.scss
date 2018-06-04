@@ -24,10 +24,11 @@
 
 	.column {
 		align-items: center;
-		border-top: 6px solid $brand-crimson;
+		border-top: 8px solid $brand-crimson;
+		border-bottom: 8px solid $body-background-color;
 		display: flex;
 		justify-content: flex-end;
-		padding: 0 1rem;
+		padding: .75rem 1rem;
 		z-index: 900;
 	}
 
