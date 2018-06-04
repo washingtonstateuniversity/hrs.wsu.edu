@@ -46,6 +46,10 @@ main {
 		border-left: 8px solid $body-background-color;
 	}
 
+	.home main section {
+		border-left: none;
+	}
+
 }
 
 /**
