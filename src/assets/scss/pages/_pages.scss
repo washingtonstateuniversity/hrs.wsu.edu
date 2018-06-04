@@ -129,7 +129,7 @@
 
 .page-tricities .builder-banner-inner-title,
 .page-spokane .builder-banner-inner-title {
-	font-size: 2.4rem;
+	font-size: $font-size-8;
 	margin: auto;
 	width: 400px;
 	width: fit-content;
@@ -148,7 +148,7 @@
 	}
 
 	.article-title {
-		font-size: 1.4rem;
+		font-size: $font-size-4;
 		font-weight: 600;
 		padding: .5rem 0;
 	}
