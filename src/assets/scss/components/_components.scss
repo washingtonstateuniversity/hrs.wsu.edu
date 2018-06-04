@@ -297,6 +297,7 @@ input[type="number"] {
 	border: 5px solid $neutral-dark;
 	border-left-width: 1em;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: flex-end;
 	margin: 1.5em auto;
 	max-width: 54.851em;
@@ -308,10 +309,6 @@ input[type="number"] {
 
 	& > *:first-child {
 		margin-right: auto;
-	}
-
-	p {
-		padding: 0;
 	}
 }
 
@@ -328,6 +325,18 @@ input[type="number"] {
 .notification--warning {
 	@extend .notification;
 	border-color: $accent-orange;
+}
+
+@media (min-width: $medium) {
+
+	.notification {
+		flex-wrap: nowrap;
+
+		p {
+			padding: 0;
+		}
+	}
+
 }
 
 /**
