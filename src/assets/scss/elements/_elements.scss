@@ -63,7 +63,7 @@ main {
 		&:hover,
 		&:focus {
 			background: #fff;
-			color: $accent-crimson;
+			color: $nav-color-hover;
 		}
 
 		&:active {
@@ -72,6 +72,7 @@ main {
 	}
 
 	.button-flat {
+		border-radius: 3px;
 		display: inline-block;
 		line-height: 1.5;
 		font-size: 1rem;
@@ -84,7 +85,7 @@ main {
 
 		&:hover,
 		&:focus {
-			background: $accent-crimson;
+			background: $nav-color-hover;
 			color: #fff;
 		}
 
@@ -94,7 +95,6 @@ main {
 		}
 	}
 }
-
 
 /**
  * 2.2 Embedded Content
