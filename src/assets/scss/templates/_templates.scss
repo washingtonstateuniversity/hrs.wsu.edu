@@ -157,8 +157,10 @@
  * 5.3 Article
  */
 
-.article-date {
-	color: lighten($neutral-dark, 30%);
+.article-date {}
+
+article header time:before {
+	content: "@ ";
 }
 
 /**
