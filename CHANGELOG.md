@@ -37,11 +37,14 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
+- Update all font sizes to use variables.
 - Style the search form and menu for homepage and mobile displays.
-- Move mobile-only styles to "base" and larger-width adjustments into media queries as needed (essentially reverse the current setup).
 
 ### Changed
 
+- All media queries, new and old, updated and streamlined using mobile-ready versions as the default, fix #25.
+- Tweak row list display to be less cluttered on small screens.
+- Use flexbox with notification styles to allow optional right-aligned button and require only one line of text.
 - Update all old media queries to use breakpoint variables and target small-screen as base wherever possible (given parent and plugin theme limitations).
 - Adjust site title sizes for better responsive display.
 - Switch gallery styles to use small-screen layout as the default with a media query to handle larger screens.

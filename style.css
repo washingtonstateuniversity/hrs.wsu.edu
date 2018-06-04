@@ -75,8 +75,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * 7.0 Plugins
  *     7.1 TablePress
  *     7.2 Caldera Forms
- *
- * 8.0 Breakpoints
  */
 /* Globals */
 /*
@@ -101,18 +99,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
  * These use em units relative to the base context, which is 18px at desktop-
  * sized screens and 16px at smaller-sized screens. As such, all of the font
- * sizes adjust in proportion to each other.
+ * sizes adjust in proportion to each other. Using a 1.125 ratio for the steps.
  *
  * @since 0.11.0
  */
-/* 16px small, 18px large */
+/* 16px small || 18px large */
 /**
  * 1.6.3 Breakpoints
  *
  * @since 0.11.0
  */
-/* 688px - Point where gallery columns all switch to 50% */
-/* 990px - Point where Spine moves to fixed top position. */
+/* 544px @ 16px base */
+/* 688px @ 16px base */
+/* 990px @ 16px base */
 /**
  * 1.0 Globals
  *
@@ -152,24 +151,33 @@ main section {
   background-color: #fdfdfd;
 }
 
+@media (min-width: 61.875em) {
+  main section {
+    border-left: 8px solid #f2f2f2;
+  }
+  .home main section {
+    border-left: none;
+  }
+}
+
 /**
  * 1.2 Typography
  */
 h1 {
-  font-size: 2.639em;
+  font-size: 2.281em;
   padding-top: 0;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.802em;
 }
 
 h3 {
-  font-size: 1.5157em;
+  font-size: 1.424em;
 }
 
 h4 {
-  font-size: 1.1487em;
+  font-size: 1.125em;
 }
 
 h5 {
@@ -177,7 +185,7 @@ h5 {
 }
 
 h6 {
-  font-size: 0.8706em;
+  font-size: 0.889em;
 }
 
 blockquote {
@@ -525,7 +533,7 @@ button.hrs-button-white {
   background-color: rgba(255, 255, 255, 0.9);
   color: #981e32;
   font-weight: 600;
-  padding: 1rem 2rem;
+  padding: .25rem 1rem;
 }
 
 .builder-section-banner .builder-banner-inner-content {
@@ -973,7 +981,7 @@ main button:active,
 main input[type="button"]:active,
 main input[type="reset"]:active {
   background: #6d1624;
-  border: 1px solid #2a3033;
+  border: 1px solid #475055;
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
   outline-width: 0;
 }
@@ -997,6 +1005,7 @@ main input[type="submit"]:active {
 }
 
 main .button-flat {
+  border-radius: 3px;
   display: inline-block;
   line-height: 1.5;
   font-size: 1rem;
@@ -1193,7 +1202,7 @@ figcaption {
   font-size: .85em;
   letter-spacing: .02em;
   line-height: normal;
-  padding: .3em .75em;
+  padding: .3em .5em;
 }
 
 /**
@@ -1287,74 +1296,69 @@ input[type="number"] {
 
 /*
  * 3.7 Modules
- *
- * @todo Adjust module styles and sizes when they are needed.
  */
-.module, .action-module, .alert-module {
-  border: 11px solid #981e32;
+.module, .module--cta, .module--alert {
+  border: 8px solid #475055;
   margin: 1.5rem auto;
+  max-width: 54.851em;
   padding: 1.5rem 2rem;
 }
 
-.module .module-title, .action-module .module-title, .alert-module .module-title {
-  color: #981e32;
+.module .module-title, .module--cta .module-title, .module--alert .module-title {
+  color: #475055;
 }
 
 .module-title {
   border-bottom: 4px solid #eff0f1;
-  font-size: 1.8em;
-  /* whatever the standard h3 size is */
+  font-size: 1.602em;
   margin: 0 0 .5em;
   padding: 0 0 .25em;
 }
 
-.action-module {
-  background-color: #00a5bd;
-  border-color: #006271;
+.module--cta {
   text-align: center;
 }
 
-.action-module .module-title {
-  border-bottom-color: #008fa4;
-  font-size: 3em;
+.module--cta .module-title {
+  font-size: 2.027em;
 }
 
-.alert-module {
+.module--alert {
   border-color: #981e32;
   min-width: 300px;
   text-align: center;
   width: 80%;
 }
 
-.alert-module .module-title {
+.module--alert .module-title {
   font-size: 3em;
 }
 
-.alert-module svg {
+.module--alert svg {
   fill: #981e32;
 }
 
-.alert-module.positive {
+.module--alert.positive {
   border-color: #ada400;
 }
 
-.alert-module.positive svg {
+.module--alert.positive svg {
   fill: #ada400;
 }
 
-.alert-module.caution {
+.module--alert.caution {
   border-color: #ffb81c;
 }
 
-.alert-module.caution svg {
+.module--alert.caution svg {
   fill: #ffb81c;
 }
 
-.alert-module.warning {
+.module--alert.warning {
   border-color: #f6861f;
 }
 
-.alert-module.warning svg {
+.module--alert.warning svg {
   fill: #f6861f;
 }
 
@@ -1362,31 +1366,53 @@ input[type="number"] {
  * 3.8 Notifications
  *
  * @todo Replace .hrs-callout classes with .notification classes.
+ * @todo Good candidate for a template -- would allow more specific styles if we
+ *       didn't need to catch any containing markup.
  */
-.notification, .positive-notification, .caution-notification, .warning-notification {
-  border: 5px solid #5e6a71;
-  border-left: 21px solid #5e6a71;
+.notification, .notification--positive, .notification--caution, .notification--warning {
+  -ms-flex-align: center;
+      align-items: center;
+  border: 5px solid #475055;
+  border-left-width: 1em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
   margin: 1.5em auto;
-  padding: 1em 1.5em;
+  max-width: 54.851em;
+  padding: .75em 1em;
 }
 
-.notification p, .positive-notification p, .caution-notification p, .warning-notification p {
-  padding: 0;
+.notification > *:not(:first-child), .notification--positive > *:not(:first-child), .notification--caution > *:not(:first-child), .notification--warning > *:not(:first-child) {
+  padding-left: 1em;
 }
 
-.positive-notification {
-  border: 5px solid #00a5bd;
-  border-left: 21px solid #00a5bd;
+.notification > *:first-child, .notification--positive > *:first-child, .notification--caution > *:first-child, .notification--warning > *:first-child {
+  margin-right: auto;
 }
 
-.caution-notification {
-  border: 5px solid #ffb81c;
-  border-left: 21px solid #ffb81c;
+.notification--positive {
+  border-color: #ada400;
 }
 
-.warning-notification {
-  border: 5px solid #f6861f;
-  border-left: 21px solid #f6861f;
+.notification--caution {
+  border-color: #ffb81c;
+}
+
+.notification--warning {
+  border-color: #f6861f;
+}
+
+@media (min-width: 43em) {
+  .notification, .notification--positive, .notification--caution, .notification--warning {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .notification p, .notification--positive p, .notification--caution p, .notification--warning p {
+    padding: 0;
+  }
 }
 
 /**
@@ -1394,8 +1420,9 @@ input[type="number"] {
  */
 .nav-links,
 .pager {
-  margin: 1.5rem 0;
-  text-align: center;
+  margin: 1.5rem auto;
+  padding: 1.5rem 0;
+  /* Override excess padding from Spine. @todo Clean up template maybe. */
 }
 
 .nav-links a,
@@ -1424,6 +1451,12 @@ input[type="number"] {
   border: 1px solid #464e54;
 }
 
+.nav-links.pad-ends .column,
+.pager.pad-ends .column {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .nav-previous,
 .nav-next {
   display: inline-block;
@@ -1437,8 +1470,6 @@ input[type="number"] {
 
 /**
  * 3.10 Row Lists
- *
- * @todo Adjust these styles to be more agnostic of markup?
  */
 .articles-list article,
 .articles-list .list-item {
@@ -1446,7 +1477,7 @@ input[type="number"] {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.5em;
 }
 
 .articles-list .article-image {
@@ -1455,7 +1486,7 @@ input[type="number"] {
   -ms-flex: 0 0 100px;
       flex: 0 0 100px;
   line-height: 0;
-  margin-right: 1rem;
+  margin-right: 1em;
 }
 
 .articles-list .list-content {
@@ -1464,26 +1495,43 @@ input[type="number"] {
 }
 
 .articles-list .article-header {
-  -ms-flex-align: center;
-      align-items: center;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
 }
 
 .articles-list .article-title {
-  font-size: 1.5rem;
+  font-size: 1.424em;
   padding: 0;
-  margin: 0;
+  margin-right: auto;
+}
+
+.articles-list time {
+  white-space: nowrap;
+}
+
+.articles-list .article-excerpt,
+.articles-list time {
+  display: none;
 }
 
 .articles-list p {
   padding: .5em 0 0;
-  font-size: 1rem;
-  line-height: 1.2;
+}
+
+@media (min-width: 34em) {
+  .articles-list .article-header {
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .articles-list time {
+    display: inline;
+    padding-left: 1em;
+  }
+  .articles-list .article-excerpt {
+    display: block;
+  }
 }
 
 /**
@@ -1519,8 +1567,8 @@ input[type="number"] {
 }
 
 .search-toggle[aria-expanded="true"] {
-  background: #2a3033;
-  border-color: #2a3033;
+  background: #475055;
+  border-color: #475055;
   color: #eff0f1;
 }
 
@@ -1556,7 +1604,7 @@ input[type="number"] {
   background-size: 80%;
   content: "";
   display: inline-block;
-  fill: #2a3033;
+  fill: #475055;
   height: 1em;
   margin: .2em 0 -.05em .1em;
   position: absolute;
@@ -1606,25 +1654,26 @@ input[type="number"] {
 .banner .column {
   -ms-flex-align: center;
       align-items: center;
-  border-top: 6px solid #981e32;
+  border-top: 8px solid #981e32;
+  border-bottom: 8px solid #f2f2f2;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
       justify-content: flex-end;
-  padding: 0 1rem;
+  padding: .75rem 1rem;
   z-index: 900;
 }
 
 .site-title {
   border: none;
   color: #981e32;
-  font-size: 1.5157em;
+  font-size: 1.424em;
   margin: .75rem 1rem .75rem 0;
 }
 
 @media (min-width: 43em) {
   .site-title {
-    font-size: 2em;
+    font-size: 1.802em;
     margin: 1rem 2rem;
   }
 }
@@ -1634,7 +1683,7 @@ input[type="number"] {
     padding: 0 2rem;
   }
   .site-title {
-    font-size: 2.2974em;
+    font-size: 2.027em;
     margin: 1.5rem 2rem;
   }
 }
@@ -1693,8 +1742,8 @@ input[type="number"] {
 .site-reference ul {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
+  -ms-flex-flow: column;
+      flex-flow: column;
   -ms-flex-pack: end;
       justify-content: flex-end;
 }
@@ -1715,11 +1764,18 @@ input[type="number"] {
   text-decoration: underline;
 }
 
+@media (min-width: 34em) {
+  .site-reference ul {
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+  }
+}
+
 /**
  * 5.3 Article
  */
-.article-date {
-  color: #6f7f87;
+article header time:before {
+  content: "@ ";
 }
 
 /**
@@ -1745,50 +1801,71 @@ input[type="number"] {
  *
  * @since 0.11.0
  */
-/* Adust the seach menu width on the homepage to dodge the WSU banner. */
 @media (min-width: 61.875em) {
+  .home #spine.cropped:not(.skimmed) {
+    margin-left: 2rem;
+  }
   .home #search-menu {
     right: 0;
     width: 60%;
   }
 }
 
-.home-main-subnav a,
-.home-detail-subnav h2 a {
-  background-color: #2a3033;
-  border-bottom: none;
-  border-right: 3px solid #fff;
-  color: #fff;
-  display: block;
-  padding: .9em;
-}
-
-.home-main-subnav a:hover,
-.home-detail-subnav h2 a:hover {
-  background: #c60c30;
-  color: #fff;
-}
-
-/*
- * @todo Base style should be flex column with no border. Change this to non-
- *       mobile display.
- */
 .home-main-subnav nav ul {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: space-evenly;
+      justify-content: space-evenly;
   padding: 0;
 }
 
 .home-main-subnav nav li {
-  -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
-  font-size: 1.2rem;
-  padding: 0;
+  -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
+  font-size: 1.125em;
+  padding: .2em 0 0;
   text-align: center;
 }
 
-.home-main-subnav nav li:last-of-type a {
-  border-right: none;
+.home-main-subnav nav a {
+  background-color: #475055;
+  border-bottom: none;
+  color: #fff;
+  display: block;
+}
+
+.home-main-subnav nav a:hover {
+  background: #c60c30;
+  color: #fff;
+}
+
+@media (max-width: 34em) {
+  .home-main-subnav nav a {
+    height: 25vw;
+    line-height: 25vw;
+    width: 48vw;
+  }
+}
+
+@media (min-width: 34em) {
+  .home-main-subnav nav ul {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .home-main-subnav nav li {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    padding: 0;
+  }
+  .home-main-subnav nav a {
+    border-right: 3px solid #fff;
+    padding: .9em;
+  }
+  li:last-of-type a {
+    border-right: none;
+  }
 }
 
 .home-detail-subnav {
@@ -1796,15 +1873,18 @@ input[type="number"] {
 }
 
 .home-detail-subnav h2 {
+  font-size: 1.266em;
   padding: 0;
 }
 
 .home-detail-subnav h2 a {
   background-color: #981e32;
-  border-right: none;
+  border-bottom: none;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  font-size: 1.4rem;
+  color: #fff;
+  display: block;
+  padding: .9em;
 }
 
 .home-detail-subnav ul {
@@ -1819,7 +1899,7 @@ input[type="number"] {
  */
 .page-tricities .builder-banner-inner-title,
 .page-spokane .builder-banner-inner-title {
-  font-size: 2.4rem;
+  font-size: 2.281em;
   margin: auto;
   width: 400px;
   width: -webkit-fit-content;
@@ -1840,7 +1920,7 @@ input[type="number"] {
 
 .page-tricities .article-title,
 .page-spokane .article-title {
-  font-size: 1.4rem;
+  font-size: 1.424em;
   font-weight: 600;
   padding: .5rem 0;
 }
@@ -1879,27 +1959,16 @@ input[type="number"] {
 }
 
 /* HRS Contacts adjustments */
-.tablepress-manual-contacts .column-1 {
-  width: 497px;
-}
-
-.tablepress-manual-contacts td.column-3,
 .tablepress-hrs-contacts td.column-3 {
   white-space: nowrap;
 }
 
 /* Set by TablePress plugin, so use a "max-width" rule to override on small. */
 @media (max-width: 43em) {
-  .tablepress-manual-contacts,
   .tablepress-hrs-contacts {
     display: block;
     text-align: left;
   }
-  .tablepress-manual-contacts caption,
-  .tablepress-manual-contacts tbody,
-  .tablepress-manual-contacts tr,
-  .tablepress-manual-contacts th,
-  .tablepress-manual-contacts td,
   .tablepress-hrs-contacts caption,
   .tablepress-hrs-contacts tbody,
   .tablepress-hrs-contacts tr,
@@ -1908,28 +1977,21 @@ input[type="number"] {
     display: block;
     text-align: left;
   }
-  .tablepress-manual-contacts thead,
-  .tablepress-manual-contacts th:empty,
-  .tablepress-manual-contacts td:empty,
   .tablepress-hrs-contacts thead,
   .tablepress-hrs-contacts th:empty,
   .tablepress-hrs-contacts td:empty {
     display: none;
     visibility: hidden;
   }
-  .tablepress-manual-contacts tbody tr,
   .tablepress-hrs-contacts tbody tr {
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.5rem;
   }
-  .tablepress-manual-contacts tbody td,
-  .tablepress-manual-contacts tfoot th,
   .tablepress-hrs-contacts tbody td,
   .tablepress-hrs-contacts tfoot th {
     border: none;
     line-height: 1.4;
     padding: 4px 8px;
   }
-  .tablepress-manual-contacts .column-1,
   .tablepress-hrs-contacts .column-1 {
     font-weight: 700;
   }
@@ -1984,7 +2046,8 @@ input[type="number"] {
 }
 
 /*
- * @todo Update labor relations table to use a class
+ * @todo Convert the content in these tables into another format because they
+ *       aren't tabular data.
  */
 .tablepress-id-31 .column-1 {
   width: 450px !important;
@@ -2004,10 +2067,6 @@ input[type="number"] {
   width: 100px !important;
 }
 
-.tablepress.hrs-4-of-5 td.column-1 {
-  width: 30%;
-}
-
 /**
  * 7.2 Caldera Forms
  *
@@ -2017,15 +2076,3 @@ input[type="number"] {
 .caldera-grid th {
   padding: .5em .75em;
 }
-
-/* Breakpoints */
-/**
- * 8.0 Breakpoints
- *
- * All previous styles should be fluid, responsive, and otherwise target the
- * smallest standard viewport size (i.e., mobile devices). This section provides
- * adjustments to take advantage of additional screen space on larger viewports
- * and fix items that may no longer be ideal at larger screen sizes.
- *
- * @since 0.9.0
- */
