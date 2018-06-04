@@ -302,7 +302,11 @@ input[type="number"] {
 	max-width: 54.851em;
 	padding: .75em 1em;
 
-	*:first-child {
+	& > *:not(:first-child) {
+		padding-left: 1em;
+	}
+
+	& > *:first-child {
 		margin-right: auto;
 	}
 
