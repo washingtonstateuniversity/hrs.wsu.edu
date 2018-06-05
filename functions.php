@@ -15,6 +15,19 @@ $hrs_child_theme_version = '0.12.0-alpha1';
 require_once 'includes/class-hrs-theme-setup.php';
 
 /**
+ * Creates a script version.
+ *
+ * @since 0.7.0
+ */
+function hrs_get_script_version() {
+	global $hrs_child_theme_version;
+
+	$script_version = $hrs_child_theme_version;
+
+	return $script_version;
+}
+
+/**
  * Add HRS Child Theme stylesheets and scripts.
  *
  * @since 0.7.0
@@ -35,19 +48,6 @@ function hrs_dequeue_styles() {
 	wp_dequeue_style( 'spine-theme-child' );
 }
 add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
-
-/**
- * Creates a script version.
- *
- * @since 0.7.0
- */
-function hrs_get_script_version() {
-	global $hrs_child_theme_version;
-
-	$script_version = $hrs_child_theme_version;
-
-	return $script_version;
-}
 
 
 /***** start old ******/
