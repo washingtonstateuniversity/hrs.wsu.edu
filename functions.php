@@ -5,17 +5,24 @@
  *
  * @since 0.7.0
  */
-$hrs_child_theme_version = '0.11.1';
+$hrs_child_theme_version = '0.12.0-alpha1';
 
 /**
- * Add HRS Child Theme stylesheet.
+ * Sets up basic theme configuration and WordPress API settings.
+ *
+ * @since 0.12.0
+ */
+require_once 'includes/class-hrs-theme-setup.php';
+
+/**
+ * Add HRS Child Theme stylesheets and scripts.
  *
  * @since 0.7.0
  */
 function hrs_enqueue_styles() {
 	wp_enqueue_style( 'hrs-child-theme', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'wsu-spine' ), hrs_get_script_version() );
 	wp_enqueue_style( 'source_sans_pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i' );
-
+	wp_enqueue_script( 'hrs-custom', get_stylesheet_directory_uri() . '/assets/js/custom.min.js', array( 'jquery' ), spine_get_script_version(), true );
 }
 add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 
@@ -43,18 +50,10 @@ function hrs_get_script_version() {
 }
 
 
-
 /***** start old ******/
 
 add_filter( 'spine_enable_builder_module', '__return_true' );
 
-add_action( 'wp_enqueue_scripts', 'hrs_enqueue_scripts' );
-/*
- * Enqueue custom scripting in child theme.
- */
-function hrs_enqueue_scripts() {
-	wp_enqueue_script( 'hrs-custom', get_stylesheet_directory_uri() . '/assets/js/custom.min.js', array( 'jquery' ), spine_get_script_version(), true );
-}
 /*
  * Add HTML5 search box
  */
