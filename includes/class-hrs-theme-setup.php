@@ -52,21 +52,9 @@ class HRS_Theme_Setup {
 	 * @access private
 	 */
 	private function setup_hooks() {
-		// add_action( 'init', array( $this, 'register_hrs_courses' ), 10 );
-		// add_action( 'init', array( $this, 'create_hrs_courses_taxonomies' ), 0 );
-		// add_action( 'after_setup_theme', array( $this, 'maybe_flush_rewrite_rules' ) );
-		//
-		// add_action( 'add_meta_boxes', array( $this, 'add_courses_meta_boxes' ) );
-		// add_action( 'save_post', array( $this, 'save_spacetime_meta' ), 10, 2 );
-		// add_action( 'save_post', array( $this, 'save_presenters_meta' ), 10, 2 );
-		// add_action( 'save_post', array( $this, 'save_registration_meta' ), 10, 2 );
-		// add_action( 'manage_posts_custom_column', array( $this, 'manage_courses_pin_status_column' ), 10, 2 );
-		//
-		// add_filter( 'manage_hrs_courses_posts_columns', array( $this, 'add_courses_pin_status_column' ) );
-		// add_filter( 'single_template', array( $this, 'set_hrs_courses_single_template' ) );
-		// add_filter( 'archive_template', array( $this, 'set_hrs_courses_archive_template' ) );
-		//
-		// add_shortcode( 'hrscourses', array( $this, 'hrs_recent_courses_shortcode' ) );
+		// add theme support
+		// register nav menu
+		// maybe set Spine defaults using its hook?
 	}
 
 }
