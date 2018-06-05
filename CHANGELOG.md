@@ -24,10 +24,13 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
-- Set up grid fallbacks.
+- Move article footer inside the `section` element.
+- Set max width on text-based content like posts and standard pages, open #30.
+- Clean up templates.
+- Set up grid fallbacks, open #31.
 - Set up no-js handling for the search form and menu.
 - Get Babel processing working.
-- Determine if we really need the `center-middle` utility class. If yes, look into using a grid with `Xvh` and `Xvh` column and row size to center instead.
+- Determine if we really need the `center-middle` utility class. If yes, look into using a flex or grid with `Xvh` and `Xvh` column and row size to center instead.
 
 ## 0.11.1 (unreleased)
 
@@ -35,13 +38,9 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 - Add a container class for the deprecated Builder Banner tool that downgrades its z-index value to 1 to prevent it overlapping other elements.
 
-### Todo
-
-- Update all font sizes to use variables.
-- Style the search form and menu for homepage and mobile displays.
-
 ### Changed
 
+- Update all font sizes to use variables.
 - All media queries, new and old, updated and streamlined using mobile-ready versions as the default, fix #25.
 - Tweak row list display to be less cluttered on small screens.
 - Use flexbox with notification styles to allow optional right-aligned button and require only one line of text.
