@@ -54,8 +54,9 @@
 		color: #fff;
 		display: block;
 
-		&:hover {
-			background: $nav-color-hover;
+		&:hover,
+		&:focus {
+			background-color: $nav-color-hover;
 			color: #fff;
 		}
 	}
@@ -113,6 +114,11 @@
 		color: #fff;
 		display: block;
 		padding: .9em;
+
+		&:hover,
+		&:focus {
+			background-color: $nav-color-hover;
+		}
 	}
 
 	ul {

@@ -1835,8 +1835,8 @@ article header time:before {
   display: block;
 }
 
-.home-main-subnav nav a:hover {
-  background: #c60c30;
+.home-main-subnav nav a:hover, .home-main-subnav nav a:focus {
+  background-color: #c60c30;
   color: #fff;
 }
 
@@ -1884,6 +1884,10 @@ article header time:before {
   color: #fff;
   display: block;
   padding: .9em;
+}
+
+.home-detail-subnav h2 a:hover, .home-detail-subnav h2 a:focus {
+  background-color: #c60c30;
 }
 
 .home-detail-subnav ul {
