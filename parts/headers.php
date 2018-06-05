@@ -1,10 +1,10 @@
 <?php
 $hrs_common_search_args = array(
-	'theme_location'  => 'hrs-common-search',
-	'menu'            => 'hrs-common-search',
-	'container'       => 'nav',
-	'items_wrap'      => '<ul>%3$s</ul>',
-	'depth'           => 2,
+	'theme_location' => 'hrs-common-search',
+	'menu'           => 'hrs-common-search',
+	'container'      => 'nav',
+	'items_wrap'     => '<ul>%3$s</ul>',
+	'depth'          => 2,
 );
 ?>
 
@@ -19,8 +19,8 @@ $hrs_common_search_args = array(
 				<input name="cx" value="002970099942160159670:yqxxz06m1b0" type="hidden">
 				<input name="cof" value="FORID:11" type="hidden">
 				<input name="sa" value="Search" type="hidden">
-				<label class="screen-reader-text" for="s"><?php _e( 'Search', 'hrs-wsu-edu' ); ?></label>
-				<input class="search-input" id="s" type="search" name="q" placeholder="<?php _e( 'Search', 'hrs-wsu-edu' ); ?>" spellcheck="true" autocomplete="false" value="" />
+				<label class="screen-reader-text" for="s"><?php esc_html_e( 'Search', 'hrs-wsu-edu' ); ?></label>
+				<input class="search-input" id="s" type="search" name="q" placeholder="<?php esc_attr_e( 'Search', 'hrs-wsu-edu' ); ?>" spellcheck="true" autocomplete="false" value="" />
 			</form>
 			<div class="search-links">
 				<p class="search-links-title">Common Searches</p>
