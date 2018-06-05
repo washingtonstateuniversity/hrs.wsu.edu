@@ -5,7 +5,7 @@
  *
  * @since 0.7.0
  */
-$hrs_child_theme_version = '0.11.1~20180530-01';
+$hrs_child_theme_version = '0.11.1';
 
 /**
  * Add HRS Child Theme stylesheet.
