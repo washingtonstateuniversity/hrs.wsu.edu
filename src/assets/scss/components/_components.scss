@@ -8,13 +8,14 @@
  *     - 3.1 Cards
  *     - 3.2 Data Tables
  *     - 3.3 Dialogs
- *     - 3.4 Forms
- *     - 3.5 Grid Lists
- *     - 3.6 Modules
- *     - 3.7 Notifications
- *     - 3.8 Pagination
- *     - 3.9 Row Lists
- *     - 3.10 Search
+ *     - 3.4 Figures
+ *     - 3.5 Forms
+ *     - 3.6 Grid Lists
+ *     - 3.7 Modules
+ *     - 3.8 Notifications
+ *     - 3.9 Pagination
+ *     - 3.10 Row Lists
+ *     - 3.11 Search
  *
  * @since 0.9.0
  */
@@ -23,59 +24,95 @@
  * 3.1 Cards
  */
 
+.cards,
 .recent-articles {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 	grid-auto-rows: minmax(4rem, auto);
 	grid-gap: 1.5rem 2rem;
+
+	article,
+	.card {
+		display: grid;
+	}
+
+	.article-image {
+		order: -1;
+	}
+
+	.article-taxonomy {
+		order: -2;
+	}
 }
 
 /**
  * 3.2 Data Tables
  */
 
-.tablepress-manual-contacts .column-1 {
-	width: 497px;
-}
+main {
 
-.tablepress-manual-contacts td.column-3,
-.tablepress-hrs-contacts td.column-3 {
-	white-space: nowrap;
-}
+	table,
+	.tablepress {
+		font-variant-numeric: lining-nums tabular-nums;
+		margin-bottom: 1.5rem;
+	}
 
-.caldera-grid .hrs-caldera-table td,
-.caldera-grid .hrs-caldera-table th {
-	padding: 8px;
-}
+	thead tr {
+		border-bottom: 1px solid lighten($brand-gray, 15%);
+	}
 
-/* Labor relation table */
-.tablepress-id-31 .column-1 {
-	width: 450px !important;
-}
+	td,
+	th {
+		padding: .5em .75em;
+		text-align: left;
+	}
 
-.tablepress-id-7 .column-1 {
-	width: 500px !important;
-}
+	th.nums,
+	td.nums {
+		text-align: right;
+	}
 
-.tablepress-id-31 .column-2,
-.tablepress-id-7 .column-2 {
-	width: 150px !important;
-}
+	th {
+		font-weight: 600;
+	}
 
-.tablepress-id-31 .column-3,
-.tablepress-id-7 .column-3 {
-	width: 100px !important;
-}
+	.striped {
 
-.tablepress.hrs-4-of-5 td.column-1 {
-	width: 30%;
+		tbody tr:nth-child(odd) td {
+			background: $neutral-light;
+		}
+
+	}
 }
 
 /**
- * 3.4 Forms
+ * 3.3 Dialogs
  */
 
-/* Add "number" type to the Spine `input[type=$]` styles */
+/**
+ * 3.4 Figures
+ */
+
+figure {
+
+	img {
+		max-width: 100%;
+	}
+
+}
+
+figcaption {
+	font-size: $font-size-1;
+	letter-spacing: .02em;
+	line-height: normal;
+	padding: .3em .5em;
+}
+
+/**
+ * 3.5 Forms
+ */
+
+/* Adds "number" type to the Spine `input[type=$]` styles */
 input[type="number"] {
 	background: #fff;
 	border: 1px solid #ccc;
@@ -86,54 +123,135 @@ input[type="number"] {
 	outline: 0;
 }
 
-/*
- * 3.6 Modules
+/**
+ * 3.6 Grid Lists
  */
 
-/* adjust all of the module sizes to match the vertical rhythm */
-%module {
-	border: 11px solid $brand-crimson;
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+
+	img {
+		border: 0;
+		box-sizing: border-box;
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.gallery-item {
+	box-sizing: border-box;
+	padding: 1rem;
+	text-align: center;
+}
+
+.gallery-columns-1 .gallery-item,
+.gallery-columns-2 .gallery-item,
+.gallery-columns-3 .gallery-item,
+.gallery-columns-4 .gallery-item,
+.gallery-columns-5 .gallery-item,
+.gallery-columns-6 .gallery-item,
+.gallery-columns-7 .gallery-item,
+.gallery-columns-8 .gallery-item,
+.gallery-columns-9 .gallery-item {
+	width: 50%;
+}
+
+@media (max-width: $medium) {
+
+	.gallery-item:nth-child(odd) {
+		padding-left: 0;
+	}
+
+	.gallery-item:nth-child(even) {
+		padding-right: 0;
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.gallery-item {
+
+		.gallery-columns-1 & {
+			width: (100% / 1);
+		}
+
+		.gallery-columns-2 & {
+			width: (100% / 2);
+		}
+
+		.gallery-columns-3 & {
+			width: (100% / 3);
+		}
+
+		.gallery-columns-4 & {
+			width: (100% / 4);
+		}
+
+		.gallery-columns-5 & {
+			width: (100% / 5);
+		}
+
+		.gallery-columns-6 & {
+			width: (100% / 6);
+		}
+
+		.gallery-columns-7 & {
+			width: (100% / 7);
+		}
+
+		.gallery-columns-8 & {
+			width: (100% / 8);
+		}
+
+		.gallery-columns-9 & {
+			width: (100% / 9);
+		}
+	}
+}
+
+/*
+ * 3.7 Modules
+ */
+
+.module {
+	border: 8px solid $neutral-dark;
 	margin: 1.5rem auto;
+	max-width: 54.851em;
 	padding: 1.5rem 2rem;
+
+	.module-title {
+		color: $neutral-dark;
+	}
 }
 
 .module-title {
 	border-bottom: 4px solid $neutral-light;
-	font-size: 1.8em; /* whatever the standard h3 size is */
+	font-size: $font-size-5;
 	margin: 0 0 .5em;
 	padding: 0 0 .25em;
 }
 
-.module {
-	@extend %module;
-
-	.module-title {
-		color: $brand-crimson;
-	}
-}
-
-.action-module {
-	@extend %module;
-	background-color: $accent-blue;
-	border-color: darken($accent-blue, 15%);
+.module--cta {
+	@extend .module;
 	text-align: center;
 
 	.module-title {
-		border-bottom-color: darken($accent-blue, 5%);
-		font-size: 3em;
+		font-size: $font-size-7;
 	}
-
 }
 
-.alert-module {
-	@extend %module;
+.module--alert {
+	@extend .module;
 	border-color: $brand-crimson;
 	min-width: 300px;
 	text-align: center;
 	width: 80%;
 
 	.module-title {
-		font-size: 3em;
+		font-size: $font-size-8;
 	}
 
 	svg {
@@ -166,142 +284,123 @@ input[type="number"] {
 }
 
 /**
- * 3.7 Notifications
+ * 3.8 Notifications
+ *
+ * @todo Replace .hrs-callout classes with .notification classes.
+ * @todo Good candidate for a template -- would allow more specific styles if we
+ *       didn't need to catch any containing markup.
  */
 
-/* @todo Replace .hrs-callout classes with .notification classes */
-%notification {
+.notification {
+	align-items: center;
+	border: 5px solid $neutral-dark;
+	border-left-width: 1em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
 	margin: 1.5em auto;
-	padding: 1em 1.5em;
+	max-width: 54.851em;
+	padding: .75em 1em;
 
-	p {
-		padding: 0;
+	& > *:not(:first-child) {
+		padding-left: 1em;
+	}
+
+	& > *:first-child {
+		margin-right: auto;
 	}
 }
 
-.notification {
-	@extend %notification;
-	border: 5px solid $brand-gray;
-	border-left: 21px solid $brand-gray;
+.notification--positive {
+	@extend .notification;
+	border-color: $accent-green;
 }
 
-.positive-notification {
-	@extend %notification;
-	border: 5px solid $accent-blue;
-	border-left: 21px solid $accent-blue;
+.notification--caution {
+	@extend .notification;
+	border-color: $accent-yellow;
 }
 
-.caution-notification {
-	@extend %notification;
-	border: 5px solid $accent-yellow;
-	border-left: 21px solid $accent-yellow;
+.notification--warning {
+	@extend .notification;
+	border-color: $accent-orange;
 }
 
-.warning-notification {
-	@extend %notification;
-	border: 5px solid $accent-orange;
-	border-left: 21px solid $accent-orange;
-}
+@media (min-width: $medium) {
 
-/* HRS Banner Callouts */
-.hrs-callout-banner {
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center top;
-	margin: 1.4rem 0;
-	text-align: center;
-}
+	.notification {
+		flex-wrap: nowrap;
 
-.hrs-banner-careers {
-	background-image: url(http://hrsdev.hrs.wsu.edu/wp-content/uploads/2016/02/large-1024x347.jpg);
-}
+		p {
+			padding: 0;
+		}
+	}
 
-.hrs-banner-careers header h2 {
-	color: #fff;
-	width: 100%;
-}
-
-.hrs-callout-gallery {
-	margin: 1.4rem auto;
-	position: relative;
-}
-
-.hrs-callout-gallery h3 {
-	font-size: 1.1rem;
-	left: 50%;
-	margin-right: -50%;
-	position: absolute;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 99;
-}
-
-.hrs-callout-gallery h3 a.hrs-button {
-	font-weight: 400;
-	line-height: 1.4;
-	padding: .3rem .7rem;
-	text-transform: none;
-	width: 100%;
-}
-
-.hrs-callout-gallery h3 a.hrs-button-priority {
-	background: rgba(152, 30, 50, .8);
-}
-
-.hrs-callout-gallery h3 a.hrs-button-priority:hover,
-.hrs-callout-gallery h3 a.hrs-button-priority:focus {
-	background-color: #fff;
-	color: rgb(152, 30, 50);
-}
-
-.hrs-callout-gallery div.gallery-columns-3 {
-	max-width: 600px;
-}
-
-.hrs-callout-gallery div.gallery-columns-3 .gallery-item {
-	max-width: 33%;
-	margin: 0 0 -.5em 0;
-	position: relative;
-}
-
-.hrs-callout-gallery .gallery img {
-	border: none;
-}
-
-.hrs-callout-gallery .gallery .gallery-caption {
-	color: #fff;
-	left: 50%;
-	margin-right: -50%;
-	margin-left: 0;
-	position: absolute;
-	top: 50%;
-	transform: translate(-50%, -50%);
 }
 
 /**
- * 3.8 Pagination
+ * 3.9 Pagination
  */
+
+.nav-links,
+.pager {
+	margin: 1.5rem auto;
+	padding: 1.5rem 0;
+
+	a,
+	.page-numbers {
+		border: 1px solid transparent;
+		margin: 0 .25em;
+		padding: .75em 1em;
+
+		&:hover,
+		&:focus {
+			background: $brand-crimson;
+			color: #fff;
+		}
+	}
+
+	.current {
+		background: $neutral-light;
+		border: 1px solid $neutral-dark;
+	}
+
+	/* Override excess padding from Spine. @todo Clean up template maybe. */
+	&.pad-ends .column {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.nav-previous,
+.nav-next {
+	display: inline-block;
+	width: 50%;
+}
+
+.nav-next {
+	float: right;
+	text-align: right;
+}
 
 /**
- * 3.9 Row Lists
- *
- * @todo Adjust these styles to be more agnostic of markup?
+ * 3.10 Row Lists
  */
 
-%row-list {
+.articles-list {
 
 	article,
 	.list-item {
 		display: flex;
 		align-items: center;
-		margin: 0 0 1.5rem;
+		margin: 0 0 1.5em;
 	}
 
 	.article-image {
 		align-self: flex-start;
 		flex: 0 0 100px;
 		line-height: 0;
-		margin-right: 1rem;
+		margin-right: 1em;
 	}
 
 	.list-content {
@@ -309,159 +408,129 @@ input[type="number"] {
 	}
 
 	.article-header {
-		align-items: center;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
+		align-items: flex-start;
+		justify-content: flex-end;
 	}
 
 	.article-title {
-		font-size: 1.5rem;
+		font-size: $font-size-4;
 		padding: 0;
-		margin: 0;
+		margin-right: auto;
+	}
+
+	time {
+		white-space: nowrap;
+	}
+
+	.article-excerpt,
+	time {
+		display: none;
 	}
 
 	p {
 		padding: .5em 0 0;
-		font-size: 1rem;
-		line-height: 1.2;
+	}
+}
+
+@media (min-width: $small) {
+
+	.articles-list {
+
+		.article-header {
+			display: flex;
+		}
+
+		time {
+			display: inline;
+			padding-left: 1em;
+		}
+
+		.article-excerpt {
+			display: block;
+		}
+	}
+}
+
+/**
+ * 3.11 Search
+ */
+
+#search-menu {
+	background: $neutral-light;
+	box-shadow: 2px 3px 5px 1px rgba(20, 20, 20, .12);
+	display: flex;
+	flex-flow: row wrap;
+	padding: 5.5rem 2rem 1.5rem;
+	position: absolute;
+	top: 4.8rem;
+	transform: translateY(-100rem);
+	transition-delay: .1s;
+	transition-duration: .3s;
+	transition-property: transform top;
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	width: 100%;
+	z-index: 200;
+
+	&.is-visible {
+		transform: translateY(-4.8rem);
+	}
+}
+
+.search-toggle {
+	padding: .5rem 1rem;
+}
+
+.search-toggle[aria-expanded="true"] {
+	background: $neutral-dark;
+	border-color: $neutral-dark;
+	color: $neutral-light;
+}
+
+.search-form {
+	flex: 1 1 auto;
+}
+
+.search-input[type="search"] {
+	font-size: $font-size-5;
+	width: 90%;
+}
+
+.search-links-title {
+	font-size: $font-size-6;
+	padding-top: .5rem;
+	padding-bottom: 1rem;
+}
+
+.search-links ul {
+	column-count: 2;
+	margin: 0 0 1rem;
+	padding: 0;
+
+	li {
+		line-height: 1.5;
+	}
+}
+
+.search-links {
+
+	a:after {
+		background: url(/wp-content/themes/hrs.wsu.edu/assets/images/icons/link.svg) no-repeat;
+		background-position: .1em;
+		background-size: 80%;
+		content: "";
+		display: inline-block;
+		height: 1em;
+		margin: .2em 0 -.05em .1em;
+		position: absolute;
+		width: 1em;
 	}
 
 }
 
-.articles-list {
-	@extend %row-list;
-}
+@media (min-width: $medium) {
 
-/**
- * 3.10 Search
- */
+	.search-toggle {
+		padding: .75rem 1.5rem;
+	}
 
-body.home .parent-stretch .single.row .column header,
-.header-search-wrapper .search-label,
-.si-dropdown,
-.header-search-wrapper-hide {
-	display: none;
-}
-
-.menu-quick-links-search-container li {
-	float: left !important;
-	width: 50% !important;
-}
-
-.header-search-wrapper {
-	background-color: #dbdbdb !important;
-	max-width: 1188px;
-}
-
-.home .header-search-wrapper {
-	max-width: 100vw;
-}
-
-.header-search-wrapper section.single.row {
-	padding-left: 78px;
-	margin-left: 0;
-}
-
-.header-search-a-z-wrapper {
-	clear: both;
-	float: right;
-	padding-top: 10px;
-	padding-right: 100px;
-}
-
-.header-search-wrapper .quick-links-label {
-	font-size: 1.4rem;
-	padding-top: 1.2em;
-	padding-bottom: .8em;
-}
-
-.header-search-wrapper .radio-rapper {
-	display: none;
-}
-
-.header-search-wrapper .radio-rapper:last-of-type {
-	margin-left: 23px;
-}
-
-.header-search-wrapper .radio-rapper label {
-	font-weight: 300;
-	font-size: 1.4em;
-	font-family: "Open Sans", sans-serif;
-	color: #363636;
-	vertical-align: middle;
-	margin-right: 1em;
-}
-
-.header-search-wrapper .radio-rapper label:last-of-type {
-	margin-right: 0;
-}
-
-.header-search-wrapper .common-searches ul,
-.header-search-wrapper .common-searches ul li {
-	list-style: none;
-	font-weight: 400;
-	margin-left: 0;
-	padding-left: 0;
-}
-
-.header-search-wrapper .common-searches ul {
-	column-count: 2;
-}
-
-#hrs-common-search li {
-	padding-bottom: .5em;
-}
-
-.common-searches ul li:first-child {
-	padding-top: 0;
-}
-
-.header-search-wrapper input[type="text"],
-.header-search-wrapper input[type="password"],
-.header-search-wrapper input[type="email"],
-.header-search-wrapper select,
-.header-search-wrapper textarea {
-	background: #fff;
-}
-
-.header-search-input-wrapper input.radio {
-	display: inline-block;
-	vertical-align: middle;
-	cursor: pointer;
-}
-
-.header-search-input-wrapper input.header-search-input {
-	border-radius: 0;
-	float: right;
-	font-family: "Open Sans", sans-serif;
-	font-size: 1.75em;
-	font-weight: 300;
-	height: 50px;
-	max-width: 60%;
-	min-width: 50%;
-	margin-left: 100px;
-	margin-top: 50px;
-	margin-right: 100px;
-	padding: 25px;
-	padding-top: 4px; /* Fixes Firefox input text cut off */
-	padding-bottom: 4px; /* Fixes Firefox input text cut off */
-}
-
-/* Closing "X" */
-.close-header-drawer,
-.close-header-search {
-	text-align: right;
-	padding-right: 1em;
-	padding-bottom: 1em;
-	color: #981e32;
-	font-size: 2rem;
-	font-weight: 300;
-	cursor: pointer;
-	transition: color .3s ease;
-}
-
-.close-header-drawer:hover,
-.close-header-search:hover {
-	color: #c60c30;
 }

@@ -1,5 +1,5 @@
 /**
- * 8.0 Deprecated
+ * 0.0 Deprecated
  *
  * These styles or selectors have been deprecated and will be removed from
  * future versions. Stop targeting these rules and update any markup that relies
@@ -8,6 +8,89 @@
  * @since 0.9.0
  */
 
+/**
+ * Deprecated Foundation Styles
+ *
+ * @since 0.11.0
+ */
+
+/* We don't use a background or background image so we probably don't need
+html {
+	min-height: 100%;
+
+	main {
+		min-height: 100%;
+
+		div.page {
+			min-height: 80vh;
+		}
+	}
+}
+*/
+
+/**
+ * Deprecated Typography Styles
+ *
+ * @since 0.11.0
+
+.two aside {
+	font-size: 90%;
+
+	h3 {
+		padding-top: 0;
+	}
+}
+ */
+
+/**
+ * Deprecated List Styles
+ *
+ * @since 0.11.0
+
+ul.inline,
+ol.inline {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+ul.inline li,
+ol.inline li {
+	display: inline-block;
+	line-height: 1.4;
+	margin-right: 1.5rem;
+}
+
+ul.inline li:last-child,
+ol.inline li:last-child {
+	margin-right: 0;
+}
+ */
+
+/**
+ * Deprecated Utility Styles
+ *
+ * @since 0.11.0
+
+.fixed {
+	position: fixed;
+	top: 50px;
+	margin-top: 0;
+	z-index: 1;
+	transition: all .3s ease-out;
+}
+
+.gray-bg {
+	background-color: #e4e4e4;
+}
+ */
+
+/**
+ * Deprecated Button Styles
+ *
+ * @since 0.9.0
+ */
+
+/*
 a.button {
 	background: #981e32;
 	border: none;
@@ -26,6 +109,60 @@ a.button {
 a.button:hover {
 	background: #c60c30;
 	color: #fff;
+}
+*/
+
+/* @todo Deprecate class name, replace in markup.
+.hrs-button,
+button.hrs-button,
+input[type="button"].hrs-button,
+input[type="reset"].hrs-button,
+input[type="submit"].hrs-button {
+	@extend .button-cta;
+}
+
+.hrs-button-white,
+button.hrs-button-white {
+	@extend .button;
+}
+
+.hrs-open-enrollment ul.inline li {
+	margin-right: 1%;
+}
+
+.hrs-open-enrollment .inline .hrs-button {
+	min-width: 90px;
+	min-height: 83px;
+	padding: .75em;
+	vertical-align: top;
+}
+
+@media only screen and (max-width: 365px) {
+
+	.hrs-open-enrollment ul.inline li {
+		display: block;
+		margin-right: 0;
+	}
+
+	.hrs-open-enrollment .inline .hrs-button {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 365px) and (max-width: 640px) {
+
+	.hrs-open-enrollment .inline .hrs-button {
+		max-width: 135px;
+	}
+
+}
+
+@media only screen and (min-width: 700px) and (max-width: 790px) {
+
+	.hrs-open-enrollment .inline .hrs-button {
+		font-size: .7em;
+	}
+
 }
 
 #button_holder a {
@@ -117,6 +254,12 @@ a.button:hover {
 		color: #fff;
 	}
 }
+*/
+
+/**
+ * Deprecated Table Styles
+ *
+ * @since 0.9.0
 
 #color-table tr:nth-child(even) {
 	background: #f7f6f3;
@@ -132,8 +275,72 @@ a.button:hover {
 	background: #717171;
 	color: #fff;
 }
+*/
 
-/* Replaced with the `notification` component */
+/**
+ * Deprecated Builder Banner Styles
+ *
+ * @since 0.11.0
+ */
+
+/* Builder: Banner */
+.builder-section-banner {
+
+	.builder-banner-content {
+		border-top-width: 3.6rem;
+	}
+
+	.builder-banner-inner-title {
+		background-color: #fff;
+		background-color: rgba(255, 255, 255, .9);
+		color: $brand-crimson;
+		font-weight: 600;
+		padding: .25rem 1rem;
+	}
+
+	.builder-banner-inner-content {
+		justify-content: flex-start;
+
+		p {
+			background-color: #fff;
+			background-color: rgba(255, 255, 255, .9);
+			color: $text-color;
+			padding: 1.5rem 2rem;
+		}
+
+	}
+
+	.content-position-none .builder-banner-content {
+		text-align: center;
+	}
+
+	.content-position-left {
+		background-position: center right;
+	}
+
+	.content-position-right {
+		background-position: center left;
+	}
+
+}
+
+.banner-container {
+
+	/*
+	 * Make banner repsect other elements' z-index values.
+	 * Add this class to the Banner section classes on the edit post screen.
+	 */
+	z-index: 1;
+
+}
+
+/**
+ * Deprecated Callout Styles
+ *
+ * Replaced with the `notification` component.
+ *
+ * @since 0.10.1
+
 .hrs-callout {
 	border: 2px solid #a9a9a9;
 	border-radius: 3px;
@@ -158,9 +365,99 @@ a.button:hover {
 .hrs-priority-neutral {
 	background-color: #eff0f1;
 }
+*/
+
+/* HRS Banner Callouts
+.hrs-callout-banner {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	margin: 1.4rem 0;
+	text-align: center;
+}
+
+.hrs-banner-careers {
+	background-image: url(http://hrsdev.hrs.wsu.edu/wp-content/uploads/2016/02/large-1024x347.jpg);
+}
+
+.hrs-banner-careers header h2 {
+	color: #fff;
+	width: 100%;
+}
+
+.hrs-callout-gallery {
+	margin: 1.4rem auto;
+	position: relative;
+}
+
+.hrs-callout-gallery h3 {
+	font-size: 1.1rem;
+	left: 50%;
+	margin-right: -50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 99;
+}
+
+.hrs-callout-gallery h3 a.hrs-button {
+	font-weight: 400;
+	line-height: 1.4;
+	padding: .3rem .7rem;
+	text-transform: none;
+	width: 100%;
+}
+
+.hrs-callout-gallery h3 a.hrs-button-priority {
+	background: rgba(152, 30, 50, .8);
+}
+
+.hrs-callout-gallery h3 a.hrs-button-priority:hover,
+.hrs-callout-gallery h3 a.hrs-button-priority:focus {
+	background-color: #fff;
+	color: rgb(152, 30, 50);
+}
+
+.hrs-callout-gallery div.gallery-columns-3 {
+	max-width: 600px;
+}
+
+.hrs-callout-gallery div.gallery-columns-3 .gallery-item {
+	max-width: 33%;
+	margin: 0 0 -.5em 0;
+	position: relative;
+}
+
+.hrs-callout-gallery .gallery img {
+	border: none;
+}
+
+.hrs-callout-gallery .gallery .gallery-caption {
+	color: #fff;
+	left: 50%;
+	margin-right: -50%;
+	margin-left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+*/
 
 /**
- * Spine (_spine.scss)
+ * Deprecated Gallery Style
+ *
+ * @since 0.10.0
+
+
+.hrs-gallery {
+	@extend .gallery;
+}
+*/
+
+/**
+ * Deprecated Spine Overrides
+ *
+ * @since 0.9.0
  */
 
 /* Not sure what this is supposed to target.
@@ -206,5 +503,203 @@ a.button:hover {
 		position: relative !important;
 	}
 
+}
+*/
+
+/**
+ * 4.2 Columns
+ */
+
+/* @todo Find any pages still using these and use something, else then delete.*/
+@media only screen and (min-width: 640px) {
+
+	.hrs-two-col {
+		width: 47%;
+		clear: none !important;
+	}
+
+	.hrs-1-of-4 {
+		width: 23%;
+	}
+
+	.hrs-1-of-5 {
+		width: 20%;
+	}
+
+	.hrs-2-of-5 {
+		width: 40%;
+	}
+
+	.hrs-3-of-5 {
+		width: 60%;
+	}
+
+	.hrs-4-of-5 {
+		width: 80%;
+	}
+
+	.gform_wrapper .gfield_error.hrs-two-col {
+		width: 47%;
+	}
+}
+
+/*
+.nested-halves {
+	width: 100%;
+	display: inline-block;
+	text-align: top;
+	clear: both;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.nested-halves .nested-one {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-right: 1%;
+}
+
+.nested-halves .nested-two {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-left: 1%;
+}
+
+.nested-thirds {
+	width: 100%;
+	display: inline-block;
+	clear: both;
+}
+
+.nested-thirds .nested-one {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-two {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-three {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+}
+
+.nested-gutter {
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.nested-one,
+.nested-two,
+.nested-three {
+
+	h5 {
+		background: #981e32;
+
+		a {
+			color: #fff;
+
+			&:hover,
+			&:focus {
+				color: #b5babe;
+			}
+		}
+	}
+
+	ul {
+		background-color: #fff;
+		border-radius: 5px;
+	}
+}
+*/
+
+/**
+ * Deprecated Unused New Page Experiment
+ *
+ * @since 0.11.0
+ */
+
+/* 6.2 Benefits *
+.hrs-benefits-new-employees .column {
+	padding: 0 1rem !important;
+}
+
+.hrs-benefits-new-employees header h2,
+.hrs-benefits-new-employees h2 {
+	font-weight: 700;
+	width: 100%;
+}
+
+.hrs-benefits-new-employees h4 {
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+.hrs-benefits-new-employees .benefits,
+.hrs-benefits-new-employees .resources {
+	background-size: 100% 100%;
+	color: #fff;
+	min-height: 300px;
+	text-align: center;
+}
+
+.hrs-benefits-new-employees .benefits {
+	background: url(http://hrs.wsu.edu/wp-content/uploads/2017/09/Clouds_over_a_Harvested_Wheat_Field_darken.jpg) no-repeat bottom center;
+}
+
+.hrs-benefits-new-employees .resources {
+	background: url(http://hrs.wsu.edu/wp-content/uploads/2017/09/tri-cities-campus-above_darker.jpg) no-repeat bottom center;
+}
+
+.hrs-benefits-new-employees .benefits header h2,
+.hrs-benefits-new-employees .resources header h2 {
+	color: #fff;
+}
+
+.hrs-benefits-new-employees .orientation,
+.hrs-benefits-new-employees .deadlines {
+	text-align: center;
+}
+
+.hrs-benefits-new-employees .orientation img,
+.hrs-benefits-new-employees .deadlines img {
+	margin-top: 1rem;
+	margin-bottom: -.8rem;
+}
+
+/* 6.4 Recruitment *
+.hrs-app-instructions {
+	margin-top: 2em;
+}
+
+.hrs-app-instructions .circle-icon-holder {
+	background: #4f868e;
+	border: 5px solid #fff;
+	border-radius: 100%;
+	height: 70px;
+	margin: 0 auto -30px;
+	overflow: hidden;
+	position: relative;
+	top: -35px;
+	width: 70px;
+}
+
+.hrs-app-instructions .job-search {
+	background: #4f868e;
+	color: #fff;
+}
+
+.hrs-app-instructions .job-search h2 {
+	color: #eff0f1;
+	text-align: center;
 }
 */
