@@ -1,0 +1,161 @@
+/**
+ * 7.0 Plugins
+ *
+ * Rules targeted to adjusting and overriding styles declared by plugins.
+ *
+ *     - 7.1 TablePress
+ *     - 7.2 Caldera Forms
+ *
+ * @since 0.11.0
+ */
+
+/**
+ * 7.1 TablePress
+ *
+ * @since 0.11.0
+ */
+
+.tablepress {
+
+	tfoot th,
+	thead th {
+		background-color: inherit;
+		vertical-align: inherit;
+	}
+
+	thead th {
+		border-bottom: inherit;
+	}
+
+}
+
+/* HRS Contacts adjustments */
+.tablepress-hrs-contacts td.column-3 {
+	white-space: nowrap;
+}
+
+/* Set by TablePress plugin, so use a "max-width" rule to override on small. */
+@media (max-width: $medium) {
+
+	.tablepress-hrs-contacts {
+		display: block;
+		text-align: left;
+
+		caption,
+		tbody,
+		tr,
+		th,
+		td {
+			display: block;
+			text-align: left;
+		}
+
+		thead,
+		th:empty,
+		td:empty {
+			display: none;
+			visibility: hidden;
+		}
+
+		tbody tr {
+			margin-bottom: 1.5rem;
+		}
+
+		tbody td,
+		tfoot th {
+			border: none;
+			line-height: 1.4;
+			padding: 4px 8px;
+		}
+
+		.column-1 {
+			font-weight: 600;
+		}
+	}
+}
+
+/* The 2018 Medical Premium Changes table */
+.hrs-medical-premium-changes-2018 {
+
+	tbody {
+		border-bottom: 1px solid #ddd;
+		border-left: 1px solid #ddd;
+	}
+
+	tbody td {
+		border-right: 1px solid #ddd;
+	}
+
+	tbody td:not(.column-1) {
+		text-align: center;
+		width: 9%;
+	}
+
+	/* The 2018 columns */
+	tr .column-3,
+	tr .column-5,
+	tr .column-7,
+	tr .column-9 {
+		background-color: #eee;
+		font-weight: 600;
+	}
+
+	.row-1 td {
+		background-color: $brand-crimson;
+		color: #fff;
+		font-weight: 600;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	.row-2 td {
+		background-color: #2a3033;
+		color: #fff;
+		text-align: center;
+	}
+
+	.row-3 .column-1,
+	.row-8 .column-1,
+	.row-12 .column-1 {
+		background-color: #d7dadb;
+		font-weight: 600;
+	}
+}
+
+/*
+ * @todo Convert the content in these tables into another format because they
+ *       aren't tabular data.
+ */
+
+.tablepress-id-31 .column-1 {
+	width: 450px !important;
+}
+
+.tablepress-id-7 .column-1 {
+	width: 500px !important;
+}
+
+.tablepress-id-31 .column-2,
+.tablepress-id-7 .column-2 {
+	width: 150px !important;
+}
+
+.tablepress-id-31 .column-3,
+.tablepress-id-7 .column-3 {
+	width: 100px !important;
+}
+
+/**
+ * 7.2 Caldera Forms
+ *
+ * @since 0.11.0
+ */
+
+.caldera-grid {
+
+	td,
+	th {
+		padding: .5em .75em;
+	}
+
+}

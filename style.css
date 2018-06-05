@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 0.10.2
+Version: 0.11.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -30,48 +30,88 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*
  * Table of Contents
  *
+ * 0.0 Deprecated
+ *
  * 1.0 Globals
  *     1.1 Foundation
- *     1.2 Colors
- *     1.3 Typography
- *     1.4 Links
- *     1.5 Lists
- *     1.6 Utility
+ *     1.2 Typography
+ *     1.3 Links
+ *     1.4 Lists
+ *     1.5 Utility
+ *     1.6 Variables
  *
  * 2.0 Elements
  *     2.1 Buttons
- *     2.2 Images
- *     2.3 Embeds
+ *     2.2 Embedded Content
+ *     2.3 Images
  *
  * 3.0 Components
  *     3.1 Cards
  *     3.2 Data Tables
  *     3.3 Dialogs
- *     3.4 Forms
- *     3.5 Grid lists
- *     3.6 Modules
- *     3.7 Notifications
- *     3.8 Pagination
- *     3.9 Row Lists
- *     3.10 Search
+ *     3.4 Figures
+ *     3.5 Forms
+ *     3.6 Grid Lists
+ *     3.7 Modules
+ *     3.8 Notifications
+ *     3.9 Pagination
+ *     3.10 Row Lists
+ *     3.11 Search
  *
  * 4.0 Layouts
- *     4.1 Columns
+ *     4.1 n/a
  *
  * 5.0 Templates
- *     5.1 Articles
- *     5.2 Footer (Global)
- *     5.3 Header (Global)
- *     5.4 Print
+ *     5.1 Header
+ *     5.2 Footer
+ *     5.3 Article
+ *     5.4 Archive
+ *     5.4 Multi-part Page
  *
  * 6.0 Pages
  *     6.1 Homepage
+ *     6.2 Spokane and Tri-Cities
  *
- * 7.0 Breakpoints
- *
- * 8.0 Deprecated
+ * 7.0 Plugins
+ *     7.1 TablePress
+ *     7.2 Caldera Forms
  */
 /* Globals */
+/*
+ * 1.6 Variables
+ *
+ * @todo Settle on primary and secondary colors and rename
+ *       then also settle on the purpose of the secondary and
+ *       accent colors and rename them to match.
+ */
+/**
+ * 1.6.1 Colors
+ *
+ * @since 0.11.0
+ */
+/**
+ * 1.6.4 Typography
+ *
+ * @since 0.11.0
+ */
+/*
+ * The font size steps.
+ *
+ * These use em units relative to the base context, which is 18px at desktop-
+ * sized screens and 16px at smaller-sized screens. As such, all of the font
+ * sizes adjust in proportion to each other. Using a 1.125 ratio for the steps.
+ *
+ * @since 0.11.0
+ */
+/* 16px small || 18px large */
+/**
+ * 1.6.3 Breakpoints
+ *
+ * @since 0.11.0
+ */
+/* 544px @ 16px base */
+/* 688px @ 16px base */
+/* 990px @ 16px base */
 /**
  * 1.0 Globals
  *
@@ -92,210 +132,104 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /**
  * 1.1 Foundation
  */
-* {
+html {
+  background-color: #f2f2f2;
+}
+
+main {
+  color: #191919;
+  font: 400 18px/28px "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
+}
+
+main *,
+main *:before,
+main *:after {
   box-sizing: border-box;
 }
 
-html {
-  min-height: 100%;
+main section {
+  background-color: #fdfdfd;
 }
 
-html main {
-  min-height: 100%;
-}
-
-html main div.page {
-  min-height: 80vh;
+@media (min-width: 61.875em) {
+  main section {
+    border-left: 8px solid #f2f2f2;
+  }
+  .home main section {
+    border-left: none;
+  }
 }
 
 /**
  * 1.2 Typography
  */
-/*
 h1 {
-	font-weight: 600;
-	text-transform: uppercase;
-	padding-top: 1em;
-	padding-bottom: .75em;
-	width: 80%;
-}
-*/
-/*
-h2,
-.h2 {
-	color: #363636;
-	font-size: 1.5rem;
-	font-weight: 500;
-
-	header & {
-		font-size: 2.1em;
-		font-weight: 600;
-		padding-top: 1em;
-		padding-bottom: .75em;
-		text-transform: uppercase;
-		width: 80%;
-	}
-
-	.side-right & {
-		width: 85%;
-	}
-
-	+ h3 {
-		padding-top: 0;
-	}
-}
-*/
-/*
-h3 {
-	font-size: 1rem;
-	font-weight: 300;
-	padding-top: 1.2em;
-	padding-bottom: 1.4em;
-}
-*/
-/*
-h4 {
-	font-size: 1.2rem;
-	color: #363636;
-	font-weight: 400;
-
-	+ h5 {
-		padding-top: 2em;
-		padding-bottom: 1.2em;
-	}
-}
-*/
-/*
-h2 + ul,
-h2 + p,
-h4 + ul,
-h4 + p {
-	padding-top: 1em;
-}
-*/
-/*
-.quick-links-label,
-h5 {
-	font-size: 1rem;
-}
-*/
-/*
-h5 + ul {
-	padding-top: 1.2em;
-}
-*/
-/*
-p {
-	font-weight: 400;
-	margin: 0;
-	padding-bottom: 1em;
-	line-height: 1.8em;
-	font-size: 1.1em;
-}
-*/
-.two aside {
-  font-size: 90%;
-}
-
-.two aside h3 {
+  font-size: 2.281em;
   padding-top: 0;
 }
 
-hr {
-  margin-top: 2em;
-  margin-bottom: 2em;
+h2 {
+  font-size: 1.802em;
 }
 
-hr:after {
-  content: "";
-  display: block;
-  height: 10px;
-  width: 10px;
-  background: #5d5d5d;
+h3 {
+  font-size: 1.424em;
 }
 
-hr:after {
-  display: none !important;
+h4 {
+  font-size: 1.125em;
 }
 
-hr + h2 {
-  padding-top: 1.5em;
-}
-
-/**
- * 1.4 Links
- */
-main a:hover, main a:focus {
-  transition: color .6s ease-out;
-}
-
-h1 a {
-  color: #363636 !important;
-}
-
-/**
- * 1.5 Lists
- */
-main ul,
-main ol {
-  font-size: 1.1em;
-  font-weight: 400;
-  line-height: 1.8;
-  margin: 0;
-  padding-bottom: 1em;
-  padding-left: 2.4em;
-}
-
-main ul ul,
-main ul ol,
-main ul li ol,
-main ol ul,
-main ol ol,
-main ol li ol {
+h5 {
   font-size: 1em;
-  padding-bottom: 1em;
 }
 
-main li {
-  padding-bottom: 1.2em;
+h6 {
+  font-size: 0.889em;
 }
 
-ul.inline,
-ol.inline {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-ul.inline li,
-ol.inline li {
-  display: inline-block;
-  line-height: 1.4;
-  margin-right: 1.5rem;
-}
-
-ul.inline li:last-child,
-ol.inline li:last-child {
-  margin-right: 0;
+blockquote {
+  font-family: "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
 }
 
 /**
- * 1.6 Utility
+ * 1.3 Links
  */
-.textaligncenter {
-  text-align: center;
+main a {
+  border-bottom: 1px solid #da1e00;
+  color: #191919;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s ease;
 }
 
-/* Must be contained within a relatively positioned element. */
-.abs-center {
-  margin: 0 -50% 0 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 0;
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
+main a:hover, main a:focus {
+  color: #c60c30;
 }
 
+main figure > a {
+  border-bottom: none;
+  display: block;
+  position: relative;
+}
+
+.article-title a,
+.site-title a {
+  border-color: transparent;
+}
+
+.article-title a:hover, .article-title a:focus,
+.site-title a:hover,
+.site-title a:focus {
+  border-color: currentColor;
+}
+
+/**
+ * 1.4 Lists
+ */
+/**
+ * 1.5 Utility
+ */
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -310,2081 +244,13 @@ ol.inline li:last-child {
   word-wrap: normal !important;
 }
 
-.fixed {
-  position: fixed;
-  top: 50px;
-  margin-top: 0;
-  z-index: 1;
-  transition: all .3s ease-out;
-}
-
-.gray-bg {
-  background-color: #e4e4e4;
-}
-
-.pad-top .column {
-  padding-top: 0 !important;
-}
-
-.pad-bottom {
-  padding-bottom: 3em;
-}
-
-/* Elements */
-/**
- * 2.0 Elements
- *
- * CSS rules for small, elemental bits of HTML. These pieces make up the
- * building blocks of larger components (buttons as parts of forms, tags as
- * parts of article meta). Try to keep these styles agnostic and general. They
- * can be built upon in other sections as needed; these should form the
- * skeletons.
- *
- *     - 2.1 Buttons
- *     - 2.2 Embedded Content
- *     - 2.3 Images
- *
- * @since 0.9.0
- */
-/**
- * 2.1 Buttons
- */
-.hrs-button,
-button.hrs-button,
-input[type="button"].hrs-button,
-input[type="reset"].hrs-button,
-input[type="submit"].hrs-button {
-  background: #464e54;
-  border: 1px solid transparent;
-  box-shadow: none;
-  color: #fff;
-  display: inline-block;
-  font-size: .9em;
-  font-weight: 600;
-  line-height: 1.4;
-  min-width: 120px;
-  padding: .75rem 1.25rem;
-  text-align: center;
-  transition: background-color .3s ease;
-}
-
-.hrs-button:hover, .hrs-button:focus,
-button.hrs-button:hover,
-button.hrs-button:focus,
-input[type="button"].hrs-button:hover,
-input[type="button"].hrs-button:focus,
-input[type="reset"].hrs-button:hover,
-input[type="reset"].hrs-button:focus,
-input[type="submit"].hrs-button:hover,
-input[type="submit"].hrs-button:focus {
-  background: #eff0f1;
-  border: 1px solid #464e54;
-  color: #464e54;
-}
-
-.hrs-button-priority,
-button.hrs-button-priority,
-input[type="button"].hrs-button-priority,
-input[type="reset"].hrs-button-priority,
-input[type="submit"].hrs-button-priority {
-  background: #981e32;
-}
-
-.hrs-button-priority:hover, .hrs-button-priority:focus,
-button.hrs-button-priority:hover,
-button.hrs-button-priority:focus,
-input[type="button"].hrs-button-priority:hover,
-input[type="button"].hrs-button-priority:focus,
-input[type="reset"].hrs-button-priority:hover,
-input[type="reset"].hrs-button-priority:focus,
-input[type="submit"].hrs-button-priority:hover,
-input[type="submit"].hrs-button-priority:focus {
-  background: #eff0f1;
-  border: 1px solid #981e32;
-  color: #981e32;
-}
-
-.hrs-button-white,
-button.hrs-button-white,
-input[type="button"].hrs-button-white,
-input[type="reset"].hrs-button-white,
-input[type="submit"].hrs-button-white {
-  background: #eff0f1;
-  border: 1px solid #464e54;
-  color: #464e54;
-}
-
-.hrs-button-white:hover, .hrs-button-white:focus,
-button.hrs-button-white:hover,
-button.hrs-button-white:focus,
-input[type="button"].hrs-button-white:hover,
-input[type="button"].hrs-button-white:focus,
-input[type="reset"].hrs-button-white:hover,
-input[type="reset"].hrs-button-white:focus,
-input[type="submit"].hrs-button-white:hover,
-input[type="submit"].hrs-button-white:focus {
-  background: #464e54;
-  border: 1px solid transparent;
-  color: #fff;
-}
-
-/**
- * 2.2 Embedded Content
- */
-/*
- * A flexible youtube embed container (default 16x9 aspect ratio)
- * Following techinque from Rachel McCollin's {@see http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-responsive-design/}
- * Which is itself based on Thierry Koblenz's {@see http://alistapart.com/article/creating-intrinsic-ratios-for-video}
- */
-.embed-youtube {
-  height: 0;
-  margin-bottom: 1.4em;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-}
-
-.embed-youtube iframe,
-.embed-youtube object,
-.embed-youtube embed {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.youtube-4x3 {
-  padding-bottom: 75%;
-}
-
-/**
- * 2.3 Images
- */
-figure img {
-  width: 100%;
-}
-
-/* Builder: Banner */
-.builder-section-banner .cycle-prev,
-.builder-section-banner .cycle-next {
-  top: 90%;
-}
-
-/* Centered layout ("content position: none") */
-.content-position-none .builder-banner-content {
-  text-align: center;
-  width: 100%;
-}
-
-/* Left-aligned layout (content-position: left) */
-.builder-banner-slide.content-position-left {
-  background-position: center right;
-}
-
-.builder-banner-slide.content-position-right {
-  background-position: center left;
-}
-
-.builder-section-banner .content-position-left .builder-banner-content,
-.builder-section-banner .content-position-right .builder-banner-content {
-  font-size: 1.3rem;
-  padding: 0;
-  bottom: 0;
-  height: auto;
-  min-height: 60%;
-  width: 100%;
-}
-
-.builder-section-banner .content-position-left .builder-banner-content:after,
-.builder-section-banner .content-position-right .builder-banner-content:after {
-  display: none;
-}
-
-.builder-section-banner .content-position-left .builder-banner-inner-title,
-.builder-section-banner .content-position-right .builder-banner-inner-title {
-  color: #981e32;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.9);
-  font-weight: 600;
-  width: 100%;
-  padding: 1rem;
-}
-
-.builder-section-banner .content-position-left .builder-banner-inner-content,
-.builder-section-banner .content-position-right .builder-banner-inner-content {
-  color: #2a3033;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.builder-section-banner .content-position-left .builder-banner-inner-content p,
-.builder-section-banner .content-position-right .builder-banner-inner-content p {
-  font-size: .7em;
-  padding: 0 1rem 1rem;
-  line-height: 1.5;
-}
-
-.section-wrapper-has-background {
-  min-height: 600px !important;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.single.gutter section.builder-section-banner .column:not(.gutterless) {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Default HRS Gallery */
-.hrs-gallery {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: auto;
-}
-
-.hrs-gallery .gallery-item {
-  box-sizing: border-box;
-  padding: 1rem;
-  margin: 0;
-  float: inherit;
+.textaligncenter {
   text-align: center;
 }
 
-.hrs-gallery .gallery-columns-1 .gallery-item {
-  width: 100%;
-}
-
-.hrs-gallery .gallery-columns-2 .gallery-item {
-  width: 50%;
-}
-
-.hrs-gallery .gallery-columns-3 .gallery-item {
-  width: 33.333333%;
-}
-
-.hrs-gallery .gallery-columns-4 .gallery-item {
-  width: 25%;
-}
-
-.hrs-gallery .gallery-columns-5 .gallery-item {
-  width: 20%;
-}
-
-.hrs-gallery .gallery-columns-6 .gallery-item {
-  width: 16.66%;
-}
-
-.hrs-gallery .gallery-columns-7 .gallery-item {
-  width: 14.28%;
-}
-
-.hrs-gallery .gallery-columns-8 .gallery-item {
-  width: 12.5%;
-}
-
-.hrs-gallery .gallery-columns-9 .gallery-item {
-  width: 11.11%;
-}
-
-.hrs-gallery img {
-  border: 0;
-  box-sizing: border-box;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Social media icons */
-.socialicons {
-  background: url(http://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/cream_pixels.png);
-  padding-top: 1em;
-}
-
-.socialicons img:hover,
-.socialicons img:focus {
-  opacity: .7;
-}
-
-/* Components */
-/**
- * 3.0 Components
- *
- * CSS rules for larger modular components. Components should be made up of
- * individual Elements and should be designed with a focus on being reused
- * around the site.
- *
- *     - 3.1 Cards
- *     - 3.2 Data Tables
- *     - 3.3 Dialogs
- *     - 3.4 Forms
- *     - 3.5 Grid Lists
- *     - 3.6 Modules
- *     - 3.7 Notifications
- *     - 3.8 Pagination
- *     - 3.9 Row Lists
- *     - 3.10 Search
- *
- * @since 0.9.0
- */
-/**
- * 3.1 Cards
- */
-.recent-articles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  grid-auto-rows: minmax(4rem, auto);
-  grid-gap: 1.5rem 2rem;
-}
-
-/**
- * 3.2 Data Tables
- */
-.tablepress-manual-contacts .column-1 {
-  width: 497px;
-}
-
-.tablepress-manual-contacts td.column-3,
-.tablepress-hrs-contacts td.column-3 {
-  white-space: nowrap;
-}
-
-.caldera-grid .hrs-caldera-table td,
-.caldera-grid .hrs-caldera-table th {
-  padding: 8px;
-}
-
-/* Labor relation table */
-.tablepress-id-31 .column-1 {
-  width: 450px !important;
-}
-
-.tablepress-id-7 .column-1 {
-  width: 500px !important;
-}
-
-.tablepress-id-31 .column-2,
-.tablepress-id-7 .column-2 {
-  width: 150px !important;
-}
-
-.tablepress-id-31 .column-3,
-.tablepress-id-7 .column-3 {
-  width: 100px !important;
-}
-
-.tablepress.hrs-4-of-5 td.column-1 {
-  width: 30%;
-}
-
-/**
- * 3.4 Forms
- */
-/* Add "number" type to the Spine `input[type=$]` styles */
-input[type="number"] {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  color: #767676;
-  margin: 0;
-  padding: 6px 4px;
-  outline: 0;
-}
-
-/*
- * 3.6 Modules
- */
-/* adjust all of the module sizes to match the vertical rhythm */
-.module, .action-module, .alert-module {
-  border: 11px solid #981e32;
-  margin: 1.5rem auto;
-  padding: 1.5rem 2rem;
-}
-
-.module-title {
-  border-bottom: 4px solid #eff0f1;
-  font-size: 1.8em;
-  /* whatever the standard h3 size is */
-  margin: 0 0 .5em;
-  padding: 0 0 .25em;
-}
-
-.module .module-title {
-  color: #981e32;
-}
-
-.action-module {
-  background-color: #00a5bd;
-  border-color: #006271;
-  text-align: center;
-}
-
-.action-module .module-title {
-  border-bottom-color: #008fa4;
-  font-size: 3em;
-}
-
-.alert-module {
-  border-color: #981e32;
-  min-width: 300px;
-  text-align: center;
-  width: 80%;
-}
-
-.alert-module .module-title {
-  font-size: 3em;
-}
-
-.alert-module svg {
-  fill: #981e32;
-}
-
-.alert-module.positive {
-  border-color: #ada400;
-}
-
-.alert-module.positive svg {
-  fill: #ada400;
-}
-
-.alert-module.caution {
-  border-color: #ffb81c;
-}
-
-.alert-module.caution svg {
-  fill: #ffb81c;
-}
-
-.alert-module.warning {
-  border-color: #f6861f;
-}
-
-.alert-module.warning svg {
-  fill: #f6861f;
-}
-
-/**
- * 3.7 Notifications
- */
-/* @todo Replace .hrs-callout classes with .notification classes */
-.notification, .positive-notification, .caution-notification, .warning-notification {
-  margin: 1.5em auto;
-  padding: 1em 1.5em;
-}
-
-.notification p, .positive-notification p, .caution-notification p, .warning-notification p {
-  padding: 0;
-}
-
-.notification {
-  border: 5px solid #5e6a71;
-  border-left: 21px solid #5e6a71;
-}
-
-.positive-notification {
-  border: 5px solid #00a5bd;
-  border-left: 21px solid #00a5bd;
-}
-
-.caution-notification {
-  border: 5px solid #ffb81c;
-  border-left: 21px solid #ffb81c;
-}
-
-.warning-notification {
-  border: 5px solid #f6861f;
-  border-left: 21px solid #f6861f;
-}
-
-/* HRS Banner Callouts */
-.hrs-callout-banner {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
-  margin: 1.4rem 0;
-  text-align: center;
-}
-
-.hrs-banner-careers {
-  background-image: url(http://hrsdev.hrs.wsu.edu/wp-content/uploads/2016/02/large-1024x347.jpg);
-}
-
-.hrs-banner-careers header h2 {
-  color: #fff;
-  width: 100%;
-}
-
-.hrs-callout-gallery {
-  margin: 1.4rem auto;
-  position: relative;
-}
-
-.hrs-callout-gallery h3 {
-  font-size: 1.1rem;
-  left: 50%;
-  margin-right: -50%;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-  z-index: 99;
-}
-
-.hrs-callout-gallery h3 a.hrs-button {
-  font-weight: 400;
-  line-height: 1.4;
-  padding: .3rem .7rem;
-  text-transform: none;
-  width: 100%;
-}
-
-.hrs-callout-gallery h3 a.hrs-button-priority {
-  background: rgba(152, 30, 50, 0.8);
-}
-
-.hrs-callout-gallery h3 a.hrs-button-priority:hover,
-.hrs-callout-gallery h3 a.hrs-button-priority:focus {
-  background-color: #fff;
-  color: #981e32;
-}
-
-.hrs-callout-gallery div.gallery-columns-3 {
-  max-width: 600px;
-}
-
-.hrs-callout-gallery div.gallery-columns-3 .gallery-item {
-  max-width: 33%;
-  margin: 0 0 -.5em 0;
-  position: relative;
-}
-
-.hrs-callout-gallery .gallery img {
-  border: none;
-}
-
-.hrs-callout-gallery .gallery .gallery-caption {
-  color: #fff;
-  left: 50%;
-  margin-right: -50%;
-  margin-left: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-}
-
-/**
- * 3.8 Pagination
- */
-/**
- * 3.9 Row Lists
- *
- * @todo Adjust these styles to be more agnostic of markup?
- */
-.articles-list article {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  margin: 0 0 1.5rem;
-}
-
-.articles-list .article-image {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  -ms-flex: 0 0 100px;
-      flex: 0 0 100px;
-  line-height: 0;
-  margin-right: 1rem;
-}
-
-.articles-list .row-item-content {
-  -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
-}
-
-.articles-list .article-header {
-  -ms-flex-align: center;
-      align-items: center;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-}
-
-.articles-list .article-title {
-  font-size: 1.5rem;
-  padding: 0;
-  margin: 0;
-}
-
-.articles-list p {
-  padding: .5em 0 0;
-  font-size: 1rem;
-  line-height: 1.2;
-}
-
-/**
- * 3.10 Search
- */
-body.home .parent-stretch .single.row .column header,
-.header-search-wrapper .search-label,
-.si-dropdown,
-.header-search-wrapper-hide {
-  display: none;
-}
-
-.menu-quick-links-search-container li {
-  float: left !important;
-  width: 50% !important;
-}
-
-.header-search-wrapper {
-  background-color: #dbdbdb !important;
-  max-width: 1188px;
-}
-
-.home .header-search-wrapper {
-  max-width: 100vw;
-}
-
-.header-search-wrapper section.single.row {
-  padding-left: 78px;
-  margin-left: 0;
-}
-
-.header-search-a-z-wrapper {
-  clear: both;
-  float: right;
-  padding-top: 10px;
-  padding-right: 100px;
-}
-
-.header-search-wrapper .quick-links-label {
-  font-size: 1.4rem;
-  padding-top: 1.2em;
-  padding-bottom: .8em;
-}
-
-.header-search-wrapper .radio-rapper {
-  display: none;
-}
-
-.header-search-wrapper .radio-rapper:last-of-type {
-  margin-left: 23px;
-}
-
-.header-search-wrapper .radio-rapper label {
-  font-weight: 300;
-  font-size: 1.4em;
-  font-family: "Open Sans", sans-serif;
-  color: #363636;
-  vertical-align: middle;
-  margin-right: 1em;
-}
-
-.header-search-wrapper .radio-rapper label:last-of-type {
-  margin-right: 0;
-}
-
-.header-search-wrapper .common-searches ul,
-.header-search-wrapper .common-searches ul li {
-  list-style: none;
-  font-weight: 400;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-.header-search-wrapper .common-searches ul {
-  column-count: 2;
-}
-
-#hrs-common-search li {
-  padding-bottom: .5em;
-}
-
-.common-searches ul li:first-child {
-  padding-top: 0;
-}
-
-.header-search-wrapper input[type="text"],
-.header-search-wrapper input[type="password"],
-.header-search-wrapper input[type="email"],
-.header-search-wrapper select,
-.header-search-wrapper textarea {
-  background: #fff;
-}
-
-.header-search-input-wrapper input.radio {
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-.header-search-input-wrapper input.header-search-input {
-  border-radius: 0;
-  float: right;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.75em;
-  font-weight: 300;
-  height: 50px;
-  max-width: 60%;
-  min-width: 50%;
-  margin-left: 100px;
-  margin-top: 50px;
-  margin-right: 100px;
-  padding: 25px;
-  padding-top: 4px;
-  /* Fixes Firefox input text cut off */
-  padding-bottom: 4px;
-  /* Fixes Firefox input text cut off */
-}
-
-/* Closing "X" */
-.close-header-drawer,
-.close-header-search {
-  text-align: right;
-  padding-right: 1em;
-  padding-bottom: 1em;
-  color: #981e32;
-  font-size: 2rem;
-  font-weight: 300;
-  cursor: pointer;
-  transition: color .3s ease;
-}
-
-.close-header-drawer:hover,
-.close-header-search:hover {
-  color: #c60c30;
-}
-
-/* Layouts */
-/**
- * 4.0 Layouts
- *
- * Rules defining different layout patterns for use anywhere on the site.
- *
- *     - 4.1 Cards
- *     - 4.2 Columns
- *     - 4.3 Grids
- *     - 4.4 Tabs
- *
- * @since 0.9.0
- */
-/**
- * 4.1 Cards
- */
-/**
- * 4.2 Columns
- */
-.nested-halves {
-  width: 100%;
-  display: inline-block;
-  text-align: top;
-  clear: both;
-  padding-top: 0;
-  margin-top: 0;
-}
-
-.nested-halves .nested-one {
-  display: block;
-  width: 49%;
-  float: left;
-  padding-right: 1%;
-}
-
-.nested-halves .nested-two {
-  display: block;
-  width: 49%;
-  float: left;
-  padding-left: 1%;
-}
-
-.nested-thirds {
-  width: 100%;
-  display: inline-block;
-  clear: both;
-}
-
-.nested-thirds .nested-one {
-  display: block;
-  width: 33.33333333333333%;
-  float: left;
-  padding-right: 4%;
-}
-
-.nested-thirds .nested-two {
-  display: block;
-  width: 33.33333333333333%;
-  float: left;
-  padding-right: 4%;
-}
-
-.nested-thirds .nested-three {
-  display: block;
-  width: 33.33333333333333%;
-  float: left;
-}
-
-.nested-gutter {
-  padding-left: 1%;
-  padding-right: 1%;
-}
-
-.nested-one h5,
-.nested-two h5,
-.nested-three h5 {
-  background: #981e32;
-}
-
-.nested-one h5 a,
-.nested-two h5 a,
-.nested-three h5 a {
-  color: #fff;
-}
-
-.nested-one h5 a:hover, .nested-one h5 a:focus,
-.nested-two h5 a:hover,
-.nested-two h5 a:focus,
-.nested-three h5 a:hover,
-.nested-three h5 a:focus {
-  color: #b5babe;
-}
-
-.nested-one ul,
-.nested-two ul,
-.nested-three ul {
-  background-color: #fff;
-  border-radius: 5px;
-}
-
-/**
- * 4.3 Grids
- */
-/**
- * 4.4 Tabs
- */
-.tabbed ul.tabbed-tabs {
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0;
-}
-
-.tabbed ul li.tabbed-tab {
-  -ms-flex: 1;
-      flex: 1;
-  text-align: center;
-  display: block;
-  padding: 21px;
-  margin-top: 0;
-  font-size: 20px;
-  font-weight: 400;
-  text-transform: uppercase;
-  cursor: pointer;
-  position: relative;
-  background-color: #f0f0f0;
-  outline: 0;
-}
-
-.tabbed ul li.tabbed-tab {
-  display: none;
-}
-
-.tabbed ul li.tabbed-tab a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  outline: 0;
-  color: #363636;
-}
-
-.tabbed ul li.tabbed-tab a:hover {
-  color: #981e32;
-}
-
-.tabbed ul li.tabbed-tab.ui-tabs-active {
-  background: #fff;
-}
-
-.tabbed .ui-tabs-panel {
-  background: url(https://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/gray-tile.jpg) !important;
-  padding: 3% 8%;
-}
-
-/* Templates */
-/**
- * 5.0 Templates
- *
- * Template-specific rules for specific page styles. These generally align with
- * theme templates and template parts, and should be made up of Elements,
- * Components, and Layouts.
- *
- *     - 5.1 Header
- *     - 5.2 Footer
- *     - 5.3 Articles
- *     - 5.4 Archives
- *     - 5.4 Multi-part Pages
- *
- * @since 0.9.0
- */
-/**
- * 5.1 Header
- */
-.parent-stretch {
-  background: #444;
-  border-top: 5px solid #981e32;
-}
-
-.parent-stretch .single.row .column {
-  max-width: 1188px;
-  text-align: right;
-}
-
-.parent-stretch header {
-  display: inline-block;
-  color: #5d5d5d;
-  text-transform: uppercase;
-  padding-right: 1em;
-  margin-right: 1em;
-  border-right: 1px solid #5d5d5d;
-  font-size: 1.1em;
-}
-
-#hr-header a {
-  color: #eff0f1;
-}
-
-#hr-header a:hover, #hr-header a:focus {
-  color: #c60c30;
-}
-
-.parent-stretch .search-label {
-  color: #eff0f1;
-  display: inline-block;
-  font-size: 1.2rem;
-  padding-top: 1em;
-  padding-right: 35px;
-  padding-bottom: 1em;
-  text-align: right;
-  transition: color .3s ease;
-}
-
-.parent-stretch .search-label:after {
-  content: "$";
-  font-weight: 300;
-  font-family: Spine-Icons;
-  position: relative;
-  top: .125rem;
-  margin-left: .8em;
-}
-
-.parent-stretch .search-label:hover,
-.parent-stretch .search-label:focus {
-  color: #c60c30;
-  cursor: pointer;
-}
-
-/**
- * 5.2 Footer
- */
-footer.parent-foot {
-  width: 989px;
-  margin-bottom: 0;
-  margin-left: 0;
-  padding-left: 0;
-  display: block;
-  background-color: #fff;
-  font-family: "Open Sans", sans-serif;
-  border-top: 1px solid #efefef;
-  bottom: 0;
-}
-
-footer.parent-foot ul li {
-  padding-top: 5px;
-}
-
-footer.parent-foot ul.footer-utility {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 4em;
-  padding-bottom: 3em;
-  column-count: 3;
-  column-gap: 20px;
-}
-
-footer.parent-foot ul.footer-utility li {
-  list-style: none;
-  padding-bottom: 1.4em;
-  margin-right: 20%;
-}
-
-footer.parent-foot ul.footer-utility li:before {
-  content: "";
-  padding-right: 0;
-}
-
-footer.parent-foot .site-ref {
-  display: block;
-  background-color: #981e32;
-}
-
-footer.parent-foot .site-ref ul {
-  margin: auto;
-  text-align: center;
-  padding: .8em 0;
-}
-
-footer.parent-foot .site-ref ul li {
-  display: inline-block;
-  margin-right: 1.2em;
-  padding: 0;
-  list-style: none;
-}
-
-footer.parent-foot .site-ref ul li:before {
-  content: "";
-  padding-right: 0;
-}
-
-footer.parent-foot .site-ref ul li:after {
-  display: inline-block;
-  content: "|";
-  color: #fff;
-  margin-left: 1em;
-}
-
-footer.parent-foot .site-ref ul li:last-child:after {
-  display: none;
-}
-
-footer.parent-foot .site-ref ul li a {
-  color: #fff;
-}
-
-footer.parent-foot .site-ref ul li a:hover {
-  color: #ccc;
-}
-
-footer.parent-foot ul.footer-utility li a:hover,
-footer.parent-foot .site-ref ul li a:hover {
-  transition: color .6s ease-out;
-}
-
-/**
- * 5.3 Articles
- */
-.article-author {
-  display: none !important;
-}
-
-.article-date {
-  color: #6f7f87;
-}
-
-.hrs_news .article-date {
-  display: inline !important;
-}
-
-/**
- * 5.4 Archives
- */
-/**
- * 5.4 Multi-part Pages
- */
-/* Pages */
-/**
- * 6.0 Pages
- *
- * A section for CSS rules targeting specific individual pages. These should be
- * used sparingly and only for unique pages such as the homepage.
- *
- *     - 6.1 Homepage
- *     - 6.2 Benefits
- *     - 6.3 HRS News
- *     - 6.4 Recruitment
- *     - 6.5 Spokane and Tri-Cities
- *
- * @since 0.9.0
- */
-/**
- * 6.1 Homepage
- */
-body.home.page #binder.spineless.fluid main {
-  margin: 0;
-  min-width: 100% !important;
-}
-
-body.home #jacket #binder h3 {
-  font-weight: 300;
-  padding-top: 1.2em;
-  padding-bottom: .8em;
-}
-
-body.home main,
-body.home #spine #glue:before {
-  border: none;
-}
-
-body.home footer.parent-foot {
-  width: 100%;
-  border-left: none;
-}
-
-body.home .h1-header {
-  height: 130px;
-}
-
-body.home .h1-header h1 {
-  float: right;
-  margin-bottom: 25px;
-  padding-right: 8%;
-  padding-top: 2%;
-  width: 60%;
-}
-
-.abovepicture {
-  background: url(http://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/cream_pixels.png);
-  padding-bottom: 25px !important;
-  padding-top: 0;
-}
-
-.abovepicture a:hover, .abovepicture a:focus {
-  color: #981e32 !important;
-  transition: color .5s ease !important;
-}
-
-body.home .spacing-loose .single.gutter.builder-section-banner .column:not(.gutterless) {
-  padding: 0;
-}
-
-body.home .builder-section-banner .builder-banner-inner-title {
-  background-color: #363636;
-  margin-top: 45px;
-  padding: 1em 1em 1em 2em;
-  width: 70%;
-}
-
-body.home .builder-section-banner .builder-banner-inner-content {
-  display: block;
-  background-color: #981e32;
-  text-align: center;
-  text-shadow: none;
-  width: inherit;
-}
-
-body.home .content-position-left .builder-banner-inner-content:hover {
-  background-color: #c60c30;
-}
-
-body.home .builder-section-banner .builder-banner-inner-content p {
-  padding: 0;
-  margin: 0;
-}
-
-body.home .builder-section-banner .content-position-none .builder-banner-inner-title {
-  color: #981e32;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.9);
-  font-weight: 600;
-  width: 100%;
-  padding: 1rem;
-}
-
-body.home .builder-section-banner .content-position-none .builder-banner-inner-content {
-  color: #2a3033;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-body.home .builder-section-banner .content-position-none .builder-banner-inner-content p {
-  font-size: 90%;
-  padding: 0 1rem 1rem;
-}
-
-.belowpicture {
-  background-color: #444;
-  color: #fff !important;
-}
-
-.belowpicture a {
-  color: #fff !important;
-  font-size: 1em;
-}
-
-.belowpicture a:hover, .belowpicture a:focus {
-  color: #a0a5aa !important;
-}
-
-body.home section.home-nav {
-  background: none !important;
-  border-top: none !important;
-}
-
-body.home section.home-nav .column ul {
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  padding: 1.5em 0;
-}
-
-body.home section.home-nav .column ul li {
-  -ms-flex: 1;
-      flex: 1;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 1%;
-  padding-right: 1%;
-  text-align: center;
-  border-right: solid 1px #ddd;
-}
-
-body.home section.home-nav .column ul,
-body.home section.home-nav .column ul li {
-  box-sizing: border-box;
-}
-
-body.home section.home-nav .column ul li:last-of-type {
-  border-right: 0;
-}
-
-body.home section.home-nav .column ul li:before {
-  content: "";
-  padding-right: 0;
-}
-
-body.home section .column.tabbed h5 {
-  border-radius: 3px;
-  line-height: 1.4;
-  margin-bottom: 1.4em;
-  padding: 10px;
-}
-
-/**
- * 6.2 Benefits
- */
-.hrs-benefits-new-employees .column {
-  padding: 0 1rem !important;
-}
-
-.hrs-benefits-new-employees header h2,
-.hrs-benefits-new-employees h2 {
-  font-weight: 700;
-  width: 100%;
-}
-
-.hrs-benefits-new-employees h4 {
-  margin-top: 1em;
-  margin-bottom: 2em;
-}
-
-.hrs-benefits-new-employees .benefits,
-.hrs-benefits-new-employees .resources {
-  background-size: 100% 100%;
-  color: #fff;
-  min-height: 300px;
-  text-align: center;
-}
-
-.hrs-benefits-new-employees .benefits {
-  background: url(http://hrs.wsu.edu/wp-content/uploads/2017/09/Clouds_over_a_Harvested_Wheat_Field_darken.jpg) no-repeat bottom center;
-}
-
-.hrs-benefits-new-employees .resources {
-  background: url(http://hrs.wsu.edu/wp-content/uploads/2017/09/tri-cities-campus-above_darker.jpg) no-repeat bottom center;
-}
-
-.hrs-benefits-new-employees .benefits header h2,
-.hrs-benefits-new-employees .resources header h2 {
-  color: #fff;
-}
-
-.hrs-benefits-new-employees .orientation,
-.hrs-benefits-new-employees .deadlines {
-  text-align: center;
-}
-
-.hrs-benefits-new-employees .orientation img,
-.hrs-benefits-new-employees .deadlines img {
-  margin-top: 1rem;
-  margin-bottom: -.8rem;
-}
-
-.tablepress.hrs-medical-premium-changes-2018 tbody {
-  border-bottom: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-}
-
-.tablepress.hrs-medical-premium-changes-2018 tbody td {
-  border-right: 1px solid #ddd;
-}
-
-.tablepress.hrs-medical-premium-changes-2018 tbody td:not(.column-1) {
-  text-align: center;
-  width: 9%;
-}
-
-/* The 2018 columns */
-.tablepress.hrs-medical-premium-changes-2018 tr .column-3,
-.tablepress.hrs-medical-premium-changes-2018 tr .column-5,
-.tablepress.hrs-medical-premium-changes-2018 tr .column-7,
-.tablepress.hrs-medical-premium-changes-2018 tr .column-9 {
-  background-color: #eee;
-  font-weight: 700;
-}
-
-.tablepress.hrs-medical-premium-changes-2018 .row-1 td {
-  color: #fff;
-  background-color: #981e32;
-  font-weight: 700;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.tablepress.hrs-medical-premium-changes-2018 .row-2 td {
-  color: #fff;
-  background-color: #2a3033;
-  text-align: center;
-}
-
-.tablepress.hrs-medical-premium-changes-2018 .row-3 .column-1,
-.tablepress.hrs-medical-premium-changes-2018 .row-8 .column-1,
-.tablepress.hrs-medical-premium-changes-2018 .row-12 .column-1 {
-  background-color: #d7dadb;
-  font-weight: 700;
-}
-
-/**
- * 6.3 HRS News
- */
-.post-type-archive-hrs_news .news-nav {
-  border-top: 2px solid #aec7cb;
-  border-right: 8px solid #fff;
-  border-bottom: 2px solid #aec7cb;
-  border-left: 8px solid #fff;
-  list-style-type: none;
-  margin: 1.5em 0;
-  padding: 0 0 0 1em;
-}
-
-.post-type-archive-hrs_news .nav-links {
-  text-align: center;
-}
-
-.single-hrs_news .nav-links a,
-.post-type-archive-hrs_news .nav-links .page-numbers {
-  margin: 0 .25em;
-  padding: .75em 1em;
-}
-
-.post-type-archive-hrs_news .nav-links .current {
-  background: #eff0f1;
-  border: 1px solid #464e54;
-}
-
-.single-hrs_news .nav-links a,
-.post-type-archive-hrs_news .nav-links a {
-  transition: color .3s ease-out, background-color .3s ease-out;
-}
-
-.single-hrs_news .nav-links a:hover,
-.post-type-archive-hrs_news .nav-links a:hover,
-.post-type-archive-hrs_news .nav-links a:focus {
-  background: #981e32;
-  border: 1px solid transparent;
-  color: #fff;
-}
-
-.single-hrs_news .nav-previous,
-.single-hrs_news .nav-next {
-  display: inline-block;
-  width: 50%;
-}
-
-.single-hrs_news .nav-next {
-  float: right;
-  text-align: right;
-}
-
-.post-type-archive-hrs_news article footer,
-.single-hrs_news article footer {
-  border-top: none;
-  border-bottom: 1px rgba(127, 127, 127, 0.2) solid;
-}
-
-.hrs_news h3 {
-  line-height: 1.4;
-  padding-bottom: .5em;
-}
-
-.hrs_news h3 > a {
-  border-left: 8px solid;
-  padding-left: .5em;
-}
-
-.hrs_news .hrs-news-unit {
-  font-size: 1em;
-  padding-bottom: 0;
-}
-
-.hrs_news .article-summary,
-.hrs_news .article-body {
-  margin-top: 1.4em;
-}
-
-.hrs_news p {
-  font-size: 1.2em;
-  line-height: 1.5;
-}
-
-/**
- * 6.4 Recruitment
- */
-.hrs-app-instructions {
-  margin-top: 2em;
-}
-
-.hrs-app-instructions .circle-icon-holder {
-  background: #4f868e;
-  border: 5px solid #fff;
-  border-radius: 100%;
-  height: 70px;
-  margin: 0 auto -30px;
-  overflow: hidden;
-  position: relative;
-  top: -35px;
-  width: 70px;
-}
-
-.hrs-app-instructions .job-search {
-  background: #4f868e;
-  color: #fff;
-}
-
-.hrs-app-instructions .job-search h2 {
-  color: #eff0f1;
-  text-align: center;
-}
-
-.hrs-open-enrollment ul.inline li {
-  margin-right: 1%;
-}
-
-.hrs-open-enrollment .inline .hrs-button {
-  min-width: 90px;
-  min-height: 83px;
-  padding: .75em;
-  vertical-align: top;
-}
-
-/**
- * 6.5 Spokane and Tri-Cities
- */
-.page-tricities .builder-banner-inner-title,
-.page-spokane .builder-banner-inner-title {
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #981e32;
-  font-size: 3.4rem;
-  font-weight: 600;
-  left: 50%;
-  padding: .3rem 1.3rem;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-}
-
-.page-tricities .hrs-button-big,
-.page-spokane .hrs-button-big {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.page-tricities .hrs-button-big a,
-.page-spokane .hrs-button-big a {
-  background: #981e32;
-  border: medium none;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  box-sizing: border-box;
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: 1px;
-  padding: 1rem 2rem;
-  text-align: center;
-  text-transform: uppercase;
-  transition: background-color .2s ease;
-}
-
-.page-tricities .hrs-button-big a:hover,
-.page-spokane .hrs-button-big a:hover {
-  background: #464e54;
-}
-
-.page-tricities .hrs-button-menu ul,
-.page-spokane .hrs-button-menu ul {
-  list-style-type: none;
-  padding: 1rem 0 0;
-  text-align: center;
-}
-
-.page-tricities .hrs-button-menu ul li,
-.page-spokane .hrs-button-menu ul li {
-  margin-bottom: .5rem;
-  padding: 0;
-}
-
-.page-tricities h2.blue-text,
-.page-spokane h2.blue-text {
-  font-size: 2rem;
-  padding-top: 0;
-}
-
-.page-tricities .hrs-nav-modules .column,
-.page-spokane .hrs-nav-modules .column {
-  text-align: center;
-}
-
-.page-tricities .hrs-nav-modules .column a:hover img,
-.page-tricities .hrs-nav-modules .column a:focus img,
-.page-spokane .hrs-nav-modules .column a:hover img,
-.page-spokane .hrs-nav-modules .column a:focus img {
-  opacity: .7;
-}
-
-.page-tricities .hrs-nav-modules h3,
-.page-spokane .hrs-nav-modules h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: .5rem;
-  padding: 0;
-  text-transform: uppercase;
-}
-
-.page-tricities .hrs-nav-modules p,
-.page-spokane .hrs-nav-modules p {
-  line-height: 1.5;
-  font-size: 1.1rem;
-  font-weight: 400;
-}
-
-/* Breakpoints */
-/**
- * 7.0 Breakpoints
- *
- * All previous styles should be fluid, responsive, and otherwise target the
- * smallest standard viewport size (i.e., mobile devices). This section provides
- * adjustments to take advantage of additional screen space on larger viewports
- * and fix items that may no longer be ideal at larger screen sizes.
- *
- *     - 7.1 Small
- *     - 7.2 Medium
- *     - 7.3 Large
- *     - 7.4 Massive
- *
- * @since 0.9.0
- */
-@media only screen and (max-width: 37.5em) {
-  .tablepress-manual-contacts,
-  .tablepress-hrs-contacts {
-    display: block;
-    text-align: left;
-  }
-  .tablepress-manual-contacts caption,
-  .tablepress-manual-contacts tbody,
-  .tablepress-manual-contacts tr,
-  .tablepress-manual-contacts th,
-  .tablepress-manual-contacts td,
-  .tablepress-hrs-contacts caption,
-  .tablepress-hrs-contacts tbody,
-  .tablepress-hrs-contacts tr,
-  .tablepress-hrs-contacts th,
-  .tablepress-hrs-contacts td {
-    display: block;
-    text-align: left;
-  }
-  .tablepress-manual-contacts thead,
-  .tablepress-manual-contacts th:empty,
-  .tablepress-manual-contacts td:empty,
-  .tablepress-hrs-contacts thead,
-  .tablepress-hrs-contacts th:empty,
-  .tablepress-hrs-contacts td:empty {
-    display: none;
-    visibility: hidden;
-  }
-  .tablepress-manual-contacts tbody tr,
-  .tablepress-hrs-contacts tbody tr {
-    margin-bottom: 1.4rem;
-  }
-  .tablepress-manual-contacts tbody td,
-  .tablepress-manual-contacts tfoot th,
-  .tablepress-hrs-contacts tbody td,
-  .tablepress-hrs-contacts tfoot th {
-    border: none;
-    line-height: 1.4;
-    padding: 4px 8px;
-  }
-  .tablepress-manual-contacts .column-1,
-  .tablepress-hrs-contacts .column-1 {
-    font-weight: 700;
-  }
-}
-
-@media only screen and (max-width: 365px) {
-  .hrs-open-enrollment ul.inline li {
-    display: block;
-    margin-right: 0;
-  }
-  .hrs-open-enrollment .inline .hrs-button {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 365px) and (max-width: 640px) {
-  .hrs-open-enrollment .inline .hrs-button {
-    max-width: 135px;
-  }
-}
-
-@media only screen and (min-width: 700px) and (max-width: 790px) {
-  .hrs-open-enrollment .inline .hrs-button {
-    font-size: .7em;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  .page-tricities .hrs-button-big a,
-  .page-spokane .hrs-button-big a {
-    padding: 2rem 4rem;
-  }
-}
-
-@media screen and (max-width: 490px) {
-  /* Global Header */
-  .parent-stretch .single.row .column {
-    padding-right: 25px;
-  }
-  .parent-stretch header {
-    font-size: .95em;
-  }
-  /* Search form */
-  .parent-stretch .search-label {
-    padding-right: 0;
-  }
-  .header-search-wrapper {
-    background: none !important;
-    background-color: #eaeaea;
-  }
-  .header-search-wrapper .radio-rapper {
-    width: 100%;
-    display: block;
-  }
-  .header-search-input-wrapper input.header-search-input {
-    width: calc(100% - 50px);
-  }
-  /* Footers: Global Footer */
-  footer.parent-foot ul.footer-utility {
-    column-count: 1;
-    column-gap: 20px;
-  }
-  footer.parent-foot ul.footer-utility li {
-    display: block;
-    width: 100%;
-    float: none;
-    border-top: 1px solid #ddd;
-    padding-top: .8em;
-  }
-  footer.parent-foot ul.footer-utility li a {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  /* Pages: Home */
-  body.home .builder-section-banner .builder-banner-inner-title {
-    width: 100%;
-  }
-  body.home .builder-section-banner .builder-banner-inner-content {
-    width: 100%;
-    max-width: 100%;
-    margin-left: 5%;
-    margin-top: 10px;
-  }
-  body.home section.home-nav .column ul {
-    display: block;
-    padding: 0;
-  }
-  body.home section.home-nav .column ul li {
-    width: 100%;
-    padding: 15px 0;
-    border-top: 1px solid #ddd;
-  }
-  body.home section.home-nav .column ul li:first-of-type {
-    border-top: none;
-  }
-}
-
-@media only screen and (max-width: 520px) {
-  .hrs-gallery.gallery-columns-1 .gallery-item,
-  .hrs-gallery.gallery-columns-2 .gallery-item,
-  .hrs-gallery.gallery-columns-3 .gallery-item,
-  .hrs-gallery.gallery-columns-4 .gallery-item,
-  .hrs-gallery.gallery-columns-5 .gallery-item,
-  .hrs-gallery.gallery-columns-6 .gallery-item,
-  .hrs-gallery.gallery-columns-7 .gallery-item,
-  .hrs-gallery.gallery-columns-8 .gallery-item,
-  .hrs-gallery.gallery-columns-9 .gallery-item {
-    width: 50%;
-  }
-  .hrs-gallery .gallery-item:nth-child(odd) {
-    padding-left: 0;
-  }
-  .hrs-gallery .gallery-item:nth-child(even) {
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width: 800px) and (max-width: 1000px) {
-  body.home .builder-section-banner .content-position-none .builder-banner-inner-title {
-    font-size: .8em;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .builder-section-banner .cycle-prev,
-  .builder-section-banner .cycle-next {
-    top: 62%;
-  }
-  .content-position-none .builder-banner-content {
-    padding: 0 62px;
-    padding: 0 5rem;
-  }
-  body.home .builder-section-banner .content-position-none .builder-banner-inner-title {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    transition: background .3s ease;
-  }
-  body.home .builder-section-banner .content-position-none .builder-banner-inner-content {
-    font-size: .75em;
-    width: 90%;
-    transition: background .3s ease;
-  }
-  body.home .builder-section-banner .content-position-none a:hover .builder-banner-inner-title,
-  body.home .builder-section-banner .content-position-none a:focus .builder-banner-inner-title,
-  body.home .builder-section-banner .content-position-none a:hover .builder-banner-inner-content,
-  body.home .builder-section-banner .content-position-none a:hover .builder-banner-inner-content {
-    background-color: rgba(215, 218, 219, 0.9);
-  }
-}
-
-@media screen and (min-width: 700px) and (max-width: 900px) {
-  .builder-section-banner .content-position-left .builder-banner-inner-content p,
-  .builder-section-banner .content-position-right .builder-banner-inner-content p {
-    font-size: .7em;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .builder-section-banner .content-position-left .builder-banner-content,
-  .builder-section-banner .content-position-right .builder-banner-content {
-    width: 60%;
-    bottom: 1em;
-  }
-  .builder-section-banner .content-position-left .builder-banner-inner-title,
-  .builder-section-banner .content-position-right .builder-banner-inner-title {
-    font-size: 2rem;
-  }
-  .builder-banner-slide a:hover {
-    opacity: 10%;
-  }
-}
-
-@media screen and (max-width: 790px) {
-  .main-header .header-group {
-    left: 0;
-  }
-  /* Search */
-  .header-search-input-wrapper input.header-search-input {
-    margin-top: 20px;
-  }
-  .header-search-wrapper .quick-links-label {
-    padding-bottom: 1em;
-  }
-  #jacket #binder .header-search-wrapper section.single.row {
-    padding-left: 0;
-    margin-left: 2em;
-    margin-top: 0;
-  }
-  #jacket #binder .header-search-wrapper section.single.row .radio-rapper:last-of-type {
-    margin-top: 0;
-  }
-  /* Footers: Global Footer */
-  footer.parent-foot {
-    width: 100%;
-  }
-  footer.parent-foot .site-ref {
-    padding-top: 1em;
-  }
-  footer.parent-foot .site-ref ul li {
-    width: 100%;
-    display: block;
-    padding-bottom: 1.1em;
-  }
-  footer.parent-foot .site-ref ul li:after {
-    display: none;
-  }
-  /* Pages: Home */
-  body.home .h1-header {
-    height: inherit;
-  }
-  body.home .h1-header h1 {
-    float: left;
-    width: 100%;
-  }
-  body.home #jacket #binder .header-search-wrapper {
-    margin-top: 40px;
-  }
-  body.home .spacing-loose .single.gutter.home-nav .column:not(.gutterless) {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .nested-halves .nested-one,
-  .nested-halves .nested-two,
-  .nested-halves .nested-three,
-  .nested-thirds .nested-one,
-  .nested-thirds .nested-two,
-  .nested-thirds .nested-three {
-    width: 100%;
-    margin-bottom: 1em;
-  }
-  .nested-one,
-  .nested-two {
-    display: block;
-    width: 100%;
-    clear: both;
-  }
-}
-
-@media only screen and (min-width: 791px) and (max-width: 990px) {
-  #jacket #binder .header-search-wrapper section.single.row {
-    padding-left: 198px;
-    margin-left: 4em;
-  }
-  #jacket #binder .header-search-wrapper section.single.row .radio-rapper:last-of-type {
-    margin-top: 0;
-  }
-  body.home #spine #glue.spine-glue {
-    min-height: 0 !important;
-  }
-  body.home #spine .spine-sitenav,
-  body.home #spine footer {
-    display: none;
-  }
-  body.home #spine.cropped {
-    height: 198px !important;
-    min-height: 198px !important;
-    top: 0 !important;
-    left: auto !important;
-  }
-  body.home #spine.cropped #glue {
-    width: 198px;
-    height: 198px !important;
-    min-height: 198px !important;
-  }
-  body.home #spine.cropped #glue:before {
-    width: 198px;
-  }
-  body.home #spine.cropped #glue nav,
-  body.home #spine.cropped #glue footer {
-    display: none;
-  }
-  body.home #spine.cropped.bleed #glue:before {
-    left: 0;
-  }
-  body.home #spine.cropped.shelved button#shelve,
-  body.home #spine.cropped.unshelved button#shelve {
-    display: none;
-  }
-  /* Cropped and Scrolled */
-  body.home #spine.cropped.skimmed:not(.unshelved) {
-    left: 0 !important;
-    top: 0 !important;
-    width: 100% !important;
-    height: 50px !important;
-    min-height: 0 !important;
-  }
-  body.home #spine.cropped.skimmed:not(.unshelved) #glue,
-  body.home #spine.cropped.skimmed:not(.unshelved) #glue:before {
-    min-height: 0 !important;
-    height: 50px !important;
-    width: 100% !important;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  body.home #spine.cropped.skimmed:not(.unshelved) #glue #wsu-signature {
-    background-position: center 12px;
-    background-size: auto 30px;
-    height: 49px;
-    pointer-events: none;
-    cursor: default;
-  }
-  body.home #spine.cropped.skimmed:not(.unshelved) #glue #wsu-actions {
-    width: 198px;
-    margin-top: -40px;
-  }
-  body.home #spine.cropped.skimmed #wsu-signature {
-    background-image: url(https://repo.wsu.edu/spine/2/marks/wsu-signature-horizontal.svg);
-  }
-  body.home .h1-header h1 {
-    width: 75%;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width: 990px) {
-  body.home #jacket #binder .header-search-wrapper section.single.row {
-    left: 300px;
-    max-width: calc(100vw - 24%);
-  }
-  body.home .parent-stretch .single.row .column {
-    max-width: 90%;
-  }
-  body.home .close-header-search {
-    margin-right: 10%;
-  }
-}
-
-@media screen and (max-width: 1530px) {
-  .header-search-input-wrapper input.header-search-input {
-    max-width: 40%;
-    min-width: 40%;
-  }
-}
-
-@media screen and (max-width: 989px) {
-  .header-search-input-wrapper input.header-search-input {
-    max-width: 60%;
-    min-width: 60%;
-  }
-}
-
-@media screen and (max-width: 695px) {
-  .header-search-input-wrapper input.header-search-input {
-    max-width: 80%;
-    min-width: 80%;
-    margin-right: 10px !important;
-    margin-left: 10px !important;
-    float: left;
-  }
-  .column .one .common-searches .common-searches-hide {
-    margin-left: 15px !important;
-  }
-  .row .column {
-    padding-left: 10px !important;
-  }
-}
-
-@media only screen and (min-width: 640px) {
-  .hrs-two-col {
-    width: 47%;
-    clear: none !important;
-  }
-  .hrs-1-of-4 {
-    width: 23%;
-  }
-  .hrs-1-of-5 {
-    width: 20%;
-  }
-  .hrs-2-of-5 {
-    width: 40%;
-  }
-  .hrs-3-of-5 {
-    width: 60%;
-  }
-  .hrs-4-of-5 {
-    width: 80%;
-  }
-  .gform_wrapper .gfield_error.hrs-two-col {
-    width: 47%;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .content-position-left .builder-banner-content {
-    padding: 0;
-    font-size: 1.4em;
-  }
-  body.home .builder-section-banner .builder-banner-inner-title {
-    width: 80%;
-  }
-  body.home .builder-section-banner .builder-banner-inner-content {
-    margin-top: 25px;
-    margin-left: 30%;
-  }
-}
-
-@media screen and (max-width: 799px) {
-  .builder-banner-content {
-    padding: 0;
-    font-size: 120%;
-    width: 70%;
-  }
-  body.home .builder-section-banner .builder-banner-inner-content {
-    width: 100%;
-    max-width: 55%;
-    margin-left: 15%;
-    margin-top: 25px;
-  }
-}
-
-@media only screen and (min-width: 520px) {
-  .hrs-callout-gallery h3 {
-    font-size: 2rem;
-  }
-}
-
-@media only screen and (min-width: 990px) and (max-width: 1699px) {
-  #spine.cropped {
-    left: 10% !important;
-  }
-}
-
-@media only screen and (min-width: 1700px) {
-  #spine.cropped {
-    left: 8% !important;
-  }
-}
-
-/**
- * 7.1 Small
- */
-/**
- * 7.2 Medium
- */
-/**
- * 7.3 Large
- */
-/**
- * 7.4 Massive
- */
 /* Deprecated */
 /**
- * 8.0 Deprecated
+ * 0.0 Deprecated
  *
  * These styles or selectors have been deprecated and will be removed from
  * future versions. Stop targeting these rules and update any markup that relies
@@ -2392,156 +258,437 @@ body.home section .column.tabbed h5 {
  *
  * @since 0.9.0
  */
+/**
+ * Deprecated Foundation Styles
+ *
+ * @since 0.11.0
+ */
+/* We don't use a background or background image so we probably don't need
+html {
+	min-height: 100%;
+
+	main {
+		min-height: 100%;
+
+		div.page {
+			min-height: 80vh;
+		}
+	}
+}
+*/
+/**
+ * Deprecated Typography Styles
+ *
+ * @since 0.11.0
+
+.two aside {
+	font-size: 90%;
+
+	h3 {
+		padding-top: 0;
+	}
+}
+ */
+/**
+ * Deprecated List Styles
+ *
+ * @since 0.11.0
+
+ul.inline,
+ol.inline {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+ul.inline li,
+ol.inline li {
+	display: inline-block;
+	line-height: 1.4;
+	margin-right: 1.5rem;
+}
+
+ul.inline li:last-child,
+ol.inline li:last-child {
+	margin-right: 0;
+}
+ */
+/**
+ * Deprecated Utility Styles
+ *
+ * @since 0.11.0
+
+.fixed {
+	position: fixed;
+	top: 50px;
+	margin-top: 0;
+	z-index: 1;
+	transition: all .3s ease-out;
+}
+
+.gray-bg {
+	background-color: #e4e4e4;
+}
+ */
+/**
+ * Deprecated Button Styles
+ *
+ * @since 0.9.0
+ */
+/*
 a.button {
-  background: #981e32;
-  border: none;
-  box-sizing: border-box;
-  box-shadow: none;
-  color: #fff;
-  display: block;
-  font-weight: 700;
-  margin: 0;
-  padding: 1rem 0 .75rem;
-  text-align: center;
-  transition: background-color .3s ease;
-  width: 30%;
+	background: #981e32;
+	border: none;
+	box-sizing: border-box;
+	box-shadow: none;
+	color: #fff;
+	display: block;
+	font-weight: 700;
+	margin: 0;
+	padding: 1rem 0 .75rem;
+	text-align: center;
+	transition: background-color .3s ease;
+	width: 30%;
 }
 
 a.button:hover {
-  background: #c60c30;
-  color: #fff;
+	background: #c60c30;
+	color: #fff;
+}
+*/
+/* @todo Deprecate class name, replace in markup.
+.hrs-button,
+button.hrs-button,
+input[type="button"].hrs-button,
+input[type="reset"].hrs-button,
+input[type="submit"].hrs-button {
+	@extend .button-cta;
+}
+
+.hrs-button-white,
+button.hrs-button-white {
+	@extend .button;
+}
+
+.hrs-open-enrollment ul.inline li {
+	margin-right: 1%;
+}
+
+.hrs-open-enrollment .inline .hrs-button {
+	min-width: 90px;
+	min-height: 83px;
+	padding: .75em;
+	vertical-align: top;
+}
+
+@media only screen and (max-width: 365px) {
+
+	.hrs-open-enrollment ul.inline li {
+		display: block;
+		margin-right: 0;
+	}
+
+	.hrs-open-enrollment .inline .hrs-button {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 365px) and (max-width: 640px) {
+
+	.hrs-open-enrollment .inline .hrs-button {
+		max-width: 135px;
+	}
+
+}
+
+@media only screen and (min-width: 700px) and (max-width: 790px) {
+
+	.hrs-open-enrollment .inline .hrs-button {
+		font-size: .7em;
+	}
+
 }
 
 #button_holder a {
-  color: #fff;
-  text-decoration: none;
-}
+	color: #fff;
+	text-decoration: none;
 
-#button_holder a:hover, #button_holder a:focus {
-  color: #fff;
-  text-decoration: none;
+	&:hover,
+	&:focus {
+		color: #fff;
+		text-decoration: none;
+	}
 }
 
 #buttonholder:after {
-  clear: both;
+	clear: both;
 }
 
 .new_button {
-  background: #c92f2f;
-  background: linear-gradient(to top, #852b2b, #c92f2f);
-  border-radius: 8px;
-  border-top: 1px solid #696969;
-  box-shadow: #000 0 1px 0;
-  color: #fff;
-  display: inline-block !important;
-  font-size: 16px;
-  height: 75px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  padding: 5px 20px 20px 0;
-  text-align: center;
-  text-decoration: none;
-  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
-  vertical-align: center;
-  width: 125px;
-}
+	background: #c92f2f;
+	background: linear-gradient(to top, #852b2b, #c92f2f);
+	border-radius: 8px;
+	border-top: 1px solid #696969;
+	box-shadow: #000 0 1px 0;
+	color: #fff;
+	display: inline-block !important;
+	font-size: 16px;
+	height: 75px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 5px 20px 20px 0;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+	vertical-align: center;
+	width: 125px;
 
-.new_button:hover, .new_button:focus {
-  background: #981e32;
-  border-top-color: #690000;
-  box-shadow: 9px 10px 5px #888;
-  color: #fff;
+	&:hover,
+	&:focus {
+		background: #981e32;
+		border-top-color: #690000;
+		box-shadow: 9px 10px 5px #888;
+		color: #fff;
+	}
 }
 
 .new_button_back {
-  background: #c92f2f;
-  background: linear-gradient(to top, #852b2b, #c92f2f);
-  border-radius: 8px;
-  box-shadow: #000 0 1px 0;
-  border-top: 1px solid #696969;
-  color: #fff;
-  font-size: 16px;
-  height: 35px;
-  margin-right: 10px;
-  margin-bottom: 20px;
-  padding: 5px 20px 20px 0;
-  text-align: center;
-  text-decoration: none;
-  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
-  vertical-align: center;
-  width: 75px;
+	background: #c92f2f;
+	background: linear-gradient(to top, #852b2b, #c92f2f);
+	border-radius: 8px;
+	box-shadow: #000 0 1px 0;
+	border-top: 1px solid #696969;
+	color: #fff;
+	font-size: 16px;
+	height: 35px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	padding: 5px 20px 20px 0;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+	vertical-align: center;
+	width: 75px;
 }
 
 .new_button_benefits {
-  background: #c92f2f;
-  background: linear-gradient(to top, #852b2b, #c92f2f);
-  border-radius: 8px;
-  border-top: 1px solid #696969;
-  box-shadow: #000 0 1px 0;
-  color: #fff;
-  float: left !important;
-  font-size: 16px;
-  height: 35px;
-  margin-right: 10px;
-  margin-bottom: 20px;
-  padding: 5px 20px 20px 0;
-  text-align: center;
-  text-decoration: none;
-  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
-  vertical-align: center;
-  width: 175px;
-}
+	background: #c92f2f;
+	background: linear-gradient(to top, #852b2b, #c92f2f);
+	border-radius: 8px;
+	border-top: 1px solid #696969;
+	box-shadow: #000 0 1px 0;
+	color: #fff;
+	float: left !important;
+	font-size: 16px;
+	height: 35px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	padding: 5px 20px 20px 0;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+	vertical-align: center;
+	width: 175px;
 
-.new_button_benefits:hover, .new_button_benefits:focus {
-  background: #981e32;
-  border-top-color: #690000;
-  box-shadow: 9px 10px 5px #888;
-  color: #fff;
+	&:hover,
+	&:focus {
+		background: #981e32;
+		border-top-color: #690000;
+		box-shadow: 9px 10px 5px #888;
+		color: #fff;
+	}
 }
+*/
+/**
+ * Deprecated Table Styles
+ *
+ * @since 0.9.0
 
 #color-table tr:nth-child(even) {
-  background: #f7f6f3;
-  padding: 5px;
+	background: #f7f6f3;
+	padding: 5px;
 }
 
 #color-table tr:nth-child(odd) {
-  background: #fff;
-  padding: 5px;
+	background: #fff;
+	padding: 5px;
 }
 
 #color-table tr:first-child {
-  background: #717171;
-  color: #fff;
+	background: #717171;
+	color: #fff;
+}
+*/
+/**
+ * Deprecated Builder Banner Styles
+ *
+ * @since 0.11.0
+ */
+/* Builder: Banner */
+.builder-section-banner .builder-banner-content {
+  border-top-width: 3.6rem;
 }
 
-/* Replaced with the `notification` component */
-.hrs-callout {
-  border: 2px solid #a9a9a9;
-  border-radius: 3px;
-  padding: 1em 1.5em 0;
+.builder-section-banner .builder-banner-inner-title {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #981e32;
+  font-weight: 600;
+  padding: .25rem 1rem;
 }
 
-.hrs-priority-positive {
-  background-color: #d3e1e3;
-  border-color: #aec7cb;
+.builder-section-banner .builder-banner-inner-content {
+  -ms-flex-pack: start;
+      justify-content: flex-start;
 }
 
-.hrs-priority-caution {
-  background-color: #f1e4c4;
-  border-color: #e5cd93;
+.builder-section-banner .builder-banner-inner-content p {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #191919;
+  padding: 1.5rem 2rem;
 }
 
-.hrs-priority-negative {
-  background-color: #eddccc;
-  border-color: #ddbea1;
+.builder-section-banner .content-position-none .builder-banner-content {
+  text-align: center;
 }
 
-.hrs-priority-neutral {
-  background-color: #eff0f1;
+.builder-section-banner .content-position-left {
+  background-position: center right;
+}
+
+.builder-section-banner .content-position-right {
+  background-position: center left;
+}
+
+.banner-container {
+  /*
+	 * Make banner repsect other elements' z-index values.
+	 * Add this class to the Banner section classes on the edit post screen.
+	 */
+  z-index: 1;
 }
 
 /**
- * Spine (_spine.scss)
+ * Deprecated Callout Styles
+ *
+ * Replaced with the `notification` component.
+ *
+ * @since 0.10.1
+
+.hrs-callout {
+	border: 2px solid #a9a9a9;
+	border-radius: 3px;
+	padding: 1em 1.5em 0;
+}
+
+.hrs-priority-positive {
+	background-color: #d3e1e3;
+	border-color: #aec7cb;
+}
+
+.hrs-priority-caution {
+	background-color: #f1e4c4;
+	border-color: #e5cd93;
+}
+
+.hrs-priority-negative {
+	background-color: #eddccc;
+	border-color: #ddbea1;
+}
+
+.hrs-priority-neutral {
+	background-color: #eff0f1;
+}
+*/
+/* HRS Banner Callouts
+.hrs-callout-banner {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	margin: 1.4rem 0;
+	text-align: center;
+}
+
+.hrs-banner-careers {
+	background-image: url(http://hrsdev.hrs.wsu.edu/wp-content/uploads/2016/02/large-1024x347.jpg);
+}
+
+.hrs-banner-careers header h2 {
+	color: #fff;
+	width: 100%;
+}
+
+.hrs-callout-gallery {
+	margin: 1.4rem auto;
+	position: relative;
+}
+
+.hrs-callout-gallery h3 {
+	font-size: 1.1rem;
+	left: 50%;
+	margin-right: -50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 99;
+}
+
+.hrs-callout-gallery h3 a.hrs-button {
+	font-weight: 400;
+	line-height: 1.4;
+	padding: .3rem .7rem;
+	text-transform: none;
+	width: 100%;
+}
+
+.hrs-callout-gallery h3 a.hrs-button-priority {
+	background: rgba(152, 30, 50, .8);
+}
+
+.hrs-callout-gallery h3 a.hrs-button-priority:hover,
+.hrs-callout-gallery h3 a.hrs-button-priority:focus {
+	background-color: #fff;
+	color: rgb(152, 30, 50);
+}
+
+.hrs-callout-gallery div.gallery-columns-3 {
+	max-width: 600px;
+}
+
+.hrs-callout-gallery div.gallery-columns-3 .gallery-item {
+	max-width: 33%;
+	margin: 0 0 -.5em 0;
+	position: relative;
+}
+
+.hrs-callout-gallery .gallery img {
+	border: none;
+}
+
+.hrs-callout-gallery .gallery .gallery-caption {
+	color: #fff;
+	left: 50%;
+	margin-right: -50%;
+	margin-left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+*/
+/**
+ * Deprecated Gallery Style
+ *
+ * @since 0.10.0
+
+
+.hrs-gallery {
+	@extend .gallery;
+}
+*/
+/**
+ * Deprecated Spine Overrides
+ *
+ * @since 0.9.0
  */
 /* Not sure what this is supposed to target.
 .main-header {
@@ -2588,3 +735,1343 @@ a.button:hover {
 
 }
 */
+/**
+ * 4.2 Columns
+ */
+/* @todo Find any pages still using these and use something, else then delete.*/
+@media only screen and (min-width: 640px) {
+  .hrs-two-col {
+    width: 47%;
+    clear: none !important;
+  }
+  .hrs-1-of-4 {
+    width: 23%;
+  }
+  .hrs-1-of-5 {
+    width: 20%;
+  }
+  .hrs-2-of-5 {
+    width: 40%;
+  }
+  .hrs-3-of-5 {
+    width: 60%;
+  }
+  .hrs-4-of-5 {
+    width: 80%;
+  }
+  .gform_wrapper .gfield_error.hrs-two-col {
+    width: 47%;
+  }
+}
+
+/*
+.nested-halves {
+	width: 100%;
+	display: inline-block;
+	text-align: top;
+	clear: both;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.nested-halves .nested-one {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-right: 1%;
+}
+
+.nested-halves .nested-two {
+	display: block;
+	width: 49%;
+	float: left;
+	padding-left: 1%;
+}
+
+.nested-thirds {
+	width: 100%;
+	display: inline-block;
+	clear: both;
+}
+
+.nested-thirds .nested-one {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-two {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+	padding-right: 4%;
+}
+
+.nested-thirds .nested-three {
+	display: block;
+	width: 33.33333333333333%;
+	float: left;
+}
+
+.nested-gutter {
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.nested-one,
+.nested-two,
+.nested-three {
+
+	h5 {
+		background: #981e32;
+
+		a {
+			color: #fff;
+
+			&:hover,
+			&:focus {
+				color: #b5babe;
+			}
+		}
+	}
+
+	ul {
+		background-color: #fff;
+		border-radius: 5px;
+	}
+}
+*/
+/**
+ * Deprecated Unused New Page Experiment
+ *
+ * @since 0.11.0
+ */
+/* 6.2 Benefits *
+.hrs-benefits-new-employees .column {
+	padding: 0 1rem !important;
+}
+
+.hrs-benefits-new-employees header h2,
+.hrs-benefits-new-employees h2 {
+	font-weight: 700;
+	width: 100%;
+}
+
+.hrs-benefits-new-employees h4 {
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+.hrs-benefits-new-employees .benefits,
+.hrs-benefits-new-employees .resources {
+	background-size: 100% 100%;
+	color: #fff;
+	min-height: 300px;
+	text-align: center;
+}
+
+.hrs-benefits-new-employees .benefits {
+	background: url(http://hrs.wsu.edu/wp-content/uploads/2017/09/Clouds_over_a_Harvested_Wheat_Field_darken.jpg) no-repeat bottom center;
+}
+
+.hrs-benefits-new-employees .resources {
+	background: url(http://hrs.wsu.edu/wp-content/uploads/2017/09/tri-cities-campus-above_darker.jpg) no-repeat bottom center;
+}
+
+.hrs-benefits-new-employees .benefits header h2,
+.hrs-benefits-new-employees .resources header h2 {
+	color: #fff;
+}
+
+.hrs-benefits-new-employees .orientation,
+.hrs-benefits-new-employees .deadlines {
+	text-align: center;
+}
+
+.hrs-benefits-new-employees .orientation img,
+.hrs-benefits-new-employees .deadlines img {
+	margin-top: 1rem;
+	margin-bottom: -.8rem;
+}
+
+/* 6.4 Recruitment *
+.hrs-app-instructions {
+	margin-top: 2em;
+}
+
+.hrs-app-instructions .circle-icon-holder {
+	background: #4f868e;
+	border: 5px solid #fff;
+	border-radius: 100%;
+	height: 70px;
+	margin: 0 auto -30px;
+	overflow: hidden;
+	position: relative;
+	top: -35px;
+	width: 70px;
+}
+
+.hrs-app-instructions .job-search {
+	background: #4f868e;
+	color: #fff;
+}
+
+.hrs-app-instructions .job-search h2 {
+	color: #eff0f1;
+	text-align: center;
+}
+*/
+/* Elements */
+/**
+ * 2.0 Elements
+ *
+ * CSS rules for small, elemental bits of HTML. These pieces make up the
+ * building blocks of larger components (buttons as parts of forms, tags as
+ * parts of article meta). Try to keep these styles agnostic and general. They
+ * can be built upon in other sections as needed; these should form the
+ * skeletons.
+ *
+ *     - 2.1 Buttons
+ *     - 2.2 Embedded Content
+ *     - 2.3 Images
+ *
+ * @since 0.9.0
+ */
+/**
+ * 2.1 Buttons
+ */
+main .button, main .button-cta,
+main input[type="submit"],
+main button,
+main input[type="button"],
+main input[type="reset"] {
+  background: #fff;
+  border: 1px solid #981e32;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  color: #981e32;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: .75rem 1.5rem;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+main .button:hover, main .button-cta:hover,
+main input:hover[type="submit"], main .button:focus, main .button-cta:focus,
+main input:focus[type="submit"],
+main button:hover,
+main button:focus,
+main input[type="button"]:hover,
+main input[type="button"]:focus,
+main input[type="reset"]:hover,
+main input[type="reset"]:focus {
+  background: #c60c30;
+  border: 1px solid #da1e00;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+main .button:active, main .button-cta:active,
+main input:active[type="submit"],
+main button:active,
+main input[type="button"]:active,
+main input[type="reset"]:active {
+  background: #6d1624;
+  border: 1px solid #475055;
+  box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
+  outline-width: 0;
+}
+
+main .button-cta,
+main input[type="submit"] {
+  background: #981e32;
+  color: #fff;
+}
+
+main .button-cta:hover, main .button-cta:focus,
+main input[type="submit"]:hover,
+main input[type="submit"]:focus {
+  background: #fff;
+  color: #c60c30;
+}
+
+main .button-cta:active,
+main input[type="submit"]:active {
+  background: #eff0f1;
+}
+
+main .button-flat {
+  border-radius: 3px;
+  display: inline-block;
+  line-height: 1.5;
+  font-size: 1rem;
+  padding: .75rem 1.5rem;
+  text-decoration: underline;
+  transition: all .3s ease;
+  color: #981e32;
+  border: none;
+  font-weight: 400;
+}
+
+main .button-flat:hover, main .button-flat:focus {
+  background: #c60c30;
+  color: #fff;
+}
+
+main .button-flat:active {
+  background: #6d1624;
+  box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * 2.2 Embedded Content
+ */
+/*
+ * A flexible youtube embed container (default 16x9 aspect ratio)
+ * Following techinque from Rachel McCollin's {@see http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-responsive-design/}
+ * Which is itself based on Thierry Koblenz's {@see http://alistapart.com/article/creating-intrinsic-ratios-for-video}
+ */
+.embed-youtube {
+  height: 0;
+  margin-bottom: 1.4em;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.embed-youtube iframe,
+.embed-youtube object,
+.embed-youtube embed {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.youtube-4x3 {
+  padding-bottom: 75%;
+}
+
+/**
+ * 2.3 Images
+ */
+/* @todo Determine what this applies to, if anything. */
+.section-wrapper-has-background {
+  min-height: 600px !important;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*
+ * Home page social media icons.
+ *
+ * Over-specified to override Spine `display: block` rule on .column.
+ *
+ * @todo Move these from the page content editor to the theme template, using
+ *       settings for the social media account handles.
+ */
+.column.social-media-icons {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+
+.column.social-media-icons p {
+  line-height: 1;
+  padding: 0;
+}
+
+.column.social-media-icons a {
+  border: none;
+  padding-right: .75rem;
+}
+
+.column.social-media-icons a:hover img,
+.column.social-media-icons a:focus img {
+  opacity: .7;
+}
+
+.column.social-media-icons img {
+  border-radius: 4px;
+}
+
+/* Components */
+/**
+ * 3.0 Components
+ *
+ * CSS rules for larger modular components. Components should be made up of
+ * individual Elements and should be designed with a focus on being reused
+ * around the site.
+ *
+ *     - 3.1 Cards
+ *     - 3.2 Data Tables
+ *     - 3.3 Dialogs
+ *     - 3.4 Figures
+ *     - 3.5 Forms
+ *     - 3.6 Grid Lists
+ *     - 3.7 Modules
+ *     - 3.8 Notifications
+ *     - 3.9 Pagination
+ *     - 3.10 Row Lists
+ *     - 3.11 Search
+ *
+ * @since 0.9.0
+ */
+/**
+ * 3.1 Cards
+ */
+.cards,
+.recent-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: minmax(4rem, auto);
+  grid-gap: 1.5rem 2rem;
+}
+
+.cards article,
+.cards .card,
+.recent-articles article,
+.recent-articles .card {
+  display: grid;
+}
+
+.cards .article-image,
+.recent-articles .article-image {
+  -ms-flex-order: -1;
+      order: -1;
+}
+
+.cards .article-taxonomy,
+.recent-articles .article-taxonomy {
+  -ms-flex-order: -2;
+      order: -2;
+}
+
+/**
+ * 3.2 Data Tables
+ */
+main table,
+main .tablepress {
+  font-variant-numeric: lining-nums tabular-nums;
+  margin-bottom: 1.5rem;
+}
+
+main thead tr {
+  border-bottom: 1px solid #839098;
+}
+
+main td,
+main th {
+  padding: .5em .75em;
+  text-align: left;
+}
+
+main th.nums,
+main td.nums {
+  text-align: right;
+}
+
+main th {
+  font-weight: 600;
+}
+
+main .striped tbody tr:nth-child(odd) td {
+  background: #eff0f1;
+}
+
+/**
+ * 3.3 Dialogs
+ */
+/**
+ * 3.4 Figures
+ */
+figure img {
+  max-width: 100%;
+}
+
+figcaption {
+  font-size: 0.889em;
+  letter-spacing: .02em;
+  line-height: normal;
+  padding: .3em .5em;
+}
+
+/**
+ * 3.5 Forms
+ */
+/* Adds "number" type to the Spine `input[type=$]` styles */
+input[type="number"] {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  color: #767676;
+  margin: 0;
+  padding: 6px 4px;
+  outline: 0;
+}
+
+/**
+ * 3.6 Grid Lists
+ */
+.gallery {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: auto;
+}
+
+.gallery img {
+  border: 0;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  box-sizing: border-box;
+  padding: 1rem;
+  text-align: center;
+}
+
+.gallery-columns-1 .gallery-item,
+.gallery-columns-2 .gallery-item,
+.gallery-columns-3 .gallery-item,
+.gallery-columns-4 .gallery-item,
+.gallery-columns-5 .gallery-item,
+.gallery-columns-6 .gallery-item,
+.gallery-columns-7 .gallery-item,
+.gallery-columns-8 .gallery-item,
+.gallery-columns-9 .gallery-item {
+  width: 50%;
+}
+
+@media (max-width: 43em) {
+  .gallery-item:nth-child(odd) {
+    padding-left: 0;
+  }
+  .gallery-item:nth-child(even) {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 43em) {
+  .gallery-columns-1 .gallery-item {
+    width: 100%;
+  }
+  .gallery-columns-2 .gallery-item {
+    width: 50%;
+  }
+  .gallery-columns-3 .gallery-item {
+    width: 33.33333%;
+  }
+  .gallery-columns-4 .gallery-item {
+    width: 25%;
+  }
+  .gallery-columns-5 .gallery-item {
+    width: 20%;
+  }
+  .gallery-columns-6 .gallery-item {
+    width: 16.66667%;
+  }
+  .gallery-columns-7 .gallery-item {
+    width: 14.28571%;
+  }
+  .gallery-columns-8 .gallery-item {
+    width: 12.5%;
+  }
+  .gallery-columns-9 .gallery-item {
+    width: 11.11111%;
+  }
+}
+
+/*
+ * 3.7 Modules
+ */
+.module, .module--cta, .module--alert {
+  border: 8px solid #475055;
+  margin: 1.5rem auto;
+  max-width: 54.851em;
+  padding: 1.5rem 2rem;
+}
+
+.module .module-title, .module--cta .module-title, .module--alert .module-title {
+  color: #475055;
+}
+
+.module-title {
+  border-bottom: 4px solid #eff0f1;
+  font-size: 1.602em;
+  margin: 0 0 .5em;
+  padding: 0 0 .25em;
+}
+
+.module--cta {
+  text-align: center;
+}
+
+.module--cta .module-title {
+  font-size: 2.027em;
+}
+
+.module--alert {
+  border-color: #981e32;
+  min-width: 300px;
+  text-align: center;
+  width: 80%;
+}
+
+.module--alert .module-title {
+  font-size: 2.281em;
+}
+
+.module--alert svg {
+  fill: #981e32;
+}
+
+.module--alert.positive {
+  border-color: #ada400;
+}
+
+.module--alert.positive svg {
+  fill: #ada400;
+}
+
+.module--alert.caution {
+  border-color: #ffb81c;
+}
+
+.module--alert.caution svg {
+  fill: #ffb81c;
+}
+
+.module--alert.warning {
+  border-color: #f6861f;
+}
+
+.module--alert.warning svg {
+  fill: #f6861f;
+}
+
+/**
+ * 3.8 Notifications
+ *
+ * @todo Replace .hrs-callout classes with .notification classes.
+ * @todo Good candidate for a template -- would allow more specific styles if we
+ *       didn't need to catch any containing markup.
+ */
+.notification, .notification--positive, .notification--caution, .notification--warning {
+  -ms-flex-align: center;
+      align-items: center;
+  border: 5px solid #475055;
+  border-left-width: 1em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  margin: 1.5em auto;
+  max-width: 54.851em;
+  padding: .75em 1em;
+}
+
+.notification > *:not(:first-child), .notification--positive > *:not(:first-child), .notification--caution > *:not(:first-child), .notification--warning > *:not(:first-child) {
+  padding-left: 1em;
+}
+
+.notification > *:first-child, .notification--positive > *:first-child, .notification--caution > *:first-child, .notification--warning > *:first-child {
+  margin-right: auto;
+}
+
+.notification--positive {
+  border-color: #ada400;
+}
+
+.notification--caution {
+  border-color: #ffb81c;
+}
+
+.notification--warning {
+  border-color: #f6861f;
+}
+
+@media (min-width: 43em) {
+  .notification, .notification--positive, .notification--caution, .notification--warning {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .notification p, .notification--positive p, .notification--caution p, .notification--warning p {
+    padding: 0;
+  }
+}
+
+/**
+ * 3.9 Pagination
+ */
+.nav-links,
+.pager {
+  margin: 1.5rem auto;
+  padding: 1.5rem 0;
+  /* Override excess padding from Spine. @todo Clean up template maybe. */
+}
+
+.nav-links a,
+.nav-links .page-numbers,
+.pager a,
+.pager .page-numbers {
+  border: 1px solid transparent;
+  margin: 0 .25em;
+  padding: .75em 1em;
+}
+
+.nav-links a:hover, .nav-links a:focus,
+.nav-links .page-numbers:hover,
+.nav-links .page-numbers:focus,
+.pager a:hover,
+.pager a:focus,
+.pager .page-numbers:hover,
+.pager .page-numbers:focus {
+  background: #981e32;
+  color: #fff;
+}
+
+.nav-links .current,
+.pager .current {
+  background: #eff0f1;
+  border: 1px solid #475055;
+}
+
+.nav-links.pad-ends .column,
+.pager.pad-ends .column {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav-previous,
+.nav-next {
+  display: inline-block;
+  width: 50%;
+}
+
+.nav-next {
+  float: right;
+  text-align: right;
+}
+
+/**
+ * 3.10 Row Lists
+ */
+.articles-list article,
+.articles-list .list-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  margin: 0 0 1.5em;
+}
+
+.articles-list .article-image {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-flex: 0 0 100px;
+      flex: 0 0 100px;
+  line-height: 0;
+  margin-right: 1em;
+}
+
+.articles-list .list-content {
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+}
+
+.articles-list .article-header {
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+
+.articles-list .article-title {
+  font-size: 1.424em;
+  padding: 0;
+  margin-right: auto;
+}
+
+.articles-list time {
+  white-space: nowrap;
+}
+
+.articles-list .article-excerpt,
+.articles-list time {
+  display: none;
+}
+
+.articles-list p {
+  padding: .5em 0 0;
+}
+
+@media (min-width: 34em) {
+  .articles-list .article-header {
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .articles-list time {
+    display: inline;
+    padding-left: 1em;
+  }
+  .articles-list .article-excerpt {
+    display: block;
+  }
+}
+
+/**
+ * 3.11 Search
+ */
+#search-menu {
+  background: #eff0f1;
+  box-shadow: 2px 3px 5px 1px rgba(20, 20, 20, 0.12);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  padding: 5.5rem 2rem 1.5rem;
+  position: absolute;
+  top: 4.8rem;
+  -ms-transform: translateY(-100rem);
+      transform: translateY(-100rem);
+  transition-delay: .1s;
+  transition-duration: .3s;
+  transition-property: transform top;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  z-index: 200;
+}
+
+#search-menu.is-visible {
+  -ms-transform: translateY(-4.8rem);
+      transform: translateY(-4.8rem);
+}
+
+.search-toggle {
+  padding: .5rem 1rem;
+}
+
+.search-toggle[aria-expanded="true"] {
+  background: #475055;
+  border-color: #475055;
+  color: #eff0f1;
+}
+
+.search-form {
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+}
+
+.search-input[type="search"] {
+  font-size: 1.602em;
+  width: 90%;
+}
+
+.search-links-title {
+  font-size: 1.802em;
+  padding-top: .5rem;
+  padding-bottom: 1rem;
+}
+
+.search-links ul {
+  column-count: 2;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.search-links ul li {
+  line-height: 1.5;
+}
+
+.search-links a:after {
+  background: url(/wp-content/themes/hrs.wsu.edu/assets/images/icons/link.svg) no-repeat;
+  background-position: .1em;
+  background-size: 80%;
+  content: "";
+  display: inline-block;
+  height: 1em;
+  margin: .2em 0 -.05em .1em;
+  position: absolute;
+  width: 1em;
+}
+
+@media (min-width: 43em) {
+  .search-toggle {
+    padding: .75rem 1.5rem;
+  }
+}
+
+/* Layouts */
+/**
+ * 4.0 Layouts
+ *
+ * Rules defining different layout patterns for use anywhere on the site.
+ *
+ *     - 4.1 ???
+ *
+ * @since 0.9.0
+ */
+/**
+ * 4.1 ???
+ */
+/* Templates */
+/**
+ * 5.0 Templates
+ *
+ * Template-specific rules for specific page styles. These generally align with
+ * theme templates and template parts, and should be made up of Elements,
+ * Components, and Layouts.
+ *
+ *     - 5.1 Header
+ *     - 5.2 Footer
+ *     - 5.3 Article
+ *     - 5.4 Archive
+ *     - 5.4 Multi-part Page
+ *
+ * @since 0.9.0
+ */
+/**
+ * 5.1 Header
+ *
+ * @since 0.11.0
+ */
+.banner .column {
+  -ms-flex-align: center;
+      align-items: center;
+  border-top: 8px solid #981e32;
+  border-bottom: 8px solid #f2f2f2;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  padding: .75rem 1rem;
+  z-index: 900;
+}
+
+.site-title {
+  border: none;
+  color: #981e32;
+  font-size: 1.424em;
+  margin: .75rem 1rem .75rem 0;
+}
+
+@media (min-width: 43em) {
+  .site-title {
+    font-size: 1.802em;
+    margin: 1rem 2rem;
+  }
+}
+
+@media (min-width: 61.875em) {
+  .banner .column {
+    padding: 0 2rem;
+  }
+  .site-title {
+    font-size: 2.027em;
+    margin: 1.5rem 2rem;
+  }
+}
+
+/**
+ * 5.2 Footer
+ *
+ * @since 0.11.0
+ */
+.site-footer nav ul {
+  font-size: 0.79em;
+  padding: 0;
+}
+
+.site-footer nav a {
+  border-bottom: none;
+}
+
+.footer-nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+}
+
+.footer-nav nav {
+  -ms-flex: 3 1 auto;
+      flex: 3 1 auto;
+  margin: 1.5rem 2rem;
+}
+
+.footer-nav .wsu-brand {
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  margin: 1.5rem 2rem;
+  position: relative;
+}
+
+.footer-nav .wsu-cougar-head {
+  bottom: 0;
+  width: 100px;
+  height: auto;
+  position: absolute;
+  right: 0;
+}
+
+.footer-nav .footer-nav-title {
+  font-weight: 600;
+}
+
+.site-reference {
+  background: #981e32;
+  color: #fff;
+}
+
+.site-reference ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+      flex-flow: column;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+
+.site-reference ul li {
+  padding: 0;
+}
+
+.site-reference a {
+  color: #fff;
+  display: block;
+  font-weight: 400;
+  padding: 1em .75em;
+}
+
+.site-reference a:hover, .site-reference a:focus {
+  color: #eff0f1;
+  text-decoration: underline;
+}
+
+@media (min-width: 34em) {
+  .site-reference ul {
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+  }
+}
+
+/**
+ * 5.3 Article
+ */
+article header time:before {
+  content: "@ ";
+}
+
+/**
+ * 5.4 Archive
+ */
+/**
+ * 5.4 Multi-part Page
+ */
+/* Pages */
+/**
+ * 6.0 Pages
+ *
+ * A section for CSS rules targeting specific individual pages. These should be
+ * used sparingly and only for unique pages such as the homepage.
+ *
+ *     - 6.1 Homepage
+ *     - 6.2 Spokane and Tri-Cities
+ *
+ * @since 0.9.0
+ */
+/**
+ * 6.1 Homepage
+ *
+ * @since 0.11.0
+ */
+@media (min-width: 61.875em) {
+  .home #spine.cropped:not(.skimmed) {
+    margin-left: 2rem;
+  }
+  .home #search-menu {
+    right: 0;
+    width: 60%;
+  }
+}
+
+.home-main-subnav nav ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: space-evenly;
+      justify-content: space-evenly;
+  padding: 0;
+}
+
+.home-main-subnav nav li {
+  -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
+  font-size: 1.125em;
+  padding: .2em 0 0;
+  text-align: center;
+}
+
+.home-main-subnav nav a {
+  background-color: #475055;
+  border-bottom: none;
+  color: #fff;
+  display: block;
+}
+
+.home-main-subnav nav a:hover {
+  background: #c60c30;
+  color: #fff;
+}
+
+@media (max-width: 34em) {
+  .home-main-subnav nav a {
+    height: 25vw;
+    line-height: 25vw;
+    width: 48vw;
+  }
+}
+
+@media (min-width: 34em) {
+  .home-main-subnav nav ul {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .home-main-subnav nav li {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    padding: 0;
+  }
+  .home-main-subnav nav a {
+    border-right: 3px solid #fff;
+    padding: .9em;
+  }
+  li:last-of-type a {
+    border-right: none;
+  }
+}
+
+.home-detail-subnav {
+  background-color: transparent;
+}
+
+.home-detail-subnav h2 {
+  font-size: 1.266em;
+  padding: 0;
+}
+
+.home-detail-subnav h2 a {
+  background-color: #981e32;
+  border-bottom: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  color: #fff;
+  display: block;
+  padding: .9em;
+}
+
+.home-detail-subnav ul {
+  background-color: #fdfdfd;
+  padding: 1.5em 2em;
+}
+
+/**
+ * 6.5 Spokane and Tri-Cities
+ *
+ * @since 0.11.0
+ */
+.page-tricities .builder-banner-inner-title,
+.page-spokane .builder-banner-inner-title {
+  font-size: 2.281em;
+  margin: auto;
+  width: 400px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.page-tricities .cards,
+.page-spokane .cards {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.page-tricities .aligncenter,
+.page-spokane .aligncenter {
+  margin: auto;
+}
+
+.page-tricities .article-title,
+.page-spokane .article-title {
+  font-size: 1.424em;
+  font-weight: 600;
+  padding: .5rem 0;
+}
+
+.page-tricities .article-image img:hover,
+.page-tricities .article-image img:focus,
+.page-spokane .article-image img:hover,
+.page-spokane .article-image img:focus {
+  opacity: .6;
+}
+
+/* Plugins */
+/**
+ * 7.0 Plugins
+ *
+ * Rules targeted to adjusting and overriding styles declared by plugins.
+ *
+ *     - 7.1 TablePress
+ *     - 7.2 Caldera Forms
+ *
+ * @since 0.11.0
+ */
+/**
+ * 7.1 TablePress
+ *
+ * @since 0.11.0
+ */
+.tablepress tfoot th,
+.tablepress thead th {
+  background-color: inherit;
+  vertical-align: inherit;
+}
+
+.tablepress thead th {
+  border-bottom: inherit;
+}
+
+/* HRS Contacts adjustments */
+.tablepress-hrs-contacts td.column-3 {
+  white-space: nowrap;
+}
+
+/* Set by TablePress plugin, so use a "max-width" rule to override on small. */
+@media (max-width: 43em) {
+  .tablepress-hrs-contacts {
+    display: block;
+    text-align: left;
+  }
+  .tablepress-hrs-contacts caption,
+  .tablepress-hrs-contacts tbody,
+  .tablepress-hrs-contacts tr,
+  .tablepress-hrs-contacts th,
+  .tablepress-hrs-contacts td {
+    display: block;
+    text-align: left;
+  }
+  .tablepress-hrs-contacts thead,
+  .tablepress-hrs-contacts th:empty,
+  .tablepress-hrs-contacts td:empty {
+    display: none;
+    visibility: hidden;
+  }
+  .tablepress-hrs-contacts tbody tr {
+    margin-bottom: 1.5rem;
+  }
+  .tablepress-hrs-contacts tbody td,
+  .tablepress-hrs-contacts tfoot th {
+    border: none;
+    line-height: 1.4;
+    padding: 4px 8px;
+  }
+  .tablepress-hrs-contacts .column-1 {
+    font-weight: 600;
+  }
+}
+
+/* The 2018 Medical Premium Changes table */
+.hrs-medical-premium-changes-2018 {
+  /* The 2018 columns */
+}
+
+.hrs-medical-premium-changes-2018 tbody {
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+.hrs-medical-premium-changes-2018 tbody td {
+  border-right: 1px solid #ddd;
+}
+
+.hrs-medical-premium-changes-2018 tbody td:not(.column-1) {
+  text-align: center;
+  width: 9%;
+}
+
+.hrs-medical-premium-changes-2018 tr .column-3,
+.hrs-medical-premium-changes-2018 tr .column-5,
+.hrs-medical-premium-changes-2018 tr .column-7,
+.hrs-medical-premium-changes-2018 tr .column-9 {
+  background-color: #eee;
+  font-weight: 600;
+}
+
+.hrs-medical-premium-changes-2018 .row-1 td {
+  background-color: #981e32;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hrs-medical-premium-changes-2018 .row-2 td {
+  background-color: #2a3033;
+  color: #fff;
+  text-align: center;
+}
+
+.hrs-medical-premium-changes-2018 .row-3 .column-1,
+.hrs-medical-premium-changes-2018 .row-8 .column-1,
+.hrs-medical-premium-changes-2018 .row-12 .column-1 {
+  background-color: #d7dadb;
+  font-weight: 600;
+}
+
+/*
+ * @todo Convert the content in these tables into another format because they
+ *       aren't tabular data.
+ */
+.tablepress-id-31 .column-1 {
+  width: 450px !important;
+}
+
+.tablepress-id-7 .column-1 {
+  width: 500px !important;
+}
+
+.tablepress-id-31 .column-2,
+.tablepress-id-7 .column-2 {
+  width: 150px !important;
+}
+
+.tablepress-id-31 .column-3,
+.tablepress-id-7 .column-3 {
+  width: 100px !important;
+}
+
+/**
+ * 7.2 Caldera Forms
+ *
+ * @since 0.11.0
+ */
+.caldera-grid td,
+.caldera-grid th {
+  padding: .5em .75em;
+}

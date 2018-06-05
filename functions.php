@@ -5,7 +5,7 @@
  *
  * @since 0.7.0
  */
-$hrs_child_theme_version = '0.10.2';
+$hrs_child_theme_version = '0.11.1';
 
 /**
  * Add HRS Child Theme stylesheet.
@@ -14,8 +14,10 @@ $hrs_child_theme_version = '0.10.2';
  */
 function hrs_enqueue_styles() {
 	wp_enqueue_style( 'hrs-child-theme', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'wsu-spine' ), hrs_get_script_version() );
+	wp_enqueue_style( 'source_sans_pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i' );
+
 }
-add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 
 /**
  * Removes child theme style call from parent theme.

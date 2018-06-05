@@ -20,6 +20,101 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## (next release) (unreleased)
+
+### Todo
+
+- Move article footer inside the `section` element.
+- Set max width on text-based content like posts and standard pages, open #30.
+- Clean up templates.
+- Set up grid fallbacks, open #31.
+- Set up no-js handling for the search form and menu.
+- Get Babel processing working.
+- Determine if we really need the `center-middle` utility class. If yes, look into using a flex or grid with `Xvh` and `Xvh` column and row size to center instead.
+
+## 0.11.1 (2018-06-05)
+
+### Fixed
+
+- Escape translated form labels in search menu.
+- Add a container class for the deprecated Builder Banner tool that downgrades its z-index value to 1 to prevent it overlapping other elements.
+
+### Changed
+
+- Update all font sizes to use variables.
+- All media queries, new and old, updated and streamlined using mobile-ready versions as the default, fix #25.
+- Tweak row list display to be less cluttered on small screens.
+- Use flexbox with notification styles to allow optional right-aligned button and require only one line of text.
+- Update all old media queries to use breakpoint variables and target small-screen as base wherever possible (given parent and plugin theme limitations).
+- Adjust site title sizes for better responsive display.
+- Switch gallery styles to use small-screen layout as the default with a media query to handle larger screens.
+- Incorporate breakpoint styles into main SCSS files for ease of development and since we aren't using stylesheet switching yet.
+- Switched from inline styles to flexbox for homepage social media links.
+- Simplified styling of Tri-Cities and Spokane landing pages.
+- Updated CSS for home page to simplify and refresh appearance.
+- Simplified Builder banner styles by reverting to base Spine styles with some adjustments.
+- Adjust site background colors.
+- Restyle site footer display.
+- Refactor `footers.php` template part for more organization.
+- Restyle expandable search menu for a cleaner display and slide effect.
+- Convert theme JS from jQuery to ES6 and refactor search menu toggle controls.
+- Refactor header search menu markup to be more accessible and leaner.
+- Match pagination style selectors to Spine markup.
+- Reverse primary and secondary button styles to make light version standard and dark version into a call-to-action variant.
+- Clean up button styles following link style updates.
+- Update `.socialicons` styles.
+- Just use the WordPress builtin "gallery" naming for all grid lists (get rid of "grid-list" mixin and references).
+- Override Spine's blockquote font.
+- Tone down header link styles.
+- Restyle links to stand out more.
+- Switch to Source Sans Pro as primary site font.
+- Enqueue Source Sans Pro from Google Fonts.
+- Delay enqueuing HRS child theme styles until after all parent and plugin styles have loaded.
+- Move `figure` styles to Components.
+- Update button styles and organization.
+- Move deprecated styles earlier in the stylesheet to allow for overriding.
+- Alphabetize utility styles.
+- Change `abs-center` class into a scss mixin called `center-middle` that targets the container.
+
+### Added
+
+- New array of font sizes following a 1.1487 scale.
+- Icons image directory with a "link" SVG image.
+- Separate scss file `_plugins` for styles targeted to adjusting and overriding styles loaded by plugins such as TablePress.
+- Baseline data table styles.
+- Use nested grid and order to adjust the visual ordering of elements in `recent-articles` grids (logical ordering to promote the title; visual ordering moves the image back to the top).
+- Apply "Insider"-style links inside the `main` element, with adjustments for images and article titles.
+- Set base font color, weight, size, and family on `main` element.
+- Variables for the default font stack and some named color values.
+- Border-box style on all `main` elements.
+
+### Deprecated
+
+- Old (unused) experimental design for new application instructions page.
+- Old (unused) experimental layout for a new benefits page.
+- Old column layout using the `nested*` classes.
+- Old callout styles.
+- Former `.hrs-gallery` element style class(es) to prefer the standard `.gallery` class.
+- Builder Banner styles.
+- Former `.hrs-button` button style classes (now style the same as default buttons).
+- Font size adjustment on `.two` elements.
+- 100% height styles on `html` and `body` probably not needed.
+- `.fixed` and `.gray-bg` styles targeting unknown site elements.
+- Inline list styles using `inline` class. Replace with flexbox as needed.
+
+### Removed
+
+- Delete old media queries.
+- Delete all HRS News styles in favor of standard posts.
+- Many old homepage-only styles.
+- Many, many Builder banner styles.
+- Old template styles for header, footer, and article author display.
+- Old tabbed content styles.
+- Don't use a mixin for buttons. Redundant.
+- Do not override padding styles of the main parent theme (yet).
+- Do not need to set all elements to `border-box` since Spine parents already sets relevant elements.
+- Remove unneeded `<hr>` styles.
+
 ## 0.10.2 (2018-04-27)
 
 ### Fixed
@@ -34,6 +129,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Move more table-specific styles to `_plugins.scss` from `_pages.scss`.
 - Remove some extraneous styles on the `HTML` and `body` elements.
 - Removed the global `display: none!important` rule from `.article-date` fields. If it is needed for a specific subset of pages we can add it back in a less global fashion.
 - Rename callout styles to notifications and restyle them.

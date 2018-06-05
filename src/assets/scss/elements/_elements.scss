@@ -18,61 +18,80 @@
  * 2.1 Buttons
  */
 
-.hrs-button,
-button.hrs-button,
-input[type="button"].hrs-button,
-input[type="reset"].hrs-button,
-input[type="submit"].hrs-button {
-	background: #464e54;
-	border: 1px solid transparent;
-	box-shadow: none;
-	color: #fff;
-	display: inline-block;
-	font-size: .9em;
-	font-weight: 600;
-	line-height: 1.4;
-	min-width: 120px;
-	padding: .75rem 1.25rem;
-	text-align: center;
-	transition: background-color .3s ease;
+main {
 
-	&:hover,
-	&:focus {
-		background: #eff0f1;
-		border: 1px solid #464e54;
-		color: #464e54;
+	.button,
+	button,
+	input[type="button"],
+	input[type="reset"] {
+		background: #fff;
+		border: 1px solid $brand-crimson;
+		border-radius: 3px;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .1);
+		color: $brand-crimson;
+		display: inline-block;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.5;
+		padding: .75rem 1.5rem;
+		text-decoration: none;
+		transition: all .3s ease;
+
+		&:hover,
+		&:focus {
+			background: $nav-color-hover;
+			border: 1px solid $nav-color-border;
+			box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1);
+			color: #fff;
+		}
+
+		&:active {
+			background: darken($brand-crimson, 10%);
+			border: 1px solid $neutral-dark;
+			box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
+			outline-width: 0;
+		}
 	}
-}
 
-.hrs-button-priority,
-button.hrs-button-priority,
-input[type="button"].hrs-button-priority,
-input[type="reset"].hrs-button-priority,
-input[type="submit"].hrs-button-priority {
-	background: #981e32;
-
-	&:hover,
-	&:focus {
-		background: #eff0f1;
-		border: 1px solid #981e32;
-		color: #981e32;
-	}
-}
-
-.hrs-button-white,
-button.hrs-button-white,
-input[type="button"].hrs-button-white,
-input[type="reset"].hrs-button-white,
-input[type="submit"].hrs-button-white {
-	background: #eff0f1;
-	border: 1px solid #464e54;
-	color: #464e54;
-
-	&:hover,
-	&:focus {
-		background: #464e54;
-		border: 1px solid transparent;
+	.button-cta,
+	input[type="submit"] {
+		@extend .button;
+		background: $brand-crimson;
 		color: #fff;
+
+		&:hover,
+		&:focus {
+			background: #fff;
+			color: $nav-color-hover;
+		}
+
+		&:active {
+			background: $neutral-light;
+		}
+	}
+
+	.button-flat {
+		border-radius: 3px;
+		display: inline-block;
+		line-height: 1.5;
+		font-size: 1rem;
+		padding: .75rem 1.5rem;
+		text-decoration: underline;
+		transition: all .3s ease;
+		color: $nav-color;
+		border: none;
+		font-weight: 400;
+
+		&:hover,
+		&:focus {
+			background: $nav-color-hover;
+			color: #fff;
+		}
+
+		&:active {
+			background: darken($brand-crimson, 10%);
+			box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
+		}
 	}
 }
 
@@ -108,77 +127,12 @@ input[type="submit"].hrs-button-white {
 	padding-bottom: 75%;
 }
 
+
 /**
  * 2.3 Images
  */
 
-figure img {
-	width: 100%;
-}
-
-/* Builder: Banner */
-.builder-section-banner .cycle-prev,
-.builder-section-banner .cycle-next {
-	top: 90%;
-}
-
-/* Centered layout ("content position: none") */
-.content-position-none .builder-banner-content {
-	text-align: center;
-	width: 100%;
-}
-
-/* Left-aligned layout (content-position: left) */
-.builder-banner-slide.content-position-left {
-	background-position: center right;
-}
-
-.builder-banner-slide.content-position-right {
-	background-position: center left;
-}
-
-.builder-section-banner .content-position-left .builder-banner-content,
-.builder-section-banner .content-position-right .builder-banner-content {
-	font-size: 1.3rem;
-	padding: 0;
-	bottom: 0;
-	height: auto;
-	min-height: 60%;
-	width: 100%;
-}
-
-.builder-section-banner .content-position-left .builder-banner-content:after,
-.builder-section-banner .content-position-right .builder-banner-content:after {
-	display: none;
-}
-
-.builder-section-banner .content-position-left .builder-banner-inner-title,
-.builder-section-banner .content-position-right .builder-banner-inner-title {
-	color: #981e32;
-	background-color: #fff;
-	background-color: rgba(255, 255, 255, .9);
-	font-weight: 600;
-	width: 100%;
-	padding: 1rem;
-}
-
-.builder-section-banner .content-position-left .builder-banner-inner-content,
-.builder-section-banner .content-position-right .builder-banner-inner-content {
-	color: #2a3033;
-	background-color: #fff;
-	background-color: rgba(255, 255, 255, .9);
-	width: 100%;
-	max-width: 100%;
-	margin: 0 auto;
-}
-
-.builder-section-banner .content-position-left .builder-banner-inner-content p,
-.builder-section-banner .content-position-right .builder-banner-inner-content p {
-	font-size: .7em;
-	padding: 0 1rem 1rem;
-	line-height: 1.5;
-}
-
+/* @todo Determine what this applies to, if anything. */
 .section-wrapper-has-background {
 	min-height: 600px !important;
 	background-attachment: fixed;
@@ -186,76 +140,36 @@ figure img {
 	background-size: cover;
 }
 
-.single.gutter section.builder-section-banner .column:not(.gutterless) {
-	padding-left: 0;
-	padding-right: 0;
-}
+/*
+ * Home page social media icons.
+ *
+ * Over-specified to override Spine `display: block` rule on .column.
+ *
+ * @todo Move these from the page content editor to the theme template, using
+ *       settings for the social media account handles.
+ */
 
-/* Default HRS Gallery */
-.hrs-gallery {
+.column.social-media-icons {
 	display: flex;
-	flex-wrap: wrap;
-	margin: auto;
-}
+	flex-flow: row nowrap;
+	justify-content: flex-end;
 
-.hrs-gallery .gallery-item {
-	box-sizing: border-box;
-	padding: 1rem;
-	margin: 0;
-	float: inherit;
-	text-align: center;
-}
+	p {
+		line-height: 1;
+		padding: 0;
+	}
 
-.hrs-gallery .gallery-columns-1 .gallery-item {
-	width: 100%;
-}
+	a {
+		border: none;
+		padding-right: .75rem;
 
-.hrs-gallery .gallery-columns-2 .gallery-item {
-	width: 50%;
-}
+		&:hover img,
+		&:focus img {
+			opacity: .7;
+		}
+	}
 
-.hrs-gallery .gallery-columns-3 .gallery-item {
-	width: 33.333333%;
-}
-
-.hrs-gallery .gallery-columns-4 .gallery-item {
-	width: 25%;
-}
-
-.hrs-gallery .gallery-columns-5 .gallery-item {
-	width: 20%;
-}
-
-.hrs-gallery .gallery-columns-6 .gallery-item {
-	width: 16.66%;
-}
-
-.hrs-gallery .gallery-columns-7 .gallery-item {
-	width: 14.28%;
-}
-
-.hrs-gallery .gallery-columns-8 .gallery-item {
-	width: 12.5%;
-}
-
-.hrs-gallery .gallery-columns-9 .gallery-item {
-	width: 11.11%;
-}
-
-.hrs-gallery img {
-	border: 0;
-	box-sizing: border-box;
-	display: block;
-	margin: 0 auto;
-}
-
-/* Social media icons */
-.socialicons {
-	background: url(http://hrs.wsu.edu/wp-content/themes/hrs.wsu.edu-0.3.0.5/assets/cream_pixels.png);
-	padding-top: 1em;
-}
-
-.socialicons img:hover,
-.socialicons img:focus {
-	opacity: .7;
+	img {
+		border-radius: 4px;
+	}
 }
