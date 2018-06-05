@@ -18,18 +18,18 @@
     "Firefox ESR"
   ],
   "devDependencies": {
-    "autoprefixer": "^8.2.0",
-    "cpx": "^1.5.0",
-    "cssnano": "^3.10.0",
-    "eslint": "^4.19.1",
-    "eslint-config-wordpress": "^2.0.0",
+    "autoprefixer": "^8.6.x",
+    "cpx": "^1.5.x",
+    "cssnano": "^3.10.x",
+    "eslint": "^4.19.x",
+    "eslint-config-wordpress": "^2.0.x",
     "mkdirp": "^0.5.1",
-    "node-sass": "^4.8.3",
-    "postcss-cli": "^5.0.0",
-    "rimraf": "^2.6.2",
-    "stylelint": "^9.2.0",
-    "svgo": "^1.0.5",
-    "uglify-es": "^3.3.9"
+    "node-sass": "^4.8.x",
+    "postcss-cli": "^5.0.x",
+    "rimraf": "^2.6.x",
+    "stylelint": "^9.2.x",
+    "svgo": "^1.0.x",
+    "uglify-es": "^3.3.x"
   },
   "scripts": {
     "clean": "rimraf assets/{css/,images/,js/}",
