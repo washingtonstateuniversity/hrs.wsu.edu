@@ -52,9 +52,8 @@ class HRS_Theme_Setup {
 	 * @access private
 	 */
 	private function setup_hooks() {
-		// add theme support
 		add_action( 'after_setup_theme', array( $this, 'add_theme_support' ) );
-		// register nav menu
+		add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
 
 		// Set Spine options.
 		add_action( 'after_setup_theme', array( $this, 'get_hrs_spine_schema' ), 5 );
@@ -107,6 +106,15 @@ class HRS_Theme_Setup {
 	 */
 	public function add_theme_support() {
 		add_theme_support( 'html5', array( 'search-form' ) );
+	}
+
+	/**
+	 * Registers the HRS theme WordPress menus.
+	 *
+	 * @since 0.12.0
+	 */
+	public function register_nav_menus() {
+		register_nav_menu( 'hrs-common-search', 'Common Search' );
 	}
 
 }

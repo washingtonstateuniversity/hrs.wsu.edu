@@ -52,19 +52,7 @@ add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 
 /***** start old ******/
 
-
-
-/*
- * Add HTML5 search box
- */
-add_action( 'after_setup_theme', 'hrs_html_support' );
-
-function hrs_html_support() {
-	register_nav_menu( 'hrs-common-search', 'Common Search' );
-}
-
 /** Remove lost password **/
-
 function remove_lostpassword_text( $text ) {
 	if ( 'Lost your password?' === $text ) {
 		$text = '';
