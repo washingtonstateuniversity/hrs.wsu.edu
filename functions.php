@@ -60,7 +60,6 @@ add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 add_action( 'after_setup_theme', 'hrs_html_support' );
 
 function hrs_html_support() {
-	add_theme_support( 'html5', array( 'header-search-input' ) );
 	register_nav_menu( 'hrs-common-search', 'Common Search' );
 }
 

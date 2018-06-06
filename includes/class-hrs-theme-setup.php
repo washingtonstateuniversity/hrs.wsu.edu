@@ -53,6 +53,7 @@ class HRS_Theme_Setup {
 	 */
 	private function setup_hooks() {
 		// add theme support
+		add_action( 'after_setup_theme', array( $this, 'add_theme_support' ) );
 		// register nav menu
 
 		// Set Spine options.
@@ -94,6 +95,18 @@ class HRS_Theme_Setup {
 		update_option( 'spine_schema', $hrs_schema );
 
 		return $hrs_schema;
+	}
+
+	/**
+	 * Adds theme support for features provided by WordPress.
+	 *
+	 * Gallery and caption HTML5 support is already added in the Spine parent
+	 * theme, so all we need to do is add the search form support to the array.
+	 *
+	 * @since 0.12.0
+	 */
+	public function add_theme_support() {
+		add_theme_support( 'html5', array( 'search-form' ) );
 	}
 
 }

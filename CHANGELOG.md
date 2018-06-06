@@ -41,7 +41,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
--
+- Fix malformed call to `add_theme_support` for HTML5 search form and move to the setup class.
 
 ### Added
 
