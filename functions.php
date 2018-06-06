@@ -52,7 +52,7 @@ add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 
 /***** start old ******/
 
-add_filter( 'spine_enable_builder_module', '__return_true' );
+
 
 /*
  * Add HTML5 search box

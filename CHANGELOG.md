@@ -45,6 +45,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Action and methods to get and set the Spine schema version for the HRS child theme -- set to 2.x to target the latest Spine configuration options.
 - A theme setup class to handle theme setup tasks such as registering theme support in a new `includes/` directory.
 
 ## 0.11.1 (2018-06-05)
