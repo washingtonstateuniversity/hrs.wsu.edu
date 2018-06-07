@@ -41,12 +41,14 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Prefer to enqueue the login page CSS rather than inline it.
 - Rename HRS nav menus for easier identification.
 - Move WP menu(s) registration into the setup class.
 - Fix malformed call to `add_theme_support` for HTML5 search form and move to the setup class.
 
 ### Added
 
+- Crimson svg WSU cougar logo for CSS background use.
 - New nav menu to display the site footer nav menu so that the "Offsite" menu can display in the Spine as intended, or not at all if unwanted.
 - Action and methods to get and set the Spine schema version for the HRS child theme -- set to 2.x to target the latest Spine configuration options.
 - A theme setup class to handle theme setup tasks such as registering theme support in a new `includes/` directory.

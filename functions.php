@@ -49,6 +49,15 @@ function hrs_dequeue_styles() {
 }
 add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 
+add_action( 'login_enqueue_scripts', 'hrs_login_styles' );
+/**
+ * Calls custom CSS on the login page for fancy styling.
+ *
+ * @since 0.12.0
+ */
+function hrs_login_styles() {
+	wp_enqueue_style( 'hrs-login-style', get_stylesheet_directory_uri() . '/assets/css/login-style.css', false, hrs_get_script_version() );
+}
 
 /***** start old ******/
 
@@ -60,22 +69,6 @@ function remove_lostpassword_text( $text ) {
 	return $text;
 }
 add_filter( 'gettext', 'remove_lostpassword_text' );
-
-
-/** Changes to login page **/
-function my_login_logo() {
-?>
-	<style type="text/css">
-		#login h1 a,
-		.login h1 a {
-			background-image: url(http://hrs.wsu.edu/wp-content/uploads/2016/09/new-logo.png);
-		}
-	</style>
-<?php
-}
-
-
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 function my_login_logo_url() {
 	return home_url();
