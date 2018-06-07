@@ -27,6 +27,7 @@ function hrs_get_script_version() {
 	return $script_version;
 }
 
+add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 /**
  * Add HRS Child Theme stylesheets and scripts.
  *
@@ -37,8 +38,8 @@ function hrs_enqueue_styles() {
 	wp_enqueue_style( 'source_sans_pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i' );
 	wp_enqueue_script( 'hrs-custom', get_stylesheet_directory_uri() . '/assets/js/custom.min.js', array( 'jquery' ), spine_get_script_version(), true );
 }
-add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 
+add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 /**
  * Removes child theme style call from parent theme.
  *
@@ -47,7 +48,6 @@ add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 function hrs_dequeue_styles() {
 	wp_dequeue_style( 'spine-theme-child' );
 }
-add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 
 add_action( 'login_enqueue_scripts', 'hrs_login_styles' );
 /**
@@ -61,6 +61,7 @@ function hrs_login_styles() {
 
 /***** start old ******/
 
+add_filter( 'gettext', 'remove_lostpassword_text' );
 /** Remove lost password **/
 function remove_lostpassword_text( $text ) {
 	if ( 'Lost your password?' === $text ) {
@@ -68,14 +69,13 @@ function remove_lostpassword_text( $text ) {
 	}
 	return $text;
 }
-add_filter( 'gettext', 'remove_lostpassword_text' );
 
+add_filter( 'login_headerurl', 'my_login_logo_url' );
 function my_login_logo_url() {
 	return home_url();
 }
-add_filter( 'login_headerurl', 'my_login_logo_url' );
 
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 function my_login_logo_url_title() {
 	return 'Human Resource Services';
 }
-add_filter( 'login_headertitle', 'my_login_logo_url_title' );
