@@ -111,10 +111,19 @@ class HRS_Theme_Setup {
 	/**
 	 * Registers the HRS theme WordPress menus.
 	 *
+	 * Creates locations for two menus, one in the expandable search section in
+	 * the site headers, and the other in the site footer just above the site
+	 * reference section. HRS also uses a "Site" and "Offsite" menu, both of
+	 * which are registered in the Spine parent theme. "Offsite" displays in the
+	 * Spine by default, underneath the main BU navigation links.
+	 *
 	 * @since 0.12.0
 	 */
 	public function register_nav_menus() {
-		register_nav_menu( 'hrs-common-search', 'Common Search' );
+		register_nav_menus( array(
+			'hrs-search-menu' => __( 'Search Menu', 'hrs-wsu-edu' ),
+			'hrs-site-footer' => __( 'Site Footer', 'hrs-wsu-edu' ),
+		) );
 	}
 
 }
