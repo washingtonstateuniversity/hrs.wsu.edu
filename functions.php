@@ -59,6 +59,30 @@ function hrs_login_styles() {
 	wp_enqueue_style( 'hrs-login-style', get_stylesheet_directory_uri() . '/assets/css/login-style.css', false, hrs_get_script_version() );
 }
 
+add_filter( 'login_headerurl', 'hrs_login_logo_url' );
+/**
+ * Changes the login logo link from wordpress.org to hrs.wsu.edu.
+ *
+ * @since 0.12.0
+ *
+ * @return string
+ */
+function hrs_login_logo_url() {
+	return home_url();
+}
+
+add_filter( 'login_headertitle', 'hrs_login_logo_url_title' );
+/**
+ * Changes the login logo text to the site title.
+ *
+ * @since 0.12.0
+ *
+ * @return string
+ */
+function hrs_login_logo_url_title() {
+	return get_bloginfo( 'name' );
+}
+
 /***** start old ******/
 
 add_filter( 'gettext', 'remove_lostpassword_text' );
@@ -68,14 +92,4 @@ function remove_lostpassword_text( $text ) {
 		$text = '';
 	}
 	return $text;
-}
-
-add_filter( 'login_headerurl', 'my_login_logo_url' );
-function my_login_logo_url() {
-	return home_url();
-}
-
-add_filter( 'login_headertitle', 'my_login_logo_url_title' );
-function my_login_logo_url_title() {
-	return 'Human Resource Services';
 }
