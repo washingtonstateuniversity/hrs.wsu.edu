@@ -72,6 +72,8 @@ class HRS_Theme_Setup {
 	private function includes() {
 		// The HRS documents gallery shortcode.
 		require __DIR__ . '/shortcode-document-gallery.php';
+		// The HRS last updated label shortcode.
+		require __DIR__ . '/shortcode-last-updated.php';
 	}
 
 	/**
