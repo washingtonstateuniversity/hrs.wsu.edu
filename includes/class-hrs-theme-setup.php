@@ -30,6 +30,7 @@ class HRS_Theme_Setup {
 		if ( null === $instance ) {
 			$instance = new HRS_Theme_Setup();
 			$instance->setup_hooks();
+			$instance->includes();
 		}
 
 		return $instance;
@@ -59,6 +60,18 @@ class HRS_Theme_Setup {
 		add_action( 'after_setup_theme', array( $this, 'get_hrs_spine_schema' ), 5 );
 		add_filter( 'spine_get_title', array( $this, 'hrs_get_page_title' ) );
 		add_filter( 'spine_enable_builder_module', '__return_true' );
+	}
+
+	/**
+	 * Includes files required by the HRS theme.
+	 *
+	 * @since 0.13.0
+	 *
+	 * @access private
+	 */
+	private function includes() {
+		// The HRS documents gallery shortcode.
+		require __DIR__ . '/shortcode-document-gallery.php';
 	}
 
 	/**
