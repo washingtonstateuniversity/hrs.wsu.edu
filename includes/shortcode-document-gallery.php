@@ -6,11 +6,11 @@
  * @since 0.13.0
  */
 
+namespace WSU\HRS\Shortcode_Documents_Gallery;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
-namespace WSU\HRS\Shortcode_Documents_Gallery;
 
 add_shortcode( 'hrsgallery', 'WSU\HRS\Shortcode_Documents_Gallery\hrs_gallery' );
 
