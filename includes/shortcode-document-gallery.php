@@ -10,19 +10,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-add_shortcode( 'hrsgallery', 'hrs_gallery' );
+namespace WSU\HRS\Shortcode_Documents_Gallery;
+
+add_shortcode( 'hrsgallery', 'WSU\HRS\Shortcode_Documents_Gallery\hrs_gallery' );
 
 /**
- * Builds the HRS Gallery shortcode output.
+ * Builds the HRS Documents Gallery shortcode output.
  *
  * Mostly just a slimmed-down and adjusted duplicate of the WP Gallery
  * shortcode {@see gallery_shortcode}. This version includes PDF docs
  * in its output, allowing users to create a "gallery" of PDF documents
  * and/or images represented either by thumbnails (if capable) or icons.
  *
- * @since 1.1.0
- *
- * @staticvar int $instance
+ * @since 0.13.0
  *
  * @param array $attr {
  *     Attributes of the HRS gallery shortcode
@@ -49,7 +49,7 @@ add_shortcode( 'hrsgallery', 'hrs_gallery' );
  * }
  * @return string HTML content to display a gallery.
  */
-public function hrs_gallery( $attr ) {
+function hrs_gallery( $attr ) {
 	$post = get_post();
 
 	static $instance = 0;

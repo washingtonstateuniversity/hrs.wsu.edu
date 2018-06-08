@@ -36,9 +36,13 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
-- Create HRS document gallery shortcode (copy from helper plugin).
 - Create HRS last updated shortcode (copy from helper plugin).
 - Redirect users to homepage on logout (copy from helper plugin).
+
+### Added
+
+- Namespace the HRS document gallery shortcode.
+- HRS document gallery shortcode that largely duplicates the standard WP gallery shortcode, but for PDF thumbnail galleries.
 
 ## 0.12.0 (2018-06-08)
 
