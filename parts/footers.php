@@ -1,7 +1,7 @@
 <?php
 $footer_nav_args = array(
-	'theme_location'  => 'site',
-	'menu'            => 'footer',
+	'theme_location'  => 'hrs-site-footer',
+	'menu'            => 'hrs-site-footer',
 	'container'       => 'nav',
 	'container_class' => false,
 	'container_id'    => false,
@@ -13,7 +13,7 @@ $footer_nav_args = array(
 
 $site_reference_args = array(
 	'theme_location'  => 'site',
-	'menu'            => 'hrsites',
+	'menu'            => 'site-reference',
 	'container'       => 'nav',
 	'container_class' => 'site-reference',
 	'container_id'    => false,

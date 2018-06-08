@@ -1,7 +1,7 @@
 <?php
 $hrs_common_search_args = array(
-	'theme_location' => 'hrs-common-search',
-	'menu'           => 'hrs-common-search',
+	'theme_location' => 'hrs-search-menu',
+	'menu'           => 'hrs-search-menu',
 	'container'      => 'nav',
 	'items_wrap'     => '<ul>%3$s</ul>',
 	'depth'          => 2,
