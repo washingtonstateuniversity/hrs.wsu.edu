@@ -26,7 +26,7 @@ class HRS_Theme_Setup {
 	public static function get_instance() {
 		static $instance = null;
 
-		// Only setup and activate the plugin if it hasn't already been done.
+		// Only setup and activate if it hasn't already been done.
 		if ( null === $instance ) {
 			$instance = new HRS_Theme_Setup();
 			$instance->setup_hooks();
@@ -72,6 +72,8 @@ class HRS_Theme_Setup {
 	private function includes() {
 		// The HRS documents gallery shortcode.
 		require __DIR__ . '/shortcode-document-gallery.php';
+		// The HRS last updated label shortcode.
+		require __DIR__ . '/shortcode-last-updated.php';
 	}
 
 	/**
