@@ -48,10 +48,15 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Filter to adjust the punctuation in the HRS page title element.
 - Crimson svg WSU cougar logo for CSS background use.
 - New nav menu to display the site footer nav menu so that the "Offsite" menu can display in the Spine as intended, or not at all if unwanted.
 - Action and methods to get and set the Spine schema version for the HRS child theme -- set to 2.x to target the latest Spine configuration options.
 - A theme setup class to handle theme setup tasks such as registering theme support in a new `includes/` directory.
+
+### Removed
+
+- Restored the "lost password" link to the login page by removing the filter that erased it.
 
 ## 0.11.1 (2018-06-05)
 
