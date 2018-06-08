@@ -66,8 +66,8 @@ function hrs_gallery( $attr ) {
 		if ( ! empty( $attr['urls'] ) ) {
 			$_urls = explode( ',', $attr['urls'] );
 			foreach ( $_urls as $url ) {
-				 $att_id = attachment_url_to_postid( esc_url( $url ) );
-				 $attr['include'] .= $att_id ? $att_id . ',' : '';
+				$att_id           = attachment_url_to_postid( esc_url( $url ) );
+				$attr['include'] .= $att_id ? $att_id . ',' : '';
 			}
 		}
 		$attr['include'] .= $attr['ids'];
@@ -75,7 +75,7 @@ function hrs_gallery( $attr ) {
 
 	// Check for <figure> element support.
 	$html5 = current_theme_supports( 'html5', 'gallery' );
-	$atts = shortcode_atts( array(
+	$atts  = shortcode_atts( array(
 		'order'      => 'ASC',
 		'orderby'    => 'menu_order ID',
 		'id'         => $post ? $post->ID : 0,
@@ -84,7 +84,7 @@ function hrs_gallery( $attr ) {
 		'captiontag' => $html5 ? 'figcaption' : 'dd',
 		'columns'    => 3,
 		'size'       => 'thumbnail',
-		'useicon'     => false,
+		'useicon'    => false,
 		'include'    => '',
 		'exclude'    => '',
 		'link'       => 'file',
@@ -95,12 +95,12 @@ function hrs_gallery( $attr ) {
 	// Retrieve the attachments.
 	if ( ! empty( $atts['include'] ) ) {
 		$_attachments = get_posts( array(
-			'include' => $atts['include'],
-			'post_status' => 'inherit',
-			'post_type' => 'attachment',
+			'include'        => $atts['include'],
+			'post_status'    => 'inherit',
+			'post_type'      => 'attachment',
 			'post_mime_type' => 'image,application/pdf',
-			'order' => $atts['order'],
-			'orderby' => $atts['orderby'],
+			'order'          => $atts['order'],
+			'orderby'        => $atts['orderby'],
 		) );
 
 		$attachments = array();
@@ -110,23 +110,23 @@ function hrs_gallery( $attr ) {
 	} elseif ( ! empty( $atts['exclude'] ) ) {
 		// Uses get_children to use linked attachments as the includes.
 		$attachments = get_children( array(
-			'post_parent' => $id,
-			'exclude' => $atts['exclude'],
-			'post_status' => 'inherit',
-			'post_type' => 'attachment',
+			'post_parent'    => $id,
+			'exclude'        => $atts['exclude'],
+			'post_status'    => 'inherit',
+			'post_type'      => 'attachment',
 			'post_mime_type' => 'image,application/pdf',
-			'order' => $atts['order'],
-			'orderby' => $atts['orderby'],
+			'order'          => $atts['order'],
+			'orderby'        => $atts['orderby'],
 		) );
 	} else {
 		// If no attachments are specified, default to those attached to the current post.
 		$attachments = get_children( array(
-			'post_parent' => $id,
-			'post_status' => 'inherit',
-			'post_type' => 'attachment',
+			'post_parent'    => $id,
+			'post_status'    => 'inherit',
+			'post_type'      => 'attachment',
 			'post_mime_type' => 'image,application/pdf',
-			'order' => $atts['order'],
-			'orderby' => $atts['orderby'],
+			'order'          => $atts['order'],
+			'orderby'        => $atts['orderby'],
 		) );
 	}
 
@@ -143,9 +143,9 @@ function hrs_gallery( $attr ) {
 	}
 
 	// Build elements.
-	$itemtag = tag_escape( $atts['itemtag'] );
+	$itemtag    = tag_escape( $atts['itemtag'] );
 	$captiontag = tag_escape( $atts['captiontag'] );
-	$icontag = tag_escape( $atts['icontag'] );
+	$icontag    = tag_escape( $atts['icontag'] );
 	$valid_tags = wp_kses_allowed_html( 'post' );
 
 	if ( ! isset( $valid_tags[ $itemtag ] ) ) {
@@ -158,8 +158,8 @@ function hrs_gallery( $attr ) {
 		$icontag = 'dt';
 	}
 
-	$columns = intval( $atts['columns'] );
-	$selector = "hrs-gallery-{$instance}";
+	$columns    = intval( $atts['columns'] );
+	$selector   = "hrs-gallery-{$instance}";
 	$size_class = sanitize_html_class( $atts['size'] );
 
 	$output = "<div id='{$selector}' class='gallery hrs-gallery gallery-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
