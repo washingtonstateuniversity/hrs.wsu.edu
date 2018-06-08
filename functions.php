@@ -1,11 +1,22 @@
 <?php
+/**
+ * WSU Human Resources Services functions and definitions
+ *
+ * Defines the primary HRS child theme variables and methods, these are all
+ * loaded after the main Spine parent theme methods. The bulk of the child theme
+ * setup happens in the required 'class-hrs-theme-setup.php' file. This class
+ * also includes secondary methods such as shortcode and template tag files.
+ *
+ * @package WSU_Human_Resources_Services
+ * @since 0.1.0
+ */
 
 /**
  * Tracks HRS Child Theme Version
  *
  * @since 0.7.0
  */
-$hrs_child_theme_version = '0.13.0~alpha2';
+$hrs_child_theme_version = '0.13.0';
 
 /**
  * Sets up basic theme configuration and WordPress API settings.
@@ -81,4 +92,22 @@ add_filter( 'login_headertitle', 'hrs_login_logo_url_title' );
  */
 function hrs_login_logo_url_title() {
 	return get_bloginfo( 'name' );
+}
+
+add_filter( 'logout_redirect', 'hrs_logout_redirect_home', 10, 3 );
+/**
+ * Redirects users to the home page on logout.
+ *
+ * @since 0.3.0
+ *
+ * @param string $redirect_to The redirect destination URL.
+ * @param string $requested_redirect_to The requested redirect destination URL passed as a parameter.
+ * @param WP_User $user The WP_User object for the user that's logging out.
+ * @return string URL of page to redirect users to on logout.
+ */
+function hrs_logout_redirect_home( $redirect_to, $requested_redirect_to, $user ) {
+	// Set requested redirect parameter to the home url.
+	$requested_redirect_to = home_url( '/' );
+
+	return $requested_redirect_to;
 }
