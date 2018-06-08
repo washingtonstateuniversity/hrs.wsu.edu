@@ -26,7 +26,7 @@ class HRS_Theme_Setup {
 	public static function get_instance() {
 		static $instance = null;
 
-		// Only setup and activate the plugin if it hasn't already been done.
+		// Only setup and activate if it hasn't already been done.
 		if ( null === $instance ) {
 			$instance = new HRS_Theme_Setup();
 			$instance->setup_hooks();
