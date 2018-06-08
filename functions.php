@@ -47,7 +47,7 @@ add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 function hrs_enqueue_styles() {
 	wp_enqueue_style( 'hrs-child-theme', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'wsu-spine' ), hrs_get_script_version() );
 	wp_enqueue_style( 'source_sans_pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i' );
-	wp_enqueue_script( 'hrs-custom', get_stylesheet_directory_uri() . '/assets/js/custom.min.js', array( 'jquery' ), spine_get_script_version(), true );
+	wp_enqueue_script( 'hrs-custom', get_stylesheet_directory_uri() . '/assets/js/custom.min.js', array(), spine_get_script_version(), true );
 }
 
 add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
