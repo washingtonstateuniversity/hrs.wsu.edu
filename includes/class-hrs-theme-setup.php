@@ -63,9 +63,9 @@ class HRS_Theme_Setup {
 	}
 
 	/**
-	 * Includes the required files.
+	 * Includes files required by the HRS theme.
 	 *
-	 * @since 0.1.0
+	 * @since 0.13.0
 	 *
 	 * @access private
 	 */
