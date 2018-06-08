@@ -32,6 +32,14 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Get Babel processing working, open #35.
 - Determine if we really need the `center-middle` utility class. If yes, look into using a flex or grid with `Xvh` and `Xvh` column and row size to center instead.
 
+## 0.13.0 (unreleased)
+
+### Todo
+
+- Create HRS document gallery shortcode (copy from helper plugin).
+- Create HRS last updated shortcode (copy from helper plugin).
+- Redirect users to homepage on logout (copy from helper plugin).
+
 ## 0.12.0 (2018-06-08)
 
 ### Changed
