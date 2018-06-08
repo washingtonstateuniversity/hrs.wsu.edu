@@ -57,6 +57,7 @@ class HRS_Theme_Setup {
 
 		// Set Spine options.
 		add_action( 'after_setup_theme', array( $this, 'get_hrs_spine_schema' ), 5 );
+		add_filter( 'spine_get_title', array( $this, 'hrs_get_page_title' ) );
 		add_filter( 'spine_enable_builder_module', '__return_true' );
 	}
 
@@ -124,6 +125,28 @@ class HRS_Theme_Setup {
 			'hrs-search-menu' => __( 'Search Menu', 'hrs-wsu-edu' ),
 			'hrs-site-footer' => __( 'Site Footer', 'hrs-wsu-edu' ),
 		) );
+	}
+
+	/**
+	 * Filters the Spine page title contents.
+	 *
+	 * Adjusts the formatting and punctuation of the default Spine parent theme
+	 * title, which itself replaces the default `wp_title()`,
+	 * {@see https://github.com/washingtonstateuniversity/WSUWP-spine-parent-theme/functions.php}
+	 *
+	 * @since 0.12.0
+	 *
+	 * @param string $title The built title to filter.
+	 * @return string The contents of the `title` element.
+	 */
+	public function hrs_get_page_title( $title ) {
+		$page_title   = wp_title( '-', false, 'right' );
+		$site_title   = get_bloginfo( 'name' );
+		$global_title = ', Washington State University';
+
+		$title = $page_title . $site_title . $global_title;
+
+		return $title;
 	}
 
 }

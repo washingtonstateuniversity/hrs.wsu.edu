@@ -82,26 +82,3 @@ add_filter( 'login_headertitle', 'hrs_login_logo_url_title' );
 function hrs_login_logo_url_title() {
 	return get_bloginfo( 'name' );
 }
-
-add_filter( 'spine_get_title', 'hrs_get_page_title' );
-/**
- * Filters the Spine page title contents.
- *
- * Adjusts the formatting and punctuation of the default Spine parent theme
- * title, which itself replaces the default `wp_title()`,
- * {@see https://github.com/washingtonstateuniversity/WSUWP-spine-parent-theme/functions.php}
- *
- * @since 0.12.0
- *
- * @param string $title The built title to filter.
- * @return string The contents of the `title` element.
- */
-function hrs_get_page_title( $title ) {
-	$page_title   = wp_title( '-', false, 'right' );
-	$site_title   = get_bloginfo( 'name' );
-	$global_title = ', Washington State University';
-
-	$title = $page_title . $site_title . $global_title;
-
-	return $title;
-}
