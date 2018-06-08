@@ -36,11 +36,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
-- Create HRS last updated shortcode (copy from helper plugin).
 - Redirect users to homepage on logout (copy from helper plugin).
 
 ### Added
 
+- Shortcode to display the date a page was last updated.
 - Namespace the HRS document gallery shortcode.
 - HRS document gallery shortcode that largely duplicates the standard WP gallery shortcode, but for PDF thumbnail galleries.
 
