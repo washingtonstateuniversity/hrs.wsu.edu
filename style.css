@@ -136,18 +136,23 @@ html {
   background-color: #f2f2f2;
 }
 
-main {
+main,
+.site-header {
   color: #191919;
   font: 400 18px/28px "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
 }
 
 main *,
 main *:before,
-main *:after {
+main *:after,
+.site-header *,
+.site-header *:before,
+.site-header *:after {
   box-sizing: border-box;
 }
 
-main section {
+main section,
+.site-header section {
   background-color: #fdfdfd;
 }
 
@@ -195,7 +200,8 @@ blockquote {
 /**
  * 1.3 Links
  */
-main a {
+main a,
+.site-header a {
   border-bottom: 1px solid #da1e00;
   color: #191919;
   font-weight: 600;
@@ -203,24 +209,27 @@ main a {
   transition: all .3s ease;
 }
 
-main a:hover, main a:focus {
+main a:hover, main a:focus,
+.site-header a:hover,
+.site-header a:focus {
   color: #c60c30;
 }
 
-main figure > a {
+main figure > a,
+.site-header figure > a {
   border-bottom: none;
   display: block;
   position: relative;
 }
 
 .article-title a,
-.site-title a {
+a.site-title {
   border-color: transparent;
 }
 
 .article-title a:hover, .article-title a:focus,
-.site-title a:hover,
-.site-title a:focus {
+a.site-title:hover,
+a.site-title:focus {
   border-color: currentColor;
 }
 
@@ -945,7 +954,8 @@ main .button, main .button-cta,
 main input[type="submit"],
 main button,
 main input[type="button"],
-main input[type="reset"] {
+main input[type="reset"],
+.site-header button {
   background: #fff;
   border: 1px solid #981e32;
   border-radius: 3px;
@@ -968,7 +978,9 @@ main button:focus,
 main input[type="button"]:hover,
 main input[type="button"]:focus,
 main input[type="reset"]:hover,
-main input[type="reset"]:focus {
+main input[type="reset"]:focus,
+.site-header button:hover,
+.site-header button:focus {
   background: #c60c30;
   border: 1px solid #da1e00;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
@@ -979,7 +991,8 @@ main .button:active, main .button-cta:active,
 main input:active[type="submit"],
 main button:active,
 main input[type="button"]:active,
-main input[type="reset"]:active {
+main input[type="reset"]:active,
+.site-header button:active {
   background: #6d1624;
   border: 1px solid #475055;
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
@@ -1004,7 +1017,7 @@ main input[type="submit"]:active {
   background: #eff0f1;
 }
 
-main .button-flat {
+.button-flat {
   border-radius: 3px;
   display: inline-block;
   line-height: 1.5;
@@ -1017,12 +1030,12 @@ main .button-flat {
   font-weight: 400;
 }
 
-main .button-flat:hover, main .button-flat:focus {
+.button-flat:hover, .button-flat:focus {
   background: #c60c30;
   color: #fff;
 }
 
-main .button-flat:active {
+.button-flat:active {
   background: #6d1624;
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
 }
@@ -1544,7 +1557,7 @@ input[type="number"] {
   display: flex;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  padding: 5.5rem 2rem 1.5rem;
+  padding: 9rem 2rem 1.5rem;
   position: absolute;
   top: 4.8rem;
   -ms-transform: translateY(-100rem);
@@ -1610,6 +1623,12 @@ input[type="number"] {
   width: 1em;
 }
 
+@media (min-width: 34em) {
+  #search-menu {
+    padding-top: 7.5rem;
+  }
+}
+
 @media (min-width: 43em) {
   .search-toggle {
     padding: .75rem 1.5rem;
@@ -1650,7 +1669,11 @@ input[type="number"] {
  *
  * @since 0.11.0
  */
-.banner .column {
+.site-header {
+  margin: 50px 0 -50px;
+}
+
+.site-header .column {
   -ms-flex-align: center;
       align-items: center;
   border-top: 8px solid #981e32;
@@ -1663,7 +1686,11 @@ input[type="number"] {
   z-index: 900;
 }
 
-.site-title {
+.home .site-header {
+  margin-left: 0;
+}
+
+a.site-title {
   border: none;
   color: #981e32;
   font-size: 1.424em;
@@ -1671,17 +1698,20 @@ input[type="number"] {
 }
 
 @media (min-width: 43em) {
-  .site-title {
+  a.site-title {
     font-size: 1.802em;
     margin: 1rem 2rem;
   }
 }
 
 @media (min-width: 61.875em) {
-  .banner .column {
+  .site-header {
+    margin: 0 0 0 198px;
+  }
+  .site-header .column {
     padding: 0 2rem;
   }
-  .site-title {
+  a.site-title {
     font-size: 2.027em;
     margin: 1.5rem 2rem;
   }

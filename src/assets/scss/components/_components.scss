@@ -460,7 +460,7 @@ input[type="number"] {
 	box-shadow: 2px 3px 5px 1px rgba(20, 20, 20, .12);
 	display: flex;
 	flex-flow: row wrap;
-	padding: 5.5rem 2rem 1.5rem;
+	padding: 9rem 2rem 1.5rem;
 	position: absolute;
 	top: 4.8rem;
 	transform: translateY(-100rem);
@@ -523,6 +523,14 @@ input[type="number"] {
 		margin: .2em 0 -.05em .1em;
 		position: absolute;
 		width: 1em;
+	}
+
+}
+
+@media (min-width: $small) {
+
+	#search-menu {
+		padding-top: 7.5rem;
 	}
 
 }

@@ -20,7 +20,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## (next release) (unreleased)
+## 0.14.0 (unreleased)
 
 ### Todo
 
@@ -32,9 +32,17 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Get Babel processing working, open #35.
 - Determine if we really need the `center-middle` utility class. If yes, look into using a flex or grid with `Xvh` and `Xvh` column and row size to center instead.
 
+### Added
+
+- A new template part called `before-main.php` that displays the site header. This used to be displayed by `headers.php`, but we want the site header outside of the `main` element, close #22.
+
+### Deprecated
+
+- Silenced the output of the `headers.php` file because we don't want the parent theme to display its default headers inside the `main` element.
+
 ### Removed
 
-- Deleted the `header.php` file because it simply duplicated the parent theme version.
+- Deleted the `header.php` file because it simply duplicated the parent theme version, close #19.
 
 ## 0.13.1 (2018-06-08)
 
@@ -56,7 +64,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
-- Clean up `functions.php` to remove unneeded methods and refactor the rest.
+- Clean up `functions.php` to remove unneeded methods and refactor the rest, fix #17.
 - Prefer to enqueue the login page CSS rather than inline it.
 - Rename HRS nav menus for easier identification.
 - Move WP menu(s) registration into the setup class.

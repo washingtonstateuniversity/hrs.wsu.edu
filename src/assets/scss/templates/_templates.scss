@@ -20,7 +20,8 @@
  * @since 0.11.0
  */
 
-.banner {
+.site-header {
+	margin: 50px 0 -50px;
 
 	.column {
 		align-items: center;
@@ -34,7 +35,11 @@
 
 }
 
-.site-title {
+.home .site-header {
+	margin-left: 0;
+}
+
+a.site-title {
 	border: none;
 	color: $brand-crimson;
 	font-size: $font-size-4;
@@ -43,7 +48,7 @@
 
 @media (min-width: $medium) {
 
-	.site-title {
+	a.site-title {
 		font-size: $font-size-6;
 		margin: 1rem 2rem;
 	}
@@ -52,7 +57,8 @@
 
 @media (min-width: $large) {
 
-	.banner {
+	.site-header {
+		margin: 0 0 0 198px;
 
 		.column {
 			padding: 0 2rem;
@@ -60,7 +66,7 @@
 
 	}
 
-	.site-title {
+	a.site-title {
 		font-size: $font-size-7;
 		margin: 1.5rem 2rem;
 	}
