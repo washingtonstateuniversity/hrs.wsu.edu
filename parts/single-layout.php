@@ -8,22 +8,16 @@
 */
 ?>
 
-<section class="row side-right gutter pad-ends">
+<?php while ( have_posts() ) : the_post(); ?>
 
-	<div class="column one">
+	<section class="row single gutter pad-top article-containter">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<div class="column one">
 
 			<?php get_template_part( 'articles/post', get_post_type() ) ?>
 
-		<?php endwhile; ?>
+		</div><!--/column-->
 
-	</div><!--/column-->
+	</section>
 
-	<div class="column two">
-
-		<?php get_sidebar(); ?>
-
-	</div><!--/column two-->
-
-</section>
+<?php endwhile; ?>
