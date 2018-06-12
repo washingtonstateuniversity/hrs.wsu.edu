@@ -1,11 +1,12 @@
 <?php
 /**
-* Single Post Layout Template
-*
-* The template for layout out the content of individual post views.
-*
-* @since 0.14.0
-*/
+ * Single Post Layout Template
+ *
+ * The template for layout out the content of individual post views.
+ *
+ * @package WSU_Human_Resources_Services
+ * @since 0.14.0
+ */
 ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
