@@ -55,6 +55,7 @@ class HRS_Theme_Setup {
 	private function setup_hooks() {
 		add_action( 'after_setup_theme', array( $this, 'add_theme_support' ) );
 		add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
+		add_action( 'init', array( $this, 'register_taxonomies' ), 0 );
 
 		// Set Spine options.
 		add_action( 'after_setup_theme', array( $this, 'get_hrs_spine_schema' ), 5 );
@@ -140,6 +141,45 @@ class HRS_Theme_Setup {
 			'hrs-search-menu' => __( 'Search Menu', 'hrs-wsu-edu' ),
 			'hrs-site-footer' => __( 'Site Footer', 'hrs-wsu-edu' ),
 		) );
+	}
+
+	/**
+	 * Creates the HRS taxonomies.
+	 *
+	 * Uses the WP taxonomy API to create custom taxonomy for the HRS site,
+	 * {@see register_taxonomy}.
+	 *
+	 * @since 0.14.0
+	 */
+	public function register_taxonomies() {
+
+		// Create the HRS Unit taxonomy.
+		$labels = array(
+			'name'          => _x( 'HRS Units', 'taxonomy general name', 'hrs-wsu-edu' ),
+			'singular_name' => _x( 'HRS Unit', 'taxonomy singular name', 'hrs-wsu-edu' ),
+			'all_items'     => __( 'All Units', 'hrs-wsu-edu' ),
+			'edit_item'     => __( 'Edit Unit', 'hrs-wsu-edu' ),
+			'view_item'     => __( 'View Unit', 'hrs-wsu-edu' ),
+			'update_item'   => __( 'Update Unit', 'hrs-wsu-edu' ),
+			'add_new_item'  => __( 'Add New Unit', 'hrs-wsu-edu' ),
+			'new_item_name' => __( 'New Unit Name', 'hrs-wsu-edu' ),
+			'parent_item'   => __( 'Parent Unit', 'hrs-wsu-edu' ),
+			'parent_item_colon' => __( 'HRS Unit: ', 'hrs-wsu-edu' ),
+			'search_items'  => __( 'Search Units', 'hrs-wsu-edu' ),
+		);
+
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => array(
+				'slug' => 'hrs-units',
+			),
+		);
+
+		register_taxonomy( 'hrsunit', array( 'post', 'document' ), $args );
 	}
 
 	/**
