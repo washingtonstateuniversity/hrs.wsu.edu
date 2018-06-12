@@ -85,11 +85,7 @@
 	<?php endif; ?>
 
 	<footer class="article-footer">
-		<?php
-		if ( is_singular() && in_array( $post_share_placement, array( 'bottom', 'both' ) ) ) {
-			get_template_part( 'parts/share-tools' );
-		}
-		?>
+		<?php // get_template_part( 'parts/share-tools' ); ?>
 
 		<cite class="article-author">
 			<?php // The HRS Unit taxonomy will go here. ?>
