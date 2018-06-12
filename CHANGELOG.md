@@ -32,6 +32,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Template for displaying individual post views to adjust the markup of the parent theme version (remove the featured image background).
 - PHP doc header information for `footers.php`, close #21.
 - A new template part called `before-main.php` that displays the site header. This used to be displayed by `headers.php`, but we want the site header outside of the `main` element, close #22.
 
