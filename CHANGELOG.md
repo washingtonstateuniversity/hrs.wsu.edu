@@ -24,9 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
-- Move article footer inside the `section` element.
 - Set max width on text-based content like posts and standard pages, open #30.
-- Clean up templates.
 - Set up grid fallbacks, open #31.
 - Set up no-js handling for the search form and menu, open #34.
 - Get Babel processing working, open #35.
@@ -34,6 +32,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- PHP doc header information for `footers.php`, close #21.
 - A new template part called `before-main.php` that displays the site header. This used to be displayed by `headers.php`, but we want the site header outside of the `main` element, close #22.
 
 ### Deprecated
