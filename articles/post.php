@@ -87,9 +87,7 @@
 	<footer class="article-footer">
 		<?php // get_template_part( 'parts/share-tools' ); ?>
 
-		<cite class="article-author">
-			<?php // The HRS Unit taxonomy will go here. ?>
-		</cite>
+		<?php the_terms( get_the_ID(), 'hrsunit', '<p class="hrs-unit">', ', ', '</p>' ); ?>
 
 	<?php
 	// Display site level categories attached to the post.
