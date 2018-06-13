@@ -33,7 +33,7 @@
 		$article_image_type = 'thumbnail-image';
 	} elseif ( spine_has_featured_image() ) {
 		$article_image_type = 'feature-image';
-		$image_caption = get_post( get_post_thumbnail_id() )->post_excerpt;
+		$image_caption      = get_post( get_post_thumbnail_id() )->post_excerpt;
 	}
 	?>
 
@@ -68,7 +68,7 @@
 			 * Otherwise show full content.
 			 */
 			if ( $post->post_excerpt ) {
-				echo get_the_excerpt() . ' <a href="' . get_permalink() . '"><span class="excerpt-more-default">&rarr; More ...</span></a>';
+				echo wp_kses_post( get_the_excerpt() ) . ' <a href="' . esc_url( get_permalink() ) . '"><span class="excerpt-more-default">&rarr; More ...</span></a>';
 			} elseif ( strstr( $post->post_content, '<!--more-->' ) ) {
 				the_content( '<span class="content-more-default">&rarr; More ...</span>' );
 			} elseif ( 'excerpt' === spine_get_option( 'archive_content_display' ) ) {
