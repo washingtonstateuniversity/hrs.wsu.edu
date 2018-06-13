@@ -179,7 +179,7 @@ class HRS_Theme_Setup {
 			),
 		);
 
-		register_taxonomy( 'hrsunit', array( 'post', 'document' ), $args );
+		register_taxonomy( 'hrs_unit', array( 'post', 'document' ), $args );
 	}
 
 	/**
