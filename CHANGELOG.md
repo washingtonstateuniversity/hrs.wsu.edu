@@ -32,6 +32,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Template tags file for custom HRS child theme template tags, when needed.
 - Create new HRS taxonomy to categorize posts by HRS unit(s).
 - Template for displaying individual post content inside the single template to adjust markup of the parent theme version (remove sidebar).
 - Template for displaying individual post views to adjust the markup of the parent theme version (remove the featured image background).
