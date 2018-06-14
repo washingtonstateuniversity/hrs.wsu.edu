@@ -11,7 +11,7 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-	<section class="row single gutter pad-ends article-container">
+	<section class="row single gutter pad-top article-container">
 
 		<div class="column one">
 
