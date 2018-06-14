@@ -126,6 +126,10 @@ a.site-title {
  * 1.4 Lists
  */
 
+dl dt,
+dl dd {
+	display: block;
+}
 
 /**
  * 1.5 Utility
