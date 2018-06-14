@@ -8,6 +8,7 @@
  *     - 5.1 Header
  *     - 5.2 Footer
  *     - 5.3 Article
+ *         - 5.3.1 Post (Single)
  *     - 5.4 Archive
  *     - 5.4 Multi-part Page
  *
@@ -164,7 +165,50 @@ a.site-title {
  * 5.3 Article
  */
 
-.article-date {}
+.article-containter {}
+
+/**
+ * 5.3.1 Article: Post (Single)
+ *
+ * @since 0.14.0
+ */
+
+.single-post {
+
+	.article-header {
+		margin-bottom: 3rem;
+	}
+
+	.article-container figure.article-image {
+		margin-bottom: 1.5rem;
+		margin-left: -2rem;
+		max-width: none;
+		width: 100vw;
+	}
+}
+
+@media (min-width: $medium) {
+
+	.single-post {
+
+		.article-container {
+
+			.article-content {
+				width: 70%;
+			}
+
+			figure.article-image {
+				float: right;
+				margin-right: calc(-43% - 2rem);
+				margin-left: 0;
+				padding: 0 2rem;
+				max-width: $small;
+				width: 50vw;
+			}
+		}
+	}
+
+}
 
 article header time:before {
 	content: "@ ";
