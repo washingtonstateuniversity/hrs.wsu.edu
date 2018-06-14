@@ -32,6 +32,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Custom template tags to get and display any taxonomy terms, formatted at a data list element.
 - Fetch and display the HRS Unit taxonomy terms on posts.
 - Template tags file for custom HRS child theme template tags, when needed.
 - Create new HRS taxonomy to categorize posts by HRS unit(s).
