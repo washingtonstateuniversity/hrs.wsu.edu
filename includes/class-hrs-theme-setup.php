@@ -75,6 +75,8 @@ class HRS_Theme_Setup {
 		require __DIR__ . '/shortcode-document-gallery.php';
 		// The HRS last updated label shortcode.
 		require __DIR__ . '/shortcode-last-updated.php';
+		// The HRS template tags.
+		require __DIR__ . '/hrs-template-tags.php';
 	}
 
 	/**
@@ -155,17 +157,17 @@ class HRS_Theme_Setup {
 
 		// Create the HRS Unit taxonomy.
 		$labels = array(
-			'name'          => _x( 'HRS Units', 'taxonomy general name', 'hrs-wsu-edu' ),
-			'singular_name' => _x( 'HRS Unit', 'taxonomy singular name', 'hrs-wsu-edu' ),
-			'all_items'     => __( 'All Units', 'hrs-wsu-edu' ),
-			'edit_item'     => __( 'Edit Unit', 'hrs-wsu-edu' ),
-			'view_item'     => __( 'View Unit', 'hrs-wsu-edu' ),
-			'update_item'   => __( 'Update Unit', 'hrs-wsu-edu' ),
-			'add_new_item'  => __( 'Add New Unit', 'hrs-wsu-edu' ),
-			'new_item_name' => __( 'New Unit Name', 'hrs-wsu-edu' ),
-			'parent_item'   => __( 'Parent Unit', 'hrs-wsu-edu' ),
+			'name'              => _x( 'HRS Units', 'taxonomy general name', 'hrs-wsu-edu' ),
+			'singular_name'     => _x( 'HRS Unit', 'taxonomy singular name', 'hrs-wsu-edu' ),
+			'all_items'         => __( 'All Units', 'hrs-wsu-edu' ),
+			'edit_item'         => __( 'Edit Unit', 'hrs-wsu-edu' ),
+			'view_item'         => __( 'View Unit', 'hrs-wsu-edu' ),
+			'update_item'       => __( 'Update Unit', 'hrs-wsu-edu' ),
+			'add_new_item'      => __( 'Add New Unit', 'hrs-wsu-edu' ),
+			'new_item_name'     => __( 'New Unit Name', 'hrs-wsu-edu' ),
+			'parent_item'       => __( 'Parent Unit', 'hrs-wsu-edu' ),
 			'parent_item_colon' => __( 'HRS Unit: ', 'hrs-wsu-edu' ),
-			'search_items'  => __( 'Search Units', 'hrs-wsu-edu' ),
+			'search_items'      => __( 'Search Units', 'hrs-wsu-edu' ),
 		);
 
 		$args = array(
