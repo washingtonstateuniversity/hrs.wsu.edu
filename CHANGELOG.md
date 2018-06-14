@@ -47,6 +47,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Removed
 
+- Author info section removed from `articles/post.php` template.
 - Deleted the `header.php` file because it simply duplicated the parent theme version, close #19.
 
 ## 0.13.1 (2018-06-08)
