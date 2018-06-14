@@ -30,6 +30,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Get Babel processing working, open #35.
 - Determine if we really need the `center-middle` utility class. If yes, look into using a flex or grid with `Xvh` and `Xvh` column and row size to center instead.
 
+### Changed
+
+- Restyle the single post footer to align more with the site footers.
+
 ### Added
 
 - Custom template tags to get and display any taxonomy terms, formatted at a data list element.

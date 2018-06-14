@@ -62,6 +62,7 @@ a.site-title {
 		margin: 0 0 0 198px;
 
 		.column {
+			border-left: 8px solid $body-background-color;
 			padding: 0 2rem;
 		}
 
@@ -80,19 +81,27 @@ a.site-title {
  * @since 0.11.0
  */
 
-.site-footer {
+footer {
 
-	nav {
-
-		ul {
-			font-size: $font-size-0;
-			padding: 0;
-		}
+	ul,
+	dd {
+		font-size: $font-size-0;
 
 		a {
-			border-bottom: none;
-		}
+			border-bottom-color: transparent;
 
+			&:hover,
+			&:focus {
+				border-bottom-color: currentColor;
+			}
+		}
+	}
+}
+
+.site-footer {
+
+	nav ul {
+		padding: 0;
 	}
 
 }
@@ -147,6 +156,7 @@ a.site-title {
 
 		&:hover,
 		&:focus {
+			border: none;
 			color: $neutral-light;
 			text-decoration: underline;
 		}
@@ -157,6 +167,7 @@ a.site-title {
 
 	.site-reference ul {
 		flex-flow: row wrap;
+		margin-right: 1.25rem;
 	}
 
 }
@@ -185,6 +196,43 @@ a.site-title {
 		max-width: none;
 		width: 100vw;
 	}
+
+	.article-body {
+		padding-bottom: 1.5em;
+	}
+
+	.article-footer {
+		border-top: 8px solid $body-background-color;
+		color: $neutral-dark;
+		margin: 0 -2rem;
+		padding: 1.5rem 2rem .75rem;
+
+		dl {
+			padding-bottom: .75rem;
+
+			dt:after {
+				content: none;
+			}
+		}
+
+		dt {
+			font-weight: 600;
+			line-height: 1.4;
+		}
+
+		dd {
+			display: inline-block;
+		}
+
+		a {
+			color: $text-color;
+
+			&:hover,
+			&:focus {
+				color: $nav-color-hover;
+			}
+		}
+	}
 }
 
 @media (min-width: $medium) {
@@ -204,6 +252,16 @@ a.site-title {
 				padding: 0 2rem;
 				max-width: $small;
 				width: 50vw;
+			}
+		}
+
+		.article-footer {
+			display: flex;
+			justify-content: space-between;
+			margin-right: calc(-43% - 2rem);
+
+			dl:last-child {
+				margin-right: 25%;
 			}
 		}
 	}
