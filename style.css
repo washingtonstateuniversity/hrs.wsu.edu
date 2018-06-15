@@ -89,6 +89,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @since 0.11.0
  */
+/* #475055 */
 /**
  * 1.6.4 Typography
  *
@@ -236,6 +237,11 @@ a.site-title:focus {
 /**
  * 1.4 Lists
  */
+dl dt,
+dl dd {
+  display: block;
+}
+
 /**
  * 1.5 Utility
  */
@@ -1073,6 +1079,40 @@ main input[type="submit"]:active {
 /**
  * 2.3 Images
  */
+/* Contextual mini-icons. */
+figure .wp-caption-text:before,
+.article-header time:before {
+  background-image: url(../images/icons/label.svg);
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 1em;
+  margin: 0 .4em -.2em 0;
+  width: 1em;
+}
+
+.search-links a {
+  border-bottom-color: transparent;
+}
+
+.search-links a:after {
+  background: url(../images/icons/link.svg);
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 1em;
+  margin: .05em 0 -.05em .3em;
+  width: 1em;
+}
+
+.search-links a:hover, .search-links a:focus {
+  border-bottom-color: currentColor;
+}
+
 /* @todo Determine what this applies to, if anything. */
 .section-wrapper-has-background {
   min-height: 600px !important;
@@ -1212,6 +1252,7 @@ figure img {
 }
 
 figcaption {
+  color: #475055;
   font-size: 0.889em;
   letter-spacing: .02em;
   line-height: normal;
@@ -1612,15 +1653,7 @@ input[type="number"] {
 }
 
 .search-links a:after {
-  background: url(/wp-content/themes/hrs.wsu.edu/assets/images/icons/link.svg) no-repeat;
-  background-position: .1em;
   background-size: 80%;
-  content: "";
-  display: inline-block;
-  height: 1em;
-  margin: .2em 0 -.05em .1em;
-  position: absolute;
-  width: 1em;
 }
 
 @media (min-width: 34em) {
@@ -1659,6 +1692,7 @@ input[type="number"] {
  *     - 5.1 Header
  *     - 5.2 Footer
  *     - 5.3 Article
+ *         - 5.3.1 Post (Single)
  *     - 5.4 Archive
  *     - 5.4 Multi-part Page
  *
@@ -1709,6 +1743,7 @@ a.site-title {
     margin: 0 0 0 198px;
   }
   .site-header .column {
+    border-left: 8px solid #f2f2f2;
     padding: 0 2rem;
   }
   a.site-title {
@@ -1722,13 +1757,28 @@ a.site-title {
  *
  * @since 0.11.0
  */
-.site-footer nav ul {
+footer ul,
+footer dd {
   font-size: 0.79em;
-  padding: 0;
 }
 
-.site-footer nav a {
-  border-bottom: none;
+footer ul a,
+footer dd a {
+  border-bottom-color: transparent;
+}
+
+footer ul a:hover, footer ul a:focus,
+footer dd a:hover,
+footer dd a:focus {
+  border-bottom-color: currentColor;
+}
+
+.site-footer {
+  margin-top: 1.5rem;
+}
+
+.site-footer nav ul {
+  padding: 0;
 }
 
 .footer-nav {
@@ -1789,6 +1839,7 @@ a.site-title {
 }
 
 .site-reference a:hover, .site-reference a:focus {
+  border: none;
   color: #eff0f1;
   text-decoration: underline;
 }
@@ -1797,14 +1848,95 @@ a.site-title {
   .site-reference ul {
     -ms-flex-flow: row wrap;
         flex-flow: row wrap;
+    margin-right: 1.25rem;
   }
 }
 
 /**
  * 5.3 Article
  */
-article header time:before {
-  content: "@ ";
+/**
+ * 5.3.1 Article: Post (Single)
+ *
+ * @since 0.14.0
+ */
+.single-post .article-header {
+  margin-bottom: 3rem;
+}
+
+.single-post .article-header time {
+  font-size: 0.79em;
+}
+
+.single-post .article-header time:before {
+  background-image: url(../images/icons/time.svg);
+}
+
+.single-post .article-container figure.article-image {
+  margin-bottom: 1.5rem;
+  margin-left: -2rem;
+  max-width: none;
+  width: 100vw;
+}
+
+.single-post .article-body {
+  padding-bottom: 1.5em;
+}
+
+.single-post .article-footer {
+  border-top: 8px solid #f2f2f2;
+  color: #475055;
+  margin: 0 -2rem;
+  padding: 1.5rem 2rem .75rem;
+}
+
+.single-post .article-footer dl {
+  padding-bottom: .75rem;
+}
+
+.single-post .article-footer dl dt:after {
+  content: none;
+}
+
+.single-post .article-footer dt {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.single-post .article-footer dd {
+  display: inline-block;
+}
+
+.single-post .article-footer a {
+  color: #191919;
+}
+
+.single-post .article-footer a:hover, .single-post .article-footer a:focus {
+  color: #c60c30;
+}
+
+@media (min-width: 43em) {
+  .single-post .article-container .article-content {
+    width: 70%;
+  }
+  .single-post .article-container figure.article-image {
+    float: right;
+    margin-right: calc(-43% - 2rem);
+    margin-left: 0;
+    padding: 0 2rem;
+    max-width: 34em;
+    width: 50vw;
+  }
+  .single-post .article-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    margin-right: calc(-43% - 2rem);
+  }
+  .single-post .article-footer dl:last-child {
+    margin-right: 25%;
+  }
 }
 
 /**

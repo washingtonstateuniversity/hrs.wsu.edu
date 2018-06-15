@@ -99,6 +99,7 @@ footer {
 }
 
 .site-footer {
+	margin-top: 1.5rem;
 
 	nav ul {
 		padding: 0;
@@ -188,6 +189,14 @@ footer {
 
 	.article-header {
 		margin-bottom: 3rem;
+
+		time {
+			font-size: $font-size-0;
+
+			&:before {
+				background-image: url(../images/icons/time.svg);
+			}
+		}
 	}
 
 	.article-container figure.article-image {
@@ -266,10 +275,6 @@ footer {
 		}
 	}
 
-}
-
-article header time:before {
-	content: "@ ";
 }
 
 /**
