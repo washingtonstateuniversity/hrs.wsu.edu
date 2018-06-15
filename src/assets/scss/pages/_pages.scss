@@ -115,6 +115,11 @@
 		display: block;
 		padding: .9em;
 
+		&:after {
+			background-image: url(../images/icons/link_light.svg);
+			background-size: 70%;
+		}
+
 		&:hover,
 		&:focus {
 			background-color: $nav-color-hover;

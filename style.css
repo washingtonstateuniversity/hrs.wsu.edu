@@ -1093,11 +1093,13 @@ figure .wp-caption-text:before,
   width: 1em;
 }
 
-.search-links a {
+.search-links a,
+.home-detail-subnav h2 a {
   border-bottom-color: transparent;
 }
 
-.search-links a:after {
+.search-links a:after,
+.home-detail-subnav h2 a:after {
   background: url(../images/icons/link.svg);
   background-position: center 100%;
   background-repeat: no-repeat;
@@ -1109,7 +1111,9 @@ figure .wp-caption-text:before,
   width: 1em;
 }
 
-.search-links a:hover, .search-links a:focus {
+.search-links a:hover, .search-links a:focus,
+.home-detail-subnav h2 a:hover,
+.home-detail-subnav h2 a:focus {
   border-bottom-color: currentColor;
 }
 
@@ -2046,6 +2050,11 @@ footer dd a:focus {
   color: #fff;
   display: block;
   padding: .9em;
+}
+
+.home-detail-subnav h2 a:after {
+  background-image: url(../images/icons/link_light.svg);
+  background-size: 70%;
 }
 
 .home-detail-subnav h2 a:hover, .home-detail-subnav h2 a:focus {
