@@ -130,6 +130,46 @@ main input[type="submit"] {
  * 2.3 Images
  */
 
+/* Contextual mini-icons. */
+figure .wp-caption-text,
+.article-header time {
+
+	&:before {
+		background-image: url(../images/icons/label.svg);
+		background-position: center 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: "";
+		display: inline-block;
+		height: 1em;
+		margin: 0 .4em -.2em 0;
+		width: 1em;
+	}
+
+}
+
+.search-links a {
+	border-bottom-color: transparent;
+
+	&:after {
+		background: url(../images/icons/link.svg);
+		background-position: center 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: "";
+		display: inline-block;
+		height: 1em;
+		margin: .05em 0 -.05em .3em;
+		width: 1em;
+	}
+
+	&:hover,
+	&:focus {
+		border-bottom-color: currentColor;
+	}
+
+}
+
 /* @todo Determine what this applies to, if anything. */
 .section-wrapper-has-background {
 	min-height: 600px !important;

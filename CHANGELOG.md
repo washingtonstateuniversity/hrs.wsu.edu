@@ -32,6 +32,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Globalize contextual mini-icon :before and :after styles.
 - Restyle the single post footer to align more with the site footers.
 
 ### Added
