@@ -149,7 +149,8 @@ figure .wp-caption-text,
 }
 
 .search-links a,
-.home-detail-subnav h2 a {
+.home-detail-subnav h2 a,
+.article-taxonomy--primary ul a {
 	border-bottom-color: transparent;
 
 	&:after {

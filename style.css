@@ -1094,12 +1094,14 @@ figure .wp-caption-text:before,
 }
 
 .search-links a,
-.home-detail-subnav h2 a {
+.home-detail-subnav h2 a,
+.article-taxonomy--primary ul a {
   border-bottom-color: transparent;
 }
 
 .search-links a:after,
-.home-detail-subnav h2 a:after {
+.home-detail-subnav h2 a:after,
+.article-taxonomy--primary ul a:after {
   background: url(../images/icons/link.svg);
   background-position: center 100%;
   background-repeat: no-repeat;
@@ -1113,7 +1115,9 @@ figure .wp-caption-text:before,
 
 .search-links a:hover, .search-links a:focus,
 .home-detail-subnav h2 a:hover,
-.home-detail-subnav h2 a:focus {
+.home-detail-subnav h2 a:focus,
+.article-taxonomy--primary ul a:hover,
+.article-taxonomy--primary ul a:focus {
   border-bottom-color: currentColor;
 }
 
@@ -1859,6 +1863,25 @@ footer dd a:focus {
 /**
  * 5.3 Article
  */
+.article-taxonomy--primary ul {
+  font-size: 0.79em;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-taxonomy--primary ul a {
+  color: #475055;
+}
+
+.article-taxonomy--primary ul a:after {
+  background-size: 80%;
+}
+
+.article-taxonomy--primary ul a:hover, .article-taxonomy--primary ul a:focus {
+  color: #c60c30;
+}
+
 /**
  * 5.3.1 Article: Post (Single)
  *
