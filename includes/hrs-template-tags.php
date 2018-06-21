@@ -18,9 +18,12 @@ namespace WSU\HRS\Template_Tags;
  *
  * @param int $id Post ID
  * @param string $taxonomy The taxonomy name.
+ * @param bool $show_title Optional. Whether to display the taxonomy title. Default true.
+ * @param string $container_tag Optional. The HTML element used to contain the list of terms. Default is a data list (`dl` tag).
+ * @param string $item_tag Optional. The HTML element used to contain each item in the list of terms. Default is a data list definition (`dd` tag).
  * @return string|false|WP_Error List of terms on success, false if no taxonomy or terms exist, WP_Error on failure.
  */
-function get_terms( $id, $taxonomy ) {
+function get_terms( $id, $taxonomy, $show_title = true, $container_tag = 'dl', $item_tag = 'dd' ) {
 
 	if ( ! isset( $taxonomy ) || ! taxonomy_exists( $taxonomy ) ) {
 		return false;
@@ -47,18 +50,19 @@ function get_terms( $id, $taxonomy ) {
 		return false;
 	}
 
-	$container_start = '<dl class="article-taxonomy ' . esc_attr( $taxonomy ) . '">';
-	$container_end   = '</dl>';
+	$container_start = '<' . $container_tag . ' class="article-taxonomy ' . esc_attr( $taxonomy ) . '">';
+	$container_end   = '</' . $container_tag . '>';
+	$term_title      = ( true === $show_title ) ? '<dt>' . esc_html( $term_title ) . '</dt>' : '';
 	$terms_list      = array();
 
 	foreach ( $terms as $term ) {
 		$term_link = get_term_link( $term->term_id, $taxonomy );
 		if ( ! is_wp_error( $term_link ) ) {
-				$terms_list[] = '<dd><a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a></dd>';
+				$terms_list[] = '<' . $item_tag . '><a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a></' . $item_tag . '>';
 		}
 	}
 
-	return $container_start . '<dt>' . esc_html( $term_title ) . '</dt>' . join( '', $terms_list ) . $container_end;
+	return $container_start . $term_title . join( '', $terms_list ) . $container_end;
 }
 
 /**
@@ -66,11 +70,15 @@ function get_terms( $id, $taxonomy ) {
  *
  * @since 0.14.0
  *
- *
+ * @param int $id Post ID
+ * @param string $taxonomy The taxonomy name.
+ * @param bool $show_title Optional. Whether to display the taxonomy title. Default true.
+ * @param string $container_tag Optional. The HTML element used to contain the list of terms. Default is a data list (`dl` tag).
+ * @param string $item_tag Optional. The HTML element used to contain each item in the list of terms. Default is a data list definition (`dd` tag).
  * @return false|void False on WordPress error.
  */
-function the_terms( $id, $taxonomy ) {
-	$terms_list = \WSU\HRS\Template_Tags\get_terms( $id, $taxonomy );
+function the_terms( $id, $taxonomy, $show_title = true, $container_tag = 'dl', $item_tag = 'dd' ) {
+	$terms_list = \WSU\HRS\Template_Tags\get_terms( $id, $taxonomy, $show_title, $container_tag, $item_tag );
 
 	if ( is_wp_error( $terms_list ) ) {
 		return false;
