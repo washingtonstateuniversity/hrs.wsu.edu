@@ -11,6 +11,20 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+	<?php if ( has_term( '', 'hrs_unit' ) ) : ?>
+
+		<section class="row single gutter pad-top article-taxonomy--primary">
+
+			<div class="column one">
+
+				<?php WSU\HRS\Template_Tags\the_terms( $post->ID, 'hrs_unit', false, 'ul', 'li' ); ?>
+
+			</div><!--/column-->
+
+		</section>
+
+	<?php endif; ?>
+
 	<section class="row single gutter pad-top article-container">
 
 		<div class="column one">
