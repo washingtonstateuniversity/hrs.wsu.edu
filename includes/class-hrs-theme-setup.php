@@ -61,6 +61,7 @@ class HRS_Theme_Setup {
 		add_action( 'after_setup_theme', array( $this, 'get_hrs_spine_schema' ), 5 );
 		add_filter( 'spine_get_title', array( $this, 'hrs_get_page_title' ) );
 		add_filter( 'spine_enable_builder_module', '__return_true' );
+		add_filter( 'spine_option_defaults', array( $this, 'hrs_spine_option_defaults' ) );
 	}
 
 	/**
@@ -113,6 +114,99 @@ class HRS_Theme_Setup {
 		update_option( 'spine_schema', $hrs_schema );
 
 		return $hrs_schema;
+	}
+
+	/**
+	 * Updates the Spine options list with HRS's default options.
+	 *
+	 * Overrides some of the default Spine options (typically set in the
+	 * Customizer) to align with the HRS child theme. The full HRS defaults are:
+	 *
+	 *   'spine_version'             => '2',
+	 *   'grid_style'                => 'fluid',
+	 *   'campus_location'           => '',
+	 *   'spine_color'               => 'white',
+	 *   'large_format'              => ' folio max-1386', // Max Width 1386px
+	 *   'theme_style'               => 'skeletal',
+	 *   'secondary_colors'          => 'default', // Crimson
+	 *   'theme_spacing'             => 'default', // 2em
+	 *   'global_main_header_sup'    => '',
+	 *   'global_main_header_sub'    => '',
+	 *   'main_header_show'          => true,
+	 *   'articletitle_show'         => true,
+	 *   'articletitle_header'       => false,
+	 *   'broken_binding'            => false,
+	 *   'bleed'                     => true,
+	 *   'search_state'              => 'closed',
+	 *   'crop'                      => true, // Cropped Spine (homepage)
+	 *   'spineless'                 => true, // Spineless (homepage) checked
+	 *   'open_sans'                 => '0', // Off
+	 *   'contact_name'              => 'Washington State University',
+	 *   'contact_department'        => 'Human Resource Services',
+	 *   'contact_url'               => 'https://hrs.wsu.edu/',
+	 *   'contact_streetAddress'     => 'PO Box 641014',
+	 *   'contact_addressLocality'   => 'Pullman, WA',
+	 *   'contact_postalCode'        => '99164',
+	 *   'contact_telephone'         => '509-335-4521',
+	 *   'contact_email'             => 'hrs@wsu.edu',
+	 *   'contact_ContactPoint'      => 'http://hrs.wsu.edu/hrs-contacts/',
+	 *   'contact_ContactPointTitle' => 'Contact Page...',
+	 *   'archive_content_display'   => 'full',
+	 *   'social_spot_one_type'      => 'facebook',
+	 *   'social_spot_one'           => 'https://www.facebook.com/wsuhrs',
+	 *   'social_spot_two_type'      => 'twitter',
+	 *   'social_spot_two'           => 'https://twitter.com/wsupullman',
+	 *   'social_spot_three_type'    => 'linkedin',
+	 *   'social_spot_three'         => 'https://www.linkedin.com/company/washington-state-university',
+	 *   'social_spot_four_type'     => 'directory',
+	 *   'social_spot_four'          => 'https://socialmedia.wsu.edu/',
+	 *   'post_social_placement'     => 'none',
+	 *   'show_author_page'          => '0',
+	 *   'show_breadcrumbs'          => 'top', // Only valid with Breadcrumb NavXT plugin installed.
+	 *   'front_page_title'          => false,
+	 *   'page_for_posts_title'      => false,
+	 *
+	 * @since 0.14.0
+	 *
+	 * @param array $spine_options The list of default Spine options.
+	 * @return array The updated list of default options.
+	 */
+	public function hrs_spine_option_defaults( $spine_options ) {
+
+		// Defaults for the spine options to merge with HRS defaults.
+		$spine_defaults = spine_get_option_defaults();
+
+		$hrs_defaults = array(
+			'grid_style'              => 'fluid',
+			'spine_color'             => 'white',
+			'theme_style'             => 'skeletal',
+			'large_format'            => ' folio max-1386',
+			'crop'                    => true,
+	   	    'spineless'               => true,
+	   	    'bleed'                   => true,
+			'open_sans'               => '0',
+	   	    'contact_name'            => 'Washington State University',
+	   	    'contact_department'      => 'Human Resource Services',
+	   	    'contact_url'             => 'https://hrs.wsu.edu/',
+	   	    'contact_streetAddress'   => 'PO Box 641014',
+	   	    'contact_addressLocality' => 'Pullman, WA',
+	   	    'contact_postalCode'      => '99164',
+	   	    'contact_telephone'       => '509-335-4521',
+	   	    'contact_email'           => 'hrs@wsu.edu',
+	   	    'contact_ContactPoint'    => 'http://hrs.wsu.edu/hrs-contacts/',
+	   	    'social_spot_one_type'    => 'facebook',
+	   	    'social_spot_one'         => 'https://www.facebook.com/wsuhrs',
+	   	    'social_spot_two_type'    => 'twitter',
+	   	    'social_spot_two'         => 'https://twitter.com/wsupullman',
+	   	    'social_spot_three_type'  => 'linkedin',
+	   	    'social_spot_three'       => 'https://www.linkedin.com/company/washington-state-university',
+	   	    'social_spot_four_type'   => 'directory',
+	   	    'social_spot_four'        => 'https://socialmedia.wsu.edu/',
+		);
+
+		$spine_options = wp_parse_args( $hrs_defaults, $spine_defaults );
+
+		return $spine_options;
 	}
 
 	/**

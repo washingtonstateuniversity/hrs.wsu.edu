@@ -37,6 +37,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Method in the setup class to set HRS's default Spine options, overriding some of the default Spine options.
 - Default label icon svg.
 - WSU time icon svg.
 - Custom template tags to get and display any taxonomy terms, formatted at a data list element.
