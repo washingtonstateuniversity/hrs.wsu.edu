@@ -70,7 +70,7 @@ function hrs_login_styles() {
 	wp_enqueue_style( 'hrs-login-style', get_stylesheet_directory_uri() . '/assets/css/login-style.css', false, hrs_get_script_version() );
 }
 
-add_filter( 'excerpt_length', 'hrs_excerpt_length');
+add_filter( 'excerpt_length', 'hrs_excerpt_length' );
 /**
  * Sets the default excerpt word count.
  *
@@ -84,7 +84,7 @@ function hrs_excerpt_length( $word_count ) {
 	return $word_count;
 }
 
-add_filter( 'excerpt_more', 'hrs_excerpt_more_link');
+add_filter( 'excerpt_more', 'hrs_excerpt_more_link' );
 /**
  * Removes the default Read More link from excerpts.
  *

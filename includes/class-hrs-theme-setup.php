@@ -78,6 +78,8 @@ class HRS_Theme_Setup {
 		require __DIR__ . '/shortcode-last-updated.php';
 		// The HRS template tags.
 		require __DIR__ . '/hrs-template-tags.php';
+		// WP database queries.
+		require __DIR__ . '/hrs-queries.php';
 	}
 
 	/**
@@ -182,26 +184,26 @@ class HRS_Theme_Setup {
 			'theme_style'             => 'skeletal',
 			'large_format'            => ' folio max-1386',
 			'crop'                    => true,
-	   	    'spineless'               => true,
-	   	    'bleed'                   => true,
+			'spineless'               => true,
+			'bleed'                   => true,
 			'open_sans'               => '0',
-	   	    'contact_name'            => 'Washington State University',
-	   	    'contact_department'      => 'Human Resource Services',
-	   	    'contact_url'             => 'https://hrs.wsu.edu/',
-	   	    'contact_streetAddress'   => 'PO Box 641014',
-	   	    'contact_addressLocality' => 'Pullman, WA',
-	   	    'contact_postalCode'      => '99164',
-	   	    'contact_telephone'       => '509-335-4521',
-	   	    'contact_email'           => 'hrs@wsu.edu',
-	   	    'contact_ContactPoint'    => 'http://hrs.wsu.edu/hrs-contacts/',
-	   	    'social_spot_one_type'    => 'facebook',
-	   	    'social_spot_one'         => 'https://www.facebook.com/wsuhrs',
-	   	    'social_spot_two_type'    => 'twitter',
-	   	    'social_spot_two'         => 'https://twitter.com/wsupullman',
-	   	    'social_spot_three_type'  => 'linkedin',
-	   	    'social_spot_three'       => 'https://www.linkedin.com/company/washington-state-university',
-	   	    'social_spot_four_type'   => 'directory',
-	   	    'social_spot_four'        => 'https://socialmedia.wsu.edu/',
+			'contact_name'            => 'Washington State University',
+			'contact_department'      => 'Human Resource Services',
+			'contact_url'             => 'https://hrs.wsu.edu/',
+			'contact_streetAddress'   => 'PO Box 641014',
+			'contact_addressLocality' => 'Pullman, WA',
+			'contact_postalCode'      => '99164',
+			'contact_telephone'       => '509-335-4521',
+			'contact_email'           => 'hrs@wsu.edu',
+			'contact_ContactPoint'    => 'http://hrs.wsu.edu/hrs-contacts/',
+			'social_spot_one_type'    => 'facebook',
+			'social_spot_one'         => 'https://www.facebook.com/wsuhrs',
+			'social_spot_two_type'    => 'twitter',
+			'social_spot_two'         => 'https://twitter.com/wsupullman',
+			'social_spot_three_type'  => 'linkedin',
+			'social_spot_three'       => 'https://www.linkedin.com/company/washington-state-university',
+			'social_spot_four_type'   => 'directory',
+			'social_spot_four'        => 'https://socialmedia.wsu.edu/',
 		);
 
 		$spine_options = wp_parse_args( $hrs_defaults, $spine_defaults );
