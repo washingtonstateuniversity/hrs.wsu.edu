@@ -35,18 +35,21 @@ main,
 		box-sizing: border-box;
 	}
 
-	section {
+	section,
+	.page-header {
 		background-color: $section-background-color;
 	}
 }
 
 @media (min-width: $large) {
 
-	main section {
+	main section,
+	main .page-header {
 		border-left: 8px solid $body-background-color;
 	}
 
-	.home main section {
+	.home main section,
+	.home main .page-header {
 		border-left: none;
 	}
 
