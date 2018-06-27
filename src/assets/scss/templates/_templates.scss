@@ -10,6 +10,7 @@
  *     - 5.3 Article
  *         - 5.3.1 Post (Single)
  *     - 5.4 Archive
+ *         - 5.4.1 Taxonomy
  *     - 5.4 Multi-part Page
  *
  * @since 0.9.0
@@ -205,25 +206,25 @@ footer {
  * @since 0.14.0
  */
 
-.single-post {
+.article-header time {
+	font-size: $font-size-0;
 
-	.article-header {
-		margin-bottom: 3rem;
-
-		time {
-			font-size: $font-size-0;
-
-			&:before {
-				background-image: url(../images/icons/time.svg);
-			}
-		}
+	&:before {
+		background-image: url(../images/icons/time.svg);
 	}
+}
+
+.single-post {
 
 	.article-container figure.article-image {
 		margin-bottom: 1.5rem;
 		margin-left: -2rem;
 		max-width: none;
 		width: 100vw;
+	}
+
+	.article-header {
+		margin-bottom: 3rem;
 	}
 
 	.article-body {
@@ -301,7 +302,72 @@ footer {
  * 5.4 Archive
  */
 
-.recent-articles {}
+/**
+ * 5.4.1 Taxonomy Archive
+ *
+ * @since 0.14.1
+ */
+
+.page-header {
+	padding: 1.5rem 2rem;
+
+	h1 {
+		text-transform: capitalize;
+	}
+}
+
+.article-archive h2 {
+	margin-bottom: 2.25rem;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.article-archive article {
+	border-bottom: 6px solid $body-background-color;
+	padding: .75rem 0;
+}
+
+.article-archive footer {
+	display: none;
+}
+
+section.latest {
+	border-top: 8px solid $body-background-color;
+	border-bottom: 8px solid $body-background-color;
+
+	article {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: $medium) {
+
+	.features .articles-list {
+
+		article {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.article-image {
+			order: -1;
+		}
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.features .articles-list {
+
+		article {
+			grid-auto-rows: 1fr 2fr;
+			grid-template-columns: repeat(2, minmax(220px, 1fr));
+		}
+	}
+
+}
 
 /**
  * 5.4 Multi-part Page
