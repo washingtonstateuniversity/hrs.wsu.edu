@@ -24,7 +24,8 @@ html {
 	background-color: $body-background-color;
 }
 
-main {
+main,
+.site-header {
 	color: $text-color;
 	font: 400 18px/28px $sans-serif-fonts;
 
@@ -34,18 +35,21 @@ main {
 		box-sizing: border-box;
 	}
 
-	section {
+	section,
+	.page-header {
 		background-color: $section-background-color;
 	}
 }
 
 @media (min-width: $large) {
 
-	main section {
+	main section,
+	main .page-header {
 		border-left: 8px solid $body-background-color;
 	}
 
-	.home main section {
+	.home main section,
+	.home main .page-header {
 		border-left: none;
 	}
 
@@ -88,7 +92,8 @@ blockquote {
  * 1.3 Links
  */
 
-main {
+main,
+.site-header {
 
 	a {
 		border-bottom: 1px solid $nav-color-border;
@@ -111,7 +116,7 @@ main {
 }
 
 .article-title a,
-.site-title a {
+a.site-title {
 	border-color: transparent;
 
 	&:hover,
@@ -124,6 +129,10 @@ main {
  * 1.4 Lists
  */
 
+dl dt,
+dl dd {
+	display: block;
+}
 
 /**
  * 1.5 Utility

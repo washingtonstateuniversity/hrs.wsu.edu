@@ -8,7 +8,9 @@
  *     - 5.1 Header
  *     - 5.2 Footer
  *     - 5.3 Article
+ *         - 5.3.1 Post (Single)
  *     - 5.4 Archive
+ *         - 5.4.1 Taxonomy
  *     - 5.4 Multi-part Page
  *
  * @since 0.9.0
@@ -20,7 +22,8 @@
  * @since 0.11.0
  */
 
-.banner {
+.site-header {
+	margin: 50px 0 -50px;
 
 	.column {
 		align-items: center;
@@ -34,7 +37,11 @@
 
 }
 
-.site-title {
+.home .site-header {
+	margin-left: 0;
+}
+
+a.site-title {
 	border: none;
 	color: $brand-crimson;
 	font-size: $font-size-4;
@@ -43,7 +50,7 @@
 
 @media (min-width: $medium) {
 
-	.site-title {
+	a.site-title {
 		font-size: $font-size-6;
 		margin: 1rem 2rem;
 	}
@@ -52,15 +59,17 @@
 
 @media (min-width: $large) {
 
-	.banner {
+	.site-header {
+		margin: 0 0 0 198px;
 
 		.column {
+			border-left: 8px solid $body-background-color;
 			padding: 0 2rem;
 		}
 
 	}
 
-	.site-title {
+	a.site-title {
 		font-size: $font-size-7;
 		margin: 1.5rem 2rem;
 	}
@@ -73,19 +82,28 @@
  * @since 0.11.0
  */
 
-.site-footer {
+footer {
 
-	nav {
-
-		ul {
-			font-size: $font-size-0;
-			padding: 0;
-		}
+	ul,
+	dd {
+		font-size: $font-size-0;
 
 		a {
-			border-bottom: none;
-		}
+			border-bottom-color: transparent;
 
+			&:hover,
+			&:focus {
+				border-bottom-color: currentColor;
+			}
+		}
+	}
+}
+
+.site-footer {
+	margin-top: 1.5rem;
+
+	nav ul {
+		padding: 0;
 	}
 
 }
@@ -140,6 +158,7 @@
 
 		&:hover,
 		&:focus {
+			border: none;
 			color: $neutral-light;
 			text-decoration: underline;
 		}
@@ -150,6 +169,7 @@
 
 	.site-reference ul {
 		flex-flow: row wrap;
+		margin-right: 1.25rem;
 	}
 
 }
@@ -158,17 +178,196 @@
  * 5.3 Article
  */
 
-.article-date {}
+.article-containter {}
 
-article header time:before {
-	content: "@ ";
+.article-taxonomy--primary ul {
+	font-size: $font-size-0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	a {
+		color: $neutral-dark;
+
+		&:after {
+			background-size: 80%;
+		}
+
+		&:hover,
+		&:focus {
+			color: $nav-color-hover;
+		}
+	}
+}
+
+/**
+ * 5.3.1 Article: Post (Single)
+ *
+ * @since 0.14.0
+ */
+
+.article-header time {
+	font-size: $font-size-0;
+
+	&:before {
+		background-image: url(../images/icons/time.svg);
+	}
+}
+
+.single-post {
+
+	.article-container figure.article-image {
+		margin-bottom: 1.5rem;
+		margin-left: -2rem;
+		max-width: none;
+		width: 100vw;
+	}
+
+	.article-header {
+		margin-bottom: 3rem;
+	}
+
+	.article-body {
+		padding-bottom: 1.5em;
+	}
+
+	.article-footer {
+		border-top: 8px solid $body-background-color;
+		color: $neutral-dark;
+		margin: 0 -2rem;
+		padding: 1.5rem 2rem .75rem;
+
+		dl {
+			padding-bottom: .75rem;
+
+			dt:after {
+				content: none;
+			}
+		}
+
+		dt {
+			font-weight: 600;
+			line-height: 1.4;
+		}
+
+		dd {
+			display: inline-block;
+		}
+
+		a {
+			color: $text-color;
+
+			&:hover,
+			&:focus {
+				color: $nav-color-hover;
+			}
+		}
+	}
+}
+
+@media (min-width: $medium) {
+
+	.single-post {
+
+		.article-container {
+
+			.article-content {
+				width: 70%;
+			}
+
+			figure.article-image {
+				float: right;
+				margin-right: calc(-43% - 2rem);
+				margin-left: 0;
+				padding: 0 2rem;
+				max-width: $small;
+				width: 50vw;
+			}
+		}
+
+		.article-footer {
+			display: flex;
+			justify-content: space-between;
+			margin-right: calc(-43% - 2rem);
+
+			dl:last-child {
+				margin-right: 25%;
+			}
+		}
+	}
+
 }
 
 /**
  * 5.4 Archive
  */
 
-.recent-articles {}
+/**
+ * 5.4.1 Taxonomy Archive
+ *
+ * @since 0.14.1
+ */
+
+.page-header {
+	padding: 1.5rem 2rem;
+
+	h1 {
+		text-transform: capitalize;
+	}
+}
+
+.article-archive h2 {
+	margin-bottom: 2.25rem;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.article-archive article {
+	border-bottom: 6px solid $body-background-color;
+	padding: .75rem 0;
+}
+
+.article-archive footer {
+	display: none;
+}
+
+section.latest {
+	border-top: 8px solid $body-background-color;
+	border-bottom: 8px solid $body-background-color;
+
+	article {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: $medium) {
+
+	.features .articles-list {
+
+		article {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.article-image {
+			order: -1;
+		}
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.features .articles-list {
+
+		article {
+			grid-auto-rows: 1fr 2fr;
+			grid-template-columns: repeat(2, minmax(220px, 1fr));
+		}
+	}
+
+}
 
 /**
  * 5.4 Multi-part Page

@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 0.13.1
+Version: 0.14.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -89,6 +89,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @since 0.11.0
  */
+/* #475055 */
 /**
  * 1.6.4 Typography
  *
@@ -136,26 +137,35 @@ html {
   background-color: #f2f2f2;
 }
 
-main {
+main,
+.site-header {
   color: #191919;
   font: 400 18px/28px "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
 }
 
 main *,
 main *:before,
-main *:after {
+main *:after,
+.site-header *,
+.site-header *:before,
+.site-header *:after {
   box-sizing: border-box;
 }
 
-main section {
+main section,
+main .page-header,
+.site-header section,
+.site-header .page-header {
   background-color: #fdfdfd;
 }
 
 @media (min-width: 61.875em) {
-  main section {
+  main section,
+  main .page-header {
     border-left: 8px solid #f2f2f2;
   }
-  .home main section {
+  .home main section,
+  .home main .page-header {
     border-left: none;
   }
 }
@@ -195,7 +205,8 @@ blockquote {
 /**
  * 1.3 Links
  */
-main a {
+main a,
+.site-header a {
   border-bottom: 1px solid #da1e00;
   color: #191919;
   font-weight: 600;
@@ -203,30 +214,38 @@ main a {
   transition: all .3s ease;
 }
 
-main a:hover, main a:focus {
+main a:hover, main a:focus,
+.site-header a:hover,
+.site-header a:focus {
   color: #c60c30;
 }
 
-main figure > a {
+main figure > a,
+.site-header figure > a {
   border-bottom: none;
   display: block;
   position: relative;
 }
 
 .article-title a,
-.site-title a {
+a.site-title {
   border-color: transparent;
 }
 
 .article-title a:hover, .article-title a:focus,
-.site-title a:hover,
-.site-title a:focus {
+a.site-title:hover,
+a.site-title:focus {
   border-color: currentColor;
 }
 
 /**
  * 1.4 Lists
  */
+dl dt,
+dl dd {
+  display: block;
+}
+
 /**
  * 1.5 Utility
  */
@@ -945,7 +964,8 @@ main .button, main .button-cta,
 main input[type="submit"],
 main button,
 main input[type="button"],
-main input[type="reset"] {
+main input[type="reset"],
+.site-header button {
   background: #fff;
   border: 1px solid #981e32;
   border-radius: 3px;
@@ -968,7 +988,9 @@ main button:focus,
 main input[type="button"]:hover,
 main input[type="button"]:focus,
 main input[type="reset"]:hover,
-main input[type="reset"]:focus {
+main input[type="reset"]:focus,
+.site-header button:hover,
+.site-header button:focus {
   background: #c60c30;
   border: 1px solid #da1e00;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
@@ -979,7 +1001,8 @@ main .button:active, main .button-cta:active,
 main input:active[type="submit"],
 main button:active,
 main input[type="button"]:active,
-main input[type="reset"]:active {
+main input[type="reset"]:active,
+.site-header button:active {
   background: #6d1624;
   border: 1px solid #475055;
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
@@ -1004,7 +1027,7 @@ main input[type="submit"]:active {
   background: #eff0f1;
 }
 
-main .button-flat {
+.button-flat {
   border-radius: 3px;
   display: inline-block;
   line-height: 1.5;
@@ -1017,12 +1040,12 @@ main .button-flat {
   font-weight: 400;
 }
 
-main .button-flat:hover, main .button-flat:focus {
+.button-flat:hover, .button-flat:focus {
   background: #c60c30;
   color: #fff;
 }
 
-main .button-flat:active {
+.button-flat:active {
   background: #6d1624;
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
 }
@@ -1060,6 +1083,57 @@ main .button-flat:active {
 /**
  * 2.3 Images
  */
+/* Contextual mini-icons. */
+figure .wp-caption-text:before,
+.article-header time:before,
+.page-header h1:before {
+  background-image: url(../images/icons/label.svg);
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 1em;
+  margin: 0 .4em -.2em 0;
+  width: 1em;
+}
+
+.search-links a,
+.home-detail-subnav h2 a,
+.article-taxonomy--primary ul a,
+.cards .article-title a,
+.articles-list .article-title a {
+  border-bottom-color: transparent;
+}
+
+.search-links a:after,
+.home-detail-subnav h2 a:after,
+.article-taxonomy--primary ul a:after,
+.cards .article-title a:after,
+.articles-list .article-title a:after {
+  background: url(../images/icons/link.svg);
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 1em;
+  margin: .05em 0 -.05em .3em;
+  width: 1em;
+}
+
+.search-links a:hover, .search-links a:focus,
+.home-detail-subnav h2 a:hover,
+.home-detail-subnav h2 a:focus,
+.article-taxonomy--primary ul a:hover,
+.article-taxonomy--primary ul a:focus,
+.cards .article-title a:hover,
+.cards .article-title a:focus,
+.articles-list .article-title a:hover,
+.articles-list .article-title a:focus {
+  border-bottom-color: currentColor;
+}
+
 /* @todo Determine what this applies to, if anything. */
 .section-wrapper-has-background {
   min-height: 600px !important;
@@ -1141,7 +1215,15 @@ main .button-flat:active {
 .cards .card,
 .recent-articles article,
 .recent-articles .card {
-  display: grid;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.cards .article-summary,
+.recent-articles .article-summary {
+  margin-top: .5em;
 }
 
 .cards .article-image,
@@ -1150,10 +1232,17 @@ main .button-flat:active {
       order: -1;
 }
 
-.cards .article-taxonomy,
-.recent-articles .article-taxonomy {
+.cards .article-footer,
+.recent-articles .article-footer {
   -ms-flex-order: -2;
       order: -2;
+}
+
+.cards .article-title a:after,
+.articles-list .article-title a:after {
+  background-size: 50%;
+  margin: -.17em 0 0;
+  position: absolute;
 }
 
 /**
@@ -1199,6 +1288,7 @@ figure img {
 }
 
 figcaption {
+  color: #475055;
   font-size: 0.889em;
   letter-spacing: .02em;
   line-height: normal;
@@ -1471,66 +1561,52 @@ input[type="number"] {
 /**
  * 3.10 Row Lists
  */
-.articles-list article,
-.articles-list .list-item {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  margin: 0 0 1.5em;
-}
-
-.articles-list .article-image {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  -ms-flex: 0 0 100px;
-      flex: 0 0 100px;
-  line-height: 0;
-  margin-right: 1em;
-}
-
-.articles-list .list-content {
-  -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
-}
-
-.articles-list .article-header {
-  -ms-flex-align: start;
-      align-items: flex-start;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
-}
-
-.articles-list .article-title {
+.articles-list .article-title,
+.recent-articles .article-title,
+.cards .article-title {
+  line-height: 1.1;
   font-size: 1.424em;
+  font-weight: 900;
+  padding: .5em 0 .2em;
+}
+
+.articles-list .article-footer,
+.recent-articles .article-footer,
+.cards .article-footer {
+  border: none;
+  color: #191919;
+  margin: 0 0 .5em;
   padding: 0;
-  margin-right: auto;
 }
 
-.articles-list time {
-  white-space: nowrap;
+.latest .articles-list .article-title,
+.features .articles-list .article-title {
+  font-size: 1.802em;
 }
 
-.articles-list .article-excerpt,
-.articles-list time {
-  display: none;
-}
-
-.articles-list p {
-  padding: .5em 0 0;
-}
-
-@media (min-width: 34em) {
-  .articles-list .article-header {
-    display: -ms-flexbox;
-    display: flex;
+@media (min-width: 43em) {
+  .articles-list article {
+    display: grid;
+    grid-template-columns: minmax(220px, 3fr) minmax(220px, 1fr);
+    grid-column-gap: 2rem;
   }
-  .articles-list time {
-    display: inline;
-    padding-left: 1em;
+  .articles-list .article-header,
+  .articles-list .article-summary {
+    grid-column: 1;
   }
-  .articles-list .article-excerpt {
-    display: block;
+  .articles-list .article-image {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+  section:not(.features) .articles-list article {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 61.875em;
+  }
+  section:not(.features) .articles-list .article-image {
+    margin-top: .75em;
+    max-height: 7em;
+    overflow: hidden;
   }
 }
 
@@ -1544,7 +1620,7 @@ input[type="number"] {
   display: flex;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  padding: 5.5rem 2rem 1.5rem;
+  padding: 9rem 2rem 1.5rem;
   position: absolute;
   top: 4.8rem;
   -ms-transform: translateY(-100rem);
@@ -1599,15 +1675,13 @@ input[type="number"] {
 }
 
 .search-links a:after {
-  background: url(/wp-content/themes/hrs.wsu.edu/assets/images/icons/link.svg) no-repeat;
-  background-position: .1em;
   background-size: 80%;
-  content: "";
-  display: inline-block;
-  height: 1em;
-  margin: .2em 0 -.05em .1em;
-  position: absolute;
-  width: 1em;
+}
+
+@media (min-width: 34em) {
+  #search-menu {
+    padding-top: 7.5rem;
+  }
 }
 
 @media (min-width: 43em) {
@@ -1640,7 +1714,9 @@ input[type="number"] {
  *     - 5.1 Header
  *     - 5.2 Footer
  *     - 5.3 Article
+ *         - 5.3.1 Post (Single)
  *     - 5.4 Archive
+ *         - 5.4.1 Taxonomy
  *     - 5.4 Multi-part Page
  *
  * @since 0.9.0
@@ -1650,7 +1726,11 @@ input[type="number"] {
  *
  * @since 0.11.0
  */
-.banner .column {
+.site-header {
+  margin: 50px 0 -50px;
+}
+
+.site-header .column {
   -ms-flex-align: center;
       align-items: center;
   border-top: 8px solid #981e32;
@@ -1663,7 +1743,11 @@ input[type="number"] {
   z-index: 900;
 }
 
-.site-title {
+.home .site-header {
+  margin-left: 0;
+}
+
+a.site-title {
   border: none;
   color: #981e32;
   font-size: 1.424em;
@@ -1671,17 +1755,21 @@ input[type="number"] {
 }
 
 @media (min-width: 43em) {
-  .site-title {
+  a.site-title {
     font-size: 1.802em;
     margin: 1rem 2rem;
   }
 }
 
 @media (min-width: 61.875em) {
-  .banner .column {
+  .site-header {
+    margin: 0 0 0 198px;
+  }
+  .site-header .column {
+    border-left: 8px solid #f2f2f2;
     padding: 0 2rem;
   }
-  .site-title {
+  a.site-title {
     font-size: 2.027em;
     margin: 1.5rem 2rem;
   }
@@ -1692,13 +1780,28 @@ input[type="number"] {
  *
  * @since 0.11.0
  */
-.site-footer nav ul {
+footer ul,
+footer dd {
   font-size: 0.79em;
-  padding: 0;
 }
 
-.site-footer nav a {
-  border-bottom: none;
+footer ul a,
+footer dd a {
+  border-bottom-color: transparent;
+}
+
+footer ul a:hover, footer ul a:focus,
+footer dd a:hover,
+footer dd a:focus {
+  border-bottom-color: currentColor;
+}
+
+.site-footer {
+  margin-top: 1.5rem;
+}
+
+.site-footer nav ul {
+  padding: 0;
 }
 
 .footer-nav {
@@ -1759,6 +1862,7 @@ input[type="number"] {
 }
 
 .site-reference a:hover, .site-reference a:focus {
+  border: none;
   color: #eff0f1;
   text-decoration: underline;
 }
@@ -1767,19 +1871,177 @@ input[type="number"] {
   .site-reference ul {
     -ms-flex-flow: row wrap;
         flex-flow: row wrap;
+    margin-right: 1.25rem;
   }
 }
 
 /**
  * 5.3 Article
  */
-article header time:before {
-  content: "@ ";
+.article-taxonomy--primary ul {
+  font-size: 0.79em;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-taxonomy--primary ul a {
+  color: #475055;
+}
+
+.article-taxonomy--primary ul a:after {
+  background-size: 80%;
+}
+
+.article-taxonomy--primary ul a:hover, .article-taxonomy--primary ul a:focus {
+  color: #c60c30;
+}
+
+/**
+ * 5.3.1 Article: Post (Single)
+ *
+ * @since 0.14.0
+ */
+.article-header time {
+  font-size: 0.79em;
+}
+
+.article-header time:before {
+  background-image: url(../images/icons/time.svg);
+}
+
+.single-post .article-container figure.article-image {
+  margin-bottom: 1.5rem;
+  margin-left: -2rem;
+  max-width: none;
+  width: 100vw;
+}
+
+.single-post .article-header {
+  margin-bottom: 3rem;
+}
+
+.single-post .article-body {
+  padding-bottom: 1.5em;
+}
+
+.single-post .article-footer {
+  border-top: 8px solid #f2f2f2;
+  color: #475055;
+  margin: 0 -2rem;
+  padding: 1.5rem 2rem .75rem;
+}
+
+.single-post .article-footer dl {
+  padding-bottom: .75rem;
+}
+
+.single-post .article-footer dl dt:after {
+  content: none;
+}
+
+.single-post .article-footer dt {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.single-post .article-footer dd {
+  display: inline-block;
+}
+
+.single-post .article-footer a {
+  color: #191919;
+}
+
+.single-post .article-footer a:hover, .single-post .article-footer a:focus {
+  color: #c60c30;
+}
+
+@media (min-width: 43em) {
+  .single-post .article-container .article-content {
+    width: 70%;
+  }
+  .single-post .article-container figure.article-image {
+    float: right;
+    margin-right: calc(-43% - 2rem);
+    margin-left: 0;
+    padding: 0 2rem;
+    max-width: 34em;
+    width: 50vw;
+  }
+  .single-post .article-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    margin-right: calc(-43% - 2rem);
+  }
+  .single-post .article-footer dl:last-child {
+    margin-right: 25%;
+  }
 }
 
 /**
  * 5.4 Archive
  */
+/**
+ * 5.4.1 Taxonomy Archive
+ *
+ * @since 0.14.1
+ */
+.page-header {
+  padding: 1.5rem 2rem;
+}
+
+.page-header h1 {
+  text-transform: capitalize;
+}
+
+.article-archive h2 {
+  margin-bottom: 2.25rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.article-archive article {
+  border-bottom: 6px solid #f2f2f2;
+  padding: .75rem 0;
+}
+
+.article-archive footer {
+  display: none;
+}
+
+section.latest {
+  border-top: 8px solid #f2f2f2;
+  border-bottom: 8px solid #f2f2f2;
+}
+
+section.latest article {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 43em) {
+  .features .articles-list article {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+  .features .articles-list .article-image {
+    -ms-flex-order: -1;
+        order: -1;
+  }
+}
+
+@media (min-width: 43em) {
+  .features .articles-list article {
+    grid-auto-rows: 1fr 2fr;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
 /**
  * 5.4 Multi-part Page
  */
@@ -1884,6 +2146,11 @@ article header time:before {
   color: #fff;
   display: block;
   padding: .9em;
+}
+
+.home-detail-subnav h2 a:after {
+  background-image: url(../images/icons/link_light.svg);
+  background-size: 70%;
 }
 
 .home-detail-subnav h2 a:hover, .home-detail-subnav h2 a:focus {

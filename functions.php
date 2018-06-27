@@ -16,7 +16,7 @@
  *
  * @since 0.7.0
  */
-$hrs_child_theme_version = '0.13.1';
+$hrs_child_theme_version = '0.14.0';
 
 /**
  * Sets up basic theme configuration and WordPress API settings.
@@ -68,6 +68,33 @@ add_action( 'login_enqueue_scripts', 'hrs_login_styles' );
  */
 function hrs_login_styles() {
 	wp_enqueue_style( 'hrs-login-style', get_stylesheet_directory_uri() . '/assets/css/login-style.css', false, hrs_get_script_version() );
+}
+
+add_filter( 'excerpt_length', 'hrs_excerpt_length' );
+/**
+ * Sets the default excerpt word count.
+ *
+ * @since 0.14.0
+ *
+ * @return int The number of words to trim the automatic excerpt to.
+ */
+function hrs_excerpt_length( $word_count ) {
+	$word_count = 20;
+
+	return $word_count;
+}
+
+add_filter( 'excerpt_more', 'hrs_excerpt_more_link' );
+/**
+ * Removes the default Read More link from excerpts.
+ *
+ * @since 0.14.0
+ *
+ */
+function hrs_excerpt_more_link( $excerpt_more ) {
+	$excerpt_more = '<span class="more">&hellip;</span>';
+
+	return $excerpt_more;
 }
 
 add_filter( 'login_headerurl', 'hrs_login_logo_url' );

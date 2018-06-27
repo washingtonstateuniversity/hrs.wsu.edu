@@ -20,17 +20,52 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## (next release) (unreleased)
+## (future) (unreleased)
 
 ### Todo
 
-- Move article footer inside the `section` element.
 - Set max width on text-based content like posts and standard pages, open #30.
-- Clean up templates.
 - Set up grid fallbacks, open #31.
 - Set up no-js handling for the search form and menu, open #34.
 - Get Babel processing working, open #35.
 - Determine if we really need the `center-middle` utility class. If yes, look into using a flex or grid with `Xvh` and `Xvh` column and row size to center instead.
+
+## 0.14.0 (2018-06-27)
+
+### Changed
+
+- Update article list (grid row) styling to be more flexible and to include feature images.
+- Update default Spine options to hide author pages since HRS does not use them.
+- Globalize contextual mini-icon :before and :after styles.
+- Restyle the single post footer to align more with the site footers.
+
+### Added
+
+- Base styles for archive page(s) layout.
+- Method to filter the default WP Query for HRS Unit taxonomy term archives.
+- Special archive template for HRS Unit taxonomy term archives.
+- Default archive template for author, category, CPT, taxonomy, date, and, tag archives.
+- Article template for displaying archive post content.
+- Method in the setup class to set HRS's default Spine options, overriding some of the default Spine options.
+- Default label icon svg.
+- WSU time icon svg.
+- Custom template tags to get and display any taxonomy terms, formatted at a data list element.
+- Fetch and display the HRS Unit taxonomy terms on posts.
+- Template tags file for custom HRS child theme template tags, when needed.
+- Create new HRS taxonomy to categorize posts by HRS unit(s).
+- Template for displaying individual post content inside the single template to adjust markup of the parent theme version (remove sidebar).
+- Template for displaying individual post views to adjust the markup of the parent theme version (remove the featured image background).
+- PHP doc header information for `footers.php`, close #21.
+- A new template part called `before-main.php` that displays the site header. This used to be displayed by `headers.php`, but we want the site header outside of the `main` element, close #22.
+
+### Deprecated
+
+- Silenced the output of the `headers.php` file because we don't want the parent theme to display its default headers inside the `main` element.
+
+### Removed
+
+- Author info section removed from `articles/post.php` template.
+- Deleted the `header.php` file because it simply duplicated the parent theme version, close #19.
 
 ## 0.13.1 (2018-06-08)
 
@@ -52,7 +87,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
-- Clean up `functions.php` to remove unneeded methods and refactor the rest.
+- Clean up `functions.php` to remove unneeded methods and refactor the rest, fix #17.
 - Prefer to enqueue the login page CSS rather than inline it.
 - Rename HRS nav menus for easier identification.
 - Move WP menu(s) registration into the setup class.
