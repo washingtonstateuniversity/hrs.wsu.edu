@@ -132,7 +132,8 @@ main input[type="submit"] {
 
 /* Contextual mini-icons. */
 figure .wp-caption-text,
-.article-header time {
+.article-header time,
+.page-header h1 {
 
 	&:before {
 		background-image: url(../images/icons/label.svg);
@@ -150,7 +151,9 @@ figure .wp-caption-text,
 
 .search-links a,
 .home-detail-subnav h2 a,
-.article-taxonomy--primary ul a {
+.article-taxonomy--primary ul a,
+.cards .article-title a,
+.articles-list .article-title a {
 	border-bottom-color: transparent;
 
 	&:after {
