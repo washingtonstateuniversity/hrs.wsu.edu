@@ -7,6 +7,7 @@
  * @package WSU_Human_Resources_Services
  * @since 0.14.0
  */
+global $is_feature;
 
 if ( is_category() ) {
 	$index_type = 'category';
@@ -30,6 +31,8 @@ if ( is_category() ) {
 }
 
 $page = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+$is_feature = false;
 
 get_header();
 ?>
