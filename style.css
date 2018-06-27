@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 0.13.1
+Version: 0.14.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -153,15 +153,19 @@ main *:after,
 }
 
 main section,
-.site-header section {
+main .page-header,
+.site-header section,
+.site-header .page-header {
   background-color: #fdfdfd;
 }
 
 @media (min-width: 61.875em) {
-  main section {
+  main section,
+  main .page-header {
     border-left: 8px solid #f2f2f2;
   }
-  .home main section {
+  .home main section,
+  .home main .page-header {
     border-left: none;
   }
 }
@@ -1081,7 +1085,8 @@ main input[type="submit"]:active {
  */
 /* Contextual mini-icons. */
 figure .wp-caption-text:before,
-.article-header time:before {
+.article-header time:before,
+.page-header h1:before {
   background-image: url(../images/icons/label.svg);
   background-position: center 100%;
   background-repeat: no-repeat;
@@ -1095,13 +1100,17 @@ figure .wp-caption-text:before,
 
 .search-links a,
 .home-detail-subnav h2 a,
-.article-taxonomy--primary ul a {
+.article-taxonomy--primary ul a,
+.cards .article-title a,
+.articles-list .article-title a {
   border-bottom-color: transparent;
 }
 
 .search-links a:after,
 .home-detail-subnav h2 a:after,
-.article-taxonomy--primary ul a:after {
+.article-taxonomy--primary ul a:after,
+.cards .article-title a:after,
+.articles-list .article-title a:after {
   background: url(../images/icons/link.svg);
   background-position: center 100%;
   background-repeat: no-repeat;
@@ -1117,7 +1126,11 @@ figure .wp-caption-text:before,
 .home-detail-subnav h2 a:hover,
 .home-detail-subnav h2 a:focus,
 .article-taxonomy--primary ul a:hover,
-.article-taxonomy--primary ul a:focus {
+.article-taxonomy--primary ul a:focus,
+.cards .article-title a:hover,
+.cards .article-title a:focus,
+.articles-list .article-title a:hover,
+.articles-list .article-title a:focus {
   border-bottom-color: currentColor;
 }
 
@@ -1202,7 +1215,15 @@ figure .wp-caption-text:before,
 .cards .card,
 .recent-articles article,
 .recent-articles .card {
-  display: grid;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.cards .article-summary,
+.recent-articles .article-summary {
+  margin-top: .5em;
 }
 
 .cards .article-image,
@@ -1211,10 +1232,17 @@ figure .wp-caption-text:before,
       order: -1;
 }
 
-.cards .article-taxonomy,
-.recent-articles .article-taxonomy {
+.cards .article-footer,
+.recent-articles .article-footer {
   -ms-flex-order: -2;
       order: -2;
+}
+
+.cards .article-title a:after,
+.articles-list .article-title a:after {
+  background-size: 50%;
+  margin: -.17em 0 0;
+  position: absolute;
 }
 
 /**
@@ -1533,66 +1561,52 @@ input[type="number"] {
 /**
  * 3.10 Row Lists
  */
-.articles-list article,
-.articles-list .list-item {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  margin: 0 0 1.5em;
-}
-
-.articles-list .article-image {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  -ms-flex: 0 0 100px;
-      flex: 0 0 100px;
-  line-height: 0;
-  margin-right: 1em;
-}
-
-.articles-list .list-content {
-  -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
-}
-
-.articles-list .article-header {
-  -ms-flex-align: start;
-      align-items: flex-start;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
-}
-
-.articles-list .article-title {
+.articles-list .article-title,
+.recent-articles .article-title,
+.cards .article-title {
+  line-height: 1.1;
   font-size: 1.424em;
+  font-weight: 900;
+  padding: .5em 0 .2em;
+}
+
+.articles-list .article-footer,
+.recent-articles .article-footer,
+.cards .article-footer {
+  border: none;
+  color: #191919;
+  margin: 0 0 .5em;
   padding: 0;
-  margin-right: auto;
 }
 
-.articles-list time {
-  white-space: nowrap;
+.latest .articles-list .article-title,
+.features .articles-list .article-title {
+  font-size: 1.802em;
 }
 
-.articles-list .article-excerpt,
-.articles-list time {
-  display: none;
-}
-
-.articles-list p {
-  padding: .5em 0 0;
-}
-
-@media (min-width: 34em) {
-  .articles-list .article-header {
-    display: -ms-flexbox;
-    display: flex;
+@media (min-width: 43em) {
+  .articles-list article {
+    display: grid;
+    grid-template-columns: minmax(220px, 3fr) minmax(220px, 1fr);
+    grid-column-gap: 2rem;
   }
-  .articles-list time {
-    display: inline;
-    padding-left: 1em;
+  .articles-list .article-header,
+  .articles-list .article-summary {
+    grid-column: 1;
   }
-  .articles-list .article-excerpt {
-    display: block;
+  .articles-list .article-image {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+  section:not(.features) .articles-list article {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 61.875em;
+  }
+  section:not(.features) .articles-list .article-image {
+    margin-top: .75em;
+    max-height: 7em;
+    overflow: hidden;
   }
 }
 
@@ -1702,6 +1716,7 @@ input[type="number"] {
  *     - 5.3 Article
  *         - 5.3.1 Post (Single)
  *     - 5.4 Archive
+ *         - 5.4.1 Taxonomy
  *     - 5.4 Multi-part Page
  *
  * @since 0.9.0
@@ -1887,15 +1902,11 @@ footer dd a:focus {
  *
  * @since 0.14.0
  */
-.single-post .article-header {
-  margin-bottom: 3rem;
-}
-
-.single-post .article-header time {
+.article-header time {
   font-size: 0.79em;
 }
 
-.single-post .article-header time:before {
+.article-header time:before {
   background-image: url(../images/icons/time.svg);
 }
 
@@ -1904,6 +1915,10 @@ footer dd a:focus {
   margin-left: -2rem;
   max-width: none;
   width: 100vw;
+}
+
+.single-post .article-header {
+  margin-bottom: 3rem;
 }
 
 .single-post .article-body {
@@ -1969,6 +1984,64 @@ footer dd a:focus {
 /**
  * 5.4 Archive
  */
+/**
+ * 5.4.1 Taxonomy Archive
+ *
+ * @since 0.14.1
+ */
+.page-header {
+  padding: 1.5rem 2rem;
+}
+
+.page-header h1 {
+  text-transform: capitalize;
+}
+
+.article-archive h2 {
+  margin-bottom: 2.25rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.article-archive article {
+  border-bottom: 6px solid #f2f2f2;
+  padding: .75rem 0;
+}
+
+.article-archive footer {
+  display: none;
+}
+
+section.latest {
+  border-top: 8px solid #f2f2f2;
+  border-bottom: 8px solid #f2f2f2;
+}
+
+section.latest article {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 43em) {
+  .features .articles-list article {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+  .features .articles-list .article-image {
+    -ms-flex-order: -1;
+        order: -1;
+  }
+}
+
+@media (min-width: 43em) {
+  .features .articles-list article {
+    grid-auto-rows: 1fr 2fr;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
 /**
  * 5.4 Multi-part Page
  */

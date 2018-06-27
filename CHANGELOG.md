@@ -20,7 +20,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 0.14.0 (unreleased)
+## (future) (unreleased)
 
 ### Todo
 
@@ -30,13 +30,22 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Get Babel processing working, open #35.
 - Determine if we really need the `center-middle` utility class. If yes, look into using a flex or grid with `Xvh` and `Xvh` column and row size to center instead.
 
+## 0.14.0 (2018-06-27)
+
 ### Changed
 
+- Update article list (grid row) styling to be more flexible and to include feature images.
+- Update default Spine options to hide author pages since HRS does not use them.
 - Globalize contextual mini-icon :before and :after styles.
 - Restyle the single post footer to align more with the site footers.
 
 ### Added
 
+- Base styles for archive page(s) layout.
+- Method to filter the default WP Query for HRS Unit taxonomy term archives.
+- Special archive template for HRS Unit taxonomy term archives.
+- Default archive template for author, category, CPT, taxonomy, date, and, tag archives.
+- Article template for displaying archive post content.
 - Method in the setup class to set HRS's default Spine options, overriding some of the default Spine options.
 - Default label icon svg.
 - WSU time icon svg.

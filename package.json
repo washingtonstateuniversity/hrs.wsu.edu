@@ -1,6 +1,6 @@
 {
   "name": "hrs.wsu.edu",
-  "version": "0.13.1",
+  "version": "0.14.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/washingtonstateuniversity/hrs.wsu.edu"
@@ -18,16 +18,16 @@
     "Firefox ESR"
   ],
   "devDependencies": {
-    "autoprefixer": "^8.6.x",
+    "autoprefixer": "^8.6.4",
     "cpx": "^1.5.x",
     "cssnano": "^3.10.x",
     "eslint": "^4.19.x",
     "eslint-config-wordpress": "^2.0.x",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.8.x",
-    "postcss-cli": "^5.0.x",
+    "postcss-cli": "^5.0.1",
     "rimraf": "^2.6.x",
-    "stylelint": "^9.2.x",
+    "stylelint": "^9.3.0",
     "svgo": "^1.0.x",
     "uglify-es": "^3.3.x"
   },
