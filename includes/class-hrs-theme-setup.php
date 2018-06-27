@@ -196,6 +196,7 @@ class HRS_Theme_Setup {
 			'contact_telephone'       => '509-335-4521',
 			'contact_email'           => 'hrs@wsu.edu',
 			'contact_ContactPoint'    => 'http://hrs.wsu.edu/hrs-contacts/',
+			'show_author_page'        => '0',
 			'social_spot_one_type'    => 'facebook',
 			'social_spot_one'         => 'https://www.facebook.com/wsuhrs',
 			'social_spot_two_type'    => 'twitter',
