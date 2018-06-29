@@ -8,7 +8,7 @@
 
 namespace WSU\HRS\Queries;
 
-add_action( 'pre_get_posts', 'WSU\HRS\Queries\filter_hrs_units_tax_query', 10 );
+add_action( 'pre_get_posts', 'WSU\HRS\Queries\hrs_filter_query', 10 );
 
 /**
  * Filters the main tax query for the HRS Units tax.
@@ -18,7 +18,15 @@ add_action( 'pre_get_posts', 'WSU\HRS\Queries\filter_hrs_units_tax_query', 10 );
  *
  * @param \WP_Query $query
  */
-function filter_hrs_units_tax_query( $query ) {
+function hrs_filter_query( $query ) {
+
+	/* Exclude posts in the reminder category from the posts home query. */
+	if ( ! is_admin() && is_home() ) {
+		$reminders = get_category_by_slug( 'reminders' );
+		$query->set( 'category__not_in', intval( $reminders->term_id ) );
+		return;
+	}
+
 	if ( is_admin() || ! $query->is_main_query() || ! is_tax( 'hrs_unit' ) ) {
 		return;
 	}
