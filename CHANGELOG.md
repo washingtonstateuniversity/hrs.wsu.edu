@@ -30,6 +30,24 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Get Babel processing working, open #35.
 - Determine if we really need the `center-middle` utility class. If yes, look into using a flex or grid with `Xvh` and `Xvh` column and row size to center instead.
 
+## 0.15.0 (unreleased)
+
+### Todo
+
+- Get paging working on the posts archive templates
+
+### Changed
+
+- Update page header.
+
+### Added
+
+- Base styles for the posts home page.
+- Method to display a gallery of taxonomy term titles.
+- Method to retrieve recent posts categorized as "reminders."
+- Icons for bookmarks and events.
+- A `home.php` template to handle display and layout of the home posts page.
+
 ## 0.14.0 (2018-06-27)
 
 ### Changed
