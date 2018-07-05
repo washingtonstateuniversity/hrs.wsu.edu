@@ -359,33 +359,34 @@ input[type="number"] {
  * 3.9 Pagination
  */
 
-.nav-links,
 .pager {
 	margin: 1.5rem auto;
-	padding: 1.5rem 0;
 
-	a,
-	.page-numbers {
+	ul {
+		display: flex;
+		flex-flow: row nowrap;
+		padding: 0;
+	}
+
+	.pagination a {
 		border: 1px solid transparent;
+		display: block;
 		margin: 0 .25em;
 		padding: .75em 1em;
 
 		&:hover,
 		&:focus {
-			background: $brand-crimson;
-			color: #fff;
+			background: $nav-color-hover;
+			color: $section-background-color;
 		}
 	}
 
 	.current {
-		background: $neutral-light;
+		background: $body-background-color;
 		border: 1px solid $neutral-dark;
-	}
-
-	/* Override excess padding from Spine. @todo Clean up template maybe. */
-	&.pad-ends .column {
-		padding-top: 0;
-		padding-bottom: 0;
+		display: block;
+		margin: 0 .25em;
+		padding: .75em 1em;
 	}
 }
 
@@ -398,6 +399,17 @@ input[type="number"] {
 .nav-next {
 	float: right;
 	text-align: right;
+}
+
+@media (min-width: $small) {
+
+	.pager {
+
+		ul {
+			font-size: $font-size-base;
+		}
+	}
+
 }
 
 /**
