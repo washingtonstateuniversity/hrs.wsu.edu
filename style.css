@@ -1660,6 +1660,22 @@ input[type="number"] {
   color: #eff0f1;
 }
 
+#search-menu .screen-reader-text:focus {
+  background: #fdfdfd;
+  bottom: 7px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto;
+  -webkit-clip-path: inherit;
+          clip-path: inherit;
+  color: #c60c30;
+  display: block;
+  height: auto;
+  padding: 15px 23px 14px;
+  right: 6px;
+  width: auto;
+  z-index: 100000;
+}
+
 .search-form {
   -ms-flex: 1 1 auto;
       flex: 1 1 auto;
