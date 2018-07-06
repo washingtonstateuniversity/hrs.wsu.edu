@@ -50,6 +50,18 @@ function hrs_enqueue_styles() {
 	wp_enqueue_script( 'hrs-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js', array(), spine_get_script_version(), true );
 }
 
+add_action( 'wp_head', 'hrs_noscript_styles' );
+/**
+ * Adds a noscript element for HRS styles.
+ *
+ * @since 0.15.2
+ */
+function hrs_noscript_styles() {
+	?>
+	<noscript><style>.search-toggle { display: none !important; } #search-menu { padding-top: 1.5rem !important; position: relative !important; top: 0; transform: none !important; }</style></noscript>
+	<?php
+}
+
 add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 /**
  * Removes child theme style call from parent theme.
