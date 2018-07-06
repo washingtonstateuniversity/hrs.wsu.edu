@@ -29,6 +29,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Set up no-js handling for the search form and menu, open #34.
 - Get Babel processing working, open #35.
 
+## 0.15.1 (2018-07-06)
+
+### Fixed
+
+- Update npm dependencies.
+
 ## 0.15.0 (2018-07-06)
 
 ### Changed
