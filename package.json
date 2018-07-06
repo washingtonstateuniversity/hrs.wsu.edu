@@ -20,8 +20,8 @@
   "devDependencies": {
     "autoprefixer": "^8.6.5",
     "cpx": "^1.5.x",
-    "cssnano": "^3.10.x",
-    "eslint": "^4.19.x",
+    "cssnano": "^4.0.x",
+    "eslint": "^5.0.x",
     "eslint-config-wordpress": "^2.0.x",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.9.1",
