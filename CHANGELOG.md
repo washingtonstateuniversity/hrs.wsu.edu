@@ -28,13 +28,8 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Set up grid fallbacks, open #31.
 - Set up no-js handling for the search form and menu, open #34.
 - Get Babel processing working, open #35.
-- Determine if we really need the `center-middle` utility class. If yes, look into using a flex or grid with `Xvh` and `Xvh` column and row size to center instead.
 
-## 0.15.0 (unreleased)
-
-### Todo
-
-- Get paging working on the posts archive templates
+## 0.15.0 (2018-07-06)
 
 ### Changed
 
