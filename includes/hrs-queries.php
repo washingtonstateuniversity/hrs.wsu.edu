@@ -46,9 +46,9 @@ function get_reminder_posts( $output = 'ids' ) {
 	$reminders = get_category_by_slug( 'reminders' );
 
 	$args = array(
-		'post_type' => 'post',
-		'cat' => intval( $reminders->term_id ),
-		'post_status' => array(
+		'post_type'      => 'post',
+		'cat'            => intval( $reminders->term_id ),
+		'post_status'    => array(
 			'publish',
 			'future',
 		),
