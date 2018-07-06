@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 0.14.0
+Version: 0.15.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -248,6 +248,10 @@ dl dd {
 
 /**
  * 1.5 Utility
+ */
+/*
+ * @todo Determine if we really need `center-middle` utility class. If yes,
+ * use flex or grid with `Xvh` and `Xvh` column and row size to center instead.
  */
 .screen-reader-text {
   border: 0;
@@ -1086,7 +1090,8 @@ main input[type="submit"]:active {
 /* Contextual mini-icons. */
 figure .wp-caption-text:before,
 .article-header time:before,
-.page-header h1:before {
+.archive .page-header h1:before,
+.reminders li a:before {
   background-image: url(../images/icons/label.svg);
   background-position: center 100%;
   background-repeat: no-repeat;
@@ -1099,6 +1104,7 @@ figure .wp-caption-text:before,
 }
 
 .search-links a,
+.reminders li a,
 .home-detail-subnav h2 a,
 .article-taxonomy--primary ul a,
 .cards .article-title a,
@@ -1107,6 +1113,7 @@ figure .wp-caption-text:before,
 }
 
 .search-links a:after,
+.reminders li a:after,
 .home-detail-subnav h2 a:after,
 .article-taxonomy--primary ul a:after,
 .cards .article-title a:after,
@@ -1123,6 +1130,8 @@ figure .wp-caption-text:before,
 }
 
 .search-links a:hover, .search-links a:focus,
+.reminders li a:hover,
+.reminders li a:focus,
 .home-detail-subnav h2 a:hover,
 .home-detail-subnav h2 a:focus,
 .article-taxonomy--primary ul a:hover,
@@ -1508,43 +1517,40 @@ input[type="number"] {
 /**
  * 3.9 Pagination
  */
-.nav-links,
 .pager {
   margin: 1.5rem auto;
-  padding: 1.5rem 0;
-  /* Override excess padding from Spine. @todo Clean up template maybe. */
 }
 
-.nav-links a,
-.nav-links .page-numbers,
-.pager a,
-.pager .page-numbers {
+.pager ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  padding: 0;
+}
+
+.pager .pagination a {
   border: 1px solid transparent;
+  display: block;
   margin: 0 .25em;
   padding: .75em 1em;
 }
 
-.nav-links a:hover, .nav-links a:focus,
-.nav-links .page-numbers:hover,
-.nav-links .page-numbers:focus,
-.pager a:hover,
-.pager a:focus,
-.pager .page-numbers:hover,
-.pager .page-numbers:focus {
-  background: #981e32;
-  color: #fff;
+.pager .pagination a:hover, .pager .pagination a:focus {
+  background: #c60c30;
+  color: #fdfdfd;
 }
 
-.nav-links .current,
+.pager .dots,
 .pager .current {
-  background: #eff0f1;
-  border: 1px solid #475055;
+  display: block;
+  margin: 0 .25em;
+  padding: .75em 1em;
 }
 
-.nav-links.pad-ends .column,
-.pager.pad-ends .column {
-  padding-top: 0;
-  padding-bottom: 0;
+.pager .current {
+  background: #f2f2f2;
+  border: 1px solid #475055;
 }
 
 .nav-previous,
@@ -1556,6 +1562,12 @@ input[type="number"] {
 .nav-next {
   float: right;
   text-align: right;
+}
+
+@media (min-width: 34em) {
+  .pager ul {
+    font-size: 1em;
+  }
 }
 
 /**
@@ -1715,6 +1727,7 @@ input[type="number"] {
  *     - 5.2 Footer
  *     - 5.3 Article
  *         - 5.3.1 Post (Single)
+ *     - 5.3 Single page
  *     - 5.4 Archive
  *         - 5.4.1 Taxonomy
  *     - 5.4 Multi-part Page
@@ -1982,6 +1995,15 @@ footer dd a:focus {
 }
 
 /**
+ * 5.3 Single page
+ *
+ * @since 0.15.0
+ */
+.page-header {
+  padding: 1.5rem 2rem;
+}
+
+/**
  * 5.4 Archive
  */
 /**
@@ -1989,12 +2011,12 @@ footer dd a:focus {
  *
  * @since 0.14.1
  */
-.page-header {
-  padding: 1.5rem 2rem;
+.archive .page-header h1 {
+  text-transform: capitalize;
 }
 
-.page-header h1 {
-  text-transform: capitalize;
+.archive .page-header h1:before {
+  background-image: url(../images/icons/bookmarks.svg);
 }
 
 .article-archive h2 {
@@ -2040,6 +2062,11 @@ section.latest article {
     grid-auto-rows: 1fr 2fr;
     grid-template-columns: repeat(2, minmax(220px, 1fr));
   }
+  .features .articles-list .article-footer {
+    position: absolute;
+    left: 2rem;
+    top: 1rem;
+  }
 }
 
 /**
@@ -2052,13 +2079,14 @@ section.latest article {
  * A section for CSS rules targeting specific individual pages. These should be
  * used sparingly and only for unique pages such as the homepage.
  *
- *     - 6.1 Homepage
+ *     - 6.1 Front page
+ *     - 6.2 Posts home page
  *     - 6.2 Spokane and Tri-Cities
  *
  * @since 0.9.0
  */
 /**
- * 6.1 Homepage
+ * 6.1 Front page
  *
  * @since 0.11.0
  */
@@ -2163,7 +2191,92 @@ section.latest article {
 }
 
 /**
- * 6.5 Spokane and Tri-Cities
+ * 6.2 Posts home page
+ *
+ * @since 0.15.0
+ */
+.blog .reminders {
+  padding-top: 3rem;
+}
+
+.blog .reminders h2 {
+  border-left: 12px solid #981e32;
+  border-bottom: 2px solid #981e32;
+  font-style: italic;
+  font-weight: 600;
+  padding: .25em .5em;
+  margin-left: -.3em;
+  margin-bottom: 1.5rem;
+}
+
+.blog .reminders ul {
+  list-style-type: none;
+  padding: 0 0 0 2em;
+}
+
+.blog .reminders ul li {
+  margin-bottom: 1em;
+}
+
+.blog .reminders ul a:before {
+  background-image: url(../images/icons/event.svg);
+  height: 2em;
+  margin-left: -2.6rem;
+  position: absolute;
+  width: 2em;
+}
+
+.blog .reminders ul a:after {
+  background-size: 70%;
+  position: absolute;
+}
+
+.blog .hrs-units-browse {
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.blog .hrs-units-browse .gallery {
+  list-style-type: none;
+  padding: 0;
+}
+
+.blog .hrs-units-browse .gallery a {
+  border: 1px solid #981e32;
+  background-color: #fdfdfd;
+  display: block;
+  font-size: 1.125em;
+  height: 100%;
+  padding: 1.5rem .5rem;
+}
+
+.blog .hrs-units-browse .gallery a:hover, .blog .hrs-units-browse .gallery a:focus {
+  background-color: #c60c30;
+  color: #fdfdfd;
+}
+
+@media (min-width: 34em) {
+  .blog .reminders {
+    padding-top: 0;
+  }
+  .blog .reminders h2 {
+    margin-left: 0;
+  }
+  .blog .features .column {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: 3rem;
+  }
+}
+
+@media (min-width: 43em) {
+  .blog .features .articles-list article {
+    grid-auto-rows: 1fr 1fr;
+  }
+}
+
+/**
+ * 6.3 Spokane and Tri-Cities
  *
  * @since 0.11.0
  */

@@ -1,8 +1,8 @@
 <?php
 /**
- * HRS Unit Taxonomy Archive Template
+ * HRS Posts Home Template
  *
- * The template for displaying lists of posts in the custom HRS Unit taxonomy.
+ * The template for displaying the posts page showing the latest of all posts.
  *
  * @package WSU_Human_Resources_Services
  * @since 0.14.0
@@ -10,8 +10,8 @@
 global $is_feature;
 
 $page            = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$exclude_post_id = array();
 $is_feature      = false;
+$exclude_post_id = array();
 
 get_header();
 ?>
@@ -19,11 +19,11 @@ get_header();
 <main id="wsuwp-main" class="spine-hrs_unit-index">
 
 	<header class="page-header">
-		<?php /* translators: the HRS news archive title: 1: the taxonomy name */ ?>
-		<h1><?php printf( esc_html__( 'HRS News from %s', 'hrs-wsu-edu' ), single_term_title( '', false ) ); ?></h1>
+		<h1><?php esc_html_e( 'News from Human Resource Services', 'hrs-wsu-edu' ) ?></h1>
 	</header>
 
 	<?php
+	// Display the feature layout and reminders section only on the first page.
 	if ( have_posts() && 1 === $page ) :
 		?>
 
@@ -40,27 +40,45 @@ get_header();
 
 						get_template_part( 'articles/archive-content' );
 
+						break;
+
 					endwhile;
 					?>
 
 				</div>
+
+				<?php
+				$reminders = WSU\HRS\Queries\get_reminder_posts( 'objects' );
+
+				if ( $reminders->have_posts() ) :
+					?>
+					<div class="reminders">
+						<h2><?php esc_html_e( 'Reminders', 'hrs-wsu-edu' ); ?></h2>
+						<ul>
+							<?php
+							while ( $reminders->have_posts() ) : $reminders->the_post();
+								$exclude_post_id[] = get_the_ID();
+								?>
+								<li><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></li>
+								<?php
+							endwhile;
+							?>
+						</ul>
+					</div>
+						<?php
+				endif;
+				?>
+
 			</div>
 		</section>
 
 		<?php
-	endif;
+	endif; // End of the feature and reminders sections.
 
 	$is_feature = false;
 
 	$archive_query = new WP_Query( array(
 		'posts_per_page' => 10,
-		'tax_query'      => array(
-			array(
-				'taxonomy' => 'hrs_unit',
-				'field'    => 'slug',
-				'terms'    => get_query_var( 'term' ),
-			),
-		),
 		'post__not_in'   => $exclude_post_id,
 		'paged'          => absint( $page ),
 	) );
@@ -70,6 +88,7 @@ get_header();
 
 		while ( $archive_query->have_posts() ) : $archive_query->the_post();
 
+			// Display special layout and content on the first page only.
 			if ( ! is_paged() ) {
 				if ( 0 === $output_post_count ) {
 					?>
@@ -79,15 +98,27 @@ get_header();
 					<?php
 				}
 
-				if ( 3 === $output_post_count ) {
+				if ( 4 === $output_post_count ) {
 					?>
 							</div>
 						</div>
 					</section>
+
+					<section class="row single gutter pad-ends hrs-units-browse">
+						<div class="column one">
+							<header>
+								<h2><?php esc_html_e( 'Latest From ...', 'hrs-wsu-edu' ); ?></h2>
+							</header>
+							<ul class="gallery gallery-columns-3">
+								<?php \WSU\HRS\Template_Tags\the_terms_gallery( 'hrs_unit' ); ?>
+							</ul>
+						</div>
+					</section>
+
 					<section class="row single gutter pad-ends article-archive">
 						<div class="column one">
 							<header>
-								<h2>More from <?php single_term_title(); ?></h2>
+								<h2>More News from HRS</h2>
 							</header>
 							<div class="articles-list">
 					<?php
@@ -118,7 +149,6 @@ get_header();
 	$pagination = paginate_links( array(
 		'base'               => str_replace( 99164, '%#%', esc_url( get_pagenum_link( 99164 ) ) ),
 		'format'             => 'page/%#%',
-		'total'              => $archive_query->max_num_pages,
 		'type'               => 'list',
 		'current'            => max( 1, get_query_var( 'paged' ) ),
 		'prev_text'          => 'Previous <span class="screen-reader-text">page</span>',

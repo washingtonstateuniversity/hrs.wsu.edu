@@ -4,14 +4,15 @@
  * A section for CSS rules targeting specific individual pages. These should be
  * used sparingly and only for unique pages such as the homepage.
  *
- *     - 6.1 Homepage
+ *     - 6.1 Front page
+ *     - 6.2 Posts home page
  *     - 6.2 Spokane and Tri-Cities
  *
  * @since 0.9.0
  */
 
 /**
- * 6.1 Homepage
+ * 6.1 Front page
  *
  * @since 0.11.0
  */
@@ -133,7 +134,113 @@
 }
 
 /**
- * 6.5 Spokane and Tri-Cities
+ * 6.2 Posts home page
+ *
+ * @since 0.15.0
+ */
+
+.blog {
+
+	.reminders {
+		padding-top: 3rem;
+	}
+
+	.reminders h2 {
+		border-left: 12px solid $brand-crimson;
+		border-bottom: 2px solid $brand-crimson;
+		font-style: italic;
+		font-weight: 600;
+		padding: .25em .5em;
+		margin-left: -.3em;
+		margin-bottom: 1.5rem;
+	}
+
+	.reminders ul {
+		list-style-type: none;
+		padding: 0 0 0 2em;
+
+		li {
+			margin-bottom: 1em;
+		}
+
+		a {
+
+			&:before {
+				background-image: url(../images/icons/event.svg);
+				height: 2em;
+				margin-left: -2.6rem;
+				position: absolute;
+				width: 2em;
+			}
+
+			&:after {
+				background-size: 70%;
+				position: absolute;
+			}
+		}
+	}
+
+	.hrs-units-browse {
+		background-color: $body-background-color;
+		text-align: center;
+
+		.gallery {
+			list-style-type: none;
+			padding: 0;
+
+			a {
+				border: 1px solid $nav-color;
+				background-color: $section-background-color;
+				display: block;
+				font-size: $font-size-2;
+				height: 100%;
+				padding: 1.5rem .5rem;
+
+				&:hover,
+				&:focus {
+					background-color: $nav-color-hover;
+					color: $section-background-color;
+				}
+			}
+		}
+	}
+
+}
+
+@media (min-width: $small) {
+
+	.blog {
+
+		.reminders {
+			padding-top: 0;
+		}
+
+		.reminders h2 {
+			margin-left: 0;
+		}
+
+		.features .column {
+			display: grid;
+			grid-template-columns: 3fr 1fr;
+			grid-column-gap: 3rem;
+		}
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.blog {
+
+		.features .articles-list article {
+			grid-auto-rows: 1fr 1fr;
+		}
+	}
+
+}
+
+/**
+ * 6.3 Spokane and Tri-Cities
  *
  * @since 0.11.0
  */

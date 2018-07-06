@@ -138,6 +138,11 @@ dl dd {
  * 1.5 Utility
  */
 
+/*
+ * @todo Determine if we really need `center-middle` utility class. If yes,
+ * use flex or grid with `Xvh` and `Xvh` column and row size to center instead.
+ */
+
 %center-middle {
 	position: relative;
 

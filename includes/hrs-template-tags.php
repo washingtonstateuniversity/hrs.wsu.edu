@@ -86,3 +86,24 @@ function the_terms( $id, $taxonomy, $show_title = true, $container_tag = 'dl', $
 
 	echo wp_kses_post( $terms_list );
 }
+
+/**
+ * Displays a gallery of all terms in a given taxonomy.
+ *
+ * @since 0.15.0
+ *
+ * @param string $taxonomy The taxonomy name.
+ * @return string The taxonomy output formatted as an unordered gallery list.
+ */
+function the_terms_gallery( $taxonomy ) {
+	$list = wp_list_categories( array(
+		'echo'       => false,
+		'hide_empty' => 0,
+		'taxonomy'   => $taxonomy,
+		'title_li'   => '',
+	) );
+
+	$list = str_replace( 'cat-item', 'gallery-item cat-item', $list );
+
+	echo wp_kses_post( $list );
+}

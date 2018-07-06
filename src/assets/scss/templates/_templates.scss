@@ -9,6 +9,7 @@
  *     - 5.2 Footer
  *     - 5.3 Article
  *         - 5.3.1 Post (Single)
+ *     - 5.3 Single page
  *     - 5.4 Archive
  *         - 5.4.1 Taxonomy
  *     - 5.4 Multi-part Page
@@ -299,6 +300,16 @@ footer {
 }
 
 /**
+ * 5.3 Single page
+ *
+ * @since 0.15.0
+ */
+
+.page-header {
+	padding: 1.5rem 2rem;
+}
+
+/**
  * 5.4 Archive
  */
 
@@ -308,11 +319,14 @@ footer {
  * @since 0.14.1
  */
 
-.page-header {
-	padding: 1.5rem 2rem;
+.archive .page-header {
 
 	h1 {
 		text-transform: capitalize;
+
+		&:before {
+			background-image: url(../images/icons/bookmarks.svg);
+		}
 	}
 }
 
@@ -364,6 +378,12 @@ section.latest {
 		article {
 			grid-auto-rows: 1fr 2fr;
 			grid-template-columns: repeat(2, minmax(220px, 1fr));
+		}
+
+		.article-footer {
+			position: absolute;
+			left: 2rem;
+			top: 1rem;
 		}
 	}
 

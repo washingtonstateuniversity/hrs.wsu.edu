@@ -133,7 +133,8 @@ main input[type="submit"] {
 /* Contextual mini-icons. */
 figure .wp-caption-text,
 .article-header time,
-.page-header h1 {
+.archive .page-header h1,
+.reminders li a {
 
 	&:before {
 		background-image: url(../images/icons/label.svg);
@@ -150,6 +151,7 @@ figure .wp-caption-text,
 }
 
 .search-links a,
+.reminders li a,
 .home-detail-subnav h2 a,
 .article-taxonomy--primary ul a,
 .cards .article-title a,
