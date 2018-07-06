@@ -38,6 +38,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Update archive pages (`home.php`, `archive.php`, and `taxonomy-hrs_unit.php`) to display the most recent 10 posts, include pagination, and only use the special feature layout on the first results page.
 - Update page header.
 
 ### Added

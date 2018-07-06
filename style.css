@@ -1513,43 +1513,40 @@ input[type="number"] {
 /**
  * 3.9 Pagination
  */
-.nav-links,
 .pager {
   margin: 1.5rem auto;
-  padding: 1.5rem 0;
-  /* Override excess padding from Spine. @todo Clean up template maybe. */
 }
 
-.nav-links a,
-.nav-links .page-numbers,
-.pager a,
-.pager .page-numbers {
+.pager ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  padding: 0;
+}
+
+.pager .pagination a {
   border: 1px solid transparent;
+  display: block;
   margin: 0 .25em;
   padding: .75em 1em;
 }
 
-.nav-links a:hover, .nav-links a:focus,
-.nav-links .page-numbers:hover,
-.nav-links .page-numbers:focus,
-.pager a:hover,
-.pager a:focus,
-.pager .page-numbers:hover,
-.pager .page-numbers:focus {
-  background: #981e32;
-  color: #fff;
+.pager .pagination a:hover, .pager .pagination a:focus {
+  background: #c60c30;
+  color: #fdfdfd;
 }
 
-.nav-links .current,
+.pager .dots,
 .pager .current {
-  background: #eff0f1;
-  border: 1px solid #475055;
+  display: block;
+  margin: 0 .25em;
+  padding: .75em 1em;
 }
 
-.nav-links.pad-ends .column,
-.pager.pad-ends .column {
-  padding-top: 0;
-  padding-bottom: 0;
+.pager .current {
+  background: #f2f2f2;
+  border: 1px solid #475055;
 }
 
 .nav-previous,
@@ -1561,6 +1558,12 @@ input[type="number"] {
 .nav-next {
   float: right;
   text-align: right;
+}
+
+@media (min-width: 34em) {
+  .pager ul {
+    font-size: 1em;
+  }
 }
 
 /**
@@ -2207,9 +2210,8 @@ section.latest article {
   padding: 0 0 0 2em;
 }
 
-.blog .reminders ul a {
-  display: block;
-  margin: 1em 0 0;
+.blog .reminders ul li {
+  margin-bottom: 1em;
 }
 
 .blog .reminders ul a:before {
