@@ -49,26 +49,37 @@ get_header();
 
 		while ( have_posts() ) : the_post();
 
-			if ( 0 === $output_post_count ) {
-				?>
-				<section class="row single gutter pad-ends latest">
-					<div class="column one">
-						<div class="cards">
-				<?php
-			}
+			if ( ! is_paged() ) {
 
-			if ( 4 === $output_post_count ) {
-				?>
+				if ( 0 === $output_post_count ) {
+					?>
+					<section class="row single gutter pad-ends latest">
+						<div class="column one">
+							<div class="cards">
+					<?php
+				}
+
+				if ( 4 === $output_post_count ) {
+					?>
+							</div>
 						</div>
-					</div>
-				</section>
-				<section class="row single gutter pad-ends article-archive">
-					<div class="column one">
-						<header>
-							<h2>More <?php echo esc_html( $archive_title ); ?></h2>
-						</header>
-						<div class="articles-list">
-				<?php
+					</section>
+					<section class="row single gutter pad-ends article-archive">
+						<div class="column one">
+							<header>
+								<h2>More <?php echo esc_html( $archive_title ); ?></h2>
+							</header>
+							<div class="articles-list">
+					<?php
+				}
+			} else {
+				if ( 0 === $output_post_count ) {
+					?>
+					<section class="row single gutter pad-ends article-archive">
+						<div class="column one">
+							<div class="articles-list">
+					<?php
+				}
 			}
 
 			get_template_part( 'articles/archive-content' );
@@ -84,10 +95,32 @@ get_header();
 		<?php
 	endif;
 
-	//wp_reset_postdata();
-	?>
+	$pagination = paginate_links( array(
+		'base'               => str_replace( 99164, '%#%', esc_url( get_pagenum_link( 99164 ) ) ),
+		'format'             => 'page/%#%',
+		'type'               => 'list',
+		'current'            => max( 1, get_query_var( 'paged' ) ),
+		'prev_text'          => 'Previous <span class="screen-reader-text">page</span>',
+		'next_text'          => 'Next <span class="screen-reader-text">page</span>',
+		'before_page_number' => '<span class="screen-reader-text">Page </span>',
+	) );
 
-	<?php get_template_part( 'parts/footers' ); ?>
+	if ( ! empty( $pagination ) ) {
+		?>
+		<footer class="article-footer">
+			<section class="row single pager prevnext gutter pad-ends">
+				<div class="column one">
+					<nav class="navigation pagination" role="navigation" aria-label="Pagination navigation">
+						<?php echo wp_kses_post( $pagination ); ?>
+					</nav>
+				</div>
+			</section>
+		</footer>
+		<?php
+	}
+
+	get_template_part( 'parts/footers' );
+	?>
 
 </main><!--/#page-->
 

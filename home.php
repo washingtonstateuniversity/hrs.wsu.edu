@@ -9,9 +9,9 @@
  */
 global $is_feature;
 
-$page = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-
-$is_feature = false;
+$page            = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$is_feature      = false;
+$exclude_post_id = array();
 
 get_header();
 ?>
@@ -23,7 +23,8 @@ get_header();
 	</header>
 
 	<?php
-	if ( have_posts() ) :
+	// Display the feature layout and reminders section only on the first page.
+	if ( have_posts() && 1 === $page ) :
 		?>
 
 		<section class="row single gutter pad-ends features">
@@ -47,16 +48,13 @@ get_header();
 				</div>
 
 				<?php
-				$exclude_post_id = array();
 				$reminders = WSU\HRS\Queries\get_reminder_posts( 'objects' );
 
 				if ( $reminders->have_posts() ) :
 					?>
 					<div class="reminders">
-						<h2><?php _e( 'Reminders', 'hrs-wsu-edu' ); ?></h2>
-
+						<h2><?php esc_html_e( 'Reminders', 'hrs-wsu-edu' ); ?></h2>
 						<ul>
-
 							<?php
 							while ( $reminders->have_posts() ) : $reminders->the_post();
 								$exclude_post_id[] = get_the_ID();
@@ -64,9 +62,7 @@ get_header();
 								<li><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></li>
 								<?php
 							endwhile;
-							wp_reset_postdata();
 							?>
-
 						</ul>
 					</div>
 						<?php
@@ -77,14 +73,14 @@ get_header();
 		</section>
 
 		<?php
-	endif;
+	endif; // End of the feature and reminders sections.
 
 	$is_feature = false;
 
 	$archive_query = new WP_Query( array(
-		'posts_per_page'   => 20,
-		'post__not_in'     => $exclude_post_id,
-		'paged'            => absint( $page ),
+		'posts_per_page' => 10,
+		'post__not_in'   => $exclude_post_id,
+		'paged'          => absint( $page ),
 	) );
 
 	if ( $archive_query->have_posts() ) :
@@ -92,38 +88,49 @@ get_header();
 
 		while ( $archive_query->have_posts() ) : $archive_query->the_post();
 
-			if ( 0 === $output_post_count ) {
-				?>
-				<section class="row single gutter pad-ends latest">
-					<div class="column one">
-						<div class="cards">
-				<?php
-			}
+			// Display special layout and content on the first page only.
+			if ( ! is_paged() ) {
+				if ( 0 === $output_post_count ) {
+					?>
+					<section class="row single gutter pad-ends latest">
+						<div class="column one">
+							<div class="cards">
+					<?php
+				}
 
-			if ( 4 === $output_post_count ) {
-				?>
+				if ( 4 === $output_post_count ) {
+					?>
+							</div>
 						</div>
-					</div>
-				</section>
+					</section>
 
-				<section class="row single gutter pad-ends hrs-units-browse">
-					<div class="column one">
-						<header>
-							<h2><?php _e( 'Latest From ...', 'hrs-wsu-edu' ); ?></h2>
-						</header>
-						<ul class="gallery gallery-columns-3">
-							<?php \WSU\HRS\Template_Tags\the_terms_gallery( 'hrs_unit' ); ?>
-						</ul>
-					</div>
-				</section>
+					<section class="row single gutter pad-ends hrs-units-browse">
+						<div class="column one">
+							<header>
+								<h2><?php esc_html_e( 'Latest From ...', 'hrs-wsu-edu' ); ?></h2>
+							</header>
+							<ul class="gallery gallery-columns-3">
+								<?php \WSU\HRS\Template_Tags\the_terms_gallery( 'hrs_unit' ); ?>
+							</ul>
+						</div>
+					</section>
 
-				<section class="row single gutter pad-ends article-archive">
-					<div class="column one">
-						<header>
-							<h2>More News from HRS</h2>
-						</header>
-						<div class="articles-list">
-				<?php
+					<section class="row single gutter pad-ends article-archive">
+						<div class="column one">
+							<header>
+								<h2>More News from HRS</h2>
+							</header>
+							<div class="articles-list">
+					<?php
+				}
+			} else {
+				if ( 0 === $output_post_count ) {
+					?>
+					<section class="row single gutter pad-ends article-archive">
+						<div class="column one">
+							<div class="articles-list">
+					<?php
+				}
 			}
 
 			get_template_part( 'articles/archive-content' );
@@ -139,7 +146,29 @@ get_header();
 		<?php
 	endif;
 
-	wp_reset_postdata();
+	$pagination = paginate_links( array(
+		'base'               => str_replace( 99164, '%#%', esc_url( get_pagenum_link( 99164 ) ) ),
+		'format'             => 'page/%#%',
+		'type'               => 'list',
+		'current'            => max( 1, get_query_var( 'paged' ) ),
+		'prev_text'          => 'Previous <span class="screen-reader-text">page</span>',
+		'next_text'          => 'Next <span class="screen-reader-text">page</span>',
+		'before_page_number' => '<span class="screen-reader-text">Page </span>',
+	) );
+
+	if ( ! empty( $pagination ) ) {
+		?>
+		<footer class="article-footer">
+			<section class="row single pager prevnext gutter pad-ends">
+				<div class="column one">
+					<nav class="navigation pagination" role="navigation" aria-label="Pagination navigation">
+						<?php echo wp_kses_post( $pagination ); ?>
+					</nav>
+				</div>
+			</section>
+		</footer>
+		<?php
+	}
 
 	get_template_part( 'parts/footers' );
 	?>

@@ -9,11 +9,11 @@
  */
 global $is_feature;
 
+$page            = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$exclude_post_id = array();
+$is_feature      = false;
+
 get_header();
-
-$page = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-
-$is_feature = false;
 ?>
 
 <main id="wsuwp-main" class="spine-hrs_unit-index">
@@ -24,8 +24,7 @@ $is_feature = false;
 	</header>
 
 	<?php
-	$exclude_post_id = array();
-	if ( have_posts() ) :
+	if ( have_posts() && 1 === $page ) :
 		?>
 
 		<section class="row single gutter pad-ends features">
@@ -54,11 +53,13 @@ $is_feature = false;
 	$is_feature = false;
 
 	$archive_query = new WP_Query( array(
-		'posts_per_page' => 20,
+		'posts_per_page' => 10,
 		'tax_query'      => array(
-			'taxonomy' => 'hrs_unit',
-			'field'    => 'name',
-			'terms'    => get_query_var( 'term' ),
+			array(
+				'taxonomy' => 'hrs_unit',
+				'field'    => 'slug',
+				'terms'    => get_query_var( 'term' ),
+			),
 		),
 		'post__not_in'   => $exclude_post_id,
 		'paged'          => absint( $page ),
@@ -69,26 +70,36 @@ $is_feature = false;
 
 		while ( $archive_query->have_posts() ) : $archive_query->the_post();
 
-			if ( 0 === $output_post_count ) {
-				?>
-				<section class="row single gutter pad-ends latest">
-					<div class="column one">
-						<div class="cards">
-				<?php
-			}
+			if ( ! is_paged() ) {
+				if ( 0 === $output_post_count ) {
+					?>
+					<section class="row single gutter pad-ends latest">
+						<div class="column one">
+							<div class="cards">
+					<?php
+				}
 
-			if ( 3 === $output_post_count ) {
-				?>
+				if ( 3 === $output_post_count ) {
+					?>
+							</div>
 						</div>
-					</div>
-				</section>
-				<section class="row single gutter pad-ends article-archive">
-					<div class="column one">
-						<header>
-							<h2>More from <?php single_term_title(); ?></h2>
-						</header>
-						<div class="articles-list">
-				<?php
+					</section>
+					<section class="row single gutter pad-ends article-archive">
+						<div class="column one">
+							<header>
+								<h2>More from <?php single_term_title(); ?></h2>
+							</header>
+							<div class="articles-list">
+					<?php
+				}
+			} else {
+				if ( 0 === $output_post_count ) {
+					?>
+					<section class="row single gutter pad-ends article-archive">
+						<div class="column one">
+							<div class="articles-list">
+					<?php
+				}
 			}
 
 			get_template_part( 'articles/archive-content' );
@@ -104,7 +115,30 @@ $is_feature = false;
 		<?php
 	endif;
 
-	wp_reset_postdata();
+	$pagination = paginate_links( array(
+		'base'               => str_replace( 99164, '%#%', esc_url( get_pagenum_link( 99164 ) ) ),
+		'format'             => 'page/%#%',
+		'total'              => $archive_query->max_num_pages,
+		'type'               => 'list',
+		'current'            => max( 1, get_query_var( 'paged' ) ),
+		'prev_text'          => 'Previous <span class="screen-reader-text">page</span>',
+		'next_text'          => 'Next <span class="screen-reader-text">page</span>',
+		'before_page_number' => '<span class="screen-reader-text">Page </span>',
+	) );
+
+	if ( ! empty( $pagination ) ) {
+		?>
+		<footer class="article-footer">
+			<section class="row single pager prevnext gutter pad-ends">
+				<div class="column one">
+					<nav class="navigation pagination" role="navigation" aria-label="Pagination navigation">
+						<?php echo wp_kses_post( $pagination ); ?>
+					</nav>
+				</div>
+			</section>
+		</footer>
+		<?php
+	}
 
 	get_template_part( 'parts/footers' );
 	?>
