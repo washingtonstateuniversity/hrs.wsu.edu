@@ -28,7 +28,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Set up grid fallbacks, open #31.
 - Get Babel processing working, open #35.
 
-## 0.15.2 (unreleased)
+## 0.15.2 (2018-07-06)
 
 ### Fixed
 

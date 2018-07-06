@@ -16,7 +16,7 @@
  *
  * @since 0.7.0
  */
-$hrs_child_theme_version = '0.15.1';
+$hrs_child_theme_version = '0.15.2';
 
 /**
  * Sets up basic theme configuration and WordPress API settings.
