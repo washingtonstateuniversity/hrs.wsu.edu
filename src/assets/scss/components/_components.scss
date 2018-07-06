@@ -381,12 +381,16 @@ input[type="number"] {
 		}
 	}
 
+	.dots,
 	.current {
-		background: $body-background-color;
-		border: 1px solid $neutral-dark;
 		display: block;
 		margin: 0 .25em;
 		padding: .75em 1em;
+	}
+
+	.current {
+		background: $body-background-color;
+		border: 1px solid $neutral-dark;
 	}
 }
 
