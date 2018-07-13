@@ -28,6 +28,13 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Set up grid fallbacks, open #31.
 - Get Babel processing working, open #35.
 
+## 0.16.0 (unreleased)
+
+### Added
+
+- Shortcode to display the latest HRS posts matching a given criteria.
+- Includes file to store shortcodes related to post lists.
+
 ## 0.15.2 (2018-07-06)
 
 ### Fixed
