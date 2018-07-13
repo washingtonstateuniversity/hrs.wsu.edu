@@ -76,6 +76,8 @@ class HRS_Theme_Setup {
 		require __DIR__ . '/shortcode-document-gallery.php';
 		// The HRS last updated label shortcode.
 		require __DIR__ . '/shortcode-last-updated.php';
+		// The HRS post lists shortcodes.
+		require __DIR__ . '/shortcode-post-lists.php';
 		// The HRS template tags.
 		require __DIR__ . '/hrs-template-tags.php';
 		// WP database queries.
