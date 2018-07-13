@@ -20,13 +20,17 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## (future) (unreleased)
+## 0.16.0 (2018-07-13)
 
-### Todo
+### Changed
 
-- Set max width on text-based content like posts and standard pages, open #30.
-- Set up grid fallbacks, open #31.
-- Get Babel processing working, open #35.
+- Update theme setup class to require the new post lists shortcode file.
+
+### Added
+
+- Methods to retrieve and display the latest HRS posts with some filtering criteria.
+- Shortcode to display the latest HRS posts matching a given criteria.
+- Includes file to store shortcodes related to post lists.
 
 ## 0.15.2 (2018-07-06)
 
