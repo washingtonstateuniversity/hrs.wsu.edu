@@ -179,7 +179,8 @@ footer {
  * 5.3 Article
  */
 
-.article-header {
+.single-post .article-header,
+.page .article-header {
 	margin-bottom: 3rem;
 }
 
