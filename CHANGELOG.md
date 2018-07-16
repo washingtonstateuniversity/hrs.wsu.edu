@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.17.0 (unreleased)
+
+### Added
+
+- Template for displaying default page views, adjusted from the parent theme to display as single instead of two-column layout.
+
 ## 0.16.0 (2018-07-13)
 
 ### Changed
