@@ -20,14 +20,20 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 0.17.0 (unreleased)
+## 0.17.1 (unreleased)
+
+### Fixed
+
+- Page header bottom margin should only apply to main page and single template page headers, not individual archive items.
 
 ### Changed
 
+- Move pagination query and markup from the multiple archive templates into a function.
 - Add width styles to default and Builder template page views to prevent overly long lines of text, fix #30.
 
 ### Added
 
+- Function to retrieve and display archive page post pagination.
 - Template for displaying default page views, adjusted from the parent theme to display as single instead of two-column layout.
 
 ## 0.16.0 (2018-07-13)
