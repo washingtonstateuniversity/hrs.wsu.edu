@@ -16,7 +16,7 @@
 <?php get_template_part( 'parts/headers' ); ?>
 <?php get_template_part( 'parts/featured-images' ); ?>
 
-<section class="row single gutter pad-ends">
+<section class="row single gutter pad-ends article-container">
 
 	<div class="column one">
 

@@ -9,7 +9,7 @@
  *     - 5.2 Footer
  *     - 5.3 Article
  *         - 5.3.1 Post (Single)
- *     - 5.3 Single page
+ *         - 5.3.2 Page (Single)
  *     - 5.4 Archive
  *         - 5.4.1 Taxonomy
  *     - 5.4 Multi-part Page
@@ -179,7 +179,9 @@ footer {
  * 5.3 Article
  */
 
-.article-containter {}
+.article-header {
+	margin-bottom: 3rem;
+}
 
 .article-taxonomy--primary ul {
 	font-size: $font-size-0;
@@ -222,10 +224,6 @@ footer {
 		margin-left: -2rem;
 		max-width: none;
 		width: 100vw;
-	}
-
-	.article-header {
-		margin-bottom: 3rem;
 	}
 
 	.article-body {
@@ -300,13 +298,24 @@ footer {
 }
 
 /**
- * 5.3 Single page
+ * 5.3.2 Article: Page (Single)
  *
  * @since 0.15.0
  */
 
 .page-header {
 	padding: 1.5rem 2rem;
+}
+
+@media (min-width: $large) {
+
+	.page {
+
+		article.page {
+			max-width: 80ch;
+		}
+	}
+
 }
 
 /**
