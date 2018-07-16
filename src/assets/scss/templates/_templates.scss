@@ -179,9 +179,17 @@ footer {
  * 5.3 Article
  */
 
-.single-post .article-header,
-.page .article-header {
-	margin-bottom: 3rem;
+.single-post,
+.page {
+
+	.article-container {
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+	}
+
+	.article-header {
+		margin-bottom: 3rem;
+	}
 }
 
 .article-taxonomy--primary ul {

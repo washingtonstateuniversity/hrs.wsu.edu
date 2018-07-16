@@ -1929,7 +1929,14 @@ footer dd a:focus {
 /**
  * 5.3 Article
  */
-.article-header {
+.single-post .article-container,
+.page .article-container {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.single-post .article-header,
+.page .article-header {
   margin-bottom: 3rem;
 }
 
