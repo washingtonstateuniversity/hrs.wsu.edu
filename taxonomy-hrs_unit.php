@@ -52,17 +52,9 @@ get_header();
 
 	$is_feature = false;
 
-	$archive_query = new WP_Query( array(
-		'posts_per_page' => 10,
-		'tax_query'      => array(
-			array(
-				'taxonomy' => 'hrs_unit',
-				'field'    => 'slug',
-				'terms'    => get_query_var( 'term' ),
-			),
-		),
-		'post__not_in'   => $exclude_post_id,
-		'paged'          => absint( $page ),
+	$archive_query = \WSU\HRS\Queries\get_hrs_unit_posts( array(
+		'post__not_in' => $exclude_post_id,
+		'paged'        => $page,
 	) );
 
 	if ( $archive_query->have_posts() ) :
