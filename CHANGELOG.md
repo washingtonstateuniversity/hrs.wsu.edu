@@ -22,6 +22,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ## 0.17.0 (unreleased)
 
+### Changed
+
+- Add width styles to default and Builder template page views to prevent overly long lines of text, fix #30.
+
 ### Added
 
 - Template for displaying default page views, adjusted from the parent theme to display as single instead of two-column layout.
