@@ -288,6 +288,7 @@ class HRS_Theme_Setup {
 			'labels'            => $labels,
 			'show_ui'           => true,
 			'show_admin_column' => true,
+			'show_in_rest'      => true, // Required for Gutenberg < 3.2.0 to show tax on edit post screen.
 			'query_var'         => true,
 			'rewrite'           => array(
 				'slug' => 'hrs-units',

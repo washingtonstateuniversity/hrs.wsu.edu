@@ -28,6 +28,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Set `show_in_rest` to true to display HRS Units taxonomy in the WP RESP API so that it is enabled in the new Gutenberg editor.
 - Add `break-word` rule to single and page template article content to avoid edge case of overflowing titles and content.
 - Move pagination query and markup from the multiple archive templates into a function.
 - Add width styles to default and Builder template page views to prevent overly long lines of text, fix #30.
