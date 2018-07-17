@@ -87,7 +87,15 @@ h6 {
 }
 
 blockquote {
+	border-left: 4px solid $brand-gray;
 	font-family: $sans-serif-fonts;
+	margin-bottom: 1em;
+	margin-left: 1em;
+	padding: 0 2em 0 1em;
+
+	p:last-child {
+		padding: 0;
+	}
 }
 
 /**
