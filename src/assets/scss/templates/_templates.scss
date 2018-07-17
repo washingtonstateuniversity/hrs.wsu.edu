@@ -68,10 +68,6 @@ a.site-title {
 		}
 	}
 
-	body:not(.home) .site-header .column {
-		border-left: 8px solid $body-background-color;
-	}
-
 	a.site-title {
 		font-size: $font-size-7;
 		margin: 1.5rem 2rem;
