@@ -278,6 +278,38 @@ button.hrs-button-white {
 */
 
 /**
+ * Deprecated Builder Page Styles
+ *
+ * Stop-gap styles targeting Builder Template pages for until the Builder
+ * template is phased out.
+ *
+ * @since 0.17.0
+ */
+
+.page-template-template-builder {
+
+	.h1-header {
+		padding-bottom: 3rem;
+	}
+}
+
+@media (min-width: $large) {
+
+	.page-template-template-builder {
+
+		div.page .row.single .column {
+			width: 70%;
+		}
+
+		div.page .row.single.builder-section-banner .column,
+		div.page .row.single.full-width .column {
+			width: 100%;
+		}
+	}
+
+}
+
+/**
  * Deprecated Builder Banner Styles
  *
  * @since 0.11.0

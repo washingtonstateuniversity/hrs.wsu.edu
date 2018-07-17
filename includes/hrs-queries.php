@@ -68,3 +68,39 @@ function get_reminder_posts( $output = 'ids' ) {
 
 	return $reminders_query;
 }
+
+/**
+ * Retrieves all posts with a given term from the HRS Unit tax.
+ *
+ * @uses \WP_Query()
+ *
+ * @since 0.17.0
+ *
+ * @return array|\WP_Query The posts as an array of IDs or array of post objects.
+ */
+function get_hrs_unit_posts( $args = array() ) {
+	$defaults = array(
+		'posts_per_page' => get_option( 'posts_per_page' ),
+		'tax_query'      => array(
+			array(
+				'taxonomy' => 'hrs_unit',
+				'field'    => 'slug',
+				'terms'    => get_query_var( 'term' ),
+			),
+		),
+		'post__not_in'   => '',
+		'paged'          => get_query_var( 'paged' ),
+		'fields'         => 'objects',
+	);
+
+	$args = wp_parse_args( $args, $defaults );
+
+	$hrsunit_query = new \WP_Query( $args );
+
+	if ( 'ids' === $args['fields'] ) {
+		wp_reset_postdata();
+		return $hrsunit_query;
+	}
+
+	return $hrsunit_query;
+}

@@ -95,29 +95,7 @@ get_header();
 		<?php
 	endif;
 
-	$pagination = paginate_links( array(
-		'base'               => str_replace( 99164, '%#%', esc_url( get_pagenum_link( 99164 ) ) ),
-		'format'             => 'page/%#%',
-		'type'               => 'list',
-		'current'            => max( 1, get_query_var( 'paged' ) ),
-		'prev_text'          => 'Previous <span class="screen-reader-text">page</span>',
-		'next_text'          => 'Next <span class="screen-reader-text">page</span>',
-		'before_page_number' => '<span class="screen-reader-text">Page </span>',
-	) );
-
-	if ( ! empty( $pagination ) ) {
-		?>
-		<footer class="article-footer">
-			<section class="row single pager prevnext gutter pad-ends">
-				<div class="column one">
-					<nav class="navigation pagination" role="navigation" aria-label="Pagination navigation">
-						<?php echo wp_kses_post( $pagination ); ?>
-					</nav>
-				</div>
-			</section>
-		</footer>
-		<?php
-	}
+	\WSU\HRS\Template_Tags\hrs_pagination();
 
 	get_template_part( 'parts/footers' );
 	?>

@@ -52,17 +52,9 @@ get_header();
 
 	$is_feature = false;
 
-	$archive_query = new WP_Query( array(
-		'posts_per_page' => 10,
-		'tax_query'      => array(
-			array(
-				'taxonomy' => 'hrs_unit',
-				'field'    => 'slug',
-				'terms'    => get_query_var( 'term' ),
-			),
-		),
-		'post__not_in'   => $exclude_post_id,
-		'paged'          => absint( $page ),
+	$archive_query = \WSU\HRS\Queries\get_hrs_unit_posts( array(
+		'post__not_in' => $exclude_post_id,
+		'paged'        => $page,
 	) );
 
 	if ( $archive_query->have_posts() ) :
@@ -115,30 +107,7 @@ get_header();
 		<?php
 	endif;
 
-	$pagination = paginate_links( array(
-		'base'               => str_replace( 99164, '%#%', esc_url( get_pagenum_link( 99164 ) ) ),
-		'format'             => 'page/%#%',
-		'total'              => $archive_query->max_num_pages,
-		'type'               => 'list',
-		'current'            => max( 1, get_query_var( 'paged' ) ),
-		'prev_text'          => 'Previous <span class="screen-reader-text">page</span>',
-		'next_text'          => 'Next <span class="screen-reader-text">page</span>',
-		'before_page_number' => '<span class="screen-reader-text">Page </span>',
-	) );
-
-	if ( ! empty( $pagination ) ) {
-		?>
-		<footer class="article-footer">
-			<section class="row single pager prevnext gutter pad-ends">
-				<div class="column one">
-					<nav class="navigation pagination" role="navigation" aria-label="Pagination navigation">
-						<?php echo wp_kses_post( $pagination ); ?>
-					</nav>
-				</div>
-			</section>
-		</footer>
-		<?php
-	}
+	\WSU\HRS\Template_Tags\hrs_pagination( $archive_query->max_num_pages );
 
 	get_template_part( 'parts/footers' );
 	?>

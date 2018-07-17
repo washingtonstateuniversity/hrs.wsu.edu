@@ -55,6 +55,7 @@ class HRS_Theme_Setup {
 	private function setup_hooks() {
 		add_action( 'after_setup_theme', array( $this, 'add_theme_support' ) );
 		add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
+		add_action( 'after_setup_theme', array( $this, 'remove_spine_filters' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ), 0 );
 
 		// Set Spine options.
@@ -245,6 +246,19 @@ class HRS_Theme_Setup {
 	}
 
 	/**
+	 * Removes select Spine parent theme filters.
+	 *
+	 * This must be hooked into `after_setup_theme` because the child theme
+	 * functions.php runs before the parent theme functions.php, and therefore
+	 * before the parent theme defines these filters.
+	 *
+	 * @since 0.17.0
+	 */
+	public function remove_spine_filters() {
+		remove_filter( 'get_the_excerpt', 'spine_trim_excerpt', 5 );
+	}
+
+	/**
 	 * Creates the HRS taxonomies.
 	 *
 	 * Uses the WP taxonomy API to create custom taxonomy for the HRS site,
@@ -274,6 +288,7 @@ class HRS_Theme_Setup {
 			'labels'            => $labels,
 			'show_ui'           => true,
 			'show_admin_column' => true,
+			'show_in_rest'      => true, // Required for Gutenberg < 3.2.0 to show tax on edit post screen.
 			'query_var'         => true,
 			'rewrite'           => array(
 				'slug' => 'hrs-units',

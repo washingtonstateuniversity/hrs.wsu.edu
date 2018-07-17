@@ -16,7 +16,7 @@
  *
  * @since 0.7.0
  */
-$hrs_child_theme_version = '0.16.0';
+$hrs_child_theme_version = '0.17.2';
 
 /**
  * Sets up basic theme configuration and WordPress API settings.
@@ -24,6 +24,16 @@ $hrs_child_theme_version = '0.16.0';
  * @since 0.12.0
  */
 require_once 'includes/class-hrs-theme-setup.php';
+
+add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
+add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
+add_action( 'wp_head', 'hrs_noscript_styles' );
+add_action( 'login_enqueue_scripts', 'hrs_login_styles' );
+add_filter( 'login_headerurl', 'hrs_login_logo_url' );
+add_filter( 'login_headertitle', 'hrs_login_logo_url_title' );
+add_filter( 'logout_redirect', 'hrs_logout_redirect_home', 10, 3 );
+add_filter( 'excerpt_length', 'hrs_excerpt_length' );
+add_filter( 'excerpt_more', 'hrs_excerpt_more_link' );
 
 /**
  * Creates a script version.
@@ -38,7 +48,6 @@ function hrs_get_script_version() {
 	return $script_version;
 }
 
-add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 /**
  * Add HRS Child Theme stylesheets and scripts.
  *
@@ -50,7 +59,6 @@ function hrs_enqueue_styles() {
 	wp_enqueue_script( 'hrs-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js', array(), spine_get_script_version(), true );
 }
 
-add_action( 'wp_head', 'hrs_noscript_styles' );
 /**
  * Adds a noscript element for HRS styles.
  *
@@ -62,7 +70,6 @@ function hrs_noscript_styles() {
 	<?php
 }
 
-add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 /**
  * Removes child theme style call from parent theme.
  *
@@ -72,7 +79,6 @@ function hrs_dequeue_styles() {
 	wp_dequeue_style( 'spine-theme-child' );
 }
 
-add_action( 'login_enqueue_scripts', 'hrs_login_styles' );
 /**
  * Calls custom CSS on the login page for fancy styling.
  *
@@ -82,7 +88,6 @@ function hrs_login_styles() {
 	wp_enqueue_style( 'hrs-login-style', get_stylesheet_directory_uri() . '/assets/css/login-style.css', false, hrs_get_script_version() );
 }
 
-add_filter( 'excerpt_length', 'hrs_excerpt_length' );
 /**
  * Sets the default excerpt word count.
  *
@@ -96,7 +101,6 @@ function hrs_excerpt_length( $word_count ) {
 	return $word_count;
 }
 
-add_filter( 'excerpt_more', 'hrs_excerpt_more_link' );
 /**
  * Removes the default Read More link from excerpts.
  *
@@ -109,7 +113,6 @@ function hrs_excerpt_more_link( $excerpt_more ) {
 	return $excerpt_more;
 }
 
-add_filter( 'login_headerurl', 'hrs_login_logo_url' );
 /**
  * Changes the login logo link from wordpress.org to hrs.wsu.edu.
  *
@@ -121,7 +124,6 @@ function hrs_login_logo_url() {
 	return home_url();
 }
 
-add_filter( 'login_headertitle', 'hrs_login_logo_url_title' );
 /**
  * Changes the login logo text to the site title.
  *
@@ -133,7 +135,6 @@ function hrs_login_logo_url_title() {
 	return get_bloginfo( 'name' );
 }
 
-add_filter( 'logout_redirect', 'hrs_logout_redirect_home', 10, 3 );
 /**
  * Redirects users to the home page on logout.
  *

@@ -20,6 +20,26 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.17.2 (2018-07-17)
+
+### Fixed
+
+- Apply `break-word` rule globally on the `main` element.
+- Page header bottom margin should only apply to main page and single template page headers, not individual archive items.
+
+### Changed
+
+- Set `show_in_rest` to true to display HRS Units taxonomy in the WP RESP API so that it is enabled in the new Gutenberg editor.
+- Add `break-word` rule to single and page template article content to avoid edge case of overflowing titles and content.
+- Move pagination query and markup from the multiple archive templates into a function.
+- Add width styles to default and Builder template page views to prevent overly long lines of text, fix #30.
+
+### Added
+
+- Setup method in `class-hrs-theme-setup.php` to hook into the WP API and remove the Spine parent theme excerpt filter.
+- Function to retrieve and display archive page post pagination.
+- Template for displaying default page views, adjusted from the parent theme to display as single instead of two-column layout.
+
 ## 0.16.0 (2018-07-13)
 
 ### Changed
