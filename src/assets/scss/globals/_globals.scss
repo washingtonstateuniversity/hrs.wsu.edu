@@ -46,12 +46,14 @@ main,
 @media (min-width: $large) {
 
 	main section,
-	main .page-header {
+	main .page-header,
+	.site-header {
 		border-left: 8px solid $body-background-color;
 	}
 
 	.home main section,
-	.home main .page-header {
+	.home main .page-header,
+	.home .site-header {
 		border-left: none;
 	}
 
@@ -87,7 +89,27 @@ h6 {
 }
 
 blockquote {
+	border-left: 4px solid $brand-gray;
 	font-family: $sans-serif-fonts;
+	margin-bottom: 1em;
+	margin-left: 1em;
+	padding: 0 2em 0 1em;
+
+	p:last-child {
+		padding: 0;
+	}
+}
+
+abbr[title],
+acronym[title] {
+	border-bottom: 2px dotted;
+	text-decoration: none;
+}
+
+hr {
+	height: 4px;
+	margin: 1em auto;
+	width: 55%;
 }
 
 /**
@@ -134,6 +156,10 @@ a.site-title {
 dl dt,
 dl dd {
 	display: block;
+}
+
+dd {
+	padding-left: 2em;
 }
 
 /**

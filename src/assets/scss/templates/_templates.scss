@@ -64,10 +64,8 @@ a.site-title {
 		margin: 0 0 0 198px;
 
 		.column {
-			border-left: 8px solid $body-background-color;
 			padding: 0 2rem;
 		}
-
 	}
 
 	a.site-title {
@@ -255,6 +253,7 @@ footer {
 
 		dd {
 			display: inline-block;
+			padding-left: 0;
 		}
 
 		a {
