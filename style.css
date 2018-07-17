@@ -1819,8 +1819,10 @@ a.site-title {
     margin: 0 0 0 198px;
   }
   .site-header .column {
-    border-left: 8px solid #f2f2f2;
     padding: 0 2rem;
+  }
+  body:not(.home) .site-header .column {
+    border-left: 8px solid #f2f2f2;
   }
   a.site-title {
     font-size: 2.027em;

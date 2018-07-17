@@ -64,10 +64,12 @@ a.site-title {
 		margin: 0 0 0 198px;
 
 		.column {
-			border-left: 8px solid $body-background-color;
 			padding: 0 2rem;
 		}
+	}
 
+	body:not(.home) .site-header .column {
+		border-left: 8px solid $body-background-color;
 	}
 
 	a.site-title {

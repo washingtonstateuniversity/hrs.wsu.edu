@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.17.3 (2018-07-17)
+
+### Fixed
+
+- Remove left border on the site header when on the full-width home page, fix #45.
+
 ## 0.17.2 (2018-07-17)
 
 ### Fixed
