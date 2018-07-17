@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
+- Use get method instead of global variable to track HRS child theme version, fix #42.
 - Remove left border on the site header when on the full-width home page, fix #45.
 
 ## 0.17.2 (2018-07-17)
