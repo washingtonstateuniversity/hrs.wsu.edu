@@ -20,10 +20,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 0.17.1 (unreleased)
+## 0.17.2 (unreleased)
 
 ### Fixed
 
+- Apply `break-word` rule globally on the `main` element.
 - Page header bottom margin should only apply to main page and single template page headers, not individual archive items.
 
 ### Changed

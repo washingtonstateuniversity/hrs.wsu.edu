@@ -28,6 +28,8 @@ main,
 .site-header {
 	color: $text-color;
 	font: 400 18px/28px $sans-serif-fonts;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
 
 	*,
 	*:before,
