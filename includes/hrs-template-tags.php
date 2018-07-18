@@ -18,10 +18,7 @@ namespace WSU\HRS\Template_Tags;
  *
  * @param int $id Post ID
  * @param string $taxonomy The taxonomy name.
- * @param bool $show_title Optional. Whether to display the taxonomy title. Default true.
- * @param string $container_tag Optional. The HTML element used to contain the list of terms. Default is a data list (`dl` tag).
- * @param string $item_tag Optional. The HTML element used to contain each item in the list of terms. Default is a data list definition (`dd` tag).
- * @return string|false|WP_Error Array of WP_Term objects on success, false if no taxonomy or terms exist, WP_Error on failure.
+ * @return array|false|WP_Error Array of WP_Term objects on success, false if no taxonomy or terms exist, WP_Error on failure.
  */
 function get_terms( $id, $taxonomy ) {
 	if ( ! isset( $taxonomy ) || ! taxonomy_exists( $taxonomy ) ) {
@@ -52,11 +49,15 @@ function get_terms( $id, $taxonomy ) {
  *
  * @since 0.14.0
  *
- * @param int $id Post ID
- * @param string $taxonomy The taxonomy name.
- * @param bool $show_title Optional. Whether to display the taxonomy title. Default true.
- * @param string $container_tag Optional. The HTML element used to contain the list of terms. Default is a data list (`dl` tag).
- * @param string $item_tag Optional. The HTML element used to contain each item in the list of terms. Default is a data list definition (`dd` tag).
+ * @param array $args {
+ *     Optional. Arguments to filter retrieval of HRS posts.
+ *
+ *     @type int    $id            Post ID
+ *     @type string $taxonomy      The taxonomy name.
+ *     @type bool   $show_title    Whether to display the taxonomy title. Default true.
+ *     @type string $container_tag The HTML element used to contain the list of terms. Default is a data list (`dl` tag).
+ *     @type string $item_tag      The HTML element used to contain each item in the list of terms. Default is a data list definition (`dd` tag).
+ * }
  * @return string|false HTML formatted list of terms or false if no terms exist or on WordPress error.
  */
 function the_terms( $args = array() ) {
