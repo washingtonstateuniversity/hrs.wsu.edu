@@ -91,11 +91,11 @@ use WSU\HRS\Template_Tags as Tags;
 		// get_template_part( 'parts/share-tools' );
 
 		// Print the post taxonomy lists, if they exist.
-		Tags\the_terms( get_the_ID(), 'hrs_unit' );
-		Tags\the_terms( get_the_ID(), 'category' );
-		Tags\the_terms( get_the_ID(), 'wsuwp_university_category' );
-		Tags\the_terms( get_the_ID(), 'post_tag' );
-		Tags\the_terms( get_the_ID(), 'wsuwp_university_location' );
+		Tags\the_terms( array( 'taxonomy' => 'hrs_unit' ) );
+		Tags\the_terms( array( 'taxonomy' => 'category' ) );
+		Tags\the_terms( array( 'taxonomy' => 'wsuwp_university_category' ) );
+		Tags\the_terms( array( 'taxonomy' => 'post_tag' ) );
+		Tags\the_terms( array( 'taxonomy' => 'wsuwp_university_location' ) );
 		?>
 	</footer><!-- .entry-meta -->
 

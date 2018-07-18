@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.17.4 (2018-07-18)
+
+### Changed
+
+- Separate retrieving and display formatting functionality between the HRS "get_terms" methods and streamline argument declaration with a default set.
+
 ## 0.17.3 (2018-07-17)
 
 ### Fixed
