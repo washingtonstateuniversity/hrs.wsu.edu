@@ -46,6 +46,6 @@
     "test": "npm run phpcs -s && npm run lintjs -s && npm run lintscss -s",
     "prebuild": "npm run clean && npm run phpcs",
     "build": "npm run build:css && npm run build:js && npm run build:images",
-    "deploy": "mkdirp build && cpx {*.php,*.css,README.md,*.png,assets/**,includes/**,parts/**,templates/**} build"
+    "deploy": "mkdirp build && cpx {*.php,*.css,README.md,*.png,articles/**,assets/**,includes/**,parts/**,templates/**} build"
   }
 }
