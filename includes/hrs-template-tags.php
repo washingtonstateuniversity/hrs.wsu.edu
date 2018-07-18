@@ -18,28 +18,19 @@ namespace WSU\HRS\Template_Tags;
  *
  * @param int $id Post ID
  * @param string $taxonomy The taxonomy name.
- * @param bool $show_title Optional. Whether to display the taxonomy title. Default true.
- * @param string $container_tag Optional. The HTML element used to contain the list of terms. Default is a data list (`dl` tag).
- * @param string $item_tag Optional. The HTML element used to contain each item in the list of terms. Default is a data list definition (`dd` tag).
- * @return string|false|WP_Error List of terms on success, false if no taxonomy or terms exist, WP_Error on failure.
+ * @return array|false|WP_Error Array of WP_Term objects on success, false if no taxonomy or terms exist, WP_Error on failure.
  */
-function get_terms( $id, $taxonomy, $show_title = true, $container_tag = 'dl', $item_tag = 'dd' ) {
-
+function get_terms( $id, $taxonomy ) {
 	if ( ! isset( $taxonomy ) || ! taxonomy_exists( $taxonomy ) ) {
 		return false;
 	}
 
-	$taxonomy_obj = get_taxonomy( $taxonomy );
-
 	if ( 'category' === $taxonomy ) {
-		$terms      = get_the_category();
-		$term_title = __( 'Categorized' );
+		$terms = get_the_category();
 	} elseif ( 'post_tag' === $taxonomy ) {
-		$terms      = get_the_tags();
-		$term_title = __( 'Tagged' );
+		$terms = get_the_tags();
 	} else {
-		$terms      = get_the_terms( $id, $taxonomy );
-		$term_title = $taxonomy_obj->labels->singular_name;
+		$terms = get_the_terms( $id, $taxonomy );
 	}
 
 	if ( is_wp_error( $terms ) ) {
@@ -50,19 +41,7 @@ function get_terms( $id, $taxonomy, $show_title = true, $container_tag = 'dl', $
 		return false;
 	}
 
-	$container_start = '<' . $container_tag . ' class="article-taxonomy ' . esc_attr( $taxonomy ) . '">';
-	$container_end   = '</' . $container_tag . '>';
-	$term_title      = ( true === $show_title ) ? '<dt>' . esc_html( $term_title ) . '</dt>' : '';
-	$terms_list      = array();
-
-	foreach ( $terms as $term ) {
-		$term_link = get_term_link( $term->term_id, $taxonomy );
-		if ( ! is_wp_error( $term_link ) ) {
-				$terms_list[] = '<' . $item_tag . '><a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a></' . $item_tag . '>';
-		}
-	}
-
-	return $container_start . $term_title . join( '', $terms_list ) . $container_end;
+	return $terms;
 }
 
 /**
@@ -70,21 +49,77 @@ function get_terms( $id, $taxonomy, $show_title = true, $container_tag = 'dl', $
  *
  * @since 0.14.0
  *
- * @param int $id Post ID
- * @param string $taxonomy The taxonomy name.
- * @param bool $show_title Optional. Whether to display the taxonomy title. Default true.
- * @param string $container_tag Optional. The HTML element used to contain the list of terms. Default is a data list (`dl` tag).
- * @param string $item_tag Optional. The HTML element used to contain each item in the list of terms. Default is a data list definition (`dd` tag).
- * @return false|void False on WordPress error.
+ * @param array $args {
+ *     Optional. Arguments to filter retrieval of HRS posts.
+ *
+ *     @type int    $id            Post ID
+ *     @type string $taxonomy      The taxonomy name.
+ *     @type bool   $show_title    Whether to display the taxonomy title. Default true.
+ *     @type string $container_tag The HTML element used to contain the list of terms. Default is a data list (`dl` tag).
+ *     @type string $item_tag      The HTML element used to contain each item in the list of terms. Default is a data list definition (`dd` tag).
+ * }
+ * @return string|false HTML formatted list of terms or false if no terms exist or on WordPress error.
  */
-function the_terms( $id, $taxonomy, $show_title = true, $container_tag = 'dl', $item_tag = 'dd' ) {
-	$terms_list = \WSU\HRS\Template_Tags\get_terms( $id, $taxonomy, $show_title, $container_tag, $item_tag );
+function the_terms( $args = array() ) {
+	$defaults = array(
+		'id'            => get_the_ID(),
+		'taxonomy'      => '',
+		'show_title'    => true,
+		'container_tag' => 'dl',
+		'item_tag'      => 'dd',
+	);
 
-	if ( is_wp_error( $terms_list ) ) {
+	$atts = wp_parse_args( $args, $defaults );
+
+	if ( ! isset( $atts['taxonomy'] ) || ! taxonomy_exists( $atts['taxonomy'] ) ) {
 		return false;
 	}
 
-	echo wp_kses_post( $terms_list );
+	$terms = \WSU\HRS\Template_Tags\get_terms( $atts['id'], $atts['taxonomy'] );
+
+	if ( is_wp_error( $terms ) || empty( $terms ) ) {
+		return false;
+	}
+
+	if ( true === $atts['show_title'] ) {
+		if ( 'category' === $atts['taxonomy'] ) {
+			$term_title = '<dt>' . __( 'Categorized', 'hrs-wsu-edu' ) . '</dt>';
+		} elseif ( 'post_tag' === $atts['taxonomy'] ) {
+			$term_title = '<dt>' . __( 'Tagged', 'hrs-wsu-edu' ) . '</dt>';
+		} else {
+			$taxonomy_obj = get_taxonomy( $atts['taxonomy'] );
+			/* translators: The taxonomy name in singular tense */
+			$term_title = sprintf( __( '<dt>%s</dt>', 'hrs-wsu-edu' ),
+				esc_html( $taxonomy_obj->labels->singular_name )
+			);
+		}
+	} else {
+		$term_title = '';
+	}
+
+	$terms_list = array();
+
+	foreach ( $terms as $term ) {
+		$term_link = get_term_link( $term->term_id, $atts['taxonomy'] );
+		if ( ! is_wp_error( $term_link ) ) {
+			/* translators: 1: the list item element tag, 2: the term URL, 3: the term name */
+			$terms_list[] = sprintf( __( '<%1$s><a href="%2$s">%3$s</a></%1$s>', 'hrs-wsu-edu' ),
+				$atts['item_tag'],
+				esc_url( $term_link ),
+				esc_html( $term->name )
+			);
+		}
+	}
+
+	/* translators: 1: the container element tag name, 2: the containing element class name(s), 3: one or more list items containing term links and names, 4: the taxonomy name */
+	$html = sprintf( __( '<%1$s class="class="article-taxonomy %2$s">%4$s%3$s</%1$s>', 'hrs-wsu-edu' ),
+		esc_html( $atts['container_tag'] ),
+		esc_attr( $atts['taxonomy'] ),
+		join( '', $terms_list ),
+		$term_title
+	);
+
+	echo wp_kses_post( $html );
 }
 
 /**
