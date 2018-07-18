@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.17.5 (2018-07-18)
+
+### Fixed
+
+- Add missing `articles/` directory to the NPM deploy script.
+
 ## 0.17.4 (2018-07-18)
 
 ### Changed
