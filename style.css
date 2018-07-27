@@ -606,7 +606,7 @@ button.hrs-button-white {
   background-color: rgba(255, 255, 255, 0.9);
   color: #981e32;
   font-weight: 600;
-  padding: .25rem 1rem;
+  padding: 1em 1rem .25rem;
 }
 
 .builder-section-banner .builder-banner-inner-content {
