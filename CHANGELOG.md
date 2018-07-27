@@ -30,6 +30,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Switch the footer cougar head logo to crimson.
 - Have medium- and full-size right-aligned images pull to the right into the margin.
 
+### Fixed
+
+- Fix #49, Empty feature image link URL on single views by echoing the Spine image URL function.
+
 ### Changed
 
 - Style page template feature image to match single post views.

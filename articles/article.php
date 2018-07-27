@@ -22,7 +22,7 @@
 		$image_caption = get_post( get_post_thumbnail_id() )->post_excerpt;
 		?>
 		<figure class="article-image feature-image">
-			<a href="<?php esc_url( spine_get_featured_image_src() ); ?>">
+			<a href="<?php echo esc_url( spine_get_featured_image_src() ); ?>">
 				<?php spine_the_featured_image(); ?>
 			</a>
 			<?php if ( ! empty( $image_caption ) ) : ?>
