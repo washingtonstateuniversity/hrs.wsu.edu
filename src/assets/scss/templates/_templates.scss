@@ -185,6 +185,17 @@ footer {
 	}
 }
 
+body.single,
+body.page {
+
+	.article-container figure.article-image {
+		margin-bottom: 1.5rem;
+		margin-left: -2rem;
+		max-width: none;
+		width: 100vw;
+	}
+}
+
 .article-taxonomy--primary ul {
 	font-size: $font-size-0;
 	list-style-type: none;
@@ -205,6 +216,27 @@ footer {
 	}
 }
 
+@media (min-width: $medium) {
+
+	body.single,
+	body.page {
+
+		.article-container figure.article-image {
+			float: right;
+			margin-right: calc(-43% - 2rem);
+			margin-left: 0;
+			padding: 0 2rem;
+			max-width: $small;
+			width: 50vw;
+		}
+
+		.article-content {
+			width: 70%;
+		}
+	}
+
+}
+
 /**
  * 5.3.1 Article: Post (Single)
  *
@@ -220,13 +252,6 @@ footer {
 }
 
 .single-post {
-
-	.article-container figure.article-image {
-		margin-bottom: 1.5rem;
-		margin-left: -2rem;
-		max-width: none;
-		width: 100vw;
-	}
 
 	.article-body {
 		padding-bottom: 1.5em;
@@ -271,22 +296,6 @@ footer {
 
 	.single-post {
 
-		.article-container {
-
-			.article-content {
-				width: 70%;
-			}
-
-			figure.article-image {
-				float: right;
-				margin-right: calc(-43% - 2rem);
-				margin-left: 0;
-				padding: 0 2rem;
-				max-width: $small;
-				width: 50vw;
-			}
-		}
-
 		.article-footer {
 			display: flex;
 			justify-content: space-between;
@@ -311,14 +320,6 @@ footer {
 }
 
 @media (min-width: $large) {
-
-	.page {
-
-		article.page {
-			max-width: 80ch;
-		}
-	}
-
 }
 
 /**

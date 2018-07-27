@@ -1961,6 +1961,14 @@ footer dd a:focus {
   margin-bottom: 3rem;
 }
 
+body.single .article-container figure.article-image,
+body.page .article-container figure.article-image {
+  margin-bottom: 1.5rem;
+  margin-left: -2rem;
+  max-width: none;
+  width: 100vw;
+}
+
 .article-taxonomy--primary ul {
   font-size: 0.79em;
   list-style-type: none;
@@ -1980,6 +1988,22 @@ footer dd a:focus {
   color: #c60c30;
 }
 
+@media (min-width: 43em) {
+  body.single .article-container figure.article-image,
+  body.page .article-container figure.article-image {
+    float: right;
+    margin-right: calc(-43% - 2rem);
+    margin-left: 0;
+    padding: 0 2rem;
+    max-width: 34em;
+    width: 50vw;
+  }
+  body.single .article-content,
+  body.page .article-content {
+    width: 70%;
+  }
+}
+
 /**
  * 5.3.1 Article: Post (Single)
  *
@@ -1991,13 +2015,6 @@ footer dd a:focus {
 
 .article-header time:before {
   background-image: url(../images/icons/time.svg);
-}
-
-.single-post .article-container figure.article-image {
-  margin-bottom: 1.5rem;
-  margin-left: -2rem;
-  max-width: none;
-  width: 100vw;
 }
 
 .single-post .article-body {
@@ -2038,17 +2055,6 @@ footer dd a:focus {
 }
 
 @media (min-width: 43em) {
-  .single-post .article-container .article-content {
-    width: 70%;
-  }
-  .single-post .article-container figure.article-image {
-    float: right;
-    margin-right: calc(-43% - 2rem);
-    margin-left: 0;
-    padding: 0 2rem;
-    max-width: 34em;
-    width: 50vw;
-  }
   .single-post .article-footer {
     display: -ms-flexbox;
     display: flex;
@@ -2068,12 +2074,6 @@ footer dd a:focus {
  */
 .page-header {
   padding: 1.5rem 2rem;
-}
-
-@media (min-width: 61.875em) {
-  .page article.page {
-    max-width: 80ch;
-  }
 }
 
 /**

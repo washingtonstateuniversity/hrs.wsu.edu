@@ -32,6 +32,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Style page template feature image to match single post views.
 - Move page template feature image out of the hero position.
 
 ## 0.17.5 (2018-07-18)
