@@ -25,7 +25,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Todo
 
 - Shift banner title down slightly, and apply top padding.
-- Space out the main site header a bit.
 - Switch the footer cougar head logo to crimson.
 - Have medium- and full-size right-aligned images pull to the right into the margin.
 
@@ -36,6 +35,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Give the site header a little more breathing room.
 - Style page template feature image to match single post views.
 - Move page template feature image out of the hero position.
 
