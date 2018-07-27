@@ -16,8 +16,9 @@
 		<header class="article-header">
 			<h1 class="article-title"><?php the_title(); ?></h1>
 		</header>
-	<?php endif;
+	<?php endif; ?>
 
+	<?php
 	if ( spine_has_featured_image() ) :
 		$image_caption = get_post( get_post_thumbnail_id() )->post_excerpt;
 		?>
