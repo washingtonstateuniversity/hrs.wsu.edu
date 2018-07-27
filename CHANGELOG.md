@@ -20,11 +20,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 0.17.6 (unreleased)
-
-### Todo
-
-- Have medium- and full-size right-aligned images pull to the right into the margin.
+## 0.17.6 (2018-07-27)
 
 ### Fixed
 
