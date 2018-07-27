@@ -177,16 +177,11 @@ footer {
  * 5.3 Article
  */
 
-.single-post,
-.page {
+body.single:not(.home) {
 
 	.article-header {
 		margin-bottom: 3rem;
 	}
-}
-
-body.single,
-body.page {
 
 	.article-container figure.article-image {
 		margin-bottom: 1.5rem;
@@ -218,8 +213,7 @@ body.page {
 
 @media (min-width: $medium) {
 
-	body.single,
-	body.page {
+	body.single:not(.home) {
 
 		.article-container figure.article-image {
 			float: right;
@@ -317,9 +311,6 @@ body.page {
 
 .page-header {
 	padding: 1.5rem 2rem;
-}
-
-@media (min-width: $large) {
 }
 
 /**

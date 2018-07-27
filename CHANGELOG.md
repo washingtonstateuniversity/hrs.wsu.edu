@@ -24,7 +24,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
-- Fix `.article-header` bottom margin to only apply on actual single pages, open #48.
 - Shift banner title down slightly, and apply top padding.
 - Space out the main site header a bit.
 - Switch the footer cougar head logo to crimson.
@@ -32,6 +31,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
+- Fix #48, Apply `.article-header` bottom margin only on single pages.
 - Fix #49, Empty feature image link URL on single views by echoing the Spine image URL function.
 
 ### Changed
