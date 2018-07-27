@@ -20,6 +20,20 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.17.6 (unreleased)
+
+### Todo
+
+- Fix `.article-header` bottom margin to only apply on actual single pages, open #48.
+- Shift banner title down slightly, and apply top padding.
+- Space out the main site header a bit.
+- Switch the footer cougar head logo to crimson.
+- Have medium- and full-size right-aligned images pull to the right into the margin.
+
+### Changed
+
+- Move page template feature image out of the hero position.
+
 ## 0.17.5 (2018-07-18)
 
 ### Fixed
