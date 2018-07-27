@@ -20,6 +20,23 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.17.6 (2018-07-27)
+
+### Fixed
+
+- Fix #50, Jiggering on site reference nav menu hover.
+- Fix #48, Apply `.article-header` bottom margin only on single pages.
+- Fix #49, Empty feature image link URL on single views by echoing the Spine image URL function.
+
+### Changed
+
+- Switch the footer cougar head logo to crimson.
+- Shift Builder banner title down slightly.
+- Remove unused color Sass variables.
+- Give the site header a little more breathing room.
+- Style page template feature image to match single post views.
+- Move page template feature image out of the hero position.
+
 ## 0.17.5 (2018-07-18)
 
 ### Fixed

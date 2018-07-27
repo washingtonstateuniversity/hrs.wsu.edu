@@ -14,7 +14,6 @@
 <main id="wsuwp-main" class="spine-page-default">
 
 <?php get_template_part( 'parts/headers' ); ?>
-<?php get_template_part( 'parts/featured-images' ); ?>
 
 <section class="row single gutter pad-ends article-container">
 

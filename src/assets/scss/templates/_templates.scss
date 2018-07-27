@@ -70,7 +70,7 @@ a.site-title {
 
 	a.site-title {
 		font-size: $font-size-7;
-		margin: 1.5rem 2rem;
+		margin: 2.027rem 2rem;
 	}
 
 }
@@ -150,6 +150,7 @@ footer {
 	}
 
 	a {
+		border: none;
 		color: #fff;
 		display: block;
 		font-weight: 400;
@@ -177,11 +178,17 @@ footer {
  * 5.3 Article
  */
 
-.single-post,
-.page {
+body.single:not(.home) {
 
 	.article-header {
 		margin-bottom: 3rem;
+	}
+
+	.article-container figure.article-image {
+		margin-bottom: 1.5rem;
+		margin-left: -2rem;
+		max-width: none;
+		width: 100vw;
 	}
 }
 
@@ -205,6 +212,26 @@ footer {
 	}
 }
 
+@media (min-width: $medium) {
+
+	body.single:not(.home) {
+
+		.article-container figure.article-image {
+			float: right;
+			margin-right: calc(-43% - 2rem);
+			margin-left: 0;
+			padding: 0 2rem;
+			max-width: $small;
+			width: 50vw;
+		}
+
+		.article-content {
+			width: 70%;
+		}
+	}
+
+}
+
 /**
  * 5.3.1 Article: Post (Single)
  *
@@ -220,13 +247,6 @@ footer {
 }
 
 .single-post {
-
-	.article-container figure.article-image {
-		margin-bottom: 1.5rem;
-		margin-left: -2rem;
-		max-width: none;
-		width: 100vw;
-	}
 
 	.article-body {
 		padding-bottom: 1.5em;
@@ -271,22 +291,6 @@ footer {
 
 	.single-post {
 
-		.article-container {
-
-			.article-content {
-				width: 70%;
-			}
-
-			figure.article-image {
-				float: right;
-				margin-right: calc(-43% - 2rem);
-				margin-left: 0;
-				padding: 0 2rem;
-				max-width: $small;
-				width: 50vw;
-			}
-		}
-
 		.article-footer {
 			display: flex;
 			justify-content: space-between;
@@ -308,17 +312,6 @@ footer {
 
 .page-header {
 	padding: 1.5rem 2rem;
-}
-
-@media (min-width: $large) {
-
-	.page {
-
-		article.page {
-			max-width: 80ch;
-		}
-	}
-
 }
 
 /**
