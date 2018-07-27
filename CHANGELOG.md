@@ -28,6 +28,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
+- Fix #50, Jiggering on site reference nav menu hover.
 - Fix #48, Apply `.article-header` bottom margin only on single pages.
 - Fix #49, Empty feature image link URL on single views by echoing the Spine image URL function.
 
