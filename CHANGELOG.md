@@ -24,7 +24,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Todo
 
-- Switch the footer cougar head logo to crimson.
 - Have medium- and full-size right-aligned images pull to the right into the margin.
 
 ### Fixed
@@ -34,6 +33,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Switch the footer cougar head logo to crimson.
 - Shift Builder banner title down slightly.
 - Remove unused color Sass variables.
 - Give the site header a little more breathing room.
