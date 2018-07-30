@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.17.7 (2018-07-30)
+
+### Fixed
+
+- Silence output of the `featured-images.php` template part for non-default page templates in the parent theme (to avoid having to override all of those themes).
+
 ## 0.17.6 (2018-07-27)
 
 ### Fixed
