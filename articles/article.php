@@ -27,7 +27,7 @@
 				<?php spine_the_featured_image(); ?>
 			</a>
 			<?php if ( ! empty( $image_caption ) ) : ?>
-				<figcaption class="wp-caption-text"><?php echo esc_html( $image_caption ); ?></figcaption>
+				<figcaption class="wp-caption-text"><?php echo wp_kses_post( $image_caption ); ?></figcaption>
 			<?php endif; ?>
 		</figure>
 		<?php
