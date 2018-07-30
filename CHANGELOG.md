@@ -27,6 +27,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Fix #53, Caption text on page feature images was being encoded; switched from `esc_html` to `wp_kses_post` to preserve needed HTML.
 - Silence output of the `featured-images.php` template part for non-default page templates in the parent theme (to avoid having to override all of those themes).
 
+### Removed
+
+- Remove un-used and/or unwanted parent theme page templates from the editor template selection menu.
+
 ## 0.17.6 (2018-07-27)
 
 ### Fixed

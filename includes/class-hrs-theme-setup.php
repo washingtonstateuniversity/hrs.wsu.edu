@@ -63,6 +63,7 @@ class HRS_Theme_Setup {
 		add_filter( 'spine_get_title', array( $this, 'hrs_get_page_title' ) );
 		add_filter( 'spine_enable_builder_module', '__return_true' );
 		add_filter( 'spine_option_defaults', array( $this, 'hrs_spine_option_defaults' ) );
+		add_filter( 'theme_page_templates', array( $this, 'remove_spine_templates' ) );
 	}
 
 	/**
@@ -318,6 +319,19 @@ class HRS_Theme_Setup {
 		$title = $page_title . $site_title . $global_title;
 
 		return $title;
+	}
+
+	/**
+	 * Removes selected Spine parent theme templates.
+	 *
+	 * @since 0.17.7
+	 */
+	public function remove_spine_templates( $templates ) {
+		unset( $templates['templates/single.php'] );
+		unset( $templates['templates/blank.php'] );
+		unset( $templates['templates/section-label.php'] );
+
+		return $templates;
 	}
 
 }
