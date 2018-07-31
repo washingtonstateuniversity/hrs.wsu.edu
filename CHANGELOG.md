@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.17.8 (2018-07-31)
+
+### Fixed
+
+- Fix #54, Switch from manual "is first page" check to WP-builtin `is_paged()` method to check for first page of archive results.
+
 ## 0.17.7 (2018-07-30)
 
 ### Fixed

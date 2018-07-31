@@ -24,7 +24,7 @@ get_header();
 
 	<?php
 	// Display the feature layout and reminders section only on the first page.
-	if ( have_posts() && 1 === $page ) :
+	if ( have_posts() && ! is_paged() ) :
 		?>
 
 		<section class="row single gutter pad-ends features">
