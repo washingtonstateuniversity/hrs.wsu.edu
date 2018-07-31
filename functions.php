@@ -34,7 +34,7 @@ add_filter( 'excerpt_more', 'hrs_excerpt_more_link' );
  * @since 0.17.3
  */
 function hrs_get_theme_version() {
-	$hrs_version = '0.17.7';
+	$hrs_version = '0.17.8';
 
 	return $hrs_version;
 }
