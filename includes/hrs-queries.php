@@ -11,27 +11,24 @@ namespace WSU\HRS\Queries;
 add_action( 'pre_get_posts', 'WSU\HRS\Queries\hrs_filter_query', 10 );
 
 /**
- * Filters the main tax query for the HRS Units tax.
+ * Filters the main WP_Query.
  *
- * Adjust the main taxonomy query for the HRS Units taxonomy to display only the
- * first result. For use in the featured article layout template.
+ * Adjust the main query on the posts home page to filter out posts in the
+ * "Reminder" category to prevent duplicate results.
  *
  * @param \WP_Query $query
  */
 function hrs_filter_query( $query ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
 
-	/* Exclude posts in the reminder category from the posts home query. */
+	// Exclude posts in the reminder category from the posts home query.
 	if ( ! is_admin() && is_home() && $query->is_main_query() ) {
 		$reminders = get_category_by_slug( 'reminders' );
 		$query->set( 'category__not_in', intval( $reminders->term_id ) );
 		return;
 	}
-
-	if ( is_admin() || ! $query->is_main_query() || ! is_tax( 'hrs_unit' ) ) {
-		return;
-	}
-
-	$query->set( 'posts_per_page', 1 );
 }
 
 /**

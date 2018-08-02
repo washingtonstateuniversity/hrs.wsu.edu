@@ -20,6 +20,23 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.18.1 (2018-08-02)
+
+### Fixed
+
+- Fix #55 and close #56, use main WP Query wherever possible instead of custom queries to maintain pagination.
+
+### Changed
+
+- No longer override the posts_per_page setting on the posts home page.
+- Switch from using a custom WP_Query in `home.php` to using only the main query and filtering it with `pre_get_posts` and formatting with a counter.
+- Switched from using a custom WP_Query on HRS taxonomy archive pages to just filtering the full main query.
+
+### Removed
+
+- Stop filtering the main query on the HRS taxonomy archive pages.
+- Removed unneeded page query var from `archive.php`.
+
 ## 0.17.8 (2018-07-31)
 
 ### Fixed

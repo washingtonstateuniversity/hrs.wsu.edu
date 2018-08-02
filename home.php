@@ -9,10 +9,6 @@
  */
 global $is_feature;
 
-$page            = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$is_feature      = false;
-$exclude_post_id = array();
-
 get_header();
 ?>
 
@@ -22,87 +18,58 @@ get_header();
 		<h1><?php esc_html_e( 'News from Human Resource Services', 'hrs-wsu-edu' ) ?></h1>
 	</header>
 
-	<?php
-	// Display the feature layout and reminders section only on the first page.
-	if ( have_posts() && ! is_paged() ) :
-		?>
-
-		<section class="row single gutter pad-ends features">
-			<div class="column one">
-				<div class="articles-list">
-
-					<?php
-					while ( have_posts() ) : the_post();
-
-						$exclude_post_id[] = get_the_ID();
-
-						$is_feature = true;
-
-						get_template_part( 'articles/archive-content' );
-
-						break;
-
-					endwhile;
-					?>
-
-				</div>
-
-				<?php
-				$reminders = WSU\HRS\Queries\get_reminder_posts( 'objects' );
-
-				if ( $reminders->have_posts() ) :
-					?>
-					<div class="reminders">
-						<h2><?php esc_html_e( 'Reminders', 'hrs-wsu-edu' ); ?></h2>
-						<ul>
-							<?php
-							while ( $reminders->have_posts() ) : $reminders->the_post();
-								$exclude_post_id[] = get_the_ID();
-								?>
-								<li><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></li>
-								<?php
-							endwhile;
-							?>
-						</ul>
-					</div>
-						<?php
-				endif;
-				?>
-
-			</div>
-		</section>
-
-		<?php
-	endif; // End of the feature and reminders sections.
-
-	$is_feature = false;
-
-	$archive_query = new WP_Query( array(
-		'posts_per_page' => 10,
-		'post__not_in'   => $exclude_post_id,
-		'paged'          => absint( $page ),
-	) );
-
-	if ( $archive_query->have_posts() ) :
-		$output_post_count = 0;
-
-		while ( $archive_query->have_posts() ) : $archive_query->the_post();
-
-			// Display special layout and content on the first page only.
+	<?php if ( have_posts() ) :
+		$result_count = 0;
+		while ( have_posts() ) : the_post();
 			if ( ! is_paged() ) {
-				if ( 0 === $output_post_count ) {
+
+				if ( 0 === $result_count ) {
+					$is_feature = true;
 					?>
+					<section class="row single gutter pad-ends features">
+						<div class="column one">
+							<div class="articles-list">
+					<?php
+				}
+
+				if ( 1 === $result_count ) {
+					$is_feature = false;
+
+					?>
+							</div><!-- .articles-list -->
+
+							<?php
+							$reminders = WSU\HRS\Queries\get_reminder_posts( 'objects' );
+
+							if ( $reminders->have_posts() ) {
+								?>
+								<div class="reminders">
+									<h2><?php esc_html_e( 'Reminders', 'hrs-wsu-edu' ); ?></h2>
+									<ul>
+										<?php while ( $reminders->have_posts() ) : $reminders->the_post(); ?>
+											<li><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></li>
+										<?php endwhile; ?>
+									</ul>
+								</div>
+								<?php
+							}
+
+							wp_reset_postdata();
+							?>
+						</div>
+					</section><!-- .features -->
+
 					<section class="row single gutter pad-ends latest">
 						<div class="column one">
 							<div class="cards">
 					<?php
 				}
 
-				if ( 4 === $output_post_count ) {
+				if ( 5 === $result_count ) {
 					?>
 							</div>
 						</div>
-					</section>
+					</section><!-- .latest -->
 
 					<section class="row single gutter pad-ends hrs-units-browse">
 						<div class="column one">
@@ -118,13 +85,13 @@ get_header();
 					<section class="row single gutter pad-ends article-archive">
 						<div class="column one">
 							<header>
-								<h2>More News from HRS</h2>
+								<h2><?php esc_html_e( 'More News from HRS', 'hrs-wsu-edu' ); ?></h2>
 							</header>
 							<div class="articles-list">
 					<?php
 				}
 			} else {
-				if ( 0 === $output_post_count ) {
+				if ( 0 === $result_count ) {
 					?>
 					<section class="row single gutter pad-ends article-archive">
 						<div class="column one">
@@ -135,14 +102,14 @@ get_header();
 
 			get_template_part( 'articles/archive-content' );
 
-			$output_post_count++;
+			$result_count++;
 
 		endwhile;
 		?>
-						</div>
-					</div><!--/column-->
-				</section>
 
+							</div>
+						</div><!--/column-->
+					</section>
 		<?php
 	endif;
 
