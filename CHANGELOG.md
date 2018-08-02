@@ -20,11 +20,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 0.18.0 (unreleased)
+## 0.18.1 (2018-08-02)
 
 ### Fixed
 
-- Fix #55 and #56 use main WP Query wherever possible instead of custom queries to maintain pagination.
+- Fix #55 and close #56, use main WP Query wherever possible instead of custom queries to maintain pagination.
 
 ### Changed
 
