@@ -19,19 +19,17 @@ add_action( 'pre_get_posts', 'WSU\HRS\Queries\hrs_filter_query', 10 );
  * @param \WP_Query $query
  */
 function hrs_filter_query( $query ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
 
 	/* Exclude posts in the reminder category from the posts home query. */
 	if ( ! is_admin() && is_home() && $query->is_main_query() ) {
 		$reminders = get_category_by_slug( 'reminders' );
 		$query->set( 'category__not_in', intval( $reminders->term_id ) );
+		$query->set( 'posts_per_page', 1 );
 		return;
 	}
-
-	if ( is_admin() || ! $query->is_main_query() || ! is_tax( 'hrs_unit' ) ) {
-		return;
-	}
-
-	$query->set( 'posts_per_page', 1 );
 }
 
 /**
