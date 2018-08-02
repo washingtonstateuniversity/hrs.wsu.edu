@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.18.0 (unreleased)
+
+### Removed
+
+- Removed unneeded page query var from `archive.php`.
+
 ## 0.17.8 (2018-07-31)
 
 ### Fixed

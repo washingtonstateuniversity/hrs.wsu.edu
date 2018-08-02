@@ -30,8 +30,6 @@ if ( is_category() ) {
 	$archive_title = __( 'HRS News' );
 }
 
-$page = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-
 $is_feature = false;
 
 get_header();
