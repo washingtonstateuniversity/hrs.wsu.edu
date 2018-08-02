@@ -22,6 +22,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ## 0.18.0 (unreleased)
 
+### Changed
+
+- Switched from using a custom WP_Query on HRS taxonomy archive pages to just filtering the full main query.
+
 ### Removed
 
 - Stop filtering the main query on the HRS taxonomy archive pages.

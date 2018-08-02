@@ -9,10 +9,6 @@
  */
 global $is_feature;
 
-$page            = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$exclude_post_id = array();
-$is_feature      = false;
-
 get_header();
 ?>
 
@@ -23,59 +19,40 @@ get_header();
 		<h1><?php printf( esc_html__( 'HRS News from %s', 'hrs-wsu-edu' ), single_term_title( '', false ) ); ?></h1>
 	</header>
 
-	<?php
-	if ( have_posts() && 1 === $page ) :
-		?>
+	<?php if ( have_posts() ) :
 
-		<section class="row single gutter pad-ends features">
-			<div class="column one">
-				<div class="articles-list">
+		$result_count = 0;
 
-					<?php
-					while ( have_posts() ) : the_post();
-
-						$exclude_post_id[] = get_the_ID();
-
-						$is_feature = true;
-
-						get_template_part( 'articles/archive-content' );
-
-					endwhile;
-					?>
-
-				</div>
-			</div>
-		</section>
-
-		<?php
-	endif;
-
-	$is_feature = false;
-
-	$archive_query = \WSU\HRS\Queries\get_hrs_unit_posts( array(
-		'post__not_in' => $exclude_post_id,
-		'paged'        => $page,
-	) );
-
-	if ( $archive_query->have_posts() ) :
-		$output_post_count = 0;
-
-		while ( $archive_query->have_posts() ) : $archive_query->the_post();
+		while ( have_posts() ) : the_post();
 
 			if ( ! is_paged() ) {
-				if ( 0 === $output_post_count ) {
+
+				if ( 0 === $result_count ) {
+					$is_feature = true;
 					?>
+					<section class="row single gutter pad-ends features">
+						<div class="column one">
+							<div class="articles-list">
+					<?php
+				}
+
+				if ( 1 === $result_count ) {
+					$is_feature = false;
+					?>
+							</div>
+						</div>
+					</section><!-- .features -->
 					<section class="row single gutter pad-ends latest">
 						<div class="column one">
 							<div class="cards">
 					<?php
 				}
 
-				if ( 3 === $output_post_count ) {
+				if ( 4 === $result_count ) {
 					?>
 							</div>
 						</div>
-					</section>
+					</section><!-- .latest -->
 					<section class="row single gutter pad-ends article-archive">
 						<div class="column one">
 							<header>
@@ -85,7 +62,7 @@ get_header();
 					<?php
 				}
 			} else {
-				if ( 0 === $output_post_count ) {
+				if ( 0 === $result_count ) {
 					?>
 					<section class="row single gutter pad-ends article-archive">
 						<div class="column one">
@@ -96,18 +73,18 @@ get_header();
 
 			get_template_part( 'articles/archive-content' );
 
-			$output_post_count++;
+			$result_count++;
 
 		endwhile;
 		?>
-						</div>
-					</div><!--/column-->
-				</section>
 
+							</div>
+						</div><!--/column-->
+					</section>
 		<?php
 	endif;
 
-	\WSU\HRS\Template_Tags\hrs_pagination( $archive_query->max_num_pages );
+	\WSU\HRS\Template_Tags\hrs_pagination();
 
 	get_template_part( 'parts/footers' );
 	?>
