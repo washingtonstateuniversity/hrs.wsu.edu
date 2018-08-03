@@ -20,6 +20,17 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.18.2 (2018-08-03)
+
+### Fixed
+
+- Remove flex display on archive page card layout for browsers that don't support CSS Grid to fix an odd auto-height bug.
+- Fix #31, adds float fallbacks for CSS Grid layouts (based on advice from Rachel Andrew in a [_Smashing Magazine_ post](https://www.smashingmagazine.com/2017/11/css-grid-supporting-browsers-without-grid/) and in [examples on her website](https://rachelandrew.co.uk/css/cheatsheets/grid-fallbacks).
+
+### Changed
+
+- Add README section on browser support and Browserlist.
+
 ## 0.18.1 (2018-08-02)
 
 ### Fixed

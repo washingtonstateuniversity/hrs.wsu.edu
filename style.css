@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 0.18.1
+Version: 0.18.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -1262,22 +1262,29 @@ figure .wp-caption-text:before,
 /**
  * 3.1 Cards
  */
+@media (min-width: 61.875em) {
+  .cards article,
+  .cards .card,
+  .recent-articles article,
+  .recent-articles .card {
+    float: left;
+    padding: 0 1rem;
+    width: 33%;
+  }
+  .home .recent-articles article {
+    width: 20%;
+  }
+  .blog .cards article {
+    width: 25%;
+  }
+}
+
 .cards,
 .recent-articles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-auto-rows: minmax(4rem, auto);
   grid-gap: 1.5rem 2rem;
-}
-
-.cards article,
-.cards .card,
-.recent-articles article,
-.recent-articles .card {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
 }
 
 .cards .article-summary,
@@ -1295,6 +1302,27 @@ figure .wp-caption-text:before,
 .recent-articles .article-footer {
   -ms-flex-order: -2;
       order: -2;
+}
+
+@supports (display: grid) {
+  .cards article,
+  .cards .card,
+  .recent-articles article,
+  .recent-articles .card {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    float: none;
+    padding: 0;
+    width: auto;
+  }
+  .home .recent-articles article {
+    width: auto;
+  }
+  .blog .cards article {
+    width: auto;
+  }
 }
 
 .cards .article-title a:after,
@@ -2115,15 +2143,17 @@ section.latest article {
 }
 
 @media (max-width: 43em) {
-  .features .articles-list article {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-  }
-  .features .articles-list .article-image {
-    -ms-flex-order: -1;
-        order: -1;
+  @supports (display: grid) {
+    .features .articles-list article {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+    }
+    .features .articles-list .article-image {
+      -ms-flex-order: -1;
+          order: -1;
+    }
   }
 }
 
