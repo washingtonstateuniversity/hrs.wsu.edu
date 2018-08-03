@@ -23,3 +23,19 @@ npm run phpcs
 npm run lintscss
 npm run lintjs
 ~~~
+
+### Browser Support
+
+The WSU Human Resource Services child theme uses [Browserlist](https://github.com/browserslist/browserslist) to help monitor feature support. It aims provide a reasonably fast and fully usable experience on older browsers while to progressively enhancing the user experience on more modern browsers.
+
+Specifically, the HRS theme aims to support all browsers with greater than 1% global usage (based on data from [Can I Use](http://caniuse.com/)), as well as IE 8-11, and the Firefox Extended Support Release (ESR). The Browserlist configuration, defined in `package.json` is:
+
+~~~
+"browserslist": [
+  "> 1%",
+  "ie 8-11",
+  "Firefox ESR"
+],
+~~~
+
+Review the current list of mobile and desktop browsers this resolves to using the [Browserlist online demo](http://browserl.ist/) (search for `> 1%,ie 8-11,Firefox ESR`).
