@@ -24,18 +24,36 @@
  * 3.1 Cards
  */
 
+@media (min-width: $large) {
+
+	.cards,
+	.recent-articles {
+
+		article,
+		.card {
+			float: left;
+			padding: 0 1rem;
+			width: 33%;
+		}
+
+	}
+
+	.home .recent-articles article {
+		width: 20%;
+	}
+
+	.blog .cards article {
+		width: 25%;
+	}
+
+}
+
 .cards,
 .recent-articles {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 	grid-auto-rows: minmax(4rem, auto);
 	grid-gap: 1.5rem 2rem;
-
-	article,
-	.card {
-		display: flex;
-		flex-direction: column;
-	}
 
 	.article-summary {
 		margin-top: .5em;
@@ -48,6 +66,32 @@
 	.article-footer {
 		order: -2;
 	}
+}
+
+@supports (display: grid) {
+
+	.cards,
+	.recent-articles {
+
+		article,
+		.card {
+			display: flex;
+			flex-direction: column;
+			float: none;
+			padding: 0;
+			width: auto;
+		}
+
+	}
+
+	.home .recent-articles article {
+		width: auto;
+	}
+
+	.blog .cards article {
+		width: auto;
+	}
+
 }
 
 .cards .article-title a,

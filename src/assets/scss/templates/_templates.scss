@@ -361,19 +361,21 @@ section.latest {
 }
 
 @media (max-width: $medium) {
+	@supports (display: grid) {
 
-	.features .articles-list {
+		.features .articles-list {
 
-		article {
-			display: flex;
-			flex-direction: column;
+			article {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.article-image {
+				order: -1;
+			}
 		}
 
-		.article-image {
-			order: -1;
-		}
 	}
-
 }
 
 @media (min-width: $medium) {
