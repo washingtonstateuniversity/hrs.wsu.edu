@@ -20,6 +20,18 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.19.0 (2018-08-07)
+
+### Changed
+
+- Fix alignment and add "if posts" check to default page template.
+
+### Added
+
+- CSS to target the new Gutenberg `alignwide` option to create full-width images.
+- Gutenberg page template to enable the Gutenberg editor on select pages (override Spine parent theme version).
+- Action to include and modify theme support for select Gutenberg editor elements (including removing the color picker for now).
+
 ## 0.18.2 (2018-08-03)
 
 ### Fixed

@@ -1,17 +1,18 @@
 <?php
 /**
- * Default Page Template
+ * Template Name: Gutenberg (Beta)
  *
- * The default template for displaying individual page views.
+ * Provides a template that can be used to enable the Gutenberg editor
+ * on pages without interrupting existing page builder templates.
  *
  * @package WSU_Human_Resources_Services
- * @since 0.17.0
+ * @since 0.19.0
  */
 
 get_header();
 ?>
 
-<main id="wsuwp-main" class="spine-page-default">
+<main id="wsuwp-main" class="spine-gutenberg-beta-template">
 
 	<?php get_template_part( 'parts/headers' ); ?>
 
@@ -26,7 +27,7 @@ get_header();
 			endif;
 			?>
 
-		</div><!--/column-->
+		</div>
 	</section>
 
 	<?php get_template_part( 'parts/footers' ); ?>

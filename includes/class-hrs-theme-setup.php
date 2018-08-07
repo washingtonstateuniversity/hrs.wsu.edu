@@ -226,6 +226,16 @@ class HRS_Theme_Setup {
 	 */
 	public function add_theme_support() {
 		add_theme_support( 'html5', array( 'search-form' ) );
+
+		add_theme_support( 'gutenberg', array(
+			'wide-images' => true,
+		) );
+
+		// Disables the custom option in the Gutenberg block color picker.
+		add_theme_support( 'disable-custom-colors' );
+
+		// By calling an empty array, we disable the Gutenberg custom color selector entirely.
+		add_theme_support( 'editor-color-palette', array() );
 	}
 
 	/**

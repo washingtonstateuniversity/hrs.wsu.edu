@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 0.18.2
+Version: 0.19.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -1137,6 +1137,11 @@ main input[type="submit"]:active {
 /**
  * 2.3 Images
  */
+.article-container .column figure.alignwide {
+  margin: 1em auto;
+  max-width: 143%;
+}
+
 /* Contextual mini-icons. */
 figure .wp-caption-text:before,
 .article-header time:before,
@@ -1235,6 +1240,12 @@ figure .wp-caption-text:before,
 
 .column.social-media-icons img {
   border-radius: 4px;
+}
+
+@media (min-width: 43em) {
+  .article-container .column figure.alignwide {
+    margin-right: -43%;
+  }
 }
 
 /* Components */

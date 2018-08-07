@@ -130,6 +130,11 @@ main input[type="submit"] {
  * 2.3 Images
  */
 
+.article-container .column figure.alignwide {
+	margin: 1em auto;
+	max-width: 143%;
+}
+
 /* Contextual mini-icons. */
 figure .wp-caption-text,
 .article-header time,
@@ -217,4 +222,12 @@ figure .wp-caption-text,
 	img {
 		border-radius: 4px;
 	}
+}
+
+@media (min-width: $medium) {
+
+	.article-container .column figure.alignwide {
+		margin-right: -43%;
+	}
+
 }
