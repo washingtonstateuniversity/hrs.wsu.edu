@@ -340,3 +340,61 @@ function hrs_pagination( $total_pages = '' ) {
 		<?php
 	}
 }
+
+/**
+ * Document.
+ *
+ * @since 0.20.0
+ */
+function get_awards_list( $awards = '', $year = '' ) {
+	if ( ! $awards ) {
+		$awards = WSU\HRS\Queries\get_erdb_awards();
+	}
+
+	$list = '';
+	foreach ( $awards as $award ) {
+		if ( ! $year ) {
+			$list .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
+				esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+				esc_html( wptexturize( $award->name ) ),
+				esc_html( wptexturize( $award->description ) )
+			);
+		} else {
+			if ( $year === $award->year ) {
+				$list .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
+					esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+					esc_html( wptexturize( $award->name ) ),
+					esc_html( wptexturize( $award->description ) )
+				);
+			}
+		}
+	}
+
+	return $list;
+}
+
+/**
+ * Document me.
+ *
+ * @since 0.11.0
+ * @return
+ */
+function list_erdb_awards_by_year() {
+	$awards = get_erdb_awards();
+
+	$group_years = array();
+	foreach ( $awards as $award ) {
+		if ( ! in_array( $award->year, $group_years, true ) ) {
+			$group_years[] = $award->year;
+		}
+	}
+
+	foreach ( $group_years as $year ) {
+		$title = ( -1 === $year ) ? 'All' : $year;
+
+		printf( '<section class="articles-list"><h2>%s Year Awards</h2>%s</section>', // WPCS: XSS ok.
+			esc_attr( $title ),
+			get_awards_list( $awards, $year )
+		);
+	}
+}

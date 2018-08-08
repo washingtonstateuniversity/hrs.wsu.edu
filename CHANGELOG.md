@@ -24,10 +24,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Move odbc queries and template tags to respective newer files.
 - Move awards list heading inside section element and change functions so that only one prints output.
 - Modify `HRS_MSDB` query methods to allow SQL Server-style parameterized queries (@see http://php.net/manual/en/function.sqlsrv-query.php).
 - Add escaping functions and fix other PHPCS issues.
-- Include the new `template-tags.php` file in `functions.php`.
 - Include the new `HRS_MSDB` class file in `functions.php`.
 - Add the new `includes/` and `templates/` directories to the npm PHPCS script.
 - Adjust row list component class names to be a little more element agnostic.
@@ -36,10 +36,9 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 - Functions to handle preparing SQL statements for SQL Server requests.
 - Template to handle presenting a list of awards from the Employee Recognition database.
-- Function in `template-tags.php` to print the lists of awards grouped by ER year.
-- Function in `template-tags.php` to print the results of a request to the ER DB awards table as lists of awards.
-- Function in `template-tags.php` that instantiates the HRS_MSDB class to open a new connection to the ER database, retrieve the contents of the awards table as an object, then close the connection and return the results.
-- New file `template-tags.php` in the `includes/` directory, to be used for custom template tags for the WSU HRS theme.
+- Function in `hrs-template-tags.php` to print the lists of awards grouped by ER year.
+- Function in `hrs-template-tags.php` to print the results of a request to the ER DB awards table as lists of awards.
+- Function in `hrs-queries.php` that instantiates the HRS_MSDB class to open a new connection to the ER database, retrieve the contents of the awards table as an object, then close the connection and return the results.
 - New class `HRS_MSDB` that provides a variety of methods for connecting to and interacting with an SQL Server database.
 
 ## 0.19.0 (2018-08-07)
