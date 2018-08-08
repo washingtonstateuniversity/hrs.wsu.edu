@@ -39,15 +39,10 @@ add_filter( 'excerpt_more', 'hrs_excerpt_more_link' );
  * @since 0.17.3
  */
 function hrs_get_theme_version() {
-	$hrs_version = '0.19.0';
+	$hrs_version = '0.20.0~build-odbc-connections';
 
 	return $hrs_version;
 }
-
-/**
- * Adds custom template tags for the WSU HRS theme.
- */
-require_once 'includes/template-tags.php';
 
 /**
  * Add HRS Child Theme stylesheet.
