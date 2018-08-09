@@ -346,7 +346,7 @@ function hrs_pagination( $total_pages = '' ) {
  *
  * @since 0.20.0
  */
-function get_awards_list( $awards = '', $year = '' ) {
+function get_awards_list( $year = '', $awards = '' ) {
 	if ( ! $awards ) {
 		$awards = WSU\HRS\Queries\get_erdb_awards();
 	}
@@ -392,9 +392,9 @@ function list_erdb_awards_by_year() {
 	foreach ( $group_years as $year ) {
 		$title = ( -1 === $year ) ? 'All' : $year;
 
-		printf( '<section class="articles-list"><h2>%s Year Awards</h2>%s</section>', // WPCS: XSS ok.
+		printf( '<div class="articles-list"><h2>%s Year Awards</h2>%s</div>', // WPCS: XSS ok.
 			esc_attr( $title ),
-			get_awards_list( $awards, $year )
+			get_awards_list( $year, $awards )
 		);
 	}
 }
