@@ -24,7 +24,7 @@ get_header();
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
 					get_template_part( 'articles/article' );
-					list_erdb_awards_by_year();
+					WSU\HRS\Template_Tags\list_erdb_awards_by_year();
 				endwhile;
 			endif;
 			?>

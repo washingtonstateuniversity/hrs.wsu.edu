@@ -380,7 +380,7 @@ function get_awards_list( $awards = '', $year = '' ) {
  * @return
  */
 function list_erdb_awards_by_year() {
-	$awards = get_erdb_awards();
+	$awards = \WSU\HRS\Queries\get_erdb_awards();
 
 	$group_years = array();
 	foreach ( $awards as $award ) {

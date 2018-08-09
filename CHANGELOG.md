@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
+- Namespace errors following update.
 - Match ER Awards template to default page template and fix phpcs issues.
 
 ### Changed

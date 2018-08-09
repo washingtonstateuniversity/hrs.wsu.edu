@@ -102,7 +102,7 @@ function get_hrs_unit_posts( $args = array() ) {
 	return $hrsunit_query;
 }
 
-if ( class_exists( 'HRS_MSDB' ) ) :
+
 	/**
 	 * Returns an object of awards from the ER Database.
 	 *
@@ -122,7 +122,7 @@ if ( class_exists( 'HRS_MSDB' ) ) :
 		$dbname     = defined( 'ERDB_NAME' ) ? ERDB_NAME : '';
 		$dbhost     = defined( 'ERDB_HOST' ) ? ERDB_HOST : '';
 
-		$msdb = new HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+		$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
 		$awards = $msdb->get_results( $msdb->prepare(
 			'
@@ -137,4 +137,3 @@ if ( class_exists( 'HRS_MSDB' ) ) :
 
 		return $awards;
 	}
-endif;
