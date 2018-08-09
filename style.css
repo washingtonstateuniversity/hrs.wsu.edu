@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 0.20.1
+Version: 0.20.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -1354,6 +1354,7 @@ main .tablepress {
 
 main thead tr {
   border-bottom: 1px solid #839098;
+  font-weight: 600;
 }
 
 main td,

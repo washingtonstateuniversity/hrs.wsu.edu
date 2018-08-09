@@ -429,7 +429,7 @@ function hrs_salary_grid( $data = '' ) {
 	}
 
 	/* translators: 1: The table head section, 2: The table body section filled with numbers. */
-	$output = sprintf( __( '<table class="tablepress colortable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+	$output = sprintf( __( '<table class="tablepress striped"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
 		$table_head,
 		$table_body
 	);

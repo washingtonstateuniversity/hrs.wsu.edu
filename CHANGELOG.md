@@ -20,7 +20,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 0.20.1~build-odbc-connections (unreleased)
+## 0.20.2~build-odbc-connections (unreleased)
 
 ### Fixed
 
@@ -29,6 +29,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Adjust table style to semi-bold tableheaders.
 - Switch from template to shortcode for displaying external ER Awards content.
 - Move odbc queries and template tags to respective newer files.
 - Move awards list heading inside section element and change functions so that only one prints output.
