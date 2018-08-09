@@ -136,3 +136,30 @@ function get_erdb_awards() {
 
 	return $awards;
 }
+
+/**
+ * Returns an object of from the EDB.
+ *
+ * @since 0.20.1
+ *
+ * @return object
+ */
+function get_salary_grid() {
+	$dbuser     = defined( 'ERDB_USER' ) ? ERDB_USER : '';
+	$dbpassword = defined( 'ERDB_PASSWORD' ) ? ERDB_PASSWORD : '';
+	$dbname     = defined( 'EDB_NAME' ) ? EDB_NAME : '';
+	$dbhost     = defined( 'ERDB_HOST' ) ? ERDB_HOST : '';
+
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$salary = $msdb->get_results(
+		'
+		SELECT *
+		FROM SalGrid
+		'
+	);
+
+	$msdb->clean();
+
+	return $salary;
+}

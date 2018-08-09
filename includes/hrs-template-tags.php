@@ -398,3 +398,41 @@ function list_erdb_awards_by_year() {
 		);
 	}
 }
+
+/**
+ * Document.
+ *
+ * @since 0.20.0
+ */
+function hrs_salary_grid( $data = '' ) {
+	if ( ! $data ) {
+		$data = \WSU\HRS\Queries\get_salary_grid();
+	}
+
+	$table_head = '<tr><td>Range</td>';
+	foreach ( range( 'A', 'M' ) as $letter ) {
+		/* translators: A letter of the alphabet. */
+		$table_head .= sprintf( __( '<td>Step %s</td>', 'hrs-wsu-edu' ), $letter );
+	}
+	$table_head .= '</tr>';
+
+	$table_body = '';
+	foreach ( $data as $row ) {
+		$table_body .= '<tr>';
+
+		foreach ( $row as $key => $val ) {
+			/* translators: The salary number with a comma in the thousands place. */
+			$table_body .= sprintf( __( '<td>%s</td>', 'hrs-wsu-edu' ), number_format( $val ) );
+		}
+
+		$table_body .= '</tr>';
+	}
+
+	/* translators: 1: The table head section, 2: The table body section filled with numbers. */
+	$output = sprintf( __( '<table class="tablepress colortable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+		$table_head,
+		$table_body
+	);
+
+	echo wp_kses_post( $output );
+}

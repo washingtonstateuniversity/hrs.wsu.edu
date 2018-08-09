@@ -29,6 +29,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Switch from template to shortcode for displaying external ER Awards content.
 - Move odbc queries and template tags to respective newer files.
 - Move awards list heading inside section element and change functions so that only one prints output.
 - Modify `HRS_MSDB` query methods to allow SQL Server-style parameterized queries (@see http://php.net/manual/en/function.sqlsrv-query.php).
@@ -39,6 +40,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+- Functions to fetch, format, and display data for the salary grid table.
 - Functions to handle preparing SQL statements for SQL Server requests.
 - Template to handle presenting a list of awards from the Employee Recognition database.
 - Function in `hrs-template-tags.php` to print the lists of awards grouped by ER year.
