@@ -80,6 +80,8 @@ class HRS_Theme_Setup {
 		require __DIR__ . '/shortcode-last-updated.php';
 		// The HRS post lists shortcodes.
 		require __DIR__ . '/shortcode-post-lists.php';
+		// The HRS external content shortcodes.
+		require __DIR__ . '/shortcode-external-content.php';
 		// The HRS template tags.
 		require __DIR__ . '/hrs-template-tags.php';
 		// WP database queries.
