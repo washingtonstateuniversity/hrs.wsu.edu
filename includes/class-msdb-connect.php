@@ -2,14 +2,14 @@
 /**
  * HRS SQL Server Connector: HRS_MSDB Class
  *
- * The HRS SQL Server connector is comprised of the HRS_MSDB class, which when
+ * The HRS SQL Server connector is comprised of the HRS_MSDB class, which, when
  * instantiated with valid credentials, opens a connection from WordPress to
  * a SQL Server database. The class provides a variety of methods for
  * interacting with the SQL Server database (currently using the `sqlsvr` PHP
  * extension).
  *
  * @package WSU_Human_Resources_Services
- * @since 0.11.0
+ * @since 0.20.2
  */
 
 /**
@@ -17,7 +17,7 @@
  *
  * @link https://codex.wordpress.org/Function_Reference/wpdb_Class
  *
- * @since 0.11.0
+ * @since 0.20.2
  */
 class HRS_MSDB {
 
@@ -27,7 +27,7 @@ class HRS_MSDB {
 	 * Default behavior is to show errors if both WP_DEBUG and WP_DEBUG_DISPLAY
 	 * evaluated to true.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 * @var bool
 	 */
 	private $show_errors = false;
@@ -35,7 +35,7 @@ class HRS_MSDB {
 	/**
 	 * Results of the last query made.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 * @var array|null
 	 */
 	private $last_result;
@@ -43,7 +43,7 @@ class HRS_MSDB {
 	/**
 	 * SQL server result, either a resource or a booleen.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 * @var mixed
 	 */
 	protected $result;
@@ -51,7 +51,7 @@ class HRS_MSDB {
 	/**
 	 * Database Username.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 * @var string
 	 */
 	protected $dbuser;
@@ -59,7 +59,7 @@ class HRS_MSDB {
 	/**
 	 * Database Password.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 * @var string
 	 */
 	protected $dbpassword;
@@ -67,7 +67,7 @@ class HRS_MSDB {
 	/**
 	 * Database Name.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 * @var string
 	 */
 	protected $dbname;
@@ -75,7 +75,7 @@ class HRS_MSDB {
 	/**
 	 * Database Host.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 * @var string
 	 */
 	protected $dbhost;
@@ -83,7 +83,7 @@ class HRS_MSDB {
 	/**
 	 * Database Handle.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 * @var string
 	 */
 	protected $dbh;
@@ -91,17 +91,23 @@ class HRS_MSDB {
 	/**
 	 * Whether a connection has been made.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 * @var bool
 	 */
 	private $has_connected = false;
 
 	/**
-	 * ... constructor ...
+	 * Connects to a database server and selects a database.
 	 *
-	 * tell my story
+	 * PHP5+ style constructor that sets up the class properties and connection
+	 * to the database.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
+	 *
+	 * @param string $dbuser     MSSQL database user
+	 * @param string $dbpassword MSSQL database password
+	 * @param string $dbname     MSSQL database name
+	 * @param string $dbhost     MSSQL database host
 	 */
 	public function __construct( $dbuser, $dbpassword, $dbname, $dbhost ) {
 		if ( WP_DEBUG && WP_DEBUG_DISPLAY ) {
@@ -117,11 +123,14 @@ class HRS_MSDB {
 	}
 
 	/**
-	 * Opens a connection.
+	 * Connects to and selects a database.
 	 *
-	 * Explain yourself.
+	 * Uses the `sqlsrv` PHP extension to open a connection to a Microsoft SQL
+	 * Server database.
 	 *
-	 * @since 0.11.0
+	 * @link http://php.net/manual/en/intro.sqlsrv.php
+	 *
+	 * @since 0.20.2
 	 *
 	 * @return bool True with a successful connection, false on failure.
 	 */
@@ -151,7 +160,7 @@ class HRS_MSDB {
 	/**
 	 * Real escape using ???
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 *
 	 * @param string $string String to escape.
 	 * @return string Escaped string.
@@ -165,7 +174,9 @@ class HRS_MSDB {
 	/**
 	 * Escapes content by reference for insertion into the database.
 	 *
-	 * @since 0.11.0
+	 * @uses msdb::mssql_escape()
+	 *
+	 * @since 0.20.2
 	 *
 	 * @param string $string String to escape.
 	 */
@@ -228,7 +239,7 @@ class HRS_MSDB {
 	 *   %f (float)
 	 *   %s (string)
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 *
 	 * @param string      $query Query statement with sprintf()-like placeholders.
 	 * @param array|mixed $args  The array of variables to substitute into the query's placeholders
@@ -312,7 +323,7 @@ class HRS_MSDB {
 	 * @todo Check on the type of query, {@see /wp-includes/wp-db.php}.
 	 * @todo Include some filtering and checking first.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 *
 	 * @param string $query A database query.
 	 * @return int|bool Number of rows selected for select queries. Booleen
@@ -374,7 +385,7 @@ class HRS_MSDB {
 	 *
 	 * @todo Consider adding additional output formats, such as array.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 */
 	public function get_results( $query = null, $param = null, $output = OBJECT ) {
 		if ( $query && $param ) {
@@ -400,7 +411,7 @@ class HRS_MSDB {
 	 *
 	 * Explain yourself.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 */
 	public function close() {
 		if ( ! $this->dbh ) {
@@ -412,7 +423,7 @@ class HRS_MSDB {
 		if ( $closed ) {
 			$this->dbh           = null;
 			$this->has_connected = false;
-			echo '<!-- DEBUG: Connection to' . esc_html( $this->dbname ) . 'closed. -->'; // DEBUGGING
+			echo '<!-- DEBUG: Connection to ' . esc_html( $this->dbname ) . ' closed. -->'; // DEBUGGING
 		}
 
 		return $closed;
@@ -425,7 +436,7 @@ class HRS_MSDB {
 	 *
 	 * @todo Break this out into two pieces: flush() and close().
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 */
 	public function clean( $statements = array() ) {
 
@@ -433,10 +444,11 @@ class HRS_MSDB {
 		if ( $statements ) {
 			foreach ( $statements as $statement ) {
 				sqlsrv_free_stmt( $statement );
-				echo '<!-- DEBUG: Freed resources for' . esc_html( $statement ) . 'statement. -->'; // DEBUGGING
+				echo '<!-- DEBUG: Freed resources for ' . esc_html( $statement ) . ' statement. -->'; // DEBUGGING
 			}
 		} else {
 			sqlsrv_free_stmt( $this->result );
+			echo '<!-- DEBUG: Freed resources for ' . esc_html( $this->result ) . ' statement. -->'; // DEBUGGING
 		}
 
 		// Then close the connection.
@@ -447,7 +459,7 @@ class HRS_MSDB {
 	/**
 	 * Print SQL/DB error.
 	 *
-	 * @since 0.11.0
+	 * @since 0.20.2
 	 *
 	 * @param string $str The error to display.
 	 * @return false|void False if showing of errors is disabled.
