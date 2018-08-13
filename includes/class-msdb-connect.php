@@ -54,7 +54,7 @@ class HRS_MSDB {
 	 * @since 0.20.2
 	 * @var array
 	 */
-	var $last_query;
+	private $last_query;
 
 	/**
 	 * SQL server result, either a resource or a booleen.
@@ -188,7 +188,7 @@ class HRS_MSDB {
 	 * @param string $string String to escape.
 	 * @return string Escaped string.
 	 */
-	private function _mssql_escape_string( $string ) {
+	private function mssql_escape_string( $string ) {
 		if ( $this->dbh ) {
 			$escaped = str_replace( "'", "''", $string );
 		} else {
@@ -203,7 +203,7 @@ class HRS_MSDB {
 	/**
 	 * Escapes content by reference for insertion into the database.
 	 *
-	 * @uses msdb::_mssql_escape_string()
+	 * @uses msdb::mssql_escape_string()
 	 *
 	 * @since 0.20.2
 	 *
@@ -211,7 +211,7 @@ class HRS_MSDB {
 	 */
 	public function escape_by_ref( &$string ) {
 		if ( ! is_float( $string ) ) {
-			$string = $this->_mssql_escape_string( $string );
+			$string = $this->mssql_escape_string( $string );
 		}
 	}
 
@@ -421,9 +421,9 @@ class HRS_MSDB {
 
 		// Run the query.
 		if ( ! $param ) {
-			$this->_do_query( $query );
+			$this->do_query( $query );
 		} else {
-			$this->_do_query( $query, $param );
+			$this->do_query( $query, $param );
 		}
 
 		// Catch errors.
@@ -443,7 +443,7 @@ class HRS_MSDB {
 
 			// Log the number of rows returned and return them.
 			$this->num_rows = $num_rows;
-			$return_val = $num_rows;
+			$return_val     = $num_rows;
 
 		}
 
@@ -461,7 +461,7 @@ class HRS_MSDB {
 	 * @param string $query The query to run.
 	 * @param array $param Optional. Arguments for a parameterized query.
 	 */
-	private function _do_query( $query, $param = array() ) {
+	private function do_query( $query, $param = array() ) {
 		if ( ! empty( $this->dbh ) ) {
 			if ( ! $param ) {
 				$this->result = sqlsrv_query( $this->dbh, $query );
@@ -495,10 +495,10 @@ class HRS_MSDB {
 			return null;
 		}
 
-		if ( $output === OBJECT ) {
+		if ( OBJECT === $output ) {
 			// Return an integer-keyed array of row objects.
 			return $this->last_result;
-		} elseif ( strtoupper( $output ) === OBJECT ) {
+		} elseif ( OBJECT === strtoupper( $output ) ) {
 			// Return an integer-keyed array of row objects.
 			return $this->last_result;
 		}
