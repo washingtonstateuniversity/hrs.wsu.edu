@@ -493,6 +493,21 @@ class HRS_MSDB {
 	}
 
 	/**
+	 * Remove cached query results.
+	 *
+	 * @since 0.20.2
+	 */
+	public function flush() {
+		$this->last_result = array();
+		$this->num_rows = 0;
+
+		if ( is_resource( $this->result ) ) {
+			sqlsrv_free_stmt( $this->result );
+			echo '<!-- DEBUG: Freed resources for ' . esc_html( $this->result ) . ' statement. -->'; // DEBUGGING
+		}
+	}
+
+	/**
 	 * Closes the current database connection.
 	 *
 	 * @since 0.20.2
@@ -517,30 +532,16 @@ class HRS_MSDB {
 	}
 
 	/**
-	 * Cleans up request resources and close.
-	 *
-	 * Explain yourself.
-	 *
-	 * @todo Break this out into two pieces: flush() and close().
+	 * Cleans up request resources and closes.
 	 *
 	 * @since 0.20.2
 	 */
-	public function clean( $statements = array() ) {
-
-		// First free all resources for the specified statement(s).
-		if ( $statements ) {
-			foreach ( $statements as $statement ) {
-				sqlsrv_free_stmt( $statement );
-				echo '<!-- DEBUG: Freed resources for ' . esc_html( $statement ) . ' statement. -->'; // DEBUGGING
-			}
-		} else {
-			sqlsrv_free_stmt( $this->result );
-			echo '<!-- DEBUG: Freed resources for ' . esc_html( $this->result ) . ' statement. -->'; // DEBUGGING
-		}
+	public function clean() {
+		// Clean up.
+		$this->flush();
 
 		// Then close the connection.
 		$this->close();
-
 	}
 
 	/**
