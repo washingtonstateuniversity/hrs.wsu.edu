@@ -44,8 +44,17 @@ class HRS_MSDB {
 	 * Count of rows returned by previous query.
 	 *
 	 * @since 0.20.2
+	 * @var int
 	 */
 	public $num_rows = 0;
+
+	/**
+	 * Last query made.
+	 *
+	 * @since 0.20.2
+	 * @var array
+	 */
+	var $last_query;
 
 	/**
 	 * SQL server result, either a resource or a booleen.
@@ -405,11 +414,16 @@ class HRS_MSDB {
 			return false;
 		}
 
+		$this->flush();
+
+		// Keep track of the last query for debug.
+		$this->last_query = $query;
+
 		// Run the query.
 		if ( ! $param ) {
-			$this->do_query( $query );
+			$this->_do_query( $query );
 		} else {
-			$this->do_query( $query, $param );
+			$this->_do_query( $query, $param );
 		}
 
 		// Catch errors.
@@ -447,7 +461,7 @@ class HRS_MSDB {
 	 * @param string $query The query to run.
 	 * @param array $param Optional. Arguments for a parameterized query.
 	 */
-	private function do_query( $query, $param = array() ) {
+	private function _do_query( $query, $param = array() ) {
 		if ( ! empty( $this->dbh ) ) {
 			if ( ! $param ) {
 				$this->result = sqlsrv_query( $this->dbh, $query );
@@ -499,7 +513,8 @@ class HRS_MSDB {
 	 */
 	public function flush() {
 		$this->last_result = array();
-		$this->num_rows = 0;
+		$this->last_query  = null;
+		$this->num_rows    = 0;
 
 		if ( is_resource( $this->result ) ) {
 			sqlsrv_free_stmt( $this->result );
