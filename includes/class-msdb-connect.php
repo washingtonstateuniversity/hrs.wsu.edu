@@ -41,6 +41,13 @@ class HRS_MSDB {
 	private $last_result;
 
 	/**
+	 * Count of rows returned by previous query.
+	 *
+	 * @since 0.20.2
+	 */
+	public $num_rows = 0;
+
+	/**
 	 * SQL server result, either a resource or a booleen.
 	 *
 	 * @since 0.20.2
@@ -148,25 +155,38 @@ class HRS_MSDB {
 		if ( ! $this->dbh ) {
 			// Connection failed, so print errors and end.
 			$this->print_error();
+
 			return false;
 		} elseif ( $this->dbh ) {
 			$this->has_connected = true;
 			echo '<!-- DEBUG: Connection successful! :) -->'; // DEBUGGING
+
 			return true;
 		}
+
 		return false;
 	}
 
 	/**
-	 * Real escape using ???
+	 * Attempts to escape special characters in a string.
+	 *
+	 * For now only escapes quotation marks.
+	 *
+	 * @todo Consider switching to PDO for better built-in escaping.
 	 *
 	 * @since 0.20.2
 	 *
 	 * @param string $string String to escape.
 	 * @return string Escaped string.
 	 */
-	private function mssql_escape( $string ) {
-		$escaped = str_replace( "'", "''", $string );
+	private function _mssql_escape_string( $string ) {
+		if ( $this->dbh ) {
+			$escaped = str_replace( "'", "''", $string );
+		} else {
+			/* translators: %s: database access class HRS_MSDB */
+			$this->print_error( sprintf( __( '%s must set a database connection for use with escaping.', 'hrs-wsu-edu' ), get_class( $this ) ) );
+			$escaped = str_replace( "'", "''", $string );
+		}
 
 		return $this->add_placeholder_escape( $escaped );
 	}
@@ -174,7 +194,7 @@ class HRS_MSDB {
 	/**
 	 * Escapes content by reference for insertion into the database.
 	 *
-	 * @uses msdb::mssql_escape()
+	 * @uses msdb::_mssql_escape_string()
 	 *
 	 * @since 0.20.2
 	 *
@@ -182,12 +202,18 @@ class HRS_MSDB {
 	 */
 	public function escape_by_ref( &$string ) {
 		if ( ! is_float( $string ) ) {
-			$string = $this->mssql_escape( $string );
+			$string = $this->_mssql_escape_string( $string );
 		}
 	}
 
 	/**
-	 * esCape
+	 * Generates and returns a placeholder escape string for use in queries returned by ::prepare().
+	 *
+	 * @see wpdb::placeholder_escape()
+	 *
+	 * @since 0.20.2
+	 *
+	 * @return string String to escape placeholders.
 	 */
 	public function placeholder_escape() {
 		static $placeholder;
@@ -212,7 +238,12 @@ class HRS_MSDB {
 	}
 
 	/**
-	 * escapee
+	 * Adds a placeholder escape string, to escape anything that resembles a printf() placeholder.
+	 *
+	 * @since 0.20.2
+	 *
+	 * @param string $query The query to escape.
+	 * @return string The query with the placeholder escape string inserted as needed.
 	 */
 	public function add_placeholder_escape( $query ) {
 		/*
@@ -223,8 +254,12 @@ class HRS_MSDB {
 	}
 
 	/**
-	 * unescapee
+	 * Removes the placeholder escape strings from a query.
 	 *
+	 * @since 0.20.2
+	 *
+	 * @param string $query The query to remove the placeholder from.
+	 * @return string The query with the placeholder removed as needed.
 	 */
 	public function remove_placeholder_escape( $query ) {
 		return str_replace( $this->placeholder_escape(), '%', $query );
@@ -238,6 +273,23 @@ class HRS_MSDB {
 	 *   %d (integer)
 	 *   %f (float)
 	 *   %s (string)
+	 *
+	 * All placeholders **must** be left unquoted in the query string and a
+	 * corresponding argument **must** be passed for each placeholder.
+	 *
+	 * Numbered or formatted query strings (such as %1$2 or %5s) will not have
+	 * quotes added by this function. They should be passed with appropriate
+	 * quotation marks aruond them for your usage.
+	 *
+	 * Literal percentage signs (%) in the query string must be written as `%%`.
+	 * Percentage wildcards (such as those used in LIKE syntax) must be passed
+	 * via a substitution argument containing the complete LIKE string; they
+	 * cannot be inserted directly in the query string, see {@see esc_like()}.
+	 *
+	 * Examples:
+	 *     $msdb->prepare( "SELECT * FROM table WHERE column = %s OR field LIKE %s", array( 'foo', '%bar' ) )
+	 *
+	 * @link https://secure.php.net/sprintf Description of syntax.
 	 *
 	 * @since 0.20.2
 	 *
@@ -277,13 +329,32 @@ class HRS_MSDB {
 			}
 		}
 
+		/*
+		 * Specify the formatting allowed in a placeholder. The following are allowed:
+		 *
+		 * - Sign specifier. eg, $+d
+		 * - Numbered placeholders. eg, %1$s
+		 * - Padding specifier, including custom padding characters. eg, %05s, %'#5s
+		 * - Alignment specifier. eg, %05-s
+		 * - Precision specifier. eg, %.2f
+		 */
 		$allowed_format = '(?:[1-9][0-9]*[$])?[-+0-9]*(?: |0|\'.)?[-+0-9]*(?:\.[0-9]+)?';
 
+		/*
+		 * If a %s placeholder already has quotes around it, removing the existing quotes
+		 * and re-inserting them ensures the quotes are consistent.
+		 *
+		 * For backwards compatibility, this is only applied to %s, and not to placeholders
+		 * like %1$s, which are frequently used in the middle of longer strings, or as table
+		 * name placeholders.
+		 */
 		$query = str_replace( "'%s'", '%s', $query ); // Strip any existing single quotes.
 		$query = str_replace( '"%s"', '%s', $query ); // Strip any existing double quotes.
+
 		$query = preg_replace( "/(?<!%)(%($allowed_format)?f)/", '%\\2F', $query ); // Force floats to be locale unaware.
 		$query = preg_replace( "/%(?:%|$|(?!($allowed_format)?[sdF]))/", '%%\\1', $query ); // Escape any unescaped percents.
 
+		// Count the number of valid placeholders in the query.
 		$placeholders = preg_match_all( "/(^|[^%]|(%%)+)%($allowed_format)?[sdF]/", $query, $matches );
 
 		if ( count( $args ) !== $placeholders ) {
@@ -314,7 +385,7 @@ class HRS_MSDB {
 	}
 
 	/**
-	 * Perform a MS SQL Server database query, using current DB connection.
+	 * Performs a MS SQL Server database query, using the current DB connection.
 	 *
 	 * For the time being only handles SELECT queries.
 	 * More complex than it needs to be for now, in order to allow for easily
@@ -330,6 +401,10 @@ class HRS_MSDB {
 	 *                  false on error.
 	 */
 	public function query( $query, $param = null ) {
+		if ( ! $this->has_connected ) {
+			return false;
+		}
+
 		// Run the query.
 		if ( ! $param ) {
 			$this->do_query( $query );
@@ -353,7 +428,7 @@ class HRS_MSDB {
 			}
 
 			// Log the number of rows returned and return them.
-			// $this->num_rows = $num_rows;
+			$this->num_rows = $num_rows;
 			$return_val = $num_rows;
 
 		}
@@ -365,10 +440,14 @@ class HRS_MSDB {
 	 * Internal function performs an sqlsrv_query() call.
 	 *
 	 * @see HRS_MSDB::query()
+	 * @link http://php.net/manual/en/function.sqlsrv-query.php
+	 *
+	 * @since 0.20.2
 	 *
 	 * @param string $query The query to run.
+	 * @param array $param Optional. Arguments for a parameterized query.
 	 */
-	private function do_query( $query, $param = null ) {
+	private function do_query( $query, $param = array() ) {
 		if ( ! empty( $this->dbh ) ) {
 			if ( ! $param ) {
 				$this->result = sqlsrv_query( $this->dbh, $query );
@@ -379,15 +458,21 @@ class HRS_MSDB {
 	}
 
 	/**
-	 * Get results.
+	 * Retrieves an entire SQL result from the database (many rows).
 	 *
-	 * Explain yourself.
-	 *
-	 * @todo Consider adding additional output formats, such as array.
+	 * Executes a given SLQ query and returns the full result.
 	 *
 	 * @since 0.20.2
+	 *
+	 * @param string $query An SQL query.
+	 * @param array $param Optional. Arguments for a parameterized sqlsvr query.
+	 * @param string $output Optional. Any of ARRAY_A, ARRAY_N, or OBJECT constants.
+	 *                       All return an arrow of rows indexed from 0 by SQL result row number.
+	 *                       Each row is an associative array (column => value, ...), a numerically
+	 *                       indexed array (0 => value, ...), or an object ( ->column = value ), respectively.
+	 * @return array|object|null The database query results.
 	 */
-	public function get_results( $query = null, $param = null, $output = OBJECT ) {
+	public function get_results( $query = null, $param = array(), $output = OBJECT ) {
 		if ( $query && $param ) {
 			$this->query( $query, $param );
 		} elseif ( $query && ! $param ) {
@@ -396,22 +481,24 @@ class HRS_MSDB {
 			return null;
 		}
 
-		if ( OBJECT === $output ) {
+		if ( $output === OBJECT ) {
 			// Return an integer-keyed array of row objects.
 			return $this->last_result;
-		} elseif ( OBJECT === strtoupper( $output ) ) {
+		} elseif ( strtoupper( $output ) === OBJECT ) {
 			// Return an integer-keyed array of row objects.
 			return $this->last_result;
 		}
+
 		return null;
 	}
 
 	/**
-	 * Closes.
-	 *
-	 * Explain yourself.
+	 * Closes the current database connection.
 	 *
 	 * @since 0.20.2
+	 *
+	 * @return bool True if the connection was successfully closed, falise if it
+	 *              wasn't or if the connection doesn't exist.
 	 */
 	public function close() {
 		if ( ! $this->dbh ) {
@@ -457,7 +544,7 @@ class HRS_MSDB {
 	}
 
 	/**
-	 * Print SQL/DB error.
+	 * Prints an SQL/DB error.
 	 *
 	 * @since 0.20.2
 	 *
@@ -465,7 +552,6 @@ class HRS_MSDB {
 	 * @return false|void False if showing of errors is disabled.
 	 */
 	public function print_error( $str = '' ) {
-
 		if ( ! $str ) {
 			$str = sqlsrv_errors();
 		}
