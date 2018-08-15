@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 add_shortcode( 'erdb_awards_list', __NAMESPACE__ . '\erdb_awards_list_shortcode' );
 add_shortcode( 'salary_grid_table', __NAMESPACE__ . '\salary_grid_table_shortcode' );
+add_shortcode( 'cs_salary_schedule', __NAMESPACE__ . '\cs_salary_schedule_shortcode' );
 
 /**
  * Shortcode displays a list of ERDB Awards.
@@ -45,6 +46,18 @@ function salary_grid_table_shortcode() {
 	ob_start();
 
 	\WSU\HRS\Template_Tags\hrs_salary_grid();
+
+	return ob_get_clean();
+}
+
+/**
+ * Explain.
+ *
+ */
+function cs_salary_schedule_shortcode() {
+	ob_start();
+
+	\WSU\HRS\Template_Tags\hrs_cs_salary_schedule();
 
 	return ob_get_clean();
 }
