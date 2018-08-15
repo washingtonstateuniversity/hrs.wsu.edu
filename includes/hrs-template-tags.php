@@ -409,12 +409,11 @@ function hrs_salary_grid( $data = '' ) {
 		$data = \WSU\HRS\Queries\get_salary_grid();
 	}
 
-	$table_head = '<tr><td>Range</td>';
+	$table_head = '<th>Range</th>';
 	foreach ( range( 'A', 'M' ) as $letter ) {
 		/* translators: A letter of the alphabet. */
-		$table_head .= sprintf( __( '<td>Step %s</td>', 'hrs-wsu-edu' ), $letter );
+		$table_head .= sprintf( __( '<th>Step<br> %s</th>', 'hrs-wsu-edu' ), $letter );
 	}
-	$table_head .= '</tr>';
 
 	$table_body = '';
 	foreach ( $data as $row ) {
