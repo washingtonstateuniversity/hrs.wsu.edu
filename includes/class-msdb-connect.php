@@ -177,6 +177,32 @@ class HRS_MSDB {
 	}
 
 	/**
+	 * Escapes certain LIKE special characters to prep for MS SQL Parameterized Query.
+	 *
+	 * Use this only before a MS SQL parameterized query. This function is not
+	 * sufficient to create SQL-safe output on its own.
+	 *
+	 * Example:
+	 *
+	 *     $find = 'only 42% of the universe';
+	 *     $like = $msdb->esc_like( $find );
+	 *     $sql  = $msdb->get_results( "SELECT * FROM table WHERE content LIKE '%' + ? + '%' ", array( $like ) );
+	 *
+	 * @since 0.20.2
+	 *
+	 * @param string $text The raw text to be escaped.
+	 * @return string Text in the form of a LIKE phrase. The output is not SQL safe on its own.
+	 */
+	public function esc_like( $text ) {
+		$text = str_replace( '[', '[[]', $text );
+		$text = str_replace( '%', '[%]', $text );
+		$text = str_replace( '_', '[_]', $text );
+		$text = addcslashes( $text, '_%\\' );
+
+		return $this->add_placeholder_escape( $text );
+	}
+
+	/**
 	 * Attempts to escape special characters in a string.
 	 *
 	 * For now only escapes quotation marks.
@@ -191,6 +217,7 @@ class HRS_MSDB {
 	private function mssql_escape_string( $string ) {
 		if ( $this->dbh ) {
 			$escaped = str_replace( "'", "''", $string );
+			$escaped = addslashes( $escaped );
 		} else {
 			/* translators: %s: database access class HRS_MSDB */
 			$this->print_error( sprintf( __( '%s must set a database connection for use with escaping.', 'hrs-wsu-edu' ), get_class( $this ) ) );
@@ -429,6 +456,7 @@ class HRS_MSDB {
 		// Catch errors.
 		if ( false === $this->result ) {
 			$this->print_error();
+			return false;
 		} else {
 			echo '<!-- DEBUG: Query request successful! :) -->'; // DEBUGGING
 		}
