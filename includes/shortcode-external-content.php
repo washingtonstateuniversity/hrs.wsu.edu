@@ -19,13 +19,13 @@ add_shortcode( 'salary_grid_table', __NAMESPACE__ . '\salary_grid_table_shortcod
 add_shortcode( 'cs_salary_schedule', __NAMESPACE__ . '\cs_salary_schedule_shortcode' );
 
 /**
- * Shortcode displays a list of ERDB Awards.
+ * Shortcode displays a list of Employee Recognition Awards.
  *
  * Sample usage: [erdb_awards_list]
  *
  * @since 0.20.1
  *
- * @return string HTML content to display the latest HRS posts.
+ * @return string HTML content to display the Employee Recognition awards.
  */
 function erdb_awards_list_shortcode() {
 	ob_start();
@@ -36,11 +36,13 @@ function erdb_awards_list_shortcode() {
 }
 
 /**
- * Explain.
+ * Shortcode displays a table of the CS salary grid.
+ *
+ * Sample usage: [salary_grid_table]
  *
  * @since 0.20.1
  *
- * @return string
+ * @return string HTML content to display the salary grid table.
  */
 function salary_grid_table_shortcode() {
 	ob_start();
@@ -51,8 +53,13 @@ function salary_grid_table_shortcode() {
 }
 
 /**
- * Explain.
+ * Shortcode displays a table of the CS salary schedule data.
  *
+ * Sample usage: [cs_salary_schedule]
+ *
+ * @since 0.20.2
+ *
+ * @return string HTML content to display the salary schedule table.
  */
 function cs_salary_schedule_shortcode() {
 	ob_start();

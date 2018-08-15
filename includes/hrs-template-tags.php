@@ -342,9 +342,16 @@ function hrs_pagination( $total_pages = '' ) {
 }
 
 /**
- * Document.
+ * Retrieves a list of Employee Recognition awards.
+ *
+ * Queries the Employee Recognition database using an instance of the HRS_MSDB()
+ * class.
  *
  * @since 0.20.0
+ *
+ * @param string $year   Optional. The year from which to select awards to display.
+ * @param string $awards Optional. An array of ER award objects to format.
+ * @return string HTML formatted list of ER awards including title, description, and image.
  */
 function get_awards_list( $year = '', $awards = '' ) {
 	if ( ! $awards ) {
@@ -374,10 +381,11 @@ function get_awards_list( $year = '', $awards = '' ) {
 }
 
 /**
- * Document me.
+ * Displays a list of Employee Recognition awards grouped by year.
  *
  * @since 0.11.0
- * @return
+ *
+ * @return string HTML formatted list of awards grouped by year.
  */
 function list_erdb_awards_by_year() {
 	$awards = \WSU\HRS\Queries\get_erdb_awards();
@@ -400,11 +408,17 @@ function list_erdb_awards_by_year() {
 }
 
 /**
- * Document.
+ * Retrieves and displays a table of Salary Grid data.
+ *
+ * Pulls salary data from the Salary Grid database and formats it into an HTML
+ * table.
  *
  * @since 0.20.0
+ *
+ * @param array Optional. An array of salary grid data to format.
+ * @return string HTML formatted table of salary grid data.
  */
-function hrs_salary_grid( $data = '' ) {
+function hrs_salary_grid( $data = array() ) {
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid();
 	}
@@ -437,11 +451,17 @@ function hrs_salary_grid( $data = '' ) {
 }
 
 /**
- * Explain.
+ * Retrieves and displays a table of Salary Schedule data.
+ *
+ * Pulls salary and position data from the Employee database and formats it into
+ * an HTML table.
  *
  * @since 0.20.2
+ *
+ * @param array Optional. An array of salary data to format.
+ * @return string HTML formatted table of salary data.
  */
-function hrs_cs_salary_schedule( $data = '' ) {
+function hrs_cs_salary_schedule( $data = array() ) {
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_cs_salary_schedule();
 	}
