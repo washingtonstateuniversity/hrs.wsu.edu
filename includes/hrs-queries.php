@@ -113,7 +113,8 @@ function get_hrs_unit_posts( $args = array() ) {
  * @uses HRS_MSDB
  *
  * @since 0.20.0
- * @return
+ *
+ * @return array An array of objects matching the specified query.
  */
 function get_erdb_awards() {
 	$dbuser     = defined( 'ERDB_USER' ) ? ERDB_USER : '';
@@ -138,11 +139,16 @@ function get_erdb_awards() {
 }
 
 /**
- * Returns an object of from the EDB.
+ * Returns an object of salary data from the EDB.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using the saved
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
  *
  * @since 0.20.1
  *
- * @return object
+ * @return array An array of objects matching the specified query.
  */
 function get_salary_grid() {
 	$dbuser     = defined( 'ERDB_USER' ) ? ERDB_USER : '';
