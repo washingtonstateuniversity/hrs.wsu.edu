@@ -435,3 +435,43 @@ function hrs_salary_grid( $data = '' ) {
 
 	echo wp_kses_post( $output );
 }
+
+/**
+ * Explain.
+ *
+ * @since 0.20.2
+ */
+function hrs_cs_salary_schedule( $data = '' ) {
+	if ( ! $data ) {
+		$data = \WSU\HRS\Queries\get_cs_salary_schedule();
+	}
+
+	?>
+	<table class="tablepress striped">
+		<thead>
+			<th>Job Class</th>
+			<th>Job Group</th>
+			<th>Job Title</th>
+			<th>Range</th>
+			<th>Salary Min</th>
+			<th>Salary Max</th>
+		</thead>
+		<tbody>
+			<?php
+			$table_body = '';
+			foreach ( $data as $row ) {
+				$table_body .= '<tr>';
+				$table_body .= '<td>' . $row->ClassCode . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td>' . $row->JobGroupCode . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td>' . $row->JobTitle . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td><a href="/selectsalaryrange/?range=' . esc_url( $row->SalRangeNum ) . '">' . $row->SalrangeWExceptions . '</a></td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td>$' . number_format( $row->Salary_Min, 2 ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td>$' . number_format( $row->Salary_Max, 2 ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '</tr>';
+			}
+			echo wp_kses_post( $table_body );
+			?>
+		</tbody>
+	</table>
+	<?php
+}
