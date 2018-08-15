@@ -169,3 +169,37 @@ function get_salary_grid() {
 
 	return $salary;
 }
+
+/**
+ * Returns an object of salary data and job titles from the EDB.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using the saved
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
+ *
+ * @since 0.20.1
+ *
+ * @return array An array of objects matching the specified query.
+ */
+function get_cs_salary_schedule() {
+	$dbuser     = defined( 'ERDB_USER' ) ? ERDB_USER : '';
+	$dbpassword = defined( 'ERDB_PASSWORD' ) ? ERDB_PASSWORD : '';
+	$dbname     = defined( 'EDB_NAME' ) ? EDB_NAME : '';
+	$dbhost     = defined( 'EDB_HOST' ) ? EDB_HOST : '';
+
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$data = $msdb->get_results( $msdb->prepare(
+		'
+		SELECT ClassCode, JobGroupCode, JobTitle, SalRangeNum, SalrangeWExceptions, Salary_Min, Salary_Max
+		FROM V_JobClassCS
+		ORDER BY %s
+		',
+		array( 'JobTitle' )
+	) );
+
+	$msdb->clean();
+
+	return $data;
+}
