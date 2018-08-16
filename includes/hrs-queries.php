@@ -117,10 +117,10 @@ function get_hrs_unit_posts( $args = array() ) {
  * @return array An array of objects matching the specified query.
  */
 function get_erdb_awards() {
-	$dbuser     = defined( 'ERDB_USER' ) ? ERDB_USER : '';
-	$dbpassword = defined( 'ERDB_PASSWORD' ) ? ERDB_PASSWORD : '';
-	$dbname     = defined( 'ERDB_NAME' ) ? ERDB_NAME : '';
-	$dbhost     = defined( 'ERDB_HOST' ) ? ERDB_HOST : '';
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'RECOG_DB_NAME' ) ? RECOG_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
 
 	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
@@ -151,10 +151,10 @@ function get_erdb_awards() {
  * @return array An array of objects matching the specified query.
  */
 function get_salary_grid() {
-	$dbuser     = defined( 'ERDB_USER' ) ? ERDB_USER : '';
-	$dbpassword = defined( 'ERDB_PASSWORD' ) ? ERDB_PASSWORD : '';
-	$dbname     = defined( 'EDB_NAME' ) ? EDB_NAME : '';
-	$dbhost     = defined( 'ERDB_HOST' ) ? ERDB_HOST : '';
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
 
 	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
@@ -183,10 +183,10 @@ function get_salary_grid() {
  * @return array An array of objects matching the specified query.
  */
 function get_cs_salary_schedule() {
-	$dbuser     = defined( 'ERDB_USER' ) ? ERDB_USER : '';
-	$dbpassword = defined( 'ERDB_PASSWORD' ) ? ERDB_PASSWORD : '';
-	$dbname     = defined( 'EDB_NAME' ) ? EDB_NAME : '';
-	$dbhost     = defined( 'EDB_HOST' ) ? EDB_HOST : '';
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
 
 	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
