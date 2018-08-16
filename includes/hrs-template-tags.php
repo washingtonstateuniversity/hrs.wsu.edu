@@ -410,10 +410,14 @@ function get_awards_list( $year = '', $awards = '' ) {
  *
  * @since 0.11.0
  *
- * @return string HTML formatted list of awards grouped by year.
+ * @return string|false HTML formatted list of awards grouped by year or false if no award data.
  */
 function list_erdb_awards_by_year() {
 	$awards = \WSU\HRS\Queries\get_erdb_awards();
+
+	if ( ! $awards ) {
+		return false;
+	}
 
 	$group_years = array();
 	foreach ( $awards as $award ) {
@@ -441,11 +445,15 @@ function list_erdb_awards_by_year() {
  * @since 0.20.0
  *
  * @param array Optional. An array of salary grid data to format.
- * @return string HTML formatted table of salary grid data.
+ * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid( $data = array() ) {
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid();
+
+		if ( ! $data ) {
+			return false;
+		}
 	}
 
 	$table_head = '<th>Range</th>';
@@ -482,11 +490,15 @@ function hrs_salary_grid( $data = array() ) {
  * @since 0.20.2
  *
  * @param array Optional. An array of salary data to format.
- * @return string HTML formatted table of salary data.
+ * @return string|false HTML formatted table of salary data. False if no data is available.
  */
 function hrs_cs_salary_schedule( $data = array() ) {
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_cs_salary_schedule();
+
+		if ( ! $data ) {
+			return false;
+		}
 	}
 
 	js_search_form( 3, 'Search by Job Title' );
