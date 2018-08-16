@@ -350,8 +350,8 @@ function hrs_pagination( $total_pages = '' ) {
  *
  * @since 0.22.2
  *
- * @param string $column Optional. The column to search within. Defaults to column 1.
- * @param string $label Optional. Label text to display. Defaults to "Search table".
+ * @param int    $column Optional. The column to search within. Defaults to column 1.
+ * @param string $label  Optional. Label text to display. Defaults to "Search table".
  * @return string HTML formatted input form.
  */
 function js_search_form( $column = 1, $label = '' ) {
@@ -491,7 +491,7 @@ function hrs_cs_salary_schedule( $data = array() ) {
 		$data = \WSU\HRS\Queries\get_cs_salary_schedule();
 	}
 
-	js_search_form( 3, 'Job Title' );
+	js_search_form( 3, 'Search by Job Title' );
 
 	?>
 	<table class="tablepress striped searchable">

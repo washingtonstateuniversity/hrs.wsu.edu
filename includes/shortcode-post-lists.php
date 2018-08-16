@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 add_shortcode( 'hrs_recent_posts', 'WSU\HRS\Shortcode_Posts_Lists\hrs_recent_posts_shortcode' );
+add_shortcode( 'filter_form', __NAMESPACE__ . '\js_search_form_shortchode' );
 
 /**
  * Shortcode displays the latest HRS posts matching criteria.
@@ -39,6 +40,7 @@ add_shortcode( 'hrs_recent_posts', 'WSU\HRS\Shortcode_Posts_Lists\hrs_recent_pos
  *                                 display as individual cards in a grid. If 'list' posts will display
  *                                 as a grid row list of flex items. Enter any other value for a custom
  *                                 class or leave empty for no container. Default 'cards'.
+ * }
  * @return string HTML content to display the latest HRS posts.
  */
 function hrs_recent_posts_shortcode( $atts ) {
@@ -53,6 +55,43 @@ function hrs_recent_posts_shortcode( $atts ) {
 	ob_start();
 
 	\WSU\HRS\Template_Tags\hrs_recent_posts( $query );
+
+	return ob_get_clean();
+}
+
+/**
+ * Shortcode displays the search form for filtering table contents.
+ *
+ * Sample default usage: [filter_form]
+ *
+ * Sample usage to search the third column with a custom label:
+ * [filter_form column="3" label="Filter column"]
+ *
+ * Supported attributes for the shortcode are: 'column', to designate by number
+ * which column to search within; and 'label', to customize the text of the
+ * input field label.
+ *
+ * @see \WSU\HRS\Template_Tags\js_search_form()
+ *
+ * @since 0.20.0
+ *
+ * @param $atts {
+ *     Optional. Arguments to customize the display and behavior of the search form.
+ *
+ *     @type int    $column The column to search within. Defaults to column 1.
+ *     @type string $label  Label text to display. Defaults to "Search table".
+ * }
+ * @return string HTML formatted search input element.
+ */
+function js_search_form_shortchode( $atts ) {
+	$args = shortcode_atts( array(
+		'column' => 1,
+		'label'  => '',
+	), $atts );
+
+	ob_start();
+
+	\WSU\HRS\Template_Tags\js_search_form( $args['column'], $args['label'] );
 
 	return ob_get_clean();
 }
