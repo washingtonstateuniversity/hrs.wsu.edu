@@ -1,10 +1,16 @@
 'use strict';
 ( function() {
 	const input = document.querySelector( 'input#search_table_input' );
+	const reset = document.querySelector( '#js-search-form-reset' );
+
+	function resetFilter() {
+		input.value = '';
+		filterTable();
+	}
 
 	function filterTable() {
 		let td, i;
-		let filter = input.value.toUpperCase();
+		let filter = sanitize( input.value.toUpperCase() );
 		let table = document.querySelector( 'table.searchable' );
 		let tr = table.getElementsByTagName( 'tr' );
 		let searchColumn = ( input.dataset.searchColumn ? input.dataset.searchColumn : 1 );
@@ -22,5 +28,6 @@
 		}
 	}
 
-	input.addEventListener( 'keyup', filterTable );
+	input.addEventListener( 'keyup', filterTable, false );
+	reset.addEventListener( 'click', resetFilter, false );
 }() );

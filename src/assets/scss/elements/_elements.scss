@@ -69,6 +69,11 @@ main input[type="submit"] {
 	}
 }
 
+.button-small {
+	padding: .25em .75em;
+	vertical-align: baseline;
+}
+
 .button-flat {
 	border-radius: 3px;
 	display: inline-block;
