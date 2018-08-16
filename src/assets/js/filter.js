@@ -3,6 +3,21 @@
 	const input = document.querySelector( 'input#search_table_input' );
 	const reset = document.querySelector( '#js-search-form-reset' );
 
+	// Check the URL for a search parameter.
+	const params = new URLSearchParams( window.location.search );
+	const filterBy = params.get( 'filter' );
+
+	if ( null !== filterBy ) {
+		input.value = sanitize( filterBy );
+		filterTable();
+	}
+
+	function sanitize( str ) {
+		return encodeURIComponent( str ).replace( /[!'()*]/g, function( c ) {
+			return '%' + c.charCodeAt( 0 ).toString( 16 );
+		} );
+	}
+
 	function resetFilter() {
 		input.value = '';
 		filterTable();

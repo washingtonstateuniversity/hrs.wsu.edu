@@ -360,7 +360,7 @@ function js_search_form( $column = 1, $label = '' ) {
 	$label = ( '' !== $label ) ? $label : 'Search table';
 
 	/* translators: 1: the search field label, 2: the number of the column to search within. */
-	printf( __( '<label class="js-search-form" for="search_table_input">%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
+	printf( __( '<label class="js-search-form" for="search_table_input">%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label><button id="js-search-form-reset" type="button" class="button-small">Reset</button>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
 		esc_html( $label ),
 		esc_html( absint( $column ) )
 	);
@@ -467,15 +467,20 @@ function hrs_salary_grid( $data = array() ) {
 		$table_body .= '<tr>';
 
 		foreach ( $row as $key => $val ) {
-			/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
-			$table_body .= sprintf( __( '<td data-title="%1$s">%2$s</td>', 'hrs-wsu-edu' ), esc_attr( ucfirst( strtolower( $key ) ) ), esc_html( number_format( $val ) ) );
+			if ( 'range' === strtolower( $key ) ) {
+				/* translators: 1: The table column title, 2: The range step number. */
+				$table_body .= sprintf( __( '<td data-title="%1$s" id="%2$s">%2$s</td>', 'hrs-wsu-edu' ), esc_attr( ucfirst( strtolower( $key ) ) ), esc_html( $val ) );
+			} else {
+				/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
+				$table_body .= sprintf( __( '<td data-title="%1$s">%2$s</td>', 'hrs-wsu-edu' ), esc_attr( ucfirst( strtolower( $key ) ) ), esc_html( number_format( $val ) ) );
+			}
 		}
 
 		$table_body .= '</tr>';
 	}
 
 	/* translators: 1: The table head section, 2: The table body section filled with numbers. */
-	printf( __( '<table class="tablepress striped"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
+	printf( __( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
 		$table_head,
 		$table_body
 	);
@@ -521,7 +526,7 @@ function hrs_cs_salary_schedule( $data = array() ) {
 				$table_body .= '<td data-title="Job Class">' . esc_html( $row->ClassCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 				$table_body .= '<td data-title="Job Group">' . esc_html( $row->JobGroupCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 				$table_body .= '<td data-title="Job Title">' . esc_html( $row->JobTitle ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
-				$table_body .= '<td data-title="Range"><a href="/selectsalaryrange/?range=' . esc_url( $row->SalRangeNum ) . '">' . esc_html( $row->SalrangeWExceptions ) . '</a></td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Range"><a href="/external-db-testing/salary-grid/?filter=' . esc_attr( $row->SalRangeNum ) . '">' . esc_html( $row->SalrangeWExceptions ) . '</a></td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 				$table_body .= '<td data-title="Salary Min">$' . esc_html( number_format( $row->Salary_Min, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 				$table_body .= '<td data-title="Salary Max">$' . esc_html( number_format( $row->Salary_Max, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 				$table_body .= '</tr>';
