@@ -348,20 +348,20 @@ function hrs_pagination( $total_pages = '' ) {
  * an HTML table. The table must have the class `searchable` and must be the
  * only such table on the page.
  *
- * @since 0.22.0
+ * @since 0.22.2
  *
  * @param string $column Optional. The column to search within. Defaults to column 1.
- * @param string $title Optional. The name of the column to search within (for the label). Defaults to "table."
+ * @param string $label Optional. Label text to display. Defaults to "Search table".
  * @return string HTML formatted input form.
  */
-function js_search_form( $column = 1, $title = '' ) {
+function js_search_form( $column = 1, $label = '' ) {
 	wp_enqueue_script( 'hrs-filter-script', get_stylesheet_directory_uri() . '/assets/js/filter.min.js', array(), spine_get_script_version() );
 
-	$title = ( '' !== $title ) ? ' by ' . $title : ' table';
+	$label = ( '' !== $label ) ? $label : 'Search table';
 
-	/* translators: 1: the title of the column being searched, 2: the number of the column to search within. */
-	printf( __( '<label class="js-search-form" for="search_table_input">Search%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
-		esc_html( $title ),
+	/* translators: 1: the search field label, 2: the number of the column to search within. */
+	printf( __( '<label class="js-search-form" for="search_table_input">%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
+		esc_html( $label ),
 		esc_html( absint( $column ) )
 	);
 }
