@@ -451,7 +451,7 @@ function hrs_salary_grid( $data = array() ) {
 	$table_head = '<th>Range</th>';
 	foreach ( range( 'A', 'M' ) as $letter ) {
 		/* translators: A letter of the alphabet. */
-		$table_head .= sprintf( __( '<th>Step<br> %s</th>', 'hrs-wsu-edu' ), $letter );
+		$table_head .= sprintf( __( '<th>Step<br> %s</th>', 'hrs-wsu-edu' ), esc_html( $letter ) );
 	}
 
 	$table_body = '';
@@ -459,20 +459,18 @@ function hrs_salary_grid( $data = array() ) {
 		$table_body .= '<tr>';
 
 		foreach ( $row as $key => $val ) {
-			/* translators: The salary number with a comma in the thousands place. */
-			$table_body .= sprintf( __( '<td>%s</td>', 'hrs-wsu-edu' ), number_format( $val ) );
+			/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
+			$table_body .= sprintf( __( '<td data-title="%1$s">%2$s</td>', 'hrs-wsu-edu' ), esc_attr( ucfirst( strtolower( $key ) ) ), esc_html( number_format( $val ) ) );
 		}
 
 		$table_body .= '</tr>';
 	}
 
 	/* translators: 1: The table head section, 2: The table body section filled with numbers. */
-	$output = sprintf( __( '<table class="tablepress striped"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+	printf( __( '<table class="tablepress striped"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
 		$table_head,
 		$table_body
 	);
-
-	echo wp_kses_post( $output );
 }
 
 /**
@@ -508,15 +506,15 @@ function hrs_cs_salary_schedule( $data = array() ) {
 			$table_body = '';
 			foreach ( $data as $row ) {
 				$table_body .= '<tr>';
-				$table_body .= '<td>' . $row->ClassCode . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
-				$table_body .= '<td>' . $row->JobGroupCode . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
-				$table_body .= '<td>' . $row->JobTitle . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
-				$table_body .= '<td><a href="/selectsalaryrange/?range=' . esc_url( $row->SalRangeNum ) . '">' . $row->SalrangeWExceptions . '</a></td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
-				$table_body .= '<td>$' . number_format( $row->Salary_Min, 2 ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
-				$table_body .= '<td>$' . number_format( $row->Salary_Max, 2 ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Job Class">' . esc_html( $row->ClassCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Job Group">' . esc_html( $row->JobGroupCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Job Title">' . esc_html( $row->JobTitle ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Range"><a href="/selectsalaryrange/?range=' . esc_url( $row->SalRangeNum ) . '">' . esc_html( $row->SalrangeWExceptions ) . '</a></td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Salary Min">$' . esc_html( number_format( $row->Salary_Min, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Salary Max">$' . esc_html( number_format( $row->Salary_Max, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 				$table_body .= '</tr>';
 			}
-			echo wp_kses_post( $table_body );
+			echo $table_body; // WPCS: XSS ok.
 			?>
 		</tbody>
 	</table>
