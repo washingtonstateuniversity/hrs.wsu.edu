@@ -469,11 +469,12 @@ function hrs_salary_grid( $data = array() ) {
 		}
 	}
 
-	$table_head = '<th>Range</th>';
+	$table_head = '<tr><th>Range</th>';
 	foreach ( range( 'A', 'M' ) as $letter ) {
 		/* translators: A letter of the alphabet. */
 		$table_head .= sprintf( __( '<th>Step<br> %s</th>', 'hrs-wsu-edu' ), esc_html( $letter ) );
 	}
+	$table_head .= '</tr>';
 
 	$table_body = '';
 	foreach ( $data as $row ) {
@@ -531,12 +532,14 @@ function hrs_cs_salary_schedule( $data = array() ) {
 	?>
 	<table class="tablepress striped searchable">
 		<thead>
-			<th>Job Class</th>
-			<th>Job Group</th>
-			<th>Job Title</th>
-			<th>Range</th>
-			<th>Salary Min</th>
-			<th>Salary Max</th>
+			<tr>
+				<th>Job Class</th>
+				<th>Job Group</th>
+				<th>Job Title</th>
+				<th>Range</th>
+				<th>Salary Min</th>
+				<th>Salary Max</th>
+			</tr>
 		</thead>
 		<tbody>
 			<?php
