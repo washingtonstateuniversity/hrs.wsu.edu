@@ -20,10 +20,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 0.20.3~build-odbc-connections (unreleased)
+## 0.20.4~build-odbc-connections (unreleased)
 
 ### Fixed
 
+- Add `URLSearchParams` feature detection to `filter.js` to prevent IE from ignoring the rest of the script.
 - Added missing `tr` elements to table formatting in `template-tags.php`.
 - Namespace errors following update.
 - Match ER Awards template to default page template and fix phpcs issues.

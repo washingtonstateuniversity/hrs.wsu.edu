@@ -3,13 +3,18 @@
 	const input = document.querySelector( 'input#search_table_input' );
 	const reset = document.querySelector( '#js-search-form-reset' );
 
-	// Check the URL for a search parameter.
-	const params = new URLSearchParams( window.location.search );
-	const filterBy = params.get( 'filter' );
+	// If browser supports `URLSearchParams`
+	if ( 'URLSearchParams' in window ) {
 
-	if ( null !== filterBy ) {
-		input.value = sanitize( filterBy );
-		filterTable();
+		// Check the URL for a search parameter.
+		const params = new URLSearchParams( window.location.search );
+		const filterBy = params.get( 'filter' );
+
+		if ( null !== filterBy ) {
+			input.value = sanitize( filterBy );
+			filterTable();
+		}
+
 	}
 
 	function sanitize( str ) {
