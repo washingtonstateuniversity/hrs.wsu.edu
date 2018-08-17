@@ -442,7 +442,7 @@ function list_erdb_awards_by_year() {
 		$title = ( -1 === $year ) ? 'All' : $year;
 
 		/* translators: 1: the section title (plural), 2: a list element of multiple awards */
-		printf( __( '<h2>%s Year Awards</h2><ul class="articles-list">%s</ul>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
+		printf( __( '<h2>%1$s Year Awards</h2><ul class="articles-list">%2$s</ul>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
 			esc_attr( $title ),
 			get_awards_list( $year, $awards )
 		);
