@@ -515,6 +515,7 @@ input[type="number"] {
 .articles-list,
 .recent-articles,
 .cards {
+	list-style-type: none;
 
 	.article-title {
 		line-height: 1.1;

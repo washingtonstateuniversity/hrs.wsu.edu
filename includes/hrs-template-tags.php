@@ -386,14 +386,14 @@ function get_awards_list( $year = '', $awards = '' ) {
 	$list = '';
 	foreach ( $awards as $award ) {
 		if ( ! $year ) {
-			$list .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
+			$list .= sprintf( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>',
 				esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 				esc_html( wptexturize( $award->name ) ),
 				esc_html( wptexturize( $award->description ) )
 			);
 		} else {
 			if ( $year === $award->year ) {
-				$list .= sprintf( '<div class="list-item"><figure class="article-image"><img src="%1$s" alt="%3$s"></figure><div class="list-content"><p class="article-title">%2$s</p><p>%3$s</p></div></div>',
+				$list .= sprintf( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>',
 					esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 					esc_html( wptexturize( $award->name ) ),
 					esc_html( wptexturize( $award->description ) )
@@ -429,7 +429,7 @@ function list_erdb_awards_by_year() {
 	foreach ( $group_years as $year ) {
 		$title = ( -1 === $year ) ? 'All' : $year;
 
-		printf( '<div class="articles-list"><h2>%s Year Awards</h2>%s</div>', // WPCS: XSS ok.
+		printf( '<h2>%s Year Awards</h2><ul class="articles-list">%s</ul>', // WPCS: XSS ok.
 			esc_attr( $title ),
 			get_awards_list( $year, $awards )
 		);
