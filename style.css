@@ -1081,6 +1081,11 @@ main input[type="submit"]:active {
   background: #eff0f1;
 }
 
+.button-small {
+  padding: .25em .75em;
+  vertical-align: baseline;
+}
+
 .button-flat {
   border-radius: 3px;
   display: inline-block;
@@ -1346,6 +1351,42 @@ figure .wp-caption-text:before,
 /**
  * 3.2 Data Tables
  */
+@media (max-width: 43em) {
+  table,
+  caption,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+    text-align: left;
+  }
+  thead,
+  th:empty,
+  td:empty {
+    display: none;
+    visibility: hidden;
+  }
+  td[data-title]:before {
+    content: attr(data-title) ": ";
+    display: inline-block;
+    padding-right: .25em;
+    width: 25%;
+  }
+  tbody tr {
+    margin-bottom: 1.5rem;
+  }
+  tbody td,
+  tfoot th {
+    border: none;
+    line-height: 1.4;
+    padding: 4px 8px;
+  }
+  table .column-1 {
+    font-weight: 600;
+  }
+}
+
 main table,
 main .tablepress {
   font-variant-numeric: lining-nums tabular-nums;
@@ -1406,6 +1447,11 @@ input[type="number"] {
   margin: 0;
   padding: 6px 4px;
   outline: 0;
+}
+
+.js-search-form {
+  display: inline-block;
+  margin: 1.5em 1em 1.5em 0;
 }
 
 /**
@@ -1663,6 +1709,12 @@ input[type="number"] {
 /**
  * 3.10 Row Lists
  */
+.articles-list,
+.recent-articles,
+.cards {
+  list-style-type: none;
+}
+
 .articles-list .article-title,
 .recent-articles .article-title,
 .cards .article-title {
@@ -2458,40 +2510,6 @@ section.latest article {
 /* HRS Contacts adjustments */
 .tablepress-hrs-contacts td.column-3 {
   white-space: nowrap;
-}
-
-/* Set by TablePress plugin, so use a "max-width" rule to override on small. */
-@media (max-width: 43em) {
-  .tablepress-hrs-contacts {
-    display: block;
-    text-align: left;
-  }
-  .tablepress-hrs-contacts caption,
-  .tablepress-hrs-contacts tbody,
-  .tablepress-hrs-contacts tr,
-  .tablepress-hrs-contacts th,
-  .tablepress-hrs-contacts td {
-    display: block;
-    text-align: left;
-  }
-  .tablepress-hrs-contacts thead,
-  .tablepress-hrs-contacts th:empty,
-  .tablepress-hrs-contacts td:empty {
-    display: none;
-    visibility: hidden;
-  }
-  .tablepress-hrs-contacts tbody tr {
-    margin-bottom: 1.5rem;
-  }
-  .tablepress-hrs-contacts tbody td,
-  .tablepress-hrs-contacts tfoot th {
-    border: none;
-    line-height: 1.4;
-    padding: 4px 8px;
-  }
-  .tablepress-hrs-contacts .column-1 {
-    font-weight: 600;
-  }
 }
 
 /* The 2018 Medical Premium Changes table */
