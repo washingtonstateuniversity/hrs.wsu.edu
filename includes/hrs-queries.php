@@ -110,7 +110,7 @@ function get_hrs_unit_posts( $args = array() ) {
  * the database, frees the SQL statement resources, closes the connection,
  * and returns the results.
  *
- * @uses HRS_MSDB
+ * @uses \HRS_MSDB()
  *
  * @since 0.20.0
  *
@@ -122,6 +122,7 @@ function get_erdb_awards() {
 	$dbname     = defined( 'RECOG_DB_NAME' ) ? RECOG_DB_NAME : '';
 	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
 
+	// Open a new MS database connection.
 	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
 	$awards = $msdb->get_results( $msdb->prepare(
@@ -156,6 +157,7 @@ function get_salary_grid() {
 	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
 	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
 
+	// Open a new MS database connection.
 	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
 	$salary = $msdb->get_results(
@@ -188,6 +190,7 @@ function get_cs_salary_schedule() {
 	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
 	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
 
+	// Open a new MS database connection.
 	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
 	$data = $msdb->get_results( $msdb->prepare(

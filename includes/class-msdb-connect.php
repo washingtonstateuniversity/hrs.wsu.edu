@@ -126,6 +126,7 @@ class HRS_MSDB {
 	 * @param string $dbhost     MSSQL database host
 	 */
 	public function __construct( $dbuser, $dbpassword, $dbname, $dbhost ) {
+		// Only print errors if debugging is enabled globally.
 		if ( WP_DEBUG && WP_DEBUG_DISPLAY ) {
 			$this->show_errors = true;
 		}
@@ -151,25 +152,23 @@ class HRS_MSDB {
 	 * @return bool True with a successful connection, false on failure.
 	 */
 	public function msdb_connect() {
-
+		// Set the MS SQL Server-style query parameters.
 		$params = array(
 			'Database' => $this->dbname,
 			'Uid'      => $this->dbuser,
 			'PWD'      => $this->dbpassword,
 		);
 
-		// Opens MS SQL connection using ODBC.
+		// Open a MS SQL connection using ODBC.
 		$this->dbh = sqlsrv_connect( $this->dbhost, $params );
 
+		// Check for a successful connection. Return false on error.
 		if ( ! $this->dbh ) {
-			// Connection failed, so print errors and end.
 			$this->print_error();
-
 			return false;
 		} elseif ( $this->dbh ) {
 			$this->has_connected = true;
 			echo '<!-- DEBUG: Connection successful! :) -->'; // DEBUGGING
-
 			return true;
 		}
 
@@ -216,6 +215,7 @@ class HRS_MSDB {
 	 */
 	private function mssql_escape_string( $string ) {
 		if ( $this->dbh ) {
+			// MS SQL syntax requires single quotes to be escaped.
 			$escaped = str_replace( "'", "''", $string );
 			$escaped = addslashes( $escaped );
 		} else {
@@ -433,20 +433,23 @@ class HRS_MSDB {
 	 * @since 0.20.2
 	 *
 	 * @param string $query A database query.
+	 * @param array  $param Optional. Arguments for a parameterized query.
 	 * @return int|bool Number of rows selected for select queries. Booleen
 	 *                  false on error.
 	 */
-	public function query( $query, $param = null ) {
+	public function query( $query, $param = array() ) {
 		if ( ! $this->has_connected ) {
+			// Stop execution if there is no connection present.
 			return false;
 		}
 
+		// Clear out any preexisting query statements.
 		$this->flush();
 
 		// Keep track of the last query for debug.
 		$this->last_query = $query;
 
-		// Run the query.
+		// Run the query, without or with parameters.
 		if ( ! $param ) {
 			$this->do_query( $query );
 		} else {
@@ -506,8 +509,8 @@ class HRS_MSDB {
 	 *
 	 * @since 0.20.2
 	 *
-	 * @param string $query An SQL query.
-	 * @param array $param Optional. Arguments for a parameterized sqlsvr query.
+	 * @param string $query  An SQL query.
+	 * @param array  $param  Optional. Arguments for a parameterized sqlsvr query.
 	 * @param string $output Optional. Any of ARRAY_A, ARRAY_N, or OBJECT constants.
 	 *                       All return an arrow of rows indexed from 0 by SQL result row number.
 	 *                       Each row is an associative array (column => value, ...), a numerically
@@ -515,6 +518,7 @@ class HRS_MSDB {
 	 * @return array|object|null The database query results.
 	 */
 	public function get_results( $query = null, $param = array(), $output = OBJECT ) {
+		// Perform a query with the provided SQL statement and optional parameters.
 		if ( $query && $param ) {
 			$this->query( $query, $param );
 		} elseif ( $query && ! $param ) {
@@ -523,6 +527,7 @@ class HRS_MSDB {
 			return null;
 		}
 
+		// Return the query results.
 		if ( OBJECT === $output ) {
 			// Return an integer-keyed array of row objects.
 			return $this->last_result;
@@ -540,10 +545,12 @@ class HRS_MSDB {
 	 * @since 0.20.2
 	 */
 	public function flush() {
+		// Unset properties.
 		$this->last_result = array();
 		$this->last_query  = null;
 		$this->num_rows    = 0;
 
+		// If a resource statement is still saved, clear it.
 		if ( is_resource( $this->result ) ) {
 			sqlsrv_free_stmt( $this->result );
 			echo '<!-- DEBUG: Freed resources for ' . esc_html( $this->result ) . ' statement. -->'; // DEBUGGING
@@ -555,7 +562,7 @@ class HRS_MSDB {
 	 *
 	 * @since 0.20.2
 	 *
-	 * @return bool True if the connection was successfully closed, falise if it
+	 * @return bool True if the connection was successfully closed, false if it
 	 *              wasn't or if the connection doesn't exist.
 	 */
 	public function close() {
@@ -566,6 +573,7 @@ class HRS_MSDB {
 		$closed = sqlsrv_close( $this->dbh );
 
 		if ( $closed ) {
+			// If successfully closed, unset the class properties as well.
 			$this->dbh           = null;
 			$this->has_connected = false;
 			echo '<!-- DEBUG: Connection to ' . esc_html( $this->dbname ) . ' closed. -->'; // DEBUGGING
@@ -576,6 +584,8 @@ class HRS_MSDB {
 
 	/**
 	 * Cleans up request resources and closes.
+	 *
+	 * This is only a wrapper for HRS_MSDB::flush() and HRS_MSDB::clean().
 	 *
 	 * @since 0.20.2
 	 */

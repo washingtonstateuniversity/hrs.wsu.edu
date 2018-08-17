@@ -370,7 +370,8 @@ function js_search_form( $column = 1, $label = '' ) {
  * Retrieves a list of Employee Recognition awards.
  *
  * Queries the Employee Recognition database using an instance of the HRS_MSDB()
- * class.
+ * class. Formats the results into a list of `li` elements for use in a parent
+ * list element.
  *
  * @since 0.20.0
  *
@@ -379,21 +380,29 @@ function js_search_form( $column = 1, $label = '' ) {
  * @return string HTML formatted list of ER awards including title, description, and image.
  */
 function get_awards_list( $year = '', $awards = '' ) {
+	// Retrieve awards data if none was passed with the function call.
 	if ( ! $awards ) {
 		$awards = WSU\HRS\Queries\get_erdb_awards();
 	}
 
 	$list = '';
 	foreach ( $awards as $award ) {
+		/*
+		 * If no year was specified in the function call, then return a list of
+		 * awards from all years. Otherwise, return of list of awards from only
+		 * the specified award year.
+		 */
 		if ( ! $year ) {
-			$list .= sprintf( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>',
+			/* translators: 1: an image, 2: the name of the award, 3: a description of the award */
+			$list .= sprintf( __( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>', 'hrs-wsu-edu' ),
 				esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 				esc_html( wptexturize( $award->name ) ),
 				esc_html( wptexturize( $award->description ) )
 			);
 		} else {
 			if ( $year === $award->year ) {
-				$list .= sprintf( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>',
+				/* translators: 1: an image, 2: the name of the award, 3: a description of the award */
+				$list .= sprintf( __( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>', 'hrs-wsu-edu' ),
 					esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 					esc_html( wptexturize( $award->name ) ),
 					esc_html( wptexturize( $award->description ) )
@@ -407,6 +416,9 @@ function get_awards_list( $year = '', $awards = '' ) {
 
 /**
  * Displays a list of Employee Recognition awards grouped by year.
+ *
+ * Builds the full list of ER awards in sections grouped by award year.
+ * {@uses get_awards_list()} to build the actual list items.
  *
  * @since 0.11.0
  *
@@ -429,7 +441,8 @@ function list_erdb_awards_by_year() {
 	foreach ( $group_years as $year ) {
 		$title = ( -1 === $year ) ? 'All' : $year;
 
-		printf( '<h2>%s Year Awards</h2><ul class="articles-list">%s</ul>', // WPCS: XSS ok.
+		/* translators: 1: the section title (plural), 2: a list element of multiple awards */
+		printf( __( '<h2>%s Year Awards</h2><ul class="articles-list">%s</ul>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
 			esc_attr( $title ),
 			get_awards_list( $year, $awards )
 		);
@@ -466,13 +479,20 @@ function hrs_salary_grid( $data = array() ) {
 	foreach ( $data as $row ) {
 		$table_body .= '<tr>';
 
+		// Build the row output including a `data-title` attribute for the range column.
 		foreach ( $row as $key => $val ) {
 			if ( 'range' === strtolower( $key ) ) {
 				/* translators: 1: The table column title, 2: The range step number. */
-				$table_body .= sprintf( __( '<td data-title="%1$s" id="%2$s">%2$s</td>', 'hrs-wsu-edu' ), esc_attr( ucfirst( strtolower( $key ) ) ), esc_html( $val ) );
+				$table_body .= sprintf( __( '<td data-title="%1$s" id="%2$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( $val )
+				);
 			} else {
 				/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
-				$table_body .= sprintf( __( '<td data-title="%1$s">%2$s</td>', 'hrs-wsu-edu' ), esc_attr( ucfirst( strtolower( $key ) ) ), esc_html( number_format( $val ) ) );
+				$table_body .= sprintf( __( '<td data-title="%1$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( number_format( $val ) )
+				);
 			}
 		}
 

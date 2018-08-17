@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-add_shortcode( 'hrs_recent_posts', 'WSU\HRS\Shortcode_Posts_Lists\hrs_recent_posts_shortcode' );
+add_shortcode( 'hrs_recent_posts', __NAMESPACE__ . '\hrs_recent_posts_shortcode' );
 add_shortcode( 'filter_form', __NAMESPACE__ . '\js_search_form_shortchode' );
 
 /**

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-add_shortcode( 'hrsgallery', 'WSU\HRS\Shortcode_Documents_Gallery\hrs_gallery' );
+add_shortcode( 'hrsgallery', __NAMESPACE__ . '\hrs_gallery' );
 
 /**
  * Builds the HRS Documents Gallery shortcode output.
