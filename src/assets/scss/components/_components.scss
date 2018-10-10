@@ -24,36 +24,13 @@
  * 3.1 Cards
  */
 
-@media (min-width: $large) {
-
-	.cards,
-	.recent-articles {
-
-		article,
-		.card {
-			float: left;
-			padding: 0 1rem;
-			width: 33%;
-		}
-
-	}
-
-	.home .recent-articles article {
-		width: 20%;
-	}
-
-	.blog .cards article {
-		width: 25%;
-	}
-
-}
-
 .cards,
 .recent-articles {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 	grid-auto-rows: minmax(4rem, auto);
 	grid-gap: 1.5rem 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	margin-top: 1.5rem;
 
 	.article-summary {
 		margin-top: .5em;
@@ -95,7 +72,8 @@
 }
 
 .cards .article-title a,
-.articles-list .article-title a {
+.articles-list .article-title a,
+.recent-articles .article-title a {
 
 	&:after {
 		background-size: 50%;
@@ -527,15 +505,6 @@ input[type="number"] {
 	}
 }
 
-.latest .articles-list,
-.features .articles-list {
-
-	.article-title {
-		font-size: $font-size-6;
-	}
-
-}
-
 @media (min-width: $medium) {
 
 	.articles-list {
@@ -545,26 +514,31 @@ input[type="number"] {
 			display: grid;
 			grid-template-columns: minmax(220px, 3fr) minmax(220px, 1fr);
 			grid-column-gap: 2rem;
-		}
 
-		.article-header,
-		.article-summary {
-			grid-column: 1;
-		}
+			.article-header,
+			.article-summary {
+				grid-column: 1;
+			}
 
-		.article-image {
-			grid-column: 2;
-			grid-row: 1 / 3;
+			.article-image {
+				grid-column: 2;
+				grid-row: 1 / 3;
+			}
 		}
 	}
 
 	section:not(.features) .articles-list {
 
-		article,
-		.list-item {
+		article {
+			border-bottom: 6px solid $body-background-color;
 			font-size: 1rem;
 			line-height: 1.5;
 			max-width: $large;
+			padding: .75rem 0;
+
+			footer {
+				display: none;
+			}
 		}
 
 		.article-image {
@@ -641,17 +615,17 @@ input[type="number"] {
 	padding-bottom: 1rem;
 }
 
-.search-links ul {
-	column-count: 2;
-	margin: 0 0 1rem;
-	padding: 0;
-
-	li {
-		line-height: 1.5;
-	}
-}
-
 .search-links {
+
+	ul {
+		column-count: 2;
+		margin: 0 0 1rem;
+		padding: 0;
+
+		li {
+			line-height: 1.5;
+		}
+	}
 
 	a:after {
 		background-size: 80%;

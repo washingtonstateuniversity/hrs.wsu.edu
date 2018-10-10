@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 0.20.1
+Version: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -16,6 +16,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Table of Contents
  *
  * 0.0 Deprecated
+ *     0.1 Fallbacks
+ *     0.2 Deprecated
  *
  * 1.0 Globals
  *     1.1 Foundation
@@ -67,6 +69,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "globals/globals";
 
 /* Deprecated */
+@import "deprecated/fallbacks";
 @import "deprecated/deprecated";
 
 /* Elements */
@@ -74,9 +77,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* Components */
 @import "components/components";
-
-/* Layouts */
-@import "layouts/layouts";
 
 /* Templates */
 @import "templates/templates";

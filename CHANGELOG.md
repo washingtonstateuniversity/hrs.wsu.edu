@@ -24,12 +24,17 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
+* Apply missing link-after icon styles to recent articles lists.
+* Fix #63 misaligned padding on deprecated Builder banner titles.
 * Target feature image styles more specifically.
 * Fix #65 don't check for a term ID when the term doesn't exist.
 * Verify `get_reminder_posts()` returned results before using them.
 
 ### Changed
 
+* Move fallback styles into a dedicated scss file.
+* Expand the `.alignwide` class to apply block level elements.
+* Organize styles a bit.
 * More specific classes to distinguish single vs. archive articles.
 
 ### Removed

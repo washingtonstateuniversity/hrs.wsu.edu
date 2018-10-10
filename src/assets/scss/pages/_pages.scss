@@ -141,6 +141,15 @@
 
 .blog {
 
+	.latest .articles-list,
+	.features .articles-list {
+
+		.article-title {
+			font-size: $font-size-6;
+		}
+
+	}
+
 	.reminders {
 		padding-top: 3rem;
 	}
@@ -203,6 +212,12 @@
 				}
 			}
 		}
+	}
+
+	.article-archive h2 {
+		margin-bottom: 2.25rem;
+		text-align: center;
+		text-transform: capitalize;
 	}
 
 }

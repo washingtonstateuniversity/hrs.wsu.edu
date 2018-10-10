@@ -52,7 +52,7 @@ main input[type="reset"],
 	}
 }
 
-main .button-cta,
+main .button--cta,
 main input[type="submit"] {
 	@extend .button;
 	background: $brand-crimson;
@@ -69,7 +69,7 @@ main input[type="submit"] {
 	}
 }
 
-.button-flat {
+.button--flat {
 	border-radius: 3px;
 	display: inline-block;
 	line-height: 1.5;
@@ -160,7 +160,8 @@ figure .wp-caption-text,
 .home-detail-subnav h2 a,
 .article-taxonomy--primary ul a,
 .cards .article-title a,
-.articles-list .article-title a {
+.articles-list .article-title a,
+.recent-articles .article-title a {
 	border-bottom-color: transparent;
 
 	&:after {
@@ -226,8 +227,20 @@ figure .wp-caption-text,
 
 @media (min-width: $medium) {
 
-	.article-container .column figure.alignwide {
-		margin-right: -43%;
+	.article-container {
+
+		aside,
+		div,
+		form,
+		nav,
+		section,
+		table,
+		video {
+
+			.alignwide {
+				width: 143%;
+			}
+		}
 	}
 
 }
