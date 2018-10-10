@@ -12,7 +12,7 @@ use WSU\HRS\Template_Tags as Tags;
 global $is_feature;
 ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class( 'article-content' ); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-content' ); ?>>
 
 		<header class="article-header">
 			<p class="article-title">

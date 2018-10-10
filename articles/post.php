@@ -40,7 +40,7 @@ use WSU\HRS\Template_Tags as Tags;
 	?>
 
 	<?php if ( ! empty( $article_image_type ) ) : ?>
-		<figure class="article-image <?php echo esc_attr( $article_image_type ); ?>">
+		<figure class="article-image article-feature <?php echo esc_attr( $article_image_type ); ?>">
 			<?php
 			if ( ! is_singular() ) {
 				if ( 'thumbnail' === $article_image_type ) {

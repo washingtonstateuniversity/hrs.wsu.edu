@@ -28,6 +28,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 * Fix #65 don't check for a term ID when the term doesn't exist.
 * Verify `get_reminder_posts()` returned results before using them.
 
+### Changed
+
+* More specific classes to distinguish single vs. archive articles.
+
 ### Removed
 
 * Clean out unused deprecated styles.
