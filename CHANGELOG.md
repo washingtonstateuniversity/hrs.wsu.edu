@@ -24,8 +24,8 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
-* Apply missing link-after icon styles to recent articles lists.
 * Fix #63 misaligned padding on deprecated Builder banner titles.
+* Apply missing link-after icon styles to recent articles lists.
 * Target feature image styles more specifically.
 * Fix #65 don't check for a term ID when the term doesn't exist.
 * Verify `get_reminder_posts()` returned results before using them.
