@@ -1492,6 +1492,11 @@ footer dd a:focus {
 /**
  * 5.3 Article
  */
+.article-content.page > .article-header,
+.single-post .article-content > .article-header {
+  margin-bottom: 3rem;
+}
+
 .article-taxonomy--primary ul {
   font-size: 0.79em;
   list-style-type: none;
@@ -1546,10 +1551,6 @@ footer dd a:focus {
  *
  * @since 0.14.0
  */
-.single-post .article-content > .article-header {
-  margin-bottom: 3rem;
-}
-
 .single-post .article-body {
   padding-bottom: 1.5em;
 }
@@ -1900,12 +1901,6 @@ section.latest article {
  *
  * @since 0.11.0
  */
-.page-tricities .builder-banner-inner-title,
-.page-spokane .builder-banner-inner-title {
-  font-size: 2.281em;
-  margin: auto;
-}
-
 .page-tricities .cards,
 .page-spokane .cards {
   padding: 1.5rem 0;

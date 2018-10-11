@@ -34,6 +34,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* Replace bottom margin on page title headers.
 * Update theme screenshot.
 * Added some box shadow, stamped down some box shadow.
 * Use more reliable centering on the Builder banner title elements.
@@ -48,6 +49,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Removed
 
+* No special styling for Builder banner titles on specific pages.
 * Clean out unused deprecated styles.
 
 ## 0.20.1 (2018-11-07)
