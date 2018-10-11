@@ -20,7 +20,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.0.0 (WIP 2018-10)
+## 1.0.0~20181011.2 (WIP 2018-10)
 
 ### Fixed
 
@@ -40,6 +40,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 * Expand the `.alignwide` class to apply block level elements.
 * Organize styles a bit.
 * More specific classes to distinguish single vs. archive articles.
+
+### Added
+
+* A `.gitattributes` file to manage cross-environment settings and facilitate creating non-development zip files for download.
 
 ### Removed
 
