@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
+* Close #60 hide empty `<p>` elements in Banner sections. Caused by an unknown interaction between Builder, TinyMCE, and Gutenberg, but only appears in Builder banner sections, which are deprecated here anyway, so just hide them.
 * Fix #63 misaligned padding on deprecated Builder banner titles.
 * Apply missing link-after icon styles to recent articles lists.
 * Target feature image styles more specifically.

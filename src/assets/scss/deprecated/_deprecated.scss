@@ -49,6 +49,11 @@
 /* Builder: Banner */
 .builder-section-banner {
 
+	// Something between Builder and Gutenberg litters markup with empty p tags.
+	p:empty {
+		display: none;
+	}
+
 	.builder-banner-content {
 		border-top-width: 3.6rem;
 	}
