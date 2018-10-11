@@ -33,6 +33,13 @@
 
 }
 
+.home {
+
+	#wsuwp-main section:nth-of-type(-n+2) {
+		background: transparent;
+	}
+}
+
 .home-main-subnav nav {
 
 	ul {
@@ -264,8 +271,6 @@
 .page-spokane .builder-banner-inner-title {
 	font-size: $font-size-8;
 	margin: auto;
-	width: 400px;
-	width: fit-content;
 }
 
 .page-tricities,

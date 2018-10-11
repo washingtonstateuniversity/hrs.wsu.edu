@@ -55,12 +55,24 @@
 	}
 
 	.builder-banner-content {
-		border-top-width: 3.6rem;
+		background-color: #fff;
+		background-color: rgba(255, 255, 255, .9);
+		border: none;
+		box-sizing: border-box;
+		color: #fff;
+		display: block;
+		height: auto;
+		left: 50%;
+		line-height: 1.35;
+		overflow: hidden;
+		position: absolute;
+		text-shadow: 1px 0 8px rgba(0, 0, 0, .15);
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%;
 	}
 
 	.builder-banner-inner-title {
-		background-color: #fff;
-		background-color: rgba(255, 255, 255, .9);
 		color: $brand-crimson;
 		font-weight: 600;
 		padding: 1rem;
@@ -70,8 +82,6 @@
 		justify-content: flex-start;
 
 		p {
-			background-color: #fff;
-			background-color: rgba(255, 255, 255, .9);
 			color: $text-color;
 			padding: 0 1rem 1rem;
 		}
@@ -88,6 +98,14 @@
 
 	.content-position-right {
 		background-position: center left;
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.builder-section-banner .builder-banner-content {
+		width: 80%;
 	}
 
 }
