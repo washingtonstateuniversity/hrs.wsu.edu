@@ -556,7 +556,7 @@ input[type="number"] {
 
 #search-menu {
 	background: $neutral-light;
-	box-shadow: 2px 3px 5px 1px rgba(20, 20, 20, .12);
+	box-shadow: -1px 1px 4px 0 rgba(20, 20, 20, .1);
 	display: flex;
 	flex-flow: row wrap;
 	padding: 9rem 2rem 1.5rem;
