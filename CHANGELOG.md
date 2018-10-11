@@ -34,6 +34,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* Update theme screenshot.
 * Added some box shadow, stamped down some box shadow.
 * Use more reliable centering on the Builder banner title elements.
 * Move fallback styles into a dedicated scss file.
