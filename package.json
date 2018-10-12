@@ -39,7 +39,7 @@
     "lintscss": "stylelint \"src/assets/scss/**/*.scss\"",
     "sass": "node-sass --output-style expanded src/assets/scss -o assets/css",
     "postsass": "postcss assets/css/style.css -u autoprefixer --no-map -o ./style.css && postcss assets/css/*.css --map --use autoprefixer --use cssnano --replace",
-    "svgo": "mkdirp assets/images/icons && svgo -f src/assets/images -o assets/images && svgo -f src/assets/images/icons -o assets/images/icons",
+    "svgo": "mkdirp assets/images/icons && svgo --config=.svgo.yml -f src/assets/images -o assets/images && svgo --config=.svgo.yml -f src/assets/images/icons -o assets/images/icons",
     "build:css": "npm run lintscss -s && npm run sass -s",
     "build:js": "npm run lintjs -s && npm run uglify -s",
     "build:images": "npm run svgo -s && cpx \"src/assets/images/*.{png,jpg,gif}\" assets/images/ --update",

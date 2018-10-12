@@ -45,6 +45,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+* Config file for svgo npm tool to preserve `viewbox` in minified svg files.
 * A `.gitattributes` file to manage cross-environment settings and facilitate creating non-development zip files for download.
 
 ### Removed
