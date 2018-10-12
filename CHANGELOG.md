@@ -20,7 +20,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.0.0~20181011.2 (WIP 2018-10)
+## 1.0.0-20181015 (WIP 2018-10)
 
 ### Fixed
 
@@ -45,12 +45,14 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+* Page navigation styles for A-Z nav lists.
 * New general svg icons.
 * Config file for svgo npm tool to preserve `viewbox` in minified svg files.
 * A `.gitattributes` file to manage cross-environment settings and facilitate creating non-development zip files for download.
 
 ### Removed
 
+* No longer need unique card stylings for specific pages.
 * No special styling for Builder banner titles on specific pages.
 * Clean out unused deprecated styles.
 

@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.0.0
+Version: 1.0.0-20181015
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -1894,36 +1894,6 @@ section.latest article {
   .blog .features .articles-list article {
     grid-auto-rows: 1fr 1fr;
   }
-}
-
-/**
- * 6.3 Spokane and Tri-Cities
- *
- * @since 0.11.0
- */
-.page-tricities .cards,
-.page-spokane .cards {
-  padding: 1.5rem 0;
-  text-align: center;
-}
-
-.page-tricities .aligncenter,
-.page-spokane .aligncenter {
-  margin: auto;
-}
-
-.page-tricities .article-title,
-.page-spokane .article-title {
-  font-size: 1.424em;
-  font-weight: 600;
-  padding: .5rem 0;
-}
-
-.page-tricities .article-image img:hover,
-.page-tricities .article-image img:focus,
-.page-spokane .article-image img:hover,
-.page-spokane .article-image img:focus {
-  opacity: .6;
 }
 
 /* Plugins */
