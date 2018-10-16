@@ -35,6 +35,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* Load non-critical JS async.
 * Replace bottom margin on page title headers.
 * Update theme screenshot.
 * Added some box shadow, stamped down some box shadow.
@@ -46,6 +47,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+* Use Webpack + Babel to manage JS builds and selective polyfills.
 * Page navigation styles for A-Z nav lists.
 * New general svg icons.
 * Config file for svgo npm tool to preserve `viewbox` in minified svg files.
