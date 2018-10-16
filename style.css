@@ -408,6 +408,7 @@ dd {
 
 .builder-section-banner .builder-banner-inner-content p {
   color: #191919;
+  margin-top: 1px;
   padding: 0 1rem 1rem;
 }
 
