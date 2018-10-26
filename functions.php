@@ -54,7 +54,8 @@ function hrs_get_theme_version() {
 function hrs_enqueue_styles() {
 	wp_enqueue_style( 'hrs-child-theme', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'wsu-spine' ), hrs_get_theme_version() );
 	wp_enqueue_style( 'source_sans_pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i' );
-	wp_enqueue_script( 'hrs-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js', array(), spine_get_script_version() );
+	wp_enqueue_script( 'hrs-main', get_stylesheet_directory_uri() . '/assets/js/main.js', array(), spine_get_script_version() );
+	wp_enqueue_script( 'hrs-legacy', get_stylesheet_directory_uri() . '/assets/js/main.es5.js', array(), spine_get_script_version(), true );
 }
 
 /**
@@ -83,15 +84,19 @@ function hrs_dequeue_styles() {
  * @since 1.0.0
  */
 function hrs_add_attr_to_script_tag( $tag, $handle, $src ) {
-	$async_scripts = array(
-		'hrs-scripts',
-		'wsu-spine',
-	);
+	// Load main script as module to serve ES6+ version to supporting browsers.
+	if ( 'hrs-main' === $handle ) {
+		$tag = str_replace( 'text/javascript', 'module', $tag );
+	}
 
-	foreach ( $async_scripts as $script ) {
-		if ( $script === $handle ) {
-			$tag = str_replace( ' src=', ' async src=', $tag );
-		}
+	// Module-supporting browsers know not to load `nomodule` scripts.
+	if ( 'hrs-legacy' === $handle ) {
+		$tag = str_replace( ' src=', ' defer nomodule src=', $tag );
+	}
+
+	// Add `async` attribute to the WSU Spine script tag.
+	if ( 'wsu-spine' === $handle ) {
+		$tag = str_replace( ' src=', ' async src=', $tag );
 	}
 
 	return $tag;

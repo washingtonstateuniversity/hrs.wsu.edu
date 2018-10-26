@@ -35,6 +35,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* Update script enqueuing to load the main script as a module type for modern (ES6+-supporting) browsers alongside a legacy script loaded with a "nomodule" attribute. Modern browsers should ignore the nomodule script (technically shouldn't download it).
 * ES List doesn't need to support jQuery any more, but should allow module syntax.
 * Load non-critical JS async.
 * Replace bottom margin on page title headers.
