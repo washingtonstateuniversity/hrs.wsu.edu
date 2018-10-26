@@ -35,6 +35,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* ES List doesn't need to support jQuery any more, but should allow module syntax.
 * Load non-critical JS async.
 * Replace bottom margin on page title headers.
 * Update theme screenshot.
