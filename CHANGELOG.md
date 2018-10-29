@@ -36,9 +36,9 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Changed
 
 * Add more files to the `.gitattributes` ignore export rules.
-* Rename and refactor primary scripts into modules to take advantage of ES6+ syntax and methods alongside Babel transpilation and polyfills. For more on this method see: https://philipwalton.com/articles/deploying-es2015-code-in-production-today/ and https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/ and https://developers.google.com/web/fundamentals/primers/modules#mjs.
+* :hammer: Close #35 Rename and refactor primary scripts into modules to take advantage of ES6+ syntax and methods alongside Babel transpilation and polyfills. For more on this method see: https://philipwalton.com/articles/deploying-es2015-code-in-production-today/ and https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/ and https://developers.google.com/web/fundamentals/primers/modules#mjs.
 * Update script enqueuing to load the main script as a module type for modern (ES6+-supporting) browsers alongside a legacy script loaded with a "nomodule" attribute. Modern browsers should ignore the nomodule script (technically shouldn't download it).
-* ES List doesn't need to support jQuery any more, but should allow module syntax.
+* ES Lint doesn't need to support jQuery any more, but should allow module syntax.
 * Load non-critical JS async.
 * Replace bottom margin on page title headers.
 * Update theme screenshot.
