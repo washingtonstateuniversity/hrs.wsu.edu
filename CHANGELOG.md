@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
+* Fix #66 Use `flex-start` to mitigate IE 11 flex :bug: on `margin: auto` elements.
 * Builder banner buttons get cut off in Firefox.
 * Variable assignment inside condition phpcs error.
 * Close #60 hide empty `<p>` elements in Banner sections. Caused by an unknown interaction between Builder, TinyMCE, and Gutenberg, but only appears in Builder banner sections, which are deprecated here anyway, so just hide them.
