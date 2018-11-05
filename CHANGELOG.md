@@ -36,10 +36,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
-* Add npm dependency to provide a `URLSearchParams` polyfill.
-* Add npm dependencies for dynamic module imports.
-* Update Webpack config to include Babel polyfill for dynamic module imports and set public path for dynamically imported scripts.
-* Set `eslint.json` config to use emcaVersion 8 and allow dynamic module import syntax (and allow un-capitalized comments).
+* :package: Add npm dependency to provide a `URLSearchParams` polyfill.
+* :package: Add npm dependencies for dynamic module imports.
+* :wrench: Update Webpack config to include Babel polyfill for dynamic module imports and set public path for dynamically imported scripts.
+* :wrench: Set `eslint.json` config to use emcaVersion 8 and allow dynamic module import syntax (and allow un-capitalized comments).
 * Add more files to the `.gitattributes` ignore export rules.
 * :hammer: Close #35 Rename and refactor primary scripts into modules to take advantage of ES6+ syntax and methods alongside Babel transpilation and polyfills. For more on this method see: https://philipwalton.com/articles/deploying-es2015-code-in-production-today/ and https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/ and https://developers.google.com/web/fundamentals/primers/modules#mjs.
 * Update script enqueuing to load the main script as a module type for modern (ES6+-supporting) browsers alongside a legacy script loaded with a "nomodule" attribute. Modern browsers should ignore the nomodule script (technically shouldn't download it).
@@ -56,6 +56,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+* WP Shortcode and JavaScript to create a tool to filter table rows by a search term.
 * Use Webpack + Babel to manage JS builds and selective polyfills.
 * Page navigation styles for A-Z nav lists.
 * New general svg icons.

@@ -1,34 +1,24 @@
-const input = document.querySelector( 'input#search_table_input' );
-const reset = document.getElementById( 'js-search-form-reset' );
+const input = /** @type {!Element} */ (
+	document.getElementById( 'search_table_input' ) );
+
+const reset = /** @type {!Element} */ (
+	document.getElementById( 'js-search-form-reset' ) );
 
 /*
- * If browser supports `URLSearchParams`
+ * Sanitizes a given string as an encoded URI component.
  *
- * This should probably be hooked to a page load or after load event
+ * @type {!string} str A string to be encoded.
  */
-if ( 'URLSearchParams' in window ) {
-	// Check the URL for a search parameter.
-	const params = new URLSearchParams( window.location.search );
-	const filterBy = params.get( 'filter' );
-
-	if ( null !== filterBy ) {
-		input.value = sanitize( filterBy );
-		filterTable();
-	}
-}
-
-function sanitize( str ) {
-	return encodeURIComponent( str ).replace( /[!'()*]/g, function( c ) {
+const sanitize = function encodeParamString( str ) {
+	return encodeURIComponent( str ).replace( /[!'()*]/g, ( c ) => {
 		return '%' + c.charCodeAt( 0 ).toString( 16 );
 	} );
-}
+};
 
-function resetFilter() {
-	input.value = '';
-	filterTable();
-}
-
-function filterTable() {
+/*
+ * Hides all table elements not matching the search parameter.
+ */
+const handleInputChange = function updateTableDisplay() {
 	let td, i;
 	let filter = sanitize( input.value.toUpperCase() );
 	let table = document.querySelector( 'table.searchable' );
@@ -46,12 +36,36 @@ function filterTable() {
 			}
 		}
 	}
+};
+
+/*
+ * Clears the input field and resets the filtered output.
+ */
+const handleResetSelect = function resetFilter() {
+	input.value = '';
+	handleInputChange();
+};
+
+/*
+ * Updates filter results based on a URL parameter.
+ */
+async function handleURLSearchParams() {
+	if ( 'URLSearchParams' in window ) {
+		const params = new URLSearchParams( window.location.search );
+		const filterValue = params.get( 'filter' );
+
+		if ( null !== filterValue ) {
+			input.value = sanitize( filterValue );
+			await handleInputChange();
+		}
+	}
 }
 
 /**
- * Adds event handlers.
+ * Adds event handlers and URL parameter check.
  */
-const init = function addFilterEventListeners () {
-	input.addEventListener( 'keyup', filterTable );
-	reset.addEventListener( 'click', resetFilter );
-}
+export default function initializeFilter() {
+	input.addEventListener( 'keyup', handleInputChange );
+	reset.addEventListener( 'click', handleResetSelect );
+	handleURLSearchParams();
+};
