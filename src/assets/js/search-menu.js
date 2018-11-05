@@ -55,7 +55,7 @@ const maybeClose = function handleClickOutsideSearchMenu( event ) {
 /**
  * Adds event handlers for the search menu.
  */
-const init = function addSearchMenuEventListeners() {
+const initSearchMenu = function addSearchMenuEventListeners() {
 	searchToggle.addEventListener( 'click', toggle );
 	searchToggle.addEventListener( 'touchend', toggle );
 	searchCloser.addEventListener( 'click', toggle );
@@ -71,4 +71,4 @@ const init = function addSearchMenuEventListeners() {
 	} );
 };
 
-export { init };
+export { initSearchMenu };

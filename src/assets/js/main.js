@@ -1,4 +1,12 @@
-import * as searchMenu from './search-menu';
+import { initSearchMenu } from './search-menu';
+
+async function loadFilterHandler() {
+	const input = document.querySelector( 'input#search_table_input' );
+	if ( null !== input ) {
+		const { default: filterInit } = await import( /* webpackChunkName: "filter" */ './filter' );
+		filterInit();
+	}
+}
 
 /**
  * Initializes all of the site submodules.
@@ -8,7 +16,8 @@ import * as searchMenu from './search-menu';
  * @since 1.0.0
  */
 const main = () => {
-	searchMenu.init();
+	initSearchMenu();
+	loadFilterHandler();
 };
 
 main();

@@ -36,6 +36,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* Add dynamic import method for JS table filter handler and import only required functions in main JS entry point.
 * :package: Add npm dependency to provide a `URLSearchParams` polyfill.
 * :package: Add npm dependencies for dynamic module imports.
 * :wrench: Update Webpack config to include Babel polyfill for dynamic module imports and set public path for dynamically imported scripts.
