@@ -24,7 +24,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
-* Add `URLSearchParams` feature detection to `filter.js` to prevent IE from ignoring the rest of the script.
 * Added missing `tr` elements to table formatting in `template-tags.php`.
 * Namespace errors following update.
 * Match ER Awards template to default page template and fix phpcs issues.
@@ -35,7 +34,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 * Switch from `wp_kses_post` to less resource-intensive and aggressive escaping functions for external content table output.
 * Add `data-title` attributes to external content tables for responsive display.
 * Apply basic responsive tables CSS to all tables.
-* Update NPM script to not concatenate JavaScript files on build.
 * Use `<th>` instead of `<tr>` for the salary grid table header.
 * Move flushing results into its own function.
 * Add missing documentation and tidy some function checks.
@@ -52,11 +50,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Added
 
 * A `.gitattributes` file to manage cross-environment settings and facilitate creating non-development zip files for download.
-* Method to parse a URL query parameter and update the JS filter tool output.
-* Reset button and handler for the JS filter tool.
-* Shortcode to display and customize the JS filter tool.
-* Style new JS filter search input.
-* JavaScript to filter HTML table contents based on user search input.
 * Functions to fetch, format, and display data for the salary schedule table.
 * Class var to track last query for use in debugging.
 * Functions to fetch, format, and display data for the salary grid table.

@@ -342,31 +342,6 @@ function hrs_pagination( $total_pages = '' ) {
 }
 
 /**
- * Displays a search form to handle filtering HTML table contents with JavaScript.
- *
- * Calls a JavaScript method to do a simple filtered search of the contents of
- * an HTML table. The table must have the class `searchable` and must be the
- * only such table on the page.
- *
- * @since 0.22.2
- *
- * @param int    $column Optional. The column to search within. Defaults to column 1.
- * @param string $label  Optional. Label text to display. Defaults to "Search table".
- * @return string HTML formatted input form.
- */
-function js_search_form( $column = 1, $label = '' ) {
-	wp_enqueue_script( 'hrs-filter-script', get_stylesheet_directory_uri() . '/assets/js/filter.min.js', array(), spine_get_script_version() );
-
-	$label = ( '' !== $label ) ? $label : 'Search table';
-
-	/* translators: 1: the search field label, 2: the number of the column to search within. */
-	printf( __( '<label class="js-search-form" for="search_table_input">%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label><button id="js-search-form-reset" type="button" class="button-small">Reset</button>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
-		esc_html( $label ),
-		esc_html( absint( $column ) )
-	);
-}
-
-/**
  * Retrieves a list of Employee Recognition awards.
  *
  * Queries the Employee Recognition database using an instance of the HRS_MSDB()
@@ -526,8 +501,6 @@ function hrs_cs_salary_schedule( $data = array() ) {
 			return false;
 		}
 	}
-
-	js_search_form( 3, 'Search by Job Title' );
 
 	?>
 	<table class="tablepress striped searchable">
