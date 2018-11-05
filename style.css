@@ -553,6 +553,11 @@ main input[type="submit"]:active {
   background: #eff0f1;
 }
 
+.button--small {
+  padding: .25em .75em;
+  vertical-align: baseline;
+}
+
 .button--flat {
   border-radius: 3px;
   display: inline-block;
@@ -908,6 +913,15 @@ input[type="number"] {
   margin: 0;
   padding: 6px 4px;
   outline: 0;
+}
+
+.js-search-form {
+  display: block;
+  margin: 1.5em 0;
+}
+
+.js-search-form label {
+  margin-right: 1em;
 }
 
 /**

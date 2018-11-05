@@ -92,7 +92,7 @@ function js_search_form_shortchode( $atts ) {
 	ob_start();
 
 	/* translators: 1: the search field label, 2: the number of the column to search within. */
-	printf( __( '<label class="js-search-form" for="search_table_input">%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label><button id="js-search-form-reset" type="button" class="button-small">Reset</button>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
+	printf( __( '<div class="js-search-form"><label for="search_table_input">%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label><button id="js-search-form-reset" type="button" class="button--small">Reset</button></div>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
 		esc_html( $args['label'] ),
 		esc_html( absint( $args['column'] ) )
 	);
