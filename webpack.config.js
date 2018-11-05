@@ -10,7 +10,8 @@ module.exports = (env = {}) => {
 		},
 		output: {
 			filename: '[name].js',
-			path: path.resolve( __dirname, 'assets/js' )
+			path: path.resolve( __dirname, 'assets/js' ),
+			publicPath: '/wp-content/themes/hrs.wsu.edu/assets/js/'
 		},
 		module: {
 			rules: [
@@ -40,7 +41,8 @@ module.exports = (env = {}) => {
 										]
 									}
 								}]
-							]
+							],
+							plugins: ['@babel/syntax-dynamic-import']
 						}
 					}
 				}
@@ -55,7 +57,8 @@ module.exports = (env = {}) => {
 		},
 		output: {
 			filename: '[name].es5.js',
-			path: path.resolve( __dirname, 'assets/js' )
+			path: path.resolve( __dirname, 'assets/js' ),
+			publicPath: '/wp-content/themes/hrs.wsu.edu/assets/js/'
 		},
 		module: {
 			rules: [{
@@ -70,7 +73,8 @@ module.exports = (env = {}) => {
 								modules: false
 							}]
 
-						]
+						],
+						plugins: ['@babel/syntax-dynamic-import']
 					}
 				}
 			}]

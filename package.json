@@ -19,9 +19,11 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "autoprefixer": "^8.6.5",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "cpx": "^1.5.x",
     "cssnano": "^4.0.x",
@@ -43,15 +45,18 @@
     "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php parts/ includes/ articles/ templates/",
     "lintjs": "eslint src/assets/js/**",
     "lintscss": "stylelint \"src/assets/scss/**/*.scss\"",
-    "test": "npm run phpcs -s && npm run lintjs -s && npm run lintscss -s",
+    "test": "npm run phpcs && npm run lintjs && npm run lintscss",
     "js:dev": "webpack --progress",
     "sass": "node-sass --output-style expanded src/assets/scss -o assets/css",
     "postsass": "postcss assets/css/style.css -u autoprefixer --no-map -o ./style.css && postcss assets/css/*.css --map --use autoprefixer --use cssnano --replace",
     "svgo": "mkdirp assets/images/icons && svgo --config=.svgo.yml -f src/assets/images -o assets/images && svgo --config=.svgo.yml -f src/assets/images/icons -o assets/images/icons",
-    "build:css": "npm run lintscss -s && npm run sass -s",
+    "build:css": "npm run lintscss && npm run sass",
     "build:js": "webpack --env.production --progress",
-    "build:images": "npm run svgo -s && cpx \"src/assets/images/*.{png,jpg,gif}\" assets/images/ --update",
+    "build:images": "npm run svgo && cpx \"src/assets/images/*.{png,jpg,gif}\" assets/images/ --update",
     "prebuild": "npm run clean && npm run phpcs",
     "build": "npm run build:css && npm run build:js && npm run build:images"
+  },
+  "dependencies": {
+    "url-search-params-polyfill": "^5.0.0"
   }
 }

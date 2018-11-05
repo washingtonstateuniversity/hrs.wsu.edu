@@ -14,14 +14,16 @@
       "no-irregular-whitespace": "error",
       "no-undef": "error",
       "no-unused-vars": "error",
-      "capitalized-comments": ["warn", "always"],
       "lines-around-comment": ["warn", { "beforeBlockComment": true, "beforeLineComment": true }]
     },
     "env": {
       "browser": true,
       "es6": true
     },
+    "parser": "babel-eslint",
     "parserOptions": {
-      "sourceType": "module"
+      "sourceType": "module",
+      "ecmaVersion": 8,
+      "allowImportExportEverywhere": true
     }
 }
