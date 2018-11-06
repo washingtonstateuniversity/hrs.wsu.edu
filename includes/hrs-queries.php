@@ -101,3 +101,108 @@ function get_hrs_unit_posts( $args = array() ) {
 
 	return $hrsunit_query;
 }
+
+/**
+ * Returns an object of awards from the ER Database.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using default
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
+ *
+ * @uses \HRS_MSDB()
+ *
+ * @since 0.20.0
+ *
+ * @return array An array of objects matching the specified query.
+ */
+function get_erdb_awards() {
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'RECOG_DB_NAME' ) ? RECOG_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
+
+	// Open a new MS database connection.
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$awards = $msdb->get_results( $msdb->prepare(
+		'
+		SELECT BinaryFile as image, GroupDescription as description, GroupName as name, GroupYear as year
+		FROM V_AwardViewer
+		ORDER BY %s
+		',
+		array( 'GroupYear' )
+	) );
+
+	$msdb->clean();
+
+	return $awards;
+}
+
+/**
+ * Returns an object of salary data from the EDB.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using the saved
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
+ *
+ * @since 0.20.1
+ *
+ * @return array An array of objects matching the specified query.
+ */
+function get_salary_grid() {
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
+
+	// Open a new MS database connection.
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$salary = $msdb->get_results(
+		'
+		SELECT *
+		FROM SalGrid
+		'
+	);
+
+	$msdb->clean();
+
+	return $salary;
+}
+
+/**
+ * Returns an object of salary data and job titles from the EDB.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using the saved
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
+ *
+ * @since 0.20.1
+ *
+ * @return array An array of objects matching the specified query.
+ */
+function get_cs_salary_schedule() {
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
+
+	// Open a new MS database connection.
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$data = $msdb->get_results( $msdb->prepare(
+		'
+		SELECT ClassCode, JobGroupCode, JobTitle, SalRangeNum, SalrangeWExceptions, Salary_Min, Salary_Max
+		FROM V_JobClassCS
+		ORDER BY %s
+		',
+		array( 'JobTitle' )
+	) );
+
+	$msdb->clean();
+
+	return $data;
+}

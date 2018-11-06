@@ -20,6 +20,46 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.20.0 (2018-11-06)
+
+### Fixed
+
+* Added missing `tr` elements to table formatting in `template-tags.php`.
+* Namespace errors following update.
+* Match ER Awards template to default page template and fix phpcs issues.
+
+### Changed
+
+* :memo: Clean up and fill in some documentation throughout the `includes/` dir files.
+* :zap: Switch from `wp_kses_post` to less resource-intensive and aggressive escaping functions for external content table output.
+* Add `data-title` attributes to external content tables for responsive display.
+* Apply basic responsive tables CSS to all tables.
+* Use `<th>` instead of `<tr>` for the salary grid table header.
+* Move flushing results into its own function.
+* Add missing documentation and tidy some function checks.
+* :art: Adjust table style to semi-bold tableheaders.
+* Switch from template to shortcode for displaying external ER Awards content.
+* Move odbc queries and template tags to respective newer files.
+* Move awards list heading inside section element and change functions so that only one prints output.
+* Modify `HRS_MSDB` query methods to allow SQL Server-style parameterized queries (@see http://php.net/manual/en/function.sqlsrv-query.php).
+* :warning: Add escaping functions and fix other PHPCS issues.
+* Include the new `HRS_MSDB` class file in `functions.php`.
+* Add the new `includes/` and `templates/` directories to the npm PHPCS script.
+* Adjust row list component class names to be a little more element agnostic.
+
+### Added
+
+* :wrench: A `.gitattributes` file to manage cross-environment settings and facilitate creating non-development zip files for download.
+* Functions to fetch, format, and display data for the salary schedule table.
+* Class var to track last query for use in debugging.
+* Functions to fetch, format, and display data for the salary grid table.
+* Functions to handle preparing SQL statements for SQL Server requests.
+* Template to handle presenting a list of awards from the Employee Recognition database.
+* Function in `hrs-template-tags.php` to print the lists of awards grouped by ER year.
+* Function in `hrs-template-tags.php` to print the results of a request to the ER DB awards table as lists of awards.
+* Function in `hrs-queries.php` that instantiates the HRS_MSDB class to open a new connection to the ER database, retrieve the contents of the awards table as an object, then close the connection and return the results.
+* :sparkles: New class `HRS_MSDB` that provides a variety of methods for connecting to and interacting with an SQL Server database.
+
 ## 0.19.0 (2018-08-07)
 
 ### Changed

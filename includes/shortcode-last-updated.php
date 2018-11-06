@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-add_shortcode( 'lastupdated', 'WSU\HRS\Shortcode_Last_Updated\hrs_last_update_shortcode' );
+add_shortcode( 'lastupdated', __NAMESPACE__ . '\hrs_last_update_shortcode' );
 
 /**
  * Displays the date the post was last modified.

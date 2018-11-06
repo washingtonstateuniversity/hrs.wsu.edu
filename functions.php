@@ -18,6 +18,11 @@
  */
 require_once 'includes/class-hrs-theme-setup.php';
 
+/**
+ * Adds Microsoft SQL Server database connection class.
+ */
+require_once 'includes/class-msdb-connect.php';
+
 add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 add_action( 'wp_head', 'hrs_noscript_styles' );
@@ -34,12 +39,13 @@ add_filter( 'excerpt_more', 'hrs_excerpt_more_link' );
  * @since 0.17.3
  */
 function hrs_get_theme_version() {
-	$hrs_version = '0.19.0';
+	$hrs_version = '0.20.0';
 
 	return $hrs_version;
 }
 
 /**
+ * Add HRS Child Theme stylesheet.
  * Add HRS Child Theme stylesheets and scripts.
  *
  * @since 0.7.0

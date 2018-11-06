@@ -340,3 +340,196 @@ function hrs_pagination( $total_pages = '' ) {
 		<?php
 	}
 }
+
+/**
+ * Retrieves a list of Employee Recognition awards.
+ *
+ * Queries the Employee Recognition database using an instance of the HRS_MSDB()
+ * class. Formats the results into a list of `li` elements for use in a parent
+ * list element.
+ *
+ * @since 0.20.0
+ *
+ * @param string $year   Optional. The year from which to select awards to display.
+ * @param string $awards Optional. An array of ER award objects to format.
+ * @return string HTML formatted list of ER awards including title, description, and image.
+ */
+function get_awards_list( $year = '', $awards = '' ) {
+	// Retrieve awards data if none was passed with the function call.
+	if ( ! $awards ) {
+		$awards = WSU\HRS\Queries\get_erdb_awards();
+	}
+
+	$list = '';
+	foreach ( $awards as $award ) {
+		/*
+		 * If no year was specified in the function call, then return a list of
+		 * awards from all years. Otherwise, return of list of awards from only
+		 * the specified award year.
+		 */
+		if ( ! $year ) {
+			/* translators: 1: an image, 2: the name of the award, 3: a description of the award */
+			$list .= sprintf( __( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>', 'hrs-wsu-edu' ),
+				esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+				esc_html( wptexturize( $award->name ) ),
+				esc_html( wptexturize( $award->description ) )
+			);
+		} else {
+			if ( $year === $award->year ) {
+				/* translators: 1: an image, 2: the name of the award, 3: a description of the award */
+				$list .= sprintf( __( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>', 'hrs-wsu-edu' ),
+					esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+					esc_html( wptexturize( $award->name ) ),
+					esc_html( wptexturize( $award->description ) )
+				);
+			}
+		}
+	}
+
+	return $list;
+}
+
+/**
+ * Displays a list of Employee Recognition awards grouped by year.
+ *
+ * Builds the full list of ER awards in sections grouped by award year.
+ * {@uses get_awards_list()} to build the actual list items.
+ *
+ * @since 0.11.0
+ *
+ * @return string|false HTML formatted list of awards grouped by year or false if no award data.
+ */
+function list_erdb_awards_by_year() {
+	$awards = \WSU\HRS\Queries\get_erdb_awards();
+
+	if ( ! $awards ) {
+		return false;
+	}
+
+	$group_years = array();
+	foreach ( $awards as $award ) {
+		if ( ! in_array( $award->year, $group_years, true ) ) {
+			$group_years[] = $award->year;
+		}
+	}
+
+	foreach ( $group_years as $year ) {
+		$title = ( -1 === $year ) ? 'All' : $year;
+
+		/* translators: 1: the section title (plural), 2: a list element of multiple awards */
+		printf( __( '<h2>%1$s Year Awards</h2><ul class="articles-list">%2$s</ul>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
+			esc_attr( $title ),
+			get_awards_list( $year, $awards )
+		);
+	}
+}
+
+/**
+ * Retrieves and displays a table of Salary Grid data.
+ *
+ * Pulls salary data from the Salary Grid database and formats it into an HTML
+ * table.
+ *
+ * @since 0.20.0
+ *
+ * @param array Optional. An array of salary grid data to format.
+ * @return string|false HTML formatted table of salary grid data. False if no data is available.
+ */
+function hrs_salary_grid( $data = array() ) {
+	if ( ! $data ) {
+		$data = \WSU\HRS\Queries\get_salary_grid();
+
+		if ( ! $data ) {
+			return false;
+		}
+	}
+
+	$table_head = '<tr><th>Range</th>';
+	foreach ( range( 'A', 'M' ) as $letter ) {
+		/* translators: A letter of the alphabet. */
+		$table_head .= sprintf( __( '<th>Step<br> %s</th>', 'hrs-wsu-edu' ), esc_html( $letter ) );
+	}
+	$table_head .= '</tr>';
+
+	$table_body = '';
+	foreach ( $data as $row ) {
+		$table_body .= '<tr>';
+
+		// Build the row output including a `data-title` attribute for the range column.
+		foreach ( $row as $key => $val ) {
+			if ( 'range' === strtolower( $key ) ) {
+				/* translators: 1: The table column title, 2: The range step number. */
+				$table_body .= sprintf( __( '<td data-title="%1$s" id="%2$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( $val )
+				);
+			} else {
+				/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
+				$table_body .= sprintf( __( '<td data-title="%1$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( number_format( $val ) )
+				);
+			}
+		}
+
+		$table_body .= '</tr>';
+	}
+
+	/* translators: 1: The table head section, 2: The table body section filled with numbers. */
+	printf( __( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
+		$table_head,
+		$table_body
+	);
+}
+
+/**
+ * Retrieves and displays a table of Salary Schedule data.
+ *
+ * Pulls salary and position data from the Employee database and formats it into
+ * an HTML table.
+ *
+ * @since 0.20.2
+ *
+ * @param array Optional. An array of salary data to format.
+ * @return string|false HTML formatted table of salary data. False if no data is available.
+ */
+function hrs_cs_salary_schedule( $data = array() ) {
+	if ( ! $data ) {
+		$data = \WSU\HRS\Queries\get_cs_salary_schedule();
+
+		if ( ! $data ) {
+			return false;
+		}
+	}
+
+	?>
+	<table class="tablepress striped searchable">
+		<thead>
+			<tr>
+				<th>Job Class</th>
+				<th>Job Group</th>
+				<th>Job Title</th>
+				<th>Range</th>
+				<th>Salary Min</th>
+				<th>Salary Max</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+			$table_body = '';
+			foreach ( $data as $row ) {
+				$table_body .= '<tr>';
+				$table_body .= '<td data-title="Job Class">' . esc_html( $row->ClassCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Job Group">' . esc_html( $row->JobGroupCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Job Title">' . esc_html( $row->JobTitle ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Range"><a href="/external-db-testing/salary-grid/?filter=' . esc_attr( $row->SalRangeNum ) . '">' . esc_html( $row->SalrangeWExceptions ) . '</a></td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Salary Min">$' . esc_html( number_format( $row->Salary_Min, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-title="Salary Max">$' . esc_html( number_format( $row->Salary_Max, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '</tr>';
+			}
+			echo $table_body; // WPCS: XSS ok.
+			?>
+		</tbody>
+	</table>
+	<?php
+}

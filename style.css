@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 0.19.0
+Version: 0.20.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -1346,6 +1346,42 @@ figure .wp-caption-text:before,
 /**
  * 3.2 Data Tables
  */
+@media (max-width: 43em) {
+  table,
+  caption,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+    text-align: left;
+  }
+  thead,
+  th:empty,
+  td:empty {
+    display: none;
+    visibility: hidden;
+  }
+  td[data-title]:before {
+    content: attr(data-title) ": ";
+    display: inline-block;
+    padding-right: .25em;
+    width: 25%;
+  }
+  tbody tr {
+    margin-bottom: 1.5rem;
+  }
+  tbody td,
+  tfoot th {
+    border: none;
+    line-height: 1.4;
+    padding: 4px 8px;
+  }
+  table .column-1 {
+    font-weight: 600;
+  }
+}
+
 main table,
 main .tablepress {
   font-variant-numeric: lining-nums tabular-nums;
@@ -1354,6 +1390,7 @@ main .tablepress {
 
 main thead tr {
   border-bottom: 1px solid #839098;
+  font-weight: 600;
 }
 
 main td,
@@ -1662,6 +1699,12 @@ input[type="number"] {
 /**
  * 3.10 Row Lists
  */
+.articles-list,
+.recent-articles,
+.cards {
+  list-style-type: none;
+}
+
 .articles-list .article-title,
 .recent-articles .article-title,
 .cards .article-title {
@@ -1686,7 +1729,8 @@ input[type="number"] {
 }
 
 @media (min-width: 43em) {
-  .articles-list article {
+  .articles-list article,
+  .articles-list .list-item {
     display: grid;
     grid-template-columns: minmax(220px, 3fr) minmax(220px, 1fr);
     grid-column-gap: 2rem;
@@ -1699,7 +1743,8 @@ input[type="number"] {
     grid-column: 2;
     grid-row: 1 / 3;
   }
-  section:not(.features) .articles-list article {
+  section:not(.features) .articles-list article,
+  section:not(.features) .articles-list .list-item {
     font-size: 1rem;
     line-height: 1.5;
     max-width: 61.875em;
@@ -2455,40 +2500,6 @@ section.latest article {
 /* HRS Contacts adjustments */
 .tablepress-hrs-contacts td.column-3 {
   white-space: nowrap;
-}
-
-/* Set by TablePress plugin, so use a "max-width" rule to override on small. */
-@media (max-width: 43em) {
-  .tablepress-hrs-contacts {
-    display: block;
-    text-align: left;
-  }
-  .tablepress-hrs-contacts caption,
-  .tablepress-hrs-contacts tbody,
-  .tablepress-hrs-contacts tr,
-  .tablepress-hrs-contacts th,
-  .tablepress-hrs-contacts td {
-    display: block;
-    text-align: left;
-  }
-  .tablepress-hrs-contacts thead,
-  .tablepress-hrs-contacts th:empty,
-  .tablepress-hrs-contacts td:empty {
-    display: none;
-    visibility: hidden;
-  }
-  .tablepress-hrs-contacts tbody tr {
-    margin-bottom: 1.5rem;
-  }
-  .tablepress-hrs-contacts tbody td,
-  .tablepress-hrs-contacts tfoot th {
-    border: none;
-    line-height: 1.4;
-    padding: 4px 8px;
-  }
-  .tablepress-hrs-contacts .column-1 {
-    font-weight: 600;
-  }
 }
 
 /* The 2018 Medical Premium Changes table */

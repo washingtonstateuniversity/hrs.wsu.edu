@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-add_shortcode( 'hrs_recent_posts', 'WSU\HRS\Shortcode_Posts_Lists\hrs_recent_posts_shortcode' );
+add_shortcode( 'hrs_recent_posts', __NAMESPACE__ . '\hrs_recent_posts_shortcode' );
 
 /**
  * Shortcode displays the latest HRS posts matching criteria.
@@ -39,6 +39,7 @@ add_shortcode( 'hrs_recent_posts', 'WSU\HRS\Shortcode_Posts_Lists\hrs_recent_pos
  *                                 display as individual cards in a grid. If 'list' posts will display
  *                                 as a grid row list of flex items. Enter any other value for a custom
  *                                 class or leave empty for no container. Default 'cards'.
+ * }
  * @return string HTML content to display the latest HRS posts.
  */
 function hrs_recent_posts_shortcode( $atts ) {

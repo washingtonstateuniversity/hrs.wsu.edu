@@ -34,46 +34,6 @@
 	white-space: nowrap;
 }
 
-/* Set by TablePress plugin, so use a "max-width" rule to override on small. */
-@media (max-width: $medium) {
-
-	.tablepress-hrs-contacts {
-		display: block;
-		text-align: left;
-
-		caption,
-		tbody,
-		tr,
-		th,
-		td {
-			display: block;
-			text-align: left;
-		}
-
-		thead,
-		th:empty,
-		td:empty {
-			display: none;
-			visibility: hidden;
-		}
-
-		tbody tr {
-			margin-bottom: 1.5rem;
-		}
-
-		tbody td,
-		tfoot th {
-			border: none;
-			line-height: 1.4;
-			padding: 4px 8px;
-		}
-
-		.column-1 {
-			font-weight: 600;
-		}
-	}
-}
-
 /* The 2018 Medical Premium Changes table */
 .hrs-medical-premium-changes-2018 {
 

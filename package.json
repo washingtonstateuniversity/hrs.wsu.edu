@@ -1,6 +1,6 @@
 {
   "name": "hrs.wsu.edu",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/washingtonstateuniversity/hrs.wsu.edu"
@@ -33,9 +33,9 @@
   },
   "scripts": {
     "clean": "rimraf assets/{css/,images/,js/}",
-    "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php parts/ includes/ articles/",
+    "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php parts/ includes/ articles/ templates/",
     "lintjs": "eslint src/assets/js/**",
-    "uglify": "mkdirp assets/js && uglifyjs src/assets/js/*.js -o assets/js/scripts.js -m --source-map && uglifyjs src/assets/js/*.js -o assets/js/scripts.min.js -m -c",
+    "uglify": "mkdirp assets/js && uglifyjs src/assets/js/scripts.js -o assets/js/scripts.min.js -m -c",
     "lintscss": "stylelint \"src/assets/scss/**/*.scss\"",
     "sass": "node-sass --output-style expanded src/assets/scss -o assets/css",
     "postsass": "postcss assets/css/style.css -u autoprefixer --no-map -o ./style.css && postcss assets/css/*.css --map --use autoprefixer --use cssnano --replace",

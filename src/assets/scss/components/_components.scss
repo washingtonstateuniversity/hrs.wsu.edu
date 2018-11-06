@@ -109,6 +109,48 @@
  * 3.2 Data Tables
  */
 
+@media (max-width: $medium) {
+
+	table,
+	caption,
+	tbody,
+	tr,
+	th,
+	td {
+		display: block;
+		text-align: left;
+	}
+
+	thead,
+	th:empty,
+	td:empty {
+		display: none;
+		visibility: hidden;
+	}
+
+	td[data-title]:before {
+		content: attr(data-title) ": ";
+		display: inline-block;
+		padding-right: .25em;
+		width: 25%;
+	}
+
+	tbody tr {
+		margin-bottom: 1.5rem;
+	}
+
+	tbody td,
+	tfoot th {
+		border: none;
+		line-height: 1.4;
+		padding: 4px 8px;
+	}
+
+	table .column-1 {
+		font-weight: 600;
+	}
+}
+
 main {
 
 	table,
@@ -119,6 +161,7 @@ main {
 
 	thead tr {
 		border-bottom: 1px solid lighten($brand-gray, 15%);
+		font-weight: 600;
 	}
 
 	td,
@@ -467,6 +510,7 @@ input[type="number"] {
 .articles-list,
 .recent-articles,
 .cards {
+	list-style-type: none;
 
 	.article-title {
 		line-height: 1.1;
@@ -496,7 +540,8 @@ input[type="number"] {
 
 	.articles-list {
 
-		article {
+		article,
+		.list-item {
 			display: grid;
 			grid-template-columns: minmax(220px, 3fr) minmax(220px, 1fr);
 			grid-column-gap: 2rem;
@@ -515,7 +560,8 @@ input[type="number"] {
 
 	section:not(.features) .articles-list {
 
-		article {
+		article,
+		.list-item {
 			font-size: 1rem;
 			line-height: 1.5;
 			max-width: $large;
