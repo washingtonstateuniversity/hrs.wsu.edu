@@ -147,7 +147,7 @@ function get_erdb_awards() {
  * the database, frees the SQL statement resources, closes the connection,
  * and returns the results.
  *
- * @since 0.20.1
+ * @since 0.20.0
  *
  * @return array An array of objects matching the specified query.
  */
@@ -180,7 +180,7 @@ function get_salary_grid() {
  * the database, frees the SQL statement resources, closes the connection,
  * and returns the results.
  *
- * @since 0.20.1
+ * @since 0.20.0
  *
  * @return array An array of objects matching the specified query.
  */

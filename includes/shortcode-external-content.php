@@ -5,7 +5,7 @@
  * Shortcodes for fetching and displaying content from external sources.
  *
  * @package WSU_Human_Resources_Services
- * @since 0.20.1
+ * @since 0.20.0
  */
 
 namespace WSU\HRS\Shortcode_External_Content;
@@ -23,7 +23,7 @@ add_shortcode( 'cs_salary_schedule', __NAMESPACE__ . '\cs_salary_schedule_shortc
  *
  * Sample usage: [erdb_awards_list]
  *
- * @since 0.20.1
+ * @since 0.20.0
  *
  * @return string HTML content to display the Employee Recognition awards.
  */
@@ -40,7 +40,7 @@ function erdb_awards_list_shortcode() {
  *
  * Sample usage: [salary_grid_table]
  *
- * @since 0.20.1
+ * @since 0.20.0
  *
  * @return string HTML content to display the salary grid table.
  */
@@ -57,7 +57,7 @@ function salary_grid_table_shortcode() {
  *
  * Sample usage: [cs_salary_schedule]
  *
- * @since 0.20.2
+ * @since 0.20.0
  *
  * @return string HTML content to display the salary schedule table.
  */

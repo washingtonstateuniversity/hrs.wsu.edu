@@ -488,7 +488,7 @@ function hrs_salary_grid( $data = array() ) {
  * Pulls salary and position data from the Employee database and formats it into
  * an HTML table.
  *
- * @since 0.20.2
+ * @since 0.20.0
  *
  * @param array Optional. An array of salary data to format.
  * @return string|false HTML formatted table of salary data. False if no data is available.

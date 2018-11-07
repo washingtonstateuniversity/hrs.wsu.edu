@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
+* :pencil2: Wrong version number in `HRS_MSDB` related functions.
 * Extra debug messages in `HRS_MSDB` class methods.
 
 ## 0.20.0 (2018-11-06)

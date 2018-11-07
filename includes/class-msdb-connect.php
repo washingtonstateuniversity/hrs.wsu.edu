@@ -9,7 +9,7 @@
  * extension).
  *
  * @package WSU_Human_Resources_Services
- * @since 0.20.2
+ * @since 0.20.0
  */
 
 /**
@@ -17,7 +17,7 @@
  *
  * @link https://codex.wordpress.org/Function_Reference/wpdb_Class
  *
- * @since 0.20.2
+ * @since 0.20.0
  */
 class HRS_MSDB {
 
@@ -27,7 +27,7 @@ class HRS_MSDB {
 	 * Default behavior is to show errors if both WP_DEBUG and WP_DEBUG_DISPLAY
 	 * evaluated to true.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 * @var bool
 	 */
 	private $show_errors = false;
@@ -35,7 +35,7 @@ class HRS_MSDB {
 	/**
 	 * Results of the last query made.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 * @var array|null
 	 */
 	private $last_result;
@@ -43,7 +43,7 @@ class HRS_MSDB {
 	/**
 	 * Count of rows returned by previous query.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 * @var int
 	 */
 	public $num_rows = 0;
@@ -51,7 +51,7 @@ class HRS_MSDB {
 	/**
 	 * Last query made.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 * @var array
 	 */
 	private $last_query;
@@ -59,7 +59,7 @@ class HRS_MSDB {
 	/**
 	 * SQL server result, either a resource or a booleen.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 * @var mixed
 	 */
 	protected $result;
@@ -67,7 +67,7 @@ class HRS_MSDB {
 	/**
 	 * Database Username.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 * @var string
 	 */
 	protected $dbuser;
@@ -75,7 +75,7 @@ class HRS_MSDB {
 	/**
 	 * Database Password.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 * @var string
 	 */
 	protected $dbpassword;
@@ -83,7 +83,7 @@ class HRS_MSDB {
 	/**
 	 * Database Name.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 * @var string
 	 */
 	protected $dbname;
@@ -91,7 +91,7 @@ class HRS_MSDB {
 	/**
 	 * Database Host.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 * @var string
 	 */
 	protected $dbhost;
@@ -99,7 +99,7 @@ class HRS_MSDB {
 	/**
 	 * Database Handle.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 * @var string
 	 */
 	protected $dbh;
@@ -107,7 +107,7 @@ class HRS_MSDB {
 	/**
 	 * Whether a connection has been made.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 * @var bool
 	 */
 	private $has_connected = false;
@@ -118,7 +118,7 @@ class HRS_MSDB {
 	 * PHP5+ style constructor that sets up the class properties and connection
 	 * to the database.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @param string $dbuser     MSSQL database user
 	 * @param string $dbpassword MSSQL database password
@@ -147,7 +147,7 @@ class HRS_MSDB {
 	 *
 	 * @link http://php.net/manual/en/intro.sqlsrv.php
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @return bool True with a successful connection, false on failure.
 	 */
@@ -186,7 +186,7 @@ class HRS_MSDB {
 	 *     $like = $msdb->esc_like( $find );
 	 *     $sql  = $msdb->get_results( "SELECT * FROM table WHERE content LIKE '%' + ? + '%' ", array( $like ) );
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @param string $text The raw text to be escaped.
 	 * @return string Text in the form of a LIKE phrase. The output is not SQL safe on its own.
@@ -207,7 +207,7 @@ class HRS_MSDB {
 	 *
 	 * @todo Consider switching to PDO for better built-in escaping.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @param string $string String to escape.
 	 * @return string Escaped string.
@@ -231,7 +231,7 @@ class HRS_MSDB {
 	 *
 	 * @uses msdb::mssql_escape_string()
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @param string $string String to escape.
 	 */
@@ -246,7 +246,7 @@ class HRS_MSDB {
 	 *
 	 * @see wpdb::placeholder_escape()
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @return string String to escape placeholders.
 	 */
@@ -275,7 +275,7 @@ class HRS_MSDB {
 	/**
 	 * Adds a placeholder escape string, to escape anything that resembles a printf() placeholder.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @param string $query The query to escape.
 	 * @return string The query with the placeholder escape string inserted as needed.
@@ -291,7 +291,7 @@ class HRS_MSDB {
 	/**
 	 * Removes the placeholder escape strings from a query.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @param string $query The query to remove the placeholder from.
 	 * @return string The query with the placeholder removed as needed.
@@ -326,7 +326,7 @@ class HRS_MSDB {
 	 *
 	 * @link https://secure.php.net/sprintf Description of syntax.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @param string      $query Query statement with sprintf()-like placeholders.
 	 * @param array|mixed $args  The array of variables to substitute into the query's placeholders
@@ -429,7 +429,7 @@ class HRS_MSDB {
 	 * @todo Check on the type of query, {@see /wp-includes/wp-db.php}.
 	 * @todo Include some filtering and checking first.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @param string $query A database query.
 	 * @param array  $param Optional. Arguments for a parameterized query.
@@ -484,7 +484,7 @@ class HRS_MSDB {
 	 * @see HRS_MSDB::query()
 	 * @link http://php.net/manual/en/function.sqlsrv-query.php
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @param string $query The query to run.
 	 * @param array $param Optional. Arguments for a parameterized query.
@@ -504,7 +504,7 @@ class HRS_MSDB {
 	 *
 	 * Executes a given SLQ query and returns the full result.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @param string $query  An SQL query.
 	 * @param array  $param  Optional. Arguments for a parameterized sqlsvr query.
@@ -539,7 +539,7 @@ class HRS_MSDB {
 	/**
 	 * Remove cached query results.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 */
 	public function flush() {
 		// Unset properties.
@@ -556,7 +556,7 @@ class HRS_MSDB {
 	/**
 	 * Closes the current database connection.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @return bool True if the connection was successfully closed, false if it
 	 *              wasn't or if the connection doesn't exist.
@@ -582,7 +582,7 @@ class HRS_MSDB {
 	 *
 	 * This is only a wrapper for HRS_MSDB::flush() and HRS_MSDB::clean().
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 */
 	public function clean() {
 		// Clean up.
@@ -595,7 +595,7 @@ class HRS_MSDB {
 	/**
 	 * Prints an SQL/DB error.
 	 *
-	 * @since 0.20.2
+	 * @since 0.20.0
 	 *
 	 * @param string $str The error to display.
 	 * @return false|void False if showing of errors is disabled.
