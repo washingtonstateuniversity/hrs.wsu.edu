@@ -168,7 +168,6 @@ class HRS_MSDB {
 			return false;
 		} elseif ( $this->dbh ) {
 			$this->has_connected = true;
-			echo '<!-- DEBUG: Connection successful! :) -->'; // DEBUGGING
 			return true;
 		}
 
@@ -460,8 +459,6 @@ class HRS_MSDB {
 		if ( false === $this->result ) {
 			$this->print_error();
 			return false;
-		} else {
-			echo '<!-- DEBUG: Query request successful! :) -->'; // DEBUGGING
 		}
 
 		$num_rows = 0;
@@ -553,7 +550,6 @@ class HRS_MSDB {
 		// If a resource statement is still saved, clear it.
 		if ( is_resource( $this->result ) ) {
 			sqlsrv_free_stmt( $this->result );
-			echo '<!-- DEBUG: Freed resources for ' . esc_html( $this->result ) . ' statement. -->'; // DEBUGGING
 		}
 	}
 
@@ -576,7 +572,6 @@ class HRS_MSDB {
 			// If successfully closed, unset the class properties as well.
 			$this->dbh           = null;
 			$this->has_connected = false;
-			echo '<!-- DEBUG: Connection to ' . esc_html( $this->dbname ) . ' closed. -->'; // DEBUGGING
 		}
 
 		return $closed;

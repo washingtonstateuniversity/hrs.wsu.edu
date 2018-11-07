@@ -20,6 +20,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 0.20.1 (2018-11-07)
+
+### Fixed
+
+* Extra debug messages in `HRS_MSDB` class methods.
+
 ## 0.20.0 (2018-11-06)
 
 ### Fixed
