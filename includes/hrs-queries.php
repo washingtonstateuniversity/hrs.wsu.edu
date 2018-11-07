@@ -25,8 +25,9 @@ function hrs_filter_query( $query ) {
 
 	// Exclude posts in the reminder category from the posts home query.
 	if ( ! is_admin() && is_home() && $query->is_main_query() ) {
-		$reminders = get_category_by_slug( 'reminders' );
-		$query->set( 'category__not_in', intval( $reminders->term_id ) );
+		if ( $reminders = get_category_by_slug( 'reminders' ) ) {
+			$query->set( 'category__not_in', intval( $reminders->term_id ) );
+		}
 		return;
 	}
 }
@@ -40,7 +41,9 @@ function hrs_filter_query( $query ) {
  * @return array|\WP_Query The posts as an array of IDs or array of post objects.
  */
 function get_reminder_posts( $output = 'ids' ) {
-	$reminders = get_category_by_slug( 'reminders' );
+	if ( ! $reminders = get_category_by_slug( 'reminders' ) ) {
+		return false;
+	}
 
 	$args = array(
 		'post_type'      => 'post',

@@ -20,6 +20,18 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.0.0 (WIP 2018-10)
+
+### Fixed
+
+* Target feature image styles more specifically.
+* Fix #65 don't check for a term ID when the term doesn't exist.
+* Verify `get_reminder_posts()` returned results before using them.
+
+### Removed
+
+* Clean out unused deprecated styles.
+
 ## 0.20.1 (2018-11-07)
 
 ### Fixed
