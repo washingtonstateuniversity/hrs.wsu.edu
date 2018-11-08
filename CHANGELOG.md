@@ -20,7 +20,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.0.0-20181026 (WIP 2018-10)
+## 1.0.0-20181108 (:construction: WIP)
 
 ### Fixed
 
@@ -36,6 +36,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* :arrow_up: Upgrade npm dependencies.
 * :art: Clean up JS table filter input display.
 * Add dynamic import method for JS table filter handler and import only required functions in main JS entry point.
 * :package: Add npm dependency to provide a `URLSearchParams` polyfill.
@@ -43,7 +44,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 * :wrench: Update Webpack config to include Babel polyfill for dynamic module imports and set public path for dynamically imported scripts.
 * :wrench: Set `eslint.json` config to use emcaVersion 8 and allow dynamic module import syntax (and allow un-capitalized comments).
 * Add more files to the `.gitattributes` ignore export rules.
-* :hammer: Close #35 Rename and refactor primary scripts into modules to take advantage of ES6+ syntax and methods alongside Babel transpilation and polyfills. For more on this method see: https://philipwalton.com/articles/deploying-es2015-code-in-production-today/ and https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/ and https://developers.google.com/web/fundamentals/primers/modules#mjs.
+* :recycle: Close #35 Rename and refactor primary scripts into modules to take advantage of ES6+ syntax and methods alongside Babel transpilation and polyfills. For more on this method see: https://philipwalton.com/articles/deploying-es2015-code-in-production-today/ and https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/ and https://developers.google.com/web/fundamentals/primers/modules#mjs.
 * Update script enqueuing to load the main script as a module type for modern (ES6+-supporting) browsers alongside a legacy script loaded with a "nomodule" attribute. Modern browsers should ignore the nomodule script (technically shouldn't download it).
 * ES Lint doesn't need to support jQuery any more, but should allow module syntax.
 * Load non-critical JS async.
