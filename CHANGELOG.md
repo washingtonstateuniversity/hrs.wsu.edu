@@ -69,6 +69,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Removed
 
+* :fire: Old image decorations.
 * :wrench: Remove support for IE versions below 11.
 * No longer need unique card stylings for specific pages.
 * No special styling for Builder banner titles on specific pages.
