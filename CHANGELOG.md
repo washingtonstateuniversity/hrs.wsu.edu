@@ -36,6 +36,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* :arrow_up: Upgrade Composer dependencies.
 * :arrow_up: Upgrade npm dependencies.
 * :art: Clean up JS table filter input display.
 * Add dynamic import method for JS table filter handler and import only required functions in main JS entry point.
