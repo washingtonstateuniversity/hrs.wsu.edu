@@ -14,7 +14,7 @@
   "license": "GPL-2.0+",
   "browserslist": [
     "> 1%",
-    "ie 8-11",
+    "ie 11",
     "Firefox ESR"
   ],
   "devDependencies": {
