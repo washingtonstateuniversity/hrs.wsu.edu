@@ -75,7 +75,7 @@ function the_terms( $args = array() ) {
 		return false;
 	}
 
-	$terms = \WSU\HRS\Template_Tags\get_terms( $atts['id'], $atts['taxonomy'] );
+	$terms = \WSU\HRS\Template_Tags\get_terms( intval( $atts['id'] ), $atts['taxonomy'] );
 
 	if ( is_wp_error( $terms ) || empty( $terms ) ) {
 		return false;
@@ -89,9 +89,7 @@ function the_terms( $args = array() ) {
 		} else {
 			$taxonomy_obj = get_taxonomy( $atts['taxonomy'] );
 			/* translators: The taxonomy name in singular tense */
-			$term_title = sprintf( __( '<dt>%s</dt>', 'hrs-wsu-edu' ),
-				esc_html( $taxonomy_obj->labels->singular_name )
-			);
+			$term_title = sprintf( __( '<dt>%s</dt>', 'hrs-wsu-edu' ), esc_html( $taxonomy_obj->labels->singular_name ) );
 		}
 	} else {
 		$term_title = '';
@@ -102,24 +100,26 @@ function the_terms( $args = array() ) {
 	foreach ( $terms as $term ) {
 		$term_link = get_term_link( $term->term_id, $atts['taxonomy'] );
 		if ( ! is_wp_error( $term_link ) ) {
-			/* translators: 1: the list item element tag, 2: the term URL, 3: the term name */
-			$terms_list[] = sprintf( __( '<%1$s><a href="%2$s">%3$s</a></%1$s>', 'hrs-wsu-edu' ),
-				$atts['item_tag'],
+			$terms_list[] = sprintf(
+				/* translators: 1: the list item element tag, 2: the term URL, 3: the term name */
+				__( '<%1$s><a href="%2$s">%3$s</a></%1$s>', 'hrs-wsu-edu' ),
+				esc_html( $atts['item_tag'] ),
 				esc_url( $term_link ),
 				esc_html( $term->name )
 			);
 		}
 	}
 
-	/* translators: 1: the container element tag name, 2: the containing element class name(s), 3: one or more list items containing term links and names, 4: the taxonomy name */
-	$html = sprintf( __( '<%1$s class="class="article-taxonomy %2$s">%4$s%3$s</%1$s>', 'hrs-wsu-edu' ),
+	$html = sprintf(
+		/* translators: 1: the container element tag name, 2: the containing element class name(s), 3: one or more list items containing term links and names, 4: the taxonomy name */
+		__( '<%1$s class="class="article-taxonomy %2$s">%4$s%3$s</%1$s>', 'hrs-wsu-edu' ),
 		esc_html( $atts['container_tag'] ),
 		esc_attr( $atts['taxonomy'] ),
 		join( '', $terms_list ),
 		$term_title
 	);
 
-	echo wp_kses_post( $html );
+	echo $html; // WPCS: XSS ok.
 }
 
 /**
@@ -131,12 +131,14 @@ function the_terms( $args = array() ) {
  * @return string The taxonomy output formatted as an unordered gallery list.
  */
 function the_terms_gallery( $taxonomy ) {
-	$list = wp_list_categories( array(
-		'echo'       => false,
-		'hide_empty' => 0,
-		'taxonomy'   => $taxonomy,
-		'title_li'   => '',
-	) );
+	$list = wp_list_categories(
+		array(
+			'echo'       => false,
+			'hide_empty' => 0,
+			'taxonomy'   => $taxonomy,
+			'title_li'   => '',
+		)
+	);
 
 	$list = str_replace( 'cat-item', 'gallery-item cat-item', $list );
 
@@ -191,7 +193,7 @@ function hrs_recent_posts( $args = null ) {
 		}
 
 		foreach ( $posts as $post ) {
-			setup_postdata( $post );
+			setup_postdata( $post ); // WPCS: override ok.
 			get_template_part( 'articles/archive-content' );
 		}
 
@@ -362,23 +364,27 @@ function get_awards_list( $year = '', $awards = '' ) {
 
 	$list = '';
 	foreach ( $awards as $award ) {
+		$award_image = esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+
 		/*
 		 * If no year was specified in the function call, then return a list of
 		 * awards from all years. Otherwise, return of list of awards from only
 		 * the specified award year.
 		 */
 		if ( ! $year ) {
-			/* translators: 1: an image, 2: the name of the award, 3: a description of the award */
-			$list .= sprintf( __( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>', 'hrs-wsu-edu' ),
-				esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+			$list .= sprintf(
+				/* translators: 1: an image, 2: the name of the award, 3: a description of the award */
+				__( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>', 'hrs-wsu-edu' ),
+				$award_image,
 				esc_html( wptexturize( $award->name ) ),
 				esc_html( wptexturize( $award->description ) )
 			);
 		} else {
 			if ( $year === $award->year ) {
-				/* translators: 1: an image, 2: the name of the award, 3: a description of the award */
-				$list .= sprintf( __( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>', 'hrs-wsu-edu' ),
-					esc_url_raw( 'data:image/jpg;base64, ' . base64_encode( $award->image ), array( 'data' ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+				$list .= sprintf(
+					/* translators: 1: an image, 2: the name of the award, 3: a description of the award */
+					__( '<li class="list-item"><p class="article-title">%2$s</p><figure class="article-image"><img width="100" class="attachment-spine-small_size size-spine-small_size wp-post-image" src="%1$s" alt="%3$s"></figure><div class="article-summary"><p>%3$s</p></div></li>', 'hrs-wsu-edu' ),
+					$award_image,
 					esc_html( wptexturize( $award->name ) ),
 					esc_html( wptexturize( $award->description ) )
 				);
@@ -416,11 +422,12 @@ function list_erdb_awards_by_year() {
 	foreach ( $group_years as $year ) {
 		$title = ( -1 === $year ) ? 'All' : $year;
 
-		/* translators: 1: the section title (plural), 2: a list element of multiple awards */
-		printf( __( '<h2>%1$s Year Awards</h2><ul class="articles-list">%2$s</ul>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
+		printf(
+			/* translators: 1: the section title (plural), 2: a list element of multiple awards */
+			__( '<h2>%1$s Year Awards</h2><ul class="articles-list">%2$s</ul>', 'hrs-wsu-edu' ),
 			esc_attr( $title ),
 			get_awards_list( $year, $awards )
-		);
+		); // WPCS: XSS ok.
 	}
 }
 
@@ -458,14 +465,16 @@ function hrs_salary_grid( $data = array() ) {
 		// Build the row output including a `data-title` attribute for the range column.
 		foreach ( $row as $key => $val ) {
 			if ( 'range' === strtolower( $key ) ) {
-				/* translators: 1: The table column title, 2: The range step number. */
-				$table_body .= sprintf( __( '<td data-title="%1$s" id="%2$s">%2$s</td>', 'hrs-wsu-edu' ),
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The range step number. */
+					__( '<td data-title="%1$s" id="%2$s">%2$s</td>', 'hrs-wsu-edu' ),
 					esc_attr( ucfirst( strtolower( $key ) ) ),
 					esc_html( $val )
 				);
 			} else {
-				/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
-				$table_body .= sprintf( __( '<td data-title="%1$s">%2$s</td>', 'hrs-wsu-edu' ),
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
+					__( '<td data-title="%1$s">%2$s</td>', 'hrs-wsu-edu' ),
 					esc_attr( ucfirst( strtolower( $key ) ) ),
 					esc_html( number_format( $val ) )
 				);
@@ -475,11 +484,12 @@ function hrs_salary_grid( $data = array() ) {
 		$table_body .= '</tr>';
 	}
 
-	/* translators: 1: The table head section, 2: The table body section filled with numbers. */
-	printf( __( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
+	printf(
+		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
 		$table_head,
 		$table_body
-	);
+	); // WPCS: XSS ok.
 }
 
 /**

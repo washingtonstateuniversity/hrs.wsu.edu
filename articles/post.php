@@ -88,8 +88,6 @@ use WSU\HRS\Template_Tags as Tags;
 
 	<footer class="article-footer">
 		<?php
-		// get_template_part( 'parts/share-tools' );
-
 		// Print the post taxonomy lists, if they exist.
 		Tags\the_terms( array( 'taxonomy' => 'hrs_unit' ) );
 		Tags\the_terms( array( 'taxonomy' => 'category' ) );

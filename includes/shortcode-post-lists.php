@@ -44,13 +44,16 @@ add_shortcode( 'filter_form', __NAMESPACE__ . '\js_search_form_shortchode' );
  * @return string HTML content to display the latest HRS posts.
  */
 function hrs_recent_posts_shortcode( $atts ) {
-	$query = shortcode_atts( array(
-		'posts_per_page' => 5,
-		'offset'         => 0,
-		'category'       => 0,
-		'hrs_unit'       => '',
-		'style'          => 'cards',
-	), $atts );
+	$query = shortcode_atts(
+		array(
+			'posts_per_page' => 5,
+			'offset'         => 0,
+			'category'       => 0,
+			'hrs_unit'       => '',
+			'style'          => 'cards',
+		),
+		$atts
+	);
 
 	ob_start();
 
@@ -84,18 +87,22 @@ function hrs_recent_posts_shortcode( $atts ) {
  * @return string HTML formatted search input element.
  */
 function js_search_form_shortchode( $atts ) {
-	$args = shortcode_atts( array(
-		'column' => 1,
-		'label'  => 'Search',
-	), $atts );
+	$args = shortcode_atts(
+		array(
+			'column' => 1,
+			'label'  => 'Search',
+		),
+		$atts
+	);
 
 	ob_start();
 
-	/* translators: 1: the search field label, 2: the number of the column to search within. */
-	printf( __( '<div class="js-search-form"><label for="search_table_input">%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label><button id="js-search-form-reset" type="button" class="button--small">Reset</button></div>', 'hrs-wsu-edu' ), // WPCS: XSS ok.
+	printf(
+		/* translators: 1: the search field label, 2: the number of the column to search within. */
+		__( '<div class="js-search-form"><label for="search_table_input">%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label><button id="js-search-form-reset" type="button" class="button--small">Reset</button></div>', 'hrs-wsu-edu' ),
 		esc_html( $args['label'] ),
 		esc_html( absint( $args['column'] ) )
-	);
+	); // WPCS: XSS ok.
 
 	return ob_get_clean();
 }

@@ -24,7 +24,7 @@ $hrs_common_search_args = array(
 <header class="site-header">
 	<section class="row single">
 		<div class="site-banner column one">
-			<a class="site-title" href="http://hrs.wsu.edu">Human Resource Services</a>
+			<a class="site-title" href="<?php echo esc_url( home_url() ); ?>">Human Resource Services</a>
 			<button class="search-toggle" aria-expanded="false" aria-controls="search-menu">Search</button>
 		</div>
 		<div id="search-menu" class="expandable">

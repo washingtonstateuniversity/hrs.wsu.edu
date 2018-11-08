@@ -228,10 +228,7 @@ class HRS_Theme_Setup {
 	 */
 	public function add_theme_support() {
 		add_theme_support( 'html5', array( 'search-form' ) );
-
-		add_theme_support( 'gutenberg', array(
-			'wide-images' => true,
-		) );
+		add_theme_support( 'gutenberg', array( 'wide-images' => true ) );
 
 		// Disables the custom option in the Gutenberg block color picker.
 		add_theme_support( 'disable-custom-colors' );
@@ -252,10 +249,12 @@ class HRS_Theme_Setup {
 	 * @since 0.12.0
 	 */
 	public function register_nav_menus() {
-		register_nav_menus( array(
-			'hrs-search-menu' => __( 'Search Menu', 'hrs-wsu-edu' ),
-			'hrs-site-footer' => __( 'Site Footer', 'hrs-wsu-edu' ),
-		) );
+		register_nav_menus(
+			array(
+				'hrs-search-menu' => __( 'Search Menu', 'hrs-wsu-edu' ),
+				'hrs-site-footer' => __( 'Site Footer', 'hrs-wsu-edu' ),
+			)
+		);
 	}
 
 	/**

@@ -18,12 +18,14 @@
 			<div class="column one">
 
 				<?php
-				WSU\HRS\Template_Tags\the_terms( array(
-					'taxonomy'      => 'hrs_unit',
-					'show_title'    => false,
-					'container_tag' => 'ul',
-					'item_tag'      => 'li',
-				) );
+				WSU\HRS\Template_Tags\the_terms(
+					array(
+						'taxonomy'      => 'hrs_unit',
+						'show_title'    => false,
+						'container_tag' => 'ul',
+						'item_tag'      => 'li',
+					)
+				);
 				?>
 
 			</div><!--/column-->

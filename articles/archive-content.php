@@ -39,12 +39,14 @@ global $is_feature;
 		<?php if ( ! is_tax( 'hrs_unit' ) && has_term( '', 'hrs_unit' ) ) : ?>
 			<footer class="article-footer article-taxonomy--primary">
 				<?php
-				WSU\HRS\Template_Tags\the_terms( array(
-					'taxonomy'      => 'hrs_unit',
-					'show_title'    => false,
-					'container_tag' => 'ul',
-					'item_tag'      => 'li',
-				) );
+				WSU\HRS\Template_Tags\the_terms(
+					array(
+						'taxonomy'      => 'hrs_unit',
+						'show_title'    => false,
+						'container_tag' => 'ul',
+						'item_tag'      => 'li',
+					)
+				);
 				?>
 			</footer><!-- .entry-meta -->
 		<?php endif; ?>

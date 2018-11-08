@@ -130,14 +130,16 @@ function get_erdb_awards() {
 	// Open a new MS database connection.
 	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
-	$awards = $msdb->get_results( $msdb->prepare(
-		'
-		SELECT BinaryFile as image, GroupDescription as description, GroupName as name, GroupYear as year
-		FROM V_AwardViewer
-		ORDER BY %s
-		',
-		array( 'GroupYear' )
-	) );
+	$awards = $msdb->get_results(
+		$msdb->prepare(
+			'
+			SELECT BinaryFile as image, GroupDescription as description, GroupName as name, GroupYear as year
+			FROM V_AwardViewer
+			ORDER BY %s
+			',
+			array( 'GroupYear' )
+		)
+	);
 
 	$msdb->clean();
 
@@ -198,14 +200,16 @@ function get_cs_salary_schedule() {
 	// Open a new MS database connection.
 	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
-	$data = $msdb->get_results( $msdb->prepare(
-		'
-		SELECT ClassCode, JobGroupCode, JobTitle, SalRangeNum, SalrangeWExceptions, Salary_Min, Salary_Max
-		FROM V_JobClassCS
-		ORDER BY %s
-		',
-		array( 'JobTitle' )
-	) );
+	$data = $msdb->get_results(
+		$msdb->prepare(
+			'
+			SELECT ClassCode, JobGroupCode, JobTitle, SalRangeNum, SalrangeWExceptions, Salary_Min, Salary_Max
+			FROM V_JobClassCS
+			ORDER BY %s
+			',
+			array( 'JobTitle' )
+		)
+	);
 
 	$msdb->clean();
 
