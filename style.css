@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.0.0-20181015
+Version: 1.0.0-20181108
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -56,7 +56,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *     3.6 Grid Lists
  *     3.7 Modules
  *     3.8 Notifications
- *     3.9 Pagination
+ *     3.9 Page Navigation
  *     3.10 Row Lists
  *     3.11 Search
  *
@@ -745,7 +745,7 @@ figure .wp-caption-text:before,
  *     - 3.6 Grid Lists
  *     - 3.7 Modules
  *     - 3.8 Notifications
- *     - 3.9 Pagination
+ *     - 3.9 Page Navigation
  *     - 3.10 Row Lists
  *     - 3.11 Search
  *
@@ -1104,7 +1104,7 @@ input[type="number"] {
 }
 
 /**
- * 3.9 Pagination
+ * 3.9 Page Navigation
  */
 .pager {
   margin: 1.5rem auto;
@@ -1151,6 +1151,34 @@ input[type="number"] {
   text-align: right;
 }
 
+.atoz ul {
+  max-width: 34em;
+  padding: 0 0 1.5em;
+}
+
+.atoz li {
+  border: 1px solid #981e32;
+  display: inline-block;
+  margin: .2em .1em;
+  padding: 0;
+  text-align: center;
+}
+
+.atoz li a {
+  border-bottom: none;
+  color: #981e32;
+  display: block;
+  font-weight: 400;
+  min-width: 2.3em;
+  padding: 8px;
+  transition: all .5s ease;
+}
+
+.atoz li a:hover, .atoz li a:focus {
+  background-color: #981e32;
+  color: #fff;
+}
+
 @media (min-width: 34em) {
   .pager ul {
     font-size: 1em;
@@ -1192,10 +1220,13 @@ input[type="number"] {
     grid-column-gap: 2rem;
   }
   .articles-list article .article-header,
-  .articles-list article .article-summary {
+  .articles-list article .article-summary,
+  .articles-list .list-item .article-header,
+  .articles-list .list-item .article-summary {
     grid-column: 1;
   }
-  .articles-list article .article-image {
+  .articles-list article .article-image,
+  .articles-list .list-item .article-image {
     grid-column: 2;
     grid-row: 1 / 3;
   }
