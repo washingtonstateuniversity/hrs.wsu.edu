@@ -390,8 +390,7 @@ dd {
   position: absolute;
   text-shadow: 1px 0 8px rgba(0, 0, 0, 0.15);
   top: 50%;
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 90%;
 }
 
@@ -402,8 +401,7 @@ dd {
 }
 
 .builder-section-banner .builder-banner-inner-content {
-  -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .builder-section-banner .builder-banner-inner-content p {
@@ -696,12 +694,9 @@ figure .wp-caption-text:before,
  *       settings for the social media account handles.
  */
 .column.social-media-icons {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row nowrap;
-      flex-flow: row nowrap;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
 }
 
 .column.social-media-icons p {
@@ -775,14 +770,12 @@ figure .wp-caption-text:before,
 
 .cards .article-image,
 .recent-articles .article-image {
-  -ms-flex-order: -1;
-      order: -1;
+  order: -1;
 }
 
 .cards .article-footer,
 .recent-articles .article-footer {
-  -ms-flex-order: -2;
-      order: -2;
+  order: -2;
 }
 
 @supports (display: grid) {
@@ -790,10 +783,8 @@ figure .wp-caption-text:before,
   .cards .card,
   .recent-articles article,
   .recent-articles .card {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
+    flex-direction: column;
     float: none;
     padding: 0;
     width: auto;
@@ -916,7 +907,6 @@ input[type="number"] {
 }
 
 .js-search-form {
-  display: block;
   margin: 1.5em 0;
 }
 
@@ -928,10 +918,8 @@ input[type="number"] {
  * 3.6 Grid Lists
  */
 .gallery {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: auto;
 }
 
@@ -1075,16 +1063,12 @@ input[type="number"] {
  *       didn't need to catch any containing markup.
  */
 .notification, .notification--positive, .notification--caution, .notification--warning {
-  -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   border: 5px solid #475055;
   border-left-width: 1em;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   margin: 1.5em auto;
   max-width: 54.851em;
   padding: .75em 1em;
@@ -1112,8 +1096,7 @@ input[type="number"] {
 
 @media (min-width: 43em) {
   .notification, .notification--positive, .notification--caution, .notification--warning {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
   .notification p, .notification--positive p, .notification--caution p, .notification--warning p {
     padding: 0;
@@ -1128,10 +1111,8 @@ input[type="number"] {
 }
 
 .pager ul {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row nowrap;
-      flex-flow: row nowrap;
+  flex-flow: row nowrap;
   padding: 0;
 }
 
@@ -1241,15 +1222,12 @@ input[type="number"] {
 #search-menu {
   background: #eff0f1;
   box-shadow: -1px 1px 4px 0 rgba(20, 20, 20, 0.1);
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
+  flex-flow: row wrap;
   padding: 9rem 2rem 1.5rem;
   position: absolute;
   top: 4.8rem;
-  -ms-transform: translateY(-100rem);
-      transform: translateY(-100rem);
+  transform: translateY(-100rem);
   transition-delay: .1s;
   transition-duration: .3s;
   transition-property: transform top;
@@ -1259,8 +1237,7 @@ input[type="number"] {
 }
 
 #search-menu.is-visible {
-  -ms-transform: translateY(-4.8rem);
-      transform: translateY(-4.8rem);
+  transform: translateY(-4.8rem);
 }
 
 .search-toggle {
@@ -1290,8 +1267,7 @@ input[type="number"] {
 }
 
 .search-form {
-  -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .search-input[type="search"] {
@@ -1360,14 +1336,11 @@ input[type="number"] {
 }
 
 .site-header .column {
-  -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   border-top: 8px solid #981e32;
   border-bottom: 8px solid #f2f2f2;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
   padding: .75rem 1rem;
   z-index: 900;
 }
@@ -1433,21 +1406,17 @@ footer dd a:focus {
 }
 
 .footer-nav {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row nowrap;
-      flex-flow: row nowrap;
+  flex-flow: row nowrap;
 }
 
 .footer-nav nav {
-  -ms-flex: 3 1 auto;
-      flex: 3 1 auto;
+  flex: 3 1 auto;
   margin: 1.5rem 2rem;
 }
 
 .footer-nav .wsu-brand {
-  -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
+  flex: 1 1 auto;
   margin: 1.5rem 2rem;
   position: relative;
 }
@@ -1470,12 +1439,9 @@ footer dd a:focus {
 }
 
 .site-reference ul {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: column;
-      flex-flow: column;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  flex-flow: column;
+  justify-content: flex-end;
 }
 
 .site-reference ul li {
@@ -1498,8 +1464,7 @@ footer dd a:focus {
 
 @media (min-width: 34em) {
   .site-reference ul {
-    -ms-flex-flow: row wrap;
-        flex-flow: row wrap;
+    flex-flow: row wrap;
     margin-right: 1.25rem;
   }
 }
@@ -1613,10 +1578,8 @@ footer dd a:focus {
     width: 50vw;
   }
   .single-post .article-footer {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
+    justify-content: space-between;
     margin-right: calc(-43% - 2rem);
   }
   .single-post .article-footer dl:last-child {
@@ -1662,14 +1625,11 @@ section.latest article {
 @media (max-width: 43em) {
   @supports (display: grid) {
     .features .articles-list article {
-      display: -ms-flexbox;
       display: flex;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      flex-direction: column;
     }
     .features .articles-list .article-image {
-      -ms-flex-order: -1;
-          order: -1;
+      order: -1;
     }
   }
 }
@@ -1726,18 +1686,14 @@ section.latest article {
 }
 
 .home-main-subnav nav ul {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: space-evenly;
-      justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   padding: 0;
 }
 
 .home-main-subnav nav li {
-  -ms-flex: 0 1 auto;
-      flex: 0 1 auto;
+  flex: 0 1 auto;
   font-size: 1.125em;
   padding: .2em 0 0;
   text-align: center;
@@ -1765,12 +1721,10 @@ section.latest article {
 
 @media (min-width: 34em) {
   .home-main-subnav nav ul {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
   .home-main-subnav nav li {
-    -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
+    flex: 1 1 auto;
     padding: 0;
   }
   .home-main-subnav nav a {
