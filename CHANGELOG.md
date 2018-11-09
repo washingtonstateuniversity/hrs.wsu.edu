@@ -36,6 +36,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* :sparkles: Switch from using WSU custom search to the built in WP search. Because for all its drawbacks, it's still better.
 * :arrow_up: Upgrade Composer dependencies.
 * :arrow_up: Upgrade npm dependencies.
 * :art: Clean up JS table filter input display.
@@ -60,6 +61,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+* Dedicated `search.php` template to override the Spine parent theme version.
 * WP Shortcode and JavaScript to create a tool to filter table rows by a search term.
 * Use Webpack + Babel to manage JS builds and selective polyfills.
 * Page navigation styles for A-Z nav lists.
