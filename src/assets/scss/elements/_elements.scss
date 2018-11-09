@@ -22,7 +22,8 @@ main .button,
 main button,
 main input[type="button"],
 main input[type="reset"],
-.site-header button {
+.site-header button,
+.site-header input[type="submit"] {
 	background: #fff;
 	border: 1px solid $brand-crimson;
 	border-radius: 3px;

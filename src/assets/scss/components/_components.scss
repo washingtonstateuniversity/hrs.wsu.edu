@@ -644,9 +644,12 @@ input[type="number"] {
 	flex: 1 1 auto;
 }
 
-.search-input[type="search"] {
+.search-field[type="search"] {
 	font-size: $font-size-5;
-	width: 90%;
+}
+
+.search-form input[type="submit"] {
+	vertical-align: top;
 }
 
 .search-links-title {
@@ -673,11 +676,20 @@ input[type="number"] {
 
 }
 
+@media (max-width: $small ) {
+
+	.search-field[type="search"] {
+		max-width: 300px;
+	}
+
+}
+
 @media (min-width: $small) {
 
 	#search-menu {
 		padding-top: 7.5rem;
 	}
+
 
 }
 

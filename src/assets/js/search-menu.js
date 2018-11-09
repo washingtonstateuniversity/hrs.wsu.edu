@@ -14,7 +14,7 @@ let isOpen = false;
  */
 const open = function openSearchMenu() {
 	const searchField = /** @type {!Element} */ (
-		document.getElementById( 's' ) );
+		document.querySelector( '#search-menu .search-field' ) );
 	isOpen = true;
 	searchMenu.classList.add( 'is-visible' );
 	searchToggle.setAttribute( 'aria-expanded', true );
