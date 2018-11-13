@@ -62,6 +62,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+* A "light" version of the notification component.
 * Dedicated `search.php` template to override the Spine parent theme version.
 * WP Shortcode and JavaScript to create a tool to filter table rows by a search term.
 * Use Webpack + Babel to manage JS builds and selective polyfills.

@@ -416,10 +416,18 @@ input[type="number"] {
 	border-color: $accent-orange;
 }
 
+.notification--light {
+	@extend .notification;
+	border-color: $brand-gray;
+	border-width: 2px;
+	border-left-width: .5em;
+}
+
 @media (min-width: $medium) {
 
 	.notification {
 		flex-wrap: nowrap;
+		margin: 1.5em 0;
 
 		p {
 			padding: 0;
