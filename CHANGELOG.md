@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
+* Fix #67 search menu obscured by Spine on homepage when JavaScript is disabled.
 * :art: Fix #69 time contextual icon clipping.
 * Fix #66 Use `flex-start` to mitigate IE 11 flex :bug: on `margin: auto` elements.
 * Builder banner buttons get cut off in Firefox.
