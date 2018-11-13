@@ -22,7 +22,7 @@ get_header();
 			</h1>
 		</header>
 
-		<section class="row single gutter pad-ends article-archive">
+		<section class="row single gutter pad-ends">
 			<div class="column one">
 				<div class="articles-list">
 
@@ -33,6 +33,9 @@ get_header();
 					endwhile;
 					?>
 
+				</div>
+				<div class="notification--light">
+					<p>Didn't find what you were looking for? <a target="_blank" rel="noopener noreferrer" class="button--flat" href="https://search.wsu.edu/">Try the WSU site search &rarr; <span class="screen-reader-text">(Link opens in a new window.)</span></a></p>
 				</div>
 			</div><!--/column-->
 		</section>
@@ -48,6 +51,14 @@ get_header();
 				<span class="search-query"><?php echo get_search_query(); ?></span>
 			</h1>
 		</header>
+
+		<section class="row single gutter pad-ends article-archive">
+			<div class="column one">
+				<div class="notification--light">
+					<p>Didn't find what you were looking for? <a target="_blank" rel="noopener noreferrer" class="button--flat" href="https://search.wsu.edu/">Try the WSU site search &rarr; <span class="screen-reader-text">(Link opens in a new window.)</span></a></p>
+				</div>
+			</div><!--/column-->
+		</section>
 
 		<?php
 	endif;
