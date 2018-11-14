@@ -1,3 +1,6 @@
 # SVGO config: See https://github.com/svg/svgo
 plugins:
   - removeViewBox: false
+
+js2svg:
+  useShortTags: false
