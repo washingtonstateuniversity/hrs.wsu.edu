@@ -20,10 +20,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.0.0-20181108 (:construction: WIP)
+## 1.0.0-20181114 (:construction: WIP)
 
 ### Fixed
 
+* :bug: Fix #71 remove duplicate `class` attribute on terms printing function.
 * Fix #67 search menu obscured by Spine on homepage when JavaScript is disabled.
 * :art: Fix #69 time contextual icon clipping.
 * Fix #66 Use `flex-start` to mitigate IE 11 flex :bug: on `margin: auto` elements.

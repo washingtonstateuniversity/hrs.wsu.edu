@@ -112,7 +112,7 @@ function the_terms( $args = array() ) {
 
 	$html = sprintf(
 		/* translators: 1: the container element tag name, 2: the containing element class name(s), 3: one or more list items containing term links and names, 4: the taxonomy name */
-		__( '<%1$s class="class="article-taxonomy %2$s">%4$s%3$s</%1$s>', 'hrs-wsu-edu' ),
+		__( '<%1$s class="article-taxonomy %2$s">%4$s%3$s</%1$s>', 'hrs-wsu-edu' ),
 		esc_html( $atts['container_tag'] ),
 		esc_attr( $atts['taxonomy'] ),
 		join( '', $terms_list ),
