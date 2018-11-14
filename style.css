@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.0.0-20181108
+Version: 1.0.0-20181114
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: hrs-wsu-edu
@@ -762,10 +762,12 @@ figure .wp-caption-text:before,
 .cards,
 .recent-articles {
   display: grid;
+  font-size: 16px;
   grid-auto-rows: minmax(4rem, auto);
   grid-gap: 1.5rem 2rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  margin-top: 1.5rem;
+  line-height: 1.5;
+  margin-top: 3rem;
 }
 
 .cards .article-summary,
@@ -1067,7 +1069,7 @@ input[type="number"] {
  * @todo Good candidate for a template -- would allow more specific styles if we
  *       didn't need to catch any containing markup.
  */
-.notification, .notification--positive, .notification--caution, .notification--warning {
+.notification, .notification--positive, .notification--caution, .notification--warning, .notification--light {
   align-items: center;
   border: 5px solid #475055;
   border-left-width: 1em;
@@ -1079,11 +1081,11 @@ input[type="number"] {
   padding: .75em 1em;
 }
 
-.notification > *:not(:first-child), .notification--positive > *:not(:first-child), .notification--caution > *:not(:first-child), .notification--warning > *:not(:first-child) {
+.notification > *:not(:first-child), .notification--positive > *:not(:first-child), .notification--caution > *:not(:first-child), .notification--warning > *:not(:first-child), .notification--light > *:not(:first-child) {
   padding-left: 1em;
 }
 
-.notification > *:first-child, .notification--positive > *:first-child, .notification--caution > *:first-child, .notification--warning > *:first-child {
+.notification > *:first-child, .notification--positive > *:first-child, .notification--caution > *:first-child, .notification--warning > *:first-child, .notification--light > *:first-child {
   margin-right: auto;
 }
 
@@ -1099,11 +1101,18 @@ input[type="number"] {
   border-color: #f6861f;
 }
 
+.notification--light {
+  border-color: #5e6a71;
+  border-width: 2px;
+  border-left-width: .5em;
+}
+
 @media (min-width: 43em) {
-  .notification, .notification--positive, .notification--caution, .notification--warning {
+  .notification, .notification--positive, .notification--caution, .notification--warning, .notification--light {
     flex-wrap: nowrap;
+    margin: 1.5em 0;
   }
-  .notification p, .notification--positive p, .notification--caution p, .notification--warning p {
+  .notification p, .notification--positive p, .notification--caution p, .notification--warning p, .notification--light p {
     padding: 0;
   }
 }
@@ -1547,6 +1556,8 @@ footer dd a:focus {
 
 .article-header time:before {
   background-image: url(../images/icons/time.svg);
+  margin-bottom: -.25em;
+  padding: 7px;
 }
 
 .single .row figure.article-feature {
