@@ -219,10 +219,42 @@ class HRS_Theme_Setup {
 	}
 
 	/**
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array Nested arrays defining font sizes.
+	 */
+	public function get_default_font_sizes() {
+		$font_sizes = array(
+			array(
+				'name'      => __( 'Small', 'hrs-wsu-edu' ),
+				'shortName' => __( 'S', 'hrs-wsu-edu' ),
+				'size'      => 16, // SCSS var $font-size-1
+				'slug'      => 'small',
+			),
+			array(
+				'name'      => __( 'Normal', 'hrs-wsu-edu' ),
+				'shortName' => __( 'N', 'hrs-wsu-edu' ),
+				'size'      => 18, // SCSS var $font-size-base
+				'slug'      => 'normal',
+			),
+			array(
+				'name'      => __( 'Large', 'hrs-wsu-edu' ),
+				'shortName' => __( 'L', 'hrs-wsu-edu' ),
+				'size'      => 28.836, // SCSS var $font-size-5
+				'slug'      => 'large',
+			)
+		);
+
+		return $font_sizes;
+	}
+
+	/**
 	 * Adds theme support for features provided by WordPress.
 	 *
 	 * Gallery and caption HTML5 support is already added in the Spine parent
 	 * theme, so all we need to do is add the search form support to the array.
+	 * For Block editor settings see https://wordpress.org/gutenberg/handbook/extensibility/theme-support/.
 	 *
 	 * @since 0.12.0
 	 */
@@ -230,11 +262,15 @@ class HRS_Theme_Setup {
 		add_theme_support( 'html5', array( 'search-form' ) );
 		add_theme_support( 'gutenberg', array( 'wide-images' => true ) );
 
-		// Disables the custom option in the Gutenberg block color picker.
+		// Disables some custom Gutenberg block options.
 		add_theme_support( 'disable-custom-colors' );
+		add_theme_support( 'disable-custom-font-sizes' );
 
 		// By calling an empty array, we disable the Gutenberg custom color selector entirely.
 		add_theme_support( 'editor-color-palette', array() );
+
+		// Adjust the block editor default font sizes.
+		add_theme_support( 'editor-font-sizes', array( $this, 'get_default_font-sizes' ) );
 	}
 
 	/**

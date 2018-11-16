@@ -67,6 +67,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+* Setup method to adjust font size options for the new WP block editor.
 * A "light" version of the notification component.
 * Dedicated `search.php` template to override the Spine parent theme version.
 * WP Shortcode and JavaScript to create a tool to filter table rows by a search term.
