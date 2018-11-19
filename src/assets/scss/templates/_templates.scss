@@ -213,6 +213,10 @@ footer {
 	}
 }
 
+.meta {
+	color: $brand-gray;
+}
+
 // Requires high selector specificity to override Spine's own specificity.
 .single .row figure.article-feature {
 	margin-bottom: 1.5rem;

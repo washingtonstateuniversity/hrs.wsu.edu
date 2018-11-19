@@ -18,7 +18,11 @@ global $is_feature;
 			<p class="article-title">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</p>
-			<time class="article-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
+			<?php if ( is_search() ) : ?>
+				<span class="meta"><?php the_permalink(); ?></span>
+			<?php else : ?>
+				<time class="article-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
+			<?php endif; ?>
 		</header>
 
 		<?php
