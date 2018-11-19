@@ -145,7 +145,8 @@ main input[type="submit"] {
 figure .wp-caption-text,
 .article-header time,
 .archive .page-header h1,
-.reminders li a {
+.reminders li a,
+.meta {
 
 	&:before {
 		background-image: url(../images/icons/label.svg);
@@ -161,6 +162,10 @@ figure .wp-caption-text,
 
 }
 
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a,
 .search-links a,
 .reminders li a,
 .home-detail-subnav h2 a,
@@ -185,6 +190,22 @@ figure .wp-caption-text,
 	&:hover,
 	&:focus {
 		border-bottom-color: currentColor;
+	}
+
+}
+
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a,
+.cards .article-title a,
+.articles-list .article-title a,
+.recent-articles .article-title a {
+
+	&:after {
+		background-size: 50%;
+		margin: -.17em 0 0;
+		position: absolute;
 	}
 
 }

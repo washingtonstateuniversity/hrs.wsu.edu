@@ -132,20 +132,19 @@ main,
 		}
 	}
 
+	h1 a,
+	h2 a,
+	h3 a,
+	h4 a,
+	h5 a,
+	h6 a {
+		font-weight: 700;
+	}
+
 	figure > a {
 		border-bottom: none;
 		display: block;
 		position: relative;
-	}
-}
-
-.article-title a,
-a.site-title {
-	border-color: transparent;
-
-	&:hover,
-	&:focus {
-		border-color: currentColor;
 	}
 }
 

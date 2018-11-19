@@ -73,18 +73,6 @@
 
 }
 
-.cards .article-title a,
-.articles-list .article-title a,
-.recent-articles .article-title a {
-
-	&:after {
-		background-size: 50%;
-		margin: -.17em 0 0;
-		position: absolute;
-	}
-
-}
-
 /**
  * 3.2 Data Tables
  */
@@ -655,6 +643,7 @@ input[type="number"] {
 
 .search-field[type="search"] {
 	font-size: $font-size-5;
+	line-height: 0;
 }
 
 .search-form input[type="submit"] {
