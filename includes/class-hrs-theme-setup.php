@@ -243,7 +243,7 @@ class HRS_Theme_Setup {
 				'shortName' => __( 'L', 'hrs-wsu-edu' ),
 				'size'      => 28.836, // SCSS var $font-size-5
 				'slug'      => 'large',
-			)
+			),
 		);
 
 		return $font_sizes;
