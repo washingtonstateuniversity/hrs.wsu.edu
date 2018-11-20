@@ -136,9 +136,52 @@ main input[type="submit"] {
  * 2.3 Images
  */
 
+.alignleft {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+.aligncenter {
+	display: block;
+	margin: 1em auto;
+}
+
 .article-container .column figure.alignwide {
 	margin: 1em auto;
 	max-width: 143%;
+}
+
+.featured-image {
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 400px;
+	display: block;
+	z-index: 0;
+
+	img {
+		width: 100%;
+		height: auto;
+		border: none;
+		display: none;
+	}
+}
+
+.size-lt-medium img.size-medium.alignleft,
+.size-lt-medium img.size-medium.alignright,
+.size-lt-medium img.size-large.alignleft,
+.size-lt-medium img.size-large.alignright {
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: none;
+	margin: 1em 0;
 }
 
 /* Contextual mini-icons. */
@@ -210,12 +253,17 @@ main h4 a,
 
 }
 
-/* @todo Determine what this applies to, if anything. */
+/* @todo Determine what these apply to, if anything. */
 .section-wrapper-has-background {
 	min-height: 600px !important;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.has-background-image main {
+	position: relative;
+	background-color: transparent;
 }
 
 /*

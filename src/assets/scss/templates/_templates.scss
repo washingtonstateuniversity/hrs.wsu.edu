@@ -258,6 +258,7 @@ footer {
 
 	.article-footer {
 		border-top: 8px solid $body-background-color;
+		clear: both;
 		color: $neutral-dark;
 		margin: 0 -2rem;
 		padding: 1.5rem 2rem .75rem;
@@ -277,7 +278,15 @@ footer {
 
 		dd {
 			display: inline-block;
-			padding-left: 0;
+			padding: 0 .3em 0 0;
+		}
+
+		dd:after {
+			content: ", ";
+		}
+
+		dd:nth-last-of-type(1):after {
+			content: "";
 		}
 
 		a {

@@ -46,7 +46,36 @@
  * @since 0.11.0
  */
 
-/* Builder: Banner */
+.builder-banner-overlay,
+.builder-section-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.builder-banner-overlay,
+.builder-section-overlay {
+	z-index: -1;
+}
+
+.builder-banner-slide {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	display: none;
+}
+
+.builder-banner-slide.first-slide {
+	display: block;
+}
+
 .builder-section-banner {
 
 	// Something between Builder and Gutenberg litters markup with empty p tags.
@@ -66,7 +95,6 @@
 		line-height: 1.35;
 		overflow: hidden;
 		position: absolute;
-		text-shadow: none;
 		top: 50%;
 		transform: translate(-50%, -50%);
 		width: 90%;
@@ -74,12 +102,18 @@
 
 	.builder-banner-inner-title {
 		color: $brand-crimson;
+		font-size: 1.5rem;
 		font-weight: 600;
 		padding: 1rem;
 	}
 
 	.builder-banner-inner-content {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		font-size: 1rem;
 		justify-content: flex-start;
+		overflow: hidden;
 
 		p {
 			color: $text-color;
@@ -93,6 +127,10 @@
 		text-align: center;
 	}
 
+	.content-position-right .builder-banner-content {
+		text-align: right;
+	}
+
 	.content-position-left {
 		background-position: center right;
 	}
@@ -101,12 +139,115 @@
 		background-position: center left;
 	}
 
+	.cycle-pager {
+		font-size: 40px;
+		font-size: 4rem;
+		line-height: 1;
+		text-align: center;
+		user-select: none;
+	}
+
+	.cycle-pager span {
+		cursor: pointer;
+	}
+
+	.cycle-pager .cycle-pager-active {
+		color: #b9bcbf;
+	}
+
+	.cycle-prev,
+	.cycle-next {
+		cursor: pointer;
+		height: 4rem;
+		margin-top: -2rem;
+		position: absolute;
+		top: 50%;
+		z-index: 999;
+	}
+
+	.cycle-pager ~ .cycle-prev,
+	.cycle-pager ~ .cycle-next {
+		margin-top: -4rem;
+	}
+
+	.cycle-prev:before,
+	.cycle-next:before {
+		background: url(../images/icons/arrow.svg);
+		background-position: center 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: "";
+		display: inline-block;
+		height: 2.5em;
+		margin: .5em 0 0;
+		width: 2.5em;
+		position: relative;
+		filter: invert(100%);
+	}
+
+	.cycle-prev:before {
+		left: 32px;
+		transform: rotate(180deg);
+	}
+
+	.cycle-next {
+		right: 0;
+	}
+
+	.cycle-next:before {
+		right: 32px;
+	}
+
 }
 
-@media (min-width: $medium) {
+@media (min-width: $large) {
 
 	.builder-section-banner .builder-banner-content {
 		width: 80%;
+	}
+
+	.builder-banner-overlay,
+	.builder-section-overlay {
+		background-color: rgba(0, 0, 0, .4);
+	}
+
+	.builder-section-banner .cycle-prev,
+	.builder-section-banner .cycle-next {
+		opacity: .75;
+	}
+
+	.builder-section-banner .builder-banner-inner-title {
+		font-size: 2rem;
+	}
+
+	.builder-section-banner .builder-banner-inner-content {
+		font-size: 1.25rem;
+	}
+
+	.builder-section-banner:hover .cycle-prev,
+	.builder-section-banner:hover .cycle-next,
+	.builder-section-banner:focus .cycle-prev,
+	.builder-section-banner:focus .cycle-next {
+		opacity: 1;
+	}
+
+}
+
+@media (max-width: $large) {
+
+	.builder-section-banner .cycle-prev:before,
+	.builder-section-banner .cycle-next:before {
+		height: 2em;
+		margin: 1em -.4em 0;
+		width: 2em;
+	}
+
+	.builder-section-banner .cycle-prev:before {
+		left: .4rem;
+	}
+
+	.builder-section-banner .cycle-next:before {
+		right: .4rem;
 	}
 
 }

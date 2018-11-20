@@ -41,6 +41,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* :zap: Merge non-repo Spine parent theme CSS into main CSS to reduce overlap and dequeue unneeded styles.
 * Restore a path to the WSU search page for users that need it.
 * :sparkles: Switch from using WSU custom search to the built in WP search. Because for all its drawbacks, it's still better.
 * :arrow_up: Upgrade Composer dependencies.

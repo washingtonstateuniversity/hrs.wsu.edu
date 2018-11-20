@@ -165,6 +165,7 @@ main {
  */
 
 figure {
+	position: relative;
 
 	img {
 		max-width: 100%;
@@ -178,6 +179,10 @@ figcaption {
 	letter-spacing: .02em;
 	line-height: normal;
 	padding: .3em .5em;
+}
+
+figure.aligncenter figcaption {
+	text-align: center;
 }
 
 /**
@@ -223,7 +228,6 @@ input[type="number"] {
 .gallery-item {
 	box-sizing: border-box;
 	padding: 1rem;
-	text-align: left;
 }
 
 .gallery-columns-1 .gallery-item,

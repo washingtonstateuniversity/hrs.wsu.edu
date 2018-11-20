@@ -76,6 +76,15 @@ function hrs_noscript_styles() {
  */
 function hrs_dequeue_styles() {
 	wp_dequeue_style( 'spine-theme-child' );
+	wp_dequeue_style( 'spine-theme' );
+	wp_dequeue_style( 'open-sans' );
+	wp_dequeue_style( 'wp-block-library' );
+
+	if ( is_page_template( 'template-builder.php' ) ) {
+		if ( get_post_meta( get_the_ID(), '_has_builder_banner', true ) ) {
+			wp_dequeue_style( 'genericons' );
+		}
+	}
 }
 
 /**
