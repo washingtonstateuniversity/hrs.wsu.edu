@@ -68,6 +68,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+* :zap: Implement lazy loading of off-screen images site-wide using Intersection Observer methods to swap out a placeholder.
 * Setup method to adjust font size options for the new WP block editor.
 * A "light" version of the notification component.
 * Dedicated `search.php` template to override the Spine parent theme version.

@@ -86,6 +86,8 @@ class HRS_Theme_Setup {
 		require __DIR__ . '/hrs-template-tags.php';
 		// WP database queries.
 		require __DIR__ . '/hrs-queries.php';
+		// HRS Lazy Load Images.
+		require __DIR__ . '/class-lazy-load-images.php';
 	}
 
 	/**
