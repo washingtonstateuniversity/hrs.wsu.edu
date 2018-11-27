@@ -40,7 +40,7 @@ add_filter( 'excerpt_more', 'hrs_excerpt_more_link' );
  * @since 0.17.3
  */
 function hrs_get_theme_version() {
-	$hrs_version = '1.0.0-20181114';
+	$hrs_version = '1.0.0-20181127';
 
 	return $hrs_version;
 }
