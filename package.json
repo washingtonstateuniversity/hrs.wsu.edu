@@ -42,19 +42,20 @@
   },
   "scripts": {
     "clean": "rimraf assets/{css/,images/,js/}",
-    "phpcs": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php parts/ includes/ articles/ templates/",
-    "lintjs": "eslint src/assets/js/**",
-    "lintscss": "stylelint \"src/assets/scss/**/*.scss\"",
-    "test": "npm run phpcs && npm run lintjs && npm run lintscss",
-    "js:dev": "webpack --progress",
-    "sass": "node-sass --output-style expanded src/assets/scss -o assets/css",
-    "postsass": "postcss assets/css/style.css -u autoprefixer --no-map -o ./style.css && postcss assets/css/*.css --map --use autoprefixer --use cssnano --replace",
-    "svgo": "mkdirp assets/images/icons && svgo --config=.svgo.yml -f src/assets/images -o assets/images && svgo --config=.svgo.yml -f src/assets/images/icons -o assets/images/icons",
-    "build:css": "npm run lintscss && npm run sass",
-    "build:js": "webpack --env.production --progress",
-    "build:images": "npm run svgo && cpx \"src/assets/images/*.{png,jpg,gif}\" assets/images/ --update",
-    "prebuild": "npm run clean && npm run phpcs",
-    "build": "npm run build:css && npm run build:js && npm run build:images"
+    "lint:php": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php parts/ includes/ articles/ templates/",
+    "lint:js": "eslint src/assets/js/**",
+    "lint:css": "stylelint \"src/assets/scss/**/*.scss\"",
+    "css": "node-sass --output-style expanded src/assets/scss -o assets/css",
+    "images": "mkdirp assets/images/icons && svgo --config=.svgo.yml -f src/assets/images -o assets/images && svgo --config=.svgo.yml -f src/assets/images/icons -o assets/images/icons",
+    "dev:js": "webpack --progress",
+    "dev:css": "npm run css && postcss assets/css/style.css -u autoprefixer --no-map -o ./style.css && postcss assets/css/*.css --map --use autoprefixer --use cssnano --replace",
+    "build:dev": "npm run test && npm run dev:css && npm run dev:js && npm run images",
+    "prod:css": "npm run css && postcss assets/css/style.css -u autoprefixer --no-map -o ./style.css && postcss assets/css/*.css --no-map --use autoprefixer --use cssnano --replace",
+    "prod:js": "webpack --env.production --progress",
+    "prod:images": "npm run images && cpx \"src/assets/images/*.{png,jpg,gif}\" assets/images/ --update",
+    "prebuild": "npm run clean && npm run test",
+    "build": "npm run prod:css && npm run prod:js && npm run prod:images",
+    "test": "npm run lint:php && npm run lint:js && npm run lint:css"
   },
   "dependencies": {
     "url-search-params-polyfill": "^5.0.0"
