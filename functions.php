@@ -35,12 +35,16 @@ add_filter( 'excerpt_length', 'hrs_excerpt_length' );
 add_filter( 'excerpt_more', 'hrs_excerpt_more_link' );
 
 /**
- * Creates a script version.
+ * Retrieves the version number from the main stylesheet headers.
+ *
+ * Gets the headers values from the WP_Theme object {@uses wp_get_theme()}.
  *
  * @since 0.17.3
+ *
+ * @return string The HRS Child Theme version.
  */
 function hrs_get_theme_version() {
-	$hrs_version = '1.0.0-20181127';
+	$hrs_version = wp_get_theme()->get( 'Version' );
 
 	return $hrs_version;
 }
