@@ -5,7 +5,10 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.0.0-20181127
+Version: 1.0.0-20181203
+Requires at least: 4.7
+Tested up to: 4.9.9
+Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: hrs-wsu-edu
@@ -146,7 +149,7 @@ html {
 }
 
 #jacket {
-  overflow: hidden;
+  overflow: visible;
 }
 
 main,
@@ -1114,8 +1117,8 @@ main h4 a:after,
     display: none;
     visibility: hidden;
   }
-  td[data-title]:before {
-    content: attr(data-title) ": ";
+  td[data-column]:before {
+    content: attr(data-column) ": ";
     display: inline-block;
     padding-right: .25em;
     width: 25%;
@@ -1157,11 +1160,23 @@ main td.nums {
 }
 
 main th {
+  background-color: #aec7cb;
   font-weight: 600;
 }
 
 main .striped tbody tr:nth-child(odd) td {
   background: #eff0f1;
+}
+
+main .sticky-header th {
+  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+}
+
+body.admin-bar .sticky-header th {
+  top: 31px;
 }
 
 /**
@@ -2242,12 +2257,16 @@ section.latest article {
  */
 .tablepress tfoot th,
 .tablepress thead th {
-  background-color: inherit;
+  background-color: #aec7cb;
   vertical-align: inherit;
 }
 
 .tablepress thead th {
   border-bottom: inherit;
+}
+
+.dataTables_filter {
+  margin-bottom: 1em;
 }
 
 /* HRS Contacts adjustments */
