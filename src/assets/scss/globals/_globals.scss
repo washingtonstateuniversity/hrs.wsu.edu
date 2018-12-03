@@ -28,7 +28,7 @@ html {
 }
 
 #jacket {
-	overflow: hidden;
+	overflow: visible; // Override Spine setting to fix `sticky` positioning.
 }
 
 main,

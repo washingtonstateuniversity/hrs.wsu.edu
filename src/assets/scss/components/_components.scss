@@ -144,6 +144,7 @@ main {
 	}
 
 	th {
+		background-color: $neutral-blue;
 		font-weight: 600;
 	}
 
@@ -154,6 +155,21 @@ main {
 		}
 
 	}
+
+	.sticky-header {
+
+		th {
+			position: relative;
+			position: sticky;
+			top: -1px;
+		}
+
+	}
+
+}
+
+body.admin-bar .sticky-header th {
+	top: 31px;
 }
 
 /**

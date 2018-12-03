@@ -19,7 +19,7 @@
 
 	tfoot th,
 	thead th {
-		background-color: inherit;
+		background-color: $neutral-blue;
 		vertical-align: inherit;
 	}
 
@@ -27,6 +27,10 @@
 		border-bottom: inherit;
 	}
 
+}
+
+.dataTables_filter {
+	margin-bottom: 1em;
 }
 
 /* HRS Contacts adjustments */
