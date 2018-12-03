@@ -64,6 +64,9 @@ class HRS_Theme_Setup {
 		add_filter( 'spine_enable_builder_module', '__return_true' );
 		add_filter( 'spine_option_defaults', array( $this, 'hrs_spine_option_defaults' ) );
 		add_filter( 'theme_page_templates', array( $this, 'remove_spine_templates' ) );
+
+		// Plugin adjustments.
+		add_filter( 'tablepress_table_render_data', array( $this, 'add_filter_tablepress_atts' ), 10, 3 );
 	}
 
 	/**
@@ -381,6 +384,85 @@ class HRS_Theme_Setup {
 		unset( $templates['templates/section-label.php'] );
 
 		return $templates;
+	}
+
+	/**
+	 * Adds TablePress attributes filter on tables with header rows.
+	 *
+	 * Callback function for the TablePress `tablepress_table_render_data`
+	 * filter hook, called from the `TablePress_Render->_prepare_render_data()`
+	 * method after processing the table visibility information and before
+	 * rendering the table. This function simply checks whether the table has
+	 * a designated header row and add a `tablepress_cell_tag_attributes` hook
+	 * if it does. This prevents filtering the table cell attributes on tables
+	 * without header rows.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $table          The processed table.
+	 * @param array $orig_table     The unprocessed table.
+	 * @param array $render_options The render options for the table.
+	 * @return array The processed table to be rendered.
+	 */
+	public function add_filter_tablepress_atts( $table, $orig_table, $render_options ) {
+		if ( true === $render_options['table_head'] ) {
+			add_filter( 'tablepress_cell_tag_attributes', array( $this, 'filter_tablepress_atts' ), 10, 5 );
+		}
+
+		return $table;
+	}
+
+	/**
+	 * Filters the TablePress cells to add `data-column` attributes.
+	 *
+	 * Adds a `data-column` attribute to every TablePress table cell with the
+	 * value of the column header for that cell. This is used along with CSS to
+	 * create a more responsive table layout. This method fires on every
+	 * TablePress cell, so we save only the table properties we need (the
+	 * contents of the header row and the numbers of the last row and column)
+	 * in a WordPress transient and then delete it after the last cell is built.
+	 * Called by the `tablepress_cell_tag_attributes` filter hook.
+	 *
+	 * @uses TablePress_Table_Model->load() to retrieve the table data.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array  $tag_attributes The attributes for the `td` or `th` tag.
+	 * @param string $table_id       The current TablePress table ID.
+	 * @param string $cell_content   The cell content.
+	 * @param int    $row_idx        The row number of the cell.
+	 * @param int    $col_idx        The column number of the cell.
+	 * @return array The table cell attributes in 'title' => 'value' format.
+	 */
+	public function filter_tablepress_atts( $tag_attributes, $table_id, $cell_content, $row_idx, $col_idx ) {
+		$table_props = get_transient( 'hrs_tablepress_header_columns' );
+
+		if ( false === $table_props ) {
+			$table       = TablePress::$model_table->load( $table_id );
+			$table_props = array(
+				'header_row' => $table['data'][0],
+				'last_row'   => count( $table['data'] ) - 1,
+				'last_col'   => count( $table['data'][0] ) - 1,
+			);
+
+			// Save the table properties to a WP transient if they exist.
+			if ( $table_props ) {
+				set_transient( 'hrs_tablepress_header_columns', $table_props, 3600 );
+			}
+		}
+
+		// Get the given cell's column header.
+		$label = $table_props['header_row'][ $col_idx - 1 ];
+
+		// Apply a `data-column` attribute to every cell.
+		$tag_attributes['data-column'] = esc_attr( $label );
+
+		// If we've finished with the last cell, delete the transient value.
+		if ( absint( $row_idx ) === $table_props['last_row'] && absint( $col_idx === $table_props['last_col'] ) ) {
+			delete_transient( 'hrs_tablepress_header_columns' );
+		}
+
+		return $tag_attributes;
 	}
 
 }

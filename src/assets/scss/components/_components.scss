@@ -96,8 +96,8 @@
 		visibility: hidden;
 	}
 
-	td[data-title]:before {
-		content: attr(data-title) ": ";
+	td[data-column]:before {
+		content: attr(data-column) ": ";
 		display: inline-block;
 		padding-right: .25em;
 		width: 25%;
