@@ -99,6 +99,7 @@
 	td[data-column]:before {
 		content: attr(data-column) ": ";
 		display: inline-block;
+		font-weight: 600;
 		padding-right: .25em;
 		width: 25%;
 	}
