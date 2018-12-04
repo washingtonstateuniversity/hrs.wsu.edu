@@ -156,20 +156,24 @@ main {
 
 	}
 
-	.sticky-header {
-
-		th {
-			position: relative;
-			position: sticky;
-			top: -1px;
-		}
-
-	}
-
 }
 
-body.admin-bar .sticky-header th {
-	top: 31px;
+.sticky-header th {
+	position: relative;
+	position: sticky;
+	top: 49px;
+}
+
+@media ( min-width: 989px ) {
+
+	.sticky-header th {
+		top: -1px;
+	}
+
+	body.admin-bar .sticky-header th {
+		top: 31px;
+	}
+
 }
 
 /**
