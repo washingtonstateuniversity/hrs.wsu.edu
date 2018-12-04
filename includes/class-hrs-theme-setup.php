@@ -459,7 +459,9 @@ class HRS_Theme_Setup {
 		$label = $table_props['header_row'][ $col_idx - 1 ];
 
 		// Apply a `data-column` attribute to every cell with a column header.
-		$tag_attributes['data-column'] = esc_attr( $label );
+		if ( '' !== $label ) {
+			$tag_attributes['data-column'] = esc_attr( $label );
+		}
 
 		return $tag_attributes;
 	}
