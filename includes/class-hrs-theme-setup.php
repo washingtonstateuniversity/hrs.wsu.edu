@@ -406,7 +406,13 @@ class HRS_Theme_Setup {
 	 */
 	public function add_filter_tablepress_atts( $table, $orig_table, $render_options ) {
 		if ( true === $render_options['table_head'] ) {
+
+			// Clear any leftover data to fetch the lastest table contents.
+			delete_transient( 'hrs_tablepress_header_columns' );
+
+			// Filter each table cell.
 			add_filter( 'tablepress_cell_tag_attributes', array( $this, 'filter_tablepress_atts' ), 10, 5 );
+
 		}
 
 		return $table;
@@ -441,8 +447,6 @@ class HRS_Theme_Setup {
 			$table       = TablePress::$model_table->load( $table_id );
 			$table_props = array(
 				'header_row' => $table['data'][0],
-				'last_row'   => count( $table['data'] ) - 1,
-				'last_col'   => count( $table['data'][0] ) - 1,
 			);
 
 			// Save the table properties to a WP transient if they exist.
@@ -454,13 +458,8 @@ class HRS_Theme_Setup {
 		// Get the given cell's column header.
 		$label = $table_props['header_row'][ $col_idx - 1 ];
 
-		// Apply a `data-column` attribute to every cell.
+		// Apply a `data-column` attribute to every cell with a column header.
 		$tag_attributes['data-column'] = esc_attr( $label );
-
-		// If we've finished with the last cell, delete the transient value.
-		if ( absint( $row_idx ) === $table_props['last_row'] && absint( $col_idx === $table_props['last_col'] ) ) {
-			delete_transient( 'hrs_tablepress_header_columns' );
-		}
 
 		return $tag_attributes;
 	}

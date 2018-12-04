@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
+* :bug: Fix #73 clear TablePress table props transient before filtering cells.
 * :warning: Fix #72 no self-closing SVG elements.
 * :bug: Fix #71 remove duplicate `class` attribute on terms printing function.
 * Fix #67 search menu obscured by Spine on homepage when JavaScript is disabled.
