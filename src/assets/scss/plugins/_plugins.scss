@@ -30,6 +30,7 @@
 }
 
 .dataTables_filter {
+	float: none;
 	margin-bottom: 1em;
 }
 
@@ -91,21 +92,21 @@
  *       aren't tabular data.
  */
 
-.tablepress-id-31 .column-1 {
+.hrs-representation-table .column-1 {
 	width: 450px !important;
 }
 
-.tablepress-id-7 .column-1 {
+.hrs-previous-representation-cases-table .column-1 {
 	width: 500px !important;
 }
 
-.tablepress-id-31 .column-2,
-.tablepress-id-7 .column-2 {
+.hrs-representation-table .column-2,
+.hrs-previous-representation-cases-table .column-2 {
 	width: 150px !important;
 }
 
-.tablepress-id-31 .column-3,
-.tablepress-id-7 .column-3 {
+.hrs-representation-table .column-3,
+.hrs-previous-representation-cases-table .column-3 {
 	width: 100px !important;
 }
 
