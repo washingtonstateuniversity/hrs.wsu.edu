@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.0.0-20181203
+Version: 1.0.0-20181204
 Requires at least: 4.7
 Tested up to: 4.9.9
 Requires PHP: 5.3
@@ -1120,6 +1120,7 @@ main h4 a:after,
   td[data-column]:before {
     content: attr(data-column) ": ";
     display: inline-block;
+    font-weight: 600;
     padding-right: .25em;
     width: 25%;
   }
@@ -1168,15 +1169,20 @@ main .striped tbody tr:nth-child(odd) td {
   background: #eff0f1;
 }
 
-main .sticky-header th {
+.sticky-header th {
   position: relative;
   position: -webkit-sticky;
   position: sticky;
-  top: -1px;
+  top: 49px;
 }
 
-body.admin-bar .sticky-header th {
-  top: 31px;
+@media (min-width: 989px) {
+  .sticky-header th {
+    top: -1px;
+  }
+  body.admin-bar .sticky-header th {
+    top: 31px;
+  }
 }
 
 /**
@@ -2266,6 +2272,7 @@ section.latest article {
 }
 
 .dataTables_filter {
+  float: none;
   margin-bottom: 1em;
 }
 
@@ -2326,21 +2333,21 @@ section.latest article {
  * @todo Convert the content in these tables into another format because they
  *       aren't tabular data.
  */
-.tablepress-id-31 .column-1 {
+.hrs-representation-table .column-1 {
   width: 450px !important;
 }
 
-.tablepress-id-7 .column-1 {
+.hrs-previous-representation-cases-table .column-1 {
   width: 500px !important;
 }
 
-.tablepress-id-31 .column-2,
-.tablepress-id-7 .column-2 {
+.hrs-representation-table .column-2,
+.hrs-previous-representation-cases-table .column-2 {
   width: 150px !important;
 }
 
-.tablepress-id-31 .column-3,
-.tablepress-id-7 .column-3 {
+.hrs-representation-table .column-3,
+.hrs-previous-representation-cases-table .column-3 {
   width: 100px !important;
 }
 
