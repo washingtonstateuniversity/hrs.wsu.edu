@@ -7,29 +7,25 @@ cache:
   directories:
     - node_modules
     - vendor
+    # Cache directory for older Composer versions.
     - $HOME/.composer/cache
+    # Cache directory for more recent Composer versions.
+    - $HOME/.cache/composer/files
 
 notifications:
   email:
     on_success: never
-    on_failure: change
-  slack:
-    on_pull_requests: true
-    on_success: change
-    on_failure: always
-    on_start: never
-    on_cancel: always
-    rooms:
-      - wsu-ucomm:n2TLZRJd84rMOMbkKthSEMgS
+    #on_failure: change
+    on_failure: never # just until things are working
 
 branches:
   only:
     - master
+    - 1.x
 
 matrix:
   include:
     - php: 7.1
-      env: WP_TRAVISCI=grunt
 
 before_script:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
@@ -39,11 +35,10 @@ before_script:
   - php --version
   - composer install
   - nvm install stable
-  - npm install -g grunt-cli
   - npm install
   - npm --version
   - node --version
 
 script:
-  - grunt --version
-  - grunt default
+  - npm --version
+  - npm run build
