@@ -24,6 +24,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
+* :green_heart: Get Travis CI running.
 * :bug: Fix #73 clear TablePress table props transient before filtering cells.
 * :warning: Fix #72 no self-closing SVG elements.
 * :bug: Fix #71 remove duplicate `class` attribute on terms printing function.
