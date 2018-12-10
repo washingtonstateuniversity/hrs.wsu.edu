@@ -1,5 +1,9 @@
 # WSU Human Resource Services Theme
 
+[![Build Status](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu.svg?branch=1.x)](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu)
+
+## Description
+
 A child theme of the Washington State University (WSU) Human Resource Services (HRS) website.
 
 ## For Developers
