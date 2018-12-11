@@ -6,7 +6,7 @@ module.exports = (env = {}) => {
 		mode: env.production ? 'production' : 'development',
 		devtool: env.production ? 'source-map' : 'inline-source-map',
 		entry: {
-			main: './src/assets/js/main.js'
+			main: './src/js/main.js'
 		},
 		output: {
 			filename: '[name].js',
@@ -53,7 +53,7 @@ module.exports = (env = {}) => {
 		mode: env.production ? 'production' : 'development',
 		devtool: env.production ? 'source-map' : 'inline-source-map',
 		entry: {
-			main: './src/assets/js/main-legacy.js'
+			main: './src/js/main-legacy.js'
 		},
 		output: {
 			filename: '[name].es5.js',
