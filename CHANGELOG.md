@@ -1,10 +1,8 @@
 # Changelog: WSU HRS Child Theme
 
-Author: WSU Web Communications
-
-Author: Adam Turner
-
-URI: https://github.com/washingtonstateuniversity/hrs.wsu.edu/
+**Author:** WSU Web Communications  
+**Author:** Adam Turner  
+**URI:** https://github.com/washingtonstateuniversity/hrs.wsu.edu/
 
 This document details all notable changes to the WSU HRS Child Theme. Uses [Semantic Versioning](http://semver.org/) (as of v0.3.1).
 
@@ -20,7 +18,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.0.0-20181206 (:construction: WIP)
+## 1.0.0 (:construction: WIP)
 
 ### Fixed
 
@@ -43,6 +41,8 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* :memo: Update Readme file with installation and build instructions.
+* :truck: Simplify assets directory structure.
 * :zap: Merge non-repo Spine parent theme CSS into main CSS to reduce overlap and dequeue unneeded styles.
 * Restore a path to the WSU search page for users that need it.
 * :sparkles: Switch from using WSU custom search to the built in WP search. Because for all its drawbacks, it's still better.
