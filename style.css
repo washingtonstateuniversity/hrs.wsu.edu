@@ -85,10 +85,6 @@ Text Domain: hrs-wsu-edu
 /* Globals */
 /*
  * 1.6 Variables
- *
- * @todo Settle on primary and secondary colors and rename
- *       then also settle on the purpose of the secondary and
- *       accent colors and rename them to match.
  */
 /**
  * 1.6.1 Colors
@@ -143,9 +139,7 @@ Text Domain: hrs-wsu-edu
 html {
   background-color: #f2f2f2;
   background-repeat: no-repeat;
-  /* @todo probably do not need */
   background-position: center;
-  /* @todo probably do not need */
 }
 
 #jacket {
@@ -155,9 +149,7 @@ html {
 main,
 .site-header {
   background-repeat: no-repeat;
-  /* @todo probably do not need */
   background-position: left top;
-  /* @todo probably do not need */
   color: #191919;
   font: 400 18px/28px "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
   overflow-wrap: break-word;
@@ -319,10 +311,6 @@ dd {
 
 /**
  * 1.5 Utility
- */
-/*
- * @todo Determine if we really need `center-middle` utility class. If yes,
- * use flex or grid with `Xvh` and `Xvh` column and row size to center instead.
  */
 .screen-reader-text {
   border: 0;
@@ -657,7 +645,6 @@ dd {
 /**
  * 4.2 Columns
  */
-/* @todo Find any pages still using these and use something, else then delete.*/
 @media only screen and (min-width: 640px) {
   .hrs-two-col {
     width: 47%;
@@ -971,7 +958,6 @@ main h4 a:after,
   position: absolute;
 }
 
-/* @todo Determine what these apply to, if anything. */
 .section-wrapper-has-background {
   min-height: 600px !important;
   background-attachment: fixed;
@@ -1375,10 +1361,6 @@ input[type="number"] {
 
 /**
  * 3.8 Notifications
- *
- * @todo Replace .hrs-callout classes with .notification classes.
- * @todo Good candidate for a template -- would allow more specific styles if we
- *       didn't need to catch any containing markup.
  */
 .notification, .notification--positive, .notification--caution, .notification--warning, .notification--light {
   align-items: center;
@@ -2329,10 +2311,6 @@ section.latest article {
   font-weight: 600;
 }
 
-/*
- * @todo Convert the content in these tables into another format because they
- *       aren't tabular data.
- */
 .hrs-representation-table .column-1 {
   width: 450px !important;
 }
