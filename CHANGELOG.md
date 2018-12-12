@@ -567,7 +567,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 - Build production CSS files.
 - Build production JS files.
-- Create build task to copy (@todo and possibly compress) images from `src/assets/images/` to `assets/images/`.
+- Create build task to copy images from `src/assets/images/` to `assets/images/`.
 
 ### Changed
 
