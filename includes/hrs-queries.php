@@ -26,7 +26,9 @@ function hrs_filter_query( $query ) {
 	// Exclude posts in the reminder category from the posts home query.
 	if ( ! is_admin() && is_home() && $query->is_main_query() ) {
 		$reminders = get_category_by_slug( 'reminders' );
-		$query->set( 'category__not_in', intval( $reminders->term_id ) );
+		if ( false !== $reminders ) {
+			$query->set( 'category__not_in', intval( $reminders->term_id ) );
+		}
 		return;
 	}
 }
@@ -41,6 +43,9 @@ function hrs_filter_query( $query ) {
  */
 function get_reminder_posts( $output = 'ids' ) {
 	$reminders = get_category_by_slug( 'reminders' );
+	if ( false === $reminders ) {
+		return false;
+	}
 
 	$args = array(
 		'post_type'      => 'post',
@@ -125,14 +130,16 @@ function get_erdb_awards() {
 	// Open a new MS database connection.
 	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
-	$awards = $msdb->get_results( $msdb->prepare(
-		'
-		SELECT BinaryFile as image, GroupDescription as description, GroupName as name, GroupYear as year
-		FROM V_AwardViewer
-		ORDER BY %s
-		',
-		array( 'GroupYear' )
-	) );
+	$awards = $msdb->get_results(
+		$msdb->prepare(
+			'
+			SELECT BinaryFile as image, GroupDescription as description, GroupName as name, GroupYear as year
+			FROM V_AwardViewer
+			ORDER BY %s
+			',
+			array( 'GroupYear' )
+		)
+	);
 
 	$msdb->clean();
 
@@ -193,14 +200,16 @@ function get_cs_salary_schedule() {
 	// Open a new MS database connection.
 	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
 
-	$data = $msdb->get_results( $msdb->prepare(
-		'
-		SELECT ClassCode, JobGroupCode, JobTitle, SalRangeNum, SalrangeWExceptions, Salary_Min, Salary_Max
-		FROM V_JobClassCS
-		ORDER BY %s
-		',
-		array( 'JobTitle' )
-	) );
+	$data = $msdb->get_results(
+		$msdb->prepare(
+			'
+			SELECT ClassCode, JobGroupCode, JobTitle, SalRangeNum, SalrangeWExceptions, Salary_Min, Salary_Max
+			FROM V_JobClassCS
+			ORDER BY %s
+			',
+			array( 'JobTitle' )
+		)
+	);
 
 	$msdb->clean();
 

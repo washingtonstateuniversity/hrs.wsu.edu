@@ -1,0 +1,41 @@
+/**
+ * 0.1 Fallbacks
+ *
+ * Fallback styles for not-yet-supported CSS features like grid layout. These
+ * will be overridden by later styles in browsers with feature support.
+ *
+ * @since 1.0.0
+ */
+
+/**
+ * Grid Layout Fallback
+ *
+ * These styles are overridden in components/_components.scss for browsers that
+ * support grid layout.
+ *
+ * @since 1.0.0
+ */
+
+@media (min-width: $large) {
+
+	.cards,
+	.recent-articles {
+
+		article,
+		.card {
+			float: left;
+			padding: 0 1rem;
+			width: 33%;
+		}
+
+	}
+
+	.home .recent-articles article {
+		width: 20%;
+	}
+
+	.blog .cards article {
+		width: 25%;
+	}
+
+}

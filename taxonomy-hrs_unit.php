@@ -87,8 +87,8 @@ get_header();
 	\WSU\HRS\Template_Tags\hrs_pagination();
 
 	get_template_part( 'parts/footers' );
-	?>
 
+?>
 </main><!--/#page-->
 
 <?php get_footer();

@@ -1,0 +1,156 @@
+/**
+ * 7.0 Plugins
+ *
+ * Rules targeted to adjusting and overriding styles declared by plugins.
+ *
+ *     - 7.1 TablePress
+ *     - 7.2 WP Admin Bar
+ *
+ * @since 0.11.0
+ */
+
+/**
+ * 7.1 TablePress
+ *
+ * @since 0.11.0
+ */
+
+.tablepress {
+
+	tfoot th,
+	thead th {
+		background-color: $neutral-blue;
+		vertical-align: inherit;
+	}
+
+	thead th {
+		border-bottom: inherit;
+	}
+
+}
+
+.dataTables_filter {
+	float: none;
+	margin-bottom: 1em;
+}
+
+/* HRS Contacts adjustments */
+.tablepress-hrs-contacts td.column-3 {
+	white-space: nowrap;
+}
+
+/* The 2018 Medical Premium Changes table */
+.hrs-medical-premium-changes-2018 {
+
+	tbody {
+		border-bottom: 1px solid #ddd;
+		border-left: 1px solid #ddd;
+	}
+
+	tbody td {
+		border-right: 1px solid #ddd;
+	}
+
+	tbody td:not(.column-1) {
+		text-align: center;
+		width: 9%;
+	}
+
+	/* The 2018 columns */
+	tr .column-3,
+	tr .column-5,
+	tr .column-7,
+	tr .column-9 {
+		background-color: #eee;
+		font-weight: 600;
+	}
+
+	.row-1 td {
+		background-color: $brand-crimson;
+		color: #fff;
+		font-weight: 600;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	.row-2 td {
+		background-color: #2a3033;
+		color: #fff;
+		text-align: center;
+	}
+
+	.row-3 .column-1,
+	.row-8 .column-1,
+	.row-12 .column-1 {
+		background-color: #d7dadb;
+		font-weight: 600;
+	}
+}
+
+.hrs-representation-table .column-1 {
+	width: 450px !important;
+}
+
+.hrs-previous-representation-cases-table .column-1 {
+	width: 500px !important;
+}
+
+.hrs-representation-table .column-2,
+.hrs-previous-representation-cases-table .column-2 {
+	width: 150px !important;
+}
+
+.hrs-representation-table .column-3,
+.hrs-previous-representation-cases-table .column-3 {
+	width: 100px !important;
+}
+
+/*
+ * 7.2 WP Admin Bar
+ *
+ * From the WSU Spine parent theme CSS.
+ *
+ * @since 0.1.0
+ */
+
+@media (min-width: 990px) {
+
+	.admin-bar #spine #glue {
+		margin-top: 32px;
+	}
+}
+
+@media (max-width: 989px) {
+
+	body.admin-bar {
+		margin-top: -32px !important;
+		padding-bottom: 32px !important;
+	}
+
+	#wpadminbar {
+		top: auto !important;
+		bottom: 0 !important;
+		position: fixed !important;
+	}
+
+	#wpadminbar .quicklinks > ul > li {
+		position: relative;
+	}
+
+	#wpadminbar .ab-top-menu > .menupop > .ab-sub-wrapper {
+		bottom: 32px;
+		box-shadow: none;
+	}
+}
+
+@media (max-width: 780px) {
+
+	body.admin-bar {
+		margin-top: -46px !important;
+		padding-bottom: 46px !important;
+	}
+
+	#wpadminbar .ab-top-menu > .menupop > .ab-sub-wrapper {
+		bottom: 46px;
+	}
+}

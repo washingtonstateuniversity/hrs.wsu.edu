@@ -27,6 +27,7 @@ add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 add_action( 'wp_head', 'hrs_noscript_styles' );
 add_action( 'login_enqueue_scripts', 'hrs_login_styles' );
+add_filter( 'script_loader_tag', 'hrs_add_attr_to_script_tag', 10, 3 );
 add_filter( 'login_headerurl', 'hrs_login_logo_url' );
 add_filter( 'login_headertitle', 'hrs_login_logo_url_title' );
 add_filter( 'logout_redirect', 'hrs_logout_redirect_home', 10, 3 );
@@ -34,12 +35,16 @@ add_filter( 'excerpt_length', 'hrs_excerpt_length' );
 add_filter( 'excerpt_more', 'hrs_excerpt_more_link' );
 
 /**
- * Creates a script version.
+ * Retrieves the version number from the main stylesheet headers.
+ *
+ * Gets the headers values from the WP_Theme object {@uses wp_get_theme()}.
  *
  * @since 0.17.3
+ *
+ * @return string The HRS Child Theme version.
  */
 function hrs_get_theme_version() {
-	$hrs_version = '0.20.1';
+	$hrs_version = wp_get_theme()->get( 'Version' );
 
 	return $hrs_version;
 }
@@ -52,8 +57,9 @@ function hrs_get_theme_version() {
  */
 function hrs_enqueue_styles() {
 	wp_enqueue_style( 'hrs-child-theme', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'wsu-spine' ), hrs_get_theme_version() );
-	wp_enqueue_style( 'source_sans_pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i' );
-	wp_enqueue_script( 'hrs-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js', array(), spine_get_script_version(), true );
+	wp_enqueue_style( 'source_sans_pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i', array(), hrs_get_theme_version() );
+	wp_enqueue_script( 'hrs-main', get_stylesheet_directory_uri() . '/assets/js/main.js', array(), hrs_get_theme_version(), false );
+	wp_enqueue_script( 'hrs-legacy', get_stylesheet_directory_uri() . '/assets/js/main.es5.js', array(), hrs_get_theme_version(), true );
 }
 
 /**
@@ -63,7 +69,7 @@ function hrs_enqueue_styles() {
  */
 function hrs_noscript_styles() {
 	?>
-	<noscript><style>.search-toggle { display: none !important; } #search-menu { padding-top: 1.5rem !important; position: relative !important; top: 0; transform: none !important; }</style></noscript>
+	<noscript><style>.search-toggle, .js-search-form { display: none !important; } #search-menu { float: right !important; padding-top: 1.5rem !important; position: relative !important; top: 0; transform: none !important; }</style></noscript>
 	<?php
 }
 
@@ -74,6 +80,39 @@ function hrs_noscript_styles() {
  */
 function hrs_dequeue_styles() {
 	wp_dequeue_style( 'spine-theme-child' );
+	wp_dequeue_style( 'spine-theme' );
+	wp_dequeue_style( 'open-sans' );
+	wp_dequeue_style( 'wp-block-library' );
+
+	if ( is_page_template( 'template-builder.php' ) ) {
+		if ( get_post_meta( get_the_ID(), '_has_builder_banner', true ) ) {
+			wp_dequeue_style( 'genericons' );
+		}
+	}
+}
+
+/**
+ * Adds attributes to selected script tags.
+ *
+ * @since 1.0.0
+ */
+function hrs_add_attr_to_script_tag( $tag, $handle, $src ) {
+	// Load main script as module to serve ES6+ version to supporting browsers.
+	if ( 'hrs-main' === $handle ) {
+		$tag = str_replace( 'text/javascript', 'module', $tag );
+	}
+
+	// Module-supporting browsers know not to load `nomodule` scripts.
+	if ( 'hrs-legacy' === $handle ) {
+		$tag = str_replace( ' src=', ' defer nomodule src=', $tag );
+	}
+
+	// Add `async` attribute to the WSU Spine script tag.
+	if ( 'wsu-spine' === $handle ) {
+		$tag = str_replace( ' src=', ' async src=', $tag );
+	}
+
+	return $tag;
 }
 
 /**

@@ -257,7 +257,7 @@ class HRS_MSDB {
 			// If ext/hash is not present, compat.php's hash_hmac() does not support sha256.
 			$algo = function_exists( 'hash' ) ? 'sha256' : 'sha1';
 			// Old WP installs may not have AUTH_SALT defined.
-			$salt        = defined( 'AUTH_SALT' ) && AUTH_SALT ? AUTH_SALT : (string) rand();
+			$salt        = defined( 'AUTH_SALT' ) && AUTH_SALT ? AUTH_SALT : (string) wp_rand();
 			$placeholder = '{' . hash_hmac( $algo, uniqid( $salt, true ), $salt ) . '}';
 		}
 
@@ -357,10 +357,7 @@ class HRS_MSDB {
 
 		foreach ( $args as $arg ) {
 			if ( ! is_scalar( $arg ) && ! is_null( $arg ) ) {
-				$this->print_error( sprintf(
-					'Unsupported value type (%s)',
-					gettype( $arg )
-				) );
+				$this->print_error( sprintf( 'Unsupported value type (%s)', gettype( $arg ) ) );
 			}
 		}
 
@@ -414,7 +411,7 @@ class HRS_MSDB {
 		}
 
 		array_walk( $args, array( $this, 'escape_by_ref' ) );
-		$query = @vsprintf( $query, $args ); // phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+		$query = vsprintf( $query, $args );
 
 		return $this->add_placeholder_escape( $query );
 	}

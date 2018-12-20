@@ -40,7 +40,7 @@ use WSU\HRS\Template_Tags as Tags;
 	?>
 
 	<?php if ( ! empty( $article_image_type ) ) : ?>
-		<figure class="article-image <?php echo esc_attr( $article_image_type ); ?>">
+		<figure class="article-image article-feature <?php echo esc_attr( $article_image_type ); ?>">
 			<?php
 			if ( ! is_singular() ) {
 				if ( 'thumbnail' === $article_image_type ) {
@@ -88,8 +88,6 @@ use WSU\HRS\Template_Tags as Tags;
 
 	<footer class="article-footer">
 		<?php
-		// get_template_part( 'parts/share-tools' );
-
 		// Print the post taxonomy lists, if they exist.
 		Tags\the_terms( array( 'taxonomy' => 'hrs_unit' ) );
 		Tags\the_terms( array( 'taxonomy' => 'category' ) );

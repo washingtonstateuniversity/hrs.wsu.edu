@@ -1,10 +1,8 @@
 # Changelog: WSU HRS Child Theme
 
-Author: WSU Web Communications
-
-Author: Adam Turner
-
-URI: https://github.com/washingtonstateuniversity/hrs.wsu.edu/
+**Author:** WSU Web Communications  
+**Author:** Adam Turner  
+**URI:** https://github.com/washingtonstateuniversity/hrs.wsu.edu/
 
 This document details all notable changes to the WSU HRS Child Theme. Uses [Semantic Versioning](http://semver.org/) (as of v0.3.1).
 
@@ -19,6 +17,79 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Deprecated (for once-stable features removed in upcoming releases)
 ### Removed (for deprecated features removed in this release)
 -->
+
+## 1.0.0 (2018-12-20)
+
+### Fixed
+
+* :green_heart: Get Travis CI running.
+* :bug: Fix #73 clear TablePress table props transient before filtering cells.
+* :warning: Fix #72 no self-closing SVG elements.
+* :bug: Fix #71 remove duplicate `class` attribute on terms printing function.
+* Fix #67 search menu obscured by Spine on homepage when JavaScript is disabled.
+* :art: Fix #69 time contextual icon clipping.
+* Fix #66 Use `flex-start` to mitigate IE 11 flex :bug: on `margin: auto` elements.
+* Builder banner buttons get cut off in Firefox.
+* Variable assignment inside condition phpcs error.
+* :alien: Close #60 hide empty `<p>` elements in Banner sections. Caused by an unknown interaction between Builder, TinyMCE, and Gutenberg, but only appears in Builder banner sections, which are deprecated here anyway, so just hide them.
+* Fix #63 misaligned padding on deprecated Builder banner titles.
+* Fix #62 grid list layout fallback for IE 11.
+* Apply missing link-after icon styles to recent articles lists.
+* Target feature image styles more specifically.
+* Fix #65 don't check for a term ID when the term doesn't exist.
+* Verify `get_reminder_posts()` returned results before using them.
+
+### Changed
+
+* :memo: Update Readme file with installation and build instructions.
+* :truck: Simplify assets directory structure.
+* :zap: Merge non-repo Spine parent theme CSS into main CSS to reduce overlap and dequeue unneeded styles.
+* Restore a path to the WSU search page for users that need it.
+* :sparkles: Switch from using WSU custom search to the built in WP search. Because for all its drawbacks, it's still better.
+* :arrow_up: Upgrade Composer dependencies.
+* :arrow_up: Upgrade npm dependencies.
+* :art: Clean up JS table filter input display.
+* Add dynamic import method for JS table filter handler and import only required functions in main JS entry point.
+* :package: Add npm dependency to provide a `URLSearchParams` polyfill.
+* :package: Add npm dependencies for dynamic module imports.
+* :wrench: Update Webpack config to include Babel polyfill for dynamic module imports and set public path for dynamically imported scripts.
+* :wrench: Set `eslint.json` config to use emcaVersion 8 and allow dynamic module import syntax (and allow un-capitalized comments).
+* Add more files to the `.gitattributes` ignore export rules.
+* :recycle: Close #35 Rename and refactor primary scripts into modules to take advantage of ES6+ syntax and methods alongside Babel transpilation and polyfills. For more on this method see: https://philipwalton.com/articles/deploying-es2015-code-in-production-today/ and https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/ and https://developers.google.com/web/fundamentals/primers/modules#mjs.
+* Update script enqueuing to load the main script as a module type for modern (ES6+-supporting) browsers alongside a legacy script loaded with a "nomodule" attribute. Modern browsers should ignore the nomodule script (technically shouldn't download it).
+* ES Lint doesn't need to support jQuery any more, but should allow module syntax.
+* Load non-critical JS async.
+* Replace bottom margin on page title headers.
+* Update theme screenshot.
+* Added some box shadow, stamped down some box shadow.
+* Use more reliable centering on the Builder banner title elements.
+* Move fallback styles into a dedicated scss file.
+* Expand the `.alignwide` class to apply block level elements.
+* Organize styles a bit.
+* More specific classes to distinguish single vs. archive articles.
+
+### Added
+
+* TablePress filters to add `data-column` attributes to all cells in tables with header rows, to allow for responsive layouts with labels.
+* :art: Allow sticky table headers that scroll with the viewport.
+* :zap: Implement lazy loading of off-screen images site-wide using Intersection Observer methods to swap out a placeholder.
+* Setup method to adjust font size options for the new WP block editor.
+* A "light" version of the notification component.
+* Dedicated `search.php` template to override the Spine parent theme version.
+* WP Shortcode and JavaScript to create a tool to filter table rows by a search term.
+* Use Webpack + Babel to manage JS builds and selective polyfills.
+* Page navigation styles for A-Z nav lists.
+* New general svg icons.
+* Config file for svgo npm tool to preserve `viewbox` in minified svg files.
+* A `.gitattributes` file to manage cross-environment settings and facilitate creating non-development zip files for download.
+
+### Removed
+
+* :fire: Old image decorations.
+* :wrench: Remove support for IE versions below 11.
+* No longer need unique card stylings for specific pages.
+* No special styling for Builder banner titles on specific pages.
+* Clean out unused deprecated styles.
 
 ## 0.20.1 (2018-11-07)
 
@@ -496,7 +567,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 - Build production CSS files.
 - Build production JS files.
-- Create build task to copy (@todo and possibly compress) images from `src/assets/images/` to `assets/images/`.
+- Create build task to copy images from `src/assets/images/` to `assets/images/`.
 
 ### Changed
 

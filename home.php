@@ -41,7 +41,7 @@ get_header();
 							<?php
 							$reminders = WSU\HRS\Queries\get_reminder_posts( 'objects' );
 
-							if ( $reminders->have_posts() ) {
+							if ( false !== $reminders && $reminders->have_posts() ) {
 								?>
 								<div class="reminders">
 									<h2><?php esc_html_e( 'Reminders', 'hrs-wsu-edu' ); ?></h2>
@@ -116,8 +116,8 @@ get_header();
 	\WSU\HRS\Template_Tags\hrs_pagination();
 
 	get_template_part( 'parts/footers' );
-	?>
 
+?>
 </main><!--/#page-->
 
 <?php get_footer();

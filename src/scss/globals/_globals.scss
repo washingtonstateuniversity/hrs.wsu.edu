@@ -1,0 +1,258 @@
+/**
+ * 1.0 Globals
+ *
+ * CSS rules for all elements that are universal across the site, no matter the
+ * page or the viewing device. This includes setting a baseline for the site, as
+ * well as defining variables for color and and typograpy. This also includes
+ * defining standard rules for things like lists and links. This section also
+ * includes some limited utility classes for things like on-the-fly alignment.
+ *
+ *     - 1.1 Foundation
+ *     - 1.2 Typography
+ *     - 1.3 Links
+ *     - 1.4 Lists
+ *     - 1.5 Utility
+ *     - 1.6 WSU Spine
+ *
+ * @since 0.9.0
+ */
+
+/**
+ * 1.1 Foundation
+ */
+
+html {
+	background-color: $body-background-color;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#jacket {
+	overflow: hidden;
+}
+
+main,
+.site-header {
+	background-repeat: no-repeat;
+	background-position: left top;
+	color: $text-color;
+	font: 400 18px/28px $sans-serif-fonts;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+	*,
+	*:before,
+	*:after, {
+		box-sizing: border-box;
+	}
+
+	section,
+	.page-header {
+		background-color: $section-background-color;
+	}
+}
+
+@media (min-width: $large) {
+
+	main section,
+	main .page-header,
+	.site-header {
+		border-left: 8px solid $body-background-color;
+	}
+
+	.home main section,
+	.home main .page-header,
+	.home .site-header {
+		border-left: none;
+	}
+
+}
+
+/**
+ * 1.2 Typography
+ */
+
+h1 {
+	font-size: $font-size-8;
+	padding-top: 0;
+}
+
+h2 {
+	font-size: $font-size-6;
+}
+
+h3 {
+	font-size: $font-size-4;
+}
+
+h4 {
+	font-size: $font-size-2;
+}
+
+h5 {
+	font-size: $font-size-base;
+}
+
+h6 {
+	font-size: $font-size-1;
+}
+
+blockquote {
+	border-left: 4px solid $brand-gray;
+	font-family: $sans-serif-fonts;
+	margin-bottom: 1em;
+	margin-left: 1em;
+	padding: 0 2em 0 1em;
+
+	p:last-child {
+		padding: 0;
+	}
+}
+
+abbr[title],
+acronym[title] {
+	border-bottom: 2px dotted;
+	text-decoration: none;
+}
+
+hr {
+	background-color: $body-background-color;
+	height: 6px;
+	margin: 1em 0;
+	width: 100%;
+}
+
+ins {
+	background-color: $accent-green;
+	color: #000;
+	margin: -.05em 0;
+	padding: .05em .25em;
+}
+
+/**
+ * 1.3 Links
+ */
+
+main,
+.site-header {
+
+	a {
+		border-bottom: 1px solid $nav-color-border;
+		color: $text-color;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all .3s ease;
+
+		&:hover,
+		&:focus {
+			color: $nav-color-hover;
+		}
+	}
+
+	h1 a,
+	h2 a,
+	h3 a,
+	h4 a,
+	h5 a,
+	h6 a {
+		font-weight: 700;
+	}
+
+	figure > a {
+		border-bottom: none;
+		display: block;
+		position: relative;
+	}
+}
+
+/**
+ * 1.4 Lists
+ */
+
+ol ol {
+	list-style-type: lower-alpha;
+}
+
+ol ol ol {
+	list-style-type: lower-roman;
+}
+
+dl dt,
+dl dd {
+	display: block;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	padding-left: 2em;
+}
+
+/**
+ * 1.5 Utility
+ */
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-shortcut {
+	position: absolute;
+	top: -1000em;
+}
+
+.screen-reader-shortcut:focus {
+	background: #f1f1f1;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
+	color: #0073aa;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	height: auto;
+	left: 6px;
+	line-height: normal;
+	outline: none;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 7px;
+	width: auto;
+	z-index: 100000;
+}
+
+.textaligncenter {
+	text-align: center;
+}
+
+/**
+ * 1.6 WSU Spine
+ *
+ * @since 1.0.0
+ */
+
+#spine {
+
+	.spine-actions > ul li {
+		width: 33%;
+	}
+
+	.spine-actions .spine-share > ul li {
+		width: 100%;
+	}
+
+	button.customize-partial-edit-shortcut-button {
+		border-radius: 50%;
+		border: 2px solid #fff;
+		text-indent: 0;
+	}
+}

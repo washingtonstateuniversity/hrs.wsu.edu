@@ -64,6 +64,9 @@ class HRS_Theme_Setup {
 		add_filter( 'spine_enable_builder_module', '__return_true' );
 		add_filter( 'spine_option_defaults', array( $this, 'hrs_spine_option_defaults' ) );
 		add_filter( 'theme_page_templates', array( $this, 'remove_spine_templates' ) );
+
+		// Plugin adjustments.
+		add_filter( 'tablepress_table_render_data', array( $this, 'add_filter_tablepress_atts' ), 10, 3 );
 	}
 
 	/**
@@ -86,6 +89,8 @@ class HRS_Theme_Setup {
 		require __DIR__ . '/hrs-template-tags.php';
 		// WP database queries.
 		require __DIR__ . '/hrs-queries.php';
+		// HRS Lazy Load Images.
+		require __DIR__ . '/class-lazy-load-images.php';
 	}
 
 	/**
@@ -219,25 +224,58 @@ class HRS_Theme_Setup {
 	}
 
 	/**
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array Nested arrays defining font sizes.
+	 */
+	public function get_default_font_sizes() {
+		$font_sizes = array(
+			array(
+				'name'      => __( 'Small', 'hrs-wsu-edu' ),
+				'shortName' => __( 'S', 'hrs-wsu-edu' ),
+				'size'      => 16, // SCSS var $font-size-1
+				'slug'      => 'small',
+			),
+			array(
+				'name'      => __( 'Normal', 'hrs-wsu-edu' ),
+				'shortName' => __( 'N', 'hrs-wsu-edu' ),
+				'size'      => 18, // SCSS var $font-size-base
+				'slug'      => 'normal',
+			),
+			array(
+				'name'      => __( 'Large', 'hrs-wsu-edu' ),
+				'shortName' => __( 'L', 'hrs-wsu-edu' ),
+				'size'      => 28.836, // SCSS var $font-size-5
+				'slug'      => 'large',
+			),
+		);
+
+		return $font_sizes;
+	}
+
+	/**
 	 * Adds theme support for features provided by WordPress.
 	 *
 	 * Gallery and caption HTML5 support is already added in the Spine parent
 	 * theme, so all we need to do is add the search form support to the array.
+	 * For Block editor settings see https://wordpress.org/gutenberg/handbook/extensibility/theme-support/.
 	 *
 	 * @since 0.12.0
 	 */
 	public function add_theme_support() {
 		add_theme_support( 'html5', array( 'search-form' ) );
+		add_theme_support( 'gutenberg', array( 'wide-images' => true ) );
 
-		add_theme_support( 'gutenberg', array(
-			'wide-images' => true,
-		) );
-
-		// Disables the custom option in the Gutenberg block color picker.
+		// Disables some custom Gutenberg block options.
 		add_theme_support( 'disable-custom-colors' );
+		add_theme_support( 'disable-custom-font-sizes' );
 
 		// By calling an empty array, we disable the Gutenberg custom color selector entirely.
 		add_theme_support( 'editor-color-palette', array() );
+
+		// Adjust the block editor default font sizes.
+		add_theme_support( 'editor-font-sizes', array( $this, 'get_default_font-sizes' ) );
 	}
 
 	/**
@@ -252,10 +290,12 @@ class HRS_Theme_Setup {
 	 * @since 0.12.0
 	 */
 	public function register_nav_menus() {
-		register_nav_menus( array(
-			'hrs-search-menu' => __( 'Search Menu', 'hrs-wsu-edu' ),
-			'hrs-site-footer' => __( 'Site Footer', 'hrs-wsu-edu' ),
-		) );
+		register_nav_menus(
+			array(
+				'hrs-search-menu' => __( 'Search Menu', 'hrs-wsu-edu' ),
+				'hrs-site-footer' => __( 'Site Footer', 'hrs-wsu-edu' ),
+			)
+		);
 	}
 
 	/**
@@ -344,6 +384,86 @@ class HRS_Theme_Setup {
 		unset( $templates['templates/section-label.php'] );
 
 		return $templates;
+	}
+
+	/**
+	 * Adds TablePress attributes filter on tables with header rows.
+	 *
+	 * Callback function for the TablePress `tablepress_table_render_data`
+	 * filter hook, called from the `TablePress_Render->_prepare_render_data()`
+	 * method after processing the table visibility information and before
+	 * rendering the table. This function simply checks whether the table has
+	 * a designated header row and add a `tablepress_cell_tag_attributes` hook
+	 * if it does. This prevents filtering the table cell attributes on tables
+	 * without header rows.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $table          The processed table.
+	 * @param array $orig_table     The unprocessed table.
+	 * @param array $render_options The render options for the table.
+	 * @return array The processed table to be rendered.
+	 */
+	public function add_filter_tablepress_atts( $table, $orig_table, $render_options ) {
+		if ( true === $render_options['table_head'] ) {
+
+			// Clear any leftover data to fetch the lastest table contents.
+			delete_transient( 'hrs_tablepress_header_columns' );
+
+			// Filter each table cell.
+			add_filter( 'tablepress_cell_tag_attributes', array( $this, 'filter_tablepress_atts' ), 10, 5 );
+
+		}
+
+		return $table;
+	}
+
+	/**
+	 * Filters the TablePress cells to add `data-column` attributes.
+	 *
+	 * Adds a `data-column` attribute to every TablePress table cell with the
+	 * value of the column header for that cell. This is used along with CSS to
+	 * create a more responsive table layout. This method fires on every
+	 * TablePress cell, so we save only the table properties we need (the
+	 * contents of the header row and the numbers of the last row and column)
+	 * in a WordPress transient and then delete it after the last cell is built.
+	 * Called by the `tablepress_cell_tag_attributes` filter hook.
+	 *
+	 * @uses TablePress_Table_Model->load() to retrieve the table data.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array  $tag_attributes The attributes for the `td` or `th` tag.
+	 * @param string $table_id       The current TablePress table ID.
+	 * @param string $cell_content   The cell content.
+	 * @param int    $row_idx        The row number of the cell.
+	 * @param int    $col_idx        The column number of the cell.
+	 * @return array The table cell attributes in 'title' => 'value' format.
+	 */
+	public function filter_tablepress_atts( $tag_attributes, $table_id, $cell_content, $row_idx, $col_idx ) {
+		$table_props = get_transient( 'hrs_tablepress_header_columns' );
+
+		if ( false === $table_props ) {
+			$table       = TablePress::$model_table->load( $table_id );
+			$table_props = array(
+				'header_row' => $table['data'][0],
+			);
+
+			// Save the table properties to a WP transient if they exist.
+			if ( $table_props ) {
+				set_transient( 'hrs_tablepress_header_columns', $table_props, 3600 );
+			}
+		}
+
+		// Get the given cell's column header.
+		$label = $table_props['header_row'][ $col_idx - 1 ];
+
+		// Apply a `data-column` attribute to every cell with a column header.
+		if ( '' !== $label ) {
+			$tag_attributes['data-column'] = esc_attr( $label );
+		}
+
+		return $tag_attributes;
 	}
 
 }

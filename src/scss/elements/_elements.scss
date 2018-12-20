@@ -1,0 +1,319 @@
+/**
+ * 2.0 Elements
+ *
+ * CSS rules for small, elemental bits of HTML. These pieces make up the
+ * building blocks of larger components (buttons as parts of forms, tags as
+ * parts of article meta). Try to keep these styles agnostic and general. They
+ * can be built upon in other sections as needed; these should form the
+ * skeletons.
+ *
+ *     - 2.1 Buttons
+ *     - 2.2 Embedded Content
+ *     - 2.3 Images
+ *
+ * @since 0.9.0
+ */
+
+/**
+ * 2.1 Buttons
+ */
+
+main .button,
+main button,
+main input[type="button"],
+main input[type="reset"],
+.site-header button,
+.site-header input[type="submit"] {
+	background: #fff;
+	border: 1px solid $brand-crimson;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .1);
+	color: $brand-crimson;
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	padding: .75rem 1.5rem;
+	text-decoration: none;
+	transition: all .3s ease;
+
+	&:hover,
+	&:focus {
+		background: $nav-color-hover;
+		border: 1px solid $nav-color-border;
+		box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1);
+		color: #fff;
+	}
+
+	&:active {
+		background: darken($brand-crimson, 10%);
+		border: 1px solid $neutral-dark;
+		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
+		outline-width: 0;
+	}
+}
+
+main .button--cta,
+main input[type="submit"] {
+	@extend .button;
+	background: $brand-crimson;
+	color: #fff;
+
+	&:hover,
+	&:focus {
+		background: #fff;
+		color: $nav-color-hover;
+	}
+
+	&:active {
+		background: $neutral-light;
+	}
+}
+
+.button--small {
+	padding: .25em .75em;
+	vertical-align: baseline;
+}
+
+.button--flat {
+	border-radius: 3px;
+	display: inline-block;
+	line-height: 1.5;
+	font-size: 1rem;
+	padding: .75rem 1.5rem;
+	text-decoration: underline;
+	transition: all .3s ease;
+	color: $nav-color;
+	border: none;
+	font-weight: 400;
+
+	&:hover,
+	&:focus {
+		background: $nav-color-hover;
+		color: #fff;
+	}
+
+	&:active {
+		background: darken($brand-crimson, 10%);
+		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
+	}
+}
+
+/**
+ * 2.2 Embedded Content
+ */
+
+/*
+ * A flexible youtube embed container (default 16x9 aspect ratio)
+ * Following techinque from Rachel McCollin's {@see http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-responsive-design/}
+ * Which is itself based on Thierry Koblenz's {@see http://alistapart.com/article/creating-intrinsic-ratios-for-video}
+ */
+
+.embed-youtube {
+	height: 0;
+	margin-bottom: 1.4em;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+
+	iframe,
+	object,
+	embed {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.youtube-4x3 {
+	padding-bottom: 75%;
+}
+
+
+/**
+ * 2.3 Images
+ */
+
+.alignleft {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+.aligncenter {
+	display: block;
+	margin: 1em auto;
+}
+
+.article-container .column figure.alignwide {
+	margin: 1em auto;
+	max-width: 143%;
+}
+
+.featured-image {
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 400px;
+	display: block;
+	z-index: 0;
+
+	img {
+		width: 100%;
+		height: auto;
+		border: none;
+		display: none;
+	}
+}
+
+.size-lt-medium img.size-medium.alignleft,
+.size-lt-medium img.size-medium.alignright,
+.size-lt-medium img.size-large.alignleft,
+.size-lt-medium img.size-large.alignright {
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: none;
+	margin: 1em 0;
+}
+
+/* Contextual mini-icons. */
+figure .wp-caption-text,
+.article-header time,
+.archive .page-header h1,
+.reminders li a,
+.meta {
+
+	&:before {
+		background-image: url(../images/icons/label.svg);
+		background-position: center 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: "";
+		display: inline-block;
+		height: 1em;
+		margin: 0 .4em -.2em 0;
+		width: 1em;
+	}
+
+}
+
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a,
+.search-links a,
+.reminders li a,
+.home-detail-subnav h2 a,
+.article-taxonomy--primary ul a,
+.cards .article-title a,
+.articles-list .article-title a,
+.recent-articles .article-title a {
+	border-bottom-color: transparent;
+
+	&:after {
+		background: url(../images/icons/link.svg);
+		background-position: center 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: "";
+		display: inline-block;
+		height: 1em;
+		margin: .05em 0 -.05em .3em;
+		width: 1em;
+	}
+
+	&:hover,
+	&:focus {
+		border-bottom-color: currentColor;
+	}
+
+}
+
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a,
+.cards .article-title a,
+.articles-list .article-title a,
+.recent-articles .article-title a {
+
+	&:after {
+		background-size: 50%;
+		margin: -.17em 0 0;
+		position: absolute;
+	}
+
+}
+
+.section-wrapper-has-background {
+	min-height: 600px !important;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.has-background-image main {
+	position: relative;
+	background-color: transparent;
+}
+
+/*
+ * Home page social media icons.
+ *
+ * Over-specified to override Spine `display: block` rule on .column.
+ *
+ * @todo Move these from the page content editor to the theme template, using
+ *       settings for the social media account handles.
+ */
+
+.column.social-media-icons {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+
+	p {
+		line-height: 1;
+	}
+
+	a {
+		border: none;
+		padding-right: .75rem;
+
+		&:hover img,
+		&:focus img {
+			opacity: .7;
+		}
+	}
+
+	img {
+		border-radius: 4px;
+	}
+}
+
+@media (min-width: $medium) {
+
+	.article-container {
+
+		aside,
+		div,
+		form,
+		nav,
+		section,
+		table,
+		video {
+
+			.alignwide {
+				width: 143%;
+			}
+		}
+	}
+
+}

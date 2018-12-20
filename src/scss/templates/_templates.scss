@@ -1,0 +1,409 @@
+/**
+ * 5.0 Templates
+ *
+ * Template-specific rules for specific page styles. These generally align with
+ * theme templates and template parts, and should be made up of Elements,
+ * Components, and Layouts.
+ *
+ *     - 5.1 Header
+ *     - 5.2 Footer
+ *     - 5.3 Article
+ *         - 5.3.1 Post (Single)
+ *         - 5.3.2 Page (Single)
+ *     - 5.4 Archive
+ *         - 5.4.1 Taxonomy
+ *     - 5.4 Multi-part Page
+ *
+ * @since 0.9.0
+ */
+
+/**
+ * 5.1 Header
+ *
+ * @since 0.11.0
+ */
+
+.site-header {
+	margin: 50px 0 -50px;
+
+	.column {
+		align-items: center;
+		border-top: 8px solid $brand-crimson;
+		border-bottom: 8px solid $body-background-color;
+		display: flex;
+		justify-content: flex-end;
+		padding: .75rem 1rem;
+		z-index: 900;
+	}
+
+}
+
+.home .site-header {
+	margin-left: 0;
+}
+
+a.site-title {
+	border: none;
+	color: $brand-crimson;
+	font-size: $font-size-4;
+	margin: .75rem 1rem .75rem 0;
+}
+
+@media (min-width: $medium) {
+
+	a.site-title {
+		font-size: $font-size-6;
+		margin: 1rem 2rem;
+	}
+
+}
+
+@media (min-width: $large) {
+
+	.site-header {
+		margin: 0 0 0 198px;
+
+		.column {
+			padding: 0 2rem;
+		}
+	}
+
+	a.site-title {
+		font-size: $font-size-7;
+		margin: 2.027rem 2rem;
+	}
+
+}
+
+/**
+ * 5.2 Footer
+ *
+ * @since 0.11.0
+ */
+
+footer {
+
+	ul,
+	dd {
+		font-size: $font-size-0;
+
+		a {
+			border-bottom-color: transparent;
+
+			&:hover,
+			&:focus {
+				border-bottom-color: currentColor;
+			}
+		}
+	}
+}
+
+.site-footer {
+	margin-top: 1.5rem;
+
+	nav ul {
+		padding: 0;
+	}
+
+}
+
+.footer-nav {
+	display: flex;
+	flex-flow: row nowrap;
+
+	nav {
+		flex: 3 1 auto;
+		margin: 1.5rem 2rem;
+	}
+
+	.wsu-brand {
+		flex: 1 1 auto;
+		margin: 1.5rem 2rem;
+		position: relative;
+	}
+
+	.wsu-cougar-head {
+		bottom: 0;
+		width: 100px;
+		height: auto;
+		position: absolute;
+		right: 0;
+	}
+
+	.footer-nav-title {
+		font-weight: 600;
+	}
+}
+
+.site-reference {
+	background: $brand-crimson;
+	color: #fff;
+
+	ul {
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-end;
+
+		li {
+			padding: 0;
+		}
+	}
+
+	a {
+		border: none;
+		color: #fff;
+		display: block;
+		font-weight: 400;
+		padding: 1em .75em;
+
+		&:hover,
+		&:focus {
+			border: none;
+			color: $neutral-light;
+			text-decoration: underline;
+		}
+	}
+}
+
+@media (min-width: $small) {
+
+	.site-reference ul {
+		flex-flow: row wrap;
+		margin-right: 1.25rem;
+	}
+
+}
+
+/**
+ * 5.3 Article
+ */
+
+.article-content.page > .article-header,
+.single-post .article-content > .article-header {
+	margin-bottom: 3rem;
+}
+
+.article-taxonomy--primary ul {
+	font-size: $font-size-0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	a {
+		color: $neutral-dark;
+
+		&:after {
+			background-size: 80%;
+		}
+
+		&:hover,
+		&:focus {
+			color: $nav-color-hover;
+		}
+	}
+}
+
+.article-header time {
+	font-size: $font-size-0;
+
+	&:before {
+		background-image: url(../images/icons/time.svg);
+		margin-bottom: -.25em;
+		padding: 7px;
+	}
+}
+
+.meta {
+	color: $brand-gray;
+}
+
+// Requires high selector specificity to override Spine's own specificity.
+.single .row figure.article-feature {
+	margin-bottom: 1.5rem;
+	margin-left: -2rem;
+	max-width: 100vw;
+	width: 100vw;
+}
+
+@media (min-width: $medium) {
+
+	.article-content.page,
+	.single-post .article-content {
+		width: 70%;
+	}
+
+	// Requires high selector specificity to override Spine's.
+	.single .row figure.article-feature {
+		float: right;
+		margin-right: calc(-43% - 2rem);
+		margin-left: 0;
+		padding: 0 2rem;
+		max-width: $small;
+		width: 50vw;
+	}
+
+}
+
+/**
+ * 5.3.1 Article: Post (Single)
+ *
+ * @since 0.14.0
+ */
+
+.single-post {
+
+	.article-body {
+		padding-bottom: 1.5em;
+	}
+
+	.article-footer {
+		border-top: 8px solid $body-background-color;
+		clear: both;
+		color: $neutral-dark;
+		margin: 0 -2rem;
+		padding: 1.5rem 2rem .75rem;
+
+		dl {
+			padding-bottom: .75rem;
+
+			dt:after {
+				content: none;
+			}
+		}
+
+		dt {
+			font-weight: 600;
+			line-height: 1.4;
+		}
+
+		dd {
+			display: inline-block;
+			padding: 0 .3em 0 0;
+		}
+
+		dd:after {
+			content: ", ";
+		}
+
+		dd:nth-last-of-type(1):after {
+			content: "";
+		}
+
+		a {
+			color: $text-color;
+
+			&:hover,
+			&:focus {
+				color: $nav-color-hover;
+			}
+		}
+	}
+}
+
+@media (min-width: $medium) {
+
+	.single-post {
+
+		// Requires high selector specificity to override Spine's.
+		.row figure.article-feature {
+			float: right;
+			margin-right: calc(-43% - 2rem);
+			margin-left: 0;
+			padding: 0 2rem;
+			max-width: $small;
+			width: 50vw;
+		}
+
+		.article-footer {
+			display: flex;
+			justify-content: space-between;
+			margin-right: calc(-43% - 2rem);
+
+			dl:last-child {
+				margin-right: 25%;
+			}
+		}
+	}
+
+}
+
+/**
+ * 5.3.2 Article: Page (Single)
+ *
+ * @since 0.15.0
+ */
+
+.page-header {
+	padding: 1.5rem 2rem;
+}
+
+/**
+ * 5.4 Archive
+ */
+
+/**
+ * 5.4.1 Taxonomy Archive
+ *
+ * @since 0.14.1
+ */
+
+.archive .page-header {
+
+	h1 {
+		text-transform: capitalize;
+
+		&:before {
+			background-image: url(../images/icons/bookmarks.svg);
+		}
+	}
+}
+
+section.latest {
+	border-top: 8px solid $body-background-color;
+	border-bottom: 8px solid $body-background-color;
+
+	article {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: $medium) {
+	@supports (display: grid) {
+
+		.features .articles-list {
+
+			article {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.article-image {
+				order: -1;
+			}
+		}
+
+	}
+}
+
+@media (min-width: $medium) {
+
+	.features .articles-list {
+
+		article {
+			grid-auto-rows: 1fr 2fr;
+			grid-template-columns: repeat(2, minmax(220px, 1fr));
+		}
+
+		.article-footer {
+			position: absolute;
+			left: 2rem;
+			top: 1rem;
+		}
+	}
+
+}
+
+/**
+ * 5.4 Multi-part Page
+ */

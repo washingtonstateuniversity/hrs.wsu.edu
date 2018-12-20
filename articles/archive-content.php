@@ -12,13 +12,17 @@ use WSU\HRS\Template_Tags as Tags;
 global $is_feature;
 ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class( 'article-content' ); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-content' ); ?>>
 
 		<header class="article-header">
 			<p class="article-title">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</p>
-			<time class="article-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
+			<?php if ( is_search() ) : ?>
+				<span class="meta"><?php the_permalink(); ?></span>
+			<?php else : ?>
+				<time class="article-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
+			<?php endif; ?>
 		</header>
 
 		<?php
@@ -39,12 +43,14 @@ global $is_feature;
 		<?php if ( ! is_tax( 'hrs_unit' ) && has_term( '', 'hrs_unit' ) ) : ?>
 			<footer class="article-footer article-taxonomy--primary">
 				<?php
-				WSU\HRS\Template_Tags\the_terms( array(
-					'taxonomy'      => 'hrs_unit',
-					'show_title'    => false,
-					'container_tag' => 'ul',
-					'item_tag'      => 'li',
-				) );
+				WSU\HRS\Template_Tags\the_terms(
+					array(
+						'taxonomy'      => 'hrs_unit',
+						'show_title'    => false,
+						'container_tag' => 'ul',
+						'item_tag'      => 'li',
+					)
+				);
 				?>
 			</footer><!-- .entry-meta -->
 		<?php endif; ?>

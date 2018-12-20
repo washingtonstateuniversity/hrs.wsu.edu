@@ -1,0 +1,266 @@
+/**
+ * 6.0 Pages
+ *
+ * A section for CSS rules targeting specific individual pages. These should be
+ * used sparingly and only for unique pages such as the homepage.
+ *
+ *     - 6.1 Front page
+ *     - 6.2 Posts home page
+ *     - 6.2 Spokane and Tri-Cities
+ *
+ * @since 0.9.0
+ */
+
+/**
+ * 6.1 Front page
+ *
+ * @since 0.11.0
+ */
+
+@media (min-width: $large) {
+
+	.home {
+
+		#spine.cropped:not(.skimmed) {
+			margin-left: 2rem;
+		}
+
+		#search-menu {
+			right: 0;
+			width: 60%;
+		}
+	}
+
+}
+
+.home {
+
+	#wsuwp-main section:nth-of-type(-n+2) {
+		background: transparent;
+	}
+
+	#spine.cropped #glue {
+		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .05);
+	}
+}
+
+.home-main-subnav nav {
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		padding: 0;
+	}
+
+	li {
+		flex: 0 1 auto;
+		font-size: $font-size-2;
+		padding: .2em 0 0;
+		text-align: center;
+	}
+
+	a {
+		background-color: $neutral-dark;
+		border-bottom: none;
+		color: #fff;
+		display: block;
+
+		&:hover,
+		&:focus {
+			background-color: $nav-color-hover;
+			color: #fff;
+		}
+	}
+}
+
+@media (max-width: $small) {
+
+	.home-main-subnav nav {
+
+		a {
+			height: 25vw;
+			line-height: 25vw;
+			width: 48vw;
+		}
+	}
+}
+
+@media (min-width: $small) {
+
+	.home-main-subnav nav {
+
+		ul {
+			flex-wrap: nowrap;
+		}
+
+		li {
+			flex: 1 1 auto;
+			padding: 0;
+		}
+
+		a {
+			border-right: 3px solid #fff;
+			padding: .9em;
+		}
+	}
+
+	li:last-of-type a {
+		border-right: none;
+	}
+}
+
+.home-detail-subnav {
+	background-color: transparent;
+
+	h2 {
+		font-size: $font-size-3;
+		padding: 0;
+	}
+
+	h2 a {
+		background-color: $brand-crimson;
+		border-bottom: none;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+		color: #fff;
+		display: block;
+		padding: .9em;
+
+		&:after {
+			background-image: url(../images/icons/link_light.svg);
+			background-size: 70%;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: $nav-color-hover;
+		}
+	}
+
+	ul {
+		background-color: $section-background-color;
+		padding: 1.5em 2em;
+	}
+}
+
+/**
+ * 6.2 Posts home page
+ *
+ * @since 0.15.0
+ */
+
+.blog {
+
+	.latest .articles-list,
+	.features .articles-list {
+
+		.article-title {
+			font-size: $font-size-6;
+		}
+
+	}
+
+	.reminders {
+		padding-top: 3rem;
+	}
+
+	.reminders h2 {
+		border-left: 12px solid $brand-crimson;
+		border-bottom: 2px solid $brand-crimson;
+		font-style: italic;
+		font-weight: 600;
+		padding: .25em .5em;
+		margin-left: -.3em;
+		margin-bottom: 1.5rem;
+	}
+
+	.reminders ul {
+		list-style-type: none;
+		padding: 0 0 0 2em;
+
+		li {
+			margin-bottom: 1em;
+		}
+
+		a {
+
+			&:before {
+				background-image: url(../images/icons/event.svg);
+				height: 2em;
+				margin-left: -2.6rem;
+				position: absolute;
+				width: 2em;
+			}
+
+			&:after {
+				background-size: 70%;
+				position: absolute;
+			}
+		}
+	}
+
+	.hrs-units-browse {
+		background-color: $body-background-color;
+		text-align: center;
+
+		.gallery {
+			list-style-type: none;
+			padding: 0;
+
+			a {
+				border: 1px solid $nav-color;
+				background-color: $section-background-color;
+				display: block;
+				font-size: $font-size-2;
+				height: 100%;
+				padding: 1.5rem .5rem;
+
+				&:hover,
+				&:focus {
+					background-color: $nav-color-hover;
+					color: $section-background-color;
+				}
+			}
+		}
+	}
+
+	.article-archive h2 {
+		margin-bottom: 2.25rem;
+		text-align: center;
+		text-transform: capitalize;
+	}
+
+}
+
+@media (min-width: $small) {
+
+	.blog {
+
+		.reminders {
+			padding-top: 0;
+		}
+
+		.reminders h2 {
+			margin-left: 0;
+		}
+
+		.features .column {
+			display: grid;
+			grid-template-columns: 3fr 1fr;
+			grid-column-gap: 3rem;
+		}
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.blog {
+
+		.features .articles-list article {
+			grid-auto-rows: 1fr 1fr;
+		}
+	}
+
+}
