@@ -116,6 +116,11 @@ class HRS_Lazy_Load_Images {
 			return $content;
 		}
 
+		// Don't process data images.
+		if ( false !== strpos( $content, 'data:image' ) ) {
+			return $content;
+		}
+
 		// The regex to match images and do the replacement callback.
 		$content = preg_replace_callback( '#<(img)([^>]+?)(>(.*?)</\\1>|[\/]?>)#si', array( __CLASS__, 'process_image' ), $content );
 

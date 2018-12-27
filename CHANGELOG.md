@@ -18,6 +18,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.0.1 (2018-12-27)
+
+### Changed
+
+* Don't run lazy load image replacement process on images using a `data:` type source.
+
 ## 1.0.0 (2018-12-20)
 
 ### Fixed
