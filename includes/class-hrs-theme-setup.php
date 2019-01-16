@@ -224,37 +224,6 @@ class HRS_Theme_Setup {
 	}
 
 	/**
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return array Nested arrays defining font sizes.
-	 */
-	public function get_default_font_sizes() {
-		$font_sizes = array(
-			array(
-				'name'      => __( 'Small', 'hrs-wsu-edu' ),
-				'shortName' => __( 'S', 'hrs-wsu-edu' ),
-				'size'      => 16, // SCSS var $font-size-1
-				'slug'      => 'small',
-			),
-			array(
-				'name'      => __( 'Normal', 'hrs-wsu-edu' ),
-				'shortName' => __( 'N', 'hrs-wsu-edu' ),
-				'size'      => 18, // SCSS var $font-size-base
-				'slug'      => 'normal',
-			),
-			array(
-				'name'      => __( 'Large', 'hrs-wsu-edu' ),
-				'shortName' => __( 'L', 'hrs-wsu-edu' ),
-				'size'      => 28.836, // SCSS var $font-size-5
-				'slug'      => 'large',
-			),
-		);
-
-		return $font_sizes;
-	}
-
-	/**
 	 * Adds theme support for features provided by WordPress.
 	 *
 	 * Gallery and caption HTML5 support is already added in the Spine parent
@@ -275,7 +244,26 @@ class HRS_Theme_Setup {
 		add_theme_support( 'editor-color-palette', array() );
 
 		// Adjust the block editor default font sizes.
-		add_theme_support( 'editor-font-sizes', array( $this, 'get_default_font-sizes' ) );
+		add_theme_support(
+			'editor-font-sizes',
+			array(
+				array(
+					'name' => __( 'Small', 'hrs-wsu-edu' ),
+					'size' => 16, // Sass var $font-size-1
+					'slug' => 'small',
+				),
+				array(
+					'name' => __( 'Normal', 'hrs-wsu-edu' ),
+					'size' => 18, // Sass var $font-size-base
+					'slug' => 'normal',
+				),
+				array(
+					'name' => __( 'Large', 'hrs-wsu-edu' ),
+					'size' => 28.836, // Sass var $font-size-5
+					'slug' => 'large',
+				),
+			)
+		);
 	}
 
 	/**
