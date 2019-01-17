@@ -235,6 +235,7 @@ class HRS_Theme_Setup {
 	public function add_theme_support() {
 		add_theme_support( 'html5', array( 'search-form' ) );
 		add_theme_support( 'align-wide' );
+		add_theme_support( 'editor-styles' );
 
 		// Disables some custom Gutenberg block options.
 		add_theme_support( 'disable-custom-colors' );
@@ -367,9 +368,15 @@ class HRS_Theme_Setup {
 	 * @since 0.17.7
 	 */
 	public function remove_spine_templates( $templates ) {
-		unset( $templates['templates/single.php'] );
 		unset( $templates['templates/blank.php'] );
+		unset( $templates['templates/gutenberg-beta.php'] );
+		unset( $templates['templates/halves.php'] );
+		unset( $templates['templates/margin-left.php'] );
+		unset( $templates['templates/margin-right.php'] );
 		unset( $templates['templates/section-label.php'] );
+		unset( $templates['templates/side-left.php'] );
+		unset( $templates['templates/side-right.php'] );
+		unset( $templates['templates/single.php'] );
 
 		return $templates;
 	}
