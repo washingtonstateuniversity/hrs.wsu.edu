@@ -57,6 +57,7 @@ class HRS_Theme_Setup {
 		add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
 		add_action( 'after_setup_theme', array( $this, 'remove_spine_filters' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ), 0 );
+		add_action( 'customize_register', array( $this, 'remove_custom_css_control' ) );
 
 		// Set Spine options.
 		add_action( 'after_setup_theme', array( $this, 'get_hrs_spine_schema' ), 5 );
@@ -295,6 +296,19 @@ class HRS_Theme_Setup {
 	 */
 	public function remove_spine_filters() {
 		remove_filter( 'get_the_excerpt', 'spine_trim_excerpt', 5 );
+	}
+
+	/**
+	 * Removes the Customizer Custom CSS section.
+	 *
+	 * All CSS should go through GitHub for the HRS theme.
+	 *
+	 * @since 1.1.0
+	 *
+	 * @param string $id The ID of the control.
+	 */
+	public function remove_custom_css_control( $wp_customize ) {
+		$wp_customize->remove_control( 'custom_css' );
 	}
 
 	/**

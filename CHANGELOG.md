@@ -30,6 +30,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Removed
 
+* Disable the Customizer custom CSS option.
 * Unset all of the parent theme page templates that are not being used. Will give preference to Builder and then the block editor.
 * Delete the `gutenberg-beta` template. Now that WP 5.x has launched with the block editor the template is no longer needed.
 
