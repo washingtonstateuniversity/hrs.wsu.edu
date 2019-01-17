@@ -24,6 +24,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 * Updated syntax for the block editor "align wide" theme support.
 
+### Changed
+
+* Move TablePress filter from setup to functions.
+
 ### Removed
 
 * Unset all of the parent theme page templates that are not being used. Will give preference to Builder and then the block editor.
