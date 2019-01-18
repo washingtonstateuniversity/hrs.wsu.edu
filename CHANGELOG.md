@@ -28,6 +28,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 * Move TablePress filter from setup to functions.
 
+### Added
+
+* Theme support flags for several block editor features.
+
 ### Removed
 
 * Disable the Customizer custom CSS option.
