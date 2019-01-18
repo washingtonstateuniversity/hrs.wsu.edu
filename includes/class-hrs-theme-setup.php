@@ -233,6 +233,7 @@ class HRS_Theme_Setup {
 	public function add_theme_support() {
 		add_theme_support( 'html5', array( 'search-form' ) );
 		add_theme_support( 'align-wide' );
+		add_theme_support( 'responsive-embeds' );
 		add_theme_support( 'editor-styles' );
 
 		// Disables some custom Gutenberg block options.
