@@ -230,8 +230,17 @@ dd {
 	z-index: 100000;
 }
 
-.textaligncenter {
+.textaligncenter,
+.wp-block-button.aligncenter,
+.wp-block-file.aligncenter {
 	text-align: center;
+}
+
+.wp-block-button.alignright,
+.wp-block-file.alignright {
+
+	/*rtl:ignore*/
+	text-align: right;
 }
 
 /**

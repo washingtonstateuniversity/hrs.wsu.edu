@@ -16,26 +16,63 @@
 
 /**
  * 2.1 Buttons
+ *
+ * @since 0.9.0
+ * @since 1.1.0 Reversed defaults and merged WP block syntax.
  */
 
-main .button,
+.wp-block-button,
+.wp-block-file {
+	margin-bottom: 1.5em;
+}
+
 main button,
+main .button,
 main input[type="button"],
-main input[type="reset"],
+main input[type="submit"],
 .site-header button,
-.site-header input[type="submit"] {
-	background: #fff;
+.site-header input[type="submit"],
+.wp-block-button__link,
+.wp-block-file__button {
+	background: $brand-crimson;
+	color: #fff;
 	border: 1px solid $brand-crimson;
 	border-radius: 3px;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .1);
-	color: $brand-crimson;
+	cursor: pointer;
 	display: inline-block;
+	font-family: inherit;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
+	overflow-wrap: break-word;
 	padding: .75rem 1.5rem;
+	text-align: center;
 	text-decoration: none;
 	transition: all .3s ease;
+	white-space: normal;
+
+	&:hover,
+	&:focus {
+		background: #fff;
+		border: 1px solid $nav-color-hover;
+		color: $nav-color-hover;
+	}
+
+	&:active {
+		background: $neutral-light;
+		border: 1px solid $brand-crimson;
+		color: $nav-color-hover;
+	}
+}
+
+.is-style-outline .wp-block-button__link,
+.is-style-outline .button,
+.button.style-outline,
+main input[type="reset"] {
+	background: #fff;
+	border: 1px solid $brand-crimson;
+	color: $brand-crimson;
 
 	&:hover,
 	&:focus {
@@ -53,39 +90,24 @@ main input[type="reset"],
 	}
 }
 
-main .button--cta,
-main input[type="submit"] {
-	@extend .button;
-	background: $brand-crimson;
-	color: #fff;
-
-	&:hover,
-	&:focus {
-		background: #fff;
-		color: $nav-color-hover;
-	}
-
-	&:active {
-		background: $neutral-light;
-	}
-}
-
-.button--small {
+.wp-block-file .wp-block-file__button,
+.button.style-small {
+	border-radius: 6px;
 	padding: .25em .75em;
 	vertical-align: baseline;
 }
 
-.button--flat {
-	border-radius: 3px;
-	display: inline-block;
-	line-height: 1.5;
-	font-size: 1rem;
-	padding: .75rem 1.5rem;
-	text-decoration: underline;
-	transition: all .3s ease;
+.wp-block-file * + .wp-block-file__button {
+	margin-left: .75em;
+}
+
+.is-style-squared .wp-block-button__link,
+.button.style-flat {
+	background: transparent;
 	color: $nav-color;
-	border: none;
-	font-weight: 400;
+	border: 1px solid transparent;
+	box-shadow: none;
+	text-decoration: underline;
 
 	&:hover,
 	&:focus {
