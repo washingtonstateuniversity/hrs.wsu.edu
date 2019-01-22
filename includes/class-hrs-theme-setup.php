@@ -240,8 +240,67 @@ class HRS_Theme_Setup {
 		add_theme_support( 'disable-custom-colors' );
 		add_theme_support( 'disable-custom-font-sizes' );
 
-		// By calling an empty array, we disable the Gutenberg custom color selector entirely.
-		add_theme_support( 'editor-color-palette', array() );
+		// Only allow certain users to adjust colors.
+		if ( ! current_user_can( 'delete_published_pages' ) ) {
+
+			// Calling an empty array disables the block editor color selector.
+			add_theme_support( 'editor-color-palette', array() );
+
+		} else {
+
+			// See Sass globals/_variables for colors.
+			add_theme_support(
+				'editor-color-palette',
+				array(
+					array(
+						'name'  => __( 'Brand Crimson', 'hrs-wsu-edu' ),
+						'slug'  => 'brand-crimson',
+						'color' => '#981e32',
+					),
+					array(
+						'name'  => __( 'Brand Gray', 'hrs-wsu-edu' ),
+						'slug'  => 'brand-gray',
+						'color' => '#5e6a71',
+					),
+					array(
+						'name'  => __( 'Accent Crimson', 'hrs-wsu-edu' ),
+						'slug'  => 'accent-crimson',
+						'color' => '#c60c30',
+					),
+					array(
+						'name'  => __( 'Accent Green', 'hrs-wsu-edu' ),
+						'slug'  => 'accent-green',
+						'color' => '#ada400',
+					),
+					array(
+						'name'  => __( 'Accent Orange', 'hrs-wsu-edu' ),
+						'slug'  => 'accent-orange',
+						'color' => '#f6861f',
+					),
+					array(
+						'name'  => __( 'Accent Blue', 'hrs-wsu-edu' ),
+						'slug'  => 'accent-blue',
+						'color' => '#00a5bd',
+					),
+					array(
+						'name'  => __( 'Accent Yellow', 'hrs-wsu-edu' ),
+						'slug'  => 'accent-yellow',
+						'color' => '#ffb81c',
+					),
+					array(
+						'name'  => __( 'White', 'hrs-wsu-edu' ),
+						'slug'  => 'light',
+						'color' => '#fdfdfd',
+					),
+					array(
+						'name'  => __( 'Black', 'hrs-wsu-edu' ),
+						'slug'  => 'dark',
+						'color' => '#191919',
+					),
+				)
+			);
+
+		}
 
 		// Adjust the block editor default font sizes.
 		add_theme_support(
@@ -249,7 +308,7 @@ class HRS_Theme_Setup {
 			array(
 				array(
 					'name' => __( 'Small', 'hrs-wsu-edu' ),
-					'size' => 16, // Sass var $font-size-1
+					'size' => 14.22, // Sass var $font-size-0
 					'slug' => 'small',
 				),
 				array(
@@ -258,9 +317,19 @@ class HRS_Theme_Setup {
 					'slug' => 'normal',
 				),
 				array(
+					'name' => __( 'Medium', 'hrs-wsu-edu' ),
+					'size' => 22.788, // Sass var $font-size-3
+					'slug' => 'medium',
+				),
+				array(
 					'name' => __( 'Large', 'hrs-wsu-edu' ),
 					'size' => 28.836, // Sass var $font-size-5
 					'slug' => 'large',
+				),
+				array(
+					'name' => __( 'Larger', 'hrs-wsu-edu' ),
+					'size' => 36.486, // Sass var $font-size-7
+					'slug' => 'larger',
 				),
 			)
 		);

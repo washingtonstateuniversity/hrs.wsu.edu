@@ -70,6 +70,9 @@ main,
 
 /**
  * 1.2 Typography
+ *
+ * @since 0.9.0
+ * @since 1.1.0 Add font size and color options.
  */
 
 h1 {
@@ -95,6 +98,14 @@ h5 {
 
 h6 {
 	font-size: $font-size-1;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1em;
 }
 
 blockquote {
@@ -127,6 +138,118 @@ ins {
 	color: #000;
 	margin: -.05em 0;
 	padding: .05em .25em;
+}
+
+p.is-small-text,
+.has-small-font-size {
+	font-size: $font-size-0;
+}
+
+p.is-regular-text,
+.has-regular-font-size,
+.has-normal-font-size {
+	font-size: $font-size-base;
+}
+
+.has-medium-font-size {
+	font-size: $font-size-3;
+}
+
+p.is-large-text,
+.has-large-font-size {
+	font-size: $font-size-5;
+	line-height: 1.25;
+}
+
+p.is-larger-text,
+.has-larger-font-size,
+.has-huge-font-size {
+	font-size: $font-size-7;
+	line-height: 1.15;
+}
+
+p.has-drop-cap:not(:focus):first-letter {}
+
+p.has-drop-cap:not(:focus):after {}
+
+p.has-background {
+	padding: 1em 2em;
+}
+
+p.has-background + *:not(.has-background) {
+	margin-top: 1em;
+}
+
+.has-brand-crimson-background-color.has-brand-crimson-background-color {
+	background-color: #981e32;
+}
+
+.has-brand-gray-background-color.has-brand-gray-background-color {
+	background-color: #5e6a71;
+}
+
+.has-accent-crimson-background-color.has-accent-crimson-background-color {
+	background-color: #c60c30;
+}
+
+.has-accent-green-background-color.has-accent-green-background-color {
+	background-color: #ada400;
+}
+
+.has-accent-orange-background-color.has-accent-orange-background-color {
+	background-color: #f6861f;
+}
+
+.has-accent-blue-background-color.has-accent-blue-background-color {
+	background-color: #00a5bd;
+}
+
+.has-accent-yellow-background-color.has-accent-yellow-background-color {
+	background-color: #ffb81c;
+}
+
+.has-light-background-color.has-light-background-color {
+	background-color: #fdfdfd;
+}
+
+.has-dark-background-color.has-dark-background-color {
+	background-color: #191919;
+}
+
+.has-brand-crimson-color.has-brand-crimson-color {
+	color: #981e32;
+}
+
+.has-brand-gray-color.has-brand-gray-color {
+	color: #5e6a71;
+}
+
+.has-accent-crimson-color.has-accent-crimson-color {
+	color: #c60c30;
+}
+
+.has-accent-green-color.has-accent-green-color {
+	color: #ada400;
+}
+
+.has-accent-orange-color.has-accent-orange-color {
+	color: #f6861f;
+}
+
+.has-accent-blue-color.has-accent-blue-color {
+	color: #00a5bd;
+}
+
+.has-accent-yellow-color.has-accent-yellow-color {
+	color: #ffb81c;
+}
+
+.has-light-color.has-light-color {
+	color: #fdfdfd;
+}
+
+.has-dark-color.has-dark-color {
+	color: #191919;
 }
 
 /**
@@ -163,6 +286,11 @@ main,
 		display: block;
 		position: relative;
 	}
+
+	p.has-text-color a {
+		color: inherit;
+	}
+
 }
 
 /**
@@ -264,4 +392,9 @@ dd {
 		border: 2px solid #fff;
 		text-indent: 0;
 	}
+
+	footer {
+		font-size: $font-size-3;
+	}
+
 }
