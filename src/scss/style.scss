@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.1.1
+Version: 1.2.0~20190123-01
 Requires at least: 4.7
 Tested up to: 5.1.0
 Requires PHP: 5.3
@@ -50,7 +50,7 @@ Text Domain: hrs-wsu-edu
  *     3.11 Search
  *
  * 4.0 Layouts
- *     4.1 n/a
+ *     4.1 Columns
  *
  * 5.0 Templates
  *     5.1 Header
@@ -83,11 +83,14 @@ Text Domain: hrs-wsu-edu
 /* Components */
 @import "components/components";
 
+/* Layouts */
+@import "templates/layouts";
+
 /* Templates */
 @import "templates/templates";
 
 /* Pages */
-@import "pages/pages";
+@import "templates/pages";
 
 /* Plugins */
 @import "plugins/plugins";
