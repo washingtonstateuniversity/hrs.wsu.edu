@@ -122,10 +122,14 @@
 
 main {
 
-	table,
+	.wp-block-table,
 	.tablepress {
+		border-collapse: collapse;
+		border-spacing: 0;
+		border: none;
 		font-variant-numeric: lining-nums tabular-nums;
 		margin-bottom: 1.5rem;
+		width: 100%;
 	}
 
 	thead tr {
@@ -133,9 +137,9 @@ main {
 		font-weight: 600;
 	}
 
-	td,
-	th {
-		padding: .5em .75em;
+	.wp-block-table td,
+	.wp-block-table th {
+		padding: .45em;
 		text-align: left;
 	}
 
@@ -149,12 +153,24 @@ main {
 		font-weight: 600;
 	}
 
-	.striped {
+	.wp-block-table.is-style-stripes tr:nth-child(odd) {
+		background: #f9f9f9;
+	}
 
-		tbody tr:nth-child(odd) td {
-			background: $neutral-light;
-		}
+	.wp-block-table.has-fixed-layout,
+	.tablepress.has-fixed-layout {
+		table-layout: fixed;
+	}
 
+}
+
+@media (min-width: $medium) {
+
+	.wp-block-table.alignleft,
+	.wp-block-table.aligncenter,
+	.wp-block-table.alignright {
+		display: table;
+		width: auto;
 	}
 
 }
