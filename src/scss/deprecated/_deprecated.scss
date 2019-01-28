@@ -263,6 +263,141 @@
 }
 
 /**
+ *
+ * Images
+ *
+ * @since 1.1.0
+ */
+
+/*
+.featured-image {
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 400px;
+	display: block;
+	z-index: 0;
+
+	img {
+		width: 100%;
+		height: auto;
+		border: none;
+		display: none;
+	}
+}
+
+.size-lt-medium img.size-medium.alignleft,
+.size-lt-medium img.size-medium.alignright,
+.size-lt-medium img.size-large.alignleft,
+.size-lt-medium img.size-large.alignright {
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: none;
+	margin: 1em 0;
+}
+
+.section-wrapper-has-background {
+	min-height: 600px !important;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.has-background-image main {
+	position: relative;
+	background-color: transparent;
+}
+*/
+
+/**
+ * Classic Style Galleries
+ *
+ * @since 0.1.0
+ */
+
+.gallery-item {
+	box-sizing: border-box;
+	padding: 1rem;
+}
+
+
+.gallery img {
+	border: 0;
+	box-sizing: border-box;
+	display: block;
+	margin: 0 auto;
+}
+
+
+.gallery-columns-1 .gallery-item,
+.gallery-columns-2 .gallery-item,
+.gallery-columns-3 .gallery-item,
+.gallery-columns-4 .gallery-item,
+.gallery-columns-5 .gallery-item,
+.gallery-columns-6 .gallery-item,
+.gallery-columns-7 .gallery-item,
+.gallery-columns-8 .gallery-item,
+.gallery-columns-9 .gallery-item {
+	width: 50%;
+}
+
+@media (max-width: $medium) {
+
+	.gallery-item:nth-child(odd) {
+		padding-left: 0;
+	}
+
+	.gallery-item:nth-child(even) {
+		padding-right: 0;
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.gallery-item {
+
+		.gallery-columns-1 & {
+			width: (100% / 1);
+		}
+
+		.gallery-columns-2 & {
+			width: (100% / 2);
+		}
+
+		.gallery-columns-3 & {
+			width: (100% / 3);
+		}
+
+		.gallery-columns-4 & {
+			width: (100% / 4);
+		}
+
+		.gallery-columns-5 & {
+			width: (100% / 5);
+		}
+
+		.gallery-columns-6 & {
+			width: (100% / 6);
+		}
+
+		.gallery-columns-7 & {
+			width: (100% / 7);
+		}
+
+		.gallery-columns-8 & {
+			width: (100% / 8);
+		}
+
+		.gallery-columns-9 & {
+			width: (100% / 9);
+		}
+	}
+}
+
+/**
  * 4.2 Columns
  */
 
