@@ -203,20 +203,6 @@ footer {
 	}
 }
 
-.article-header time {
-	font-size: $font-size-0;
-
-	&:before {
-		background-image: url(../images/icons/time.svg);
-		margin-bottom: -.25em;
-		padding: 7px;
-	}
-}
-
-.meta {
-	color: $brand-gray;
-}
-
 // Requires high selector specificity to override Spine's own specificity.
 .single .row figure.article-feature {
 	margin-bottom: 1.5rem;
