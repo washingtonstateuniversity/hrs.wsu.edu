@@ -4,7 +4,7 @@
  * CSS rules for larger modular components. Components should designed with a
  * focus on being reused around the site.
  *
- *     - 3.9 Paragraphs
+ *     - 3.9 Text
  *     - 3.10 Quotes
  *     - 3.3 Preformatted text
  *     - 3.2 Data Tables
@@ -28,7 +28,7 @@
  */
 
 /**
- * 3.1 Paragraphs
+ * 3.1 Text
  *
  * @since 1.1.0
  */
@@ -46,6 +46,23 @@ p.has-background + *:not(.has-background) {
 
 p.has-text-color a {
 	color: inherit;
+}
+
+.wp-block-latest-posts__post-date,
+.article-date {
+	display: block;
+	font-size: $font-size-0;
+
+	&:before {
+		background-image: url(../images/icons/time.svg);
+		margin-bottom: -.25em;
+		padding: 7px;
+	}
+}
+
+.meta,
+.wp-block-latest-posts__post-date {
+	color: $brand-gray;
 }
 
 /**
@@ -1046,6 +1063,10 @@ input[type="number"] {
 
 /**
  * 3.10 Index Lists
+ *
+ * @since 0.9.0
+ *
+ * @todo Find better harmony with card, block, and index list styles
  */
 
 .articles-list,
@@ -1066,6 +1087,18 @@ input[type="number"] {
 		margin: 0 0 .5em;
 		padding: 0;
 	}
+}
+
+.wp-block-latest-posts.is-grid {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	list-style: none;
+}
+
+.wp-block-latest-posts.is-grid li {
+	margin: 0 1em 1em 0;
+	width: 100%;
 }
 
 @media (min-width: $medium) {
@@ -1109,6 +1142,26 @@ input[type="number"] {
 			max-height: 7em;
 			overflow: hidden;
 		}
+	}
+
+	.wp-block-latest-posts.columns-2 li {
+		width: calc((100% / 2) - 1em);
+	}
+
+	.wp-block-latest-posts.columns-3 li {
+		width: calc((100% / 3) - 1em);
+	}
+
+	.wp-block-latest-posts.columns-4 li {
+		width: calc((100% / 4) - 1em);
+	}
+
+	.wp-block-latest-posts.columns-5 li {
+		width: calc((100% / 5) - 1em);
+	}
+
+	.wp-block-latest-posts.columns-6 li {
+		width: calc((100% / 6) - 1em);
 	}
 
 }
