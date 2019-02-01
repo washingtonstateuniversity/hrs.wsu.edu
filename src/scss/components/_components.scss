@@ -349,6 +349,8 @@ main input[type="reset"] {
  * 3.1 Cards
  *
  * @since 0.9.0
+ * @since 1.1.0 Added horizontal variant with WP media and text block.
+ *
  * @todo Make these more robust and flexible (see https://material.io/design/components/cards.html)
  */
 
@@ -397,6 +399,71 @@ main input[type="reset"] {
 
 	.blog .cards article {
 		width: auto;
+	}
+
+}
+
+.wp-block-media-text {
+	display: grid;
+	margin-bottom: 1em;
+}
+
+.wp-block-media-text {
+	grid-column-gap: 1em;
+	grid-template-rows: auto;
+	grid-template-areas: "media-text-media media-text-content";
+	grid-template-columns: 40% auto;
+}
+
+.wp-block-media-text.has-media-on-the-right {
+	grid-template-areas: "media-text-content media-text-media";
+	grid-template-columns: auto 40%;
+}
+
+.wp-block-media-text[class*="-background-color"] {
+	padding: 1em 1em 0;
+}
+
+.wp-block-media-text.has-dark-background-color,
+.wp-block-media-text.has-brand-crimson-background-color,
+.wp-block-media-text.has-brand-gray-background-color,
+.wp-block-media-text.has-accent-crimson-background-color {
+	color: $section-background-color;
+}
+
+.wp-block-media-text .wp-block-media-text__media {
+	grid-area: media-text-media;
+	margin: 0;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+	grid-area: media-text-content;
+	word-break: break-word;
+}
+
+.wp-block-media-text > figure > img,
+.wp-block-media-text > figure > video {
+	max-width: unset;
+	width: 100%;
+	vertical-align: middle;
+}
+
+/*
+* Here we here not able to use a mobile first CSS approach.
+* Custom widths are set using inline styles, and on mobile,
+* we need 100% width, so we use important to overwrite the inline style.
+* If the style were set on mobile first, on desktop styles,
+* we would have no way of setting the style again to the inline style.
+*/
+@media (max-width: $medium) {
+
+	.wp-block-media-text.is-stacked-on-mobile {
+		grid-template-columns: 100% !important;
+		grid-template-areas: "media-text-media" "media-text-content";
+	}
+
+	.wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right {
+		grid-template-areas: "media-text-content" "media-text-media";
 	}
 
 }
