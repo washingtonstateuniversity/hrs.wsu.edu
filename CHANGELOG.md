@@ -18,6 +18,24 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.2.0~20190204-01 (:construction: WIP 2018-02-04)
+
+### Changed
+
+* :pencil2: Update CSS table of contents and documentation.
+* :truck: Reorganize some style directories for clearer organization and naming. (Consolidate layout, template, and page styles into `layout` directory; Rename "global" to "environment" and move component-specific styles into "components"; Merge `_elements.scss` into `_components.scss` for easier tracking and to avoid duplication.)
+
+### Added
+
+* :art: Front end styles for the WP blocks we want to use. Some (like buttons and image galleries) merged with existing styles and others (like columns and  responsive embeds) new or replacing existing styles.
+* Layouts stylesheet part specifically for reusable layout rules.
+
+### Deprecated
+
+* Classic-style image gallery.
+* Old-style YouTube embed CSS using classes `embed-youtube` and `youtube-4x3`. Will be removed in the next minor version.
+* Several image classes that have been replaced by WP blocks.
+
 ## 1.1.1 (2019-02-27)
 
 ### Fixed
