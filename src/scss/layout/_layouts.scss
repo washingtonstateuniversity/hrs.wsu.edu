@@ -1,18 +1,24 @@
 /**
- * 4.0 Layouts
+ * 6.0 Layouts
  *
  * CSS rules for general, reusable layouts, such as columns.
  *
- *     - 4.1 Accordians (@todo see https://www.bbc.co.uk/gel/guidelines/category/design-patterns)
- *     - 4.1 Columns
- *     - 4.2 Seperators
- *     - 4.3 Tabs (@todo see https://material.io/design/components/tabs.html#anatomy)
+ *   - 6.01 Accordians
+ *   - 6.02 Columns
+ *   - 6.03 Seperators
+ *   - 6.04 Tabs
  *
  * @since 1.1.0
  */
 
 /**
- * 4.1 Columns
+ * 6.01 Accordians
+ *
+ * @todo see https://www.bbc.co.uk/gel/guidelines/category/design-patterns
+ */
+
+/**
+ * 6.02 Columns
  *
  * @since 1.1.0
  */
@@ -61,7 +67,7 @@
 }
 
 /**
- * 4.2 Seperators
+ * 6.03 Seperators
  *
  * @since 1.1.0
  */
@@ -86,3 +92,9 @@
 	font-size: 24px;
 	letter-spacing: 2em;
 }
+
+/**
+ * 6.04 Tabs
+ *
+ * @todo see https://material.io/design/components/tabs.html#anatomy
+ */

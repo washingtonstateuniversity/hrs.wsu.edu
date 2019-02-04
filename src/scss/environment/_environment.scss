@@ -1,28 +1,27 @@
 /**
- * 1.0 Environment
+ * 2.0 Environment
  *
  * CSS rules for all elements that are universal across the site, no matter the
- * page or the viewing device. This includes setting a baseline for the site, as
- * well as defining variables for color and and typograpy. This also includes
- * defining standard rules for things like lists and links. This section also
- * includes some limited utility classes for things like on-the-fly alignment.
+ * page or the viewing device. This includes defining standard rules for things
+ * like lists and links. This section also includes some limited utility classes
+ * for things like alignment.
  *
- *     - 1.1 Foundation
- *     - 1.2 Typography
- *     - 1.3 Iconography
- *     - 1.3 Colors
- *     - 1.3 Links
- *     - 1.4 Lists
- *     - 1.5 Figures
- *     - 1.5 Usability
- *     - 1.6 Alignment
- *     - 1.6 WSU Spine
+ *   - 2.01 Foundation
+ *   - 2.02 Typography
+ *   - 2.03 Iconography
+ *   - 2.04 Colors
+ *   - 2.05 Links
+ *   - 2.06 Lists
+ *   - 2.07 Figures
+ *   - 2.08 Usability
+ *   - 2.09 Alignments
+ *   - 2.10 WSU Spine
  *
  * @since 0.9.0
  */
 
 /**
- * 1.1 Foundation
+ * 2.01 Foundation
  *
  * @since 0.9.0
  */
@@ -75,7 +74,7 @@ main,
 }
 
 /**
- * 1.2 Typography
+ * 2.02 Typography
  *
  * @since 0.9.0
  * @since 1.1.0 Add font size options.
@@ -151,7 +150,7 @@ ins {
 }
 
 /**
- * 1.3 Iconography
+ * 2.03 Iconography
  *
  * @since 0.9.0
  */
@@ -258,9 +257,8 @@ main h4 a,
 	}
 }
 
-
 /**
- * 1.3 Colors
+ * 2.04 Colors
  *
  * @since 1.1.0
  */
@@ -338,7 +336,7 @@ main h4 a,
 }
 
 /**
- * 1.3 Links
+ * 2.05 Links
  *
  * @since 0.9.0
  */
@@ -371,7 +369,7 @@ main,
 }
 
 /**
- * 1.4 Lists
+ * 2.06 Lists
  *
  * 0.9.0
  */
@@ -398,7 +396,7 @@ dd {
 }
 
 /**
- * 1.5 Figures
+ * 2.07 Figures
  *
  * @since 0.9.0
  */
@@ -418,7 +416,7 @@ figcaption {
 }
 
 /**
- * 1.5 Usability
+ * 2.08 Usability
  *
  * @since 0.9.0
  */
@@ -460,7 +458,7 @@ figcaption {
 }
 
 /**
- * 1.6 Alignment
+ * 2.09 Alignments
  *
  * @since 1.1.0
  */
@@ -561,7 +559,7 @@ figure.wp-block-pullquote.alignright.alignright,
 }
 
 /**
- * 1.6 WSU Spine
+ * 2.10 WSU Spine
  *
  * @since 1.0.0
  */

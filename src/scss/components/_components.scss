@@ -1,34 +1,33 @@
 /**
- * 3.0 Components
+ * 5.0 Components
  *
  * CSS rules for larger modular components. Components should designed with a
  * focus on being reused around the site.
  *
- *     - 3.9 Text
- *     - 3.10 Quotes
- *     - 3.3 Preformatted text
- *     - 3.2 Data Tables
- *     - 3.1 Buttons
- *     - 3.5 Forms
- *     - 3.4 Figures
- *     - 3.1 Audio/Video
- *     - 3.3 Embeds
- *     - 3.4 Images
- *     - 3.4 Cover images
- *     - 3.6 Image Lists (Gallery)
- *     - 3.6 Index Lists
- *     - 3.1 Cards
- *     - 3.8 Banners
- *     - 3.7 Modules
- *     - 3.3 Dialogs
- *     - 3.9 Pagination Navigation
- *     - 3.11 Search
+ *   - 5.01 Paragraph Text
+ *   - 5.02 Preformatted text
+ *   - 5.03 Quotes
+ *   - 5.04 Data Tables
+ *   - 5.05 Buttons
+ *   - 5.06 Forms
+ *   - 5.07 Search
+ *   - 5.08 Pagination Navigation
+ *   - 5.09 Audio/Video
+ *   - 5.10 Embeds
+ *   - 5.11 Images
+ *   - 5.12 Cover images
+ *   - 5.13 Image Lists (Gallery)
+ *   - 5.14 Index Lists
+ *   - 5.15 Cards
+ *   - 5.16 Banners
+ *   - 5.17 Modules
+ *   - 5.18 Dialogs
  *
  * @since 0.9.0
  */
 
 /**
- * 3.1 Text
+ * 5.01 Paragraph Text
  *
  * @since 1.1.0
  */
@@ -66,7 +65,38 @@ p.has-text-color a {
 }
 
 /**
- * 3.2 Quotes
+ * 5.02 Preformatted text
+ *
+ * @since 1.1.0
+ */
+
+pre.wp-block-code,
+pre.wp-block-preformatted,
+pre.wp-block-verse {
+	margin-bottom: 1em;
+}
+
+pre.wp-block-code {
+	background-color: $text-color;
+	border-radius: 4px;
+	color: #fff;
+	overflow-x: auto;
+	padding: 1em 2em;
+}
+
+pre.wp-block-preformatted,
+pre.wp-block-verse {
+	white-space: wrap;
+	white-space: pre-wrap;
+}
+
+pre.wp-block-verse {
+	font-family: $sans-serif-fonts;
+	padding: 1em 2em 0;
+}
+
+/**
+ * 5.03 Quotes
  *
  * @since 1.1.0
  */
@@ -179,297 +209,9 @@ blockquote cite:before {
 }
 
 /**
- * 3.3 Preformatted text
- *
- * @since 1.1.0
- */
-
-pre.wp-block-code,
-pre.wp-block-preformatted,
-pre.wp-block-verse {
-	margin-bottom: 1em;
-}
-
-pre.wp-block-code {
-	background-color: $text-color;
-	border-radius: 4px;
-	color: #fff;
-	overflow-x: auto;
-	padding: 1em 2em;
-}
-
-pre.wp-block-preformatted,
-pre.wp-block-verse {
-	white-space: wrap;
-	white-space: pre-wrap;
-}
-
-pre.wp-block-verse {
-	font-family: $sans-serif-fonts;
-	padding: 1em 2em 0;
-}
-
-/**
- * 3.1 Audio/Video
- *
- * @since 1.1.0
- */
-
-.wp-block-audio audio {
-	width: 100%;
-	min-width: 300px;
-}
-
-.wp-block-video video {
-	max-width: 100%;
-}
-
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-
-	.wp-block-video [poster] {
-		-o-object-fit: cover;
-		object-fit: cover;
-	}
-
-}
-
-/**
- * Buttons
+ * 5.04 Data Tables
  *
  * @since 0.9.0
- * @since 1.1.0 Reversed defaults and merged WP block syntax.
- */
-
-.wp-block-button,
-.wp-block-file {
-	margin-bottom: 1em;
-}
-
-main button,
-main .button,
-main input[type="button"],
-main input[type="submit"],
-.site-header button,
-.site-header input[type="submit"],
-.wp-block-button__link,
-.wp-block-file__button {
-	background: $brand-crimson;
-	color: #fff;
-	border: 1px solid $brand-crimson;
-	border-radius: 3px;
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .1);
-	cursor: pointer;
-	display: inline-block;
-	font-family: inherit;
-	font-size: $font-size-base;
-	letter-spacing: .85px;
-	line-height: 1.5;
-	overflow-wrap: break-word;
-	padding: .75rem 1.5rem;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-	transition: all .3s ease;
-	white-space: normal;
-
-	&:hover,
-	&:focus {
-		background: #fff;
-		border: 1px solid $nav-color-hover;
-		color: $nav-color-hover;
-	}
-
-	&:active {
-		background: $neutral-light;
-		border: 1px solid $brand-crimson;
-		color: $nav-color-hover;
-	}
-}
-
-.site-header button,
-.site-header input[type="submit"] {
-	font-size: $font-size-1;
-}
-
-.is-style-outline .wp-block-button__link,
-.is-style-outline .button,
-.button.style-outline,
-main input[type="reset"] {
-	background: #fff;
-	border: 1px solid $brand-crimson;
-	color: $brand-crimson;
-
-	&:hover,
-	&:focus {
-		background: $nav-color-hover;
-		border: 1px solid $nav-color-border;
-		box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1);
-		color: #fff;
-	}
-
-	&:active {
-		background: darken($brand-crimson, 10%);
-		border: 1px solid $neutral-dark;
-		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
-		outline-width: 0;
-	}
-}
-
-.wp-block-file .wp-block-file__button,
-.button.style-small {
-	border-radius: 6px;
-	padding: .25em .75em;
-	vertical-align: baseline;
-}
-
-.wp-block-file * + .wp-block-file__button {
-	margin-left: .75em;
-}
-
-.is-style-squared .wp-block-button__link,
-.button.style-text {
-	background: transparent;
-	color: $nav-color;
-	border: 1px solid transparent;
-	box-shadow: none;
-
-	&:hover,
-	&:focus {
-		background: $nav-color-hover;
-		color: #fff;
-	}
-
-	&:active {
-		background: darken($brand-crimson, 10%);
-		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
-	}
-}
-
-/**
- * 3.1 Cards
- *
- * @since 0.9.0
- * @since 1.1.0 Added horizontal variant with WP media and text block.
- *
- * @todo Make these more robust and flexible (see https://material.io/design/components/cards.html)
- */
-
-.cards,
-.recent-articles {
-	display: grid;
-	font-size: 16px;
-	grid-auto-rows: minmax(4rem, auto);
-	grid-gap: 1.5rem 2rem;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	line-height: 1.5;
-	margin-top: 3rem;
-
-	.article-summary {
-		margin-top: .5em;
-	}
-
-	.article-image {
-		order: -1;
-	}
-
-	.article-footer {
-		order: -2;
-	}
-}
-
-@supports (display: grid) {
-
-	.cards,
-	.recent-articles {
-
-		article,
-		.card {
-			display: flex;
-			flex-direction: column;
-			float: none;
-			padding: 0;
-			width: auto;
-		}
-
-	}
-
-	.home .recent-articles article {
-		width: auto;
-	}
-
-	.blog .cards article {
-		width: auto;
-	}
-
-}
-
-.wp-block-media-text {
-	display: grid;
-	margin-bottom: 1em;
-}
-
-.wp-block-media-text {
-	grid-column-gap: 1em;
-	grid-template-rows: auto;
-	grid-template-areas: "media-text-media media-text-content";
-	grid-template-columns: 40% auto;
-}
-
-.wp-block-media-text.has-media-on-the-right {
-	grid-template-areas: "media-text-content media-text-media";
-	grid-template-columns: auto 40%;
-}
-
-.wp-block-media-text[class*="-background-color"] {
-	padding: 1em 1em 0;
-}
-
-.wp-block-media-text.has-dark-background-color,
-.wp-block-media-text.has-brand-crimson-background-color,
-.wp-block-media-text.has-brand-gray-background-color,
-.wp-block-media-text.has-accent-crimson-background-color {
-	color: $section-background-color;
-}
-
-.wp-block-media-text .wp-block-media-text__media {
-	grid-area: media-text-media;
-	margin: 0;
-}
-
-.wp-block-media-text .wp-block-media-text__content {
-	grid-area: media-text-content;
-	word-break: break-word;
-}
-
-.wp-block-media-text > figure > img,
-.wp-block-media-text > figure > video {
-	max-width: unset;
-	width: 100%;
-	vertical-align: middle;
-}
-
-/*
-* Here we here not able to use a mobile first CSS approach.
-* Custom widths are set using inline styles, and on mobile,
-* we need 100% width, so we use important to overwrite the inline style.
-* If the style were set on mobile first, on desktop styles,
-* we would have no way of setting the style again to the inline style.
-*/
-@media (max-width: $medium) {
-
-	.wp-block-media-text.is-stacked-on-mobile {
-		grid-template-columns: 100% !important;
-		grid-template-areas: "media-text-media" "media-text-content";
-	}
-
-	.wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right {
-		grid-template-areas: "media-text-content" "media-text-media";
-	}
-
-}
-
-/**
- * 3.2 Data Tables
  */
 
 @media (max-width: $medium) {
@@ -589,11 +331,370 @@ main {
 }
 
 /**
- * 3.3 Dialogs
+ * 5.05 Buttons
+ *
+ * @since 0.9.0
+ * @since 1.1.0 Reverse defaults and merge WP block syntax.
  */
 
+.wp-block-button,
+.wp-block-file {
+	margin-bottom: 1em;
+}
+
+main button,
+main .button,
+main input[type="button"],
+main input[type="submit"],
+.site-header button,
+.site-header input[type="submit"],
+.wp-block-button__link,
+.wp-block-file__button {
+	background: $brand-crimson;
+	color: #fff;
+	border: 1px solid $brand-crimson;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .1);
+	cursor: pointer;
+	display: inline-block;
+	font-family: inherit;
+	font-size: $font-size-base;
+	letter-spacing: .85px;
+	line-height: 1.5;
+	overflow-wrap: break-word;
+	padding: .75rem 1.5rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all .3s ease;
+	white-space: normal;
+
+	&:hover,
+	&:focus {
+		background: #fff;
+		border: 1px solid $nav-color-hover;
+		color: $nav-color-hover;
+	}
+
+	&:active {
+		background: $neutral-light;
+		border: 1px solid $brand-crimson;
+		color: $nav-color-hover;
+	}
+}
+
+.site-header button,
+.site-header input[type="submit"] {
+	font-size: $font-size-1;
+}
+
+.is-style-outline .wp-block-button__link,
+.is-style-outline .button,
+.button.style-outline,
+main input[type="reset"] {
+	background: #fff;
+	border: 1px solid $brand-crimson;
+	color: $brand-crimson;
+
+	&:hover,
+	&:focus {
+		background: $nav-color-hover;
+		border: 1px solid $nav-color-border;
+		box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1);
+		color: #fff;
+	}
+
+	&:active {
+		background: darken($brand-crimson, 10%);
+		border: 1px solid $neutral-dark;
+		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
+		outline-width: 0;
+	}
+}
+
+.wp-block-file .wp-block-file__button,
+.button.style-small {
+	border-radius: 6px;
+	padding: .25em .75em;
+	vertical-align: baseline;
+}
+
+.wp-block-file * + .wp-block-file__button {
+	margin-left: .75em;
+}
+
+.is-style-squared .wp-block-button__link,
+.button.style-text {
+	background: transparent;
+	color: $nav-color;
+	border: 1px solid transparent;
+	box-shadow: none;
+
+	&:hover,
+	&:focus {
+		background: $nav-color-hover;
+		color: #fff;
+	}
+
+	&:active {
+		background: darken($brand-crimson, 10%);
+		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
+	}
+}
+
 /**
- * 3.3 Embeds
+ * 5.06 Forms
+ *
+ * @since 0.9.0
+ */
+
+/* Adds "number" type to the Spine `input[type=$]` styles */
+input[type="number"] {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	color: #767676;
+	margin: 0;
+	padding: 6px 4px;
+	outline: 0;
+}
+
+.js-search-form {
+	margin: 1.5em 0;
+}
+
+.js-search-form label {
+	margin-right: 1em;
+}
+
+/**
+ * 5.07 Search
+ *
+ * @since 0.9.0
+ */
+
+#search-menu {
+	background: $neutral-light;
+	box-shadow: -1px 1px 4px 0 rgba(20, 20, 20, .1);
+	display: flex;
+	flex-flow: row wrap;
+	padding: 9rem 2rem 1.5rem;
+	position: absolute;
+	top: 4.8rem;
+	transform: translateY(-100rem);
+	transition-delay: .1s;
+	transition-duration: .3s;
+	transition-property: transform top;
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	width: 100%;
+	z-index: 200;
+}
+
+#search-menu.is-visible {
+	transform: translateY(-4.8rem);
+}
+
+.search-toggle {
+	padding: .5rem 1rem;
+}
+
+.search-toggle[aria-expanded="true"] {
+	background: $neutral-dark;
+	border-color: $neutral-dark;
+	color: $neutral-light;
+}
+
+#search-menu .screen-reader-text:focus {
+	background: $section-background-color;
+	bottom: 7px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
+	clip: auto;
+	clip-path: inherit;
+	color: $nav-color-hover;
+	display: block;
+	height: auto;
+	padding: 15px 23px 14px;
+	right: 6px;
+	width: auto;
+	z-index: 100000;
+}
+
+.search-form {
+	flex: 1 1 auto;
+}
+
+.search-field[type="search"] {
+	font-size: $font-size-5;
+}
+
+.search-form input[type="submit"] {
+	vertical-align: top;
+}
+
+.search-links-title {
+	font-size: $font-size-6;
+	padding-top: .5rem;
+	padding-bottom: 1rem;
+}
+
+.search-links ul {
+	column-count: 2;
+	margin: 0 0 1rem;
+	padding: 0;
+}
+
+.search-links li {
+	line-height: 1.5;
+}
+
+.search-links a:after {
+	background-size: 80%;
+}
+
+@media (max-width: $small ) {
+
+	.search-field[type="search"] {
+		max-width: 300px;
+	}
+
+}
+
+@media (min-width: $small) {
+
+	#search-menu {
+		padding-top: 7.5rem;
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.search-toggle {
+		padding: .75rem 1.5rem;
+	}
+
+}
+
+/**
+ * 5.08 Page Navigation
+ *
+ * @since 0.9.0
+ */
+
+.pager {
+	margin: 1.5rem auto;
+
+	ul {
+		display: flex;
+		flex-flow: row nowrap;
+		padding: 0;
+	}
+
+	.pagination a {
+		border: 1px solid transparent;
+		display: block;
+		margin: 0 .25em;
+		padding: .75em 1em;
+
+		&:hover,
+		&:focus {
+			background: $nav-color-hover;
+			color: $section-background-color;
+		}
+	}
+
+	.dots,
+	.current {
+		display: block;
+		margin: 0 .25em;
+		padding: .75em 1em;
+	}
+
+	.current {
+		background: $body-background-color;
+		border: 1px solid $neutral-dark;
+	}
+}
+
+.nav-previous,
+.nav-next {
+	display: inline-block;
+	width: 50%;
+}
+
+.nav-next {
+	float: right;
+	text-align: right;
+}
+
+@media (min-width: $small) {
+
+	.pager {
+
+		ul {
+			font-size: $font-size-base;
+		}
+	}
+
+}
+
+.atoz {
+
+	ul {
+		padding: 0 0 1.5em;
+	}
+
+	li {
+		border: 1px solid $nav-color;
+		display: inline-block;
+		margin: .2em .1em;
+		padding: 0;
+		text-align: center;
+
+		a {
+			border-bottom: none;
+			color: $nav-color;
+			display: block;
+			font-weight: 400;
+			min-width: 2.3em;
+			padding: 8px;
+			transition: all .5s ease;
+
+			&:hover,
+			&:focus {
+				background-color: $nav-color;
+				color: #fff;
+			}
+		}
+	}
+}
+
+/**
+ * 5.09 Audio/Video
+ *
+ * @since 1.1.0
+ */
+
+.wp-block-audio audio {
+	width: 100%;
+	min-width: 300px;
+}
+
+.wp-block-video video {
+	max-width: 100%;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+
+	.wp-block-video [poster] {
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+
+}
+
+/**
+ * 5.10 Embeds
  *
  * @since 0.9.9
  * @since 1.1.0 Switch to WP block editor syntax and styles.
@@ -670,9 +771,10 @@ main {
 }
 
 /**
- * 2.3 Images
+ * 5.11 Images
  *
  * @since 0.9.0
+ * @since 1.1.0 Move to components and merge WP block styles.
  */
 
 .wp-block-image {
@@ -690,12 +792,12 @@ main {
 .wp-block-image .alignright > figcaption,
 .wp-block-image .aligncenter > figcaption,
 .wp-block-image.is-resized > figcaption {
-	display: table-caption;
 	caption-side: bottom;
+	display: table-caption;
 }
 
 /**
- * x.x Cover Images
+ * 5.12 Cover Images
  *
  * @since 1.1.0
  */
@@ -762,9 +864,6 @@ main {
 }
 
 .wp-block-cover-image h2 a,
-.wp-block-cover-image h2 a:hover,
-.wp-block-cover-image h2 a:focus,
-.wp-block-cover-image h2 a:active,
 .wp-block-cover-image .wp-block-cover-image-text a,
 .wp-block-cover-image .wp-block-cover-text a,
 .wp-block-cover h2 a,
@@ -898,30 +997,10 @@ main {
 }
 
 /**
- * 3.5 Forms
- */
-
-/* Adds "number" type to the Spine `input[type=$]` styles */
-input[type="number"] {
-	background: #fff;
-	border: 1px solid #ccc;
-	border-radius: 2px;
-	color: #767676;
-	margin: 0;
-	padding: 6px 4px;
-	outline: 0;
-}
-
-.js-search-form {
-	margin: 1.5em 0;
-
-	label {
-		margin-right: 1em;
-	}
-}
-
-/**
- * 3.6 Image Lists (Gallery)
+ * 5.13 Image Lists (Gallery)
+ *
+ * @since 0.9.0
+ * @since 1.1.0 Update with WP block styles.
  */
 
 .gallery,
@@ -1129,7 +1208,7 @@ input[type="number"] {
 }
 
 /**
- * 3.10 Index Lists
+ * 5.14 Index Lists
  *
  * @since 0.9.0
  *
@@ -1233,8 +1312,198 @@ input[type="number"] {
 
 }
 
+/**
+ * 5.15 Cards
+ *
+ * @since 0.9.0
+ * @since 1.1.0 Added horizontal variant with WP media and text block.
+ *
+ * @todo Make these more robust and flexible (see https://material.io/design/components/cards.html)
+ */
+
+.cards,
+.recent-articles {
+	display: grid;
+	font-size: 16px;
+	grid-auto-rows: minmax(4rem, auto);
+	grid-gap: 1.5rem 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	line-height: 1.5;
+	margin-top: 3rem;
+
+	.article-summary {
+		margin-top: .5em;
+	}
+
+	.article-image {
+		order: -1;
+	}
+
+	.article-footer {
+		order: -2;
+	}
+}
+
+@supports (display: grid) {
+
+	.cards,
+	.recent-articles {
+
+		article,
+		.card {
+			display: flex;
+			flex-direction: column;
+			float: none;
+			padding: 0;
+			width: auto;
+		}
+
+	}
+
+	.home .recent-articles article {
+		width: auto;
+	}
+
+	.blog .cards article {
+		width: auto;
+	}
+
+}
+
+.wp-block-media-text {
+	display: grid;
+	margin-bottom: 1em;
+}
+
+.wp-block-media-text {
+	grid-column-gap: 1em;
+	grid-template-rows: auto;
+	grid-template-areas: "media-text-media media-text-content";
+	grid-template-columns: 40% auto;
+}
+
+.wp-block-media-text.has-media-on-the-right {
+	grid-template-areas: "media-text-content media-text-media";
+	grid-template-columns: auto 40%;
+}
+
+.wp-block-media-text[class*="-background-color"] {
+	padding: 1em 1em 0;
+}
+
+.wp-block-media-text.has-dark-background-color,
+.wp-block-media-text.has-brand-crimson-background-color,
+.wp-block-media-text.has-brand-gray-background-color,
+.wp-block-media-text.has-accent-crimson-background-color {
+	color: $section-background-color;
+}
+
+.wp-block-media-text .wp-block-media-text__media {
+	grid-area: media-text-media;
+	margin: 0;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+	grid-area: media-text-content;
+	word-break: break-word;
+}
+
+.wp-block-media-text > figure > img,
+.wp-block-media-text > figure > video {
+	max-width: unset;
+	width: 100%;
+	vertical-align: middle;
+}
+
 /*
- * 3.7 Modules
+* Here we here not able to use a mobile first CSS approach.
+* Custom widths are set using inline styles, and on mobile,
+* we need 100% width, so we use important to overwrite the inline style.
+* If the style were set on mobile first, on desktop styles,
+* we would have no way of setting the style again to the inline style.
+*/
+@media (max-width: $medium) {
+
+	.wp-block-media-text.is-stacked-on-mobile {
+		grid-template-columns: 100% !important;
+		grid-template-areas: "media-text-media" "media-text-content";
+	}
+
+	.wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right {
+		grid-template-areas: "media-text-content" "media-text-media";
+	}
+
+}
+
+/**
+ * 5.16 Banners
+ *
+ * @since 0.9.0
+ *
+ * @todo Improve styling and stop using @extend.
+ */
+
+.notification {
+	align-items: center;
+	border: 5px solid $neutral-dark;
+	border-left-width: 1em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 1.5em 2em;
+	max-width: 54.851em;
+	padding: .75em 1em;
+
+	& > *:not(:first-child) {
+		padding-left: 1em;
+	}
+
+	& > *:first-child {
+		margin-right: auto;
+	}
+}
+
+.notification--positive {
+	@extend .notification;
+	border-color: $accent-green;
+}
+
+.notification--caution {
+	@extend .notification;
+	border-color: $accent-yellow;
+}
+
+.notification--warning {
+	@extend .notification;
+	border-color: $accent-orange;
+}
+
+.notification--light {
+	@extend .notification;
+	border-color: $brand-gray;
+	border-width: 2px;
+	border-left-width: .5em;
+}
+
+@media (min-width: $medium) {
+
+	.notification {
+		flex-wrap: nowrap;
+		margin: 1.5em 0;
+
+		p {
+			padding: 0;
+		}
+	}
+
+}
+
+/*
+ * 5.17 Modules
+ *
+ * @since 0.9.0
+ *
+ * @todo Stop using @extend.
  */
 
 .module {
@@ -1305,263 +1574,5 @@ input[type="number"] {
 }
 
 /**
- * 3.8 Banners
+ * 5.18 Dialogs
  */
-
-.notification {
-	align-items: center;
-	border: 5px solid $neutral-dark;
-	border-left-width: 1em;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	margin: 1.5em 2em;
-	max-width: 54.851em;
-	padding: .75em 1em;
-
-	& > *:not(:first-child) {
-		padding-left: 1em;
-	}
-
-	& > *:first-child {
-		margin-right: auto;
-	}
-}
-
-.notification--positive {
-	@extend .notification;
-	border-color: $accent-green;
-}
-
-.notification--caution {
-	@extend .notification;
-	border-color: $accent-yellow;
-}
-
-.notification--warning {
-	@extend .notification;
-	border-color: $accent-orange;
-}
-
-.notification--light {
-	@extend .notification;
-	border-color: $brand-gray;
-	border-width: 2px;
-	border-left-width: .5em;
-}
-
-@media (min-width: $medium) {
-
-	.notification {
-		flex-wrap: nowrap;
-		margin: 1.5em 0;
-
-		p {
-			padding: 0;
-		}
-	}
-
-}
-
-/**
- * 3.9 Pagination Navigation
- */
-
-.pager {
-	margin: 1.5rem auto;
-
-	ul {
-		display: flex;
-		flex-flow: row nowrap;
-		padding: 0;
-	}
-
-	.pagination a {
-		border: 1px solid transparent;
-		display: block;
-		margin: 0 .25em;
-		padding: .75em 1em;
-
-		&:hover,
-		&:focus {
-			background: $nav-color-hover;
-			color: $section-background-color;
-		}
-	}
-
-	.dots,
-	.current {
-		display: block;
-		margin: 0 .25em;
-		padding: .75em 1em;
-	}
-
-	.current {
-		background: $body-background-color;
-		border: 1px solid $neutral-dark;
-	}
-}
-
-.nav-previous,
-.nav-next {
-	display: inline-block;
-	width: 50%;
-}
-
-.nav-next {
-	float: right;
-	text-align: right;
-}
-
-.atoz {
-
-	ul {
-		padding: 0 0 1.5em;
-	}
-
-	li {
-		border: 1px solid $nav-color;
-		display: inline-block;
-		margin: .2em .1em;
-		padding: 0;
-		text-align: center;
-
-		a {
-			border-bottom: none;
-			color: $nav-color;
-			display: block;
-			font-weight: 400;
-			min-width: 2.3em;
-			padding: 8px;
-			transition: all .5s ease;
-
-			&:hover,
-			&:focus {
-				background-color: $nav-color;
-				color: #fff;
-			}
-		}
-	}
-}
-
-@media (min-width: $small) {
-
-	.pager {
-
-		ul {
-			font-size: $font-size-base;
-		}
-	}
-
-}
-
-/**
- * 3.11 Search
- */
-
-#search-menu {
-	background: $neutral-light;
-	box-shadow: -1px 1px 4px 0 rgba(20, 20, 20, .1);
-	display: flex;
-	flex-flow: row wrap;
-	padding: 9rem 2rem 1.5rem;
-	position: absolute;
-	top: 4.8rem;
-	transform: translateY(-100rem);
-	transition-delay: .1s;
-	transition-duration: .3s;
-	transition-property: transform top;
-	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-	width: 100%;
-	z-index: 200;
-
-	&.is-visible {
-		transform: translateY(-4.8rem);
-	}
-}
-
-.search-toggle {
-	padding: .5rem 1rem;
-}
-
-.search-toggle[aria-expanded="true"] {
-	background: $neutral-dark;
-	border-color: $neutral-dark;
-	color: $neutral-light;
-}
-
-#search-menu .screen-reader-text:focus {
-	background: $section-background-color;
-	bottom: 7px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
-	clip: auto;
-	clip-path: inherit;
-	color: $nav-color-hover;
-	display: block;
-	height: auto;
-	padding: 15px 23px 14px;
-	right: 6px;
-	width: auto;
-	z-index: 100000;
-}
-
-.search-form {
-	flex: 1 1 auto;
-}
-
-.search-field[type="search"] {
-	font-size: $font-size-5;
-}
-
-.search-form input[type="submit"] {
-	vertical-align: top;
-}
-
-.search-links-title {
-	font-size: $font-size-6;
-	padding-top: .5rem;
-	padding-bottom: 1rem;
-}
-
-.search-links {
-
-	ul {
-		column-count: 2;
-		margin: 0 0 1rem;
-		padding: 0;
-
-		li {
-			line-height: 1.5;
-		}
-	}
-
-	a:after {
-		background-size: 80%;
-	}
-
-}
-
-@media (max-width: $small ) {
-
-	.search-field[type="search"] {
-		max-width: 300px;
-	}
-
-}
-
-@media (min-width: $small) {
-
-	#search-menu {
-		padding-top: 7.5rem;
-	}
-
-
-}
-
-@media (min-width: $medium) {
-
-	.search-toggle {
-		padding: .75rem 1.5rem;
-	}
-
-}
