@@ -1,15 +1,21 @@
 /**
- * 0.2 Deprecated
+ * 4.0 Deprecated
  *
  * These styles or selectors have been deprecated and will be removed from
  * future versions. Stop targeting these rules and update any markup that relies
  * on these styles.
  *
+ *   - 4.01 Builder Page Styles
+ *   - 4.02 Builder Banner Styles
+ *   - 4.03 Deprecated Classic Galleries
+ *   - 4.04 Columns
+ *   - 4.05 Embedded Content
+ *
  * @since 0.9.0
  */
 
 /**
- * Deprecated Builder Page Styles
+ * 4.01 Deprecated Builder Page Styles
  *
  * Stop-gap styles targeting Builder Template pages for until the Builder
  * template is phased out.
@@ -41,7 +47,7 @@
 }
 
 /**
- * Deprecated Builder Banner Styles
+ * 4.02 Deprecated Builder Banner Styles
  *
  * @since 0.11.0
  */
@@ -312,7 +318,7 @@
 */
 
 /**
- * Classic Style Galleries
+ * 4.03 Deprecated Classic Galleries
  *
  * @since 0.1.0
  */
@@ -398,7 +404,9 @@
 }
 
 /**
- * 4.2 Columns
+ * 4.04 Deprecated Columns
+ *
+ * @since 1.0.0
  */
 
 @media only screen and (min-width: 640px) {
@@ -434,7 +442,7 @@
 }
 
 /**
- * Deprecated Embedded Content
+ * 4.05 Deprecated Embedded Content
  *
  * @since 1.1.0 Switch to WP block editor syntax and styles.
  */
