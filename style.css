@@ -691,14 +691,12 @@ figure.wp-block-pullquote.alignright.alignright,
   .wp-block-gallery.alignright {
     max-width: 350px;
   }
-  #binder.fluid.max-1386 .alignfull {
-    margin-left: -2rem;
-    max-width: 1180px;
-    width: 100vw;
-  }
+}
+
+@media (min-width: 61.875em) {
+  #binder.fluid.max-1386 .alignfull,
   #binder.fluid.max-1386 .alignwide {
-    max-width: 1180px;
-    width: 143%;
+    width: calc(100vw - 206px);
   }
 }
 
