@@ -32,8 +32,10 @@
 		</figure>
 		<?php
 	endif;
-
-	the_content();
 	?>
+
+	<div class="article-body">
+		<?php the_content(); ?>
+	</div>
 
 </article>

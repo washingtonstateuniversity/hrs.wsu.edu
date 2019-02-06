@@ -22,6 +22,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+* Switch to 100% and max width on the main article content width to be more flexible and make better use of space on medium-width viewports.
 * :pencil2: Update CSS table of contents and documentation.
 * :truck: Reorganize some style directories for clearer organization and naming. (Consolidate layout, template, and page styles into `layout` directory; Rename "global" to "environment" and move component-specific styles into "components"; Merge `_elements.scss` into `_components.scss` for easier tracking and to avoid duplication.)
 

@@ -504,7 +504,7 @@ figure.aligncenter,
 	text-align: center;
 }
 
-// Highly selected in order to override overly specific Spine rules.
+// Highly selected in order to override parent theme rules.
 .editor-block-list__block[data-type="core/embed"][data-align="left"] .editor-block-list__block-edit,
 .editor-block-list__block[data-type="core/embed"][data-align="right"] .editor-block-list__block-edit,
 figure.wp-block-embed.alignleft.alignleft,
@@ -520,6 +520,20 @@ figure.wp-block-pullquote.alignright.alignright,
 .wp-block-gallery.alignleft,
 .wp-block-gallery.alignright {
 	width: 100%;
+}
+
+#binder.fluid.max-1386 .alignwide,
+#binder.fluid.max-1386 .alignfull {
+	max-width: 1180px;
+	width: 100vw;
+}
+
+#binder.fluid.max-1386 .alignwide {
+	padding-right: 4rem;
+}
+
+#binder.fluid.max-1386 .alignfull {
+	margin-left: -2rem;
 }
 
 @media (min-width: $medium) {
@@ -541,17 +555,15 @@ figure.wp-block-pullquote.alignright.alignright,
 		max-width: 350px;
 	}
 
+}
+
+@media (min-width: $spine-break) {
+
 	#binder.fluid.max-1386 {
 
-		.alignfull {
-			margin-left: -2rem;
-			max-width: 1180px;
-			width: 100vw;
-		}
-
+		.alignfull,
 		.alignwide {
-			max-width: 1180px;
-			width: 143%;
+			width: calc(100vw - 190px);
 		}
 
 	}
