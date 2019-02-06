@@ -557,13 +557,13 @@ figure.wp-block-pullquote.alignright.alignright,
 
 }
 
-@media (min-width: $spine-break) {
+@media (min-width: $large) {
 
 	#binder.fluid.max-1386 {
 
 		.alignfull,
 		.alignwide {
-			width: calc(100vw - 190px);
+			width: calc(100vw - 206px);
 		}
 
 	}
