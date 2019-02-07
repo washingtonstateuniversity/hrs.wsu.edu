@@ -57,6 +57,7 @@ class HRS_Theme_Setup {
 		add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
 		add_action( 'after_setup_theme', array( $this, 'remove_spine_filters' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ), 0 );
+		add_action( 'admin_init', array( $this, 'enqueue_editor_style' ) );
 		add_action( 'customize_register', array( $this, 'remove_custom_css_control' ) );
 
 		// Set Spine options.
@@ -241,7 +242,7 @@ class HRS_Theme_Setup {
 		add_theme_support( 'disable-custom-font-sizes' );
 
 		// Only allow certain users to adjust colors.
-		if ( ! current_user_can( 'delete_published_pages' ) ) {
+		if ( ! current_user_can( 'publish_posts' ) ) {
 
 			// Calling an empty array disables the block editor color selector.
 			add_theme_support( 'editor-color-palette', array() );
@@ -358,13 +359,15 @@ class HRS_Theme_Setup {
 	/**
 	 * Removes select Spine parent theme filters.
 	 *
-	 * This must be hooked into `after_setup_theme` because the child theme
-	 * functions.php runs before the parent theme functions.php, and therefore
-	 * before the parent theme defines these filters.
+	 * This is hooked into `after_setup_theme` to guarantee the parent theme has
+	 * defined the filters but WP has not yet executed them.
 	 *
 	 * @since 0.17.0
 	 */
 	public function remove_spine_filters() {
+		global $spine_theme_setup;
+
+		remove_action( 'admin_init', array( $spine_theme_setup, 'add_editor_style' ) );
 		remove_filter( 'get_the_excerpt', 'spine_trim_excerpt', 5 );
 	}
 
@@ -419,6 +422,15 @@ class HRS_Theme_Setup {
 		);
 
 		register_taxonomy( 'hrs_unit', array( 'post', 'document' ), $args );
+	}
+
+	/**
+	 * Enqueues the editor style.
+	 *
+	 * @since 1.1.0
+	 */
+	public function enqueue_editor_style() {
+		add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-style.css' );
 	}
 
 	/**
