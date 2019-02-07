@@ -29,8 +29,6 @@ class HRS_Theme_Setup {
 		// Only setup and activate if it hasn't already been done.
 		if ( null === $instance ) {
 			$instance = new HRS_Theme_Setup();
-			$instance->setup_hooks();
-			$instance->includes();
 		}
 
 		return $instance;
@@ -52,7 +50,7 @@ class HRS_Theme_Setup {
 	 *
 	 * @access private
 	 */
-	private function setup_hooks() {
+	public function setup_hooks() {
 		add_action( 'after_setup_theme', array( $this, 'add_theme_support' ) );
 		add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
 		add_action( 'after_setup_theme', array( $this, 'remove_spine_filters' ) );
@@ -75,7 +73,7 @@ class HRS_Theme_Setup {
 	 *
 	 * @access private
 	 */
-	private function includes() {
+	public function includes() {
 		// The HRS documents gallery shortcode.
 		require __DIR__ . '/shortcode-document-gallery.php';
 		// The HRS last updated label shortcode.
@@ -488,7 +486,11 @@ class HRS_Theme_Setup {
  * @return object A single HRS Theme Setup instance.
  */
 function setup_hrs_theme() {
-	return HRS_Theme_Setup::get_instance();
+	$hrs_theme_setup = HRS_Theme_Setup::get_instance();
+	$hrs_theme_setup->setup_hooks();
+	$hrs_theme_setup->includes();
+
+	return $hrs_theme_setup;
 }
 
 setup_hrs_theme();
