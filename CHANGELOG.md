@@ -18,16 +18,19 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.2.0~20190204-01 (:construction: WIP 2018-02-04)
+## 1.2.0~20190214-01 (:construction: WIP 2018-02-14)
 
 ### Changed
 
+* Move the HRS theme setup method calls from the static constructor into the setup function.
+* Remove Spine theme editor style CSS and replace with HRS theme editor style.
 * Switch to 100% and max width on the main article content width to be more flexible and make better use of space on medium-width viewports.
 * :pencil2: Update CSS table of contents and documentation.
 * :truck: Reorganize some style directories for clearer organization and naming. (Consolidate layout, template, and page styles into `layout` directory; Rename "global" to "environment" and move component-specific styles into "components"; Merge `_elements.scss` into `_components.scss` for easier tracking and to avoid duplication.)
 
 ### Added
 
+* :art: Back end styles for the WP blocks we want to support.
 * :art: Front end styles for the WP blocks we want to use. Some (like buttons and image galleries) merged with existing styles and others (like columns and  responsive embeds) new or replacing existing styles.
 * Layouts stylesheet part specifically for reusable layout rules.
 
