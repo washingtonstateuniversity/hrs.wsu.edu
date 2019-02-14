@@ -179,6 +179,10 @@ blockquote cite:before {
 	background: none;
 }
 
+.wp-block-pullquote.is-style-solid-color {
+	border-radius: 4px;
+}
+
 .wp-block-pullquote.is-style-solid-color blockquote {
 	border: none;
 	margin-left: auto;
