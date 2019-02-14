@@ -1,0 +1,442 @@
+/*
+Theme Name: WSU Human Resources Services
+Theme URI: https://github.com/washingtonstateuniversity/hrs.wsu.edu/
+Author: Adam Turner, WSU University Communications
+
+Stylesheet: Post and Page screens
+
+This stylesheet is loaded on the post and page admin screens.
+
+@since 1.1.0
+*/
+
+@import "environment/variables";
+
+body {
+	background-color: $section-background-color;
+	color: $text-color;
+	font-family: $sans-serif-fonts;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+@media (min-width: 791px) {
+
+	body {
+		font-size: 18px;
+	}
+
+}
+
+.wp-block {
+	max-width: calc(40em + 28px);
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+	max-width: 1180px;
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+	max-width: none;
+}
+
+/**
+ * Typography
+ */
+
+h1 {
+	font-size: $font-size-8;
+	padding-top: 0;
+}
+
+h2 {
+	font-size: $font-size-6;
+}
+
+h3 {
+	font-size: $font-size-4;
+}
+
+h4 {
+	font-size: $font-size-2;
+}
+
+h5 {
+	font-size: $font-size-base;
+}
+
+h6 {
+	font-size: $font-size-1;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1em;
+}
+
+p {
+	font-size: 1em;
+}
+
+abbr[title],
+acronym[title] {
+	border-bottom: 2px dotted;
+	text-decoration: none;
+}
+
+ins {
+	background-color: $accent-green;
+	color: #000;
+	margin: -.05em 0;
+	padding: .05em .25em;
+}
+
+.has-small-font-size {
+	font-size: $font-size-0;
+}
+
+.has-regular-font-size,
+.has-normal-font-size {
+	font-size: $font-size-base;
+}
+
+.has-medium-font-size {
+	font-size: $font-size-3;
+}
+
+.has-large-font-size {
+	font-size: $font-size-5;
+	line-height: 1.25;
+}
+
+.has-larger-font-size {
+	font-size: $font-size-7;
+	line-height: 1.15;
+}
+
+/**
+ * Links
+ */
+
+a {
+	border-bottom: 1px solid $nav-color-border;
+	color: $text-color;
+	font-weight: 600;
+	text-decoration: none;
+	transition: all .3s ease;
+}
+
+a:hover,
+a:focus {
+	color: $nav-color-hover;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	font-weight: 700;
+}
+
+figcaption {
+	color: $neutral-dark;
+	font-size: $font-size-1;
+	letter-spacing: .02em;
+	line-height: normal;
+	margin-top: 0;
+	padding: .3em .5em 0;
+	text-align: inherit;
+}
+
+/**
+ * Iconography
+ *
+ * We don't use Dashicons on the front end, but it's easier to approximate the
+ * SVG icons from the front end with the already-loaded Dashicons here on the
+ * back end.
+ */
+
+figcaption:before {
+	color: $accent-crimson;
+	content: "\f323";
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	font-size: 1em;
+	line-height: 1.4;
+	font-family: dashicons;
+	text-decoration: inherit;
+	font-weight: 400;
+	font-style: normal;
+	vertical-align: top;
+	text-align: center;
+	transition: color .1s ease-in 0;
+	transform: rotate(45deg);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Paragraph Styles
+ */
+
+// No drop cap styling anywhere.
+p.has-drop-cap:not(:focus):first-letter {
+	float: none;
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: inherit;
+	margin: inherit;
+	text-transform: none;
+	font-style: normal;
+}
+
+p.has-drop-cap:not(:focus):after {
+	padding-top: 0;
+}
+
+/**
+ * 5.02 Preformatted text
+ *
+ * @since 1.1.0
+ */
+
+.wp-block-code,
+.wp-block-code .editor-plain-text {
+	background-color: $text-color;
+	color: #fff;
+	font-size: 16px;
+}
+
+/**
+ * 5.05 Buttons
+ *
+ * @since 0.9.0
+ * @since 1.1.0 Reverse defaults and merge WP block syntax.
+ */
+
+.wp-block-button,
+.wp-block-file {
+	margin-bottom: 1em;
+}
+
+.wp-block-button__link,
+.wp-block-file__button {
+	background: $brand-crimson;
+	color: #fff;
+	border: 1px solid $brand-crimson;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .1);
+	cursor: pointer;
+	display: inline-block;
+	font-family: inherit;
+	font-size: $font-size-base;
+	letter-spacing: .85px;
+	line-height: 1.5;
+	overflow-wrap: break-word;
+	padding: .75rem 1.5rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all .3s ease;
+	white-space: normal;
+
+	&:hover,
+	&:focus {
+		background: #fff;
+		border: 1px solid $nav-color-hover;
+		color: $nav-color-hover;
+	}
+
+	&:active {
+		background: $neutral-light;
+		border: 1px solid $brand-crimson;
+		color: $nav-color-hover;
+	}
+}
+
+.is-style-outline .wp-block-button__link {
+	background: #fff;
+	border: 1px solid $brand-crimson;
+	color: $brand-crimson;
+
+	&:hover,
+	&:focus {
+		background: $nav-color-hover;
+		border: 1px solid $nav-color-border;
+		box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1);
+		color: #fff;
+	}
+
+	&:active {
+		background: darken($brand-crimson, 10%);
+		border: 1px solid $neutral-dark;
+		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
+		outline-width: 0;
+	}
+}
+
+.wp-block-file .wp-block-file__button {
+	border-radius: 6px;
+	padding: .25em .75em;
+	vertical-align: baseline;
+}
+
+.wp-block-file * + .wp-block-file__button {
+	margin-left: .75em;
+}
+
+.is-style-squared .wp-block-button__link {
+	background: transparent;
+	color: $nav-color;
+	border: 1px solid transparent;
+	box-shadow: none;
+
+	&:hover,
+	&:focus {
+		background: $nav-color-hover;
+		color: #fff;
+	}
+
+	&:active {
+		background: darken($brand-crimson, 10%);
+		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
+	}
+}
+
+/**
+ * 5.03 Quotes
+ *
+ * @since 1.1.0
+ */
+
+.wp-block-quote.wp-block-quote {
+	background-color: $body-background-color;
+	border-left: 4px solid $accent-crimson;
+	font-family: $sans-serif-fonts;
+	margin-bottom: 1em;
+	padding: 1em 2em;
+	position: relative;
+}
+
+.wp-block-pullquote__citation,
+.wp-block-quote__citation {
+	color: inherit;
+	font-size: inherit;
+	font-style: italic;
+	text-transform: none;
+}
+
+.wp-block-pullquote__citation:before,
+.wp-block-quote__citation:before {
+	content: "- ";
+}
+
+.wp-block-quote:before {
+	color: $accent-crimson;
+	content: "\201C";
+	font-size: $font-size-8;
+	position: absolute;
+	left: 10px;
+	top: .5em;
+}
+
+.wp-block-quote.is-style-large p,
+.wp-block-quote.is-large p {
+	font-style: italic;
+}
+
+.wp-block-quote.is-style-large p,
+.wp-block-quote.is-large p,
+.wp-block-pullquote p {
+	font-size: $font-size-5;
+	line-height: 1.5;
+}
+
+.wp-block-pullquote {
+	border-top: 0;
+	border-bottom: 0;
+	padding: 3em 0 2em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.wp-block-pullquote blockquote {
+	border-top: 2px solid $accent-crimson;
+	border-bottom: 10px solid $accent-crimson;
+	border-radius: 18px;
+	font-family: $sans-serif-fonts;
+	margin-bottom: 1em;
+	padding: 1em 2em;
+}
+
+.wp-block-pullquote .has-text-color a,
+.wp-block-pullquote .is-style-solid-color a {
+	color: inherit;
+	padding: 0 4px;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		background-color: $nav-color-hover;
+	}
+
+	&:active {
+		color: #fff;
+		background-color: $nav-color;
+	}
+}
+
+.wp-block-pullquote:not(.is-style-solid-color) {
+	background: none;
+}
+
+.wp-block-pullquote.is-style-solid-color {
+	border-radius: 4px;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote {
+	border: none;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: calc(27rem + 3vw);
+	text-align: left;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: $font-size-7;
+}
+
+.wp-block-pullquote.alignleft,
+.wp-block-pullquote.alignright,
+.wp-block-pullquote.is-style-solid-color.alignleft,
+.wp-block-pullquote.is-style-solid-color.alignright {
+	text-align: left;
+
+	blockquote {
+		max-width: 100%;
+	}
+
+	blockquote p {
+		font-size: $font-size-3;
+	}
+}
+
+/**
+ * Seperators
+ */
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	margin: 0;
+	max-width: 5.5em;
+}
