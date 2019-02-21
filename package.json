@@ -1,6 +1,6 @@
 {
   "name": "hrs.wsu.edu",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/washingtonstateuniversity/hrs.wsu.edu"
@@ -18,28 +18,28 @@
     "Firefox ESR"
   ],
   "devDependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/core": "^7.3.3",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/polyfill": "^7.2.3",
-    "@babel/preset-env": "^7.2.3",
-    "autoprefixer": "^9.4.3",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.1",
+    "autoprefixer": "^9.4.8",
     "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.4",
+    "babel-loader": "^8.0.5",
     "cpx": "^1.5.x",
-    "cssnano": "^4.1.7",
-    "eslint": "^5.10.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^5.14.1",
     "eslint-config-wordpress": "^2.0.x",
-    "eslint-loader": "^2.1.1",
+    "eslint-loader": "^2.1.2",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.11.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.1.0",
-    "rimraf": "^2.6.x",
-    "stylelint": "^9.9.0",
+    "postcss-cli": "^6.1.1",
+    "rimraf": "^2.6.3",
+    "stylelint": "^9.10.1",
     "svgo": "^1.1.1",
-    "webpack": "^4.28.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-merge": "^4.1.5"
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-merge": "^4.2.1"
   },
   "scripts": {
     "test:php": "vendor/bin/phpcs -v --colors --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\" --standard=phpcs.ruleset.xml *.php parts/ includes/ articles/",
