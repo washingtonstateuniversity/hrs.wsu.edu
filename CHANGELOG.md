@@ -18,7 +18,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.1.0 (:construction: WIP 2018-01-17)
+## 1.1.0 (2019-02-21)
 
 ### Fixed
 
@@ -30,6 +30,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+* Filters and styles to adjust custom form fields, called from a central Gravity Forms setup function.
 * Theme support flags for several block editor features.
 
 ### Removed
