@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.0.1
+Version: 1.1.0
 Requires at least: 4.7
 Tested up to: 4.9.9
 Requires PHP: 5.3
@@ -81,6 +81,7 @@ Text Domain: hrs-wsu-edu
  * 7.0 Plugins
  *     7.1 TablePress
  *     7.2 Caldera Forms
+ *     7.3 Gravity Forms
  */
 /* Globals */
 /*
@@ -2234,6 +2235,7 @@ section.latest article {
  *
  *     - 7.1 TablePress
  *     - 7.2 WP Admin Bar
+ *     - 7.3 Gravity Forms
  *
  * @since 0.11.0
  */
@@ -2368,4 +2370,44 @@ section.latest article {
   #wpadminbar .ab-top-menu > .menupop > .ab-sub-wrapper {
     bottom: 46px;
   }
+}
+
+/**
+ * 7.3 Gravity Forms
+ *
+ * @since 1.1.0
+ */
+form.evaluators-selection-form {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: none;
+  font-variant-numeric: lining-nums tabular-nums;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+form.evaluators-selection-form table.gfield_list,
+form.evaluators-selection-form table.gfield_list caption,
+form.evaluators-selection-form table.gfield_list tbody,
+form.evaluators-selection-form table.gfield_list tfoot,
+form.evaluators-selection-form table.gfield_list thead,
+form.evaluators-selection-form table.gfield_list tr,
+form.evaluators-selection-form table.gfield_list th,
+form.evaluators-selection-form table.gfield_list td {
+  vertical-align: top;
+}
+
+form.evaluators-selection-form thead tr {
+  border-bottom: none;
+}
+
+form.evaluators-selection-form table.gfield_list th,
+form.evaluators-selection-form table.gfield_list td {
+  padding: 0 .45em .45em 0;
+  text-align: left;
+}
+
+form.evaluators-selection-form table.gfield_list thead th {
+  background-color: transparent;
+  font-weight: 600;
 }
