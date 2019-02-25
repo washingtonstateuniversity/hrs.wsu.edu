@@ -654,6 +654,13 @@ figcaption {
   margin-right: auto;
 }
 
+.column figure.alignfull.alignfull,
+.alignfull {
+  margin-right: -2rem;
+  margin-left: -2rem;
+  max-width: 1180px;
+}
+
 .textaligncenter,
 figure.aligncenter,
 .wp-block-button.aligncenter,
@@ -694,13 +701,6 @@ figure.wp-block-pullquote.alignright.alignright,
   .wp-block-gallery.alignleft,
   .wp-block-gallery.alignright {
     max-width: 350px;
-  }
-}
-
-@media (min-width: 61.875em) {
-  #binder.fluid.max-1386 .alignfull,
-  #binder.fluid.max-1386 .alignwide {
-    width: calc(100vw - 206px);
   }
 }
 
@@ -2993,8 +2993,20 @@ footer dd a:focus {
   color: #c60c30;
 }
 
+<<<<<<< HEAD
 .single .row figure.article-feature {
   margin-bottom: 1.5rem;
+=======
+.article-content.page .article-header,
+.single-post .article-content .article-header,
+.article-content.page .article-body > *:not(.alignwide):not(.alignfull),
+.single-post .article-body > *:not(.alignwide):not(.alignfull) {
+  max-width: 45rem;
+}
+
+.article-content.page .article-feature.article-feature,
+.single-post .article-content .article-feature.article-feature {
+>>>>>>> f12c912... v1.1.0~20190225-01
   margin-left: -2rem;
   max-width: 100vw;
   width: 100vw;
