@@ -36,7 +36,7 @@ const applyImage = function replaceImageAttributeValues( img ) {
 	const srcset = img.getAttribute( 'data-srcset' );
 	const sizes  = img.getAttribute( 'data-src-sizes' );
 
-	if ( ! src || 'undefined' === typeof( src ) ) {
+	if ( ! src || 'undefined' === typeof ( src ) ) {
 		return;
 	}
 

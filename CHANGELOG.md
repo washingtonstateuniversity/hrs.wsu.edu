@@ -18,6 +18,27 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.1.0 (2019-02-21)
+
+### Fixed
+
+* Updated syntax for the block editor "align wide" theme support.
+
+### Changed
+
+* Move TablePress filter from setup to functions.
+
+### Added
+
+* Filters and styles to adjust custom form fields, called from a central Gravity Forms setup function.
+* Theme support flags for several block editor features.
+
+### Removed
+
+* Disable the Customizer custom CSS option.
+* Unset all of the parent theme page templates that are not being used. Will give preference to Builder and then the block editor.
+* Delete the `gutenberg-beta` template. Now that WP 5.x has launched with the block editor the template is no longer needed.
+
 ## 1.0.1 (2018-12-27)
 
 ### Changed

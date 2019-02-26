@@ -5,6 +5,7 @@
  *
  *     - 7.1 TablePress
  *     - 7.2 WP Admin Bar
+ *     - 7.3 Gravity Forms
  *
  * @since 0.11.0
  */
@@ -153,4 +154,46 @@
 	#wpadminbar .ab-top-menu > .menupop > .ab-sub-wrapper {
 		bottom: 46px;
 	}
+}
+
+/**
+ * 7.3 Gravity Forms
+ *
+ * @since 1.1.0
+ */
+
+form.evaluators-selection-form {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: none;
+	font-variant-numeric: lining-nums tabular-nums;
+	margin-bottom: 1.5rem;
+	width: 100%;
+
+	table.gfield_list,
+	table.gfield_list caption,
+	table.gfield_list tbody,
+	table.gfield_list tfoot,
+	table.gfield_list thead,
+	table.gfield_list tr,
+	table.gfield_list th,
+	table.gfield_list td {
+		vertical-align: top;
+	}
+
+	thead tr {
+		border-bottom: none;
+	}
+
+	table.gfield_list th,
+	table.gfield_list td {
+		padding: 0 .45em .45em 0;
+		text-align: left;
+	}
+
+	table.gfield_list thead th {
+		background-color: transparent;
+		font-weight: 600;
+	}
+
 }
