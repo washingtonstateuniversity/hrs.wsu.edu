@@ -5,11 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-<<<<<<< HEAD
-Version: 1.2.0~20190204-01
-=======
-Version: 1.1.0~20190214-01
->>>>>>> bcce8ed... :package: Build beta v1.1.0~20190214
+Version: 1.2.0~20190226-01
 Requires at least: 4.7
 Tested up to: 5.1.0
 Requires PHP: 5.3
@@ -106,6 +102,7 @@ Text Domain: hrs-wsu-edu
  * 9.0 Plugins
  *   - 9.01 TablePress
  *   - 9.02 WP Admin Bar
+ *   - 9.03 Gravity Forms
  */
 /**
  * 1.0 Variables
@@ -2197,7 +2194,6 @@ input[type="number"] {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  margin: auto;
   padding: 0;
 }
 
@@ -2993,10 +2989,6 @@ footer dd a:focus {
   color: #c60c30;
 }
 
-<<<<<<< HEAD
-.single .row figure.article-feature {
-  margin-bottom: 1.5rem;
-=======
 .article-content.page .article-header,
 .single-post .article-content .article-header,
 .article-content.page .article-body > *:not(.alignwide):not(.alignfull),
@@ -3006,24 +2998,18 @@ footer dd a:focus {
 
 .article-content.page .article-feature.article-feature,
 .single-post .article-content .article-feature.article-feature {
->>>>>>> f12c912... v1.1.0~20190225-01
   margin-left: -2rem;
-  max-width: 100vw;
-  width: 100vw;
+  margin-right: -2rem;
+  max-width: 34em;
 }
 
-@media (min-width: 43em) {
-  .article-content.page,
-  .single-post .article-content {
-    width: 70%;
-  }
-  .single .row figure.article-feature {
+@media (min-width: 34em) {
+  .article-content.page .article-feature.article-feature,
+  .single-post .article-content .article-feature.article-feature {
     float: right;
-    margin-right: calc(-43% - 2rem);
-    margin-left: 0;
-    padding: 0 2rem;
-    max-width: 34em;
-    width: 50vw;
+    margin-left: 2rem;
+    margin-right: 0;
+    width: 40vw;
   }
 }
 
@@ -3079,18 +3065,9 @@ footer dd a:focus {
 }
 
 @media (min-width: 43em) {
-  .single-post .row figure.article-feature {
-    float: right;
-    margin-right: calc(-43% - 2rem);
-    margin-left: 0;
-    padding: 0 2rem;
-    max-width: 34em;
-    width: 50vw;
-  }
   .single-post .article-footer {
     display: flex;
     justify-content: space-between;
-    margin-right: calc(-43% - 2rem);
   }
   .single-post .article-footer dl:last-child {
     margin-right: 25%;
@@ -3374,6 +3351,7 @@ section.latest article {
  *
  *   - 9.01 TablePress
  *   - 9.02 WP Admin Bar
+ *   - 9.03 Gravity Forms
  *
  * @since 0.11.0
  */
@@ -3505,7 +3483,7 @@ section.latest article {
 }
 
 /**
- * 7.3 Gravity Forms
+ * 9.03 Gravity Forms
  *
  * @since 1.1.0
  */
