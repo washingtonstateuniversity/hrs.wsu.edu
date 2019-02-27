@@ -18,6 +18,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.1.1 (2019-02-27)
+
+### Fixed
+
+* Target the correct columns for the Gravity Forms list field filters and add an additional form.
+
 ## 1.1.0 (2019-02-21)
 
 ### Fixed
