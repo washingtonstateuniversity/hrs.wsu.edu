@@ -278,7 +278,7 @@ function hrs_filter_tablepress_atts( $tag_attributes, $table_id, $cell_content, 
  *
  * @since 1.1.0
  *
- * @return bool True if filters are added.
+ * @return bool|void False if Gravity Forms is not active.
  */
 function hrs_gform_setup() {
 	// Check if Gravity Forms exists and is loaded.
@@ -287,7 +287,7 @@ function hrs_gform_setup() {
 	}
 
 	/**
-	 * Add filters for the "360 Evaluators Selection" form.
+	 * Add filters for the Evaluators Selection forms.
 	 *
 	 * The filter targets list field columns by form, field, column
 	 * combinations in format: `FILTER_NAME_FORMID_FIELDID_COLUMN`.
@@ -295,15 +295,18 @@ function hrs_gform_setup() {
 	 * @uses RGFormsModel()
 	 *
 	 */
-	$form_id = absint( RGFormsModel::get_form_id( '360 Evaluators Selection' ) );
-	if ( $form_id ) {
-		add_filter( 'gform_column_input_content_' . $form_id . '_8_4', 'hrs_filter_evals_reason_column', 10, 6 );
-		add_filter( 'gform_column_input_' . $form_id . '_8_5', 'hrs_filter_evals_rel_column', 10, 5 );
+	$threesixty_form_id  = absint( RGFormsModel::get_form_id( '360 Evaluators Selection' ) );
+	$prog_review_form_id = absint( RGFormsModel::get_form_id( 'Progress Review Evaluators Selection' ) );
 
-		return true;
+	if ( $threesixty_form_id ) {
+		add_filter( 'gform_column_input_content_' . $threesixty_form_id . '_8_5', 'hrs_filter_evals_reason_column', 10, 6 );
+		add_filter( 'gform_column_input_' . $threesixty_form_id . '_8_6', 'hrs_filter_evals_rel_column', 10, 5 );
 	}
 
-	return false;
+	if ( $prog_review_form_id ) {
+		add_filter( 'gform_column_input_content_' . $prog_review_form_id . '_8_5', 'hrs_filter_evals_reason_column', 10, 6 );
+		add_filter( 'gform_column_input_' . $prog_review_form_id . '_8_6', 'hrs_filter_evals_rel_column', 10, 5 );
+	}
 }
 
 /**
