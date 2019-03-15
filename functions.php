@@ -24,6 +24,7 @@ require_once 'includes/class-hrs-theme-setup.php';
 require_once 'includes/class-msdb-connect.php';
 
 add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
+add_action( 'enqueue_block_editor_assets', 'hrs_enqueue_block_editor_scripts' );
 add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 add_action( 'wp_head', 'hrs_noscript_styles' );
 add_action( 'login_enqueue_scripts', 'hrs_login_styles' );
@@ -54,7 +55,6 @@ function hrs_get_theme_version() {
 }
 
 /**
- * Add HRS Child Theme stylesheet.
  * Add HRS Child Theme stylesheets and scripts.
  *
  * @since 0.7.0
@@ -64,6 +64,20 @@ function hrs_enqueue_styles() {
 	wp_enqueue_style( 'source_sans_pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i', array(), hrs_get_theme_version() );
 	wp_enqueue_script( 'hrs-main', get_stylesheet_directory_uri() . '/assets/js/main.js', array(), hrs_get_theme_version(), false );
 	wp_enqueue_script( 'hrs-legacy', get_stylesheet_directory_uri() . '/assets/js/main.es5.js', array(), hrs_get_theme_version(), true );
+}
+
+/**
+ * Adds HRS theme block editor scripts.
+ *
+ * @since 1.2.0
+ */
+function hrs_enqueue_block_editor_scripts() {
+	wp_enqueue_script(
+		'hrs-block-editor',
+		get_stylesheet_directory_uri() . '/assets/js/blocks.js',
+		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+		hrs_get_theme_version()
+	);
 }
 
 /**

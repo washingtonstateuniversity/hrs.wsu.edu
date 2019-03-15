@@ -6,7 +6,8 @@ module.exports = (env = {}) => {
 		mode: env.production ? 'production' : 'development',
 		devtool: env.production ? 'source-map' : 'inline-source-map',
 		entry: {
-			main: './src/js/main.js'
+			main: './src/js/main.js',
+			blocks: './src/js/blocks.js'
 		},
 		output: {
 			filename: '[name].js',
