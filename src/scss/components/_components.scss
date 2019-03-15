@@ -417,6 +417,7 @@ main input[type="reset"] {
 }
 
 .wp-block-file .wp-block-file__button,
+.is-style-small .wp-block-button__link,
 .button.style-small {
 	border-radius: 6px;
 	padding: .25em .75em;
@@ -428,6 +429,7 @@ main input[type="reset"] {
 }
 
 .is-style-squared .wp-block-button__link,
+.is-style-text .wp-block-button__link,
 .button.style-text {
 	background: transparent;
 	color: $nav-color;

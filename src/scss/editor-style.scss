@@ -284,6 +284,7 @@ p.has-drop-cap:not(:focus):after {
 	}
 }
 
+.is-style-small .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
 	border-radius: 6px;
 	padding: .25em .75em;
@@ -294,7 +295,8 @@ p.has-drop-cap:not(:focus):after {
 	margin-left: .75em;
 }
 
-.is-style-squared .wp-block-button__link {
+.is-style-squared .wp-block-button__link,
+.is-style-text .wp-block-button__link {
 	background: transparent;
 	color: $nav-color;
 	border: 1px solid transparent;
