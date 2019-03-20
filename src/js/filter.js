@@ -19,20 +19,20 @@ const sanitize = function encodeParamString( str ) {
  * Hides all table elements not matching the search parameter.
  */
 const handleInputChange = function updateTableDisplay() {
+	const filter = sanitize( input.value.toUpperCase() );
+	const table = document.querySelector( 'table.searchable' );
+	const tr = table.getElementsByTagName( 'tr' );
+	const searchColumn = ( input.dataset.searchColumn ? input.dataset.searchColumn : 1 );
 	let td, i;
-	let filter = sanitize( input.value.toUpperCase() );
-	let table = document.querySelector( 'table.searchable' );
-	let tr = table.getElementsByTagName( 'tr' );
-	let searchColumn = ( input.dataset.searchColumn ? input.dataset.searchColumn : 1 );
 
 	// Loop through all table rows and hide those that don't match the search.
 	for ( i = 0; i < tr.length; i++ ) {
-		td = tr[i].getElementsByTagName( 'td' )[searchColumn - 1];
+		td = tr[ i ].getElementsByTagName( 'td' )[ searchColumn - 1 ];
 		if ( td ) {
 			if ( -1 < td.innerHTML.toUpperCase().indexOf( filter ) ) {
-				tr[i].style.display = '';
+				tr[ i ].style.display = '';
 			} else {
-				tr[i].style.display = 'none';
+				tr[ i ].style.display = 'none';
 			}
 		}
 	}
@@ -68,4 +68,4 @@ export default function initializeFilter() {
 	input.addEventListener( 'keyup', handleInputChange );
 	reset.addEventListener( 'click', handleResetSelect );
 	handleURLSearchParams();
-};
+}
