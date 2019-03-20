@@ -18,10 +18,16 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.2.0~20190227-01 (:construction: WIP 2018-02-27)
+## 1.2.0-beta01 (:construction: WIP 2019-03-20)
+
+### Fixed
+
+* :warning: Fix linter warnings surfaced by new WordPress recommended config.
 
 ### Changed
 
+* :wrench: Switched to WordPress recommended ESLint configuration and updated build configs to work with blocks syntax.
+* Update button styles to reflect modified WP block style options.
 * Move the HRS theme setup method calls from the static constructor into the setup function.
 * Remove Spine theme editor style CSS and replace with HRS theme editor style.
 * Switch to 100% and max width on the main article content width to be more flexible and make better use of space on medium-width viewports.
@@ -30,6 +36,8 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Added
 
+* Add script to modify WP block styles for various blocks.
+* :sparkles: Script entry point to handle adding and modifying WP editor blocks.
 * :art: Back end styles for the WP blocks we want to support.
 * :art: Front end styles for the WP blocks we want to use. Some (like buttons and image galleries) merged with existing styles and others (like columns and  responsive embeds) new or replacing existing styles.
 * Layouts stylesheet part specifically for reusable layout rules.
