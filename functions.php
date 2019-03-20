@@ -75,8 +75,9 @@ function hrs_enqueue_block_editor_scripts() {
 	wp_enqueue_script(
 		'hrs-block-editor',
 		get_stylesheet_directory_uri() . '/assets/js/blocks.js',
-		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
-		hrs_get_theme_version()
+		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post', 'wp-i18n' ),
+		hrs_get_theme_version(),
+		true
 	);
 }
 
