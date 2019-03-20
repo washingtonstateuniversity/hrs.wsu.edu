@@ -1,4 +1,7 @@
-import { initRegistration } from './blocks/registration';
+/**
+ * Internal dependencies
+ */
+import { init as initStyles } from './blocks/styles';
 
 /**
  * Initializes all of the site submodules.
@@ -7,8 +10,8 @@ import { initRegistration } from './blocks/registration';
  *
  * @since 1.0.0
  */
-const blocksInit = () => {
-	initRegistration();
+const init = () => {
+	initStyles();
 };
 
-blocksInit();
+init();
