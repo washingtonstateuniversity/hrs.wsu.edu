@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.2.0~20190227-01
+Version: 1.2.0~beta01
 Requires at least: 4.7
 Tested up to: 5.1.0
 Requires PHP: 5.3
@@ -1611,6 +1611,7 @@ main input[type="reset"]:active {
 }
 
 .wp-block-file .wp-block-file__button,
+.is-style-small .wp-block-button__link,
 .button.style-small {
   border-radius: 6px;
   padding: .25em .75em;
@@ -1622,6 +1623,7 @@ main input[type="reset"]:active {
 }
 
 .is-style-squared .wp-block-button__link,
+.is-style-text .wp-block-button__link,
 .button.style-text {
   background: transparent;
   color: #981e32;
@@ -1630,6 +1632,8 @@ main input[type="reset"]:active {
 }
 
 .is-style-squared .wp-block-button__link:hover, .is-style-squared .wp-block-button__link:focus,
+.is-style-text .wp-block-button__link:hover,
+.is-style-text .wp-block-button__link:focus,
 .button.style-text:hover,
 .button.style-text:focus {
   background: #c60c30;
@@ -1637,6 +1641,7 @@ main input[type="reset"]:active {
 }
 
 .is-style-squared .wp-block-button__link:active,
+.is-style-text .wp-block-button__link:active,
 .button.style-text:active {
   background: #6d1624;
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
