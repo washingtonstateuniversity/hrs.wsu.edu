@@ -8,10 +8,10 @@
  *
  *   - 2.01 Foundation
  *   - 2.02 Typography
- *   - 2.03 Iconography
- *   - 2.04 Colors
- *   - 2.05 Links
- *   - 2.06 Lists
+ *   - 2.03 Links
+ *   - 2.04 Lists
+ *   - 2.05 Iconography
+ *   - 2.06 Colors
  *   - 2.07 Figures
  *   - 2.08 Usability
  *   - 2.09 Alignments
@@ -80,9 +80,21 @@ main,
  * @since 1.1.0 Add font size options.
  */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.4;
+	margin-top: 1em;
+	margin-bottom: .4em;
+	padding: 0;
+}
+
 h1 {
 	font-size: $font-size-8;
-	padding-top: 0;
+	margin: 0;
 }
 
 h2 {
@@ -103,14 +115,6 @@ h5 {
 
 h6 {
 	font-size: $font-size-1;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin-bottom: 1em;
 }
 
 abbr[title],
@@ -150,7 +154,67 @@ ins {
 }
 
 /**
- * 2.03 Iconography
+ * 2.03 Links
+ *
+ * @since 0.9.0
+ */
+
+main,
+.site-header {
+
+	a {
+		border-bottom: 1px solid $nav-color-border;
+		color: $text-color;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all .3s ease;
+
+		&:hover,
+		&:focus {
+			color: $nav-color-hover;
+		}
+	}
+
+	h1 a,
+	h2 a,
+	h3 a,
+	h4 a,
+	h5 a,
+	h6 a {
+		font-weight: 700;
+	}
+
+}
+
+/**
+ * 2.04 Lists
+ *
+ * 0.9.0
+ */
+
+ol ol {
+	list-style-type: lower-alpha;
+}
+
+ol ol ol {
+	list-style-type: lower-roman;
+}
+
+dl dt,
+dl dd {
+	display: block;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	padding-left: 2em;
+}
+
+/**
+ * 2.05 Iconography
  *
  * @since 0.9.0
  */
@@ -181,6 +245,7 @@ main h2 a,
 main h3 a,
 main h4 a,
 .search-links a,
+.subnav a,
 .reminders li a,
 .home-detail-subnav h2 a,
 .article-taxonomy--primary ul a,
@@ -258,7 +323,7 @@ main h4 a,
 }
 
 /**
- * 2.04 Colors
+ * 2.06 Colors
  *
  * @since 1.1.0
  */
@@ -333,66 +398,6 @@ main h4 a,
 
 .has-dark-color.has-dark-color {
 	color: $text-color;
-}
-
-/**
- * 2.05 Links
- *
- * @since 0.9.0
- */
-
-main,
-.site-header {
-
-	a {
-		border-bottom: 1px solid $nav-color-border;
-		color: $text-color;
-		font-weight: 600;
-		text-decoration: none;
-		transition: all .3s ease;
-
-		&:hover,
-		&:focus {
-			color: $nav-color-hover;
-		}
-	}
-
-	h1 a,
-	h2 a,
-	h3 a,
-	h4 a,
-	h5 a,
-	h6 a {
-		font-weight: 700;
-	}
-
-}
-
-/**
- * 2.06 Lists
- *
- * 0.9.0
- */
-
-ol ol {
-	list-style-type: lower-alpha;
-}
-
-ol ol ol {
-	list-style-type: lower-roman;
-}
-
-dl dt,
-dl dd {
-	display: block;
-}
-
-dt {
-	font-weight: 700;
-}
-
-dd {
-	padding-left: 2em;
 }
 
 /**
