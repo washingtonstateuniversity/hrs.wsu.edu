@@ -29,8 +29,6 @@ class HRS_Theme_Setup {
 		// Only setup and activate if it hasn't already been done.
 		if ( null === $instance ) {
 			$instance = new HRS_Theme_Setup();
-			$instance->setup_hooks();
-			$instance->includes();
 		}
 
 		return $instance;
@@ -52,11 +50,12 @@ class HRS_Theme_Setup {
 	 *
 	 * @access private
 	 */
-	private function setup_hooks() {
+	public function setup_hooks() {
 		add_action( 'after_setup_theme', array( $this, 'add_theme_support' ) );
 		add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
 		add_action( 'after_setup_theme', array( $this, 'remove_spine_filters' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ), 0 );
+		add_action( 'admin_init', array( $this, 'enqueue_editor_style' ) );
 		add_action( 'customize_register', array( $this, 'remove_custom_css_control' ) );
 
 		// Set Spine options.
@@ -74,7 +73,7 @@ class HRS_Theme_Setup {
 	 *
 	 * @access private
 	 */
-	private function includes() {
+	public function includes() {
 		// The HRS documents gallery shortcode.
 		require __DIR__ . '/shortcode-document-gallery.php';
 		// The HRS last updated label shortcode.
@@ -240,8 +239,67 @@ class HRS_Theme_Setup {
 		add_theme_support( 'disable-custom-colors' );
 		add_theme_support( 'disable-custom-font-sizes' );
 
-		// By calling an empty array, we disable the Gutenberg custom color selector entirely.
-		add_theme_support( 'editor-color-palette', array() );
+		// Only allow certain users to adjust colors.
+		if ( ! current_user_can( 'publish_posts' ) ) {
+
+			// Calling an empty array disables the block editor color selector.
+			add_theme_support( 'editor-color-palette', array() );
+
+		} else {
+
+			// See Sass globals/_variables for colors.
+			add_theme_support(
+				'editor-color-palette',
+				array(
+					array(
+						'name'  => __( 'Brand Crimson', 'hrs-wsu-edu' ),
+						'slug'  => 'brand-crimson',
+						'color' => '#981e32',
+					),
+					array(
+						'name'  => __( 'Brand Gray', 'hrs-wsu-edu' ),
+						'slug'  => 'brand-gray',
+						'color' => '#5e6a71',
+					),
+					array(
+						'name'  => __( 'Accent Crimson', 'hrs-wsu-edu' ),
+						'slug'  => 'accent-crimson',
+						'color' => '#c60c30',
+					),
+					array(
+						'name'  => __( 'Accent Green', 'hrs-wsu-edu' ),
+						'slug'  => 'accent-green',
+						'color' => '#ada400',
+					),
+					array(
+						'name'  => __( 'Accent Orange', 'hrs-wsu-edu' ),
+						'slug'  => 'accent-orange',
+						'color' => '#f6861f',
+					),
+					array(
+						'name'  => __( 'Accent Blue', 'hrs-wsu-edu' ),
+						'slug'  => 'accent-blue',
+						'color' => '#00a5bd',
+					),
+					array(
+						'name'  => __( 'Accent Yellow', 'hrs-wsu-edu' ),
+						'slug'  => 'accent-yellow',
+						'color' => '#ffb81c',
+					),
+					array(
+						'name'  => __( 'White', 'hrs-wsu-edu' ),
+						'slug'  => 'light',
+						'color' => '#fdfdfd',
+					),
+					array(
+						'name'  => __( 'Black', 'hrs-wsu-edu' ),
+						'slug'  => 'dark',
+						'color' => '#191919',
+					),
+				)
+			);
+
+		}
 
 		// Adjust the block editor default font sizes.
 		add_theme_support(
@@ -249,7 +307,7 @@ class HRS_Theme_Setup {
 			array(
 				array(
 					'name' => __( 'Small', 'hrs-wsu-edu' ),
-					'size' => 16, // Sass var $font-size-1
+					'size' => 14.22, // Sass var $font-size-0
 					'slug' => 'small',
 				),
 				array(
@@ -258,9 +316,19 @@ class HRS_Theme_Setup {
 					'slug' => 'normal',
 				),
 				array(
+					'name' => __( 'Medium', 'hrs-wsu-edu' ),
+					'size' => 22.788, // Sass var $font-size-3
+					'slug' => 'medium',
+				),
+				array(
 					'name' => __( 'Large', 'hrs-wsu-edu' ),
 					'size' => 28.836, // Sass var $font-size-5
 					'slug' => 'large',
+				),
+				array(
+					'name' => __( 'Larger', 'hrs-wsu-edu' ),
+					'size' => 36.486, // Sass var $font-size-7
+					'slug' => 'larger',
 				),
 			)
 		);
@@ -289,13 +357,15 @@ class HRS_Theme_Setup {
 	/**
 	 * Removes select Spine parent theme filters.
 	 *
-	 * This must be hooked into `after_setup_theme` because the child theme
-	 * functions.php runs before the parent theme functions.php, and therefore
-	 * before the parent theme defines these filters.
+	 * This is hooked into `after_setup_theme` to guarantee the parent theme has
+	 * defined the filters but WP has not yet executed them.
 	 *
 	 * @since 0.17.0
 	 */
 	public function remove_spine_filters() {
+		global $spine_theme_setup;
+
+		remove_action( 'admin_init', array( $spine_theme_setup, 'add_editor_style' ) );
 		remove_filter( 'get_the_excerpt', 'spine_trim_excerpt', 5 );
 	}
 
@@ -353,6 +423,15 @@ class HRS_Theme_Setup {
 	}
 
 	/**
+	 * Enqueues the editor style.
+	 *
+	 * @since 1.1.0
+	 */
+	public function enqueue_editor_style() {
+		add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-style.css' );
+	}
+
+	/**
 	 * Filters the Spine page title contents.
 	 *
 	 * Adjusts the formatting and punctuation of the default Spine parent theme
@@ -407,7 +486,11 @@ class HRS_Theme_Setup {
  * @return object A single HRS Theme Setup instance.
  */
 function setup_hrs_theme() {
-	return HRS_Theme_Setup::get_instance();
+	$hrs_theme_setup = HRS_Theme_Setup::get_instance();
+	$hrs_theme_setup->setup_hooks();
+	$hrs_theme_setup->includes();
+
+	return $hrs_theme_setup;
 }
 
 setup_hrs_theme();

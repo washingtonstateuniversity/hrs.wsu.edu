@@ -18,7 +18,7 @@ const images = /** @type {Element[]} */ (
 	document.querySelectorAll( '[data-src]' ) );
 const config = {
 	rootMargin: '100px 0px',
-	threshold: 0
+	threshold: 0,
 };
 
 let imageCount = images.length;
@@ -32,13 +32,14 @@ let observer;
  * @param {string} img An HTML image element.
  */
 const applyImage = function replaceImageAttributeValues( img ) {
-	const src    = img.getAttribute( 'data-src' );
-	const srcset = img.getAttribute( 'data-srcset' );
-	const sizes  = img.getAttribute( 'data-src-sizes' );
+	const src = img.getAttribute( 'data-src' );
 
 	if ( ! src || 'undefined' === typeof ( src ) ) {
 		return;
 	}
+
+	const srcset = img.getAttribute( 'data-srcset' );
+	const sizes = img.getAttribute( 'data-src-sizes' );
 
 	// Update the image element `src` attribute with the value of `data-src`.
 	img.src = src;
@@ -60,11 +61,11 @@ const applyImage = function replaceImageAttributeValues( img ) {
  *
  * @since 1.0.0
  *
- * @param {array} images All image elements with placeholders on the page.
+ * @param {Array} imagesArray All image elements with placeholders on the page.
  */
-function loadImagesNow( images ) {
-	for ( let i = 0; i < images.length; i++ ) {
-		let image = images[i];
+function loadImagesNow( imagesArray ) {
+	for ( let i = 0; i < imagesArray.length; i++ ) {
+		const image = imagesArray[ i ];
 		applyImage( image );
 	}
 }
@@ -78,12 +79,11 @@ function loadImagesNow( images ) {
  *
  * @since 1.0.0
  *
- * @param {array}  entries The elements to watch for interection.
+ * @param {Array}  entries The elements to watch for interection.
  * @param {Object} self    Reference to the Intersection Observer instance.
  */
 const handleIntersection = function loadOnIntersection( entries, self ) {
-	entries.forEach( entry => {
-
+	entries.forEach( ( entry ) => {
 		// Disconnect if we've loaded all of the images.
 		if ( 0 === imageCount ) {
 			observer.disconnect();
@@ -94,7 +94,6 @@ const handleIntersection = function loadOnIntersection( entries, self ) {
 			applyImage( entry.target );
 			self.unobserve( entry.target );
 		}
-
 	} );
 };
 
@@ -111,7 +110,7 @@ const initLazyImages = () => {
 	} else {
 		observer = new IntersectionObserver( handleIntersection, config );
 
-		images.forEach( image => {
+		images.forEach( ( image ) => {
 			observer.observe( image );
 		} );
 	}

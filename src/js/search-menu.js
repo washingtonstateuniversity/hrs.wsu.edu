@@ -37,7 +37,11 @@ const close = function hideSearchMenu() {
  */
 const toggle = function handleSearchToggleSelect( event ) {
 	event.preventDefault();
-	isOpen ? close() : open();
+	if ( isOpen ) {
+		close();
+	} else {
+		open();
+	}
 };
 
 /**

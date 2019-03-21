@@ -1,0 +1,584 @@
+/**
+ * 2.0 Environment
+ *
+ * CSS rules for all elements that are universal across the site, no matter the
+ * page or the viewing device. This includes defining standard rules for things
+ * like lists and links. This section also includes some limited utility classes
+ * for things like alignment.
+ *
+ *   - 2.01 Foundation
+ *   - 2.02 Typography
+ *   - 2.03 Links
+ *   - 2.04 Lists
+ *   - 2.05 Iconography
+ *   - 2.06 Colors
+ *   - 2.07 Figures
+ *   - 2.08 Usability
+ *   - 2.09 Alignments
+ *   - 2.10 WSU Spine
+ *
+ * @since 0.9.0
+ */
+
+/**
+ * 2.01 Foundation
+ *
+ * @since 0.9.0
+ */
+
+html {
+	background-color: $body-background-color;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#jacket {
+	overflow: hidden;
+}
+
+main,
+.site-header {
+	background-repeat: no-repeat;
+	background-position: left top;
+	color: $text-color;
+	font: 400 18px/28px $sans-serif-fonts;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+	*,
+	*:before,
+	*:after, {
+		box-sizing: border-box;
+	}
+
+	section,
+	.page-header {
+		background-color: $section-background-color;
+	}
+}
+
+@media (min-width: $large) {
+
+	main section,
+	main .page-header,
+	.site-header {
+		border-left: 8px solid $body-background-color;
+	}
+
+	.home main section,
+	.home main .page-header,
+	.home .site-header {
+		border-left: none;
+	}
+
+}
+
+/**
+ * 2.02 Typography
+ *
+ * @since 0.9.0
+ * @since 1.1.0 Add font size options.
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.4;
+	margin-top: 1em;
+	margin-bottom: .4em;
+	padding: 0;
+}
+
+h1 {
+	font-size: $font-size-8;
+	margin: 0;
+}
+
+h2 {
+	font-size: $font-size-6;
+}
+
+h3 {
+	font-size: $font-size-4;
+}
+
+h4 {
+	font-size: $font-size-2;
+}
+
+h5 {
+	font-size: $font-size-base;
+}
+
+h6 {
+	font-size: $font-size-1;
+}
+
+abbr[title],
+acronym[title] {
+	border-bottom: 2px dotted;
+	text-decoration: none;
+}
+
+ins {
+	background-color: $accent-green;
+	color: #000;
+	margin: -.05em 0;
+	padding: .05em .25em;
+}
+
+.has-small-font-size {
+	font-size: $font-size-0;
+}
+
+.has-regular-font-size,
+.has-normal-font-size {
+	font-size: $font-size-base;
+}
+
+.has-medium-font-size {
+	font-size: $font-size-3;
+}
+
+.has-large-font-size {
+	font-size: $font-size-5;
+	line-height: 1.25;
+}
+
+.has-larger-font-size {
+	font-size: $font-size-7;
+	line-height: 1.15;
+}
+
+/**
+ * 2.03 Links
+ *
+ * @since 0.9.0
+ */
+
+main,
+.site-header {
+
+	a {
+		border-bottom: 1px solid $nav-color-border;
+		color: $text-color;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all .3s ease;
+
+		&:hover,
+		&:focus {
+			color: $nav-color-hover;
+		}
+	}
+
+	h1 a,
+	h2 a,
+	h3 a,
+	h4 a,
+	h5 a,
+	h6 a {
+		font-weight: 700;
+	}
+
+}
+
+/**
+ * 2.04 Lists
+ *
+ * 0.9.0
+ */
+
+ol ol {
+	list-style-type: lower-alpha;
+}
+
+ol ol ol {
+	list-style-type: lower-roman;
+}
+
+dl dt,
+dl dd {
+	display: block;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	padding-left: 2em;
+}
+
+/**
+ * 2.05 Iconography
+ *
+ * @since 0.9.0
+ */
+
+figcaption,
+.wp-block-latest-posts__post-date,
+.article-date,
+.archive .page-header h1,
+.reminders li a,
+.meta {
+
+	&:before {
+		background-image: url(../images/icons/label.svg);
+		background-position: center 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: "";
+		display: inline-block;
+		height: 1em;
+		margin: 0 .4em -.2em 0;
+		width: 1em;
+	}
+
+}
+
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a,
+.search-links a,
+.subnav a,
+.reminders li a,
+.home-detail-subnav h2 a,
+.article-taxonomy--primary ul a,
+.cards .article-title a,
+.articles-list .article-title a,
+.recent-articles .article-title a {
+	border-bottom-color: transparent;
+
+	&:after {
+		background: url(../images/icons/link.svg);
+		background-position: center 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: "";
+		display: inline-block;
+		height: 1em;
+		margin: .05em 0 -.05em .3em;
+		width: 1em;
+	}
+
+	&:hover,
+	&:focus {
+		border-bottom-color: currentColor;
+	}
+
+}
+
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a,
+.cards .article-title a,
+.articles-list .article-title a,
+.recent-articles .article-title a {
+
+	&:after {
+		background-size: 50%;
+		margin: -.17em 0 0;
+		position: absolute;
+	}
+
+}
+
+/*
+ * Home page social media icons.
+ *
+ * Over-specified to override Spine `display: block` rule on .column.
+ *
+ * @todo Move these from the page content editor to the theme template, using
+ *       settings for the social media account handles.
+ */
+
+.column.social-media-icons {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+
+	p {
+		line-height: 1;
+	}
+
+	a {
+		border: none;
+		padding-right: .75rem;
+
+		&:hover img,
+		&:focus img {
+			opacity: .7;
+		}
+	}
+
+	img {
+		border-radius: 4px;
+	}
+}
+
+/**
+ * 2.06 Colors
+ *
+ * @since 1.1.0
+ */
+
+.has-brand-crimson-background-color.has-brand-crimson-background-color {
+	background-color: $brand-crimson;
+}
+
+.has-brand-gray-background-color.has-brand-gray-background-color {
+	background-color: $brand-gray;
+}
+
+.has-accent-crimson-background-color.has-accent-crimson-background-color {
+	background-color: $accent-crimson;
+}
+
+.has-accent-green-background-color.has-accent-green-background-color {
+	background-color: $accent-green;
+}
+
+.has-accent-orange-background-color.has-accent-orange-background-color {
+	background-color: $accent-orange;
+}
+
+.has-accent-blue-background-color.has-accent-blue-background-color {
+	background-color: $accent-blue;
+}
+
+.has-accent-yellow-background-color.has-accent-yellow-background-color {
+	background-color: $accent-yellow;
+}
+
+.has-light-background-color.has-light-background-color {
+	background-color: $section-background-color;
+}
+
+.has-dark-background-color.has-dark-background-color {
+	background-color: $text-color;
+}
+
+.has-brand-crimson-color.has-brand-crimson-color {
+	color: $brand-crimson;
+}
+
+.has-brand-gray-color.has-brand-gray-color {
+	color: $brand-gray;
+}
+
+.has-accent-crimson-color.has-accent-crimson-color {
+	color: $accent-crimson;
+}
+
+.has-accent-green-color.has-accent-green-color {
+	color: $accent-green;
+}
+
+.has-accent-orange-color.has-accent-orange-color {
+	color: $accent-orange;
+}
+
+.has-accent-blue-color.has-accent-blue-color {
+	color: $accent-blue;
+}
+
+.has-accent-yellow-color.has-accent-yellow-color {
+	color: $accent-yellow;
+}
+
+.has-light-color.has-light-color {
+	color: $section-background-color;
+}
+
+.has-dark-color.has-dark-color {
+	color: $text-color;
+}
+
+/**
+ * 2.07 Figures
+ *
+ * @since 0.9.0
+ */
+
+figure > a {
+	border-bottom: none;
+	display: block;
+}
+
+figcaption {
+	color: $neutral-dark;
+	font-size: $font-size-1;
+	letter-spacing: .02em;
+	line-height: normal;
+	margin-bottom: 1em;
+	padding: .3em .5em 0;
+}
+
+/**
+ * 2.08 Usability
+ *
+ * @since 0.9.0
+ */
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-shortcut {
+	position: absolute;
+	top: -1000em;
+}
+
+.screen-reader-shortcut:focus {
+	background: #f1f1f1;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
+	color: #0073aa;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	height: auto;
+	left: 6px;
+	line-height: normal;
+	outline: none;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 7px;
+	width: auto;
+	z-index: 100000;
+}
+
+/**
+ * 2.09 Alignments
+ *
+ * @since 1.1.0
+ */
+
+.alignleft {
+
+	/*rtl:ignore*/
+	float: left;
+
+	/*rtl:ignore*/
+	margin-right: 2em;
+
+}
+
+.alignright {
+
+	/*rtl:ignore*/
+	float: right;
+
+	/*rtl:ignore*/
+	margin-left: 2em;
+
+}
+
+.wp-block-button.alignright,
+.wp-block-file.alignright {
+
+	/*rtl:ignore*/
+	text-align: right;
+
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.column figure.alignfull.alignfull, /* Highly specified to override Spine theme */
+.alignfull {
+	margin-right: -2rem;
+	margin-left: -2rem;
+	max-width: 1180px;
+}
+
+.textaligncenter,
+figure.aligncenter,
+.wp-block-button.aligncenter,
+.wp-block-file.aligncenter {
+	text-align: center;
+}
+
+// Highly selected in order to override parent theme rules.
+.editor-block-list__block[data-type="core/embed"][data-align="left"] .editor-block-list__block-edit,
+.editor-block-list__block[data-type="core/embed"][data-align="right"] .editor-block-list__block-edit,
+figure.wp-block-embed.alignleft.alignleft,
+figure.wp-block-embed.alignright.alignright,
+figure.wp-block-video.alignleft.alignleft,
+figure.wp-block-video.alignright.alignright,
+figure.wp-block-pullquote.alignleft.alignleft,
+figure.wp-block-pullquote.alignright.alignright,
+.wp-block-cover-image.alignleft,
+.wp-block-cover-image.alignright,
+.wp-block-cover.alignleft,
+.wp-block-cover.alignright,
+.wp-block-gallery.alignleft,
+.wp-block-gallery.alignright {
+	width: 100%;
+}
+
+@media (min-width: $medium) {
+
+	.editor-block-list__block[data-type="core/embed"][data-align="left"] .editor-block-list__block-edit,
+	.editor-block-list__block[data-type="core/embed"][data-align="right"] .editor-block-list__block-edit,
+	figure.wp-block-embed.alignleft.alignleft,
+	figure.wp-block-embed.alignright.alignright,
+	figure.wp-block-video.alignleft.alignleft,
+	figure.wp-block-video.alignright.alignright,
+	figure.wp-block-pullquote.alignleft.alignleft,
+	figure.wp-block-pullquote.alignright.alignright,
+	.wp-block-cover-image.alignleft,
+	.wp-block-cover-image.alignright,
+	.wp-block-cover.alignleft,
+	.wp-block-cover.alignright,
+	.wp-block-gallery.alignleft,
+	.wp-block-gallery.alignright {
+		max-width: 350px;
+	}
+
+}
+
+/**
+ * 2.10 WSU Spine
+ *
+ * @since 1.0.0
+ */
+
+#spine {
+
+	.spine-actions > ul li {
+		width: 33%;
+	}
+
+	.spine-actions .spine-share > ul li {
+		width: 100%;
+	}
+
+	button.customize-partial-edit-shortcut-button {
+		border-radius: 50%;
+		border: 2px solid #fff;
+		text-indent: 0;
+	}
+
+	footer {
+		font-size: $font-size-3;
+	}
+
+}

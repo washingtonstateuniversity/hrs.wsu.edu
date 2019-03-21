@@ -1,14 +1,16 @@
 /**
- * 0.1 Fallbacks
+ * 3.0 Fallbacks
  *
  * Fallback styles for not-yet-supported CSS features like grid layout. These
  * will be overridden by later styles in browsers with feature support.
+ *
+ *   - 3.01 Grid Layout
  *
  * @since 1.0.0
  */
 
 /**
- * Grid Layout Fallback
+ * 3.01 Grid Layout Fallback
  *
  * These styles are overridden in components/_components.scss for browsers that
  * support grid layout.
