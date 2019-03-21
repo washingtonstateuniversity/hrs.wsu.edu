@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.2.0~beta01
+Version: 1.2.0-beta02
 Requires at least: 4.7
 Tested up to: 5.1.0
 Requires PHP: 5.3
@@ -42,10 +42,10 @@ Text Domain: hrs-wsu-edu
  * 2.0 Environment
  *   - 2.01 Foundation
  *   - 2.02 Typography
- *   - 2.03 Iconography
- *   - 2.04 Colors
- *   - 2.05 Links
- *   - 2.06 Lists
+ *   - 2.03 Links
+ *   - 2.04 Lists
+ *   - 2.05 Iconography
+ *   - 2.06 Colors
  *   - 2.07 Figures
  *   - 2.08 Usability
  *   - 2.09 Alignments
@@ -155,10 +155,10 @@ Text Domain: hrs-wsu-edu
  *
  *   - 2.01 Foundation
  *   - 2.02 Typography
- *   - 2.03 Iconography
- *   - 2.04 Colors
- *   - 2.05 Links
- *   - 2.06 Lists
+ *   - 2.03 Links
+ *   - 2.04 Lists
+ *   - 2.05 Iconography
+ *   - 2.06 Colors
  *   - 2.07 Figures
  *   - 2.08 Usability
  *   - 2.09 Alignments
@@ -226,9 +226,21 @@ main .page-header,
  * @since 0.9.0
  * @since 1.1.0 Add font size options.
  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+  margin-top: 1em;
+  margin-bottom: .4em;
+  padding: 0;
+}
+
 h1 {
   font-size: 2.281em;
-  padding-top: 0;
+  margin: 0;
 }
 
 h2 {
@@ -249,14 +261,6 @@ h5 {
 
 h6 {
   font-size: 0.889em;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 1em;
 }
 
 abbr[title],
@@ -296,7 +300,68 @@ ins {
 }
 
 /**
- * 2.03 Iconography
+ * 2.03 Links
+ *
+ * @since 0.9.0
+ */
+main a,
+.site-header a {
+  border-bottom: 1px solid #da1e00;
+  color: #191919;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+main a:hover, main a:focus,
+.site-header a:hover,
+.site-header a:focus {
+  color: #c60c30;
+}
+
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a,
+main h5 a,
+main h6 a,
+.site-header h1 a,
+.site-header h2 a,
+.site-header h3 a,
+.site-header h4 a,
+.site-header h5 a,
+.site-header h6 a {
+  font-weight: 700;
+}
+
+/**
+ * 2.04 Lists
+ *
+ * 0.9.0
+ */
+ol ol {
+  list-style-type: lower-alpha;
+}
+
+ol ol ol {
+  list-style-type: lower-roman;
+}
+
+dl dt,
+dl dd {
+  display: block;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  padding-left: 2em;
+}
+
+/**
+ * 2.05 Iconography
  *
  * @since 0.9.0
  */
@@ -322,6 +387,7 @@ main h2 a,
 main h3 a,
 main h4 a,
 .search-links a,
+.subnav a,
 .reminders li a,
 .home-detail-subnav h2 a,
 .article-taxonomy--primary ul a,
@@ -336,6 +402,7 @@ main h2 a:after,
 main h3 a:after,
 main h4 a:after,
 .search-links a:after,
+.subnav a:after,
 .reminders li a:after,
 .home-detail-subnav h2 a:after,
 .article-taxonomy--primary ul a:after,
@@ -362,6 +429,8 @@ main h4 a:hover,
 main h4 a:focus,
 .search-links a:hover,
 .search-links a:focus,
+.subnav a:hover,
+.subnav a:focus,
 .reminders li a:hover,
 .reminders li a:focus,
 .home-detail-subnav h2 a:hover,
@@ -422,7 +491,7 @@ main h4 a:after,
 }
 
 /**
- * 2.04 Colors
+ * 2.06 Colors
  *
  * @since 1.1.0
  */
@@ -496,67 +565,6 @@ main h4 a:after,
 
 .has-dark-color.has-dark-color {
   color: #191919;
-}
-
-/**
- * 2.05 Links
- *
- * @since 0.9.0
- */
-main a,
-.site-header a {
-  border-bottom: 1px solid #da1e00;
-  color: #191919;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all .3s ease;
-}
-
-main a:hover, main a:focus,
-.site-header a:hover,
-.site-header a:focus {
-  color: #c60c30;
-}
-
-main h1 a,
-main h2 a,
-main h3 a,
-main h4 a,
-main h5 a,
-main h6 a,
-.site-header h1 a,
-.site-header h2 a,
-.site-header h3 a,
-.site-header h4 a,
-.site-header h5 a,
-.site-header h6 a {
-  font-weight: 700;
-}
-
-/**
- * 2.06 Lists
- *
- * 0.9.0
- */
-ol ol {
-  list-style-type: lower-alpha;
-}
-
-ol ol ol {
-  list-style-type: lower-roman;
-}
-
-dl dt,
-dl dd {
-  display: block;
-}
-
-dt {
-  font-weight: 700;
-}
-
-dd {
-  padding-left: 2em;
 }
 
 /**
@@ -2972,7 +2980,7 @@ footer dd a:focus {
  */
 .article-content.page > .article-header,
 .single-post .article-content > .article-header {
-  margin-bottom: 3rem;
+  margin-bottom: 2.281em;
 }
 
 .article-taxonomy--primary ul {
@@ -3226,6 +3234,7 @@ section.latest article {
 
 .home-detail-subnav h2 {
   font-size: 1.266em;
+  margin: 0;
   padding: 0;
 }
 
