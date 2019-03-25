@@ -18,6 +18,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.3.0-alpha.01 (:construction: WIP 2019-03-25)
+
+### Changed
+
+- Add separate webpack environment config for WP blocks.
+
 ## 1.2.0 (2019-03-26)
 
 ### Fixed
