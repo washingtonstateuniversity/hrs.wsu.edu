@@ -1,27 +1,1329 @@
 /**
- * 3.0 Components
+ * 5.0 Components
  *
- * CSS rules for larger modular components. Components should be made up of
- * individual Elements and should be designed with a focus on being reused
- * around the site.
+ * CSS rules for larger modular components. Components should designed with a
+ * focus on being reused around the site.
  *
- *     - 3.1 Cards
- *     - 3.2 Data Tables
- *     - 3.3 Dialogs
- *     - 3.4 Figures
- *     - 3.5 Forms
- *     - 3.6 Grid Lists
- *     - 3.7 Modules
- *     - 3.8 Notifications
- *     - 3.9 Page Navigation
- *     - 3.10 Row Lists
- *     - 3.11 Search
+ *   - 5.01 Paragraph Text
+ *   - 5.02 Preformatted text
+ *   - 5.03 Quotes
+ *   - 5.04 Data Tables
+ *   - 5.05 Buttons
+ *   - 5.06 Forms
+ *   - 5.07 Search
+ *   - 5.08 Pagination Navigation
+ *   - 5.09 Audio/Video
+ *   - 5.10 Embeds
+ *   - 5.11 Images
+ *   - 5.12 Cover images
+ *   - 5.13 Image Lists (Gallery)
+ *   - 5.14 Index Lists
+ *   - 5.15 Cards
+ *   - 5.16 Banners
+ *   - 5.17 Modules
+ *   - 5.18 Dialogs
  *
  * @since 0.9.0
  */
 
 /**
- * 3.1 Cards
+ * 5.01 Paragraph Text
+ *
+ * @since 1.1.0
+ */
+
+p.has-drop-cap:not(:focus):first-letter,
+p.has-drop-cap:not(:focus):after {}
+
+p.has-background {
+	padding: 1em 2em;
+}
+
+p.has-background + *:not(.has-background) {
+	margin-top: 1em;
+}
+
+p.has-text-color a {
+	color: inherit;
+}
+
+.wp-block-latest-posts__post-date,
+.article-date {
+	display: block;
+	font-size: $font-size-0;
+
+	&:before {
+		background-image: url(../images/icons/time.svg);
+		margin-bottom: -.25em;
+		padding: 7px;
+	}
+}
+
+.meta,
+.wp-block-latest-posts__post-date {
+	color: $brand-gray;
+}
+
+/**
+ * 5.02 Preformatted text
+ *
+ * @since 1.1.0
+ */
+
+pre.wp-block-code,
+pre.wp-block-preformatted,
+pre.wp-block-verse {
+	margin-bottom: 1em;
+}
+
+pre.wp-block-code {
+	background-color: $text-color;
+	border-radius: 4px;
+	color: #fff;
+	overflow-x: auto;
+	padding: 1em 2em;
+}
+
+pre.wp-block-preformatted,
+pre.wp-block-verse {
+	white-space: wrap;
+	white-space: pre-wrap;
+}
+
+pre.wp-block-verse {
+	font-family: $sans-serif-fonts;
+	padding: 1em 2em 0;
+}
+
+/**
+ * 5.03 Quotes
+ *
+ * @since 1.1.0
+ */
+
+blockquote {
+	font-family: $sans-serif-fonts;
+	margin-bottom: 1em;
+	padding: 1em 2em;
+}
+
+blockquote p:last-child {
+	padding: 0;
+}
+
+blockquote cite {
+	font-style: italic;
+}
+
+blockquote cite:before {
+	content: "- ";
+}
+
+.wp-block-quote {
+	background-color: $body-background-color;
+	border-left: 4px solid $accent-crimson;
+	position: relative;
+}
+
+.wp-block-quote:before {
+	color: $accent-crimson;
+	content: "\201C";
+	font-size: $font-size-8;
+	position: absolute;
+	left: 10px;
+	top: .5em;
+}
+
+.wp-block-quote.is-style-large p,
+.wp-block-quote.is-large p {
+	font-style: italic;
+}
+
+.wp-block-quote.is-style-large p,
+.wp-block-quote.is-large p,
+.wp-block-pullquote p {
+	font-size: $font-size-5;
+	line-height: 1.5;
+}
+
+.wp-block-pullquote {
+	padding: 3em 0 2em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.wp-block-pullquote blockquote {
+	border-top: 2px solid $accent-crimson;
+	border-bottom: 10px solid $accent-crimson;
+	border-radius: 18px;
+}
+
+.wp-block-pullquote .has-text-color a,
+.wp-block-pullquote .is-style-solid-color a {
+	color: inherit;
+	padding: 0 4px;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		background-color: $nav-color-hover;
+	}
+
+	&:active {
+		color: #fff;
+		background-color: $nav-color;
+	}
+}
+
+.wp-block-pullquote:not(.is-style-solid-color) {
+	background: none;
+}
+
+.wp-block-pullquote.is-style-solid-color {
+	border-radius: 4px;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote {
+	border: none;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: calc(27rem + 3vw);
+	text-align: left;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: $font-size-7;
+}
+
+.wp-block-pullquote.alignleft,
+.wp-block-pullquote.alignright,
+.wp-block-pullquote.is-style-solid-color.alignleft,
+.wp-block-pullquote.is-style-solid-color.alignright {
+	text-align: left;
+
+	blockquote {
+		max-width: 100%;
+	}
+
+	blockquote p {
+		font-size: $font-size-3;
+	}
+}
+
+/**
+ * 5.04 Data Tables
+ *
+ * @since 0.9.0
+ */
+
+@media (max-width: $medium) {
+
+	table,
+	caption,
+	tbody,
+	tr,
+	th,
+	td {
+		display: block;
+		text-align: left;
+	}
+
+	thead,
+	th:empty,
+	td:empty {
+		display: none;
+		visibility: hidden;
+	}
+
+	td[data-column]:before {
+		content: attr(data-column) ": ";
+		display: inline-block;
+		font-weight: 600;
+		padding-right: .25em;
+		width: 25%;
+	}
+
+	tbody tr {
+		margin-bottom: 1.5rem;
+	}
+
+	tbody td,
+	tfoot th {
+		border: none;
+		line-height: 1.4;
+		padding: 4px 8px;
+	}
+
+	table .column-1 {
+		font-weight: 600;
+	}
+}
+
+main {
+
+	.wp-block-table,
+	.tablepress {
+		border-collapse: collapse;
+		border-spacing: 0;
+		border: none;
+		font-variant-numeric: lining-nums tabular-nums;
+		margin-bottom: 1.5rem;
+		width: 100%;
+	}
+
+	thead tr {
+		border-bottom: 1px solid lighten($brand-gray, 15%);
+		font-weight: 600;
+	}
+
+	.wp-block-table td,
+	.wp-block-table th {
+		padding: .45em;
+		text-align: left;
+	}
+
+	th.nums,
+	td.nums {
+		text-align: right;
+	}
+
+	th {
+		background-color: $neutral-blue;
+		font-weight: 600;
+	}
+
+	.wp-block-table.is-style-stripes tr:nth-child(odd) {
+		background: #f9f9f9;
+	}
+
+	.wp-block-table.has-fixed-layout,
+	.tablepress.has-fixed-layout {
+		table-layout: fixed;
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.wp-block-table.alignleft,
+	.wp-block-table.aligncenter,
+	.wp-block-table.alignright {
+		display: table;
+		width: auto;
+	}
+
+}
+
+.sticky-header th {
+	position: relative;
+	position: sticky;
+	top: 49px;
+}
+
+@media ( min-width: 989px ) {
+
+	.sticky-header th {
+		top: -1px;
+	}
+
+	body.admin-bar .sticky-header th {
+		top: 31px;
+	}
+
+}
+
+/**
+ * 5.05 Buttons
+ *
+ * @since 0.9.0
+ * @since 1.1.0 Reverse defaults and merge WP block syntax.
+ */
+
+.wp-block-button,
+.wp-block-file {
+	margin-bottom: 1em;
+}
+
+main button,
+main .button,
+main input[type="button"],
+main input[type="submit"],
+.site-header button,
+.site-header input[type="submit"],
+.wp-block-button__link,
+.wp-block-file__button {
+	background: $brand-crimson;
+	color: #fff;
+	border: 1px solid $brand-crimson;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .1);
+	cursor: pointer;
+	display: inline-block;
+	font-family: inherit;
+	font-size: $font-size-base;
+	letter-spacing: .85px;
+	line-height: 1.5;
+	overflow-wrap: break-word;
+	padding: .75rem 1.5rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all .3s ease;
+	white-space: normal;
+
+	&:hover,
+	&:focus {
+		background: #fff;
+		border: 1px solid $nav-color-hover;
+		color: $nav-color-hover;
+	}
+
+	&:active {
+		background: $neutral-light;
+		border: 1px solid $brand-crimson;
+		color: $nav-color-hover;
+	}
+}
+
+.site-header button,
+.site-header input[type="submit"] {
+	font-size: $font-size-1;
+}
+
+.is-style-outline .wp-block-button__link,
+.is-style-outline .button,
+.button.style-outline,
+main input[type="reset"] {
+	background: #fff;
+	border: 1px solid $brand-crimson;
+	color: $brand-crimson;
+
+	&:hover,
+	&:focus {
+		background: $nav-color-hover;
+		border: 1px solid $nav-color-border;
+		box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1);
+		color: #fff;
+	}
+
+	&:active {
+		background: darken($brand-crimson, 10%);
+		border: 1px solid $neutral-dark;
+		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
+		outline-width: 0;
+	}
+}
+
+.wp-block-file .wp-block-file__button,
+.is-style-small .wp-block-button__link,
+.button.style-small {
+	border-radius: 6px;
+	padding: .25em .75em;
+	vertical-align: baseline;
+}
+
+.wp-block-file * + .wp-block-file__button {
+	margin-left: .75em;
+}
+
+.is-style-squared .wp-block-button__link,
+.is-style-text .wp-block-button__link,
+.button.style-text {
+	background: transparent;
+	color: $nav-color;
+	border: 1px solid transparent;
+	box-shadow: none;
+
+	&:hover,
+	&:focus {
+		background: $nav-color-hover;
+		color: #fff;
+	}
+
+	&:active {
+		background: darken($brand-crimson, 10%);
+		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, .1);
+	}
+}
+
+/**
+ * 5.06 Forms
+ *
+ * @since 0.9.0
+ */
+
+/* Adds "number" type to the Spine `input[type=$]` styles */
+input[type="number"] {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	color: #767676;
+	margin: 0;
+	padding: 6px 4px;
+	outline: 0;
+}
+
+.js-search-form {
+	margin: 1.5em 0;
+}
+
+.js-search-form label {
+	margin-right: 1em;
+}
+
+/**
+ * 5.07 Search
+ *
+ * @since 0.9.0
+ */
+
+#search-menu {
+	background: $neutral-light;
+	box-shadow: -1px 1px 4px 0 rgba(20, 20, 20, .1);
+	display: flex;
+	flex-flow: row wrap;
+	padding: 9rem 2rem 1.5rem;
+	position: absolute;
+	top: 4.8rem;
+	transform: translateY(-100rem);
+	transition-delay: .1s;
+	transition-duration: .3s;
+	transition-property: transform top;
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	width: 100%;
+	z-index: 200;
+}
+
+#search-menu.is-visible {
+	transform: translateY(-4.8rem);
+}
+
+.search-toggle {
+	padding: .5rem 1rem;
+}
+
+.search-toggle[aria-expanded="true"] {
+	background: $neutral-dark;
+	border-color: $neutral-dark;
+	color: $neutral-light;
+}
+
+#search-menu .screen-reader-text:focus {
+	background: $section-background-color;
+	bottom: 7px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
+	clip: auto;
+	clip-path: inherit;
+	color: $nav-color-hover;
+	display: block;
+	height: auto;
+	padding: 15px 23px 14px;
+	right: 6px;
+	width: auto;
+	z-index: 100000;
+}
+
+.search-form {
+	flex: 1 1 auto;
+}
+
+.search-field[type="search"] {
+	font-size: $font-size-5;
+}
+
+.search-form input[type="submit"] {
+	vertical-align: top;
+}
+
+.search-links-title {
+	font-size: $font-size-6;
+	padding-top: .5rem;
+	padding-bottom: 1rem;
+}
+
+.search-links ul {
+	column-count: 2;
+	margin: 0 0 1rem;
+	padding: 0;
+}
+
+.search-links li {
+	line-height: 1.5;
+}
+
+.search-links a:after {
+	background-size: 80%;
+}
+
+@media (max-width: $small ) {
+
+	.search-field[type="search"] {
+		max-width: 300px;
+	}
+
+}
+
+@media (min-width: $small) {
+
+	#search-menu {
+		padding-top: 7.5rem;
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.search-toggle {
+		padding: .75rem 1.5rem;
+	}
+
+}
+
+/**
+ * 5.08 Page Navigation
+ *
+ * @since 0.9.0
+ */
+
+.pager {
+	margin: 1.5rem auto;
+
+	ul {
+		display: flex;
+		flex-flow: row nowrap;
+		padding: 0;
+	}
+
+	.pagination a {
+		border: 1px solid transparent;
+		display: block;
+		margin: 0 .25em;
+		padding: .75em 1em;
+
+		&:hover,
+		&:focus {
+			background: $nav-color-hover;
+			color: $section-background-color;
+		}
+	}
+
+	.dots,
+	.current {
+		display: block;
+		margin: 0 .25em;
+		padding: .75em 1em;
+	}
+
+	.current {
+		background: $body-background-color;
+		border: 1px solid $neutral-dark;
+	}
+}
+
+.nav-previous,
+.nav-next {
+	display: inline-block;
+	width: 50%;
+}
+
+.nav-next {
+	float: right;
+	text-align: right;
+}
+
+@media (min-width: $small) {
+
+	.pager {
+
+		ul {
+			font-size: $font-size-base;
+		}
+	}
+
+}
+
+.atoz {
+
+	ul {
+		padding: 0 0 1.5em;
+	}
+
+	li {
+		border: 1px solid $nav-color;
+		display: inline-block;
+		margin: .2em .1em;
+		padding: 0;
+		text-align: center;
+
+		a {
+			border-bottom: none;
+			color: $nav-color;
+			display: block;
+			font-weight: 400;
+			min-width: 2.3em;
+			padding: 8px;
+			transition: all .5s ease;
+
+			&:hover,
+			&:focus {
+				background-color: $nav-color;
+				color: #fff;
+			}
+		}
+	}
+}
+
+/**
+ * 5.09 Audio/Video
+ *
+ * @since 1.1.0
+ */
+
+.wp-block-audio audio {
+	width: 100%;
+	min-width: 300px;
+}
+
+.wp-block-video video {
+	max-width: 100%;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+
+	.wp-block-video [poster] {
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+
+}
+
+/**
+ * 5.10 Embeds
+ *
+ * @since 0.9.9
+ * @since 1.1.0 Switch to WP block editor syntax and styles.
+ */
+
+.wp-block-embed {
+	margin-bottom: 1em;
+}
+
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-21-9 .wp-block-embed__wrapper,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-18-9 .wp-block-embed__wrapper,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-4-3 .wp-block-embed__wrapper,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-1 .wp-block-embed__wrapper,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-9-16 .wp-block-embed__wrapper,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-2 .wp-block-embed__wrapper {
+	position: relative;
+}
+
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-21-9 .wp-block-embed__wrapper:before,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-18-9 .wp-block-embed__wrapper:before,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper:before,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-4-3 .wp-block-embed__wrapper:before,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-1 .wp-block-embed__wrapper:before,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-9-16 .wp-block-embed__wrapper:before,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-2 .wp-block-embed__wrapper:before {
+	content: "";
+	display: block;
+	padding-top: 50%;
+}
+
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-21-9 .wp-block-embed__wrapper iframe,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-18-9 .wp-block-embed__wrapper iframe,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper iframe,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-4-3 .wp-block-embed__wrapper iframe,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-1 .wp-block-embed__wrapper iframe,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-9-16 .wp-block-embed__wrapper iframe,
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-2 .wp-block-embed__wrapper iframe {
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-21-9 .wp-block-embed__wrapper:before {
+	padding-top: 42.85%;
+}
+
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-18-9 .wp-block-embed__wrapper:before {
+	padding-top: 50%;
+}
+
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper:before {
+	padding-top: 56.25%;
+}
+
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-4-3 .wp-block-embed__wrapper:before {
+	padding-top: 75%;
+}
+
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-1 .wp-block-embed__wrapper:before {
+	padding-top: 100%;
+}
+
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-9-6 .wp-block-embed__wrapper:before {
+	padding-top: 66.66%;
+}
+
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-2 .wp-block-embed__wrapper:before {
+	padding-top: 200%;
+}
+
+/**
+ * 5.11 Images
+ *
+ * @since 0.9.0
+ * @since 1.1.0 Move to components and merge WP block styles.
+ */
+
+.wp-block-image {
+	max-width: 100%;
+}
+
+.wp-block-image .alignleft,
+.wp-block-image .alignright,
+.wp-block-image .aligncenter,
+.wp-block-image.is-resized {
+	display: table;
+}
+
+.wp-block-image .alignleft > figcaption,
+.wp-block-image .alignright > figcaption,
+.wp-block-image .aligncenter > figcaption,
+.wp-block-image.is-resized > figcaption {
+	caption-side: bottom;
+	display: table-caption;
+}
+
+/**
+ * 5.12 Cover Images
+ *
+ * @since 1.1.0
+ */
+
+.wp-block-cover-image,
+.wp-block-cover {
+	align-items: center;
+	background-color: #000;
+	background-position: center center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1.5em;
+	min-height: 430px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.wp-block-cover-image.has-left-content,
+.wp-block-cover.has-left-content {
+	justify-content: flex-start;
+}
+
+.wp-block-cover-image.has-left-content h2,
+.wp-block-cover-image.has-left-content .wp-block-cover-image-text,
+.wp-block-cover-image.has-left-content .wp-block-cover-text,
+.wp-block-cover.has-left-content h2,
+.wp-block-cover.has-left-content .wp-block-cover-image-text,
+.wp-block-cover.has-left-content .wp-block-cover-text {
+	margin-left: 0;
+	text-align: left;
+}
+
+.wp-block-cover-image.has-right-content,
+.wp-block-cover.has-right-content {
+	justify-content: flex-end;
+}
+
+.wp-block-cover-image.has-right-content h2,
+.wp-block-cover-image.has-right-content .wp-block-cover-image-text,
+.wp-block-cover-image.has-right-content .wp-block-cover-text,
+.wp-block-cover.has-right-content h2,
+.wp-block-cover.has-right-content .wp-block-cover-image-text,
+.wp-block-cover.has-right-content .wp-block-cover-text {
+	margin-right: 0;
+	text-align: right;
+}
+
+.wp-block-cover-image h2,
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover h2,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text {
+	color: #fff;
+	font-size: $font-size-7;
+	line-height: 1.25;
+	margin-bottom: 0;
+	max-width: $medium;
+	padding: 1em;
+	text-align: center;
+	z-index: 1;
+}
+
+.wp-block-cover-image h2 a,
+.wp-block-cover-image .wp-block-cover-image-text a,
+.wp-block-cover-image .wp-block-cover-text a,
+.wp-block-cover h2 a,
+.wp-block-cover .wp-block-cover-image-text a,
+.wp-block-cover .wp-block-cover-text a {
+	color: #fff;
+	padding: 0 4px;
+
+	&:hover,
+	&:focus {
+		background-color: $nav-color-hover;
+	}
+
+	&:active {
+		background-color: $nav-color;
+	}
+}
+
+.wp-block-cover-image.has-parallax,
+.wp-block-cover.has-parallax {
+	background-attachment: fixed;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+
+	.wp-block-cover-image.has-parallax,
+	.wp-block-cover.has-parallax {
+		background-attachment: scroll;
+	}
+
+}
+
+.wp-block-cover-image.has-background-dim:before,
+.wp-block-cover.has-background-dim:before {
+	background-color: inherit;
+	bottom: 0;
+	content: "";
+	left: 0;
+	opacity: .5;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-10:before,
+.wp-block-cover.has-background-dim.has-background-dim-10:before {
+	opacity: .1;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-20:before,
+.wp-block-cover.has-background-dim.has-background-dim-20:before {
+	opacity: .2;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-30:before,
+.wp-block-cover.has-background-dim.has-background-dim-30:before {
+	opacity: .3;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-40:before,
+.wp-block-cover.has-background-dim.has-background-dim-40:before {
+	opacity: .4;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-50:before,
+.wp-block-cover.has-background-dim.has-background-dim-50:before {
+	opacity: .5;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-60:before,
+.wp-block-cover.has-background-dim.has-background-dim-60:before {
+	opacity: .6;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-70:before,
+.wp-block-cover.has-background-dim.has-background-dim-70:before {
+	opacity: .7;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-80:before,
+.wp-block-cover.has-background-dim.has-background-dim-80:before {
+	opacity: .8;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-90:before,
+.wp-block-cover.has-background-dim.has-background-dim-90:before {
+	opacity: .9;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-100:before,
+.wp-block-cover.has-background-dim.has-background-dim-100:before {
+	opacity: 1;
+}
+
+.wp-block-cover-image:after,
+.wp-block-cover:after {
+	content: "";
+	display: block;
+	font-size: 0;
+	min-height: inherit;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+
+	.wp-block-cover-image:after,
+	.wp-block-cover:after {
+		content: none;
+	}
+
+}
+
+.wp-block-cover-image.aligncenter,
+.wp-block-cover-image.alignleft,
+.wp-block-cover-image.alignright,
+.wp-block-cover.aligncenter,
+.wp-block-cover.alignleft,
+.wp-block-cover.alignright {
+	display: flex;
+}
+
+.wp-block-cover__video-background {
+	height: 100%;
+	left: 50%;
+	object-fit: cover;
+	position: absolute;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 100%;
+	z-index: 0;
+}
+
+/**
+ * 5.13 Image Lists (Gallery)
+ *
+ * @since 0.9.0
+ * @since 1.1.0 Update with WP block styles.
+ */
+
+.gallery,
+.wp-block-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	padding: 0;
+}
+
+.wp-block-gallery .blocks-gallery-image,
+.wp-block-gallery .blocks-gallery-item {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 1em 1em 0;
+	padding: 0;
+	position: relative;
+}
+
+#binder .wp-block-gallery .blocks-gallery-image figure,
+#binder .wp-block-gallery .blocks-gallery-item figure {
+	height: 100%;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+
+	.wp-block-gallery .blocks-gallery-image figure,
+	.wp-block-gallery .blocks-gallery-item figure {
+		align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+}
+
+.wp-block-gallery .blocks-gallery-image img,
+.wp-block-gallery .blocks-gallery-item img {
+	display: block;
+	width: 100%;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+
+	.wp-block-gallery .blocks-gallery-image img,
+	.wp-block-gallery .blocks-gallery-item img {
+		width: auto;
+	}
+}
+
+.wp-block-gallery.is-cropped .blocks-gallery-image figcaption,
+.wp-block-gallery.is-cropped .blocks-gallery-item figcaption {
+	background-color: #000;
+	background-color: rgba(0, 0, 0, .6);
+	bottom: 0;
+	color: #fff;
+	margin-bottom: 5px;
+	max-height: 100%;
+	overflow: auto;
+	padding: .75em .5em;
+	position: absolute;
+	width: 100%;
+}
+
+.wp-block-gallery .blocks-gallery-image figcaption img,
+.wp-block-gallery .blocks-gallery-item figcaption img {
+	display: inline;
+}
+
+.wp-block-gallery.is-cropped .blocks-gallery-image a,
+.wp-block-gallery.is-cropped .blocks-gallery-image img,
+.wp-block-gallery.is-cropped .blocks-gallery-item a,
+.wp-block-gallery.is-cropped .blocks-gallery-item img {
+	width: 100%;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+
+	.wp-block-gallery.is-cropped .blocks-gallery-image a,
+	.wp-block-gallery.is-cropped .blocks-gallery-image img,
+	.wp-block-gallery.is-cropped .blocks-gallery-item a,
+	.wp-block-gallery.is-cropped .blocks-gallery-item img {
+		height: 100%;
+		flex: 1;
+		object-fit: cover;
+	}
+
+}
+
+.wp-block-gallery .blocks-gallery-image,
+.wp-block-gallery .blocks-gallery-item {
+	width: calc((100% - 1em) / 2);
+}
+
+.wp-block-gallery .blocks-gallery-image:nth-of-type(even),
+.wp-block-gallery .blocks-gallery-item:nth-of-type(even) {
+	margin-right: 0;
+}
+
+.wp-block-gallery.columns-1 .blocks-gallery-image,
+.wp-block-gallery.columns-1 .blocks-gallery-item {
+	width: 100%;
+	margin-right: 0;
+}
+
+@media (min-width: $medium) {
+
+	.wp-block-gallery.columns-3 .blocks-gallery-image,
+	.wp-block-gallery.columns-3 .blocks-gallery-item {
+		width: calc((100% - 1em * 2) / 3);
+		margin-right: 1em;
+	}
+
+	.wp-block-gallery.columns-4 .blocks-gallery-image,
+	.wp-block-gallery.columns-4 .blocks-gallery-item {
+		width: calc((100% - 1em * 3) / 4);
+		margin-right: 1em;
+	}
+
+	.wp-block-gallery.columns-5 .blocks-gallery-image,
+	.wp-block-gallery.columns-5 .blocks-gallery-item {
+		width: calc((100% - 1em * 4) / 5);
+		margin-right: 1em;
+	}
+
+	.wp-block-gallery.columns-6 .blocks-gallery-image,
+	.wp-block-gallery.columns-6 .blocks-gallery-item {
+		width: calc((100% - 1em * 5) / 6);
+		margin-right: 1em;
+	}
+
+	.wp-block-gallery.columns-7 .blocks-gallery-image,
+	.wp-block-gallery.columns-7 .blocks-gallery-item {
+		width: calc((100% - 1em * 6) / 7);
+		margin-right: 1em;
+	}
+
+	.wp-block-gallery.columns-8 .blocks-gallery-image,
+	.wp-block-gallery.columns-8 .blocks-gallery-item {
+		width: calc((100% - 1em * 7) / 8);
+		margin-right: 1em;
+	}
+
+	.wp-block-gallery.columns-1 .blocks-gallery-image:nth-of-type(1n),
+	.wp-block-gallery.columns-1 .blocks-gallery-item:nth-of-type(1n) {
+		margin-right: 0;
+	}
+
+	.wp-block-gallery.columns-2 .blocks-gallery-image:nth-of-type(2n),
+	.wp-block-gallery.columns-2 .blocks-gallery-item:nth-of-type(2n) {
+		margin-right: 0;
+	}
+
+	.wp-block-gallery.columns-3 .blocks-gallery-image:nth-of-type(3n),
+	.wp-block-gallery.columns-3 .blocks-gallery-item:nth-of-type(3n) {
+		margin-right: 0;
+	}
+
+	.wp-block-gallery.columns-4 .blocks-gallery-image:nth-of-type(4n),
+	.wp-block-gallery.columns-4 .blocks-gallery-item:nth-of-type(4n) {
+		margin-right: 0;
+	}
+
+	.wp-block-gallery.columns-5 .blocks-gallery-image:nth-of-type(5n),
+	.wp-block-gallery.columns-5 .blocks-gallery-item:nth-of-type(5n) {
+		margin-right: 0;
+	}
+
+	.wp-block-gallery.columns-6 .blocks-gallery-image:nth-of-type(6n),
+	.wp-block-gallery.columns-6 .blocks-gallery-item:nth-of-type(6n) {
+		margin-right: 0;
+	}
+
+	.wp-block-gallery.columns-7 .blocks-gallery-image:nth-of-type(7n),
+	.wp-block-gallery.columns-7 .blocks-gallery-item:nth-of-type(7n) {
+		margin-right: 0;
+	}
+
+	.wp-block-gallery.columns-8 .blocks-gallery-image:nth-of-type(8n),
+	.wp-block-gallery.columns-8 .blocks-gallery-item:nth-of-type(8n) {
+		margin-right: 0;
+	}
+}
+
+.wp-block-gallery .blocks-gallery-image:last-child,
+.wp-block-gallery .blocks-gallery-item:last-child {
+	margin-right: 0;
+}
+
+.wp-block-gallery .blocks-gallery-item.has-add-item-button {
+	width: 100%;
+}
+
+.wp-block-gallery.alignleft,
+.wp-block-gallery.aligncenter,
+.wp-block-gallery.alignright {
+	display: flex;
+}
+
+.wp-block-gallery.aligncenter .blocks-gallery-item figure {
+	justify-content: center;
+}
+
+/**
+ * 5.14 Index Lists
+ *
+ * @since 0.9.0
+ *
+ * @todo Find better harmony with card, block, and index list styles
+ */
+
+.articles-list,
+.recent-articles,
+.cards {
+	list-style-type: none;
+
+	.article-title {
+		line-height: 1.1;
+		font-size: $font-size-4;
+		font-weight: 900;
+		padding: .5em 0 .2em;
+	}
+
+	.article-footer {
+		border: none;
+		color: $text-color;
+		margin: 0 0 .5em;
+		padding: 0;
+	}
+}
+
+.wp-block-latest-posts.is-grid {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	list-style: none;
+}
+
+.wp-block-latest-posts.is-grid li {
+	margin: 0 1em 1em 0;
+	width: 100%;
+}
+
+@media (min-width: $medium) {
+
+	.articles-list {
+
+		article,
+		.list-item {
+			display: grid;
+			grid-template-columns: minmax(220px, 3fr) minmax(220px, 1fr);
+			grid-column-gap: 2rem;
+
+			.article-header,
+			.article-summary {
+				grid-column: 1;
+			}
+
+			.article-image {
+				grid-column: 2;
+				grid-row: 1 / 3;
+			}
+		}
+	}
+
+	section:not(.features) .articles-list {
+
+		article {
+			border-bottom: 6px solid $body-background-color;
+			font-size: 1rem;
+			line-height: 1.5;
+			max-width: $large;
+			padding: .75rem 0;
+
+			footer {
+				display: none;
+			}
+		}
+
+		.article-image {
+			margin-top: .75em;
+			max-height: 7em;
+			overflow: hidden;
+		}
+	}
+
+	.wp-block-latest-posts.columns-2 li {
+		width: calc((100% / 2) - 1em);
+	}
+
+	.wp-block-latest-posts.columns-3 li {
+		width: calc((100% / 3) - 1em);
+	}
+
+	.wp-block-latest-posts.columns-4 li {
+		width: calc((100% / 4) - 1em);
+	}
+
+	.wp-block-latest-posts.columns-5 li {
+		width: calc((100% / 5) - 1em);
+	}
+
+	.wp-block-latest-posts.columns-6 li {
+		width: calc((100% / 6) - 1em);
+	}
+
+}
+
+/**
+ * 5.15 Cards
+ *
+ * @since 0.9.0
+ * @since 1.1.0 Added horizontal variant with WP media and text block.
+ *
+ * @todo Make these more robust and flexible (see https://material.io/design/components/cards.html)
  */
 
 .cards,
@@ -73,252 +1375,140 @@
 
 }
 
-/**
- * 3.2 Data Tables
- */
+.wp-block-media-text {
+	display: grid;
+	margin-bottom: 1em;
+}
 
+.wp-block-media-text {
+	grid-column-gap: 1em;
+	grid-template-rows: auto;
+	grid-template-areas: "media-text-media media-text-content";
+	grid-template-columns: 40% auto;
+}
+
+.wp-block-media-text.has-media-on-the-right {
+	grid-template-areas: "media-text-content media-text-media";
+	grid-template-columns: auto 40%;
+}
+
+.wp-block-media-text[class*="-background-color"] {
+	padding: 1em 1em 0;
+}
+
+.wp-block-media-text.has-dark-background-color,
+.wp-block-media-text.has-brand-crimson-background-color,
+.wp-block-media-text.has-brand-gray-background-color,
+.wp-block-media-text.has-accent-crimson-background-color {
+	color: $section-background-color;
+}
+
+.wp-block-media-text .wp-block-media-text__media {
+	grid-area: media-text-media;
+	margin: 0;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+	grid-area: media-text-content;
+	word-break: break-word;
+}
+
+.wp-block-media-text > figure > img,
+.wp-block-media-text > figure > video {
+	max-width: unset;
+	width: 100%;
+	vertical-align: middle;
+}
+
+/*
+* Here we here not able to use a mobile first CSS approach.
+* Custom widths are set using inline styles, and on mobile,
+* we need 100% width, so we use important to overwrite the inline style.
+* If the style were set on mobile first, on desktop styles,
+* we would have no way of setting the style again to the inline style.
+*/
 @media (max-width: $medium) {
 
-	table,
-	caption,
-	tbody,
-	tr,
-	th,
-	td {
-		display: block;
-		text-align: left;
+	.wp-block-media-text.is-stacked-on-mobile {
+		grid-template-columns: 100% !important;
+		grid-template-areas: "media-text-media" "media-text-content";
 	}
 
-	thead,
-	th:empty,
-	td:empty {
-		display: none;
-		visibility: hidden;
-	}
-
-	td[data-column]:before {
-		content: attr(data-column) ": ";
-		display: inline-block;
-		font-weight: 600;
-		padding-right: .25em;
-		width: 25%;
-	}
-
-	tbody tr {
-		margin-bottom: 1.5rem;
-	}
-
-	tbody td,
-	tfoot th {
-		border: none;
-		line-height: 1.4;
-		padding: 4px 8px;
-	}
-
-	table .column-1 {
-		font-weight: 600;
-	}
-}
-
-main {
-
-	table,
-	.tablepress {
-		font-variant-numeric: lining-nums tabular-nums;
-		margin-bottom: 1.5rem;
-	}
-
-	thead tr {
-		border-bottom: 1px solid lighten($brand-gray, 15%);
-		font-weight: 600;
-	}
-
-	td,
-	th {
-		padding: .5em .75em;
-		text-align: left;
-	}
-
-	th.nums,
-	td.nums {
-		text-align: right;
-	}
-
-	th {
-		background-color: $neutral-blue;
-		font-weight: 600;
-	}
-
-	.striped {
-
-		tbody tr:nth-child(odd) td {
-			background: $neutral-light;
-		}
-
-	}
-
-}
-
-.sticky-header th {
-	position: relative;
-	position: sticky;
-	top: 49px;
-}
-
-@media ( min-width: 989px ) {
-
-	.sticky-header th {
-		top: -1px;
-	}
-
-	body.admin-bar .sticky-header th {
-		top: 31px;
+	.wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right {
+		grid-template-areas: "media-text-content" "media-text-media";
 	}
 
 }
 
 /**
- * 3.3 Dialogs
+ * 5.16 Banners
+ *
+ * @since 0.9.0
+ *
+ * @todo Improve styling and stop using @extend.
  */
 
-/**
- * 3.4 Figures
- */
-
-figure {
-	position: relative;
-
-	img {
-		max-width: 100%;
-	}
-
-}
-
-figcaption {
-	color: $neutral-dark;
-	font-size: $font-size-1;
-	letter-spacing: .02em;
-	line-height: normal;
-	padding: .3em .5em;
-}
-
-figure.aligncenter figcaption {
-	text-align: center;
-}
-
-/**
- * 3.5 Forms
- */
-
-/* Adds "number" type to the Spine `input[type=$]` styles */
-input[type="number"] {
-	background: #fff;
-	border: 1px solid #ccc;
-	border-radius: 2px;
-	color: #767676;
-	margin: 0;
-	padding: 6px 4px;
-	outline: 0;
-}
-
-.js-search-form {
-	margin: 1.5em 0;
-
-	label {
-		margin-right: 1em;
-	}
-}
-
-/**
- * 3.6 Grid Lists
- */
-
-.gallery {
+.notification {
+	align-items: center;
+	border: 5px solid $neutral-dark;
+	border-left-width: 1em;
 	display: flex;
 	flex-wrap: wrap;
-	margin: auto;
+	justify-content: flex-start;
+	margin: 1.5em 2em;
+	max-width: 54.851em;
+	padding: .75em 1em;
 
-	img {
-		border: 0;
-		box-sizing: border-box;
-		display: block;
-		margin: 0 auto;
+	& > *:not(:first-child) {
+		padding-left: 1em;
+	}
+
+	& > *:first-child {
+		margin-right: auto;
 	}
 }
 
-.gallery-item {
-	box-sizing: border-box;
-	padding: 1rem;
+.notification--positive {
+	@extend .notification;
+	border-color: $accent-green;
 }
 
-.gallery-columns-1 .gallery-item,
-.gallery-columns-2 .gallery-item,
-.gallery-columns-3 .gallery-item,
-.gallery-columns-4 .gallery-item,
-.gallery-columns-5 .gallery-item,
-.gallery-columns-6 .gallery-item,
-.gallery-columns-7 .gallery-item,
-.gallery-columns-8 .gallery-item,
-.gallery-columns-9 .gallery-item {
-	width: 50%;
+.notification--caution {
+	@extend .notification;
+	border-color: $accent-yellow;
 }
 
-@media (max-width: $medium) {
+.notification--warning {
+	@extend .notification;
+	border-color: $accent-orange;
+}
 
-	.gallery-item:nth-child(odd) {
-		padding-left: 0;
-	}
-
-	.gallery-item:nth-child(even) {
-		padding-right: 0;
-	}
-
+.notification--light {
+	@extend .notification;
+	border-color: $brand-gray;
+	border-width: 2px;
+	border-left-width: .5em;
 }
 
 @media (min-width: $medium) {
 
-	.gallery-item {
+	.notification {
+		flex-wrap: nowrap;
+		margin: 1.5em 0;
 
-		.gallery-columns-1 & {
-			width: (100% / 1);
-		}
-
-		.gallery-columns-2 & {
-			width: (100% / 2);
-		}
-
-		.gallery-columns-3 & {
-			width: (100% / 3);
-		}
-
-		.gallery-columns-4 & {
-			width: (100% / 4);
-		}
-
-		.gallery-columns-5 & {
-			width: (100% / 5);
-		}
-
-		.gallery-columns-6 & {
-			width: (100% / 6);
-		}
-
-		.gallery-columns-7 & {
-			width: (100% / 7);
-		}
-
-		.gallery-columns-8 & {
-			width: (100% / 8);
-		}
-
-		.gallery-columns-9 & {
-			width: (100% / 9);
+		p {
+			padding: 0;
 		}
 	}
+
 }
 
 /*
- * 3.7 Modules
+ * 5.17 Modules
+ *
+ * @since 0.9.0
+ *
+ * @todo Stop using @extend.
  */
 
 .module {
@@ -389,332 +1579,5 @@ input[type="number"] {
 }
 
 /**
- * 3.8 Notifications
+ * 5.18 Dialogs
  */
-
-.notification {
-	align-items: center;
-	border: 5px solid $neutral-dark;
-	border-left-width: 1em;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	margin: 1.5em 2em;
-	max-width: 54.851em;
-	padding: .75em 1em;
-
-	& > *:not(:first-child) {
-		padding-left: 1em;
-	}
-
-	& > *:first-child {
-		margin-right: auto;
-	}
-}
-
-.notification--positive {
-	@extend .notification;
-	border-color: $accent-green;
-}
-
-.notification--caution {
-	@extend .notification;
-	border-color: $accent-yellow;
-}
-
-.notification--warning {
-	@extend .notification;
-	border-color: $accent-orange;
-}
-
-.notification--light {
-	@extend .notification;
-	border-color: $brand-gray;
-	border-width: 2px;
-	border-left-width: .5em;
-}
-
-@media (min-width: $medium) {
-
-	.notification {
-		flex-wrap: nowrap;
-		margin: 1.5em 0;
-
-		p {
-			padding: 0;
-		}
-	}
-
-}
-
-/**
- * 3.9 Page Navigation
- */
-
-.pager {
-	margin: 1.5rem auto;
-
-	ul {
-		display: flex;
-		flex-flow: row nowrap;
-		padding: 0;
-	}
-
-	.pagination a {
-		border: 1px solid transparent;
-		display: block;
-		margin: 0 .25em;
-		padding: .75em 1em;
-
-		&:hover,
-		&:focus {
-			background: $nav-color-hover;
-			color: $section-background-color;
-		}
-	}
-
-	.dots,
-	.current {
-		display: block;
-		margin: 0 .25em;
-		padding: .75em 1em;
-	}
-
-	.current {
-		background: $body-background-color;
-		border: 1px solid $neutral-dark;
-	}
-}
-
-.nav-previous,
-.nav-next {
-	display: inline-block;
-	width: 50%;
-}
-
-.nav-next {
-	float: right;
-	text-align: right;
-}
-
-.atoz {
-
-	ul {
-		padding: 0 0 1.5em;
-	}
-
-	li {
-		border: 1px solid $nav-color;
-		display: inline-block;
-		margin: .2em .1em;
-		padding: 0;
-		text-align: center;
-
-		a {
-			border-bottom: none;
-			color: $nav-color;
-			display: block;
-			font-weight: 400;
-			min-width: 2.3em;
-			padding: 8px;
-			transition: all .5s ease;
-
-			&:hover,
-			&:focus {
-				background-color: $nav-color;
-				color: #fff;
-			}
-		}
-	}
-}
-
-@media (min-width: $small) {
-
-	.pager {
-
-		ul {
-			font-size: $font-size-base;
-		}
-	}
-
-}
-
-/**
- * 3.10 Row Lists
- */
-
-.articles-list,
-.recent-articles,
-.cards {
-	list-style-type: none;
-
-	.article-title {
-		line-height: 1.1;
-		font-size: $font-size-4;
-		font-weight: 900;
-		padding: .5em 0 .2em;
-	}
-
-	.article-footer {
-		border: none;
-		color: $text-color;
-		margin: 0 0 .5em;
-		padding: 0;
-	}
-}
-
-@media (min-width: $medium) {
-
-	.articles-list {
-
-		article,
-		.list-item {
-			display: grid;
-			grid-template-columns: minmax(220px, 3fr) minmax(220px, 1fr);
-			grid-column-gap: 2rem;
-
-			.article-header,
-			.article-summary {
-				grid-column: 1;
-			}
-
-			.article-image {
-				grid-column: 2;
-				grid-row: 1 / 3;
-			}
-		}
-	}
-
-	section:not(.features) .articles-list {
-
-		article {
-			border-bottom: 6px solid $body-background-color;
-			font-size: 1rem;
-			line-height: 1.5;
-			max-width: $large;
-			padding: .75rem 0;
-
-			footer {
-				display: none;
-			}
-		}
-
-		.article-image {
-			margin-top: .75em;
-			max-height: 7em;
-			overflow: hidden;
-		}
-	}
-
-}
-
-/**
- * 3.11 Search
- */
-
-#search-menu {
-	background: $neutral-light;
-	box-shadow: -1px 1px 4px 0 rgba(20, 20, 20, .1);
-	display: flex;
-	flex-flow: row wrap;
-	padding: 9rem 2rem 1.5rem;
-	position: absolute;
-	top: 4.8rem;
-	transform: translateY(-100rem);
-	transition-delay: .1s;
-	transition-duration: .3s;
-	transition-property: transform top;
-	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-	width: 100%;
-	z-index: 200;
-
-	&.is-visible {
-		transform: translateY(-4.8rem);
-	}
-}
-
-.search-toggle {
-	padding: .5rem 1rem;
-}
-
-.search-toggle[aria-expanded="true"] {
-	background: $neutral-dark;
-	border-color: $neutral-dark;
-	color: $neutral-light;
-}
-
-#search-menu .screen-reader-text:focus {
-	background: $section-background-color;
-	bottom: 7px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
-	clip: auto;
-	clip-path: inherit;
-	color: $nav-color-hover;
-	display: block;
-	height: auto;
-	padding: 15px 23px 14px;
-	right: 6px;
-	width: auto;
-	z-index: 100000;
-}
-
-.search-form {
-	flex: 1 1 auto;
-}
-
-.search-field[type="search"] {
-	font-size: $font-size-5;
-}
-
-.search-form input[type="submit"] {
-	vertical-align: top;
-}
-
-.search-links-title {
-	font-size: $font-size-6;
-	padding-top: .5rem;
-	padding-bottom: 1rem;
-}
-
-.search-links {
-
-	ul {
-		column-count: 2;
-		margin: 0 0 1rem;
-		padding: 0;
-
-		li {
-			line-height: 1.5;
-		}
-	}
-
-	a:after {
-		background-size: 80%;
-	}
-
-}
-
-@media (max-width: $small ) {
-
-	.search-field[type="search"] {
-		max-width: 300px;
-	}
-
-}
-
-@media (min-width: $small) {
-
-	#search-menu {
-		padding-top: 7.5rem;
-	}
-
-
-}
-
-@media (min-width: $medium) {
-
-	.search-toggle {
-		padding: .75rem 1.5rem;
-	}
-
-}

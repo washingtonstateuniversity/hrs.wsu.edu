@@ -1,0 +1,100 @@
+/**
+ * 6.0 Layouts
+ *
+ * CSS rules for general, reusable layouts, such as columns.
+ *
+ *   - 6.01 Accordians
+ *   - 6.02 Columns
+ *   - 6.03 Seperators
+ *   - 6.04 Tabs
+ *
+ * @since 1.1.0
+ */
+
+/**
+ * 6.01 Accordians
+ *
+ * @todo see https://www.bbc.co.uk/gel/guidelines/category/design-patterns
+ */
+
+/**
+ * 6.02 Columns
+ *
+ * @since 1.1.0
+ */
+
+.wp-block-columns {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.wp-block-column {
+	flex: 1;
+	margin-bottom: 1em;
+	flex-basis: 100%;
+	min-width: 0;
+	word-break: break-word;
+	overflow-wrap: break-word;
+}
+
+@media (min-width: $small) {
+
+	.wp-block-columns {
+		flex-wrap: nowrap;
+	}
+
+	.wp-block-column {
+		flex-basis: 50%;
+		flex-grow: 0;
+	}
+
+	.wp-block-column:nth-child(odd) {
+		margin-right: 1rem;
+	}
+
+	.wp-block-column:nth-child(even) {
+		margin-left: 1rem;
+	}
+
+	.wp-block-column:not(:first-child) {
+		margin-left: 1rem;
+	}
+
+	.wp-block-column:not(:last-child) {
+		margin-right: 1rem;
+	}
+
+}
+
+/**
+ * 6.03 Seperators
+ *
+ * @since 1.1.0
+ */
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 5.5em;
+}
+
+.wp-block-separator.is-style-dots {
+	background: none;
+	border: none;
+	text-align: center;
+	max-width: none;
+	line-height: 1;
+	height: auto;
+}
+
+.wp-block-separator.is-style-dots:before {
+	content: "\00b7 \00b7 \00b7";
+	color: $neutral-dark;
+	font-family: serif;
+	font-size: 24px;
+	letter-spacing: 2em;
+}
+
+/**
+ * 6.04 Tabs
+ *
+ * @todo see https://material.io/design/components/tabs.html#anatomy
+ */

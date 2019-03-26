@@ -18,6 +18,38 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.2.0 (2019-03-26)
+
+### Fixed
+
+* Fix #95 Image `sizes` attribute mislabeled in lazy loader script.
+* :art: Fix #88 Make header margins more consistent and correct CSS override issue.
+* :warning: Fix linter warnings surfaced by new WordPress recommended config.
+
+### Changed
+
+* :wrench: Switched to WordPress recommended ESLint configuration and updated build configs to work with blocks syntax.
+* Update button styles to reflect modified WP block style options.
+* Move the HRS theme setup method calls from the static constructor into the setup function.
+* Remove Spine theme editor style CSS and replace with HRS theme editor style.
+* Switch to 100% and max width on the main article content width to be more flexible and make better use of space on medium-width viewports.
+* :pencil2: Update CSS table of contents and documentation.
+* :truck: Reorganize some style directories for clearer organization and naming. (Consolidate layout, template, and page styles into `layout` directory; Rename "global" to "environment" and move component-specific styles into "components"; Merge `_elements.scss` into `_components.scss` for easier tracking and to avoid duplication.)
+
+### Added
+
+* Add script to modify WP block styles for various blocks.
+* :sparkles: Script entry point to handle adding and modifying WP editor blocks.
+* :art: Back end styles for the WP blocks we want to support.
+* :art: Front end styles for the WP blocks we want to use. Some (like buttons and image galleries) merged with existing styles and others (like columns and  responsive embeds) new or replacing existing styles.
+* Layouts stylesheet part specifically for reusable layout rules.
+
+### Deprecated
+
+* Classic-style image gallery.
+* Old-style YouTube embed CSS using classes `embed-youtube` and `youtube-4x3`. Will be removed in the next minor version.
+* Several image classes that have been replaced by WP blocks.
+
 ## 1.1.1 (2019-02-27)
 
 ### Fixed

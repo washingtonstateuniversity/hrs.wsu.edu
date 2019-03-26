@@ -1,15 +1,21 @@
 /**
- * 0.2 Deprecated
+ * 4.0 Deprecated
  *
  * These styles or selectors have been deprecated and will be removed from
  * future versions. Stop targeting these rules and update any markup that relies
  * on these styles.
  *
+ *   - 4.01 Builder Page Styles
+ *   - 4.02 Builder Banner Styles
+ *   - 4.03 Deprecated Classic Galleries
+ *   - 4.04 Columns
+ *   - 4.05 Embedded Content
+ *
  * @since 0.9.0
  */
 
 /**
- * Deprecated Builder Page Styles
+ * 4.01 Deprecated Builder Page Styles
  *
  * Stop-gap styles targeting Builder Template pages for until the Builder
  * template is phased out.
@@ -41,7 +47,7 @@
 }
 
 /**
- * Deprecated Builder Banner Styles
+ * 4.02 Deprecated Builder Banner Styles
  *
  * @since 0.11.0
  */
@@ -263,7 +269,144 @@
 }
 
 /**
- * 4.2 Columns
+ *
+ * Images
+ *
+ * @since 1.1.0
+ */
+
+/*
+.featured-image {
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 400px;
+	display: block;
+	z-index: 0;
+
+	img {
+		width: 100%;
+		height: auto;
+		border: none;
+		display: none;
+	}
+}
+
+.size-lt-medium img.size-medium.alignleft,
+.size-lt-medium img.size-medium.alignright,
+.size-lt-medium img.size-large.alignleft,
+.size-lt-medium img.size-large.alignright {
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: none;
+	margin: 1em 0;
+}
+
+.section-wrapper-has-background {
+	min-height: 600px !important;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.has-background-image main {
+	position: relative;
+	background-color: transparent;
+}
+*/
+
+/**
+ * 4.03 Deprecated Classic Galleries
+ *
+ * @since 0.1.0
+ */
+
+.gallery-item {
+	box-sizing: border-box;
+	padding: 1rem;
+}
+
+
+.gallery img {
+	border: 0;
+	box-sizing: border-box;
+	display: block;
+	margin: 0 auto;
+}
+
+
+.gallery-columns-1 .gallery-item,
+.gallery-columns-2 .gallery-item,
+.gallery-columns-3 .gallery-item,
+.gallery-columns-4 .gallery-item,
+.gallery-columns-5 .gallery-item,
+.gallery-columns-6 .gallery-item,
+.gallery-columns-7 .gallery-item,
+.gallery-columns-8 .gallery-item,
+.gallery-columns-9 .gallery-item {
+	width: 50%;
+}
+
+@media (max-width: $medium) {
+
+	.gallery-item:nth-child(odd) {
+		padding-left: 0;
+	}
+
+	.gallery-item:nth-child(even) {
+		padding-right: 0;
+	}
+
+}
+
+@media (min-width: $medium) {
+
+	.gallery-item {
+
+		.gallery-columns-1 & {
+			width: (100% / 1);
+		}
+
+		.gallery-columns-2 & {
+			width: (100% / 2);
+		}
+
+		.gallery-columns-3 & {
+			width: (100% / 3);
+		}
+
+		.gallery-columns-4 & {
+			width: (100% / 4);
+		}
+
+		.gallery-columns-5 & {
+			width: (100% / 5);
+		}
+
+		.gallery-columns-6 & {
+			width: (100% / 6);
+		}
+
+		.gallery-columns-7 & {
+			width: (100% / 7);
+		}
+
+		.gallery-columns-8 & {
+			width: (100% / 8);
+		}
+
+		.gallery-columns-9 & {
+			width: (100% / 9);
+		}
+	}
+}
+
+/**
+ * 4.04 Deprecated Columns
+ *
+ * @since 1.0.0
  */
 
 @media only screen and (min-width: 640px) {
@@ -296,4 +439,38 @@
 	.gform_wrapper .gfield_error.hrs-two-col {
 		width: 47%;
 	}
+}
+
+/**
+ * 4.05 Deprecated Embedded Content
+ *
+ * @since 1.1.0 Switch to WP block editor syntax and styles.
+ */
+
+/*
+ * A flexible youtube embed container (default 16x9 aspect ratio)
+ * Following techinque from Rachel McCollin's {@see http://www.smashingmagazine.com/2014/02/27/making-embedded-content-work-in-responsive-design/}
+ * Which is itself based on Thierry Koblenz's {@see http://alistapart.com/article/creating-intrinsic-ratios-for-video}
+ */
+
+.embed-youtube {
+	height: 0;
+	margin-bottom: 1.4em;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+
+	iframe,
+	object,
+	embed {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.youtube-4x3 {
+	padding-bottom: 75%;
 }

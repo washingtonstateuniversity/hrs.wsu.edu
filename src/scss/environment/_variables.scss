@@ -1,9 +1,17 @@
-/*
- * 1.6 Variables
+/**
+ * 1.0 Variables
+ *
+ * SASS variables for colors and sizes.
+ *
+ *   - 1.01 Colors
+ *   - 1.02 Typography
+ *   - 1.03 Breakpoints
+ *
+ * @since 0.11.0
  */
 
 /**
- * 1.6.1 Colors
+ * 1.01 Colors
  *
  * @since 0.11.0
  */
@@ -25,14 +33,14 @@ $dark-dark: #191919;
 
 $text-color: $dark-dark;
 $body-background-color: #f2f2f2;
-$section-background-color: lighten($neutral-light, 5%);
+$section-background-color: lighten($neutral-light, 5%); /* #fdfdfd */
 
 $nav-color: $brand-crimson;
 $nav-color-border: #da1e00;
 $nav-color-hover: $accent-crimson;
 
 /**
- * 1.6.4 Typography
+ * 1.02 Typography
  *
  * @since 0.11.0
  */
@@ -61,7 +69,7 @@ $font-size-7: 2.027em;
 $font-size-8: 2.281em;
 
 /**
- * 1.6.3 Breakpoints
+ * 1.03 Breakpoints
  *
  * @since 0.11.0
  */

@@ -1,17 +1,17 @@
 /**
- * 7.0 Plugins
+ * 9.0 Plugins
  *
  * Rules targeted to adjusting and overriding styles declared by plugins.
  *
- *     - 7.1 TablePress
- *     - 7.2 WP Admin Bar
- *     - 7.3 Gravity Forms
+ *   - 9.01 TablePress
+ *   - 9.02 WP Admin Bar
+ *   - 9.03 Gravity Forms
  *
  * @since 0.11.0
  */
 
 /**
- * 7.1 TablePress
+ * 9.01 TablePress
  *
  * @since 0.11.0
  */
@@ -35,12 +35,16 @@
 	margin-bottom: 1em;
 }
 
-/* HRS Contacts adjustments */
+// HRS Contacts adjustments.
 .tablepress-hrs-contacts td.column-3 {
 	white-space: nowrap;
 }
 
-/* The 2018 Medical Premium Changes table */
+.tablepress.tablepress-hrs-contacts tbody td {
+	vertical-align: text-bottom;
+}
+
+// The 2018 Medical Premium Changes table.
 .hrs-medical-premium-changes-2018 {
 
 	tbody {
@@ -57,7 +61,7 @@
 		width: 9%;
 	}
 
-	/* The 2018 columns */
+	// The 2018 columns.
 	tr .column-3,
 	tr .column-5,
 	tr .column-7,
@@ -107,7 +111,7 @@
 }
 
 /*
- * 7.2 WP Admin Bar
+ * 9.02 WP Admin Bar
  *
  * From the WSU Spine parent theme CSS.
  *
@@ -157,7 +161,7 @@
 }
 
 /**
- * 7.3 Gravity Forms
+ * 9.03 Gravity Forms
  *
  * @since 1.1.0
  */

@@ -1,3 +1,6 @@
+/**
+ * Internal dependencies
+ */
 import { initSearchMenu } from './search-menu';
 import { initLazyImages } from './lazy-images';
 

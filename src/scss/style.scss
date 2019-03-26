@@ -5,10 +5,10 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.1.1
+Version: 1.2.0
 Requires at least: 4.7
-Tested up to: 5.1.0
-Requires PHP: 5.3
+Tested up to: 5.2.0
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: hrs-wsu-edu
@@ -19,75 +19,83 @@ Text Domain: hrs-wsu-edu
 /*
  * Table of Contents
  *
- * 0.0 Deprecated
- *     0.1 Fallbacks
- *     0.2 Deprecated
+ * 1.0 Variables
+ *   - 1.01 Colors
+ *   - 1.02 Typography
+ *   - 1.03 Breakpoints
  *
- * 1.0 Globals
- *     1.1 Foundation
- *     1.2 Typography
- *     1.3 Links
- *     1.4 Lists
- *     1.5 Utility
- *     1.6 Variables
+ * 2.0 Environment
+ *   - 2.01 Foundation
+ *   - 2.02 Typography
+ *   - 2.03 Links
+ *   - 2.04 Lists
+ *   - 2.05 Iconography
+ *   - 2.06 Colors
+ *   - 2.07 Figures
+ *   - 2.08 Usability
+ *   - 2.09 Alignments
+ *   - 2.10 WSU Spine
  *
- * 2.0 Elements
- *     2.1 Buttons
- *     2.2 Embedded Content
- *     2.3 Images
+ * 3.0 Fallbacks
+ *   - 3.01 Grid Layout
  *
- * 3.0 Components
- *     3.1 Cards
- *     3.2 Data Tables
- *     3.3 Dialogs
- *     3.4 Figures
- *     3.5 Forms
- *     3.6 Grid Lists
- *     3.7 Modules
- *     3.8 Notifications
- *     3.9 Page Navigation
- *     3.10 Row Lists
- *     3.11 Search
+ * 4.0 Deprecated
+ *   - 4.01 Builder Page Styles
+ *   - 4.02 Builder Banner Styles
+ *   - 4.03 Deprecated Classic Galleries
+ *   - 4.04 Columns
+ *   - 4.05 Embedded Content
  *
- * 4.0 Layouts
- *     4.1 n/a
+ * 5.0 Components
+ *   - 5.01 Paragraph Text
+ *   - 5.02 Preformatted text
+ *   - 5.03 Quotes
+ *   - 5.04 Data Tables
+ *   - 5.05 Buttons
+ *   - 5.06 Forms
+ *   - 5.07 Search
+ *   - 5.08 Page Navigation
+ *   - 5.09 Audio/Video
+ *   - 5.10 Embeds
+ *   - 5.11 Images
+ *   - 5.12 Cover images
+ *   - 5.13 Image Lists (Gallery)
+ *   - 5.14 Index Lists
+ *   - 5.15 Cards
+ *   - 5.16 Banners
+ *   - 5.17 Modules
+ *   - 5.18 Dialogs
  *
- * 5.0 Templates
- *     5.1 Header
- *     5.2 Footer
- *     5.3 Article
- *     5.4 Archive
- *     5.4 Multi-part Page
+ * 6.0 Layouts
+ *   - 6.01 Accordians
+ *   - 6.02 Columns
+ *   - 6.03 Seperators
+ *   - 6.04 Tabs
  *
- * 6.0 Pages
- *     6.1 Homepage
- *     6.2 Spokane and Tri-Cities
+ * 7.0 Templates
+ *   - 7.01 Site Header
+ *   - 7.02 Site Footer
+ *   - 7.03 Articles
+ *   - 7.04 Single Post
+ *   - 7.05 Single Page
+ *   - 7.06 Taxonomy Archive
  *
- * 7.0 Plugins
- *     7.1 TablePress
- *     7.2 Caldera Forms
- *     7.3 Gravity Forms
+ * 8.0 Pages
+ *   - 8.01 Front Page
+ *   - 8.02 Posts Home
+ *
+ * 9.0 Plugins
+ *   - 9.01 TablePress
+ *   - 9.02 WP Admin Bar
+ *   - 9.03 Gravity Forms
  */
 
-/* Globals */
-@import "globals/variables";
-@import "globals/globals";
-
-/* Deprecated */
+@import "environment/variables";
+@import "environment/environment";
 @import "deprecated/fallbacks";
 @import "deprecated/deprecated";
-
-/* Elements */
-@import "elements/elements";
-
-/* Components */
 @import "components/components";
-
-/* Templates */
-@import "templates/templates";
-
-/* Pages */
-@import "pages/pages";
-
-/* Plugins */
+@import "layout/layouts";
+@import "layout/templates";
+@import "layout/pages";
 @import "plugins/plugins";

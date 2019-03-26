@@ -1,5 +1,10 @@
+/**
+ * External dependencies
+ */
 import '@babel/polyfill';
 import 'url-search-params-polyfill';
 
-// Import main.js after polyfills are loaded.
+/**
+ * Internal dependencies
+ */
 import './main';

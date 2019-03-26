@@ -1,18 +1,17 @@
 /**
- * 6.0 Pages
+ * 8.0 Pages
  *
  * A section for CSS rules targeting specific individual pages. These should be
  * used sparingly and only for unique pages such as the homepage.
  *
- *     - 6.1 Front page
- *     - 6.2 Posts home page
- *     - 6.2 Spokane and Tri-Cities
+ *   - 8.01 Front Page
+ *   - 8.02 Posts Home
  *
  * @since 0.9.0
  */
 
 /**
- * 6.1 Front page
+ * 8.01 Front Page
  *
  * @since 0.11.0
  */
@@ -115,6 +114,7 @@
 
 	h2 {
 		font-size: $font-size-3;
+		margin: 0;
 		padding: 0;
 	}
 
@@ -145,7 +145,7 @@
 }
 
 /**
- * 6.2 Posts home page
+ * 8.02 Posts Home
  *
  * @since 0.15.0
  */
