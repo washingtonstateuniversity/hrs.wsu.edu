@@ -18,7 +18,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.2.0-RC2 (2019-03-26)
+## 1.2.0 (2019-03-26)
 
 ### Fixed
 
