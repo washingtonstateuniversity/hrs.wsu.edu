@@ -39,7 +39,7 @@ const applyImage = function replaceImageAttributeValues( img ) {
 	}
 
 	const srcset = img.getAttribute( 'data-srcset' );
-	const sizes = img.getAttribute( 'data-src-sizes' );
+	const sizes = img.getAttribute( 'data-sizes' );
 
 	// Update the image element `src` attribute with the value of `data-src`.
 	img.src = src;
