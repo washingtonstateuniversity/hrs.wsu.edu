@@ -18,11 +18,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.2.0-RC1 (2019-03-21)
+## 1.2.0-RC2 (2019-03-26)
 
 ### Fixed
 
-* :art: Make header margins more consistent and correct CSS override issue.
+* Fix #95 Image `sizes` attribute mislabeled in lazy loader script.
+* :art: Fix #88 Make header margins more consistent and correct CSS override issue.
 * :warning: Fix linter warnings surfaced by new WordPress recommended config.
 
 ### Changed
