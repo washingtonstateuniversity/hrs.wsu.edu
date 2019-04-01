@@ -19,7 +19,7 @@
  *   - 5.13 Image Lists (Gallery)
  *   - 5.14 Index Lists
  *   - 5.15 Cards
- *   - 5.16 Banners
+ *   - 5.16 Notifications
  *   - 5.17 Modules
  *   - 5.18 Dialogs
  *
@@ -1441,66 +1441,55 @@ input[type="number"] {
 }
 
 /**
- * 5.16 Banners
+ * 5.16 Notifications
  *
- * @since 0.9.0
+ * @since 1.3.0
  *
- * @todo Improve styling and stop using @extend.
  */
 
-.notification {
+.wp-block-hrs-wsu-edu-notifications {
 	align-items: center;
 	border: 5px solid $neutral-dark;
-	border-left-width: 1em;
+	border-left-width: 1rem;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	margin: 1.5em 2em;
-	max-width: 54.851em;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 	padding: .75em 1em;
-
-	& > *:not(:first-child) {
-		padding-left: 1em;
-	}
-
-	& > *:first-child {
-		margin-right: auto;
-	}
 }
 
-.notification--positive {
-	@extend .notification;
-	border-color: $accent-green;
-}
-
-.notification--caution {
-	@extend .notification;
-	border-color: $accent-yellow;
-}
-
-.notification--warning {
-	@extend .notification;
-	border-color: $accent-orange;
-}
-
-.notification--light {
-	@extend .notification;
-	border-color: $brand-gray;
-	border-width: 2px;
-	border-left-width: .5em;
+.wp-block-hrs-wsu-edu-notifications p {
+	margin-right: auto;
 }
 
 @media (min-width: $medium) {
 
-	.notification {
+	.wp-block-hrs-wsu-edu-notifications {
 		flex-wrap: nowrap;
-		margin: 1.5em 0;
 
 		p {
+			max-width: 70%;
 			padding: 0;
 		}
 	}
 
+	.wp-block-hrs-wsu-edu-notifications .wp-block-button__link {
+		margin-left: 1em;
+	}
+
+}
+
+.is-positive {
+	border-color: $accent-green;
+}
+
+.is-caution {
+	border-color: $accent-yellow;
+}
+
+.is-warning {
+	border-color: $accent-orange;
 }
 
 /*

@@ -442,3 +442,52 @@ p.has-drop-cap:not(:focus):after {
 	margin: 0;
 	max-width: 5.5em;
 }
+
+/**
+ * Notifications
+ */
+
+.wp-block-hrs-wsu-edu-notifications {
+	align-items: center;
+	border: 5px solid $neutral-dark;
+	border-left-width: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	padding: .75em 1em;
+}
+
+.wp-block-hrs-wsu-edu-notifications .hrs-wsu-edu-block-notifications__message {
+	margin-right: auto;
+}
+
+@media (min-width: 43em) {
+
+	.wp-block-hrs-wsu-edu-notifications {
+		flex-wrap: nowrap;
+	}
+
+	.hrs-wsu-edu-block-notifications__message {
+		max-width: 90%;
+		padding: 0;
+	}
+
+	.wp-block-hrs-wsu-edu-notifications .wp-block-button__link {
+		margin-left: 1em;
+	}
+
+}
+
+.is-positive {
+	border-color: $accent-green;
+}
+
+.is-caution {
+	border-color: $accent-yellow;
+}
+
+.is-warning {
+	border-color: $accent-orange;
+}

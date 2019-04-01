@@ -10,6 +10,7 @@
  *   - 4.03 Deprecated Classic Galleries
  *   - 4.04 Columns
  *   - 4.05 Embedded Content
+ *   - 4.06 Banner notifications
  *
  * @since 0.9.0
  */
@@ -473,4 +474,67 @@
 
 .youtube-4x3 {
 	padding-bottom: 75%;
+}
+
+/**
+ * 4.06 Banner notifications
+ *
+ * @since 0.9.0
+ *
+ * @todo Improve styling and stop using @extend.
+ */
+
+.notification {
+	align-items: center;
+	border: 5px solid $neutral-dark;
+	border-left-width: 1em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 1.5em 2em;
+	max-width: 54.851em;
+	padding: .75em 1em;
+
+	& > *:not(:first-child) {
+		padding-left: 1em;
+	}
+
+	& > *:first-child {
+		margin-right: auto;
+	}
+}
+
+.notification--positive {
+	@extend .notification;
+	border-color: $accent-green;
+}
+
+.notification--caution {
+	@extend .notification;
+	border-color: $accent-yellow;
+}
+
+.notification--warning {
+	@extend .notification;
+	border-color: $accent-orange;
+}
+
+.notification--light {
+	@extend .notification;
+	border-color: $brand-gray;
+	border-width: 2px;
+	border-left-width: .5em;
+}
+
+@media (min-width: $medium) {
+
+	.notification {
+		flex-wrap: nowrap;
+		margin: 1.5em 0;
+
+		p {
+			padding: 0;
+		}
+	}
+
 }
