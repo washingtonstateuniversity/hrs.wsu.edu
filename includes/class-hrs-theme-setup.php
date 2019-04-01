@@ -55,6 +55,8 @@ class HRS_Theme_Setup {
 		add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
 		add_action( 'after_setup_theme', array( $this, 'remove_spine_filters' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ), 0 );
+		add_action( 'init', array( $this, 'register_blocks' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_scripts' ) );
 		add_action( 'admin_init', array( $this, 'enqueue_editor_style' ) );
 		add_action( 'customize_register', array( $this, 'remove_custom_css_control' ) );
 
@@ -421,6 +423,45 @@ class HRS_Theme_Setup {
 
 		register_taxonomy( 'hrs_unit', array( 'post', 'document' ), $args );
 	}
+
+	/**
+	 * Registers the HRS blocks.
+	 *
+	 * @since 1.3.0
+	 */
+	public function register_blocks() {
+		// Register the HRS Notification block.
+		register_block_type(
+			'hrs-wsu-edu/notifications',
+			array(
+				'editor_script' => 'hrs-block-editor',
+			)
+		);
+	}
+
+	/**
+	 * Adds HRS blocks' block editor scripts.
+	 *
+	 * @since 1.3.0
+	 */
+	public function enqueue_block_editor_scripts() {
+		wp_enqueue_script(
+			'hrs-block-editor',
+			get_stylesheet_directory_uri() . '/assets/js/blocks.js',
+			array(
+				'wp-blocks',
+				'wp-components',
+				'wp-element',
+				'wp-editor',
+				'wp-dom-ready',
+				'wp-edit-post',
+				'wp-i18n',
+			),
+			hrs_get_theme_version(),
+			false
+		);
+	}
+
 
 	/**
 	 * Enqueues the editor style.
