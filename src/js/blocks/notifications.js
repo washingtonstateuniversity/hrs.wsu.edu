@@ -1,10 +1,19 @@
 /**
  * WordPress dependencies
  */
-const { __ } = wp.i18n;
+const { __, _x } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { Dashicon, IconButton } = wp.components;
-const { URLInput, RichText } = wp.editor;
+const {
+	Dashicon,
+	IconButton,
+	PanelBody,
+	ToggleControl,
+} = wp.components;
+const {
+	InspectorControls,
+	URLInput,
+	RichText,
+} = wp.editor;
 const { Fragment } = wp.element;
 
 const name = 'hrs-wsu-edu/notifications';
@@ -56,6 +65,13 @@ const registerNotificationBlock = () => {
 			align: true,
 		},
 
+		styles: [
+			{ name: 'default', label: _x( 'Default', 'block style' ), isDefault: true },
+			{ name: 'positive', label: _x( 'Positive', 'block style' ) },
+			{ name: 'caution', label: _x( 'Caution', 'block style' ) },
+			{ name: 'warning', label: _x( 'Warning', 'block style' ) },
+		],
+
 		edit( props ) {
 			const {
 				className,
@@ -74,6 +90,15 @@ const registerNotificationBlock = () => {
 
 			return (
 				<Fragment>
+					<InspectorControls>
+						<PanelBody title={ __( 'Action Button Settings' ) }>
+							<ToggleControl
+								label={ __( 'Show Action Button' ) }
+								checked={ showActionButton }
+								onChange={ ( checked ) => setAttributes( { showActionButton: checked } ) }
+							/>
+						</PanelBody>
+					</InspectorControls>
 					<div className={ className } title={ actionButtonTitle }>
 						<RichText
 							placeholder={ __( 'Write message…' ) }
