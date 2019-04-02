@@ -47,7 +47,7 @@ const blockAttributes = {
 	},
 };
 
-const registerNotificationBlock = () => {
+export default function registerNotificationBlock() {
 	registerBlockType( name, {
 		title: __( 'Notification' ),
 
@@ -165,10 +165,4 @@ const registerNotificationBlock = () => {
 		},
 
 	} );
-};
-
-const init = () => {
-	registerNotificationBlock();
-};
-
-export { init };
+}
