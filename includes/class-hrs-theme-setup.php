@@ -462,7 +462,6 @@ class HRS_Theme_Setup {
 		);
 	}
 
-
 	/**
 	 * Enqueues the editor style.
 	 *
