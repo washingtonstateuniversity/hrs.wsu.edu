@@ -2,6 +2,7 @@
  * Internal dependencies
  */
 import { init as initStyles } from './blocks/styles';
+import { init as notificationBlock } from './blocks/notifications';
 
 /**
  * Initializes all of the site submodules.
@@ -12,6 +13,7 @@ import { init as initStyles } from './blocks/styles';
  */
 const init = () => {
 	initStyles();
+	notificationBlock();
 };
 
 init();
