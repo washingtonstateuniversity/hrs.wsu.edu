@@ -3329,7 +3329,9 @@ section.latest article {
   border-bottom: 2px solid #981e32;
   font-style: italic;
   font-weight: 600;
-  margin-top: 0;
+  padding: .25em .5em;
+  margin-left: -.3em;
+  margin-bottom: 1.5rem;
 }
 
 .blog .reminders ul {
