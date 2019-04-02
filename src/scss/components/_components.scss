@@ -1463,13 +1463,17 @@ input[type="number"] {
 	margin-right: auto;
 }
 
+.wp-block-hrs-wsu-edu-notifications img {
+	float: left;
+	margin-right: .5em;
+}
+
 @media (min-width: $medium) {
 
 	.wp-block-hrs-wsu-edu-notifications {
 		flex-wrap: nowrap;
 
 		p {
-			max-width: 70%;
 			padding: 0;
 		}
 	}
@@ -1480,15 +1484,15 @@ input[type="number"] {
 
 }
 
-.is-positive {
+.is-style-positive {
 	border-color: $accent-green;
 }
 
-.is-caution {
+.is-style-caution {
 	border-color: $accent-yellow;
 }
 
-.is-warning {
+.is-style-warning {
 	border-color: $accent-orange;
 }
 

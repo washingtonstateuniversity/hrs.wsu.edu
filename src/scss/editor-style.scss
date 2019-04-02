@@ -463,6 +463,11 @@ p.has-drop-cap:not(:focus):after {
 	margin-right: auto;
 }
 
+.wp-block-hrs-wsu-edu-notifications img {
+	float: left;
+	margin-right: .5em;
+}
+
 @media (min-width: 43em) {
 
 	.wp-block-hrs-wsu-edu-notifications {
@@ -470,7 +475,6 @@ p.has-drop-cap:not(:focus):after {
 	}
 
 	.hrs-wsu-edu-block-notifications__message {
-		max-width: 90%;
 		padding: 0;
 	}
 
@@ -480,14 +484,14 @@ p.has-drop-cap:not(:focus):after {
 
 }
 
-.is-positive {
+.is-style-positive {
 	border-color: $accent-green;
 }
 
-.is-caution {
+.is-style-caution {
 	border-color: $accent-yellow;
 }
 
-.is-warning {
+.is-style-warning {
 	border-color: $accent-orange;
 }
