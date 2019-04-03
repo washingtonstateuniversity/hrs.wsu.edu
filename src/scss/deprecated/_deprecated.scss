@@ -11,6 +11,7 @@
  *   - 4.04 Columns
  *   - 4.05 Embedded Content
  *   - 4.06 Banner notifications
+ *   - 4.07 Modules
  *
  * @since 0.9.0
  */
@@ -537,4 +538,77 @@
 		}
 	}
 
+}
+
+/*
+ * 4.07 Modules
+ *
+ * @since 0.9.0
+ */
+
+.module {
+	border: 8px solid $neutral-dark;
+	margin: 1.5rem auto;
+	max-width: 54.851em;
+	padding: 1.5rem 2rem;
+
+	.module-title {
+		color: $neutral-dark;
+	}
+}
+
+.module-title {
+	border-bottom: 4px solid $neutral-light;
+	font-size: $font-size-5;
+	margin: 0 0 .5em;
+	padding: 0 0 .25em;
+}
+
+.module--cta {
+	@extend .module;
+	text-align: center;
+
+	.module-title {
+		font-size: $font-size-7;
+	}
+}
+
+.module--alert {
+	@extend .module;
+	border-color: $brand-crimson;
+	min-width: 300px;
+	text-align: center;
+	width: 80%;
+
+	.module-title {
+		font-size: $font-size-8;
+	}
+
+	svg {
+		fill: $brand-crimson;
+	}
+
+	&.positive {
+		border-color: $accent-green;
+
+		svg {
+			fill: $accent-green;
+		}
+	}
+
+	&.caution {
+		border-color: $accent-yellow;
+
+		svg {
+			fill: $accent-yellow;
+		}
+	}
+
+	&.warning {
+		border-color: $accent-orange;
+
+		svg {
+			fill: $accent-orange;
+		}
+	}
 }
