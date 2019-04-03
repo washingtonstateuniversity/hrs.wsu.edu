@@ -18,20 +18,23 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.3.0-alpha.02 (:construction: WIP 2019-04-01)
+## 1.3.0-alpha04 (:construction: WIP 2019-04-03)
 
 ### Added
 
+- A custom "callout" block in the block editor to display a heading & content-style element.
 - A custom "notification" block in the block editor to display a text & button-style notification element.
 
 ### Changed
 
+- Update notification and callout styles for new block syntax.
 - Move block registration methods to the theme setup class.
 - Add separate webpack environment config for WP blocks.
 
 ### Deprecated
 
-- Old-style banner notifications.
+- Old-style module (callout) styles.
+- Old-style banner notification styles.
 
 ## 1.2.0 (2019-03-26)
 
