@@ -437,6 +437,14 @@ class HRS_Theme_Setup {
 				'editor_script' => 'hrs-block-editor',
 			)
 		);
+
+		// Register the HRS Callout block.
+		register_block_type(
+			'hrs-wsu-edu/callouts',
+			array(
+				'editor_script' => 'hrs-block-editor',
+			)
+		);
 	}
 
 	/**

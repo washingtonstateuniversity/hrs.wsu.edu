@@ -3,6 +3,7 @@
  */
 import { init as modifyBlockStyles } from './blocks/styles';
 import registerNotificationBlock from './blocks/notifications';
+import registerCalloutBlock from './blocks/callouts';
 
 /**
  * Initializes all of the site submodules.
@@ -14,6 +15,7 @@ import registerNotificationBlock from './blocks/notifications';
 const init = () => {
 	modifyBlockStyles();
 	registerNotificationBlock();
+	registerCalloutBlock();
 };
 
 init();
