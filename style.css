@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.2.0
+Version: 1.3.0-RC1
 Requires at least: 4.7
 Tested up to: 5.2.0
 Requires PHP: 5.6
@@ -779,6 +779,8 @@ figure.wp-block-pullquote.alignright.alignright,
  *   - 4.03 Deprecated Classic Galleries
  *   - 4.04 Columns
  *   - 4.05 Embedded Content
+ *   - 4.06 Banner notifications
+ *   - 4.07 Modules
  *
  * @since 0.9.0
  */
@@ -1187,6 +1189,131 @@ figure.wp-block-pullquote.alignright.alignright,
 }
 
 /**
+ * 4.06 Banner notifications
+ *
+ * @since 0.9.0
+ *
+ * @todo Improve styling and stop using @extend.
+ */
+.notification, .notification--positive, .notification--caution, .notification--warning, .notification--light {
+  align-items: center;
+  border: 5px solid #475055;
+  border-left-width: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 1.5em 2em;
+  max-width: 54.851em;
+  padding: .75em 1em;
+}
+
+.notification > *:not(:first-child), .notification--positive > *:not(:first-child), .notification--caution > *:not(:first-child), .notification--warning > *:not(:first-child), .notification--light > *:not(:first-child) {
+  padding-left: 1em;
+}
+
+.notification > *:first-child, .notification--positive > *:first-child, .notification--caution > *:first-child, .notification--warning > *:first-child, .notification--light > *:first-child {
+  margin-right: auto;
+}
+
+.notification--positive {
+  border-color: #ada400;
+}
+
+.notification--caution {
+  border-color: #ffb81c;
+}
+
+.notification--warning {
+  border-color: #f6861f;
+}
+
+.notification--light {
+  border-color: #5e6a71;
+  border-width: 2px;
+  border-left-width: .5em;
+}
+
+@media (min-width: 43em) {
+  .notification, .notification--positive, .notification--caution, .notification--warning, .notification--light {
+    flex-wrap: nowrap;
+    margin: 1.5em 0;
+  }
+  .notification p, .notification--positive p, .notification--caution p, .notification--warning p, .notification--light p {
+    padding: 0;
+  }
+}
+
+/*
+ * 4.07 Modules
+ *
+ * @since 0.9.0
+ */
+.module, .module--cta, .module--alert {
+  border: 8px solid #475055;
+  margin: 1.5rem auto;
+  max-width: 54.851em;
+  padding: 1.5rem 2rem;
+}
+
+.module .module-title, .module--cta .module-title, .module--alert .module-title {
+  color: #475055;
+}
+
+.module-title {
+  border-bottom: 4px solid #eff0f1;
+  font-size: 1.602em;
+  margin: 0 0 .5em;
+  padding: 0 0 .25em;
+}
+
+.module--cta {
+  text-align: center;
+}
+
+.module--cta .module-title {
+  font-size: 2.027em;
+}
+
+.module--alert {
+  border-color: #981e32;
+  min-width: 300px;
+  text-align: center;
+  width: 80%;
+}
+
+.module--alert .module-title {
+  font-size: 2.281em;
+}
+
+.module--alert svg {
+  fill: #981e32;
+}
+
+.module--alert.positive {
+  border-color: #ada400;
+}
+
+.module--alert.positive svg {
+  fill: #ada400;
+}
+
+.module--alert.caution {
+  border-color: #ffb81c;
+}
+
+.module--alert.caution svg {
+  fill: #ffb81c;
+}
+
+.module--alert.warning {
+  border-color: #f6861f;
+}
+
+.module--alert.warning svg {
+  fill: #f6861f;
+}
+
+/**
  * 5.0 Components
  *
  * CSS rules for larger modular components. Components should designed with a
@@ -1207,7 +1334,7 @@ figure.wp-block-pullquote.alignright.alignright,
  *   - 5.13 Image Lists (Gallery)
  *   - 5.14 Index Lists
  *   - 5.15 Cards
- *   - 5.16 Banners
+ *   - 5.16 Notifications
  *   - 5.17 Modules
  *   - 5.18 Dialogs
  *
@@ -2596,130 +2723,106 @@ input[type="number"] {
 }
 
 /**
- * 5.16 Banners
+ * 5.16 Notifications
  *
- * @since 0.9.0
+ * @since 1.3.0
  *
- * @todo Improve styling and stop using @extend.
  */
-.notification, .notification--positive, .notification--caution, .notification--warning, .notification--light {
+.wp-block-hrs-wsu-edu-notifications {
   align-items: center;
   border: 5px solid #475055;
-  border-left-width: 1em;
+  border-left-width: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin: 1.5em 2em;
-  max-width: 54.851em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
   padding: .75em 1em;
 }
 
-.notification > *:not(:first-child), .notification--positive > *:not(:first-child), .notification--caution > *:not(:first-child), .notification--warning > *:not(:first-child), .notification--light > *:not(:first-child) {
-  padding-left: 1em;
-}
-
-.notification > *:first-child, .notification--positive > *:first-child, .notification--caution > *:first-child, .notification--warning > *:first-child, .notification--light > *:first-child {
+.wp-block-hrs-wsu-edu-notifications p {
   margin-right: auto;
 }
 
-.notification--positive {
-  border-color: #ada400;
-}
-
-.notification--caution {
-  border-color: #ffb81c;
-}
-
-.notification--warning {
-  border-color: #f6861f;
-}
-
-.notification--light {
-  border-color: #5e6a71;
-  border-width: 2px;
-  border-left-width: .5em;
+.wp-block-hrs-wsu-edu-notifications img {
+  float: left;
+  margin-right: .5em;
 }
 
 @media (min-width: 43em) {
-  .notification, .notification--positive, .notification--caution, .notification--warning, .notification--light {
+  .wp-block-hrs-wsu-edu-notifications {
     flex-wrap: nowrap;
-    margin: 1.5em 0;
   }
-  .notification p, .notification--positive p, .notification--caution p, .notification--warning p, .notification--light p {
+  .wp-block-hrs-wsu-edu-notifications p {
     padding: 0;
+  }
+  .wp-block-hrs-wsu-edu-notifications .wp-block-button__link {
+    margin-left: 1em;
   }
 }
 
 /*
- * 5.17 Modules
+ * 5.17 Callouts
  *
- * @since 0.9.0
- *
- * @todo Stop using @extend.
+ * @since 1.3.0
  */
-.module, .module--cta, .module--alert {
+.wp-block-hrs-wsu-edu-callouts {
   border: 8px solid #475055;
-  margin: 1.5rem auto;
-  max-width: 54.851em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
   padding: 1.5rem 2rem;
 }
 
-.module .module-title, .module--cta .module-title, .module--alert .module-title {
-  color: #475055;
-}
-
-.module-title {
+.wp-block-hrs-wsu-edu-callouts h1,
+.wp-block-hrs-wsu-edu-callouts h2,
+.wp-block-hrs-wsu-edu-callouts h3,
+.wp-block-hrs-wsu-edu-callouts h4,
+.wp-block-hrs-wsu-edu-callouts h5,
+.wp-block-hrs-wsu-edu-callouts h6 {
   border-bottom: 4px solid #eff0f1;
+  color: #475055;
   font-size: 1.602em;
   margin: 0 0 .5em;
   padding: 0 0 .25em;
 }
 
-.module--cta {
-  text-align: center;
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h1,
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h2,
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h3,
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h4,
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h5,
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h6 {
+  border-bottom-color: rgba(173, 164, 0, 0.4);
 }
 
-.module--cta .module-title {
-  font-size: 2.027em;
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h1,
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h2,
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h3,
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h4,
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h5,
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h6 {
+  border-bottom-color: rgba(255, 184, 28, 0.4);
 }
 
-.module--alert {
-  border-color: #981e32;
-  min-width: 300px;
-  text-align: center;
-  width: 80%;
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h1,
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h2,
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h3,
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h4,
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h5,
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h6 {
+  border-bottom-color: rgba(246, 134, 31, 0.4);
 }
 
-.module--alert .module-title {
-  font-size: 2.281em;
-}
-
-.module--alert svg {
-  fill: #981e32;
-}
-
-.module--alert.positive {
+.is-style-positive {
   border-color: #ada400;
 }
 
-.module--alert.positive svg {
-  fill: #ada400;
-}
-
-.module--alert.caution {
+.is-style-caution {
   border-color: #ffb81c;
 }
 
-.module--alert.caution svg {
-  fill: #ffb81c;
-}
-
-.module--alert.warning {
+.is-style-warning {
   border-color: #f6861f;
-}
-
-.module--alert.warning svg {
-  fill: #f6861f;
 }
 
 /**

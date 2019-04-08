@@ -18,18 +18,18 @@
     "Firefox ESR"
   ],
   "devDependencies": {
-    "@babel/core": "^7.3.4",
+    "@babel/core": "^7.4.3",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/polyfill": "^7.2.5",
-    "@babel/preset-env": "^7.3.4",
-    "@wordpress/babel-preset-default": "^4.0.0",
-    "@wordpress/eslint-plugin": "^2.0.0",
-    "autoprefixer": "^9.5.0",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@wordpress/babel-preset-default": "^4.1.0",
+    "@wordpress/eslint-plugin": "^2.1.0",
+    "autoprefixer": "^9.5.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "cpx": "^1.5.x",
     "cssnano": "^4.1.10",
-    "eslint": "^5.15.3",
+    "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.11.0",
@@ -37,7 +37,7 @@
     "postcss-cli": "^6.1.2",
     "rimraf": "^2.6.3",
     "stylelint": "^9.10.1",
-    "svgo": "^1.2.0",
+    "svgo": "^1.2.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-merge": "^4.2.1"
@@ -63,6 +63,6 @@
     "build": "run-p \"build:*\""
   },
   "dependencies": {
-    "url-search-params-polyfill": "^5.0.0"
+    "url-search-params-polyfill": "^5.1.0"
   }
 }

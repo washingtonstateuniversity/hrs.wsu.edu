@@ -10,6 +10,8 @@
  *   - 4.03 Deprecated Classic Galleries
  *   - 4.04 Columns
  *   - 4.05 Embedded Content
+ *   - 4.06 Banner notifications
+ *   - 4.07 Modules
  *
  * @since 0.9.0
  */
@@ -473,4 +475,140 @@
 
 .youtube-4x3 {
 	padding-bottom: 75%;
+}
+
+/**
+ * 4.06 Banner notifications
+ *
+ * @since 0.9.0
+ *
+ * @todo Improve styling and stop using @extend.
+ */
+
+.notification {
+	align-items: center;
+	border: 5px solid $neutral-dark;
+	border-left-width: 1em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 1.5em 2em;
+	max-width: 54.851em;
+	padding: .75em 1em;
+
+	& > *:not(:first-child) {
+		padding-left: 1em;
+	}
+
+	& > *:first-child {
+		margin-right: auto;
+	}
+}
+
+.notification--positive {
+	@extend .notification;
+	border-color: $accent-green;
+}
+
+.notification--caution {
+	@extend .notification;
+	border-color: $accent-yellow;
+}
+
+.notification--warning {
+	@extend .notification;
+	border-color: $accent-orange;
+}
+
+.notification--light {
+	@extend .notification;
+	border-color: $brand-gray;
+	border-width: 2px;
+	border-left-width: .5em;
+}
+
+@media (min-width: $medium) {
+
+	.notification {
+		flex-wrap: nowrap;
+		margin: 1.5em 0;
+
+		p {
+			padding: 0;
+		}
+	}
+
+}
+
+/*
+ * 4.07 Modules
+ *
+ * @since 0.9.0
+ */
+
+.module {
+	border: 8px solid $neutral-dark;
+	margin: 1.5rem auto;
+	max-width: 54.851em;
+	padding: 1.5rem 2rem;
+
+	.module-title {
+		color: $neutral-dark;
+	}
+}
+
+.module-title {
+	border-bottom: 4px solid $neutral-light;
+	font-size: $font-size-5;
+	margin: 0 0 .5em;
+	padding: 0 0 .25em;
+}
+
+.module--cta {
+	@extend .module;
+	text-align: center;
+
+	.module-title {
+		font-size: $font-size-7;
+	}
+}
+
+.module--alert {
+	@extend .module;
+	border-color: $brand-crimson;
+	min-width: 300px;
+	text-align: center;
+	width: 80%;
+
+	.module-title {
+		font-size: $font-size-8;
+	}
+
+	svg {
+		fill: $brand-crimson;
+	}
+
+	&.positive {
+		border-color: $accent-green;
+
+		svg {
+			fill: $accent-green;
+		}
+	}
+
+	&.caution {
+		border-color: $accent-yellow;
+
+		svg {
+			fill: $accent-yellow;
+		}
+	}
+
+	&.warning {
+		border-color: $accent-orange;
+
+		svg {
+			fill: $accent-orange;
+		}
+	}
 }

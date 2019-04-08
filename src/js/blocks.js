@@ -1,17 +1,21 @@
 /**
  * Internal dependencies
  */
-import { init as initStyles } from './blocks/styles';
+import { init as modifyBlockStyles } from './blocks/styles';
+import registerNotificationBlock from './blocks/notifications';
+import registerCalloutBlock from './blocks/callouts';
 
 /**
  * Initializes all of the site submodules.
  *
- * This is the main script entry point for the site.
+ * This is the main script entry point for the custom blocks.
  *
- * @since 1.0.0
+ * @since 1.3.0
  */
 const init = () => {
-	initStyles();
+	modifyBlockStyles();
+	registerNotificationBlock();
+	registerCalloutBlock();
 };
 
 init();
