@@ -18,7 +18,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.3.0-alpha04 (:construction: WIP 2019-04-03)
+## 1.3.0-RC1 (WIP 2019-04-08)
+
+### Fixed
+
+- Child blocks should not inherit center alignment from parent blocks.
 
 ### Added
 
