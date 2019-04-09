@@ -18,14 +18,16 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.3.0-RC1 (WIP 2019-04-08)
+## 1.3.0-RC2 (WIP 2019-04-09)
 
 ### Fixed
 
+- Fix z-index and text color for new cover blocks allowed content.
 - Child blocks should not inherit center alignment from parent blocks.
 
 ### Added
 
+- A "sidebar" block in the block editor to display content in a weighted two-column layout with options for the "sidebar" to sit to the left or the right.
 - A custom "callout" block in the block editor to display a heading & content-style element.
 - A custom "notification" block in the block editor to display a text & button-style notification element.
 
