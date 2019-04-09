@@ -445,6 +445,14 @@ class HRS_Theme_Setup {
 				'editor_script' => 'hrs-block-editor',
 			)
 		);
+
+		// Register the HRS Sidebar block.
+		register_block_type(
+			'hrs-wsu-edu/sidebar',
+			array(
+				'editor_script' => 'hrs-block-editor',
+			)
+		);
 	}
 
 	/**
