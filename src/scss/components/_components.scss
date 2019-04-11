@@ -19,7 +19,7 @@
  *   - 5.13 Image Lists (Gallery)
  *   - 5.14 Index Lists
  *   - 5.15 Cards
- *   - 5.16 Banners
+ *   - 5.16 Notifications
  *   - 5.17 Modules
  *   - 5.18 Dialogs
  *
@@ -991,6 +991,31 @@ input[type="number"] {
 	display: flex;
 }
 
+.wp-block-cover__inner-container {
+	color: $section-background-color;
+	width: calc(100% - 70px);
+	z-index: 1;
+}
+
+.wp-block-cover-image p,
+.wp-block-cover-image h1,
+.wp-block-cover-image h2,
+.wp-block-cover-image h3,
+.wp-block-cover-image h4,
+.wp-block-cover-image h5,
+.wp-block-cover-image h6,
+.wp-block-cover-image .wp-block-subhead,
+.wp-block-cover p,
+.wp-block-cover h1,
+.wp-block-cover h2,
+.wp-block-cover h3,
+.wp-block-cover h4,
+.wp-block-cover h5,
+.wp-block-cover h6,
+.wp-block-cover .wp-block-subhead {
+	color: inherit;
+}
+
 .wp-block-cover__video-background {
 	height: 100%;
 	left: 50%;
@@ -1441,141 +1466,112 @@ input[type="number"] {
 }
 
 /**
- * 5.16 Banners
+ * 5.16 Notifications
  *
- * @since 0.9.0
+ * @since 1.3.0
  *
- * @todo Improve styling and stop using @extend.
  */
 
-.notification {
+.wp-block-hrs-wsu-edu-notifications {
 	align-items: center;
 	border: 5px solid $neutral-dark;
-	border-left-width: 1em;
+	border-left-width: 1rem;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	margin: 1.5em 2em;
-	max-width: 54.851em;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 	padding: .75em 1em;
-
-	& > *:not(:first-child) {
-		padding-left: 1em;
-	}
-
-	& > *:first-child {
-		margin-right: auto;
-	}
 }
 
-.notification--positive {
-	@extend .notification;
-	border-color: $accent-green;
+.wp-block-hrs-wsu-edu-notifications p {
+	margin-right: auto;
 }
 
-.notification--caution {
-	@extend .notification;
-	border-color: $accent-yellow;
-}
-
-.notification--warning {
-	@extend .notification;
-	border-color: $accent-orange;
-}
-
-.notification--light {
-	@extend .notification;
-	border-color: $brand-gray;
-	border-width: 2px;
-	border-left-width: .5em;
+.wp-block-hrs-wsu-edu-notifications img {
+	float: left;
+	margin-right: .5em;
 }
 
 @media (min-width: $medium) {
 
-	.notification {
+	.wp-block-hrs-wsu-edu-notifications {
 		flex-wrap: nowrap;
-		margin: 1.5em 0;
 
 		p {
 			padding: 0;
 		}
 	}
 
+	.wp-block-hrs-wsu-edu-notifications .wp-block-button__link {
+		margin-left: 1em;
+	}
+
 }
 
 /*
- * 5.17 Modules
+ * 5.17 Callouts
  *
- * @since 0.9.0
- *
- * @todo Stop using @extend.
+ * @since 1.3.0
  */
 
-.module {
+.wp-block-hrs-wsu-edu-callouts {
 	border: 8px solid $neutral-dark;
-	margin: 1.5rem auto;
-	max-width: 54.851em;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 	padding: 1.5rem 2rem;
-
-	.module-title {
-		color: $neutral-dark;
-	}
 }
 
-.module-title {
+.wp-block-hrs-wsu-edu-callouts h1,
+.wp-block-hrs-wsu-edu-callouts h2,
+.wp-block-hrs-wsu-edu-callouts h3,
+.wp-block-hrs-wsu-edu-callouts h4,
+.wp-block-hrs-wsu-edu-callouts h5,
+.wp-block-hrs-wsu-edu-callouts h6 {
 	border-bottom: 4px solid $neutral-light;
+	color: $neutral-dark;
 	font-size: $font-size-5;
 	margin: 0 0 .5em;
 	padding: 0 0 .25em;
 }
 
-.module--cta {
-	@extend .module;
-	text-align: center;
-
-	.module-title {
-		font-size: $font-size-7;
-	}
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h1,
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h2,
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h3,
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h4,
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h5,
+.wp-block-hrs-wsu-edu-callouts.is-style-positive h6 {
+	border-bottom-color: rgba(173, 164, 0, .4);
 }
 
-.module--alert {
-	@extend .module;
-	border-color: $brand-crimson;
-	min-width: 300px;
-	text-align: center;
-	width: 80%;
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h1,
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h2,
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h3,
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h4,
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h5,
+.wp-block-hrs-wsu-edu-callouts.is-style-caution h6 {
+	border-bottom-color: rgba(255, 184, 28, .4);
+}
 
-	.module-title {
-		font-size: $font-size-8;
-	}
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h1,
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h2,
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h3,
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h4,
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h5,
+.wp-block-hrs-wsu-edu-callouts.is-style-warning h6 {
+	border-bottom-color: rgba(246, 134, 31, .4);
+}
 
-	svg {
-		fill: $brand-crimson;
-	}
+.is-style-positive {
+	border-color: $accent-green;
+}
 
-	&.positive {
-		border-color: $accent-green;
+.is-style-caution {
+	border-color: $accent-yellow;
+}
 
-		svg {
-			fill: $accent-green;
-		}
-	}
-
-	&.caution {
-		border-color: $accent-yellow;
-
-		svg {
-			fill: $accent-yellow;
-		}
-	}
-
-	&.warning {
-		border-color: $accent-orange;
-
-		svg {
-			fill: $accent-orange;
-		}
-	}
+.is-style-warning {
+	border-color: $accent-orange;
 }
 
 /**

@@ -4,7 +4,7 @@
  * CSS rules for general, reusable layouts, such as columns.
  *
  *   - 6.01 Accordians
- *   - 6.02 Columns
+ *   - 6.02 Columns and Sidebars
  *   - 6.03 Seperators
  *   - 6.04 Tabs
  *
@@ -18,9 +18,10 @@
  */
 
 /**
- * 6.02 Columns
+ * 6.02 Columns and Sidebars
  *
  * @since 1.1.0
+ * @since 1.3.0 Added sidebar (weighted column) variant.
  */
 
 .wp-block-columns {
@@ -62,6 +63,22 @@
 
 	.wp-block-column:not(:last-child) {
 		margin-right: 1rem;
+	}
+
+	.wp-block-hrs-wsu-edu-sidebar:not(.is-style-sidebar-left) > .wp-block-column:first-child {
+		flex-basis: 70%;
+	}
+
+	.wp-block-hrs-wsu-edu-sidebar:not(.is-style-sidebar-left) > .wp-block-column:last-child {
+		flex-basis: 30%;
+	}
+
+	.wp-block-hrs-wsu-edu-sidebar.is-style-sidebar-left > .wp-block-column:first-child {
+		flex-basis: 30%;
+	}
+
+	.wp-block-hrs-wsu-edu-sidebar.is-style-sidebar-left > .wp-block-column:last-child {
+		flex-basis: 70%;
 	}
 
 }
