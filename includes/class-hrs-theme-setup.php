@@ -57,7 +57,6 @@ class HRS_Theme_Setup {
 		add_action( 'init', array( $this, 'register_taxonomies' ), 0 );
 		add_action( 'init', array( $this, 'register_blocks' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_scripts' ) );
-		add_action( 'admin_init', array( $this, 'enqueue_editor_style' ) );
 		add_action( 'customize_register', array( $this, 'remove_custom_css_control' ) );
 
 		// Set Spine options.
@@ -236,6 +235,7 @@ class HRS_Theme_Setup {
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'responsive-embeds' );
 		add_theme_support( 'editor-styles' );
+		add_editor_style( '/assets/css/editor-style.css' );
 
 		// Disables some custom Gutenberg block options.
 		add_theme_support( 'disable-custom-colors' );
@@ -476,15 +476,6 @@ class HRS_Theme_Setup {
 			hrs_get_theme_version(),
 			false
 		);
-	}
-
-	/**
-	 * Enqueues the editor style.
-	 *
-	 * @since 1.1.0
-	 */
-	public function enqueue_editor_style() {
-		add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-style.css' );
 	}
 
 	/**
