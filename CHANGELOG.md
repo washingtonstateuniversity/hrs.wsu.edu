@@ -18,6 +18,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.3.1 (2019-04-12)
+
+### Fixed
+
+- Fix #100 Use local path for `add_editor_style` to load styles more reliably.
+
 ## 1.3.0 (2019-04-10)
 
 ### Fixed
