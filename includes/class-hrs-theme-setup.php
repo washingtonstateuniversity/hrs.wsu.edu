@@ -194,7 +194,7 @@ class HRS_Theme_Setup {
 			'large_format'            => ' folio max-1386',
 			'crop'                    => true,
 			'spineless'               => true,
-			'bleed'                   => true,
+			'bleed'                   => false,
 			'open_sans'               => '0',
 			'contact_name'            => 'Washington State University',
 			'contact_department'      => 'Human Resource Services',
