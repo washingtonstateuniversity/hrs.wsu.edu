@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.4.0-beta01
+Version: 1.4.0-beta02
 Requires at least: 4.7
 Tested up to: 5.2.0
 Requires PHP: 5.6
@@ -188,7 +188,7 @@ main,
   background-repeat: no-repeat;
   background-position: left top;
   color: #191919;
-  font: 400 18px/28px "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
+  font: 400 18px/1.6 "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -1442,7 +1442,7 @@ blockquote cite:before {
   font-size: 2.281em;
   position: absolute;
   left: 10px;
-  top: .5em;
+  top: 0;
 }
 
 .wp-block-quote.is-style-large p,
