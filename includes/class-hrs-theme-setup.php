@@ -352,6 +352,7 @@ class HRS_Theme_Setup {
 			array(
 				'hrs-search-menu' => __( 'Search Menu', 'hrs-wsu-edu' ),
 				'hrs-site-footer' => __( 'Site Footer', 'hrs-wsu-edu' ),
+				'site-reference'  => __( 'Site Reference (Footer)', 'hrs-wsu-edu' ),
 			)
 		);
 	}
