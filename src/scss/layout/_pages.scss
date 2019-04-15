@@ -16,33 +16,6 @@
  * @since 0.11.0
  */
 
-@media (min-width: $large) {
-
-	.home {
-
-		#spine.cropped:not(.skimmed) {
-			margin-left: 2rem;
-		}
-
-		#search-menu {
-			right: 0;
-			width: 60%;
-		}
-	}
-
-}
-
-.home {
-
-	#wsuwp-main section:nth-of-type(-n+2) {
-		background: transparent;
-	}
-
-	#spine.cropped #glue {
-		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .05);
-	}
-}
-
 .home-main-subnav nav {
 
 	ul {
@@ -142,6 +115,27 @@
 		background-color: $section-background-color;
 		padding: 1.5em 2em;
 	}
+}
+
+@media (min-width: $large) {
+
+	.home #spine.cropped:not(.skimmed) {
+		margin-left: 2rem;
+	}
+
+	.home #binder.spineless #search-menu {
+		right: 0;
+		width: 60%;
+	}
+
+}
+
+.home #binder.spineless #wsuwp-main section:nth-of-type(-n+2) {
+	background: transparent;
+}
+
+.home #spine.cropped #glue {
+	box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .05);
 }
 
 /**

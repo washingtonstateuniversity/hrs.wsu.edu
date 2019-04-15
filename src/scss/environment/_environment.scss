@@ -65,9 +65,9 @@ main,
 		border-left: 8px solid $body-background-color;
 	}
 
-	.home main section,
-	.home main .page-header,
-	.home .site-header {
+	.home #binder.spineless main section,
+	.home #binder.spineless main .page-header,
+	.home #binder.spineless .site-header {
 		border-left: none;
 	}
 
