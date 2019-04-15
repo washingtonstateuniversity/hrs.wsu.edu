@@ -18,6 +18,18 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.4.0-beta01 (:construction: WIP 2019-04-15)
+
+### Fixed
+
+- Set default Spine bleed setting to false.
+- Add menu location to prevent duplicating primary and site reference nav menus.
+
+### Changed
+
+- Isolate cropped-Spine homepage variant styles.
+- Set the site reference nav menu in the footer to use the new `site-reference` menu location and adjust the depth to 1 to prevent wrapping.
+
 ## 1.3.1 (2019-04-12)
 
 ### Fixed
