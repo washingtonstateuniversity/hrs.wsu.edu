@@ -113,16 +113,17 @@ ins {
 
 .has-medium-font-size {
 	font-size: $font-size-3;
+	line-height: 1.4;
 }
 
 .has-large-font-size {
 	font-size: $font-size-5;
-	line-height: 1.25;
+	line-height: 1.4;
 }
 
 .has-larger-font-size {
 	font-size: $font-size-7;
-	line-height: 1.15;
+	line-height: 1.2;
 }
 
 /**

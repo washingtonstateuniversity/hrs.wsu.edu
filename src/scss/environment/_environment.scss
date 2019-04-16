@@ -141,16 +141,17 @@ ins {
 
 .has-medium-font-size {
 	font-size: $font-size-3;
+	line-height: 1.4;
 }
 
 .has-large-font-size {
 	font-size: $font-size-5;
-	line-height: 1.25;
+	line-height: 1.4;
 }
 
 .has-larger-font-size {
 	font-size: $font-size-7;
-	line-height: 1.15;
+	line-height: 1.2;
 }
 
 /**
@@ -415,7 +416,6 @@ figcaption {
 	color: $neutral-dark;
 	font-size: $font-size-1;
 	letter-spacing: .02em;
-	line-height: normal;
 	margin-bottom: 1em;
 	padding: .3em .5em 0;
 }
