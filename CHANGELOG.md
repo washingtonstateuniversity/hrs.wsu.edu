@@ -18,7 +18,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.4.0-beta03 (:construction: WIP 2019-04-16)
+## 1.4.0-beta04 (:construction: WIP 2019-04-17)
 
 ### Fixed
 
@@ -31,6 +31,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Set global line height to relative value of 1.6.
 - Isolate cropped-Spine homepage variant styles.
 - Set the site reference nav menu in the footer to use the new `site-reference` menu location and adjust the depth to 1 to prevent wrapping.
+
+### Added
+
+- :sparkles: Additional intermediate image size for "small" images (max width of 350px).
+- A default attachment template to handle redirecting all attachment page requests to the attachment parent post if it exists and the attachment URL itself if it doesn't.
 
 ## 1.3.1 (2019-04-12)
 
