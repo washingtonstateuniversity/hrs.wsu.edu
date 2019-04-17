@@ -52,6 +52,8 @@ class HRS_Theme_Setup {
 	 */
 	public function setup_hooks() {
 		add_action( 'after_setup_theme', array( $this, 'add_theme_support' ) );
+		add_action( 'after_setup_theme', array( $this, 'add_image_sizes' ) );
+		add_filter( 'image_size_names_choose', array( $this, 'add_image_sizes_ui' ) );
 		add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
 		add_action( 'after_setup_theme', array( $this, 'remove_spine_filters' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ), 0 );
@@ -332,6 +334,32 @@ class HRS_Theme_Setup {
 					'size' => 36.486, // Sass var $font-size-7
 					'slug' => 'larger',
 				),
+			)
+		);
+	}
+
+	/**
+	 * Registers additional image sizes.
+	 *
+	 * @since 1.4.0
+	 */
+	public function add_image_sizes() {
+		add_image_size( 'small', 350, 9999, false );
+	}
+
+	/**
+	 * Adds custom image sizes to the admin selector UI.
+	 *
+	 * @since 1.4.0
+	 *
+	 * @param array $sizes An array of the existing image sizes in string format.
+	 * @return array An array of image sizes in string format.
+	 */
+	public function add_image_sizes_ui( $sizes ) {
+		return array_merge(
+			$sizes,
+			array(
+				'small' => __( 'Small' ),
 			)
 		);
 	}
