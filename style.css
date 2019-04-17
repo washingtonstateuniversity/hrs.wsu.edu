@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.4.0-beta03
+Version: 1.4.0-beta04
 Requires at least: 4.7
 Tested up to: 5.2.0
 Requires PHP: 5.6
@@ -3000,13 +3000,13 @@ a.site-title {
   border: none;
   color: #981e32;
   font-size: 1.424em;
-  margin: .75rem 1rem .75rem 0;
+  margin-right: 1rem;
 }
 
 @media (min-width: 43em) {
   a.site-title {
     font-size: 1.802em;
-    margin: 1rem 2rem;
+    margin: .5rem 2rem;
   }
 }
 
@@ -3019,7 +3019,7 @@ a.site-title {
   }
   a.site-title {
     font-size: 2.027em;
-    margin: 2.027rem 2rem;
+    margin: 1rem 2rem;
   }
 }
 
