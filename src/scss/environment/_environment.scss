@@ -517,40 +517,36 @@ figure.aligncenter,
 }
 
 // Highly selected in order to override parent theme rules.
-.editor-block-list__block[data-type="core/embed"][data-align="left"] .editor-block-list__block-edit,
-.editor-block-list__block[data-type="core/embed"][data-align="right"] .editor-block-list__block-edit,
-figure.wp-block-embed.alignleft.alignleft,
-figure.wp-block-embed.alignright.alignright,
-figure.wp-block-video.alignleft.alignleft,
-figure.wp-block-video.alignright.alignright,
-figure.wp-block-pullquote.alignleft.alignleft,
-figure.wp-block-pullquote.alignright.alignright,
-.wp-block-cover-image.alignleft,
-.wp-block-cover-image.alignright,
-.wp-block-cover.alignleft,
-.wp-block-cover.alignright,
-.wp-block-gallery.alignleft,
-.wp-block-gallery.alignright {
+#wsuwp-main figure.wp-block-embed.alignleft.alignleft,
+#wsuwp-main figure.wp-block-embed.alignright.alignright,
+#wsuwp-main figure.wp-block-video.alignleft.alignleft,
+#wsuwp-main figure.wp-block-video.alignright.alignright,
+#wsuwp-main figure.wp-block-pullquote.alignleft.alignleft,
+#wsuwp-main figure.wp-block-pullquote.alignright.alignright,
+#wsuwp-main .wp-block-cover-image.alignleft,
+#wsuwp-main .wp-block-cover-image.alignright,
+#wsuwp-main .wp-block-cover.alignleft,
+#wsuwp-main .wp-block-cover.alignright,
+#wsuwp-main .wp-block-gallery.alignleft,
+#wsuwp-main .wp-block-gallery.alignright {
 	width: 100%;
 }
 
 @media (min-width: $medium) {
 
-	.editor-block-list__block[data-type="core/embed"][data-align="left"] .editor-block-list__block-edit,
-	.editor-block-list__block[data-type="core/embed"][data-align="right"] .editor-block-list__block-edit,
-	figure.wp-block-embed.alignleft.alignleft,
-	figure.wp-block-embed.alignright.alignright,
-	figure.wp-block-video.alignleft.alignleft,
-	figure.wp-block-video.alignright.alignright,
-	figure.wp-block-pullquote.alignleft.alignleft,
-	figure.wp-block-pullquote.alignright.alignright,
-	.wp-block-cover-image.alignleft,
-	.wp-block-cover-image.alignright,
-	.wp-block-cover.alignleft,
-	.wp-block-cover.alignright,
-	.wp-block-gallery.alignleft,
-	.wp-block-gallery.alignright {
-		max-width: 350px;
+	#wsuwp-main figure.wp-block-embed.alignleft.alignleft,
+	#wsuwp-main figure.wp-block-embed.alignright.alignright,
+	#wsuwp-main figure.wp-block-video.alignleft.alignleft,
+	#wsuwp-main figure.wp-block-video.alignright.alignright,
+	#wsuwp-main figure.wp-block-pullquote.alignleft.alignleft,
+	#wsuwp-main figure.wp-block-pullquote.alignright.alignright,
+	#wsuwp-main .wp-block-cover-image.alignleft,
+	#wsuwp-main .wp-block-cover-image.alignright,
+	#wsuwp-main .wp-block-cover.alignleft,
+	#wsuwp-main .wp-block-cover.alignright,
+	#wsuwp-main .wp-block-gallery.alignleft,
+	#wsuwp-main .wp-block-gallery.alignright {
+		max-width: 49%;
 	}
 
 }
