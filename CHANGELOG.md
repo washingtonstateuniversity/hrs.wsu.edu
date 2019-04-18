@@ -18,7 +18,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.4.0-RC01 (:construction: 2019-04-18)
+## 1.4.0-RC02 (:construction: 2019-04-18)
 
 ### Fixed
 
@@ -39,6 +39,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 - :sparkles: Additional intermediate image size for "small" images (max width of 350px).
 - A default attachment template to handle redirecting all attachment page requests to the attachment parent post if it exists and the attachment URL itself if it doesn't.
+
+### Deprecated
+
+- Cover block styles for pre-WP 5.2 markup.
 
 ## 1.3.1 (2019-04-12)
 
