@@ -12,6 +12,7 @@
  *   - 4.05 Embedded Content
  *   - 4.06 Banner notifications
  *   - 4.07 Modules
+ *   - 4.08 Cover block Wp pre-5.2 markup
  *
  * @since 0.9.0
  */
@@ -610,5 +611,53 @@
 		svg {
 			fill: $accent-orange;
 		}
+	}
+}
+
+/**
+ * 4.08 Cover block Wp pre-5.2 markup
+ */
+
+.wp-block-cover-text {
+	width: calc(100% - 70px);
+	z-index: 1;
+}
+
+.wp-block-cover-text {
+	color: $section-background-color;
+	font-size: $font-size-5;
+	line-height: 1.4;
+	text-align: center;
+}
+
+.wp-block-cover-image.has-light-background-color,
+.wp-block-cover-image.has-accent-green-background-color,
+.wp-block-cover-image.has-accent-yellow-background-color,
+.wp-block-cover-image.has-accent-blue-background-color,
+.wp-block-cover-image.has-accent-orange-background-color,
+.wp-block-cover.has-light-background-color,
+.wp-block-cover.has-accent-green-background-color,
+.wp-block-cover.has-accent-yellow-background-color,
+.wp-block-cover.has-accent-blue-background-color,
+.wp-block-cover.has-accent-orange-background-color {
+
+	.wp-block-cover-text {
+		color: $text-color;
+	}
+}
+
+.wp-block-cover-image .wp-block-cover-text a:not(.wp-block-button__link),
+.wp-block-cover .wp-block-cover-text a:not(.wp-block-button__link) {
+	color: inherit;
+	padding: 0 .25em;
+
+	&:hover,
+	&:focus {
+		color: $section-background-color;
+		background-color: $nav-color-hover;
+	}
+
+	&:active {
+		background-color: $nav-color;
 	}
 }
