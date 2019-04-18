@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.4.0-RC01
+Version: 1.4.0-RC02
 Requires at least: 4.7
 Tested up to: 5.2.0
 Requires PHP: 5.6
@@ -787,6 +787,7 @@ figure.aligncenter,
  *   - 4.05 Embedded Content
  *   - 4.06 Banner notifications
  *   - 4.07 Modules
+ *   - 4.08 Cover block Wp pre-5.2 markup
  *
  * @since 0.9.0
  */
@@ -1317,6 +1318,52 @@ figure.aligncenter,
 
 .module--alert.warning svg {
   fill: #f6861f;
+}
+
+/**
+ * 4.08 Cover block Wp pre-5.2 markup
+ */
+.wp-block-cover-text {
+  width: calc(100% - 70px);
+  z-index: 1;
+}
+
+.wp-block-cover-text {
+  color: #fdfdfd;
+  font-size: 1.602em;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.wp-block-cover-image.has-light-background-color .wp-block-cover-text,
+.wp-block-cover-image.has-accent-green-background-color .wp-block-cover-text,
+.wp-block-cover-image.has-accent-yellow-background-color .wp-block-cover-text,
+.wp-block-cover-image.has-accent-blue-background-color .wp-block-cover-text,
+.wp-block-cover-image.has-accent-orange-background-color .wp-block-cover-text,
+.wp-block-cover.has-light-background-color .wp-block-cover-text,
+.wp-block-cover.has-accent-green-background-color .wp-block-cover-text,
+.wp-block-cover.has-accent-yellow-background-color .wp-block-cover-text,
+.wp-block-cover.has-accent-blue-background-color .wp-block-cover-text,
+.wp-block-cover.has-accent-orange-background-color .wp-block-cover-text {
+  color: #191919;
+}
+
+.wp-block-cover-image .wp-block-cover-text a:not(.wp-block-button__link),
+.wp-block-cover .wp-block-cover-text a:not(.wp-block-button__link) {
+  color: inherit;
+  padding: 0 .25em;
+}
+
+.wp-block-cover-image .wp-block-cover-text a:not(.wp-block-button__link):hover, .wp-block-cover-image .wp-block-cover-text a:not(.wp-block-button__link):focus,
+.wp-block-cover .wp-block-cover-text a:not(.wp-block-button__link):hover,
+.wp-block-cover .wp-block-cover-text a:not(.wp-block-button__link):focus {
+  color: #fdfdfd;
+  background-color: #c60c30;
+}
+
+.wp-block-cover-image .wp-block-cover-text a:not(.wp-block-button__link):active,
+.wp-block-cover .wp-block-cover-text a:not(.wp-block-button__link):active {
+  background-color: #981e32;
 }
 
 /**
