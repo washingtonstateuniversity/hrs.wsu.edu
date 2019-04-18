@@ -18,6 +18,28 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.4.0-RC01 (:construction: 2019-04-18)
+
+### Fixed
+
+- :art: Fix prominent blocks not being width-restricted when floated.
+- Set default Spine bleed setting to false.
+- Add menu location to prevent duplicating primary and site reference nav menus.
+
+### Changed
+
+- :art: Tune up table styles.
+- :art: Update cover block styles to align with switch to allowing variable inner block content in WP 5.2.
+- Normalize line height for headings and larger text sizes.
+- Set global line height to relative value of 1.6.
+- Isolate cropped-Spine homepage variant styles.
+- Set the site reference nav menu in the footer to use the new `site-reference` menu location and adjust the depth to 1 to prevent wrapping.
+
+### Added
+
+- :sparkles: Additional intermediate image size for "small" images (max width of 350px).
+- A default attachment template to handle redirecting all attachment page requests to the attachment parent post if it exists and the attachment URL itself if it doesn't.
+
 ## 1.3.1 (2019-04-12)
 
 ### Fixed

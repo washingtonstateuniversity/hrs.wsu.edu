@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.3.1
+Version: 1.4.0-beta05
 Requires at least: 4.7
 Tested up to: 5.2.0
 Requires PHP: 5.6
@@ -60,6 +60,8 @@ Text Domain: hrs-wsu-edu
  *   - 4.03 Deprecated Classic Galleries
  *   - 4.04 Columns
  *   - 4.05 Embedded Content
+ *   - 4.06 Banner notifications
+ *   - 4.07 Modules
  *
  * 5.0 Components
  *   - 5.01 Paragraph Text
@@ -186,7 +188,7 @@ main,
   background-repeat: no-repeat;
   background-position: left top;
   color: #191919;
-  font: 400 18px/28px "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
+  font: 400 18px/1.6 "Source Sans Pro", "Lucida Sans", geneva, verdana, sans-serif;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -213,9 +215,9 @@ main .page-header,
   .site-header {
     border-left: 8px solid #f2f2f2;
   }
-  .home main section,
-  .home main .page-header,
-  .home .site-header {
+  .home #binder.spineless main section,
+  .home #binder.spineless main .page-header,
+  .home #binder.spineless .site-header {
     border-left: none;
   }
 }
@@ -287,16 +289,17 @@ ins {
 
 .has-medium-font-size {
   font-size: 1.266em;
+  line-height: 1.4;
 }
 
 .has-large-font-size {
   font-size: 1.602em;
-  line-height: 1.25;
+  line-height: 1.4;
 }
 
 .has-larger-font-size {
   font-size: 2.027em;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 /**
@@ -581,7 +584,6 @@ figcaption {
   color: #475055;
   font-size: 0.889em;
   letter-spacing: .02em;
-  line-height: normal;
   margin-bottom: 1em;
   padding: .3em .5em 0;
 }
@@ -673,39 +675,43 @@ figure.aligncenter,
   text-align: center;
 }
 
-.editor-block-list__block[data-type="core/embed"][data-align="left"] .editor-block-list__block-edit,
-.editor-block-list__block[data-type="core/embed"][data-align="right"] .editor-block-list__block-edit,
-figure.wp-block-embed.alignleft.alignleft,
-figure.wp-block-embed.alignright.alignright,
-figure.wp-block-video.alignleft.alignleft,
-figure.wp-block-video.alignright.alignright,
-figure.wp-block-pullquote.alignleft.alignleft,
-figure.wp-block-pullquote.alignright.alignright,
-.wp-block-cover-image.alignleft,
-.wp-block-cover-image.alignright,
-.wp-block-cover.alignleft,
-.wp-block-cover.alignright,
-.wp-block-gallery.alignleft,
-.wp-block-gallery.alignright {
+#wsuwp-main figure.wp-block-embed.alignleft.alignleft,
+#wsuwp-main figure.wp-block-embed.alignright.alignright,
+#wsuwp-main figure.wp-block-video.alignleft.alignleft,
+#wsuwp-main figure.wp-block-video.alignright.alignright,
+#wsuwp-main figure.wp-block-pullquote.alignleft.alignleft,
+#wsuwp-main figure.wp-block-pullquote.alignright.alignright,
+#wsuwp-main .wp-block-cover-image.alignleft,
+#wsuwp-main .wp-block-cover-image.alignright,
+#wsuwp-main .wp-block-cover.alignleft,
+#wsuwp-main .wp-block-cover.alignright,
+#wsuwp-main .wp-block-gallery.alignleft,
+#wsuwp-main .wp-block-gallery.alignright,
+#wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignleft,
+#wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignright,
+#wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignleft,
+#wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignright {
   width: 100%;
 }
 
 @media (min-width: 43em) {
-  .editor-block-list__block[data-type="core/embed"][data-align="left"] .editor-block-list__block-edit,
-  .editor-block-list__block[data-type="core/embed"][data-align="right"] .editor-block-list__block-edit,
-  figure.wp-block-embed.alignleft.alignleft,
-  figure.wp-block-embed.alignright.alignright,
-  figure.wp-block-video.alignleft.alignleft,
-  figure.wp-block-video.alignright.alignright,
-  figure.wp-block-pullquote.alignleft.alignleft,
-  figure.wp-block-pullquote.alignright.alignright,
-  .wp-block-cover-image.alignleft,
-  .wp-block-cover-image.alignright,
-  .wp-block-cover.alignleft,
-  .wp-block-cover.alignright,
-  .wp-block-gallery.alignleft,
-  .wp-block-gallery.alignright {
-    max-width: 350px;
+  #wsuwp-main figure.wp-block-embed.alignleft.alignleft,
+  #wsuwp-main figure.wp-block-embed.alignright.alignright,
+  #wsuwp-main figure.wp-block-video.alignleft.alignleft,
+  #wsuwp-main figure.wp-block-video.alignright.alignright,
+  #wsuwp-main figure.wp-block-pullquote.alignleft.alignleft,
+  #wsuwp-main figure.wp-block-pullquote.alignright.alignright,
+  #wsuwp-main .wp-block-cover-image.alignleft,
+  #wsuwp-main .wp-block-cover-image.alignright,
+  #wsuwp-main .wp-block-cover.alignleft,
+  #wsuwp-main .wp-block-cover.alignright,
+  #wsuwp-main .wp-block-gallery.alignleft,
+  #wsuwp-main .wp-block-gallery.alignright,
+  #wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignleft,
+  #wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignright,
+  #wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignleft,
+  #wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignright {
+    max-width: 49%;
   }
 }
 
@@ -1440,7 +1446,7 @@ blockquote cite:before {
   font-size: 2.281em;
   position: absolute;
   left: 10px;
-  top: .5em;
+  top: 0;
 }
 
 .wp-block-quote.is-style-large p,
@@ -1582,8 +1588,12 @@ main .tablepress {
 }
 
 main thead tr {
-  border-bottom: 1px solid #839098;
+  border-bottom: 1px solid #919da4;
   font-weight: 600;
+}
+
+main tbody tr {
+  border-bottom: 1px solid #c9cfd2;
 }
 
 main .wp-block-table td,
@@ -2095,6 +2105,7 @@ input[type="number"] {
  * @since 1.1.0 Move to components and merge WP block styles.
  */
 .wp-block-image {
+  margin-bottom: 1em;
   max-width: 100%;
 }
 
@@ -2133,82 +2144,43 @@ input[type="number"] {
   width: 100%;
 }
 
-.wp-block-cover-image.has-left-content,
-.wp-block-cover.has-left-content {
-  justify-content: flex-start;
-}
-
-.wp-block-cover-image.has-left-content h2,
-.wp-block-cover-image.has-left-content .wp-block-cover-image-text,
-.wp-block-cover-image.has-left-content .wp-block-cover-text,
-.wp-block-cover.has-left-content h2,
-.wp-block-cover.has-left-content .wp-block-cover-image-text,
-.wp-block-cover.has-left-content .wp-block-cover-text {
-  margin-left: 0;
-  text-align: left;
-}
-
-.wp-block-cover-image.has-right-content,
-.wp-block-cover.has-right-content {
-  justify-content: flex-end;
-}
-
-.wp-block-cover-image.has-right-content h2,
-.wp-block-cover-image.has-right-content .wp-block-cover-image-text,
-.wp-block-cover-image.has-right-content .wp-block-cover-text,
-.wp-block-cover.has-right-content h2,
-.wp-block-cover.has-right-content .wp-block-cover-image-text,
-.wp-block-cover.has-right-content .wp-block-cover-text {
-  margin-right: 0;
-  text-align: right;
-}
-
-.wp-block-cover-image h2,
-.wp-block-cover-image .wp-block-cover-image-text,
-.wp-block-cover-image .wp-block-cover-text,
-.wp-block-cover h2,
-.wp-block-cover .wp-block-cover-image-text,
-.wp-block-cover .wp-block-cover-text {
-  color: #fff;
-  font-size: 2.027em;
-  line-height: 1.25;
-  margin-bottom: 0;
-  max-width: 43em;
-  padding: 1em;
-  text-align: center;
+.wp-block-cover__inner-container {
+  width: calc(100% - 70px);
   z-index: 1;
 }
 
-.wp-block-cover-image h2 a,
-.wp-block-cover-image .wp-block-cover-image-text a,
-.wp-block-cover-image .wp-block-cover-text a,
-.wp-block-cover h2 a,
-.wp-block-cover .wp-block-cover-image-text a,
-.wp-block-cover .wp-block-cover-text a {
-  color: #fff;
-  padding: 0 4px;
+.wp-block-cover__inner-container {
+  color: #fdfdfd;
 }
 
-.wp-block-cover-image h2 a:hover, .wp-block-cover-image h2 a:focus,
-.wp-block-cover-image .wp-block-cover-image-text a:hover,
-.wp-block-cover-image .wp-block-cover-image-text a:focus,
-.wp-block-cover-image .wp-block-cover-text a:hover,
-.wp-block-cover-image .wp-block-cover-text a:focus,
-.wp-block-cover h2 a:hover,
-.wp-block-cover h2 a:focus,
-.wp-block-cover .wp-block-cover-image-text a:hover,
-.wp-block-cover .wp-block-cover-image-text a:focus,
-.wp-block-cover .wp-block-cover-text a:hover,
-.wp-block-cover .wp-block-cover-text a:focus {
+.wp-block-cover-image.has-light-background-color .wp-block-cover__inner-container,
+.wp-block-cover-image.has-accent-green-background-color .wp-block-cover__inner-container,
+.wp-block-cover-image.has-accent-yellow-background-color .wp-block-cover__inner-container,
+.wp-block-cover-image.has-accent-blue-background-color .wp-block-cover__inner-container,
+.wp-block-cover-image.has-accent-orange-background-color .wp-block-cover__inner-container,
+.wp-block-cover.has-light-background-color .wp-block-cover__inner-container,
+.wp-block-cover.has-accent-green-background-color .wp-block-cover__inner-container,
+.wp-block-cover.has-accent-yellow-background-color .wp-block-cover__inner-container,
+.wp-block-cover.has-accent-blue-background-color .wp-block-cover__inner-container,
+.wp-block-cover.has-accent-orange-background-color .wp-block-cover__inner-container {
+  color: #191919;
+}
+
+.wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link),
+.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link) {
+  color: inherit;
+  padding: 0 .25em;
+}
+
+.wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link):hover, .wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link):focus,
+.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link):hover,
+.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link):focus {
+  color: #fdfdfd;
   background-color: #c60c30;
 }
 
-.wp-block-cover-image h2 a:active,
-.wp-block-cover-image .wp-block-cover-image-text a:active,
-.wp-block-cover-image .wp-block-cover-text a:active,
-.wp-block-cover h2 a:active,
-.wp-block-cover .wp-block-cover-image-text a:active,
-.wp-block-cover .wp-block-cover-text a:active {
+.wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link):active,
+.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link):active {
   background-color: #981e32;
 }
 
@@ -2300,40 +2272,6 @@ input[type="number"] {
   .wp-block-cover:after {
     content: none;
   }
-}
-
-.wp-block-cover-image.aligncenter,
-.wp-block-cover-image.alignleft,
-.wp-block-cover-image.alignright,
-.wp-block-cover.aligncenter,
-.wp-block-cover.alignleft,
-.wp-block-cover.alignright {
-  display: flex;
-}
-
-.wp-block-cover__inner-container {
-  color: #fdfdfd;
-  width: calc(100% - 70px);
-  z-index: 1;
-}
-
-.wp-block-cover-image p,
-.wp-block-cover-image h1,
-.wp-block-cover-image h2,
-.wp-block-cover-image h3,
-.wp-block-cover-image h4,
-.wp-block-cover-image h5,
-.wp-block-cover-image h6,
-.wp-block-cover-image .wp-block-subhead,
-.wp-block-cover p,
-.wp-block-cover h1,
-.wp-block-cover h2,
-.wp-block-cover h3,
-.wp-block-cover h4,
-.wp-block-cover h5,
-.wp-block-cover h6,
-.wp-block-cover .wp-block-subhead {
-  color: inherit;
 }
 
 .wp-block-cover__video-background {
@@ -2990,7 +2928,7 @@ input[type="number"] {
   z-index: 900;
 }
 
-.home .site-header {
+.home #binder.spineless .site-header {
   margin-left: 0;
 }
 
@@ -2998,13 +2936,13 @@ a.site-title {
   border: none;
   color: #981e32;
   font-size: 1.424em;
-  margin: .75rem 1rem .75rem 0;
+  margin-right: 1rem;
 }
 
 @media (min-width: 43em) {
   a.site-title {
     font-size: 1.802em;
-    margin: 1rem 2rem;
+    margin: .5rem 2rem;
   }
 }
 
@@ -3017,7 +2955,7 @@ a.site-title {
   }
   a.site-title {
     font-size: 2.027em;
-    margin: 2.027rem 2rem;
+    margin: 1rem 2rem;
   }
 }
 
@@ -3300,24 +3238,6 @@ section.latest article {
  *
  * @since 0.11.0
  */
-@media (min-width: 61.875em) {
-  .home #spine.cropped:not(.skimmed) {
-    margin-left: 2rem;
-  }
-  .home #search-menu {
-    right: 0;
-    width: 60%;
-  }
-}
-
-.home #wsuwp-main section:nth-of-type(-n+2) {
-  background: transparent;
-}
-
-.home #spine.cropped #glue {
-  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.05);
-}
-
 .home-main-subnav nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -3401,6 +3321,24 @@ section.latest article {
 .home-detail-subnav ul {
   background-color: #fdfdfd;
   padding: 1.5em 2em;
+}
+
+@media (min-width: 61.875em) {
+  .home #spine.cropped:not(.skimmed) {
+    margin-left: 2rem;
+  }
+  .home #binder.spineless #search-menu {
+    right: 0;
+    width: 60%;
+  }
+}
+
+.home #binder.spineless #wsuwp-main section:nth-of-type(-n+2) {
+  background: transparent;
+}
+
+.home #spine.cropped #glue {
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 /**

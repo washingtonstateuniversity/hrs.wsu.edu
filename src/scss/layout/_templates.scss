@@ -36,7 +36,7 @@
 
 }
 
-.home .site-header {
+.home #binder.spineless .site-header {
 	margin-left: 0;
 }
 
@@ -44,14 +44,14 @@ a.site-title {
 	border: none;
 	color: $brand-crimson;
 	font-size: $font-size-4;
-	margin: .75rem 1rem .75rem 0;
+	margin-right: 1rem;
 }
 
 @media (min-width: $medium) {
 
 	a.site-title {
 		font-size: $font-size-6;
-		margin: 1rem 2rem;
+		margin: .5rem 2rem;
 	}
 
 }
@@ -68,7 +68,7 @@ a.site-title {
 
 	a.site-title {
 		font-size: $font-size-7;
-		margin: 2.027rem 2rem;
+		margin: 1rem 2rem;
 	}
 
 }

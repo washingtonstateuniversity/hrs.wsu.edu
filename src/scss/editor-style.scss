@@ -113,16 +113,17 @@ ins {
 
 .has-medium-font-size {
 	font-size: $font-size-3;
+	line-height: 1.4;
 }
 
 .has-large-font-size {
 	font-size: $font-size-5;
-	line-height: 1.25;
+	line-height: 1.4;
 }
 
 .has-larger-font-size {
 	font-size: $font-size-7;
-	line-height: 1.15;
+	line-height: 1.2;
 }
 
 /**
@@ -446,6 +447,46 @@ p.has-drop-cap:not(:focus):after {
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	margin: 0;
 	max-width: 5.5em;
+}
+
+/**
+ * Cover blocks
+ */
+
+.wp-block-cover__inner-container {
+	color: $section-background-color;
+}
+
+.wp-block-cover-image.has-light-background-color,
+.wp-block-cover-image.has-accent-green-background-color,
+.wp-block-cover-image.has-accent-yellow-background-color,
+.wp-block-cover-image.has-accent-blue-background-color,
+.wp-block-cover-image.has-accent-orange-background-color,
+.wp-block-cover.has-light-background-color,
+.wp-block-cover.has-accent-green-background-color,
+.wp-block-cover.has-accent-yellow-background-color,
+.wp-block-cover.has-accent-blue-background-color,
+.wp-block-cover.has-accent-orange-background-color {
+
+	.wp-block-cover__inner-container {
+		color: $text-color;
+	}
+}
+
+.wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link),
+.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link) {
+	color: inherit;
+	padding: 0 .25em;
+
+	&:hover,
+	&:focus {
+		color: $section-background-color;
+		background-color: $nav-color-hover;
+	}
+
+	&:active {
+		background-color: $nav-color;
+	}
 }
 
 /**

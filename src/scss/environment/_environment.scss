@@ -41,7 +41,7 @@ main,
 	background-repeat: no-repeat;
 	background-position: left top;
 	color: $text-color;
-	font: 400 18px/28px $sans-serif-fonts;
+	font: 400 18px/1.6 $sans-serif-fonts;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 
@@ -65,9 +65,9 @@ main,
 		border-left: 8px solid $body-background-color;
 	}
 
-	.home main section,
-	.home main .page-header,
-	.home .site-header {
+	.home #binder.spineless main section,
+	.home #binder.spineless main .page-header,
+	.home #binder.spineless .site-header {
 		border-left: none;
 	}
 
@@ -141,16 +141,17 @@ ins {
 
 .has-medium-font-size {
 	font-size: $font-size-3;
+	line-height: 1.4;
 }
 
 .has-large-font-size {
 	font-size: $font-size-5;
-	line-height: 1.25;
+	line-height: 1.4;
 }
 
 .has-larger-font-size {
 	font-size: $font-size-7;
-	line-height: 1.15;
+	line-height: 1.2;
 }
 
 /**
@@ -415,7 +416,6 @@ figcaption {
 	color: $neutral-dark;
 	font-size: $font-size-1;
 	letter-spacing: .02em;
-	line-height: normal;
 	margin-bottom: 1em;
 	padding: .3em .5em 0;
 }
@@ -517,40 +517,44 @@ figure.aligncenter,
 }
 
 // Highly selected in order to override parent theme rules.
-.editor-block-list__block[data-type="core/embed"][data-align="left"] .editor-block-list__block-edit,
-.editor-block-list__block[data-type="core/embed"][data-align="right"] .editor-block-list__block-edit,
-figure.wp-block-embed.alignleft.alignleft,
-figure.wp-block-embed.alignright.alignright,
-figure.wp-block-video.alignleft.alignleft,
-figure.wp-block-video.alignright.alignright,
-figure.wp-block-pullquote.alignleft.alignleft,
-figure.wp-block-pullquote.alignright.alignright,
-.wp-block-cover-image.alignleft,
-.wp-block-cover-image.alignright,
-.wp-block-cover.alignleft,
-.wp-block-cover.alignright,
-.wp-block-gallery.alignleft,
-.wp-block-gallery.alignright {
+#wsuwp-main figure.wp-block-embed.alignleft.alignleft,
+#wsuwp-main figure.wp-block-embed.alignright.alignright,
+#wsuwp-main figure.wp-block-video.alignleft.alignleft,
+#wsuwp-main figure.wp-block-video.alignright.alignright,
+#wsuwp-main figure.wp-block-pullquote.alignleft.alignleft,
+#wsuwp-main figure.wp-block-pullquote.alignright.alignright,
+#wsuwp-main .wp-block-cover-image.alignleft,
+#wsuwp-main .wp-block-cover-image.alignright,
+#wsuwp-main .wp-block-cover.alignleft,
+#wsuwp-main .wp-block-cover.alignright,
+#wsuwp-main .wp-block-gallery.alignleft,
+#wsuwp-main .wp-block-gallery.alignright,
+#wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignleft,
+#wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignright,
+#wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignleft,
+#wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignright {
 	width: 100%;
 }
 
 @media (min-width: $medium) {
 
-	.editor-block-list__block[data-type="core/embed"][data-align="left"] .editor-block-list__block-edit,
-	.editor-block-list__block[data-type="core/embed"][data-align="right"] .editor-block-list__block-edit,
-	figure.wp-block-embed.alignleft.alignleft,
-	figure.wp-block-embed.alignright.alignright,
-	figure.wp-block-video.alignleft.alignleft,
-	figure.wp-block-video.alignright.alignright,
-	figure.wp-block-pullquote.alignleft.alignleft,
-	figure.wp-block-pullquote.alignright.alignright,
-	.wp-block-cover-image.alignleft,
-	.wp-block-cover-image.alignright,
-	.wp-block-cover.alignleft,
-	.wp-block-cover.alignright,
-	.wp-block-gallery.alignleft,
-	.wp-block-gallery.alignright {
-		max-width: 350px;
+	#wsuwp-main figure.wp-block-embed.alignleft.alignleft,
+	#wsuwp-main figure.wp-block-embed.alignright.alignright,
+	#wsuwp-main figure.wp-block-video.alignleft.alignleft,
+	#wsuwp-main figure.wp-block-video.alignright.alignright,
+	#wsuwp-main figure.wp-block-pullquote.alignleft.alignleft,
+	#wsuwp-main figure.wp-block-pullquote.alignright.alignright,
+	#wsuwp-main .wp-block-cover-image.alignleft,
+	#wsuwp-main .wp-block-cover-image.alignright,
+	#wsuwp-main .wp-block-cover.alignleft,
+	#wsuwp-main .wp-block-cover.alignright,
+	#wsuwp-main .wp-block-gallery.alignleft,
+	#wsuwp-main .wp-block-gallery.alignright,
+	#wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignleft,
+	#wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignright,
+	#wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignleft,
+	#wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignright {
+		max-width: 49%;
 	}
 
 }
