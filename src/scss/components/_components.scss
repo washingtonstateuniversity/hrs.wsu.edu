@@ -131,7 +131,7 @@ blockquote cite:before {
 	font-size: $font-size-8;
 	position: absolute;
 	left: 10px;
-	top: .5em;
+	top: 0;
 }
 
 .wp-block-quote.is-style-large p,
@@ -274,8 +274,12 @@ main {
 	}
 
 	thead tr {
-		border-bottom: 1px solid lighten($brand-gray, 15%);
+		border-bottom: 1px solid lighten($brand-gray, 20%);
 		font-weight: 600;
+	}
+
+	tbody tr {
+		border-bottom: 1px solid lighten($brand-gray, 40%);
 	}
 
 	.wp-block-table td,
@@ -784,6 +788,7 @@ input[type="number"] {
  */
 
 .wp-block-image {
+	margin-bottom: 1em;
 	max-width: 100%;
 }
 
@@ -823,63 +828,39 @@ input[type="number"] {
 	width: 100%;
 }
 
-.wp-block-cover-image.has-left-content,
-.wp-block-cover.has-left-content {
-	justify-content: flex-start;
-}
-
-.wp-block-cover-image.has-left-content h2,
-.wp-block-cover-image.has-left-content .wp-block-cover-image-text,
-.wp-block-cover-image.has-left-content .wp-block-cover-text,
-.wp-block-cover.has-left-content h2,
-.wp-block-cover.has-left-content .wp-block-cover-image-text,
-.wp-block-cover.has-left-content .wp-block-cover-text {
-	margin-left: 0;
-	text-align: left;
-}
-
-.wp-block-cover-image.has-right-content,
-.wp-block-cover.has-right-content {
-	justify-content: flex-end;
-}
-
-.wp-block-cover-image.has-right-content h2,
-.wp-block-cover-image.has-right-content .wp-block-cover-image-text,
-.wp-block-cover-image.has-right-content .wp-block-cover-text,
-.wp-block-cover.has-right-content h2,
-.wp-block-cover.has-right-content .wp-block-cover-image-text,
-.wp-block-cover.has-right-content .wp-block-cover-text {
-	margin-right: 0;
-	text-align: right;
-}
-
-.wp-block-cover-image h2,
-.wp-block-cover-image .wp-block-cover-image-text,
-.wp-block-cover-image .wp-block-cover-text,
-.wp-block-cover h2,
-.wp-block-cover .wp-block-cover-image-text,
-.wp-block-cover .wp-block-cover-text {
-	color: #fff;
-	font-size: $font-size-7;
-	line-height: 1.25;
-	margin-bottom: 0;
-	max-width: $medium;
-	padding: 1em;
-	text-align: center;
+.wp-block-cover__inner-container {
+	width: calc(100% - 70px);
 	z-index: 1;
 }
 
-.wp-block-cover-image h2 a,
-.wp-block-cover-image .wp-block-cover-image-text a,
-.wp-block-cover-image .wp-block-cover-text a,
-.wp-block-cover h2 a,
-.wp-block-cover .wp-block-cover-image-text a,
-.wp-block-cover .wp-block-cover-text a {
-	color: #fff;
-	padding: 0 4px;
+.wp-block-cover__inner-container {
+	color: $section-background-color;
+}
+
+.wp-block-cover-image.has-light-background-color,
+.wp-block-cover-image.has-accent-green-background-color,
+.wp-block-cover-image.has-accent-yellow-background-color,
+.wp-block-cover-image.has-accent-blue-background-color,
+.wp-block-cover-image.has-accent-orange-background-color,
+.wp-block-cover.has-light-background-color,
+.wp-block-cover.has-accent-green-background-color,
+.wp-block-cover.has-accent-yellow-background-color,
+.wp-block-cover.has-accent-blue-background-color,
+.wp-block-cover.has-accent-orange-background-color {
+
+	.wp-block-cover__inner-container {
+		color: $text-color;
+	}
+}
+
+.wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link),
+.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link) {
+	color: inherit;
+	padding: 0 .25em;
 
 	&:hover,
 	&:focus {
+		color: $section-background-color;
 		background-color: $nav-color-hover;
 	}
 
@@ -980,40 +961,6 @@ input[type="number"] {
 		content: none;
 	}
 
-}
-
-.wp-block-cover-image.aligncenter,
-.wp-block-cover-image.alignleft,
-.wp-block-cover-image.alignright,
-.wp-block-cover.aligncenter,
-.wp-block-cover.alignleft,
-.wp-block-cover.alignright {
-	display: flex;
-}
-
-.wp-block-cover__inner-container {
-	color: $section-background-color;
-	width: calc(100% - 70px);
-	z-index: 1;
-}
-
-.wp-block-cover-image p,
-.wp-block-cover-image h1,
-.wp-block-cover-image h2,
-.wp-block-cover-image h3,
-.wp-block-cover-image h4,
-.wp-block-cover-image h5,
-.wp-block-cover-image h6,
-.wp-block-cover-image .wp-block-subhead,
-.wp-block-cover p,
-.wp-block-cover h1,
-.wp-block-cover h2,
-.wp-block-cover h3,
-.wp-block-cover h4,
-.wp-block-cover h5,
-.wp-block-cover h6,
-.wp-block-cover .wp-block-subhead {
-	color: inherit;
 }
 
 .wp-block-cover__video-background {

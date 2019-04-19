@@ -21,11 +21,11 @@ $footer_nav_args = array(
 	'menu_class'      => null,
 	'menu_id'         => null,
 	'items_wrap'      => '<span class="footer-nav-title">' . __( 'About', 'hrs-wsu-edu' ) . '</span><ul>%3$s</ul>',
-	'depth'           => 9,
+	'depth'           => 4,
 );
 
 $site_reference_args = array(
-	'theme_location'  => 'site',
+	'theme_location'  => 'site-reference',
 	'menu'            => 'site-reference',
 	'container'       => 'nav',
 	'container_class' => 'site-reference',
@@ -33,7 +33,7 @@ $site_reference_args = array(
 	'menu_class'      => null,
 	'menu_id'         => null,
 	'items_wrap'      => '<ul>%3$s</ul>',
-	'depth'           => 5,
+	'depth'           => 1,
 );
 ?>
 
