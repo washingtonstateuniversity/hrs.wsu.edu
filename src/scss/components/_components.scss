@@ -1009,9 +1009,8 @@ input[type="number"] {
 
 	.wp-block-gallery .blocks-gallery-image figure,
 	.wp-block-gallery .blocks-gallery-item figure {
-		align-items: flex-end;
+		align-items: flex-start;
 		display: flex;
-		flex-direction: column;
 		justify-content: flex-start;
 	}
 
