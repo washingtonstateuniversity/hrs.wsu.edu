@@ -1,6 +1,6 @@
 # WSU Human Resource Services Theme
 
-[![Build Status](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu.svg?branch=1.x)](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu)
+[![Build Status](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu.svg?branch=master)](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu)
 
 **Contributors:** WSU University Communications, Adam Turner  
 **Requires at least:** WordPress 4.7  
