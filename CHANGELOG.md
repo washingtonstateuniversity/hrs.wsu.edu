@@ -18,6 +18,16 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.4.1 (2019-04-29)
+
+### Fixed
+
+- Fix default horizontal separator width.
+- Fix #94 Cover images set to align full should fill content width.
+- Fix gallery images stretched by removing `flex-direction` from gallery figure flex definition.
+- Adjust padding of media-and-text blocks with background color active.
+- Switch callout titles to large text to fix document structure issue created by using headings as the title element of callout blocks.
+
 ## 1.4.0 (2019-04-18)
 
 ### Fixed

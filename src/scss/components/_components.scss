@@ -825,7 +825,6 @@ input[type="number"] {
 	min-height: 430px;
 	overflow: hidden;
 	position: relative;
-	width: 100%;
 }
 
 .wp-block-cover__inner-container {
@@ -1009,9 +1008,8 @@ input[type="number"] {
 
 	.wp-block-gallery .blocks-gallery-image figure,
 	.wp-block-gallery .blocks-gallery-item figure {
-		align-items: flex-end;
+		align-items: flex-start;
 		display: flex;
-		flex-direction: column;
 		justify-content: flex-start;
 	}
 
@@ -1365,7 +1363,7 @@ input[type="number"] {
 }
 
 .wp-block-media-text[class*="-background-color"] {
-	padding: 1em 1em 0;
+	padding: 1em;
 }
 
 .wp-block-media-text.has-dark-background-color,
@@ -1469,43 +1467,23 @@ input[type="number"] {
 	padding: 1.5rem 2rem;
 }
 
-.wp-block-hrs-wsu-edu-callouts h1,
-.wp-block-hrs-wsu-edu-callouts h2,
-.wp-block-hrs-wsu-edu-callouts h3,
-.wp-block-hrs-wsu-edu-callouts h4,
-.wp-block-hrs-wsu-edu-callouts h5,
-.wp-block-hrs-wsu-edu-callouts h6 {
+.wp-block-hrs-wsu-edu-callouts .has-large-font-size:first-of-type {
 	border-bottom: 4px solid $neutral-light;
 	color: $neutral-dark;
-	font-size: $font-size-5;
+	font-weight: 900;
 	margin: 0 0 .5em;
 	padding: 0 0 .25em;
 }
 
-.wp-block-hrs-wsu-edu-callouts.is-style-positive h1,
-.wp-block-hrs-wsu-edu-callouts.is-style-positive h2,
-.wp-block-hrs-wsu-edu-callouts.is-style-positive h3,
-.wp-block-hrs-wsu-edu-callouts.is-style-positive h4,
-.wp-block-hrs-wsu-edu-callouts.is-style-positive h5,
-.wp-block-hrs-wsu-edu-callouts.is-style-positive h6 {
+.wp-block-hrs-wsu-edu-callouts.is-style-positive .has-large-font-size:first-of-type {
 	border-bottom-color: rgba(173, 164, 0, .4);
 }
 
-.wp-block-hrs-wsu-edu-callouts.is-style-caution h1,
-.wp-block-hrs-wsu-edu-callouts.is-style-caution h2,
-.wp-block-hrs-wsu-edu-callouts.is-style-caution h3,
-.wp-block-hrs-wsu-edu-callouts.is-style-caution h4,
-.wp-block-hrs-wsu-edu-callouts.is-style-caution h5,
-.wp-block-hrs-wsu-edu-callouts.is-style-caution h6 {
+.wp-block-hrs-wsu-edu-callouts.is-style-caution .has-large-font-size:first-of-type {
 	border-bottom-color: rgba(255, 184, 28, .4);
 }
 
-.wp-block-hrs-wsu-edu-callouts.is-style-warning h1,
-.wp-block-hrs-wsu-edu-callouts.is-style-warning h2,
-.wp-block-hrs-wsu-edu-callouts.is-style-warning h3,
-.wp-block-hrs-wsu-edu-callouts.is-style-warning h4,
-.wp-block-hrs-wsu-edu-callouts.is-style-warning h5,
-.wp-block-hrs-wsu-edu-callouts.is-style-warning h6 {
+.wp-block-hrs-wsu-edu-callouts.is-style-warning .has-large-font-size:first-of-type {
 	border-bottom-color: rgba(246, 134, 31, .4);
 }
 

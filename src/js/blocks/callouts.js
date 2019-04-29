@@ -8,8 +8,8 @@ const {	InnerBlocks } = wp.editor;
 const name = 'hrs-wsu-edu/callouts';
 
 const TEMPLATE = [
-	[ 'core/heading', { placeholder: 'Callout Heading' } ],
-	[ 'core/paragraph', { placeholder: 'Enter the callout message or replace.' } ],
+	[ 'core/paragraph', { fontSize: 'large', placeholder: 'Callout title…' } ],
+	[ 'core/paragraph', { placeholder: 'Enter the callout message or replace…' } ],
 ];
 
 export default function registerCalloutBlock() {
