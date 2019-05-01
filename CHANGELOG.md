@@ -18,6 +18,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.5.0 (2019-05-01)
+
+### Added
+
+- :white_check_mark: Github issue and pull request templates.
+
 ## 1.4.1 (2019-04-29)
 
 ### Fixed
