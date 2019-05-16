@@ -123,6 +123,26 @@ function the_terms( $args = array() ) {
 }
 
 /**
+ * Displays all of the existing terms for a given page.
+ *
+ * @since 1.6.0
+ *
+ * @param string $post_type Optional. The name of the post type to display taxonomy term lists form.
+ */
+function all_terms_by_post_type( $post_type = null ) {
+	if ( null === $post_type ) {
+		$post_type = get_post_type( get_the_ID() );
+	}
+
+	$post_taxonomy_names = get_object_taxonomies( $post_type );
+
+	// Print the post taxonomy lists, if they exist.
+	foreach ( $post_taxonomy_names as $taxonomy_name ) {
+		the_terms( array( 'taxonomy' => $taxonomy_name ) );
+	}
+}
+
+/**
  * Displays a gallery of all terms in a given taxonomy.
  *
  * @since 0.15.0

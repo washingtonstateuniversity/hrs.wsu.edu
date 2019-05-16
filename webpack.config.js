@@ -89,6 +89,7 @@ module.exports = (env = {}) => {
 						options: {
 							presets: [
 								['@babel/preset-env', {
+									corejs: 3,
 									useBuiltIns: 'entry',
 									modules: false,
 									targets: {
@@ -137,6 +138,7 @@ module.exports = (env = {}) => {
 						options: {
 							presets: [
 								['@wordpress/babel-preset-default', {
+									corejs: 3,
 									useBuiltIns: 'entry',
 									modules: false,
 									targets: {
@@ -177,6 +179,7 @@ module.exports = (env = {}) => {
 					options: {
 						presets: [
 							['@babel/preset-env', {
+								corejs: 3,
 								useBuiltIns: 'entry',
 								modules: false
 							}]
