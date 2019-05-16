@@ -241,13 +241,15 @@ body.single {
 		padding-bottom: 1.5em;
 	}
 
-	.article-footer {
+	.article-content .article-footer {
 		border-top: 8px solid $body-background-color;
 		clear: both;
 		color: $neutral-dark;
 		margin: 0 -2rem;
 		padding: 1.5rem 2rem .75rem;
+	}
 
+	.article-footer {
 		dl {
 			padding-bottom: .75rem;
 
