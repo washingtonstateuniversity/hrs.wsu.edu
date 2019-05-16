@@ -87,14 +87,7 @@ use WSU\HRS\Template_Tags as Tags;
 	<?php endif; ?>
 
 	<footer class="article-footer">
-		<?php
-		// Print the post taxonomy lists, if they exist.
-		Tags\the_terms( array( 'taxonomy' => 'hrs_unit' ) );
-		Tags\the_terms( array( 'taxonomy' => 'category' ) );
-		Tags\the_terms( array( 'taxonomy' => 'wsuwp_university_category' ) );
-		Tags\the_terms( array( 'taxonomy' => 'post_tag' ) );
-		Tags\the_terms( array( 'taxonomy' => 'wsuwp_university_location' ) );
-		?>
+		<?php Tags\all_terms_by_post_type(); ?>
 	</footer><!-- .entry-meta -->
 
 </article>
