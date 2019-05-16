@@ -178,8 +178,8 @@ footer {
  * @since 0.11.0
  */
 
-.article-content.page > .article-header,
-.single-post .article-content > .article-header {
+body.page .article-content > .article-header,
+body.single .article-content > .article-header {
 	margin-bottom: $font-size-8;
 }
 
@@ -203,15 +203,15 @@ footer {
 	}
 }
 
-.article-content.page .article-header,
-.single-post .article-content .article-header,
-.article-content.page .article-body > *:not(.alignwide):not(.alignfull),
-.single-post .article-body > *:not(.alignwide):not(.alignfull) {
+body.page .article-content > .article-header,
+body.single .article-content > .article-header,
+body.page .article-content .article-body > *:not(.alignwide):not(.alignfull),
+body.single .article-content .article-body > *:not(.alignwide):not(.alignfull) {
 	max-width: 45rem;
 }
 
-.article-content.page .article-feature.article-feature,
-.single-post .article-content .article-feature.article-feature {
+body.page .article-content .article-feature.article-feature,
+body.single .article-content .article-feature.article-feature {
 	margin-left: -2rem;
 	margin-right: -2rem;
 	max-width: $small;
@@ -219,8 +219,8 @@ footer {
 
 @media (min-width: $small) {
 
-	.article-content.page .article-feature.article-feature,
-	.single-post .article-content .article-feature.article-feature {
+	body.page .article-content .article-feature.article-feature,
+	body.single .article-content .article-feature.article-feature {
 		float: right;
 		margin-left: 2rem;
 		margin-right: 0;
@@ -235,18 +235,21 @@ footer {
  * @since 0.14.0
  */
 
-.single-post {
+body.single {
 
 	.article-body {
 		padding-bottom: 1.5em;
 	}
 
-	.article-footer {
+	.article-content .article-footer {
 		border-top: 8px solid $body-background-color;
 		clear: both;
 		color: $neutral-dark;
 		margin: 0 -2rem;
 		padding: 1.5rem 2rem .75rem;
+	}
+
+	.article-footer {
 
 		dl {
 			padding-bottom: .75rem;
@@ -282,12 +285,13 @@ footer {
 				color: $nav-color-hover;
 			}
 		}
+
 	}
 }
 
 @media (min-width: $medium) {
 
-	.single-post {
+	body.single {
 
 		.article-footer {
 			display: flex;

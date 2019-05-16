@@ -18,6 +18,23 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.6.0 (2019-05-16)
+
+### Added
+
+- Template function that displays lists of taxonomy terms for each taxonomy registered to a particular post type on single pages.
+
+### Changed
+
+- :art: Modify post and page CSS selectors to better catch pages and single posts of any post type.
+- Webpack requires specifying Core JS version when 'useBuiltIns' is set.
+- Use cp instead of the cpx npm dependency to copy files.
+- :arrow_up: Upgrade npm dependencies.
+
+### Removed
+
+- :heavy_minus_sign: Remove cpx npm dependency.
+
 ## 1.5.1 (2019-05-07)
 
 ### Changed
