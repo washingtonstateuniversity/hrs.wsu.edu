@@ -18,6 +18,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.7.0 (:construction: WIP 2019-06-03)
+
+### Changed
+
+- Filter the post date display on single posts using a custom template tag.
+
 ## 1.6.0 (2019-05-16)
 
 ### Added

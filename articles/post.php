@@ -27,7 +27,7 @@ use WSU\HRS\Template_Tags as Tags;
 				<h1 class="article-title"><?php the_title(); ?></h1>
 			<?php endif; ?>
 		<?php endif; ?>
-		<time class="article-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
+		<?php Tags\the_post_time_html(); ?>
 	</header>
 
 	<?php
