@@ -11,6 +11,11 @@ const addBlockStyles = () => {
 		name: 'small',
 		label: __( 'Small' ),
 	} );
+
+	registerBlockStyle( 'core/list', {
+		name: 'alpha',
+		label: __( 'Alphabetical' ),
+	} );
 };
 
 const removeBlockStyles = () => {
