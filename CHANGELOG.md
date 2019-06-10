@@ -18,7 +18,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.7.0 (:construction: WIP 2019-06-03)
+## 1.7.0-beta1 (:construction: WIP 2019-06-10)
+
+### Added
+
+- Custom "alpha" style option for the core/list block (along with matching CSS rules).
 
 ### Changed
 
