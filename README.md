@@ -3,10 +3,10 @@
 [![Build Status](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu.svg?branch=master)](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu)
 
 **Contributors:** WSU University Communications, Adam Turner  
-**Requires at least:** WordPress 4.7  
-**Tested up to:** WordPress 5.2.0  
+**Requires at least:** WordPress 5.0  
+**Tested up to:** WordPress 5.2.2  
 **Requires PHP:** 5.6  
-**Version:** 1.6.0  
+**Version:** 1.7.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
