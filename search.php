@@ -12,9 +12,9 @@ get_header();
 ?>
 
 <main id="wsuwp-main" class="spine-search-index">
-
-	<?php if ( have_posts() ) : ?>
-
+	<?php
+	if ( have_posts() ) {
+		?>
 		<header class="page-header">
 			<h1>
 				<?php esc_html_e( 'Search results for: ', 'hrs-wsu-edu' ); ?>
@@ -43,9 +43,8 @@ get_header();
 
 		<?php
 		\WSU\HRS\Template_Tags\hrs_pagination();
-	else :
+	} else {
 		?>
-
 		<header class="page-header">
 			<h1>
 				<?php esc_html_e( 'No search results for:', 'hrs-wsu-edu' ); ?>
@@ -60,9 +59,8 @@ get_header();
 				</div>
 			</div><!--/column-->
 		</section>
-
 		<?php
-	endif;
+	}
 
 	get_template_part( 'parts/footers' );
 	?>
