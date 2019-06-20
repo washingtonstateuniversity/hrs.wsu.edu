@@ -18,6 +18,22 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.7.0 (2019-06-20)
+
+### Fixed
+
+- :warning: PHP lint warnings.
+
+### Added
+
+- Custom "alpha" style option for the core/list block (along with matching CSS rules).
+
+### Changed
+
+- :arrow_up: Upgrade npm and composer dependencies.
+- Increment WP minimum version and tested-up-to version.
+- Filter the post date display on single posts using a custom template tag.
+
 ## 1.6.0 (2019-05-16)
 
 ### Added

@@ -19,10 +19,9 @@ get_header();
 		<h1><?php printf( esc_html__( 'HRS News from %s', 'hrs-wsu-edu' ), single_term_title( '', false ) ); ?></h1>
 	</header>
 
-	<?php if ( have_posts() ) :
-
+	<?php
+	if ( have_posts() ) {
 		$result_count = 0;
-
 		while ( have_posts() ) : the_post();
 
 			if ( ! is_paged() ) {
@@ -82,13 +81,12 @@ get_header();
 						</div><!--/column-->
 					</section>
 		<?php
-	endif;
+	}
 
 	\WSU\HRS\Template_Tags\hrs_pagination();
 
 	get_template_part( 'parts/footers' );
-
-?>
+	?>
 </main><!--/#page-->
-
-<?php get_footer();
+<?php
+get_footer();

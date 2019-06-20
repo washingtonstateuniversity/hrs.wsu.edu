@@ -563,3 +563,20 @@ function hrs_cs_salary_schedule( $data = array() ) {
 	</table>
 	<?php
 }
+
+/**
+ * Filters and displays the post publication date.
+ *
+ * Must be used in the Loop.
+ *
+ * @since 1.7.0
+ */
+function the_post_time_html() {
+	$post_date = sprintf(
+		'<time class="article-date" datetime="%1$s">%2$s</time>',
+		get_the_date( 'c' ),
+		get_the_date()
+	);
+
+	echo apply_filters( 'wsuwp_hrs_post_time_html', $post_date ); // phpcs:ignore WordPress.Security.EscapeOutput
+}

@@ -127,6 +127,30 @@ ins {
 }
 
 /**
+ * Lists
+ */
+
+ol ol {
+	list-style: lower-alpha;
+}
+
+ol ol ol {
+	list-style: lower-roman;
+}
+
+ol.is-style-alpha {
+	list-style: upper-alpha;
+}
+
+ol.is-style-alpha ol {
+	list-style: decimal;
+}
+
+ol.is-style-alpha ol ol {
+	list-style: lower-alpha;
+}
+
+/**
  * Links
  */
 
