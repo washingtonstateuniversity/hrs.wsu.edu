@@ -18,6 +18,29 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.7.2 (2019-09-20)
+
+### Fixed
+
+- :warning: PHP lint issues with "phpcs:ignore" syntax and a misused WP global variable in a custom loop.
+
+### Changed
+
+- :arrow_up: @babel/core 7.5.5 -> 7.6.0
+- :arrow_up: @babel/polyfill 7.4.4 -> 7.6.0
+- :arrow_up: @babel/preset-env 7.5.5 -> 7.6.0
+- :arrow_up: @wordpress/babel-preset-default 4.4.0 -> 4.6.0
+- :arrow_up: @wordpress/eslint-plugin 2.4.0 -> 3.1.0
+- :arrow_up: babel-eslint 10.0.2 -> 10.0.3
+- :arrow_up: eslint 6.1.0 -> 6.4.0
+- :arrow_up: eslint-loader 2.2.1 -> 3.0.0
+- :arrow_up: rimraf 2.6.3 -> 3.0.0
+- :arrow_up: stylelint 10.1.0 -> 11.0.0
+- :arrow_up: webpack 4.39.1 -> 4.40.2
+- :arrow_up: webpack-cli 3.3.6 -> 3.3.9
+- :arrow_up: webpack-merge 4.2.1 -> 4.2.2
+- :arrow_up: wp-coding-standards/wpcs 1.2.1 -> 2.1.1
+
 ## 1.7.1 (2019-08-08)
 
 ### Changed
