@@ -580,3 +580,563 @@ function the_post_time_html() {
 
 	echo apply_filters( 'wsuwp_hrs_post_time_html', $post_date ); // phpcs:ignore WordPress.Security.EscapeOutput
 }
+
+
+/**
+ * Retrieves and displays a table of Salary Grid data for IT Professionals.
+ *
+ * Pulls salary data from the Salary Grid IT database and formats it into an HTML
+ * table.
+ *
+ * TODO: Compare to hrs_salary_grid() -- maybe duplicating functionality.
+ *
+ * @since 0.20.0
+ *
+ * @param array Optional. An array of salary grid data to format.
+ * @return string|false HTML formatted table of salary grid data. False if no data is available.
+ */
+function hrs_salary_grid_it( $data = array() ) {
+	if ( ! $data ) {
+		$data = \WSU\HRS\Queries\get_salary_grid_it();
+
+		if ( ! $data ) {
+			return false;
+		}
+	}
+
+	$table_head = '<tr><th>Range</th>';
+	foreach ( range( 'A', 'M' ) as $letter ) {
+		/* translators: A letter of the alphabet. */
+		$table_head .= sprintf( __( '<th>Step<br> %s</th>', 'hrs-wsu-edu' ), esc_html( $letter ) );
+	}
+	$table_head .= '</tr>';
+
+	$table_body = '';
+	foreach ( $data as $row ) {
+		$table_body .= '<tr>';
+
+		// Build the row output including a `data-title` attribute for the range column.
+		foreach ( $row as $key => $val ) {
+			if ( 'range' === strtolower( $key ) ) {
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The range step number. */
+					__( '<td data-column="%1$s" id="%2$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( $val )
+				);
+			} else {
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
+					__( '<td data-column="%1$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( number_format( $val ) )
+				);
+			}
+		}
+
+		$table_body .= '</tr>';
+	}
+
+	printf(
+		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+		$table_head,
+		$table_body
+	); // WPCS: XSS ok.
+}
+
+
+/**
+ * Retrieves and displays a table of Salary Schedule data for IT Professionals.
+ *
+ * Pulls salary and position data from the Employee database and formats it into
+ * an HTML table.
+ *
+ * @since 0.20.0
+ *
+ * TODO: Compare to hrs_cs_salary_schedule() -- maybe duplicating functionality.
+ *
+ * @param array Optional. An array of salary data to format.
+ * @return string|false HTML formatted table of salary data. False if no data is available.
+ */
+function hrs_cs_salary_it_schedule( $data = array() ) {
+	if ( ! $data ) {
+		$data = \WSU\HRS\Queries\get_cs_salary_it_schedule();
+
+		if ( ! $data ) {
+			return false;
+		}
+	}
+
+	?>
+	<table class="tablepress striped searchable">
+		<thead>
+			<tr>
+				<th>Job Class</th>
+				<th>Job Group</th>
+				<th>Job Title</th>
+				<th>Range</th>
+				<th>Salary Min</th>
+				<th>Salary Max</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+			$table_body = '';
+			foreach ( $data as $row ) {
+				$table_body .= '<tr>';
+				$table_body .= '<td data-column="Job Class">' . esc_html( $row->ClassCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-column="Job Group">' . esc_html( $row->JobGroupCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-column="Job Title">' . esc_html( $row->JobTitle ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-column="Range"><a href="/external-db-testing/salary-grid-it/?filter=' . esc_attr( $row->SalRangeNum ) . '">' . esc_html( $row->SalRangeNum ) . '</a></td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-column="Salary Min">$' . esc_html( number_format( $row->Salary_Min, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-column="Salary Max">$' . esc_html( number_format( $row->Salary_Max, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '</tr>';
+			}
+			echo $table_body; // WPCS: XSS ok.
+			?>
+		</tbody>
+	</table>
+	<?php
+}
+
+
+/**
+ * Retrieves and displays a table of Salary Grid data for Nurses (Group A A-M).
+ *
+ * Pulls salary data from the Salary Grid database and formats it into an HTML
+ * table.
+ *
+ * @since 0.20.0
+ *
+ * @param array Optional. An array of salary grid data to format.
+ * @return string|false HTML formatted table of salary grid data. False if no data is available.
+ */
+function hrs_salary_grid_n_grpa_am( $data = array() ) {
+	if ( ! $data ) {
+		$data = \WSU\HRS\Queries\get_salary_grid_n_grpa_am();
+
+		if ( ! $data ) {
+			return false;
+		}
+ 	}
+
+
+	$table_head = '<tr><th>Range</th>';
+	foreach ( range( 'A', 'M' ) as $letter ) {
+		/* translators: A letter of the alphabet. */
+		$table_head .= sprintf( __( '<th>Step<br> %s</th>', 'hrs-wsu-edu' ), esc_html( $letter ) );
+	}
+
+	$table_head .= '</tr>';
+
+	$table_head .= '<tr><th>YRSx</th>';
+	foreach ( range( 'A', 'M' ) as $letter ) {
+		/* translators: A letter of the alphabet. */
+                if ($letter == 'A' || $letter == 'B' || $letter == 'C' || $letter == 'D' || $letter == 'F' || $letter == 'H' || $letter == 'J'  ){
+			$table_head .= sprintf( __( '<th></th>', 'hrs-wsu-edu' ) );
+                }elseif ( $letter == 'E' ) {
+			$table_head .= sprintf( __( '<th>0</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'G' ) {
+			$table_head .= sprintf( __( '<th>1</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'I' ) {
+			$table_head .= sprintf( __( '<th>2</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'K' ) {
+			$table_head .= sprintf( __( '<th>3</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'L' ) {
+			$table_head .= sprintf( __( '<th>4</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'M' ) {
+			$table_head .= sprintf( __( '<th>5</th>', 'hrs-wsu-edu' ) );
+		}
+	}
+
+	$table_head .= '</tr>';
+
+        $table_body = '';
+	foreach ( $data as $row ) {
+		$table_body .= '<tr>';
+
+		// Build the row output including a `data-title` attribute for the range column.
+		foreach ( $row as $key => $val ) {
+			if ( 'range' === strtolower( $key ) ) {
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The range step number. */
+					__( '<td data-column="%1$s" id="%2$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( $val )
+				);
+			} else {
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
+					__( '<td data-column="%1$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( number_format( $val ) )
+				);
+			}
+		}
+
+		$table_body .= '</tr>';
+	}
+
+	printf(
+		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+		$table_head,
+		$table_body
+	); // WPCS: XSS ok.
+
+}
+
+
+/**
+ * Retrieves and displays a table of Salary Grid data for Nurses (Group A N-U).
+ *
+ * Pulls salary data from the Salary Grid database and formats it into an HTML
+ * table.
+ *
+ * @since 0.20.0
+ *
+ * @param array Optional. An array of salary grid data to format.
+ * @return string|false HTML formatted table of salary grid data. False if no data is available.
+ */
+function hrs_salary_grid_n_grpa_nu( $data = array() ) {
+	if ( ! $data ) {
+		$data = \WSU\HRS\Queries\get_salary_grid_n_grpa_nu();
+
+		if ( ! $data ) {
+			return false;
+		}
+ 	}
+
+
+	$table_head = '<tr><th>Range</th>';
+	foreach ( range( 'N', 'U' ) as $letter ) {
+		/* translators: A letter of the alphabet. */
+		$table_head .= sprintf( __( '<th>Step<br> %s</th>', 'hrs-wsu-edu' ), esc_html( $letter ) );
+	}
+
+	$table_head .= '</tr>';
+
+	$table_head .= '<tr><th>YRSx</th>';
+	foreach ( range( 'N', 'U' ) as $letter ) {
+		/* translators: A letter of the alphabet. */
+                if ($letter == 'N' ){
+			$table_head .= sprintf( __( '<th>6</th>', 'hrs-wsu-edu' ) );
+                }elseif ( $letter == 'O' ) {
+			$table_head .= sprintf( __( '<th>7</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'P' ) {
+			$table_head .= sprintf( __( '<th>8</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'Q' ) {
+			$table_head .= sprintf( __( '<th>12</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'R' ) {
+			$table_head .= sprintf( __( '<th>15</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'S' ) {
+			$table_head .= sprintf( __( '<th>18</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'T' ) {
+			$table_head .= sprintf( __( '<th>20</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'U' ) {
+			$table_head .= sprintf( __( '<th>26</th>', 'hrs-wsu-edu' ) );
+		}
+	}
+
+	$table_head .= '</tr>';
+
+        $table_body = '';
+	foreach ( $data as $row ) {
+		$table_body .= '<tr>';
+
+		// Build the row output including a `data-title` attribute for the range column.
+		foreach ( $row as $key => $val ) {
+			if ( 'range' === strtolower( $key ) ) {
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The range step number. */
+					__( '<td data-column="%1$s" id="%2$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( $val )
+				);
+			} else {
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
+					__( '<td data-column="%1$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( number_format( $val ) )
+				);
+			}
+		}
+
+		$table_body .= '</tr>';
+	}
+
+	printf(
+		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+		$table_head,
+		$table_body
+	); // WPCS: XSS ok.
+
+}
+
+
+/**
+ * Retrieves and displays a table of Salary Grid data for Nurses (Group B A-M).
+ *
+ * Pulls salary data from the Salary Grid database and formats it into an HTML
+ * table.
+ *
+ * @since 0.20.0
+ *
+ * @param array Optional. An array of salary grid data to format.
+ * @return string|false HTML formatted table of salary grid data. False if no data is available.
+ */
+function hrs_salary_grid_n_grpb_am( $data = array() ) {
+	if ( ! $data ) {
+		$data = \WSU\HRS\Queries\get_salary_grid_n_grpb_am();
+
+		if ( ! $data ) {
+			return false;
+		}
+ 	}
+
+
+	$table_head = '<tr><th>Range</th>';
+	foreach ( range( 'A', 'M' ) as $letter ) {
+		/* translators: A letter of the alphabet. */
+		$table_head .= sprintf( __( '<th>Step<br> %s</th>', 'hrs-wsu-edu' ), esc_html( $letter ) );
+
+	}
+
+	$table_head .= '</tr>';
+
+	$table_head .= '<tr><th>YRSx</th>';
+	foreach ( range( 'A', 'M' ) as $letter ) {
+		/* translators: A letter of the alphabet. */
+                if ($letter == 'B' || $letter == 'D' || $letter == 'F' || $letter == 'H' || $letter == 'J' ){
+			$table_head .= sprintf( __( '<th></th>', 'hrs-wsu-edu' ) );
+                }elseif ( $letter == 'A' ) {
+			$table_head .= sprintf( __( '<th>0</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'C' ) {
+			$table_head .= sprintf( __( '<th>1</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'E' ) {
+			$table_head .= sprintf( __( '<th>2</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'G' ) {
+			$table_head .= sprintf( __( '<th>3</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'I' ) {
+			$table_head .= sprintf( __( '<th>4</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'K' ) {
+			$table_head .= sprintf( __( '<th>5</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'L' ) {
+			$table_head .= sprintf( __( '<th>6</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'M' ) {
+			$table_head .= sprintf( __( '<th>7</th>', 'hrs-wsu-edu' ) );
+		}
+	}
+
+	$table_head .= '</tr>';
+
+        $table_body = '';
+	foreach ( $data as $row ) {
+		$table_body .= '<tr>';
+
+		// Build the row output including a `data-title` attribute for the range column.
+		foreach ( $row as $key => $val ) {
+			if ( 'range' === strtolower( $key ) ) {
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The range step number. */
+					__( '<td data-column="%1$s" id="%2$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( $val )
+				);
+			} else {
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
+					__( '<td data-column="%1$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( number_format( $val ) )
+				);
+			}
+		}
+
+		$table_body .= '</tr>';
+	}
+
+	printf(
+		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+		$table_head,
+		$table_body
+	); // WPCS: XSS ok.
+
+}
+
+
+/**
+ * Retrieves and displays a table of Salary Grid data for Nurses (Group B N-U).
+ *
+ * Pulls salary data from the Salary Grid database and formats it into an HTML
+ * table.
+ *
+ * @since 0.20.0
+ *
+ * @param array Optional. An array of salary grid data to format.
+ * @return string|false HTML formatted table of salary grid data. False if no data is available.
+ */
+function hrs_salary_grid_n_grpb_nu( $data = array() ) {
+	if ( ! $data ) {
+		$data = \WSU\HRS\Queries\get_salary_grid_n_grpb_nu();
+
+		if ( ! $data ) {
+			return false;
+		}
+ 	}
+
+
+	$table_head = '<tr><th>Range</th>';
+	foreach ( range( 'N', 'U' ) as $letter ) {
+		/* translators: A letter of the alphabet. */
+		$table_head .= sprintf( __( '<th>Step<br> %s</th>', 'hrs-wsu-edu' ), esc_html( $letter ) );
+	}
+
+	$table_head .= '</tr>';
+
+	$table_head .= '<tr><th>YRSx</th>';
+	foreach ( range( 'N', 'U' ) as $letter ) {
+		/* translators: A letter of the alphabet. */
+                if ($letter == 'N' ){
+			$table_head .= sprintf( __( '<th>8</th>', 'hrs-wsu-edu' ) );
+                }elseif ( $letter == 'O' ) {
+			$table_head .= sprintf( __( '<th>9</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'P' ) {
+			$table_head .= sprintf( __( '<th>10</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'Q' ) {
+			$table_head .= sprintf( __( '<th>12</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'R' ) {
+			$table_head .= sprintf( __( '<th>15</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'S' ) {
+			$table_head .= sprintf( __( '<th>18</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'T' ) {
+			$table_head .= sprintf( __( '<th>20</th>', 'hrs-wsu-edu' ) );
+		}elseif ( $letter == 'U' ) {
+			$table_head .= sprintf( __( '<th>26</th>', 'hrs-wsu-edu' ) );
+		}
+	}
+
+	$table_head .= '</tr>';
+
+        $table_body = '';
+	foreach ( $data as $row ) {
+		$table_body .= '<tr>';
+
+		// Build the row output including a `data-title` attribute for the range column.
+		foreach ( $row as $key => $val ) {
+			if ( 'range' === strtolower( $key ) ) {
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The range step number. */
+					__( '<td data-column="%1$s" id="%2$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( $val )
+				);
+			} else {
+				$table_body .= sprintf(
+					/* translators: 1: The table column title, 2: The salary number with a comma in the thousands place. */
+					__( '<td data-column="%1$s">%2$s</td>', 'hrs-wsu-edu' ),
+					esc_attr( ucfirst( strtolower( $key ) ) ),
+					esc_html( number_format( $val ) )
+				);
+			}
+		}
+
+		$table_body .= '</tr>';
+	}
+
+	printf(
+		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+		$table_head,
+		$table_body
+	); // WPCS: XSS ok.
+
+}
+
+/**
+ * Retrieves and displays a table of Salary Grid data for Nurses from Groups A and B (A-M).
+ *
+ * Pulls salary data from the Salary Grid database and formats it into an HTML
+ * table.
+ *
+ * @since 0.20.0
+ *
+  */
+function hrs_salary_grid_n_grpab_am(){
+     $datagrpab = '';
+     hrs_salary_grid_n_grpb_am($datagrpab);
+     hrs_salary_grid_n_grpa_am($datagrpab);
+}
+
+
+/**
+ * Retrieves and displays a table of Salary Grid data for Nurses from Groups A and B (N-U) .
+ *
+ * Pulls salary data from the Salary Grid database and formats it into an HTML
+ * table.
+ *
+ * @since 0.20.0
+ *
+  */
+function hrs_salary_grid_n_grpab_nu(){
+     $datagrpab = '';
+     hrs_salary_grid_n_grpb_nu($datagrpab);
+     hrs_salary_grid_n_grpa_nu($datagrpab);
+}
+
+
+/**
+ * Retrieves and displays a table of Salary Schedule data for Nurses.
+ *
+ * Pulls salary and position data from the Employee database and formats it into
+ * an HTML table.
+ *
+ * @since 0.20.0
+ *
+ * @param array Optional. An array of salary data to format.
+ * @return string|false HTML formatted table of salary data. False if no data is available.
+ */
+function hrs_cs_salary_n_schedule( $data = array() ) {
+	if ( ! $data ) {
+		$data = \WSU\HRS\Queries\get_cs_salary_n_schedule();
+
+		if ( ! $data ) {
+			return false;
+		}
+	}
+
+	?>
+	<table>
+		<thead>
+			<tr>
+				<th>Job Class</th>
+				<th>Job Group</th>
+				<th>Job Title</th>
+				<th>Range</th>
+				<th>Salary Min</th>
+				<th>Salary Max</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+			$table_body = '';
+			foreach ( $data as $row ) {
+				$table_body .= '<tr>';
+				$table_body .= '<td data-column="Job Class">' . esc_html( $row->ClassCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-column="Job Group">' . esc_html( $row->JobGroupCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-column="Job Title">' . esc_html( $row->JobTitle ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-column="Range"><a href="/external-db-testing/nurse-salary-grpab-am/?filter=' . esc_attr( $row->SalRangeNum ) . '">' . esc_html( $row->SalrangeWExceptions ) . '</a></td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-column="Salary Min">$' . esc_html( number_format( $row->Salary_Min, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-column="Salary Max">$' . esc_html( number_format( $row->Salary_Max, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '</tr>';
+			}
+			echo $table_body; // WPCS: XSS ok.
+			?>
+		</tbody>
+	</table>
+	<?php
+}
