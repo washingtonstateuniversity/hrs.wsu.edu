@@ -1,6 +1,6 @@
 {
   "name": "hrs.wsu.edu",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/washingtonstateuniversity/hrs.wsu.edu"
@@ -23,7 +23,7 @@
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.5.5",
     "@wordpress/babel-preset-default": "^4.4.0",
-    "@wordpress/eslint-plugin": "^2.4.0",
+    "@wordpress/eslint-plugin": "^3.1.0",
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
