@@ -249,18 +249,10 @@ function get_cs_salary_schedule() {
  * and returns the results.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @return array An array of objects matching the specified query.
  */
 function get_salary_grid_it() {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
 	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
 	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
@@ -290,18 +282,10 @@ function get_salary_grid_it() {
  * and returns the results.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @return array An array of objects matching the specified query.
  */
 function get_cs_salary_it_schedule() {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
 	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
 	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
@@ -335,18 +319,10 @@ function get_cs_salary_it_schedule() {
  * and returns the results.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @return array An array of objects matching the specified query.
  */
 function get_salary_grid_n_grpa_am() {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
 	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
 	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
@@ -358,7 +334,7 @@ function get_salary_grid_n_grpa_am() {
 	$salgrpaam = $msdb->get_results(
 		'
 		SELECT *
-		FROM V_SalGridN_GrpA_AM 
+		FROM V_SalGridN_GrpA_AM
 		'
 	);
 
@@ -376,18 +352,10 @@ function get_salary_grid_n_grpa_am() {
  * and returns the results.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @return array An array of objects matching the specified query.
  */
 function get_salary_grid_n_grpa_nu() {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
 	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
 	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
@@ -399,7 +367,7 @@ function get_salary_grid_n_grpa_nu() {
 	$salgrpanu = $msdb->get_results(
 		'
 		SELECT *
-		FROM V_SalGridN_GrpA_NU 
+		FROM V_SalGridN_GrpA_NU
 		'
 	);
 
@@ -417,18 +385,10 @@ function get_salary_grid_n_grpa_nu() {
  * and returns the results.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @return array An array of objects matching the specified query.
  */
 function get_salary_grid_n_grpb_am() {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
 	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
 	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
@@ -440,7 +400,7 @@ function get_salary_grid_n_grpb_am() {
 	$salgrpbam = $msdb->get_results(
 		'
 		SELECT *
-		FROM V_SalGridN_GrpB_AM 
+		FROM V_SalGridN_GrpB_AM
 		'
 	);
 
@@ -458,18 +418,10 @@ function get_salary_grid_n_grpb_am() {
  * and returns the results.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @return array An array of objects matching the specified query.
  */
 function get_salary_grid_n_grpb_nu() {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
 	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
 	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
@@ -481,7 +433,7 @@ function get_salary_grid_n_grpb_nu() {
 	$salgrpbnu = $msdb->get_results(
 		'
 		SELECT *
-		FROM V_SalGridN_GrpB_NU 
+		FROM V_SalGridN_GrpB_NU
 		'
 	);
 
@@ -499,18 +451,10 @@ function get_salary_grid_n_grpb_nu() {
  * and returns the results.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @return array An array of objects matching the specified query.
  */
 function get_cs_salary_n_schedule() {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
 	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
 	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';

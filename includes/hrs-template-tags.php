@@ -616,20 +616,14 @@ function the_post_time_html() {
  * Pulls salary data from the Salary Grid IT database and formats it into an HTML
  * table.
  *
+ * TODO: Compare to hrs_salary_grid() -- maybe duplicating functionality.
+ *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary grid data to format.
  * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid_it( $data = array() ) {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid_it();
 
@@ -673,11 +667,12 @@ function hrs_salary_grid_it( $data = array() ) {
 
 	printf(
 		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
-		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		$table_head, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		$table_body // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	);
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+		$table_head,
+		$table_body
+	); // WPCS: XSS ok.
 }
+
 
 /**
  * Retrieves and displays a table of Salary Schedule data for IT Professionals.
@@ -686,19 +681,13 @@ function hrs_salary_grid_it( $data = array() ) {
  * an HTML table.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
+ *
+ * TODO: Compare to hrs_cs_salary_schedule() -- maybe duplicating functionality.
  *
  * @param array Optional. An array of salary data to format.
  * @return string|false HTML formatted table of salary data. False if no data is available.
  */
 function hrs_cs_salary_it_schedule( $data = array() ) {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin "HRS Job Classifications" block', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_cs_salary_it_schedule();
 
@@ -721,7 +710,6 @@ function hrs_cs_salary_it_schedule( $data = array() ) {
 		</thead>
 		<tbody>
 			<?php
-			// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 			$table_body = '';
 			foreach ( $data as $row ) {
 				$table_body .= '<tr>';
@@ -733,8 +721,7 @@ function hrs_cs_salary_it_schedule( $data = array() ) {
 				$table_body .= '<td data-column="Salary Max">$' . esc_html( number_format( $row->Salary_Max, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 				$table_body .= '</tr>';
 			}
-			echo $table_body; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			// phpcs:enable
+			echo $table_body; // WPCS: XSS ok.
 			?>
 		</tbody>
 	</table>
@@ -748,26 +735,19 @@ function hrs_cs_salary_it_schedule( $data = array() ) {
  * table.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary grid data to format.
  * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid_n_grpa_am( $data = array() ) {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid_n_grpa_am();
 
 		if ( ! $data ) {
 			return false;
 		}
-	}
+ 	}
+
 
 	$table_head = '<tr><th>Range</th>';
 	foreach ( range( 'A', 'M' ) as $letter ) {
@@ -779,25 +759,26 @@ function hrs_salary_grid_n_grpa_am( $data = array() ) {
 	$table_head .= '<tr><th>YRSx</th>';
 	foreach ( range( 'A', 'M' ) as $letter ) {
 		/* translators: A letter of the alphabet. */
-		if ( 'A' === $letter || 'B' === $letter || 'C' === $letter || 'D' === $letter || 'F' === $letter || 'H' === $letter || 'J' === $letter ) {
+                if ($letter == 'A' || $letter == 'B' || $letter == 'C' || $letter == 'D' || $letter == 'F' || $letter == 'H' || $letter == 'J'  ){
 			$table_head .= sprintf( __( '<th></th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'E' === $letter ) {
+                }elseif ( $letter == 'E' ) {
 			$table_head .= sprintf( __( '<th>0</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'G' === $letter ) {
+		}elseif ( $letter == 'G' ) {
 			$table_head .= sprintf( __( '<th>1</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'I' === $letter ) {
+		}elseif ( $letter == 'I' ) {
 			$table_head .= sprintf( __( '<th>2</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'K' === $letter ) {
+		}elseif ( $letter == 'K' ) {
 			$table_head .= sprintf( __( '<th>3</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'L' === $letter ) {
+		}elseif ( $letter == 'L' ) {
 			$table_head .= sprintf( __( '<th>4</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'M' === $letter ) {
+		}elseif ( $letter == 'M' ) {
 			$table_head .= sprintf( __( '<th>5</th>', 'hrs-wsu-edu' ) );
 		}
 	}
+
 	$table_head .= '</tr>';
 
-	$table_body = '';
+        $table_body = '';
 	foreach ( $data as $row ) {
 		$table_body .= '<tr>';
 
@@ -824,12 +805,13 @@ function hrs_salary_grid_n_grpa_am( $data = array() ) {
 
 	printf(
 		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
-		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		$table_head, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		$table_body // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	);
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+		$table_head,
+		$table_body
+	); // WPCS: XSS ok.
 
 }
+
 
 /**
  * Retrieves and displays a table of Salary Grid data for Nurses (Group A N-U).
@@ -838,26 +820,19 @@ function hrs_salary_grid_n_grpa_am( $data = array() ) {
  * table.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary grid data to format.
  * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid_n_grpa_nu( $data = array() ) {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid_n_grpa_nu();
 
 		if ( ! $data ) {
 			return false;
 		}
-	}
+ 	}
+
 
 	$table_head = '<tr><th>Range</th>';
 	foreach ( range( 'N', 'U' ) as $letter ) {
@@ -869,27 +844,28 @@ function hrs_salary_grid_n_grpa_nu( $data = array() ) {
 	$table_head .= '<tr><th>YRSx</th>';
 	foreach ( range( 'N', 'U' ) as $letter ) {
 		/* translators: A letter of the alphabet. */
-		if ( 'N' === $letter ) {
+                if ($letter == 'N' ){
 			$table_head .= sprintf( __( '<th>6</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'O' === $letter ) {
+                }elseif ( $letter == 'O' ) {
 			$table_head .= sprintf( __( '<th>7</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'P' === $letter ) {
+		}elseif ( $letter == 'P' ) {
 			$table_head .= sprintf( __( '<th>8</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'Q' === $letter ) {
+		}elseif ( $letter == 'Q' ) {
 			$table_head .= sprintf( __( '<th>12</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'R' === $letter ) {
+		}elseif ( $letter == 'R' ) {
 			$table_head .= sprintf( __( '<th>15</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'S' === $letter ) {
+		}elseif ( $letter == 'S' ) {
 			$table_head .= sprintf( __( '<th>18</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'T' === $letter ) {
+		}elseif ( $letter == 'T' ) {
 			$table_head .= sprintf( __( '<th>20</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'U' === $letter ) {
+		}elseif ( $letter == 'U' ) {
 			$table_head .= sprintf( __( '<th>26</th>', 'hrs-wsu-edu' ) );
 		}
 	}
+
 	$table_head .= '</tr>';
 
-	$table_body = '';
+        $table_body = '';
 	foreach ( $data as $row ) {
 		$table_body .= '<tr>';
 
@@ -916,11 +892,13 @@ function hrs_salary_grid_n_grpa_nu( $data = array() ) {
 
 	printf(
 		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
-		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		$table_head, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		$table_body // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	);
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+		$table_head,
+		$table_body
+	); // WPCS: XSS ok.
+
 }
+
 
 /**
  * Retrieves and displays a table of Salary Grid data for Nurses (Group B A-M).
@@ -929,26 +907,19 @@ function hrs_salary_grid_n_grpa_nu( $data = array() ) {
  * table.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary grid data to format.
  * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid_n_grpb_am( $data = array() ) {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid_n_grpb_am();
 
 		if ( ! $data ) {
 			return false;
 		}
-	}
+ 	}
+
 
 	$table_head = '<tr><th>Range</th>';
 	foreach ( range( 'A', 'M' ) as $letter ) {
@@ -961,29 +932,30 @@ function hrs_salary_grid_n_grpb_am( $data = array() ) {
 	$table_head .= '<tr><th>YRSx</th>';
 	foreach ( range( 'A', 'M' ) as $letter ) {
 		/* translators: A letter of the alphabet. */
-		if ( 'B' === $letter || 'D' === $letter || 'F' === $letter || 'H' === $letter || 'J' === $letter ) {
+                if ($letter == 'B' || $letter == 'D' || $letter == 'F' || $letter == 'H' || $letter == 'J' ){
 			$table_head .= sprintf( __( '<th></th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'A' === $letter ) {
+                }elseif ( $letter == 'A' ) {
 			$table_head .= sprintf( __( '<th>0</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'C' === $letter ) {
+		}elseif ( $letter == 'C' ) {
 			$table_head .= sprintf( __( '<th>1</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'E' === $letter ) {
+		}elseif ( $letter == 'E' ) {
 			$table_head .= sprintf( __( '<th>2</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'G' === $letter ) {
+		}elseif ( $letter == 'G' ) {
 			$table_head .= sprintf( __( '<th>3</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'I' === $letter ) {
+		}elseif ( $letter == 'I' ) {
 			$table_head .= sprintf( __( '<th>4</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'K' === $letter ) {
+		}elseif ( $letter == 'K' ) {
 			$table_head .= sprintf( __( '<th>5</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'L' === $letter ) {
+		}elseif ( $letter == 'L' ) {
 			$table_head .= sprintf( __( '<th>6</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'M' === $letter ) {
+		}elseif ( $letter == 'M' ) {
 			$table_head .= sprintf( __( '<th>7</th>', 'hrs-wsu-edu' ) );
 		}
 	}
+
 	$table_head .= '</tr>';
 
-	$table_body = '';
+        $table_body = '';
 	foreach ( $data as $row ) {
 		$table_body .= '<tr>';
 
@@ -1010,11 +982,13 @@ function hrs_salary_grid_n_grpb_am( $data = array() ) {
 
 	printf(
 		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
-		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		$table_head, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		$table_body // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	);
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+		$table_head,
+		$table_body
+	); // WPCS: XSS ok.
+
 }
+
 
 /**
  * Retrieves and displays a table of Salary Grid data for Nurses (Group B N-U).
@@ -1023,26 +997,19 @@ function hrs_salary_grid_n_grpb_am( $data = array() ) {
  * table.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary grid data to format.
  * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid_n_grpb_nu( $data = array() ) {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid_n_grpb_nu();
 
 		if ( ! $data ) {
 			return false;
 		}
-	}
+ 	}
+
 
 	$table_head = '<tr><th>Range</th>';
 	foreach ( range( 'N', 'U' ) as $letter ) {
@@ -1054,28 +1021,28 @@ function hrs_salary_grid_n_grpb_nu( $data = array() ) {
 	$table_head .= '<tr><th>YRSx</th>';
 	foreach ( range( 'N', 'U' ) as $letter ) {
 		/* translators: A letter of the alphabet. */
-		if ( 'N' === $letter ) {
+                if ($letter == 'N' ){
 			$table_head .= sprintf( __( '<th>8</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'O' === $letter ) {
+                }elseif ( $letter == 'O' ) {
 			$table_head .= sprintf( __( '<th>9</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'P' === $letter ) {
+		}elseif ( $letter == 'P' ) {
 			$table_head .= sprintf( __( '<th>10</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'Q' === $letter ) {
+		}elseif ( $letter == 'Q' ) {
 			$table_head .= sprintf( __( '<th>12</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'R' === $letter ) {
+		}elseif ( $letter == 'R' ) {
 			$table_head .= sprintf( __( '<th>15</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'S' === $letter ) {
+		}elseif ( $letter == 'S' ) {
 			$table_head .= sprintf( __( '<th>18</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'T' === $letter ) {
+		}elseif ( $letter == 'T' ) {
 			$table_head .= sprintf( __( '<th>20</th>', 'hrs-wsu-edu' ) );
-		} elseif ( 'U' === $letter ) {
+		}elseif ( $letter == 'U' ) {
 			$table_head .= sprintf( __( '<th>26</th>', 'hrs-wsu-edu' ) );
 		}
 	}
 
 	$table_head .= '</tr>';
 
-	$table_body = '';
+        $table_body = '';
 	foreach ( $data as $row ) {
 		$table_body .= '<tr>';
 
@@ -1103,10 +1070,10 @@ function hrs_salary_grid_n_grpb_nu( $data = array() ) {
 
 	printf(
 		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
-		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		$table_head, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		$table_body // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	);
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
+		$table_head,
+		$table_body
+	); // WPCS: XSS ok.
 
 }
 
@@ -1117,21 +1084,14 @@ function hrs_salary_grid_n_grpb_nu( $data = array() ) {
  * table.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
- */
-function hrs_salary_grid_n_grpab_am() {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
-	$datagrpab = '';
-	hrs_salary_grid_n_grpb_am( $datagrpab );
-	hrs_salary_grid_n_grpa_am( $datagrpab );
+  */
+function hrs_salary_grid_n_grpab_am(){
+     $datagrpab = '';
+     hrs_salary_grid_n_grpb_am($datagrpab);
+     hrs_salary_grid_n_grpa_am($datagrpab);
 }
+
 
 /**
  * Retrieves and displays a table of Salary Grid data for Nurses from Groups A and B (N-U) .
@@ -1140,21 +1100,14 @@ function hrs_salary_grid_n_grpab_am() {
  * table.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
- */
-function hrs_salary_grid_n_grpab_nu() {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
-	$datagrpab = '';
-	hrs_salary_grid_n_grpb_nu( $datagrpab );
-	hrs_salary_grid_n_grpa_nu( $datagrpab );
+  */
+function hrs_salary_grid_n_grpab_nu(){
+     $datagrpab = '';
+     hrs_salary_grid_n_grpb_nu($datagrpab);
+     hrs_salary_grid_n_grpa_nu($datagrpab);
 }
+
 
 /**
  * Retrieves and displays a table of Salary Schedule data for Nurses.
@@ -1163,19 +1116,11 @@ function hrs_salary_grid_n_grpab_nu() {
  * an HTML table.
  *
  * @since 0.20.0
- * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary data to format.
  * @return string|false HTML formatted table of salary data. False if no data is available.
  */
 function hrs_cs_salary_n_schedule( $data = array() ) {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Sqlsrv DB plugin "HRS Job Classifications" block', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_cs_salary_n_schedule();
 
@@ -1198,7 +1143,6 @@ function hrs_cs_salary_n_schedule( $data = array() ) {
 		</thead>
 		<tbody>
 			<?php
-			// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 			$table_body = '';
 			foreach ( $data as $row ) {
 				$table_body .= '<tr>';
@@ -1210,8 +1154,7 @@ function hrs_cs_salary_n_schedule( $data = array() ) {
 				$table_body .= '<td data-column="Salary Max">$' . esc_html( number_format( $row->Salary_Max, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 				$table_body .= '</tr>';
 			}
-			echo $table_body; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			// phpcs:enable
+			echo $table_body; // WPCS: XSS ok.
 			?>
 		</tbody>
 	</table>
