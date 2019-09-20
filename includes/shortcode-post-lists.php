@@ -5,7 +5,6 @@
  * @package WSU_Human_Resources_Services
  * @since 0.13.0
  */
-
 namespace WSU\HRS\Shortcode_Posts_Lists;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -99,10 +98,10 @@ function js_search_form_shortchode( $atts ) {
 
 	printf(
 		/* translators: 1: the search field label, 2: the number of the column to search within. */
-		__( '<div class="js-search-form"><label for="search_table_input">%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label><button id="js-search-form-reset" type="button" class="button--small">Reset</button></div>', 'hrs-wsu-edu' ),
+		__( '<div class="js-search-form"><label for="search_table_input">%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label><button id="js-search-form-reset" type="button" class="button--small">Reset</button></div>', 'hrs-wsu-edu' ), // phpcs:ignore WordPress.Security.EscapeOutput
 		esc_html( $args['label'] ),
 		esc_html( absint( $args['column'] ) )
-	); // WPCS: XSS ok.
+	);
 
 	return ob_get_clean();
 }

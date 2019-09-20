@@ -5,7 +5,6 @@
  * @package WSU_Human_Resources_Services
  * @since 0.14.0
  */
-
 namespace WSU\HRS\Template_Tags;
 
 /**
@@ -119,7 +118,7 @@ function the_terms( $args = array() ) {
 		$term_title
 	);
 
-	echo $html; // WPCS: XSS ok.
+	echo $html; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 
 /**
@@ -197,10 +196,10 @@ function hrs_recent_posts( $args = null ) {
 		'style'          => 'cards',
 	);
 
-	$query = wp_parse_args( $args, $defaults );
-	$posts = hrs_get_recent_posts( $query );
+	$query     = wp_parse_args( $args, $defaults );
+	$hrs_posts = hrs_get_recent_posts( $query );
 
-	if ( ! empty( $posts ) ) :
+	if ( ! empty( $hrs_posts ) ) :
 
 		if ( ! empty( $query['style'] ) ) {
 			if ( 'cards' === $query['style'] ) {
@@ -212,8 +211,8 @@ function hrs_recent_posts( $args = null ) {
 			}
 		}
 
-		foreach ( $posts as $post ) {
-			setup_postdata( $post ); // WPCS: override ok.
+		foreach ( $hrs_posts as $hrs_post ) {
+			setup_postdata( $hrs_post );
 			get_template_part( 'articles/archive-content' );
 		}
 
@@ -444,10 +443,10 @@ function list_erdb_awards_by_year() {
 
 		printf(
 			/* translators: 1: the section title (plural), 2: a list element of multiple awards */
-			__( '<h2>%1$s Year Awards</h2><ul class="articles-list">%2$s</ul>', 'hrs-wsu-edu' ),
+			__( '<h2>%1$s Year Awards</h2><ul class="articles-list">%2$s</ul>', 'hrs-wsu-edu' ), // phpcs:ignore WordPress.Security.EscapeOutput
 			esc_attr( $title ),
-			get_awards_list( $year, $awards )
-		); // WPCS: XSS ok.
+			get_awards_list( $year, $awards ) // phpcs:ignore WordPress.Security.EscapeOutput
+		);
 	}
 }
 
@@ -506,10 +505,10 @@ function hrs_salary_grid( $data = array() ) {
 
 	printf(
 		/* translators: 1: The table head section, 2: The table body section filled with numbers. */
-		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ),
-		$table_head,
-		$table_body
-	); // WPCS: XSS ok.
+		__( '<table class="tablepress striped searchable"><thead>%1$s</thead><tbody>%2$s</tbody></table>', 'hrs-wsu-edu' ), // phpcs:ignore WordPress.Security.EscapeOutput
+		$table_head, // phpcs:ignore WordPress.Security.EscapeOutput
+		$table_body // phpcs:ignore WordPress.Security.EscapeOutput
+	);
 }
 
 /**
@@ -549,15 +548,15 @@ function hrs_cs_salary_schedule( $data = array() ) {
 			$table_body = '';
 			foreach ( $data as $row ) {
 				$table_body .= '<tr>';
-				$table_body .= '<td data-column="Job Class">' . esc_html( $row->ClassCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
-				$table_body .= '<td data-column="Job Group">' . esc_html( $row->JobGroupCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
-				$table_body .= '<td data-column="Job Title">' . esc_html( $row->JobTitle ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
-				$table_body .= '<td data-column="Range"><a href="/external-db-testing/salary-grid/?filter=' . esc_attr( $row->SalRangeNum ) . '">' . esc_html( $row->SalrangeWExceptions ) . '</a></td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
-				$table_body .= '<td data-column="Salary Min">$' . esc_html( number_format( $row->Salary_Min, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
-				$table_body .= '<td data-column="Salary Max">$' . esc_html( number_format( $row->Salary_Max, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+				$table_body .= '<td data-column="Job Class">' . esc_html( $row->ClassCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+				$table_body .= '<td data-column="Job Group">' . esc_html( $row->JobGroupCode ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+				$table_body .= '<td data-column="Job Title">' . esc_html( $row->JobTitle ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+				$table_body .= '<td data-column="Range"><a href="/external-db-testing/salary-grid/?filter=' . esc_attr( $row->SalRangeNum ) . '">' . esc_html( $row->SalrangeWExceptions ) . '</a></td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+				$table_body .= '<td data-column="Salary Min">$' . esc_html( number_format( $row->Salary_Min, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+				$table_body .= '<td data-column="Salary Max">$' . esc_html( number_format( $row->Salary_Max, 2 ) ) . '</td>'; // phpcs:ignore WordPress.NamingConventions.ValidVariableName
 				$table_body .= '</tr>';
 			}
-			echo $table_body; // WPCS: XSS ok.
+			echo $table_body; // phpcs:ignore WordPress.Security.EscapeOutput
 			?>
 		</tbody>
 	</table>
