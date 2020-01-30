@@ -12,9 +12,11 @@
  */
 
 /**
- * Adds Microsoft SQL Server database connection class.
+ * Sets up basic theme configuration and WordPress API settings.
+ *
+ * @since 0.12.0
  */
-require_once 'includes/class-msdb-connect.php';
+require_once 'includes/class-hrs-theme-setup.php';
 
 add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
@@ -278,7 +280,7 @@ function hrs_gform_setup() {
 		return false;
 	}
 
-	/**
+	/*
 	 * Add filters for the Evaluators Selection forms.
 	 *
 	 * The filter targets list field columns by form, field, column
@@ -287,17 +289,20 @@ function hrs_gform_setup() {
 	 * @uses RGFormsModel()
 	 *
 	 */
-	$threesixty_form_id  = absint( RGFormsModel::get_form_id( '360 Evaluators Selection' ) );
-	$prog_review_form_id = absint( RGFormsModel::get_form_id( 'Progress Review Evaluators Selection' ) );
+	$form_names = array(
+		'360 Evaluators Selection',
+		'WSUTC 360 Evaluators Selection',
+		'EQ360 Evaluators Selection',
+		'Progress Review Evaluators Selection',
+	);
 
-	if ( $threesixty_form_id ) {
-		add_filter( 'gform_column_input_content_' . $threesixty_form_id . '_8_5', 'hrs_filter_evals_reason_column', 10, 6 );
-		add_filter( 'gform_column_input_' . $threesixty_form_id . '_8_6', 'hrs_filter_evals_rel_column', 10, 5 );
-	}
+	$form_ids = array_map( 'absint', array_map( array( 'RGFormsModel', 'get_form_id' ), $form_names ) );
 
-	if ( $prog_review_form_id ) {
-		add_filter( 'gform_column_input_content_' . $prog_review_form_id . '_8_5', 'hrs_filter_evals_reason_column', 10, 6 );
-		add_filter( 'gform_column_input_' . $prog_review_form_id . '_8_6', 'hrs_filter_evals_rel_column', 10, 5 );
+	foreach ( $form_ids as $form_id ) {
+		if ( 0 !== $form_id ) {
+			add_filter( 'gform_column_input_content_' . $form_id . '_8_5', 'hrs_filter_evals_reason_column', 10, 6 );
+			add_filter( 'gform_column_input_' . $form_id . '_8_6', 'hrs_filter_evals_rel_column', 10, 5 );
+		}
 	}
 }
 
@@ -348,20 +353,38 @@ function hrs_filter_evals_reason_column( $input, $input_info, $field, $text, $va
  * @return array The filtered input info array.
  */
 function hrs_filter_evals_rel_column( $input_info, $field, $column, $value, $form_id ) {
-	$input_info = array(
-		'type'    => 'select',
-		'choices' => array(
-			'',
-			'Peer',
-			'Direct Report',
-			'Student',
-			'Faculty',
-			'Staff',
-			'Regent',
-			'Community Liaison',
-			'Other',
-		),
-	);
+	$eq_threesixty_form_id = absint( RGFormsModel::get_form_id( 'EQ360 Evaluators Selection' ) );
+
+	// If this is the 'EQ360 Evaluators Selection' form.
+	if ( $eq_threesixty_form_id === $form_id ) {
+		$input_info = array(
+			'type'    => 'select',
+			'choices' => array(
+				'',
+				'Peers',
+				'Manager',
+				'Direct Reports',
+				'Community Liasons',
+				'Others',
+			),
+		);
+	} else {
+		// Otherwise it is the standard '360 Evaluators Selection' form.
+		$input_info = array(
+			'type'    => 'select',
+			'choices' => array(
+				'',
+				'Peer',
+				'Direct Report',
+				'Student',
+				'Faculty',
+				'Staff',
+				'Regent',
+				'Community Liaison',
+				'Other',
+			),
+		);
+	}
 
 	return $input_info;
 }
