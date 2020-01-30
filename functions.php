@@ -12,9 +12,11 @@
  */
 
 /**
- * Adds Microsoft SQL Server database connection class.
+ * Sets up basic theme configuration and WordPress API settings.
+ *
+ * @since 0.12.0
  */
-require_once 'includes/class-msdb-connect.php';
+require_once 'includes/class-hrs-theme-setup.php';
 
 add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
