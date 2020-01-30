@@ -79,16 +79,19 @@ class HRS_Theme_Setup {
 	public function includes() {
 		// The HRS documents gallery shortcode.
 		require __DIR__ . '/shortcode-document-gallery.php';
+
 		// The HRS last updated label shortcode.
 		require __DIR__ . '/shortcode-last-updated.php';
+
 		// The HRS post lists shortcodes.
 		require __DIR__ . '/shortcode-post-lists.php';
-		// The HRS external content shortcodes.
-		require __DIR__ . '/shortcode-external-content.php';
+
 		// The HRS template tags.
 		require __DIR__ . '/hrs-template-tags.php';
+
 		// WP database queries.
 		require __DIR__ . '/hrs-queries.php';
+
 		// HRS Lazy Load Images.
 		require __DIR__ . '/class-lazy-load-images.php';
 	}
