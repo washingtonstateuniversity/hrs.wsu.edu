@@ -18,6 +18,28 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.8.0-beta.1 (:construction: 2020-01-30)
+
+### Fixed
+
+- :warning: phpcs linter issues.
+
+### Changed
+
+- :arrow_up: node-sass => 4.13.1
+
+### Added
+
+- Additional Gravity Forms custom form modifications.
+- Template tags and shortcodes to handle fetching and displaying more external content for salary and job classification data.
+- Queries for additional MSSQL database tables.
+
+### Deprecated
+
+- SASS-base stylesheets. Converting to CSS-only stylesheets using post-css plugins to handle processing.
+- Javascript search-filter tool and related template tags. This is moving to a block in a separate plugin.
+- SQL Server connector class (`HRS_MSDB`), template tags, and shortcodes. These are moving to a separate plugin.
+
 ## 1.7.2 (2019-09-20)
 
 ### Fixed
