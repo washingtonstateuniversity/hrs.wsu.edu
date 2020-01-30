@@ -358,7 +358,7 @@ function hrs_filter_evals_reason_column( $input, $input_info, $field, $text, $va
  * @return array The filtered input info array.
  */
 function hrs_filter_evals_rel_column( $input_info, $field, $column, $value, $form_id ) {
-	$eq_threesixty_form_id  = absint( RGFormsModel::get_form_id( 'EQ360 Evaluators Selection' ) );
+	$eq_threesixty_form_id = absint( RGFormsModel::get_form_id( 'EQ360 Evaluators Selection' ) );
 
 	// If this is the 'EQ360 Evaluators Selection' form.
 	if ( $eq_threesixty_form_id === $form_id ) {
