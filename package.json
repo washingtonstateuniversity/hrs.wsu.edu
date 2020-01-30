@@ -1,6 +1,6 @@
 {
   "name": "hrs.wsu.edu",
-  "version": "1.8.0",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/washingtonstateuniversity/hrs.wsu.edu"
@@ -22,14 +22,14 @@
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/polyfill": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
-    "@wordpress/babel-preset-default": "^4.10.0",
-    "@wordpress/eslint-plugin": "^3.4.1",
+    "@wordpress/babel-preset-default": "^4.9.0",
+    "@wordpress/eslint-plugin": "^3.3.0",
     "autoprefixer": "^9.7.4",
     "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.0.5",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
-    "eslint-loader": "^3.0.3",
+    "eslint-loader": "3.0.3",
     "mkdirp": "^1.0.3",
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
@@ -60,8 +60,5 @@
     "test": "run-p \"test:*\"",
     "prebuild": "run-p clean test",
     "build": "run-p \"build:*\""
-  },
-  "dependencies": {
-    "url-search-params-polyfill": "^8.0.0"
   }
 }
