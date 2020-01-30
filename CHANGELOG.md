@@ -16,7 +16,40 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Added (for new features)
 ### Deprecated (for once-stable features removed in upcoming releases)
 ### Removed (for deprecated features removed in this release)
+### Experimental
 -->
+
+## 2.0.0-alpha.1 (:construction: 2020-01-30)
+
+### Changed
+
+- Modify the Gravity Forms filters to more easily include more form adjustments.
+- :construction_worker: Update Travis rules to monitor the 2.x branch.
+- :arrow_up: @babel/core => 7.8.4
+- :arrow_up: @babel/plugin-syntax-dynamic-import => 7.8.3
+- :arrow_up: @babel/polyfill => 7.8.3
+- :arrow_up: @babel/preset-env => 7.8.4
+- :arrow_up: @wordpress/babel-preset-default => 4.9.0
+- :arrow_up: @wordpress/eslint-plugin => 3.3.0
+- :arrow_up: autoprefixer => 9.7.4
+- :arrow_up: babel-loader => 8.0.5
+- :arrow_up: eslint => 6.8.0
+- :arrow_up: eslint-loader => 3.0.3
+- :arrow_up: mkdirp => 1.0.3
+- :arrow_up: node-sass => 4.13.1
+- :arrow_up: postcss-cli => 7.1.0
+- :arrow_up: rimraf => 3.0.1
+- :arrow_up: stylelint => 13.0.0
+- :arrow_up: svgo => 1.3.2
+- :arrow_up: webpack => 4.41.5
+- :arrow_up: webpack-cli => 3.3.10
+
+### Removed
+
+- :boom: Remove MS SQL Server connector class and all related template tags and shortcodes.
+- URL search parameters polyfill formerly used by the search filter.
+- :fire: Search-filter JavaScript tool in preference for HRS Search Filter block.
+- :heavy_minus_sign: url-search-params-polyfill npm dependency
 
 ## 1.7.2 (2019-09-20)
 
