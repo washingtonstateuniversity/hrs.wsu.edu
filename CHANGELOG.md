@@ -16,28 +16,23 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Added (for new features)
 ### Deprecated (for once-stable features removed in upcoming releases)
 ### Removed (for deprecated features removed in this release)
-### Experimental (for features that are still being tested)
+### Experimental
 -->
 
-## 1.8.0 (2020-02-04)
-
-### Fixed
-
-- :bug: `setup_postdata` requires writing to global `$post` to work.
-- :warning: phpcs linter issues.
+## 2.0.0-alpha.1 (:construction: 2020-01-30)
 
 ### Changed
 
-- Increment WP tested to 5.3.2.
-- :arrow_up: squizlabs/php_codesniffer => 3.5.4
-- :arrow_up: wp-coding-standards/wpcs => 2.2.1
+- Modify the Gravity Forms filters to more easily include more form adjustments.
+- :construction_worker: Update Travis rules to monitor the 2.x branch.
 - :arrow_up: @babel/core => 7.8.4
 - :arrow_up: @babel/plugin-syntax-dynamic-import => 7.8.3
 - :arrow_up: @babel/polyfill => 7.8.3
 - :arrow_up: @babel/preset-env => 7.8.4
-- :arrow_up: @wordpress/babel-preset-default => 4.10.0
-- :arrow_up: @wordpress/eslint-plugin => 3.4.1
+- :arrow_up: @wordpress/babel-preset-default => 4.9.0
+- :arrow_up: @wordpress/eslint-plugin => 3.3.0
 - :arrow_up: autoprefixer => 9.7.4
+- :arrow_up: babel-loader => 8.0.5
 - :arrow_up: eslint => 6.8.0
 - :arrow_up: eslint-loader => 3.0.3
 - :arrow_up: mkdirp => 1.0.3
@@ -48,19 +43,13 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - :arrow_up: svgo => 1.3.2
 - :arrow_up: webpack => 4.41.5
 - :arrow_up: webpack-cli => 3.3.10
-- :arrow_up: url-search-params-polyfill => 8.0.0
 
-### Added
+### Removed
 
-- Additional Gravity Forms custom form modifications.
-- Template tags and shortcodes to handle fetching and displaying more external content for salary and job classification data.
-- Queries for additional MSSQL database tables.
-
-### Deprecated
-
-- SASS-base stylesheets. Converting to CSS-only stylesheets using post-css plugins to handle processing.
-- Javascript search-filter tool and related template tags. This is moving to a block in a separate plugin.
-- :wastebasket: SQL Server connector class (`HRS_MSDB`), template tags, and shortcodes. These are moving to a separate plugin.
+- :boom: Remove MS SQL Server connector class and all related template tags and shortcodes.
+- URL search parameters polyfill formerly used by the search filter.
+- :fire: Search-filter JavaScript tool in preference for HRS Search Filter block.
+- :heavy_minus_sign: url-search-params-polyfill npm dependency
 
 ## 1.7.2 (2019-09-20)
 
