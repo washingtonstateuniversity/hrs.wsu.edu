@@ -12,13 +12,6 @@
  */
 
 /**
- * Sets up basic theme configuration and WordPress API settings.
- *
- * @since 0.12.0
- */
-require_once 'includes/class-hrs-theme-setup.php';
-
-/**
  * Adds Microsoft SQL Server database connection class.
  */
 require_once 'includes/class-msdb-connect.php';
