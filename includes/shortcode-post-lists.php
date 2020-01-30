@@ -12,7 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 add_shortcode( 'hrs_recent_posts', __NAMESPACE__ . '\hrs_recent_posts_shortcode' );
-add_shortcode( 'filter_form', __NAMESPACE__ . '\js_search_form_shortchode' );
 
 /**
  * Shortcode displays the latest HRS posts matching criteria.
@@ -57,59 +56,6 @@ function hrs_recent_posts_shortcode( $atts ) {
 	ob_start();
 
 	\WSU\HRS\Template_Tags\hrs_recent_posts( $query );
-
-	return ob_get_clean();
-}
-
-/**
- * Shortcode displays the search form for filtering table contents.
- *
- * Sample default usage: [filter_form]
- *
- * Sample usage to search the third column with a custom label:
- * [filter_form column="3" label="Filter column"]
- *
- * Supported attributes for the shortcode are: 'column', to designate by number
- * which column to search within; and 'label', to customize the text of the
- * input field label.
- *
- * @see \WSU\HRS\Template_Tags\js_search_form()
- *
- * @since 0.20.0
- * @deprecated 1.8.0
- *
- * @param $atts {
- *     Optional. Arguments to customize the display and behavior of the search form.
- *
- *     @type int    $column The column to search within. Defaults to column 1.
- *     @type string $label  Label text to display. Defaults to "Search table".
- * }
- * @return string HTML formatted search input element.
- */
-function js_search_form_shortchode( $atts ) {
-	do_action(
-		'deprecated_function_run',
-		__FUNCTION__,
-		__( 'HRSWP Blocks plugin "HRS Search Filter" block', 'hrs-wsu-edu' ),
-		'1.8.0'
-	);
-
-	$args = shortcode_atts(
-		array(
-			'column' => 1,
-			'label'  => 'Search',
-		),
-		$atts
-	);
-
-	ob_start();
-
-	printf(
-		/* translators: 1: the search field label, 2: the number of the column to search within. */
-		__( '<div class="js-search-form"><label for="search_table_input">%1$s: <input type="search" name="search_table_input" id="search_table_input" data-search-column="%2$d"></label><button id="js-search-form-reset" type="button" class="button--small">Reset</button></div>', 'hrs-wsu-edu' ), // phpcs:ignore WordPress.Security.EscapeOutput
-		esc_html( $args['label'] ),
-		esc_html( absint( $args['column'] ) )
-	);
 
 	return ob_get_clean();
 }

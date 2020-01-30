@@ -72,7 +72,7 @@ function hrs_enqueue_styles() {
  */
 function hrs_noscript_styles() {
 	?>
-	<noscript><style>.search-toggle, .js-search-form { display: none !important; } #search-menu { float: right !important; padding-top: 1.5rem !important; position: relative !important; top: 0; transform: none !important; }</style></noscript>
+	<noscript><style>#search-menu { float: right !important; padding-top: 1.5rem !important; position: relative !important; top: 0; transform: none !important; }</style></noscript>
 	<?php
 }
 
