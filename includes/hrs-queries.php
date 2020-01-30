@@ -215,3 +215,251 @@ function get_cs_salary_schedule() {
 
 	return $data;
 }
+
+
+/**
+ * Returns an object of salary data for IT Professionals from the EDB.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using the saved
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
+ *
+ * @since 0.20.0
+ *
+ * @return array An array of objects matching the specified query.
+ */
+function get_salary_grid_it() {
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
+
+	// Open a new MS database connection.
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$salaryit = $msdb->get_results(
+		'
+		SELECT *
+		FROM SalGridIT
+		'
+	);
+
+	$msdb->clean();
+
+	return $salaryit;
+}
+
+
+/**
+ * Returns an object of salary data and job titles for IT Professionals from the EDB.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using the saved
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
+ *
+ * @since 0.20.0
+ *
+ * @return array An array of objects matching the specified query.
+ */
+function get_cs_salary_it_schedule() {
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
+
+	// Open a new MS database connection.
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$datait = $msdb->get_results(
+		$msdb->prepare(
+			'
+			SELECT ClassCode, JobGroupCode, JobTitle, SalRangeNum, SalrangeWExceptions, Salary_Min, Salary_Max
+			FROM V_JobClassCSIT
+			ORDER BY %s
+			',
+			array( 'JobTitle' )
+		)
+	);
+
+	$msdb->clean();
+
+	return $datait;
+}
+
+
+/**
+ * Returns an object of salary data for nurses (Group A A-M) from the EDB.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using the saved
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
+ *
+ * @since 0.20.0
+ *
+ * @return array An array of objects matching the specified query.
+ */
+function get_salary_grid_n_grpa_am() {
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
+
+	// Open a new MS database connection.
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$salgrpaam = $msdb->get_results(
+		'
+		SELECT *
+		FROM V_SalGridN_GrpA_AM 
+		'
+	);
+
+	$msdb->clean();
+
+	return $salgrpaam;
+}
+
+
+/**
+ * Returns an object of salary data for nurses (Group A N-U) from the EDB.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using the saved
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
+ *
+ * @since 0.20.0
+ *
+ * @return array An array of objects matching the specified query.
+ */
+function get_salary_grid_n_grpa_nu() {
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
+
+	// Open a new MS database connection.
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$salgrpanu = $msdb->get_results(
+		'
+		SELECT *
+		FROM V_SalGridN_GrpA_NU 
+		'
+	);
+
+	$msdb->clean();
+
+	return $salgrpanu;
+}
+
+
+/**
+ * Returns an object of salary data for nurses (Group B A-M) from the EDB.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using the saved
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
+ *
+ * @since 0.20.0
+ *
+ * @return array An array of objects matching the specified query.
+ */
+function get_salary_grid_n_grpb_am() {
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
+
+	// Open a new MS database connection.
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$salgrpbam = $msdb->get_results(
+		'
+		SELECT *
+		FROM V_SalGridN_GrpB_AM 
+		'
+	);
+
+	$msdb->clean();
+
+	return $salgrpbam;
+}
+
+
+/**
+ * Returns an object of salary data for nurses (Group B N-U) from the EDB.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using the saved
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
+ *
+ * @since 0.20.0
+ *
+ * @return array An array of objects matching the specified query.
+ */
+function get_salary_grid_n_grpb_nu() {
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
+
+	// Open a new MS database connection.
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$salgrpbnu = $msdb->get_results(
+		'
+		SELECT *
+		FROM V_SalGridN_GrpB_NU 
+		'
+	);
+
+	$msdb->clean();
+
+	return $salgrpbnu;
+}
+
+
+/**
+ * Returns an object of salary data and job titles for nurses from the EDB.
+ *
+ * Loads a Microsoft SQL database connection with ODBC using the saved
+ * credentials and the HRS_MSDB class. Then selects desired columns from
+ * the database, frees the SQL statement resources, closes the connection,
+ * and returns the results.
+ *
+ * @since 0.20.0
+ *
+ * @return array An array of objects matching the specified query.
+ */
+function get_cs_salary_n_schedule() {
+	$dbuser     = defined( 'MSDB_USER' ) ? MSDB_USER : '';
+	$dbpassword = defined( 'MSDB_PASSWORD' ) ? MSDB_PASSWORD : '';
+	$dbname     = defined( 'EMPLOY_DB_NAME' ) ? EMPLOY_DB_NAME : '';
+	$dbhost     = defined( 'MSDB_HOST' ) ? MSDB_HOST : '';
+
+	// Open a new MS database connection.
+	$msdb = new \HRS_MSDB( $dbuser, $dbpassword, $dbname, $dbhost );
+
+	$datan = $msdb->get_results(
+		$msdb->prepare(
+			'
+			SELECT ClassCode, JobGroupCode, JobTitle, SalRangeNum, SalrangeWExceptions, Salary_Min, Salary_Max
+			FROM V_JobClassCSN
+			ORDER BY %s
+			',
+			array( 'JobTitle' )
+		)
+	);
+
+	$msdb->clean();
+
+	return $datan;
+}
+
+
