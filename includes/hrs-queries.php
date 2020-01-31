@@ -216,7 +216,6 @@ function get_cs_salary_schedule() {
 	return $data;
 }
 
-
 /**
  * Returns an object of salary data for IT Professionals from the EDB.
  *
@@ -249,7 +248,6 @@ function get_salary_grid_it() {
 
 	return $salaryit;
 }
-
 
 /**
  * Returns an object of salary data and job titles for IT Professionals from the EDB.
@@ -288,7 +286,6 @@ function get_cs_salary_it_schedule() {
 	return $datait;
 }
 
-
 /**
  * Returns an object of salary data for nurses (Group A A-M) from the EDB.
  *
@@ -321,7 +318,6 @@ function get_salary_grid_n_grpa_am() {
 
 	return $salgrpaam;
 }
-
 
 /**
  * Returns an object of salary data for nurses (Group A N-U) from the EDB.
@@ -356,7 +352,6 @@ function get_salary_grid_n_grpa_nu() {
 	return $salgrpanu;
 }
 
-
 /**
  * Returns an object of salary data for nurses (Group B A-M) from the EDB.
  *
@@ -390,7 +385,6 @@ function get_salary_grid_n_grpb_am() {
 	return $salgrpbam;
 }
 
-
 /**
  * Returns an object of salary data for nurses (Group B N-U) from the EDB.
  *
@@ -423,7 +417,6 @@ function get_salary_grid_n_grpb_nu() {
 
 	return $salgrpbnu;
 }
-
 
 /**
  * Returns an object of salary data and job titles for nurses from the EDB.
@@ -461,5 +454,3 @@ function get_cs_salary_n_schedule() {
 
 	return $datan;
 }
-
-
