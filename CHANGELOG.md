@@ -18,10 +18,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
-## 1.8.0-beta.1 (:construction: 2020-01-30)
+## 1.8.0-beta.2 (:construction: 2020-01-31)
 
 ### Fixed
 
+- :bug: `setup_postdata` requires writing to global `$post` to work.
 - :warning: phpcs linter issues.
 
 ### Changed
