@@ -56,7 +56,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 - SASS-base stylesheets. Converting to CSS-only stylesheets using post-css plugins to handle processing.
 - Javascript search-filter tool and related template tags. This is moving to a block in a separate plugin.
-- SQL Server connector class (`HRS_MSDB`), template tags, and shortcodes. These are moving to a separate plugin.
+- :wastebasket: SQL Server connector class (`HRS_MSDB`), template tags, and shortcodes. These are moving to a separate plugin.
 
 ## 1.7.2 (2019-09-20)
 
