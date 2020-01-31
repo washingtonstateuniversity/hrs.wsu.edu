@@ -186,7 +186,7 @@ function the_terms_gallery( $taxonomy ) {
  * }
  * @return string HTML formatted list of retrieved HRS News posts
  */
-function hrs_recent_posts( $args = null ) {
+function hrs_recent_posts( $args ) {
 	global $post;
 
 	$defaults = array(
@@ -197,10 +197,10 @@ function hrs_recent_posts( $args = null ) {
 		'style'          => 'cards',
 	);
 
-	$query     = wp_parse_args( $args, $defaults );
-	$hrs_posts = hrs_get_recent_posts( $query );
+	$query = wp_parse_args( $args, $defaults );
+	$posts = hrs_get_recent_posts( $query );
 
-	if ( ! empty( $hrs_posts ) ) :
+	if ( ! empty( $posts ) ) :
 
 		if ( ! empty( $query['style'] ) ) {
 			if ( 'cards' === $query['style'] ) {
@@ -212,8 +212,8 @@ function hrs_recent_posts( $args = null ) {
 			}
 		}
 
-		foreach ( $hrs_posts as $hrs_post ) {
-			setup_postdata( $hrs_post );
+		foreach ( $posts as $post ) {
+			setup_postdata( $post );
 			get_template_part( 'articles/archive-content' );
 		}
 
