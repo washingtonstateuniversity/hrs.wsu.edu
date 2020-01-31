@@ -212,7 +212,7 @@ function hrs_recent_posts( $args ) {
 			}
 		}
 
-		foreach ( $posts as $post ) {
+		foreach ( $posts as $post ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			setup_postdata( $post );
 			get_template_part( 'articles/archive-content' );
 		}
