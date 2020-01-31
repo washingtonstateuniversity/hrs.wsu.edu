@@ -18,6 +18,46 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Removed (for deprecated features removed in this release)
 -->
 
+## 1.8.0-rc.1 (:construction: 2020-01-31)
+
+### Fixed
+
+- :bug: `setup_postdata` requires writing to global `$post` to work.
+- :warning: phpcs linter issues.
+
+### Changed
+
+- :arrow_up: squizlabs/php_codesniffer => 3.5.4
+- :arrow_up: @babel/core => 7.8.4
+- :arrow_up: @babel/plugin-syntax-dynamic-import => 7.8.3
+- :arrow_up: @babel/polyfill => 7.8.3
+- :arrow_up: @babel/preset-env => 7.8.4
+- :arrow_up: @wordpress/babel-preset-default => 4.9.0
+- :arrow_up: @wordpress/eslint-plugin => 3.3.0
+- :arrow_up: autoprefixer => 9.7.4
+- :arrow_up: eslint => 6.8.0
+- :arrow_up: eslint-loader => 3.0.3
+- :arrow_up: mkdirp => 1.0.3
+- :arrow_up: node-sass => 4.13.1
+- :arrow_up: postcss-cli => 7.1.0
+- :arrow_up: rimraf => 3.0.1
+- :arrow_up: stylelint => 13.0.0
+- :arrow_up: svgo => 1.3.2
+- :arrow_up: webpack => 4.41.5
+- :arrow_up: webpack-cli => 3.3.10
+
+### Added
+
+- Additional Gravity Forms custom form modifications.
+- Template tags and shortcodes to handle fetching and displaying more external content for salary and job classification data.
+- Queries for additional MSSQL database tables.
+
+### Deprecated
+
+- SASS-base stylesheets. Converting to CSS-only stylesheets using post-css plugins to handle processing.
+- Javascript search-filter tool and related template tags. This is moving to a block in a separate plugin.
+- :wastebasket: SQL Server connector class (`HRS_MSDB`), template tags, and shortcodes. These are moving to a separate plugin.
+
 ## 1.7.2 (2019-09-20)
 
 ### Fixed

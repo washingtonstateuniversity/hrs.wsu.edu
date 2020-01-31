@@ -76,6 +76,7 @@ function hrs_recent_posts_shortcode( $atts ) {
  * @see \WSU\HRS\Template_Tags\js_search_form()
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  * @param $atts {
  *     Optional. Arguments to customize the display and behavior of the search form.
@@ -86,6 +87,13 @@ function hrs_recent_posts_shortcode( $atts ) {
  * @return string HTML formatted search input element.
  */
 function js_search_form_shortchode( $atts ) {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Blocks plugin "HRS Search Filter" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	$args = shortcode_atts(
 		array(
 			'column' => 1,
