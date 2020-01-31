@@ -1,3 +1,7 @@
+/**
+ * @deprecated since version 1.8.0
+ */
+
 const input = /** @type {!Element} */ (
 	document.getElementById( 'search_table_input' ) );
 

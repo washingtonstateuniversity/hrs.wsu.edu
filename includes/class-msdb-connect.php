@@ -18,9 +18,9 @@
  * @link https://codex.wordpress.org/Function_Reference/wpdb_Class
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  */
 class HRS_MSDB {
-
 	/**
 	 * Whether to show SQL/DB errors.
 	 *
@@ -130,6 +130,13 @@ class HRS_MSDB {
 		if ( WP_DEBUG && WP_DEBUG_DISPLAY ) {
 			$this->show_errors = true;
 		}
+
+		do_action(
+			'deprecated_function_run',
+			__CLASS__,
+			__( 'HRSWP Sqlsrv DB plugin', 'hrs-wsu-edu' ),
+			'1.8.0'
+		);
 
 		$this->dbuser     = $dbuser;
 		$this->dbpassword = $dbpassword;

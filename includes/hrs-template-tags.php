@@ -371,12 +371,20 @@ function hrs_pagination( $total_pages = '' ) {
  * list element.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  * @param string $year   Optional. The year from which to select awards to display.
  * @param string $awards Optional. An array of ER award objects to format.
  * @return string HTML formatted list of ER awards including title, description, and image.
  */
 function get_awards_list( $year = '', $awards = '' ) {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Awards" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	// Retrieve awards data if none was passed with the function call.
 	if ( ! $awards ) {
 		$awards = WSU\HRS\Queries\get_erdb_awards();
@@ -422,10 +430,13 @@ function get_awards_list( $year = '', $awards = '' ) {
  * {@uses get_awards_list()} to build the actual list items.
  *
  * @since 0.11.0
+ * @deprecated 1.8.0
  *
  * @return string|false HTML formatted list of awards grouped by year or false if no award data.
  */
 function list_erdb_awards_by_year() {
+	do_action( 'deprecated_function_run', __FUNCTION__, null, '1.8.0' );
+
 	$awards = \WSU\HRS\Queries\get_erdb_awards();
 
 	if ( ! $awards ) {
@@ -458,11 +469,19 @@ function list_erdb_awards_by_year() {
  * table.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary grid data to format.
  * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid( $data = array() ) {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid();
 
@@ -519,11 +538,19 @@ function hrs_salary_grid( $data = array() ) {
  * an HTML table.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary data to format.
  * @return string|false HTML formatted table of salary data. False if no data is available.
  */
 function hrs_cs_salary_schedule( $data = array() ) {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Job Classifications" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_cs_salary_schedule();
 
@@ -590,11 +617,19 @@ function the_post_time_html() {
  * table.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary grid data to format.
  * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid_it( $data = array() ) {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid_it();
 
@@ -651,11 +686,19 @@ function hrs_salary_grid_it( $data = array() ) {
  * an HTML table.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary data to format.
  * @return string|false HTML formatted table of salary data. False if no data is available.
  */
 function hrs_cs_salary_it_schedule( $data = array() ) {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Job Classifications" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_cs_salary_it_schedule();
 
@@ -705,11 +748,19 @@ function hrs_cs_salary_it_schedule( $data = array() ) {
  * table.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary grid data to format.
  * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid_n_grpa_am( $data = array() ) {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid_n_grpa_am();
 
@@ -787,11 +838,19 @@ function hrs_salary_grid_n_grpa_am( $data = array() ) {
  * table.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary grid data to format.
  * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid_n_grpa_nu( $data = array() ) {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid_n_grpa_nu();
 
@@ -870,11 +929,19 @@ function hrs_salary_grid_n_grpa_nu( $data = array() ) {
  * table.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary grid data to format.
  * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid_n_grpb_am( $data = array() ) {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid_n_grpb_am();
 
@@ -956,11 +1023,19 @@ function hrs_salary_grid_n_grpb_am( $data = array() ) {
  * table.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary grid data to format.
  * @return string|false HTML formatted table of salary grid data. False if no data is available.
  */
 function hrs_salary_grid_n_grpb_nu( $data = array() ) {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_salary_grid_n_grpb_nu();
 
@@ -1042,9 +1117,17 @@ function hrs_salary_grid_n_grpb_nu( $data = array() ) {
  * table.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  */
 function hrs_salary_grid_n_grpab_am() {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	$datagrpab = '';
 	hrs_salary_grid_n_grpb_am( $datagrpab );
 	hrs_salary_grid_n_grpa_am( $datagrpab );
@@ -1057,9 +1140,17 @@ function hrs_salary_grid_n_grpab_am() {
  * table.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  */
 function hrs_salary_grid_n_grpab_nu() {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Salary Data" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	$datagrpab = '';
 	hrs_salary_grid_n_grpb_nu( $datagrpab );
 	hrs_salary_grid_n_grpa_nu( $datagrpab );
@@ -1072,11 +1163,19 @@ function hrs_salary_grid_n_grpab_nu() {
  * an HTML table.
  *
  * @since 0.20.0
+ * @deprecated 1.8.0
  *
  * @param array Optional. An array of salary data to format.
  * @return string|false HTML formatted table of salary data. False if no data is available.
  */
 function hrs_cs_salary_n_schedule( $data = array() ) {
+	do_action(
+		'deprecated_function_run',
+		__FUNCTION__,
+		__( 'HRSWP Sqlsrv DB plugin "HRS Job Classifications" block', 'hrs-wsu-edu' ),
+		'1.8.0'
+	);
+
 	if ( ! $data ) {
 		$data = \WSU\HRS\Queries\get_cs_salary_n_schedule();
 
