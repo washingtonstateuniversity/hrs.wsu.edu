@@ -16,9 +16,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Added (for new features)
 ### Deprecated (for once-stable features removed in upcoming releases)
 ### Removed (for deprecated features removed in this release)
+### Experimental (for features that are still being tested)
 -->
 
-## 1.8.0-rc.1 (:construction: 2020-01-31)
+## 1.8.0 (2020-02-04)
 
 ### Fixed
 
@@ -27,13 +28,15 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- Increment WP tested to 5.3.2.
 - :arrow_up: squizlabs/php_codesniffer => 3.5.4
+- :arrow_up: wp-coding-standards/wpcs => 2.2.1
 - :arrow_up: @babel/core => 7.8.4
 - :arrow_up: @babel/plugin-syntax-dynamic-import => 7.8.3
 - :arrow_up: @babel/polyfill => 7.8.3
 - :arrow_up: @babel/preset-env => 7.8.4
-- :arrow_up: @wordpress/babel-preset-default => 4.9.0
-- :arrow_up: @wordpress/eslint-plugin => 3.3.0
+- :arrow_up: @wordpress/babel-preset-default => 4.10.0
+- :arrow_up: @wordpress/eslint-plugin => 3.4.1
 - :arrow_up: autoprefixer => 9.7.4
 - :arrow_up: eslint => 6.8.0
 - :arrow_up: eslint-loader => 3.0.3
@@ -45,6 +48,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - :arrow_up: svgo => 1.3.2
 - :arrow_up: webpack => 4.41.5
 - :arrow_up: webpack-cli => 3.3.10
+- :arrow_up: url-search-params-polyfill => 8.0.0
 
 ### Added
 

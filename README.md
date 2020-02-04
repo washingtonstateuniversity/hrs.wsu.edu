@@ -4,9 +4,9 @@
 
 **Contributors:** WSU University Communications, Adam Turner  
 **Requires at least:** WordPress 5.0  
-**Tested up to:** WordPress 5.2.2  
+**Tested up to:** WordPress 5.3.2  
 **Requires PHP:** 5.6  
-**Version:** 1.8.0-rc.1  
+**Version:** 1.8.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
