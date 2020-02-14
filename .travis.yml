@@ -23,21 +23,13 @@ php:
   - 7.3
   - 7.2
   - 7.1
-  - 5.4
+  - 7.0
 
 env:
   global:
     - WP_VERSION=5.0
     - WP_MULTISITE=0
     - LINT=1
-
-# Declare non-Trusty versions of PHP to use.
-matrix:
-  fast-finish: true
-  include:
-    - php: "5.3"
-      env: LINT=0
-      dist: precise
 
 branches:
   only:
