@@ -8,6 +8,7 @@
  * page template, but are also silencing this file's output in case it is called
  * from other parent theme templates.
  *
+ * @package WSU_Human_Resources_Services
  * @deprecated 0.17.7
  */
 

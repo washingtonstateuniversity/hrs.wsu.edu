@@ -25,7 +25,7 @@ add_shortcode( 'hrsgallery', __NAMESPACE__ . '\hrs_gallery' );
  * @since 0.13.0
  *
  * @param array $attr {
- *     Attributes of the HRS gallery shortcode
+ *     Attributes of the HRS gallery shortcode.
  *
  *     @type string $order      Order of the images in the gallery. Default 'ASC'. Accepts 'ASC', 'DESC'.
  *     @type string $orderby    The field to use when ordering images. Default 'menu_order ID'.

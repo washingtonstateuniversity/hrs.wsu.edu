@@ -22,10 +22,10 @@ add_action( 'wp_enqueue_scripts', 'hrs_enqueue_styles', 25 );
 add_action( 'wp_print_styles', 'hrs_dequeue_styles' );
 add_action( 'wp_head', 'hrs_noscript_styles' );
 add_action( 'login_enqueue_scripts', 'hrs_login_styles' );
-add_filter( 'script_loader_tag', 'hrs_add_attr_to_script_tag', 10, 3 );
+add_filter( 'script_loader_tag', 'hrs_add_attr_to_script_tag', 10, 2 );
 add_filter( 'login_headerurl', 'hrs_login_logo_url' );
 add_filter( 'login_headertitle', 'hrs_login_logo_url_title' );
-add_filter( 'logout_redirect', 'hrs_logout_redirect_home', 10, 3 );
+add_filter( 'logout_redirect', 'hrs_logout_redirect_home', 10, 2 );
 add_filter( 'excerpt_length', 'hrs_excerpt_length' );
 add_filter( 'excerpt_more', 'hrs_excerpt_more_link' );
 
@@ -93,8 +93,12 @@ function hrs_dequeue_styles() {
  * Adds attributes to selected script tags.
  *
  * @since 1.0.0
+ *
+ * @param string $tag    The `<script>` tag for the enqueued script to filter.
+ * @param string $handle The script's registered handle.
+ * @return string The `<script>` tag.
  */
-function hrs_add_attr_to_script_tag( $tag, $handle, $src ) {
+function hrs_add_attr_to_script_tag( $tag, $handle ) {
 	// Load main script as module to serve ES6+ version to supporting browsers.
 	if ( 'hrs-main' === $handle ) {
 		$tag = str_replace( 'text/javascript', 'module', $tag );
@@ -127,6 +131,7 @@ function hrs_login_styles() {
  *
  * @since 0.14.0
  *
+ * @param int $word_count The maximum number of words. Default 55.
  * @return int The number of words to trim the automatic excerpt to.
  */
 function hrs_excerpt_length( $word_count ) {
@@ -140,11 +145,13 @@ function hrs_excerpt_length( $word_count ) {
  *
  * @since 0.14.0
  *
+ * @param string $more_string The string shown within the more link.
+ * @return string The string shown within the more link.
  */
-function hrs_excerpt_more_link( $excerpt_more ) {
-	$excerpt_more = '<span class="more">&hellip;</span>';
+function hrs_excerpt_more_link( $more_string ) {
+	$more_string = '<span class="more">&hellip;</span>';
 
-	return $excerpt_more;
+	return $more_string;
 }
 
 /**
@@ -174,12 +181,11 @@ function hrs_login_logo_url_title() {
  *
  * @since 0.3.0
  *
- * @param string $redirect_to The redirect destination URL.
+ * @param string $redirect_to           The redirect destination URL.
  * @param string $requested_redirect_to The requested redirect destination URL passed as a parameter.
- * @param WP_User $user The WP_User object for the user that's logging out.
  * @return string URL of page to redirect users to on logout.
  */
-function hrs_logout_redirect_home( $redirect_to, $requested_redirect_to, $user ) {
+function hrs_logout_redirect_home( $redirect_to, $requested_redirect_to ) {
 	// Set requested redirect parameter to the home url.
 	$requested_redirect_to = home_url( '/' );
 

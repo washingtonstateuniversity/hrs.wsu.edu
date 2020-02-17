@@ -16,7 +16,7 @@ add_action( 'pre_get_posts', 'WSU\HRS\Queries\hrs_filter_query', 10 );
  * Adjust the main query on the posts home page to filter out posts in the
  * "Reminder" category to prevent duplicate results.
  *
- * @param \WP_Query $query
+ * @param \WP_Query $query The standard WP_Query object.
  */
 function hrs_filter_query( $query ) {
 	if ( is_admin() || ! $query->is_main_query() ) {
@@ -78,7 +78,22 @@ function get_reminder_posts( $output = 'ids' ) {
  *
  * @since 0.17.0
  *
- * @return array|\WP_Query The posts as an array of IDs or array of post objects.
+ * @param array $args {
+ *     Optional. Set of arguments to modify the HRS unit posts query.
+ *
+ *     @type int    $posts_per_page  Number of posts to show per page. Default is the option set in WP Admin settings. Accepts -1 for all.
+ *     @type array  $tax_query {
+ *         The taxonomy to show associated posts from.
+ *
+ *         @type string           $taxonomy The taxonomy handle to retrieve posts from.
+ *         @type string           $field    Select taxonomy term by. Possible values are ‘term_id’, ‘name’, ‘slug’ or ‘term_taxonomy_id’. Default value is ‘term_id’.
+ *         @type int|string|array $terms    Taxonomy term(s).
+ *     }
+ *     @type int[]  $post__not_in    Post IDs to exclude from the query.
+ *     @type int    $paged           Number of page. Show the posts that would normally show up just on page X when using the “Older Entries” link.
+ *     @type string $fields          Which fields to return. There are three options, 'all', 'ids', and 'id=>parent'.
+ * }
+ * @return int[]|\WP_Query The posts as an array of IDs or array of post objects.
  */
 function get_hrs_unit_posts( $args = array() ) {
 	$defaults = array(

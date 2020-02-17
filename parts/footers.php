@@ -1,15 +1,15 @@
 <?php
 /**
-* HRS Child Theme Site Footer
-*
-* This file is called in the Spine parent theme's primary content templates
-* (like `single.php`, `page.php`, and `index.php`), just at the end of the
-* `main` element. It displays the global site footer for the HRS child theme,
-* including two WP nav menus.
-*
-* @package WSU_Human_Resources_Services
-* @since 0.2.8
-*/
+ * HRS Child Theme Site Footer
+ *
+ * This file is called in the Spine parent theme's primary content templates
+ * (like `single.php`, `page.php`, and `index.php`), just at the end of the
+ * `main` element. It displays the global site footer for the HRS child theme,
+ * including two WP nav menus.
+ *
+ * @package WSU_Human_Resources_Services
+ * @since 0.2.8
+ */
 
 // Arguments for the WP nav menus in the site footer.
 $footer_nav_args = array(

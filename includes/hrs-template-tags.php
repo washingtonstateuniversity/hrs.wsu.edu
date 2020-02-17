@@ -16,7 +16,7 @@ namespace WSU\HRS\Template_Tags;
  *
  * @since 0.14.0
  *
- * @param int $id Post ID
+ * @param int    $id       Post ID.
  * @param string $taxonomy The taxonomy name.
  * @return array|false|WP_Error Array of WP_Term objects on success, false if no taxonomy or terms exist, WP_Error on failure.
  */
@@ -148,7 +148,6 @@ function all_terms_by_post_type( $post_type = null ) {
  * @since 0.15.0
  *
  * @param string $taxonomy The taxonomy name.
- * @return string The taxonomy output formatted as an unordered gallery list.
  */
 function the_terms_gallery( $taxonomy ) {
 	$list = wp_list_categories(
@@ -170,7 +169,7 @@ function the_terms_gallery( $taxonomy ) {
  *
  * @since 0.16.0
  *
- * @param array  $args {
+ * @param array $args {
  *     Optional. Arguments to filter retrieval of HRS posts.
  *
  *     @type int $posts_per_page   Total number of posts to display. Default 5. Accepts -1 for all.
@@ -184,7 +183,6 @@ function the_terms_gallery( $taxonomy ) {
  *                                 as a grid row list of flex items. Enter any other value for a custom
  *                                 class or leave empty for no container. Default 'cards'.
  * }
- * @return string HTML formatted list of retrieved HRS News posts
  */
 function hrs_recent_posts( $args ) {
 	global $post;
@@ -233,7 +231,7 @@ function hrs_recent_posts( $args ) {
  *
  * @see WP_Query::parse_query()
  *
- * @param array  $args {
+ * @param array $args {
  *     Optional. Arguments to filter retrieval of news posts.
  *               See WP_Query::parse_query() for explanation of parameters.
  *
@@ -329,8 +327,9 @@ function hrs_get_recent_posts( $args = null ) {
  * pages such as Home or a category archives page.
  *
  * @since 0.17.0
+ *
+ * @param int $total_pages The total number of pages to show in the pagination navigation.
  */
-
 function hrs_pagination( $total_pages = '' ) {
 	$args = array(
 		'base'               => str_replace( 99164, '%#%', esc_url( get_pagenum_link( 99164 ) ) ),
