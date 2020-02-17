@@ -14,6 +14,7 @@ get_header();
 <main id="wsuwp-main" class="spine-search-index">
 	<?php
 	if ( have_posts() ) {
+		global $wp_query;
 		?>
 		<header class="page-header">
 			<h1>

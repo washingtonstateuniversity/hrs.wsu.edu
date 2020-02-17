@@ -71,6 +71,7 @@ use WSU\HRS\Template_Tags as Tags;
 	<?php if ( ! is_singular() ) : ?>
 		<div class="article-summary">
 			<?php
+			global $post;
 
 			/*
 			 * If a manual excerpt is available, default to that. If `<!--more-->` exists in content,
