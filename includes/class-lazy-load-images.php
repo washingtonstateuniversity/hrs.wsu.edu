@@ -1,6 +1,6 @@
 <?php
 /**
- * HRS Lazy Load Images: HRS_Lazy_Load_Images Class.
+ * HRS Lazy Load Images: Lazy_Load_Images Class.
  *
  * Under normal circumstances this would be in its own plugin, but the HRS theme
  * isn't a standard setup. This class modifies WP-created image elements by
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class HRS_Lazy_Load_Images {
+class Lazy_Load_Images {
 	/**
 	 * Whether to lazy load images.
 	 *
@@ -61,7 +61,7 @@ class HRS_Lazy_Load_Images {
 		}
 
 		if ( null === $instance ) {
-			$instance = new HRS_Lazy_Load_Images();
+			$instance = new Lazy_Load_Images();
 
 			// Launch only after `<head>` finishes.
 			add_action( 'wp_head', array( __CLASS__, 'setup_hooks' ), 9999 );
@@ -148,17 +148,17 @@ class HRS_Lazy_Load_Images {
 		$old_attributes = self::flatten_kses_hair_data( $old_attributes_kses_hair );
 		$new_attributes = $old_attributes;
 
-		// Set placeholder and data-src
+		// Set placeholder and data-src.
 		$new_attributes['src']      = self::get_placeholder_image_path();
 		$new_attributes['data-src'] = $old_attributes['src'];
 
-		// Handle `srcset`
+		// Handle `srcset`.
 		if ( ! empty( $new_attributes['srcset'] ) ) {
 			$new_attributes['data-srcset'] = $old_attributes['srcset'];
 			unset( $new_attributes['srcset'] );
 		}
 
-		// Handle `sizes`
+		// Handle `sizes`.
 		if ( ! empty( $new_attributes['sizes'] ) ) {
 			$new_attributes['data-sizes'] = $old_attributes['sizes'];
 			unset( $new_attributes['sizes'] );
@@ -238,7 +238,7 @@ class HRS_Lazy_Load_Images {
  * @return object A single HRS Lazy Load Images instance.
  */
 function hrs_lazy_load_images_init() {
-	return HRS_Lazy_Load_Images::get_instance();
+	return Lazy_Load_Images::get_instance();
 }
 
 add_action( 'init', __NAMESPACE__ . '\hrs_lazy_load_images_init' );
