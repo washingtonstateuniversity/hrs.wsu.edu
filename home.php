@@ -7,6 +7,7 @@
  * @package WSU_Human_Resources_Services
  * @since 0.14.0
  */
+
 global $is_feature;
 
 get_header();
@@ -15,12 +16,14 @@ get_header();
 <main id="wsuwp-main" class="spine-hrs_unit-index">
 
 	<header class="page-header">
-		<h1><?php esc_html_e( 'News from Human Resource Services', 'hrs-wsu-edu' ) ?></h1>
+		<h1><?php esc_html_e( 'News from Human Resource Services', 'hrs-wsu-edu' ); ?></h1>
 	</header>
 
-	<?php if ( have_posts() ) :
+	<?php
+	if ( have_posts() ) :
 		$result_count = 0;
-		while ( have_posts() ) : the_post();
+		while ( have_posts() ) :
+			the_post();
 			if ( ! is_paged() ) {
 
 				if ( 0 === $result_count ) {
@@ -46,9 +49,14 @@ get_header();
 								<div class="reminders">
 									<h2><?php esc_html_e( 'Reminders', 'hrs-wsu-edu' ); ?></h2>
 									<ul>
-										<?php while ( $reminders->have_posts() ) : $reminders->the_post(); ?>
+										<?php
+										while ( $reminders->have_posts() ) :
+											$reminders->the_post();
+											?>
 											<li><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></li>
-										<?php endwhile; ?>
+											<?php
+										endwhile;
+										?>
 									</ul>
 								</div>
 								<?php
@@ -119,4 +127,5 @@ get_header();
 	?>
 </main><!--/#page-->
 
-<?php get_footer();
+<?php
+get_footer();

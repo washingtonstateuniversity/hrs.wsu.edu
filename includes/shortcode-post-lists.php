@@ -5,6 +5,7 @@
  * @package WSU_Human_Resources_Services
  * @since 0.13.0
  */
+
 namespace WSU\HRS\Shortcode_Posts_Lists;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,7 +26,7 @@ add_shortcode( 'hrs_recent_posts', __NAMESPACE__ . '\hrs_recent_posts_shortcode'
  *
  * @see \WSU\HRS\Template_Tags\hrs_recent_posts()
  *
- * @param $atts {
+ * @param array $atts {
  *     Optional. Arguments to filter retrieval of HRS posts.
  *
  *     @type int $posts_per_page   Total number of posts to display. Default 5. Accepts -1 for all.

@@ -8,6 +8,7 @@
  *
  * @since 0.17.6
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'article-content' ); ?>>

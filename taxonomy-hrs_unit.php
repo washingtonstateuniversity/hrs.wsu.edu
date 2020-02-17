@@ -7,6 +7,7 @@
  * @package WSU_Human_Resources_Services
  * @since 0.14.0
  */
+
 global $is_feature;
 
 get_header();
@@ -22,7 +23,8 @@ get_header();
 	<?php
 	if ( have_posts() ) {
 		$result_count = 0;
-		while ( have_posts() ) : the_post();
+		while ( have_posts() ) :
+			the_post();
 
 			if ( ! is_paged() ) {
 

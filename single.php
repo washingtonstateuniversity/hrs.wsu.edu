@@ -7,6 +7,7 @@
  * @package WSU_Human_Resources_Services
  * @since 0.14.0
  */
+
 ?>
 
 <?php get_header(); ?>
@@ -33,4 +34,5 @@
 
 </main><!--/#page-->
 
-<?php get_footer();
+<?php
+get_footer();

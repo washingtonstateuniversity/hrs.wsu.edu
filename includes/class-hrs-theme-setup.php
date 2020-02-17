@@ -314,27 +314,27 @@ class HRS_Theme_Setup {
 			array(
 				array(
 					'name' => __( 'Small', 'hrs-wsu-edu' ),
-					'size' => 14.22, // Sass var $font-size-0
+					'size' => 14.22, // Sass var $font-size-0.
 					'slug' => 'small',
 				),
 				array(
 					'name' => __( 'Normal', 'hrs-wsu-edu' ),
-					'size' => 18, // Sass var $font-size-base
+					'size' => 18, // Sass var $font-size-base.
 					'slug' => 'normal',
 				),
 				array(
 					'name' => __( 'Medium', 'hrs-wsu-edu' ),
-					'size' => 22.788, // Sass var $font-size-3
+					'size' => 22.788, // Sass var $font-size-3.
 					'slug' => 'medium',
 				),
 				array(
 					'name' => __( 'Large', 'hrs-wsu-edu' ),
-					'size' => 28.836, // Sass var $font-size-5
+					'size' => 28.836, // Sass var $font-size-5.
 					'slug' => 'large',
 				),
 				array(
 					'name' => __( 'Larger', 'hrs-wsu-edu' ),
-					'size' => 36.486, // Sass var $font-size-7
+					'size' => 36.486, // Sass var $font-size-7.
 					'slug' => 'larger',
 				),
 			)
@@ -362,7 +362,7 @@ class HRS_Theme_Setup {
 		return array_merge(
 			$sizes,
 			array(
-				'small' => __( 'Small' ),
+				'small' => __( 'Small', 'hrs-wsu-edu' ),
 			)
 		);
 	}
@@ -410,7 +410,7 @@ class HRS_Theme_Setup {
 	 *
 	 * @since 1.1.0
 	 *
-	 * @param string $id The ID of the control.
+	 * @param WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
 	 */
 	public function remove_custom_css_control( $wp_customize ) {
 		$wp_customize->remove_control( 'custom_css' );
@@ -536,6 +536,9 @@ class HRS_Theme_Setup {
 	 * Removes selected Spine parent theme templates.
 	 *
 	 * @since 0.17.7
+	 *
+	 * @param array $templates Array of page templates. Keys are filenames, values are translated names.
+	 * @return array Array of page templates.
 	 */
 	public function remove_spine_templates( $templates ) {
 		unset( $templates['templates/blank.php'] );

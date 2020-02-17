@@ -44,18 +44,25 @@ use WSU\HRS\Template_Tags as Tags;
 			<?php
 			if ( ! is_singular() ) {
 				if ( 'thumbnail' === $article_image_type ) {
-					?><a href="<?php the_permalink(); ?>"><?php spine_the_thumbnail_image(); ?></a><?php
+					?>
+					<a href="<?php the_permalink(); ?>"><?php spine_the_thumbnail_image(); ?></a>
+					<?php
 				} else {
-					?><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'spine-thumbnail_size' ); ?></a><?php
+					?>
+					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'spine-thumbnail_size' ); ?></a>
+					<?php
 				}
 			} else {
 				?>
 				<a href="<?php echo esc_url( spine_get_featured_image_src() ); ?>">
 					<?php spine_the_featured_image(); ?>
 				</a>
-				<?php if ( ! empty( $image_caption ) ) { ?>
+				<?php
+				if ( ! empty( $image_caption ) ) {
+					?>
 					<figcaption class="wp-caption-text"><?php echo esc_html( $image_caption ); ?></figcaption>
-				<?php }
+					<?php
+				}
 			}
 			?>
 		</figure>
@@ -64,6 +71,7 @@ use WSU\HRS\Template_Tags as Tags;
 	<?php if ( ! is_singular() ) : ?>
 		<div class="article-summary">
 			<?php
+
 			/*
 			 * If a manual excerpt is available, default to that. If `<!--more-->` exists in content,
 			 * default to that. If an option is set specifically to display excerpts, default to that.

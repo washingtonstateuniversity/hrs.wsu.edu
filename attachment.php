@@ -10,6 +10,7 @@
  * @package WSU_Human_Resources_Services
  * @since 1.4.0
  */
+
 global $post;
 
 if ( $post && $post->post_parent ) {

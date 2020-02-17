@@ -7,9 +7,13 @@
  * @package WSU_Human_Resources_Services
  * @since 0.14.0
  */
+
 ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
+<?php
+while ( have_posts() ) :
+	the_post();
+	?>
 
 	<?php if ( has_term( '', 'hrs_unit' ) ) : ?>
 
@@ -38,7 +42,7 @@
 
 		<div class="column one">
 
-			<?php get_template_part( 'articles/post', get_post_type() ) ?>
+			<?php get_template_part( 'articles/post', get_post_type() ); ?>
 
 		</div><!--/column-->
 

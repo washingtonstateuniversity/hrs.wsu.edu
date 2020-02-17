@@ -21,7 +21,7 @@ add_shortcode( 'lastupdated', __NAMESPACE__ . '\hrs_last_update_shortcode' );
  * usage is: [lastupdated]
  *
  * @since 0.13.0
- * @param $atts {
+ * @param array $atts {
  *     Optional. Attributes of the hrs last update shortcode.
  *
  *     @type string $tag         Name of HTML tag to wrap the date output in.
@@ -44,7 +44,7 @@ function hrs_last_update_shortcode( $atts ) {
 
 	return sprintf(
 		/* translators: the last modified date: 1: HTML tag, 2: HTML class value, 3: the modified date */
-		__( '<%1$s class="%2$s">%3$s</%1$s>' ),
+		__( '<%1$s class="%2$s">%3$s</%1$s>', 'hrs-wsu-edu' ),
 		esc_attr( $args['tag'] ),
 		esc_attr( $args['class'] ),
 		esc_html( get_the_modified_date( $args['date_format'] ) )
