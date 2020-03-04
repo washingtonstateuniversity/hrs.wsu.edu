@@ -1,0 +1,21 @@
+#spine {
+
+	& .spine-actions > ul li {
+		width: 33%;
+	}
+
+	& .spine-actions .spine-share > ul li {
+		width: 100%;
+	}
+
+	& button.customize-partial-edit-shortcut-button {
+		border-radius: 50%;
+		border: 2px solid #fff;
+		text-indent: 0;
+	}
+
+	& footer {
+		font-size: var(--font-size-3);
+	}
+
+}
