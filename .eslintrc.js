@@ -4,4 +4,7 @@ module.exports = {
 	globals: {
 		wp: true,
 	},
+	env: {
+		browser: true,
+	},
 }
