@@ -1,0 +1,88 @@
+/* stylelint-disable selector-class-pattern */
+.wp-block-pullquote__citation {
+	color: inherit;
+	font-size: inherit;
+	font-style: italic;
+	text-transform: none;
+}
+
+.wp-block-pullquote__citation::before {
+	content: "- ";
+}
+/* stylelint-enable selector-class-pattern */
+
+.wp-block-pullquote p {
+	font-size: var(--font-size-5);
+	line-height: 1.5;
+}
+
+.wp-block-pullquote {
+	border-top: 0;
+	border-bottom: 0;
+	padding: 3em 0 2em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.wp-block-pullquote blockquote {
+	border-top: 2px solid var(--accent-crimson);
+	border-bottom: 10px solid var(--accent-crimson);
+	border-radius: 18px;
+	font-family: var(--sans-serif-fonts);
+	margin-bottom: 1em;
+	padding: 1em 2em;
+}
+
+.wp-block-pullquote .has-text-color a,
+.wp-block-pullquote .is-style-solid-color a {
+	color: inherit;
+	padding: 0 4px;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		background-color: var(--nav-color-hover);
+	}
+
+	&:active {
+		color: #fff;
+		background-color: var(--nav-color);
+	}
+}
+
+.wp-block-pullquote:not(.is-style-solid-color) {
+	background: none;
+}
+
+.wp-block-pullquote.is-style-solid-color {
+	border-radius: 4px;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote {
+	border: none;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: calc(27rem + 3vw);
+	text-align: left;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: var(--font-size-7);
+}
+
+.wp-block-pullquote.alignleft,
+.wp-block-pullquote.alignright,
+.wp-block-pullquote.is-style-solid-color.alignleft,
+.wp-block-pullquote.is-style-solid-color.alignright {
+	text-align: left;
+
+	& blockquote {
+		max-width: 100%;
+	}
+
+	& blockquote p {
+		font-size: var(--font-size-3);
+	}
+}
