@@ -1,0 +1,16 @@
+p.has-drop-cap:not(:focus)::first-letter,
+p.has-drop-cap:not(:focus)::after {
+	font-size: inherit;
+}
+
+p.has-background {
+	padding: 1em 2em;
+}
+
+p.has-background + *:not(.has-background) {
+	margin-top: 1em;
+}
+
+p.has-text-color a {
+	color: inherit;
+}
