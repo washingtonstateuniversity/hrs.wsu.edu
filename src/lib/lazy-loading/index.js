@@ -1,7 +1,7 @@
 /**
  * Module to handle lazy loading images.
  *
- * Works with the HRS_Lazy_Load_Images() class in the `includes` directory. The
+ * Works with the Lazy_Load_Images() class in the `includes` directory. The
  * class transposes standard image tag source attributes into data-* attributes
  * and this module adds intersection observers to load those images only just
  * as they are needed.
@@ -14,8 +14,9 @@
  * @since 1.0.0
  */
 
-const images = /** @type {Element[]} */ (
-	document.querySelectorAll( '[data-src]' ) );
+const images = /** @type {Element[]} */ ( document.querySelectorAll(
+	'[data-src]'
+) );
 const config = {
 	rootMargin: '100px 0px',
 	threshold: 0,
@@ -34,7 +35,7 @@ let observer;
 const applyImage = function replaceImageAttributeValues( img ) {
 	const src = img.getAttribute( 'data-src' );
 
-	if ( ! src || 'undefined' === typeof ( src ) ) {
+	if ( ! src || 'undefined' === typeof src ) {
 		return;
 	}
 
@@ -104,7 +105,7 @@ const handleIntersection = function loadOnIntersection( entries, self ) {
  *
  * @since 1.0.0
  */
-const initLazyImages = () => {
+export default function initLazyImages() {
 	if ( ! ( 'IntersectionObserver' in window ) ) {
 		loadImagesNow( images );
 	} else {
@@ -114,6 +115,4 @@ const initLazyImages = () => {
 			observer.observe( image );
 		} );
 	}
-};
-
-export { initLazyImages };
+}
