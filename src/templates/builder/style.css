@@ -1,0 +1,24 @@
+/**
+ * @deprecated
+ */
+
+.page-template-template-builder .h1-header {
+	padding-bottom: 3rem;
+}
+
+
+@media (min-width: 61.875em) {
+
+	.page-template-template-builder {
+
+		& div.page .row.single .column {
+			width: 70%;
+		}
+
+		& div.page .row.single.builder-section-banner .column,
+		& div.page .row.single.full-width .column {
+			width: 100%;
+		}
+	}
+
+}
