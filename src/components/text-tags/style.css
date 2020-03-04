@@ -1,0 +1,12 @@
+abbr[title],
+acronym[title] {
+	border-bottom: 2px dotted;
+	text-decoration: none;
+}
+
+ins {
+	background-color: var(--accent-green);
+	color: #000;
+	margin: -0.05em 0;
+	padding: 0.05em 0.25em;
+}
