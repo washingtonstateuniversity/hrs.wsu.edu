@@ -17,6 +17,12 @@
 	</rule>
 	<rule ref="WordPress.CodeAnalysis.EmptyStatement"/>
 
+	<rule ref="WordPress.Files.FileName">
+		<properties>
+			<property name="is_theme" value="true"/>
+		</properties>
+	</rule>
+
 	<rule ref="PEAR.Functions.FunctionCallSignature">
 		<properties>
 			<property name="allowMultipleArguments" value="false"/>
