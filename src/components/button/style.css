@@ -1,0 +1,108 @@
+.wp-block-button,
+.wp-block-file {
+	margin-bottom: 1em;
+}
+
+/* stylelint-disable selector-class-pattern */
+main button,
+main .button,
+main input[type="button"],
+main input[type="submit"],
+.site-header button,
+.site-header input[type="submit"],
+.wp-block-button__link,
+.wp-block-file__button {
+	background: var(--brand-crimson);
+	color: #fff;
+	border: 1px solid var(--brand-crimson);
+	border-radius: 3px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	display: inline-block;
+	font-family: inherit;
+	font-size: var(--font-size-base);
+	letter-spacing: 0.85px;
+	line-height: 1.5;
+	overflow-wrap: break-word;
+	padding: 0.75rem 1.5rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+	white-space: normal;
+
+	&:hover,
+	&:focus {
+		background: #fff;
+		border: 1px solid var(--nav-color-hover);
+		color: var(--nav-color-hover);
+	}
+
+	&:active {
+		background: var(--neutral-light);
+		border: 1px solid var(--brand-crimson);
+		color: var(--nav-color-hover);
+	}
+}
+
+.site-header button,
+.site-header input[type="submit"] {
+	font-size: var(--font-size-1);
+}
+
+.is-style-outline .wp-block-button__link,
+.is-style-outline .button,
+.button.style-outline,
+main input[type="reset"] {
+	background: #fff;
+	border: 1px solid var(--brand-crimson);
+	color: var(--brand-crimson);
+
+	&:hover,
+	&:focus {
+		background: var(--nav-color-hover);
+		border: 1px solid var(--nav-color-border);
+		box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
+		color: #fff;
+	}
+
+	&:active {
+		background: darken(var(--brand-crimson, 10%));
+		border: 1px solid var(--neutral-dark);
+		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
+		outline-width: 0;
+	}
+}
+
+.wp-block-file .wp-block-file__button,
+.is-style-small .wp-block-button__link,
+.button.style-small {
+	border-radius: 6px;
+	padding: 0.25em 0.75em;
+	vertical-align: baseline;
+}
+
+.wp-block-file * + .wp-block-file__button {
+	margin-left: 0.75em;
+}
+
+.is-style-squared .wp-block-button__link,
+.is-style-text .wp-block-button__link,
+.button.style-text {
+	background: transparent;
+	color: var(--nav-color);
+	border: 1px solid transparent;
+	box-shadow: none;
+
+	&:hover,
+	&:focus {
+		background: var(--nav-color-hover);
+		color: #fff;
+	}
+
+	&:active {
+		background: darken(var(--brand-crimson, 10%));
+		box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
+	}
+}
+/* stylelint-enable selector-class-pattern */
