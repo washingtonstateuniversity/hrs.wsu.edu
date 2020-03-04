@@ -19,37 +19,143 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Experimental
 -->
 
-## 2.0.0-alpha.1 (:construction: 2020-01-30)
+## 2.0.0-alpha.2 (:construction: 2020-03-04)
+
+### Fixed
+
+- :wrench: Specify `is_theme` as 'true' in phpcs config to allow WP template names that violate their own rules.
+- :wrench: Include browser globals in eslint rules.
+- :warning: Specifically declare WP globals in use.
+- :warning: PHP lint issues following rules update.
 
 ### Changed
 
+- :fire: Switch from Sass to CSS using the 'postcss-present-env' plugin to allow things like variables and nesting.
+- :boom: Update development environment structure and build processes to be more component based.
+  - Break down styles into frontend and backend and organize them by component and template.
+	- Break down scripts into frontend and backend and organize them by component and template.
+	- Begin breaking templates into logical parts and placing them with their respective components and templates.
+	- Place block modification scripts along with other component parts.
+	- :truck: Move lazy loading script into the `lib` directory and modify for export support.
+	- :truck: Move search menu script into the `components` directory and modify for export support.
+	- :truck: Modify the JS entry point, now `src/index.js` to handle all frontend imports and add `src/editor.js` to handle all backend imports.
+- :memo: Update documentation.
+- Use pre-optimized images instead of optimizing on every build and use Webpack to copy from source to build.
+- :boom: Revamp `composer.json` with better metadata and build processes.
+- :boom: Revamp `package.json` with better metadata and build processes focused on PostCSS and Webpack.
+- :boom: Revamp Webpack config to use one set of rules geared to the WP block environment, to process frontend and backend scripts separately, and to handle copying componenent assets from entry to output directory.
+- :wrench: Simplify `.gitignore` rules.
+- :wrench: Update `.gitattributes` rules to match directory changes.
+- :wrench: Update phpcs ruleset to use WordPress preset recommendations and rename file.
+- :wrench: Update stylelint config to use WordPress preset recommendations.
+- :wrench: Update eslint config to use WordPress preset recommendations.
+- :wrench: Update editorconfig with newer WP-aligned rules.
 - Modify the Gravity Forms filters to more easily include more form adjustments.
-- :construction_worker: Update Travis rules to monitor the 2.x branch.
-- :arrow_up: @babel/core => 7.8.4
-- :arrow_up: @babel/plugin-syntax-dynamic-import => 7.8.3
-- :arrow_up: @babel/polyfill => 7.8.3
-- :arrow_up: @babel/preset-env => 7.8.4
-- :arrow_up: @wordpress/babel-preset-default => 4.9.0
-- :arrow_up: @wordpress/eslint-plugin => 3.3.0
-- :arrow_up: autoprefixer => 9.7.4
-- :arrow_up: babel-loader => 8.0.5
+- :construction_worker: Update Travis rules to monitor the 2.x branch and only test PHP 7.0+.
+- :arrow_up: squizlabs/php_codesniffer => 3.4.2
+- :arrow_up: wp-coding-standards/wpcs => 2.2.0
+- :arrow_up: @wordpress/babel-preset-default => 4.10.0
+- :arrow_up: @wordpress/eslint-plugin => 4.0.0
+- :arrow_up: babel-loader => 8.0.6
+- :arrow_up: cssnano => 4.1.10
 - :arrow_up: eslint => 6.8.0
-- :arrow_up: eslint-loader => 3.0.3
-- :arrow_up: mkdirp => 1.0.3
-- :arrow_up: node-sass => 4.13.1
+- :arrow_up: npm-run-all => 4.1.5
 - :arrow_up: postcss-cli => 7.1.0
-- :arrow_up: rimraf => 3.0.1
-- :arrow_up: stylelint => 13.0.0
-- :arrow_up: svgo => 1.3.2
-- :arrow_up: webpack => 4.41.5
-- :arrow_up: webpack-cli => 3.3.10
+- :arrow_up: rimraf => 3.0.2
+- :arrow_up: stylelint => 13.1.0
+- :arrow_up: webpack => 4.41.6
+- :arrow_up: webpack-cli => 3.3.11
+
+### Added
+
+- Frontend styles organized by component aggregated by directory-level `style.css` imports.
+- Frontend editor scripts named `[component]/index.js` organized by component.
+- Global source files for variables and utility scripts and styles.
+- Library source files for scripts and styles for external or plugin modifications.
+- Backend styles organized by component aggregated by directory-level `editor.css` imports.
+- Backend editor scripts named `[component]/editor.js` organized by component.
+- :wrench: Config file for PostCSS.
+- :wrench: Config file for the npm-package-json-lint linter.
+- :wrench: Configuration file for the Prettier package to handle linting JavaScript files
+- :bento: audio component
+- :bento: builder-banner component
+- :bento: button component, with core block editor filters.
+- :bento: card component
+- :bento: columns component
+- :bento: cover component
+- :bento: embed component
+- :bento: gallery component
+- :bento: heading component
+- :bento: icons component
+- :bento: image component
+- :bento: latest-posts component
+- :bento: list component, with core block editor filters.
+- :bento: media-text component
+- :bento: navigation-link component
+- :bento: navigation component
+- :bento: paragraph component
+- :bento: preformatted component
+- :bento: pullquote component
+- :bento: quote component
+- :bento: search-menu component, with PHP template.
+- :bento: search component
+- :bento: separator component
+- :bento: table component
+- :bento: text-control component
+- :bento: text-tags component
+- :bento: video component
+- :bento: wp-admin-bar component
+- :bento: archive template
+- :bento: base template
+- :bento: builder template
+- :bento: footer template
+- :bento: front-page template
+- :bento: header template
+- :bento: home template
+- :bento: page template
+- :bento: single template
+- :heavy_plus_sign: @wordpress/dependency-extraction-webpack-plugin npm dev dependency
+- :heavy_plus_sign: @wordpress/npm-package-json-lint-config npm dev dependency
+- :heavy_plus_sign: copy-webpack-plugin npm dev dependency
+- :heavy_plus_sign: npm-package-json-lint npm dev dependency
+- :heavy_plus_sign: postcss-import npm dev dependency
+- :heavy_plus_sign: postcss-preset-env npm dev dependency
+- :heavy_plus_sign: wp-prettier npm dev-dependency aliased to prettier
+- :heavy_plus_sign: resolve-bin npm dev dependency
+- :heavy_plus_sign: source-map-loader npm dev dependency
+- :heavy_plus_sign: stylelint-config-wordpress npm dev dependency
+- :heavy_plus_sign: thread-loader npm dev dependency
+- :heavy_plus_sign: webpack-bundle-analyzer npm dev dependency
+- :heavy_plus_sign: dealerdirect/phpcodesniffer-composer-installer
+- :heavy_plus_sign: phpcompatibility/php-compatibility
+- :heavy_plus_sign: sirbrillig/phpcs-variable-analysis
+- :heavy_plus_sign: roave/security-advisories
 
 ### Removed
 
+- :boom: All custom blocks. Prefer a plugin.
+- svgo config file.
+- :fire: Javascript variant for legacy browsers. Use only one integrated index file and tune later as needed.
 - :boom: Remove MS SQL Server connector class and all related template tags and shortcodes.
 - URL search parameters polyfill formerly used by the search filter.
 - :fire: Search-filter JavaScript tool in preference for HRS Search Filter block.
 - :heavy_minus_sign: url-search-params-polyfill npm dependency
+- :heavy_minus_sign: @babel/core
+- :heavy_minus_sign: @babel/plugin-syntax-dynamic-import
+- :heavy_minus_sign: @babel/polyfill
+- :heavy_minus_sign: @babel/preset-env
+- :heavy_minus_sign: autoprefixer
+- :heavy_minus_sign: babel-eslint
+- :heavy_minus_sign: eslint-loader
+- :heavy_minus_sign: mkdirp
+- :heavy_minus_sign: node-sass
+- :heavy_minus_sign: svgo
+- :heavy_minus_sign: webpack-merge
+
+### Experimental
+
+- :alembic: Store component and basic template markup in source and pull into main templates as needed.
+  - Move search menu PHP into component directory and include in header.
 
 ## 1.7.2 (2019-09-20)
 
