@@ -1,0 +1,10 @@
+.wp-block-code,
+.wp-block-code .editor-plain-text {
+	background-color: var(--text-color);
+	color: #fff;
+	font-size: 16px;
+}
+
+.wp-block-code .block-editor-plain-text:focus {
+	color: #fff;
+}
