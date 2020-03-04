@@ -1,0 +1,4 @@
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	margin: 0;
+	max-width: 5.5em;
+}
