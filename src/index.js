@@ -1,8 +1,8 @@
 /**
  * Internal dependencies
  */
-import { initSearchMenu } from './search-menu';
-import { initLazyImages } from './lazy-images';
+import initComponents from './components';
+import initLazyLoading from './lib/lazy-loading';
 
 /**
  * Initializes all of the site submodules.
@@ -11,9 +11,9 @@ import { initLazyImages } from './lazy-images';
  *
  * @since 1.0.0
  */
-const main = () => {
-	initSearchMenu();
-	initLazyImages();
-};
+function main() {
+	initComponents();
+	initLazyLoading();
+}
 
 main();
