@@ -6,8 +6,8 @@ module.exports = {
 		require( 'postcss-preset-env' )( {
 			stage: 2,
 			features: {
-				'nesting-rules': true
-			}
+				'nesting-rules': true,
+			},
 		} ),
 		require( 'cssnano' )( {
 			preset: 'default',
