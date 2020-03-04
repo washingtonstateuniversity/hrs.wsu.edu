@@ -40,6 +40,7 @@
 		"postcss-cli": "^7.1.0",
 		"postcss-import": "^12.0.1",
 		"postcss-preset-env": "^6.7.0",
+		"prettier": "npm:wp-prettier@1.19.1",
 		"resolve-bin": "^0.4.0",
 		"rimraf": "^3.0.2",
 		"source-map-loader": "^0.2.4",
@@ -59,7 +60,9 @@
 		"lint:styles": "stylelint 'src/**/*.css'",
 		"lint:pkg": "npmPkgJsonLint .",
 		"lint:php": "composer lint-detail",
+		"fix:scripts": "eslint --fix '*.js' 'src/**/*.js'",
 		"start": "run-p 'build:*'",
+		"fix": "run-p 'fix:*'",
 		"test": "run-p 'lint:*'"
 	}
 }
