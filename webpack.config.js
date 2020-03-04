@@ -18,6 +18,7 @@ const config = {
 	mode,
 	entry: {
 		index: resolve( process.cwd(), 'src/', 'index.js' ),
+		editor: resolve( process.cwd(), 'src/', 'editor.js' ),
 	},
 	output: {
 		filename: '[name].js',
@@ -41,8 +42,13 @@ const config = {
 							// Babel uses a directory within local node_modules
 							// by default. Use the environment variable option
 							// to enable more persistent caching.
-							cacheDirectory: process.env.BABEL_CACHE_DIRECTORY || true,
-							presets: [ require.resolve( '@wordpress/babel-preset-default' ) ],
+							cacheDirectory:
+								process.env.BABEL_CACHE_DIRECTORY || true,
+							presets: [
+								require.resolve(
+									'@wordpress/babel-preset-default'
+								),
+							],
 						},
 					},
 				],
@@ -55,9 +61,17 @@ const config = {
 		process.env.WP_BUNDLE_ANALYZER && new BundleAnalyzerPlugin(),
 		new CopyWebpackPlugin( [
 			{
-				from: './src/templates/**/index.php',
-				test: new RegExp( `([\\w-]+)${ escapeRegExp( sep ) }index\\.php$` ),
-				to: 'templates/[1].php',
+				from: './src/*/**/index.php',
+				test: new RegExp(
+					`([\\w-]+)${ escapeRegExp( sep ) }([\\w-]+)${ escapeRegExp(
+						sep
+					) }index\\.php$`
+				),
+				to: '[1]/[2].php',
+			},
+			{
+				from: './src/images/**/*',
+				to: 'images/[name].[ext]',
 			},
 		] ),
 		new DependencyExtractionWebpackPlugin( { injectPolyfill: true } ),
