@@ -36,8 +36,6 @@ branches:
     - master
     - 2.x
 
-sudo: false
-
 before_install:
   # Speed up build time by disabling Xdebug.
   - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
@@ -48,8 +46,6 @@ install:
   - cd $TRAVIS_BUILD_DIR
   # Install PHP_CodeSniffer and WP Coding Standards
   - if [[ "$LINT" == "1" ]]; then composer install --no-suggest; fi
-  # Workaround for an outdated dependency only showing during Travis build.
-  - if [[ "$LINT" == "1" ]]; then npm install har-validator@latest --save-dev; fi
   # NPM install for ci environments @link https://docs.npmjs.com/cli/ci.html
   - if [[ "$LINT" == "1" ]]; then npm ci; fi
 
