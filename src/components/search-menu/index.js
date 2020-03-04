@@ -1,11 +1,14 @@
-const searchToggle = /** @type {!Element} */ (
-	document.querySelector( '.search-toggle' ) );
+const searchToggle = /** @type {!Element} */ ( document.querySelector(
+	'.search-toggle'
+) );
 
-const searchMenu = /** @type {!Element} */ (
-	document.getElementById( 'search-menu' ) );
+const searchMenu = /** @type {!Element} */ ( document.getElementById(
+	'search-menu'
+) );
 
-const searchCloser = /** @type {!Element} */ (
-	document.querySelector( '.close-search-menu' ) );
+const searchCloser = /** @type {!Element} */ ( document.querySelector(
+	'.close-search-menu'
+) );
 
 let isOpen = false;
 
@@ -13,8 +16,9 @@ let isOpen = false;
  * Opens a closed search menu.
  */
 const open = function openSearchMenu() {
-	const searchField = /** @type {!Element} */ (
-		document.querySelector( '#search-menu .search-field' ) );
+	const searchField = /** @type {!Element} */ ( document.querySelector(
+		'#search-menu .search-field'
+	) );
 	isOpen = true;
 	searchMenu.classList.add( 'is-visible' );
 	searchToggle.setAttribute( 'aria-expanded', true );
@@ -51,7 +55,11 @@ const toggle = function handleSearchToggleSelect( event ) {
  */
 const maybeClose = function handleClickOutsideSearchMenu( event ) {
 	const target = /** @type {!Element} */ ( event.target );
-	if ( isOpen && ! searchToggle.contains( target ) && ! searchMenu.contains( target ) ) {
+	if (
+		isOpen &&
+		! searchToggle.contains( target ) &&
+		! searchMenu.contains( target )
+	) {
 		close();
 	}
 };
@@ -59,7 +67,7 @@ const maybeClose = function handleClickOutsideSearchMenu( event ) {
 /**
  * Adds event handlers for the search menu.
  */
-const initSearchMenu = function addSearchMenuEventListeners() {
+const addSearchMenuEventListeners = () => {
 	searchToggle.addEventListener( 'click', toggle );
 	searchToggle.addEventListener( 'touchend', toggle );
 	searchCloser.addEventListener( 'click', toggle );
@@ -75,4 +83,11 @@ const initSearchMenu = function addSearchMenuEventListeners() {
 	} );
 };
 
-export { initSearchMenu };
+export const metadata = {
+	name: 'search-menu',
+	type: 'module',
+};
+
+export const settings = {
+	init: addSearchMenuEventListeners,
+};
