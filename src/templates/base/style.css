@@ -1,0 +1,39 @@
+html {
+	background-color: var(--body-background-color);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#jacket {
+	overflow: hidden;
+}
+
+main,
+.site-header {
+	background-repeat: no-repeat;
+	background-position: left top;
+	color: var(--text-color);
+	font: 400 18px/1.6 var(--sans-serif-fonts);
+	word-wrap: break-word;
+}
+
+main section,
+main .page-header {
+	background-color: var(--section-background-color);
+}
+
+@media (min-width: 61.875em) {
+
+	main section,
+	main .page-header,
+	.site-header {
+		border-left: 8px solid var(--body-background-color);
+	}
+
+	.home #binder.spineless main section,
+	.home #binder.spineless main .page-header,
+	.home #binder.spineless .site-header {
+		border-left: none;
+	}
+
+}
