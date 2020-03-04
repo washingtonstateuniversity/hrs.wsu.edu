@@ -1,0 +1,106 @@
+/**
+ * @todo Switch from using multiple selectors to some kind of
+ * ".has-icon-before"-style class.
+ */
+
+/* stylelint-disable selector-class-pattern */
+figcaption,
+.wp-block-latest-posts__post-date,
+.article-date,
+.archive .page-header h1,
+.reminders li a,
+.meta {
+
+	&::before {
+		background-image: url(images/label.svg);
+		background-position: center 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: "";
+		display: inline-block;
+		height: 1em;
+		margin: 0 0.4em -0.2em 0;
+		width: 1em;
+	}
+
+}
+
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a,
+.search-links a,
+.subnav a,
+.reminders li a,
+.home-detail-subnav h2 a,
+.article-taxonomy--primary ul a,
+.cards .article-title a,
+.articles-list .article-title a,
+.recent-articles .article-title a {
+	border-bottom-color: transparent;
+
+	&::after {
+		background: url(images/link.svg);
+		background-position: center 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: "";
+		display: inline-block;
+		height: 1em;
+		margin: 0.05em 0 -0.05em 0.3em;
+		width: 1em;
+	}
+
+	&:hover,
+	&:focus {
+		border-bottom-color: currentColor;
+	}
+
+}
+/* stylelint-enable selector-class-pattern */
+
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a,
+.cards .article-title a,
+.articles-list .article-title a,
+.recent-articles .article-title a {
+
+	&::after {
+		background-size: 50%;
+		margin: -0.17em 0 0;
+		position: absolute;
+	}
+
+}
+
+/*
+ * Home page social media icons.
+ *
+ * Over-specified to override Spine `display: block` rule on .column.
+ */
+
+.column.social-media-icons {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+}
+
+.column.social-media-icons p {
+	line-height: 1;
+}
+
+.column.social-media-icons a {
+	border: none;
+	padding-right: 0.75rem;
+
+	&:hover img,
+	&:focus img {
+		opacity: 0.7;
+	}
+}
+
+.column.social-media-icons img {
+	border-radius: 4px;
+}
