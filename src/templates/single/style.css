@@ -1,0 +1,63 @@
+/**
+ * @todo Merge this with the default page styles, unless it needs to be unique.
+ */
+
+body.single .article-body {
+	padding-bottom: 1.5em;
+}
+
+body.single .article-content .article-footer {
+	border-top: 8px solid var(--body-background-color);
+	clear: both;
+	color: var(--neutral-dark);
+	margin: 0 -2rem;
+	padding: 1.5rem 2rem 0.75rem;
+}
+
+body.single .article-footer dl {
+	padding-bottom: 0.75rem;
+}
+
+body.single .article-footer dl dt::after {
+	content: none;
+}
+
+body.single .article-footer dt {
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+body.single .article-footer dd {
+	display: inline-block;
+	padding: 0 0.3em 0 0;
+}
+
+body.single .article-footer dd::after {
+	content: ", ";
+}
+
+body.single .article-footer dd:nth-last-of-type(1)::after {
+	content: "";
+}
+
+body.single .article-footer a {
+	color: var(--text-color);
+
+	&:hover,
+	&:focus {
+		color: var(--nav-color-hover);
+	}
+}
+
+@media (min-width: 43em) {
+
+	body.single .article-footer {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	body.single .article-footer dl:last-child {
+		margin-right: 25%;
+	}
+
+}
