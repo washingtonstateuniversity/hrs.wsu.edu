@@ -19,10 +19,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Experimental
 -->
 
-## 2.0.0-alpha.2 (:construction: 2020-03-04)
+## 2.0.0-alpha.3 (:construction: 2020-03-04)
 
 ### Fixed
 
+- Fix #115 remove deprecated sudo key from Travis config.
+- Fix #114 specify os in Travis config.
 - :wrench: Specify `is_theme` as 'true' in phpcs config to allow WP template names that violate their own rules.
 - :wrench: Include browser globals in eslint rules.
 - :warning: Specifically declare WP globals in use.
@@ -33,12 +35,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - :fire: Switch from Sass to CSS using the 'postcss-present-env' plugin to allow things like variables and nesting.
 - :boom: Update development environment structure and build processes to be more component based.
   - Break down styles into frontend and backend and organize them by component and template.
-	- Break down scripts into frontend and backend and organize them by component and template.
-	- Begin breaking templates into logical parts and placing them with their respective components and templates.
-	- Place block modification scripts along with other component parts.
-	- :truck: Move lazy loading script into the `lib` directory and modify for export support.
-	- :truck: Move search menu script into the `components` directory and modify for export support.
-	- :truck: Modify the JS entry point, now `src/index.js` to handle all frontend imports and add `src/editor.js` to handle all backend imports.
+  - Break down scripts into frontend and backend and organize them by component and template.
+  - Begin breaking templates into logical parts and placing them with their respective components and templates.
+  - Place block modification scripts along with other component parts.
+  - :truck: Move lazy loading script into the `lib` directory and modify for export support.
+  - :truck: Move search menu script into the `components` directory and modify for export support.
+  - :truck: Modify the JS entry point, now `src/index.js` to handle all frontend imports and add `src/editor.js` to handle all backend imports.
 - :memo: Update documentation.
 - Use pre-optimized images instead of optimizing on every build and use Webpack to copy from source to build.
 - :boom: Revamp `composer.json` with better metadata and build processes.
@@ -55,6 +57,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - :arrow_up: squizlabs/php_codesniffer => 3.4.2
 - :arrow_up: wp-coding-standards/wpcs => 2.2.0
 - :arrow_up: @wordpress/babel-preset-default => 4.10.0
+- :arrow_up: @wordpress/dependency-extraction-webpack-plugin => 2.3.0
 - :arrow_up: @wordpress/eslint-plugin => 4.0.0
 - :arrow_up: babel-loader => 8.0.6
 - :arrow_up: cssnano => 4.1.10
@@ -62,8 +65,8 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - :arrow_up: npm-run-all => 4.1.5
 - :arrow_up: postcss-cli => 7.1.0
 - :arrow_up: rimraf => 3.0.2
-- :arrow_up: stylelint => 13.1.0
-- :arrow_up: webpack => 4.41.6
+- :arrow_up: stylelint => 13.2.0
+- :arrow_up: webpack => 4.42.0
 - :arrow_up: webpack-cli => 3.3.11
 
 ### Added
