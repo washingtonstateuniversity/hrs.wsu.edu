@@ -1,0 +1,37 @@
+/* stylelint-disable selector-class-pattern */
+.wp-block-cover__inner-container {
+	color: var(--section-background-color);
+}
+
+.wp-block-cover-image.has-light-background-color,
+.wp-block-cover-image.has-accent-green-background-color,
+.wp-block-cover-image.has-accent-yellow-background-color,
+.wp-block-cover-image.has-accent-blue-background-color,
+.wp-block-cover-image.has-accent-orange-background-color,
+.wp-block-cover.has-light-background-color,
+.wp-block-cover.has-accent-green-background-color,
+.wp-block-cover.has-accent-yellow-background-color,
+.wp-block-cover.has-accent-blue-background-color,
+.wp-block-cover.has-accent-orange-background-color {
+
+	.wp-block-cover__inner-container {
+		color: var(--text-color);
+	}
+}
+
+.wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link),
+.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link) {
+	color: inherit;
+	padding: 0 0.25em;
+
+	&:hover,
+	&:focus {
+		color: var(--section-background-color);
+		background-color: var(--nav-color-hover);
+	}
+
+	&:active {
+		background-color: var(--nav-color);
+	}
+}
+/* stylelint-enable selector-class-pattern */
