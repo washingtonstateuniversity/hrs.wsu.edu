@@ -1,0 +1,77 @@
+/**
+ * @todo Make this only style for a single card, don't worry about grouped
+ * layout, let other components handle that. Also try to mirror the new
+ * WSU card component as much as reasonable.
+ */
+
+.cards,
+.recent-articles {
+	display: grid;
+	font-size: 16px;
+	grid-auto-rows: minmax(4rem, auto);
+	grid-gap: 1.5rem 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	line-height: 1.5;
+	margin-top: 3rem;
+
+	& .article-summary {
+		margin-top: 0.5em;
+	}
+
+	& .article-image {
+		order: -1;
+	}
+
+	& .article-footer {
+		order: -2;
+	}
+}
+
+
+@media (min-width: 61.875em) {
+
+	.cards,
+	.recent-articles {
+
+		& article,
+		& .card {
+			float: left;
+			padding: 0 1rem;
+			width: 33%;
+		}
+
+	}
+
+	.home .recent-articles article {
+		width: 20%;
+	}
+
+	.blog .cards article {
+		width: 25%;
+	}
+
+}
+
+/* Override the static width for browsers with flex support */
+@supports (display: grid) {
+
+	.cards,
+	.recent-articles {
+
+		& article,
+		& .card {
+			display: flex;
+			flex-direction: column;
+			float: none;
+			padding: 0;
+			width: auto;
+		}
+
+	}
+
+	.home .recent-articles article,
+	.blog .cards article {
+		width: auto;
+	}
+
+}
