@@ -54,10 +54,27 @@ function hrs_get_theme_version() {
  * @since 0.7.0
  */
 function hrs_enqueue_styles() {
-	wp_enqueue_style( 'hrs-child-theme', get_stylesheet_directory_uri() . '/assets/css/style.css', array( 'wsu-spine' ), hrs_get_theme_version() );
-	wp_enqueue_style( 'source_sans_pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i', array(), hrs_get_theme_version() );
-	wp_enqueue_script( 'hrs-main', get_stylesheet_directory_uri() . '/assets/js/main.js', array(), hrs_get_theme_version(), false );
-	wp_enqueue_script( 'hrs-legacy', get_stylesheet_directory_uri() . '/assets/js/main.es5.js', array(), hrs_get_theme_version(), true );
+	wp_enqueue_style(
+		'hrs-child-theme',
+		get_stylesheet_directory_uri() . '/build/style.css',
+		array(),
+		hrs_get_theme_version()
+	);
+
+	wp_enqueue_style(
+		'source_sans_pro',
+		'//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i',
+		array(),
+		hrs_get_theme_version()
+	);
+
+	wp_enqueue_script(
+		'hrs-main',
+		get_stylesheet_directory_uri() . '/build/index.js',
+		array(),
+		hrs_get_theme_version(),
+		false
+	);
 }
 
 /**
@@ -123,7 +140,12 @@ function hrs_add_attr_to_script_tag( $tag, $handle ) {
  * @since 0.12.0
  */
 function hrs_login_styles() {
-	wp_enqueue_style( 'hrs-login-style', get_stylesheet_directory_uri() . '/assets/css/login-style.css', false, hrs_get_theme_version() );
+	wp_enqueue_style(
+		'hrs-login-style',
+		get_stylesheet_directory_uri() . '/build/login.css',
+		false,
+		hrs_get_theme_version()
+	);
 }
 
 /**
