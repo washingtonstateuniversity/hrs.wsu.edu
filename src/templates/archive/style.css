@@ -1,0 +1,49 @@
+.archive .page-header h1 {
+	text-transform: capitalize;
+}
+
+.archive .page-header h1::before {
+	background-image: url(../images/icons/bookmarks.svg);
+}
+
+section.latest {
+	border-top: 8px solid var(--body-background-color);
+	border-bottom: 8px solid var(--body-background-color);
+}
+
+section.latest article {
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+@media ( max-width: 43em ) {
+
+	@supports (display: grid) {
+
+		.features .articles-list article {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.features .articles-list .article-image {
+			order: -1;
+		}
+
+	}
+
+}
+
+@media (min-width: 43em) {
+
+	.features .articles-list article {
+		grid-auto-rows: 1fr 2fr;
+		grid-template-columns: repeat(2, minmax(220px, 1fr));
+	}
+
+	.features .articles-list .article-footer {
+		position: absolute;
+		left: 2rem;
+		top: 1rem;
+	}
+
+}
