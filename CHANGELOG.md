@@ -19,6 +19,16 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Experimental (for features that are still being tested)
 -->
 
+## 1.9.0-rc.1 (2020-03-13)
+
+### Added
+
+- :art: Style option to hide the page title from all but screen readers.
+
+### Changed
+
+- :art: Modify form styles for the HRS contact form.
+
 ## 1.8.0 (2020-02-04)
 
 ### Fixed
