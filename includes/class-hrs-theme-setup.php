@@ -501,6 +501,10 @@ class HRS_Theme_Setup {
 				'wp-dom-ready',
 				'wp-edit-post',
 				'wp-i18n',
+				'wp-plugins',
+				'wp-edit-post',
+				'wp-compose',
+				'wp-data',
 			),
 			hrs_get_theme_version(),
 			false

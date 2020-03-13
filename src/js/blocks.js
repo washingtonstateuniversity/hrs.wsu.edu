@@ -5,6 +5,7 @@ import { init as modifyBlockStyles } from './blocks/styles';
 import registerNotificationBlock from './blocks/notifications';
 import registerCalloutBlock from './blocks/callouts';
 import registerSidebarBlock from './blocks/sidebar';
+import registerDisplayOptions from './blocks/documentSettingsPlugin';
 
 /**
  * Initializes all of the site submodules.
@@ -18,6 +19,7 @@ const init = () => {
 	registerNotificationBlock();
 	registerCalloutBlock();
 	registerSidebarBlock();
+	registerDisplayOptions();
 };
 
 init();
