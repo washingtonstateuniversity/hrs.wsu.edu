@@ -19,7 +19,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Experimental (for features that are still being tested)
 -->
 
-## 1.9.0-rc.1 (2020-03-13)
+## 1.9.0-rc.2 (2020-03-17)
+
+### Fixed
+
+- :alien: Add new `.has-text-align-*` class rules for updated core block classes.
 
 ### Added
 
@@ -28,6 +32,13 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Changed
 
 - :art: Modify form styles for the HRS contact form.
+
+- :arrow_up: @babel/core => 7.8.7
+- :arrow_up: @babel/polyfill => 7.8.7
+- :arrow_up: rimraf => 3.0.2
+- :arrow_up: stylelint => 13.2.1
+- :arrow_up: webpack => 4.42.0
+- :arrow_up: webpack-cli => 3.3.11
 
 ## 1.8.0 (2020-02-04)
 
