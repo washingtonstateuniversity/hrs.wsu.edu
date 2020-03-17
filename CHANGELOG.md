@@ -19,7 +19,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Experimental (for features that are still being tested)
 -->
 
-## 1.9.0-rc.2 (2020-03-17)
+## 1.9.0 (2020-03-17)
 
 ### Fixed
 
