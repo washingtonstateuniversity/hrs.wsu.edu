@@ -500,6 +500,13 @@ figcaption {
 
 }
 
+.has-text-align-left {
+
+	/*rtl:ignore*/
+	text-align: left;
+}
+
+.has-text-align-right,
 .wp-block-button.alignright,
 .wp-block-file.alignright {
 
@@ -524,7 +531,8 @@ figcaption {
 .textaligncenter,
 figure.aligncenter,
 .wp-block-button.aligncenter,
-.wp-block-file.aligncenter {
+.wp-block-file.aligncenter,
+.has-text-align-center {
 	text-align: center;
 }
 

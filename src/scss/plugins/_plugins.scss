@@ -201,3 +201,17 @@ form.evaluators-selection-form {
 	}
 
 }
+
+.gform_wrapper form.contact-hrs select.large,
+.gform_wrapper form.contact-hrs input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+.gform_wrapper form.contact-hrs textarea.large {
+	border: .05em solid #d6d6d6;
+	border-radius: 5px;
+	color: $text-color;
+	padding: .7em 1em;
+}
+
+.gform_wrapper form.contact-hrs select.large,
+.gform_wrapper form.contact-hrs input[type="text"] {
+	height: 2.9em;
+}
