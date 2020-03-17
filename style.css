@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.9.0-rc.1
+Version: 1.9.0-rc.2
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 5.6
@@ -661,6 +661,12 @@ figcaption {
   margin-left: 2em;
 }
 
+.has-text-align-left {
+  /*rtl:ignore*/
+  text-align: left;
+}
+
+.has-text-align-right,
 .wp-block-button.alignright,
 .wp-block-file.alignright {
   /*rtl:ignore*/
@@ -683,7 +689,8 @@ figcaption {
 .textaligncenter,
 figure.aligncenter,
 .wp-block-button.aligncenter,
-.wp-block-file.aligncenter {
+.wp-block-file.aligncenter,
+.has-text-align-center {
   text-align: center;
 }
 
