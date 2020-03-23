@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.8.0
+Version: 1.9.0
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 5.6
@@ -661,6 +661,12 @@ figcaption {
   margin-left: 2em;
 }
 
+.has-text-align-left {
+  /*rtl:ignore*/
+  text-align: left;
+}
+
+.has-text-align-right,
 .wp-block-button.alignright,
 .wp-block-file.alignright {
   /*rtl:ignore*/
@@ -683,7 +689,8 @@ figcaption {
 .textaligncenter,
 figure.aligncenter,
 .wp-block-button.aligncenter,
-.wp-block-file.aligncenter {
+.wp-block-file.aligncenter,
+.has-text-align-center {
   text-align: center;
 }
 
@@ -3099,6 +3106,26 @@ body.single .article-content > .article-header {
   margin-bottom: 2.281em;
 }
 
+body.page.hide-title .article-content > .article-header,
+body.single.hide-title .article-content > .article-header {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+body.page.hide-title .article-content > .article-body,
+body.single.hide-title .article-content > .article-body {
+  margin-top: -2rem;
+}
+
 .article-taxonomy--primary ul {
   font-size: 0.79em;
   list-style-type: none;
@@ -3654,4 +3681,18 @@ form.evaluators-selection-form table.gfield_list td {
 form.evaluators-selection-form table.gfield_list thead th {
   background-color: transparent;
   font-weight: 600;
+}
+
+.gform_wrapper form.contact-hrs select.large,
+.gform_wrapper form.contact-hrs input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+.gform_wrapper form.contact-hrs textarea.large {
+  border: .05em solid #d6d6d6;
+  border-radius: 5px;
+  color: #191919;
+  padding: .7em 1em;
+}
+
+.gform_wrapper form.contact-hrs select.large,
+.gform_wrapper form.contact-hrs input[type="text"] {
+  height: 2.9em;
 }
