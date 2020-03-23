@@ -61,6 +61,7 @@ class HRS_Theme_Setup {
 		add_action( 'init', array( $this, 'register_blocks' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_scripts' ) );
 		add_action( 'customize_register', array( $this, 'remove_custom_css_control' ) );
+		add_filter( 'body_class', array( $this, 'update_body_class' ) );
 
 		// Set Spine options.
 		add_action( 'after_setup_theme', array( $this, 'get_hrs_spine_schema' ), 5 );
@@ -412,6 +413,26 @@ class HRS_Theme_Setup {
 	 */
 	public function remove_custom_css_control( $wp_customize ) {
 		$wp_customize->remove_control( 'custom_css' );
+	}
+
+	/**
+	 * Modifies the WordPress body classes.
+	 *
+	 * @since 2.0.0
+	 *
+	 * @param string[] $classes An array of body class names.
+	 * @return string[] An array of body class names.
+	 */
+	public function update_body_class( $classes ) {
+		if ( is_singular() ) {
+			$hide_title = get_post_meta( get_the_ID(), 'hrswp_hide_page_title', true );
+
+			if ( '' !== $hide_title ) {
+				$classes[] = 'hide-title';
+			}
+		}
+	
+		return $classes;
 	}
 
 	/**
