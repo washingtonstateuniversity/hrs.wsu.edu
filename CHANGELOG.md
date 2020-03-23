@@ -19,7 +19,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Experimental
 -->
 
-## 2.0.0-alpha.3 (:construction: 2020-03-04)
+## 2.0.0-alpha.4 (:construction: 2020-03-23)
 
 ### Fixed
 
@@ -57,7 +57,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - :arrow_up: squizlabs/php_codesniffer => 3.4.2
 - :arrow_up: wp-coding-standards/wpcs => 2.2.0
 - :arrow_up: @wordpress/babel-preset-default => 4.10.0
-- :arrow_up: @wordpress/dependency-extraction-webpack-plugin => 2.3.0
+- :arrow_up: @wordpress/dependency-extraction-webpack-plugin => 2.4.0
 - :arrow_up: @wordpress/eslint-plugin => 4.0.0
 - :arrow_up: babel-loader => 8.0.6
 - :arrow_up: cssnano => 4.1.10
