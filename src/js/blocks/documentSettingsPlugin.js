@@ -6,7 +6,7 @@ const { registerPlugin } = wp.plugins;
 const { createElement } = wp.element;
 const { PluginDocumentSettingPanel } = wp.editPost;
 const { ToggleControl } = wp.components;
-// const { compose } = wp.compose;
+const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
 /**
@@ -14,23 +14,9 @@ const { withSelect, withDispatch } = wp.data;
  */
 const PANEL_NAME = 'display-options';
 
-const DisplayOptionsPanelWrapper = ( select ) => {
-	return {
-		displayTitle: select( 'core/editor' ).getEditedPostAttribute( 'meta' )[ 'hrswp_hide_page_title' ] // eslint-disable-line
-	}
-};
+const DisplayOptionsPanelContent = ( props ) => {
+	const { displayTitle, updateMetaFieldValue } = props;
 
-const mapDispatchToProps = ( dispatch ) => {
-	return {
-		setMetaFieldValue: ( value ) => {
-			dispatch( 'core/editor' ).editPost(
-				{ meta: { hrswp_hide_page_title: value } }
-			);
-		}
-	}
-};
-
-const DisplayOptionsPanel = ( props ) => {
 	return( 
 		<PluginDocumentSettingPanel
 			name={ PANEL_NAME }
@@ -39,10 +25,10 @@ const DisplayOptionsPanel = ( props ) => {
 		>
 			<ToggleControl
 				label={ __( 'Hide Page Title' ) }
-				checked={ !! props.displayTitle }
-				onChange={ ( value ) => { props.setMetaFieldValue( value ) } }
+				checked={ !! displayTitle }
+				onChange={ ( value ) => { updateMetaFieldValue( value ) } }
 				help={
-					props.displayTitle
+					displayTitle
 						? __( 'Toggle to show the page title.' )
 						: __( 'Toggle to hide the page title.' )
 				}
@@ -51,14 +37,32 @@ const DisplayOptionsPanel = ( props ) => {
 	);
 }
 
-const WithData = withSelect( DisplayOptionsPanelWrapper )( DisplayOptionsPanel );
-const WithDataAndActions = withDispatch( mapDispatchToProps )( WithData );
+const DisplayOptionsPanel = compose(
+	withDispatch( ( dispatch, props ) => {
+		const { metaFieldName } = props;
+
+		return {
+			updateMetaFieldValue: ( value ) => {
+				dispatch( 'core/editor' ).editPost(
+					{ meta: { [ metaFieldName ]: value } }
+				);
+			}
+		}
+	} ),
+	withSelect( ( select, props ) => {
+		const { metaFieldName } = props;
+
+		return {
+			displayTitle: select( 'core/editor' ).getEditedPostAttribute( 'meta' )[ metaFieldName ]
+		}
+	} )
+)( DisplayOptionsPanelContent );
 
 export default function registerDisplayOptions() {
 	registerPlugin( 'plugin-document-setting-panel-demo', {
 		render: () => {
-			return createElement( WithDataAndActions )
+			return createElement( DisplayOptionsPanel, { metaFieldName: 'hrswp_hide_page_title' } )
 		},
-		icon: 'palmtree',
+		icon: '',
 	});
 }
