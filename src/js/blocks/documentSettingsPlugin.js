@@ -3,9 +3,10 @@
  */
 const { __ } = wp.i18n;
 const { registerPlugin } = wp.plugins;
+const { createElement } = wp.element;
 const { PluginDocumentSettingPanel } = wp.editPost;
-const { PanelBody, ToggleControl } = wp.components;
-const { compose } = wp.compose;
+const { ToggleControl } = wp.components;
+// const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
 /**
@@ -13,50 +14,51 @@ const { withSelect, withDispatch } = wp.data;
  */
 const PANEL_NAME = 'display-options';
 
-function DisplayOptionsPanel( displayTitle = true, ...props ) {
-	const onToggleTitleDisplay = () =>
-		props.editPost( {
-			hrswp_display_page_title: displayTitle === true ? true : false,
-		} );
-	
+const DisplayOptionsPanelWrapper = ( select ) => {
+	return {
+		displayTitle: select( 'core/editor' ).getEditedPostAttribute( 'meta' )[ 'hrswp_hide_page_title' ] // eslint-disable-line
+	}
+};
+
+const mapDispatchToProps = ( dispatch ) => {
+	return {
+		setMetaFieldValue: ( value ) => {
+			dispatch( 'core/editor' ).editPost(
+				{ meta: { hrswp_hide_page_title: value } }
+			);
+		}
+	}
+};
+
+const DisplayOptionsPanel = ( props ) => {
 	return( 
 		<PluginDocumentSettingPanel
 			name={ PANEL_NAME }
 			title={ __( 'Display Options' ) }
 			className="display-options"
 		>
-			<PanelBody title={ __( 'Page Display Options' ) }>
-				<ToggleControl
-					label={ __( 'Page Title Visibility' ) }
-					checked={ !! displayTitle }
-					onChange={ onToggleTitleDisplay }
-					help={
-						displayTitle
-							? __( 'Toggle to hide the page title.' )
-							: __( 'Toggle to show the page title.' )
-					}
-				/>
-			</PanelBody>
+			<ToggleControl
+				label={ __( 'Hide Page Title' ) }
+				checked={ !! props.displayTitle }
+				onChange={ ( value ) => { props.setMetaFieldValue( value ) } }
+				help={
+					props.displayTitle
+						? __( 'Toggle to show the page title.' )
+						: __( 'Toggle to hide the page title.' )
+				}
+			/>
 		</PluginDocumentSettingPanel>
 	);
 }
 
-const renderDisplaySettings = compose( [
-	withSelect( ( select ) => {
-		return {
-			displayTitle: select( 'core/editor').getEditedPostAttribute(
-				'hrswp_display_page_title'
-			),
-		};
-	} ),
-	withDispatch( ( dispatch ) => ( {
-		editPost: dispatch( 'core/editor' ).editPost,
-	} ) ),
-] )( DisplayOptionsPanel );
+const WithData = withSelect( DisplayOptionsPanelWrapper )( DisplayOptionsPanel );
+const WithDataAndActions = withDispatch( mapDispatchToProps )( WithData );
 
 export default function registerDisplayOptions() {
 	registerPlugin( 'plugin-document-setting-panel-demo', {
-		render: ,
+		render: () => {
+			return createElement( WithDataAndActions )
+		},
 		icon: 'palmtree',
 	});
 }
