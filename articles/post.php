@@ -49,13 +49,20 @@ use WSU\HRS\Template_Tags as Tags;
 					?><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'spine-thumbnail_size' ); ?></a><?php
 				}
 			} else {
-				?>
-				<a href="<?php echo esc_url( spine_get_featured_image_src() ); ?>">
-					<?php spine_the_featured_image(); ?>
-				</a>
-				<?php if ( ! empty( $image_caption ) ) { ?>
-					<figcaption class="wp-caption-text"><?php echo esc_html( $image_caption ); ?></figcaption>
-				<?php }
+				$hide_article_image = get_post_meta( get_the_ID(), 'hrswp_hide_feature_image', true );
+
+				if ( empty( $hide_article_image ) ) {
+					?>
+					<a href="<?php echo esc_url( spine_get_featured_image_src() ); ?>">
+						<?php spine_the_featured_image(); ?>
+					</a>
+					<?php
+					if ( ! empty( $image_caption ) ) {
+						?>
+						<figcaption class="wp-caption-text"><?php echo esc_html( $image_caption ); ?></figcaption>
+						<?php
+					}
+				}
 			}
 			?>
 		</figure>
