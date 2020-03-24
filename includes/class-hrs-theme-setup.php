@@ -57,7 +57,7 @@ class HRS_Theme_Setup {
 		add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
 		add_action( 'after_setup_theme', array( $this, 'remove_spine_filters' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ), 0 );
-		add_action( 'init', array( $this, 'register_meta') );
+		add_action( 'init', array( $this, 'register_meta' ) );
 		add_action( 'init', array( $this, 'register_blocks' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_scripts' ) );
 		add_action( 'customize_register', array( $this, 'remove_custom_css_control' ) );
@@ -431,7 +431,7 @@ class HRS_Theme_Setup {
 				$classes[] = 'hide-title';
 			}
 		}
-	
+
 		return $classes;
 	}
 
@@ -477,7 +477,7 @@ class HRS_Theme_Setup {
 
 	/**
 	 * Registers post meta fields.
-	 * 
+	 *
 	 * @since 2.0.0
 	 */
 	public function register_meta() {
