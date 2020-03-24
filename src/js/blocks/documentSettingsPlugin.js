@@ -19,8 +19,9 @@ const DisplayOptionsPanelContent = ( props ) => {
 		postType,
 		displayTitle,
 		displayFeature,
-		updateDisplayTitleMeta,
-		updateDisplayFeatureMeta,
+		displayTitleMetaName,
+		displayFeatureMetaName,
+		updateMeta,
 	} = props;
 
 	return( 
@@ -32,7 +33,7 @@ const DisplayOptionsPanelContent = ( props ) => {
 			<ToggleControl
 				label={ __( 'Hide Page Title' ) }
 				checked={ !! displayTitle }
-				onChange={ ( value ) => { updateDisplayTitleMeta( value ) } }
+				onChange={ ( value ) => { updateMeta( value, displayTitleMetaName ) } }
 				help={
 					displayTitle
 						? __( 'Toggle to show the page title.' )
@@ -43,7 +44,7 @@ const DisplayOptionsPanelContent = ( props ) => {
 				<ToggleControl
 					label={ __( 'Hide Feature Image on Page' ) }
 					checked={ !! displayFeature }
-					onChange={ ( value ) => { updateDisplayFeatureMeta( value ) } }
+					onChange={ ( value ) => { updateMeta( value, displayFeatureMetaName ) } }
 					help={
 						displayFeature
 							? __( 'Toggle to show the feature image on the single post page.' )
@@ -56,21 +57,11 @@ const DisplayOptionsPanelContent = ( props ) => {
 }
 
 const DisplayOptionsPanel = compose(
-	withDispatch( ( dispatch, props ) => {
-		const {
-			displayTitleMetaName,
-			displayFeatureMetaName,
-		} = props;
-
+	withDispatch( ( dispatch ) => {
 		return {
-			updateDisplayTitleMeta: ( value ) => {
+			updateMeta: ( value, metaField ) => {
 				dispatch( 'core/editor' ).editPost(
-					{ meta: { [ displayTitleMetaName ]: value } }
-				);
-			},
-			updateDisplayFeatureMeta: ( value ) => {
-				dispatch( 'core/editor' ).editPost(
-					{ meta: { [ displayFeatureMetaName ]: value } }
+					{ meta: { [ metaField ]: value } }
 				);
 			}
 		}
