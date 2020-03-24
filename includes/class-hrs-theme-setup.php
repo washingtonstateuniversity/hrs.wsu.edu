@@ -490,6 +490,16 @@ class HRS_Theme_Setup {
 				'type'         => 'boolean',
 			)
 		);
+
+		register_post_meta(
+			'',
+			'hrswp_hide_feature_image',
+			array(
+				'show_in_rest' => true,
+				'single'       => true,
+				'type'         => 'boolean',
+			)
+		);
 	}
 
 	/**
