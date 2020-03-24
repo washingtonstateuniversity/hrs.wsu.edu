@@ -2083,7 +2083,6 @@ input[type="number"] {
 
 @supports ((position: -webkit-sticky) or (position: sticky)) {
   .wp-block-video [poster] {
-    -o-object-fit: cover;
     object-fit: cover;
   }
 }
@@ -2342,8 +2341,7 @@ input[type="number"] {
 .wp-block-cover__video-background {
   height: 100%;
   left: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: absolute;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -2436,8 +2434,7 @@ input[type="number"] {
   .wp-block-gallery.is-cropped .blocks-gallery-item img {
     height: 100%;
     flex: 1;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 
