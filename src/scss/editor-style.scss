@@ -631,7 +631,7 @@ p.has-drop-cap:not(:focus):after {
 
 .wp-block-table td,
 .wp-block-table th {
-	border: none;
+	border: 1px solid lighten($brand-gray, 20%);
 	font-variant-numeric: lining-nums tabular-nums;
 }
 
