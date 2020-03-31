@@ -19,7 +19,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Experimental (for features that are still being tested)
 -->
 
-## 1.10.0-beta.1 (:construction: 2020-03-23)
+## 1.10.0-beta.2 (:construction: 2020-03-31)
 
 ### Added
 
@@ -28,6 +28,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- :art: Apply frontend table styles to editor.
 - :arrow_up: @babel/core => 7.9.0
 - :arrow_up: @babel/preset-env => 7.9.0
 - :arrow_up: autoprefixer => 9.7.5
