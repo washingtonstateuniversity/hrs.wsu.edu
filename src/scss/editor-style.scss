@@ -624,3 +624,26 @@ p.has-drop-cap:not(:focus):after {
 	}
 
 }
+
+/**
+ * Tables
+ */
+
+.wp-block-table td,
+.wp-block-table th {
+	border: 1px solid lighten($brand-gray, 20%);
+	font-variant-numeric: lining-nums tabular-nums;
+}
+
+.wp-block-table thead tr {
+	border-bottom: 1px solid lighten($brand-gray, 20%);
+}
+
+.wp-block-table tbody tr {
+	border-bottom: 1px solid lighten($brand-gray, 40%);
+}
+
+.wp-block-table th {
+	background-color: $neutral-blue;
+	font-weight: 600;
+}

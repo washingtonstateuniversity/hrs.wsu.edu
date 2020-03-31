@@ -5,7 +5,7 @@ Author: Adam Turner, WSU University Communications
 Author URI: https://web.wsu.edu/
 Description: A child theme of the WSU Web Communications Spine template.
 Template: wsuspine
-Version: 1.9.0
+Version: 1.10.0-rc.1
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 5.6
@@ -1665,12 +1665,6 @@ main tbody tr {
 main .wp-block-table td,
 main .wp-block-table th {
   padding: .45em;
-  text-align: left;
-}
-
-main th.nums,
-main td.nums {
-  text-align: right;
 }
 
 main th {
@@ -2083,7 +2077,6 @@ input[type="number"] {
 
 @supports ((position: -webkit-sticky) or (position: sticky)) {
   .wp-block-video [poster] {
-    -o-object-fit: cover;
     object-fit: cover;
   }
 }
@@ -2342,8 +2335,7 @@ input[type="number"] {
 .wp-block-cover__video-background {
   height: 100%;
   left: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: absolute;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -2436,8 +2428,7 @@ input[type="number"] {
   .wp-block-gallery.is-cropped .blocks-gallery-item img {
     height: 100%;
     flex: 1;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 

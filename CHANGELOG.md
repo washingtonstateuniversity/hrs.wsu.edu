@@ -19,6 +19,22 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Experimental (for features that are still being tested)
 -->
 
+## 1.10.0-rc.1 (:construction: 2020-03-31)
+
+### Added
+
+- :sparkles: Post sidebar control to toggle feature image visibility on single views, using post meta and the body class filter.
+- :sparkles: Post and page sidebar control to toggle title visibility, using post meta and the body class filter.
+
+### Changed
+
+- :art: Apply frontend table styles to editor.
+- :arrow_up: @babel/core => 7.9.0
+- :arrow_up: @babel/preset-env => 7.9.0
+- :arrow_up: autoprefixer => 9.7.5
+- :arrow_up: babel-loader => 8.1.0
+- :arrow_up: webpack => 4.42.1
+
 ## 1.9.0 (2020-03-17)
 
 ### Fixed
@@ -32,7 +48,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Changed
 
 - :art: Modify form styles for the HRS contact form.
-
 - :arrow_up: @babel/core => 7.8.7
 - :arrow_up: @babel/polyfill => 7.8.7
 - :arrow_up: rimraf => 3.0.2
