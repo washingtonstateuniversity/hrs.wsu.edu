@@ -28,6 +28,7 @@ export default function registerSidebarBlock() {
 
 		supports: {
 			align: [ 'wide', 'full' ],
+			inserter: false,
 		},
 
 		styles: [

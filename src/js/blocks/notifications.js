@@ -63,6 +63,7 @@ export default function registerNotificationBlock() {
 
 		supports: {
 			align: true,
+			inserter: false,
 		},
 
 		styles: [
