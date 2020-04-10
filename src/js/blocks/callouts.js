@@ -25,6 +25,7 @@ export default function registerCalloutBlock() {
 		keywords: [ __( 'callout' ), __( 'message' ) ],
 
 		supports: {
+			inserter: false,
 			align: true,
 		},
 
