@@ -1,5 +1,6 @@
 .wp-block-code,
-.wp-block-code .editor-plain-text {
+.wp-block-code .editor-plain-text,
+.wp-block-code .block-editor-plain-text {
 	background-color: var(--text-color);
 	color: #fff;
 	font-size: 16px;
