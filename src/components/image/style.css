@@ -30,3 +30,7 @@ figcaption {
 	caption-side: bottom;
 	display: table-caption;
 }
+
+.is-style-rounded img {
+	border-radius: 9999px;
+}
