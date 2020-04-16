@@ -11,26 +11,23 @@
 }
 /* stylelint-enable selector-class-pattern */
 
+.wp-block-pullquote {
+	padding: 1em 0 0;
+	margin-bottom: 1em;
+	text-align: center;
+	border-top: 2px solid var(--accent-crimson);
+	border-bottom: 10px solid var(--accent-crimson);
+}
+
 .wp-block-pullquote p {
 	font-size: var(--font-size-5);
 	line-height: 1.5;
 }
 
-.wp-block-pullquote {
-	border-top: 0;
-	border-bottom: 0;
-	padding: 3em 0 2em;
-	margin-bottom: 1em;
-	text-align: center;
-}
-
 .wp-block-pullquote blockquote {
-	border-top: 2px solid var(--accent-crimson);
-	border-bottom: 10px solid var(--accent-crimson);
-	border-radius: 18px;
 	font-family: var(--sans-serif-fonts);
 	margin-bottom: 1em;
-	padding: 1em 2em;
+	padding: 1em 2em 2em;
 }
 
 .wp-block-pullquote .has-text-color a,

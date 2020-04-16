@@ -1,13 +1,9 @@
 .wp-block-pullquote {
-	padding: 3em 0 2em;
+	padding: 1em 0 0;
 	margin-bottom: 1em;
 	text-align: center;
-}
-
-.wp-block-pullquote blockquote {
 	border-top: 2px solid var(--accent-crimson);
 	border-bottom: 10px solid var(--accent-crimson);
-	border-radius: 18px;
 }
 
 .wp-block-pullquote p {
@@ -36,11 +32,11 @@
 }
 
 .wp-block-pullquote.is-style-solid-color {
+	border: none;
 	border-radius: 4px;
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote {
-	border: none;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: calc(27rem + 3vw);
