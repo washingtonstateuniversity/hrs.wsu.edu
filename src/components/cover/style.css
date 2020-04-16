@@ -17,6 +17,11 @@
 	color: var(--section-background-color);
 	width: calc(100% - 70px);
 	z-index: 1;
+
+	&> :last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
 }
 
 .wp-block-cover-image.has-light-background-color,
@@ -59,6 +64,15 @@
 }
 
 @supports (-webkit-overflow-scrolling: touch) {
+
+	.wp-block-cover-image.has-parallax,
+	.wp-block-cover.has-parallax {
+		background-attachment: scroll;
+	}
+
+}
+
+@media (prefers-reduced-motion: reduce) {
 
 	.wp-block-cover-image.has-parallax,
 	.wp-block-cover.has-parallax {
