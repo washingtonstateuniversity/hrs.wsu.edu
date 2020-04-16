@@ -2,6 +2,7 @@
 @import "./cover/editor.css";
 @import "./icons/editor.css";
 @import "./image/editor.css";
+@import "./media-text/editor.css";
 @import "./paragraph/editor.css";
 @import "./preformatted/editor.css";
 @import "./pullquote/editor.css";
