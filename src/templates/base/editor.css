@@ -1,10 +1,14 @@
 body {
 	background-color: var(--section-background-color);
 	color: var(--text-color);
-	font-family: var(--sans-serif-fonts);
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.4;
+}
+
+.editor-styles-wrapper .wp-block,
+.editor-post-title__block .editor-post-title__input {
+	font-family: var(--sans-serif-fonts);
 }
 
 @media (min-width: 791px) {
@@ -16,7 +20,7 @@ body {
 }
 
 .wp-block {
-	max-width: calc(40em + 28px);
+	max-width: calc(45rem);
 }
 
 /* Width of "wide" blocks */
