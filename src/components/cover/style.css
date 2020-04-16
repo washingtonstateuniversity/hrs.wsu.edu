@@ -18,7 +18,7 @@
 	width: calc(100% - 70px);
 	z-index: 1;
 
-	&> :last-child {
+	& > :last-child {
 		margin-bottom: 0;
 		padding-bottom: 0;
 	}

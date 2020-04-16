@@ -1,7 +1,8 @@
 .wp-block-media-text {
-	/* This block's direction should not be manipulated by rtl, as the mediaPosition control does. */
+
 	/*!rtl:begin:ignore*/
 	direction: ltr;
+
 	/*!rtl:end:ignore*/
 	display: grid;
 	grid-template-columns: 50% 1fr;
@@ -19,57 +20,72 @@
 	}
 }
 
+/* stylelint-disable selector-class-pattern */
 .wp-block-media-text.is-vertically-aligned-top {
+
 	& .wp-block-media-text__content,
 	& .wp-block-media-text__media {
 		align-self: start;
 	}
+
 }
 
 .wp-block-media-text,
 .wp-block-media-text.is-vertically-aligned-center {
+
 	& .wp-block-media-text__content,
 	& .wp-block-media-text__media {
 		align-self: center;
 	}
+
 }
 
 .wp-block-media-text.is-vertically-aligned-bottom {
+
 	& .wp-block-media-text__content,
 	& .wp-block-media-text__media {
 		align-self: end;
 	}
+
 }
 
 .wp-block-media-text .wp-block-media-text__media {
+
 	/*!rtl:begin:ignore*/
 	grid-column: 1;
 	grid-row: 1;
+
 	/*!rtl:end:ignore*/
 	margin: 0;
 }
 
 .wp-block-media-text .wp-block-media-text__content {
 	direction: ltr;
+
 	/*!rtl:begin:ignore*/
 	grid-column: 2;
 	grid-row: 1;
+
 	/*!rtl:end:ignore*/
 	padding: 0 8% 0 8%;
 	word-break: break-word;
 }
 
 .wp-block-media-text.has-media-on-the-right .wp-block-media-text__media {
+
 	/*!rtl:begin:ignore*/
 	grid-column: 2;
 	grid-row: 1;
+
 	/*!rtl:end:ignore*/
 }
 
 .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+
 	/*!rtl:begin:ignore*/
 	grid-column: 1;
 	grid-row: 1;
+
 	/*!rtl:end:ignore*/
 }
 
@@ -87,7 +103,6 @@
 }
 
 .wp-block-media-text.is-image-fill figure.wp-block-media-text__media > img {
-	/* The image is visually hidden but accessible to assistive technologies. */
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -97,6 +112,7 @@
 	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
+
 /*
 * Here we here not able to use a mobile first CSS approach.
 * Custom widths are set using inline styles, and on mobile,
@@ -131,5 +147,7 @@
 			grid-column: 1;
 			grid-row: 1;
 		}
+
 	}
 }
+/* stylelint-enable selector-class-pattern */

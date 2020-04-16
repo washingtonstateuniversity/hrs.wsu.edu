@@ -6,10 +6,12 @@ body {
 	line-height: 1.4;
 }
 
+/* stylelint-disable selector-class-pattern */
 .editor-styles-wrapper .wp-block,
 .editor-post-title__block .editor-post-title__input {
 	font-family: var(--sans-serif-fonts);
 }
+/* stylelint-enable selector-class-pattern */
 
 @media (min-width: 791px) {
 
