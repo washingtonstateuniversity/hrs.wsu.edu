@@ -19,7 +19,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Experimental
 -->
 
-## 2.0.0-alpha.4 (:construction: 2020-03-23)
+## 2.0.0-alpha.4 (:construction: 2020-04-16)
 
 ### Fixed
 
@@ -32,6 +32,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
+- :art: Update styles to support core block changes in WordPress v5.4.0.
 - :fire: Switch from Sass to CSS using the 'postcss-present-env' plugin to allow things like variables and nesting.
 - :boom: Update development environment structure and build processes to be more component based.
   - Break down styles into frontend and backend and organize them by component and template.
@@ -56,17 +57,17 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - :construction_worker: Update Travis rules to monitor the 2.x branch and only test PHP 7.0+.
 - :arrow_up: squizlabs/php_codesniffer => 3.4.2
 - :arrow_up: wp-coding-standards/wpcs => 2.2.0
-- :arrow_up: @wordpress/babel-preset-default => 4.10.0
-- :arrow_up: @wordpress/dependency-extraction-webpack-plugin => 2.4.0
-- :arrow_up: @wordpress/eslint-plugin => 4.0.0
-- :arrow_up: babel-loader => 8.0.6
+- :arrow_up: @wordpress/babel-preset-default => 4.12.1
+- :arrow_up: @wordpress/dependency-extraction-webpack-plugin => 2.5.0
+- :arrow_up: @wordpress/eslint-plugin => 4.1.0
+- :arrow_up: babel-loader => 8.1.0
 - :arrow_up: cssnano => 4.1.10
 - :arrow_up: eslint => 6.8.0
 - :arrow_up: npm-run-all => 4.1.5
 - :arrow_up: postcss-cli => 7.1.0
 - :arrow_up: rimraf => 3.0.2
-- :arrow_up: stylelint => 13.2.0
-- :arrow_up: webpack => 4.42.0
+- :arrow_up: stylelint => 13.3.2
+- :arrow_up: webpack => 4.42.1
 - :arrow_up: webpack-cli => 3.3.11
 
 ### Added
