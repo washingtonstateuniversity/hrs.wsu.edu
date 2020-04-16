@@ -18,6 +18,14 @@
 
 }
 
+.has-text-align-left {
+
+	/*rtl:ignore*/
+	text-align: left;
+
+}
+
+.has-text-align-right,
 .wp-block-button.alignright,
 .wp-block-file.alignright {
 
@@ -40,6 +48,7 @@
 	max-width: 1180px;
 }
 
+.has-text-align-center,
 .textaligncenter,
 figure.aligncenter,
 .wp-block-button.aligncenter,
