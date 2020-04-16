@@ -106,3 +106,21 @@ main input[type="reset"] {
 	}
 }
 /* stylelint-enable selector-class-pattern */
+
+.wp-block-buttons {
+	align-items: center;
+	display: flex;
+	flex: row wrap;
+}
+
+.wp-block-buttons .wp-block-button {
+	margin-right: 0.75em;
+}
+
+.wp-block-buttons .wp-block-button:last-of-type {
+	margin-right: 0;
+}
+
+.wp-block-buttons.aligncenter {
+	justify-content: center;
+}
