@@ -344,6 +344,24 @@ main {
 	margin-bottom: 1em;
 }
 
+.wp-block-buttons {
+	align-items: center;
+	display: flex;
+	flex: row wrap;
+}
+
+.wp-block-buttons .wp-block-button {
+	margin-right: .75em;
+}
+
+.wp-block-buttons .wp-block-button:last-of-type {
+	margin-right: 0;
+}
+
+.wp-block-buttons.aligncenter {
+	justify-content: center;
+}
+
 main button,
 main .button,
 main input[type="button"],
