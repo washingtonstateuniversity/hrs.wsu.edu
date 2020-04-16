@@ -1,0 +1,8 @@
+.wp-block-media-text {
+	&.has-brand-crimson-background-color,
+	&.has-brand-gray-background-color,
+	&.has-accent-crimson-background-color,
+	&.has-dark-background-color {
+		color: var(--section-background-color);
+	}
+}
