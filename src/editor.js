@@ -4,7 +4,6 @@
 import initEditorComponents from './components/editor';
 import registerDisplayOptions from './lib/block-filters';
 
-
 /**
  * Initializes all of the site submodules.
  *

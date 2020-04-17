@@ -24,7 +24,7 @@ const DisplayOptionsPanelContent = ( props ) => {
 		updateMeta,
 	} = props;
 
-	return( 
+	return (
 		<PluginDocumentSettingPanel
 			name={ PANEL_NAME }
 			title={ __( 'Display Options' ) }
@@ -33,50 +33,59 @@ const DisplayOptionsPanelContent = ( props ) => {
 			<ToggleControl
 				label={ __( 'Hide Page Title' ) }
 				checked={ !! displayTitle }
-				onChange={ ( value ) => { updateMeta( value, displayTitleMetaName ) } }
+				onChange={ ( value ) => {
+					updateMeta( value, displayTitleMetaName );
+				} }
 				help={
 					displayTitle
 						? __( 'Toggle to show the page title.' )
 						: __( 'Toggle to hide the page title.' )
 				}
 			/>
-			{ 'post' === postType &&
+			{ 'post' === postType && (
 				<ToggleControl
 					label={ __( 'Hide Feature Image on Page' ) }
 					checked={ !! displayFeature }
-					onChange={ ( value ) => { updateMeta( value, displayFeatureMetaName ) } }
+					onChange={ ( value ) => {
+						updateMeta( value, displayFeatureMetaName );
+					} }
 					help={
 						displayFeature
-							? __( 'Toggle to show the feature image on the single post page.' )
-							: __( 'Toggle to hide the feature image on the post page (images will still show in archive views).' )
+							? __(
+									'Toggle to show the feature image on the single post page.'
+							  )
+							: __(
+									'Toggle to hide the feature image on the post page (images will still show in archive views).'
+							  )
 					}
 				/>
-			}
+			) }
 		</PluginDocumentSettingPanel>
 	);
-}
+};
 
 const DisplayOptionsPanel = compose(
 	withDispatch( ( dispatch ) => {
 		return {
 			updateMeta: ( value, metaField ) => {
-				dispatch( 'core/editor' ).editPost(
-					{ meta: { [ metaField ]: value } }
-				);
-			}
-		}
+				dispatch( 'core/editor' ).editPost( {
+					meta: { [ metaField ]: value },
+				} );
+			},
+		};
 	} ),
 	withSelect( ( select, props ) => {
-		const {
-			displayTitleMetaName,
-			displayFeatureMetaName,
-		} = props;
+		const { displayTitleMetaName, displayFeatureMetaName } = props;
 
 		return {
 			postType: select( 'core/editor' ).getCurrentPostType(),
-			displayTitle: select( 'core/editor' ).getEditedPostAttribute( 'meta' )[ displayTitleMetaName ],
-			displayFeature: select( 'core/editor').getEditedPostAttribute( 'meta' )[ displayFeatureMetaName ],
-		}
+			displayTitle: select( 'core/editor' ).getEditedPostAttribute(
+				'meta'
+			)[ displayTitleMetaName ],
+			displayFeature: select( 'core/editor' ).getEditedPostAttribute(
+				'meta'
+			)[ displayFeatureMetaName ],
+		};
 	} )
 )( DisplayOptionsPanelContent );
 
@@ -86,8 +95,8 @@ export default function registerDisplayOptions() {
 			return createElement( DisplayOptionsPanel, {
 				displayTitleMetaName: 'hrswp_hide_page_title',
 				displayFeatureMetaName: 'hrswp_hide_feature_image',
-			} )
+			} );
 		},
 		icon: '',
-	});
+	} );
 }
