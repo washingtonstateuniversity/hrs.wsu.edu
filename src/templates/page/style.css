@@ -7,6 +7,25 @@ body.single .article-content > .article-header {
 	margin-bottom: var(--font-size-8);
 }
 
+body.page.hide-title .article-content > .article-header,
+body.single.hide-title .article-content > .article-header {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+body.page.hide-title .article-content > .article-body,
+body.single.hide-title .article-content > .article-body {
+	margin-top: -2rem;
+}
+
 /* stylelint-disable-next-line selector-class-pattern */
 .article-taxonomy--primary ul {
 	font-size: var(--font-size-0);
