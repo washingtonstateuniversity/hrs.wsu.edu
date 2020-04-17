@@ -2,6 +2,8 @@
  * Internal dependencies
  */
 import initEditorComponents from './components/editor';
+import registerDisplayOptions from './lib/block-filters';
+
 
 /**
  * Initializes all of the site submodules.
@@ -10,6 +12,7 @@ import initEditorComponents from './components/editor';
  */
 function editor() {
 	initEditorComponents();
+	registerDisplayOptions();
 }
 
 editor();

@@ -57,8 +57,10 @@ class HRS_Theme_Setup {
 		add_action( 'after_setup_theme', array( $this, 'register_nav_menus' ) );
 		add_action( 'after_setup_theme', array( $this, 'remove_spine_filters' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ), 0 );
+		add_action( 'init', array( $this, 'register_meta' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_scripts' ) );
 		add_action( 'customize_register', array( $this, 'remove_custom_css_control' ) );
+		add_filter( 'body_class', array( $this, 'update_body_class' ) );
 
 		// Set Spine options.
 		add_action( 'after_setup_theme', array( $this, 'get_hrs_spine_schema' ), 5 );
@@ -416,6 +418,26 @@ class HRS_Theme_Setup {
 	}
 
 	/**
+	 * Modifies the WordPress body classes.
+	 *
+	 * @since 2.0.0
+	 *
+	 * @param string[] $classes An array of body class names.
+	 * @return string[] An array of body class names.
+	 */
+	public function update_body_class( $classes ) {
+		if ( is_singular() ) {
+			$hide_title = get_post_meta( get_the_ID(), 'hrswp_hide_page_title', true );
+
+			if ( '' !== $hide_title ) {
+				$classes[] = 'hide-title';
+			}
+		}
+
+		return $classes;
+	}
+
+	/**
 	 * Creates the HRS taxonomies.
 	 *
 	 * Uses the WP taxonomy API to create custom taxonomy for the HRS site,
@@ -456,6 +478,33 @@ class HRS_Theme_Setup {
 	}
 
 	/**
+	 * Registers post meta fields.
+	 *
+	 * @since 2.0.0
+	 */
+	public function register_meta() {
+		register_post_meta(
+			'',
+			'hrswp_hide_page_title',
+			array(
+				'show_in_rest' => true,
+				'single'       => true,
+				'type'         => 'boolean',
+			)
+		);
+
+		register_post_meta(
+			'',
+			'hrswp_hide_feature_image',
+			array(
+				'show_in_rest' => true,
+				'single'       => true,
+				'type'         => 'boolean',
+			)
+		);
+	}
+
+	/**
 	 * Adds HRS blocks' block editor scripts.
 	 *
 	 * @since 1.3.0
@@ -472,6 +521,10 @@ class HRS_Theme_Setup {
 				'wp-dom-ready',
 				'wp-edit-post',
 				'wp-i18n',
+				'wp-plugins',
+				'wp-edit-post',
+				'wp-compose',
+				'wp-data',
 			),
 			hrs_get_theme_version()
 		);

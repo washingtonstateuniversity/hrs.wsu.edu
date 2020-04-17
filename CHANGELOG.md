@@ -21,15 +21,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ## 2.0.0-alpha.4 (:construction: 2020-04-16)
 
-### Fixed
-
-- Fix #115 remove deprecated sudo key from Travis config.
-- Fix #114 specify os in Travis config.
-- :wrench: Specify `is_theme` as 'true' in phpcs config to allow WP template names that violate their own rules.
-- :wrench: Include browser globals in eslint rules.
-- :warning: Specifically declare WP globals in use.
-- :warning: PHP lint issues following rules update.
-
 ### Changed
 
 - :art: Update styles to support core block changes in WordPress v5.4.0.
@@ -160,6 +151,65 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 - :alembic: Store component and basic template markup in source and pull into main templates as needed.
   - Move search menu PHP into component directory and include in header.
+
+## 1.10.2 (2020-04-16)
+
+### Added
+
+- Missing `wp-block-buttons` styles for the new Buttons core block in WP 5.4.
+
+## 1.10.1 (2020-04-10)
+
+### Changed
+
+- :wastebasket: Hide deprecated blocks from the inserter (but keep in existing posts).
+
+## 1.10.0 (2020-03-31)
+
+### Added
+
+- :sparkles: Post sidebar control to toggle feature image visibility on single views, using post meta and the body class filter.
+- :sparkles: Post and page sidebar control to toggle title visibility, using post meta and the body class filter.
+
+### Changed
+
+- :art: Apply frontend table styles to editor.
+- :arrow_up: @babel/core => 7.9.0
+- :arrow_up: @babel/preset-env => 7.9.0
+- :arrow_up: autoprefixer => 9.7.5
+- :arrow_up: babel-loader => 8.1.0
+- :arrow_up: webpack => 4.42.1
+
+## 1.9.0 (2020-03-17)
+
+### Fixed
+
+- :alien: Add new `.has-text-align-*` class rules for updated core block classes.
+
+### Added
+
+- :art: Style option to hide the page title from all but screen readers.
+
+### Changed
+
+- :art: Modify form styles for the HRS contact form.
+- :arrow_up: @babel/core => 7.8.7
+- :arrow_up: @babel/polyfill => 7.8.7
+- :arrow_up: rimraf => 3.0.2
+- :arrow_up: stylelint => 13.2.1
+- :arrow_up: webpack => 4.42.0
+- :arrow_up: webpack-cli => 3.3.11
+
+## 1.8.0 (2020-02-04)
+
+### Fixed
+
+- Fix #115 remove deprecated sudo key from Travis config.
+- Fix #114 specify os in Travis config.
+- :wrench: Specify `is_theme` as 'true' in phpcs config to allow WP template names that violate their own rules.
+- :wrench: Include browser globals in eslint rules.
+- :warning: Specifically declare WP globals in use.
+- :warning: PHP lint issues following rules update.
 
 ## 1.7.2 (2019-09-20)
 
