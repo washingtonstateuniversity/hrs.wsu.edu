@@ -83,13 +83,13 @@ function the_terms( $args = array() ) {
 
 	if ( true === $atts['show_title'] ) {
 		if ( 'category' === $atts['taxonomy'] ) {
-			$term_title = '<dt>' . __( 'Categorized', 'hrs-wsu-edu' ) . '</dt>';
+			$term_title = '<dt>' . __( 'Categorized', 'hrswp-theme' ) . '</dt>';
 		} elseif ( 'post_tag' === $atts['taxonomy'] ) {
-			$term_title = '<dt>' . __( 'Tagged', 'hrs-wsu-edu' ) . '</dt>';
+			$term_title = '<dt>' . __( 'Tagged', 'hrswp-theme' ) . '</dt>';
 		} else {
 			$taxonomy_obj = get_taxonomy( $atts['taxonomy'] );
 			/* translators: The taxonomy name in singular tense */
-			$term_title = sprintf( __( '<dt>%s</dt>', 'hrs-wsu-edu' ), esc_html( $taxonomy_obj->labels->singular_name ) );
+			$term_title = sprintf( __( '<dt>%s</dt>', 'hrswp-theme' ), esc_html( $taxonomy_obj->labels->singular_name ) );
 		}
 	} else {
 		$term_title = '';
@@ -102,7 +102,7 @@ function the_terms( $args = array() ) {
 		if ( ! is_wp_error( $term_link ) ) {
 			$terms_list[] = sprintf(
 				/* translators: 1: the list item element tag, 2: the term URL, 3: the term name */
-				__( '<%1$s><a href="%2$s">%3$s</a></%1$s>', 'hrs-wsu-edu' ),
+				__( '<%1$s><a href="%2$s">%3$s</a></%1$s>', 'hrswp-theme' ),
 				esc_html( $atts['item_tag'] ),
 				esc_url( $term_link ),
 				esc_html( $term->name )
@@ -112,7 +112,7 @@ function the_terms( $args = array() ) {
 
 	$html = sprintf(
 		/* translators: 1: the container element tag name, 2: the containing element class name(s), 3: one or more list items containing term links and names, 4: the taxonomy name */
-		__( '<%1$s class="article-taxonomy %2$s">%4$s%3$s</%1$s>', 'hrs-wsu-edu' ),
+		__( '<%1$s class="article-taxonomy %2$s">%4$s%3$s</%1$s>', 'hrswp-theme' ),
 		esc_html( $atts['container_tag'] ),
 		esc_attr( $atts['taxonomy'] ),
 		join( '', $terms_list ),

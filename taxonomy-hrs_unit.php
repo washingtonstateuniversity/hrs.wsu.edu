@@ -17,7 +17,7 @@ get_header();
 
 	<header class="page-header">
 		<?php /* translators: the HRS news archive title: 1: the taxonomy name */ ?>
-		<h1><?php printf( esc_html__( 'HRS News from %s', 'hrs-wsu-edu' ), single_term_title( '', false ) ); ?></h1>
+		<h1><?php printf( esc_html__( 'HRS News from %s', 'hrswp-theme' ), single_term_title( '', false ) ); ?></h1>
 	</header>
 
 	<?php

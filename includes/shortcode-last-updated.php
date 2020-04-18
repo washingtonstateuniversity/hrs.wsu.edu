@@ -44,7 +44,7 @@ function hrs_last_update_shortcode( $atts ) {
 
 	return sprintf(
 		/* translators: the last modified date: 1: HTML tag, 2: HTML class value, 3: the modified date */
-		__( '<%1$s class="%2$s">%3$s</%1$s>', 'hrs-wsu-edu' ),
+		__( '<%1$s class="%2$s">%3$s</%1$s>', 'hrswp-theme' ),
 		esc_attr( $args['tag'] ),
 		esc_attr( $args['class'] ),
 		esc_html( get_the_modified_date( $args['date_format'] ) )

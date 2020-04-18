@@ -20,7 +20,7 @@ $footer_nav_args = array(
 	'container_id'    => false,
 	'menu_class'      => null,
 	'menu_id'         => null,
-	'items_wrap'      => '<span class="footer-nav-title">' . __( 'About', 'hrs-wsu-edu' ) . '</span><ul>%3$s</ul>',
+	'items_wrap'      => '<span class="footer-nav-title">' . __( 'About', 'hrswp-theme' ) . '</span><ul>%3$s</ul>',
 	'depth'           => 4,
 );
 
