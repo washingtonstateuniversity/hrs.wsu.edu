@@ -8,6 +8,8 @@
  * @since 0.14.0
  */
 
+use HrswpTheme\components\navigation;
+
 global $is_feature;
 
 get_header();
@@ -85,7 +87,7 @@ get_header();
 		<?php
 	}
 
-	\WSU\HRS\Template_Tags\hrs_pagination();
+	navigation\render();
 
 	get_template_part( 'parts/footers' );
 	?>

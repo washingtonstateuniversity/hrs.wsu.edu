@@ -8,6 +8,8 @@
  * @since 1.0.0
  */
 
+use HrswpTheme\components\navigation;
+
 get_header();
 ?>
 
@@ -43,7 +45,7 @@ get_header();
 		</section>
 
 		<?php
-		\WSU\HRS\Template_Tags\hrs_pagination();
+		navigation\render();
 	} else {
 		?>
 		<header class="page-header">

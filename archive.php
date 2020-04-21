@@ -4,9 +4,11 @@
  *
  * The template for displaying lists of posts by category, tag, or taxonomy.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.14.0
  */
+
+use HrswpTheme\components\navigation;
 
 global $is_feature;
 
@@ -95,7 +97,7 @@ get_header();
 		<?php
 	endif;
 
-	\WSU\HRS\Template_Tags\hrs_pagination();
+	navigation\render();
 
 	get_template_part( 'parts/footers' );
 	?>

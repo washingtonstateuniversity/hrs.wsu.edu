@@ -8,6 +8,8 @@
  * @since 0.14.0
  */
 
+use HrswpTheme\components\navigation;
+
 global $is_feature;
 
 get_header();
@@ -85,7 +87,19 @@ get_header();
 								<h2><?php esc_html_e( 'Latest From ...', 'hrswp-theme' ); ?></h2>
 							</header>
 							<ul class="gallery gallery-columns-3">
-								<?php \WSU\HRS\Template_Tags\the_terms_gallery( 'hrs_unit' ); ?>
+								<?php
+								$list = wp_list_categories(
+									array(
+										'echo'       => false,
+										'hide_empty' => 0,
+										'taxonomy'   => 'hrs_unit',
+										'title_li'   => '',
+									)
+								);
+
+								$list = str_replace( 'cat-item', 'gallery-item cat-item', $list );
+								echo wp_kses_post( $list );
+								?>
 							</ul>
 						</div>
 					</section>
@@ -121,7 +135,7 @@ get_header();
 		<?php
 	endif;
 
-	\WSU\HRS\Template_Tags\hrs_pagination();
+	navigation\render();
 
 	get_template_part( 'parts/footers' );
 	?>
