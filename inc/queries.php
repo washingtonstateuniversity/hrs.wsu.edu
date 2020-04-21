@@ -1,14 +1,12 @@
 <?php
 /**
- * Custom database queries for the HRS child theme.
+ * Custom database queries for the HRSWP Theme.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.14.0
  */
 
-namespace WSU\HRS\Queries;
-
-add_action( 'pre_get_posts', 'WSU\HRS\Queries\hrs_filter_query', 10 );
+namespace HrswpTheme\inc\queries;
 
 /**
  * Filters the main WP_Query.
@@ -18,7 +16,7 @@ add_action( 'pre_get_posts', 'WSU\HRS\Queries\hrs_filter_query', 10 );
  *
  * @param \WP_Query $query The standard WP_Query object.
  */
-function hrs_filter_query( $query ) {
+function filter_main_query( $query ) {
 	if ( is_admin() || ! $query->is_main_query() ) {
 		return;
 	}
@@ -32,6 +30,7 @@ function hrs_filter_query( $query ) {
 		return;
 	}
 }
+add_action( 'pre_get_posts', __NAMESPACE__ . '\filter_main_query', 10 );
 
 /**
  * Retrieves the five most recent reminder category posts
@@ -120,4 +119,40 @@ function get_hrs_unit_posts( $args = array() ) {
 	}
 
 	return $hrsunit_query;
+}
+
+/**
+ * Retrieves a post's terms in a custom format.
+ *
+ * Format and display the HRS News unit terms as an HTML string, if the post
+ * has terms assigned.
+ *
+ * @since 0.14.0
+ *
+ * @param int    $id       Post ID.
+ * @param string $taxonomy The taxonomy name.
+ * @return array|false|WP_Error Array of WP_Term objects on success, false if no taxonomy or terms exist, WP_Error on failure.
+ */
+function get_terms( $id, $taxonomy ) {
+	if ( ! isset( $taxonomy ) || ! taxonomy_exists( $taxonomy ) ) {
+		return false;
+	}
+
+	if ( 'category' === $taxonomy ) {
+		$terms = get_the_category();
+	} elseif ( 'post_tag' === $taxonomy ) {
+		$terms = get_the_tags();
+	} else {
+		$terms = get_the_terms( $id, $taxonomy );
+	}
+
+	if ( is_wp_error( $terms ) ) {
+		return $terms;
+	}
+
+	if ( empty( $terms ) ) {
+		return false;
+	}
+
+	return $terms;
 }
