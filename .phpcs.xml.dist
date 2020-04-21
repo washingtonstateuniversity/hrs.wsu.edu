@@ -8,7 +8,7 @@
 	<rule ref="WordPress-Core"/>
 	<rule ref="WordPress-Docs"/>
 	<rule ref="WordPress.WP.I18n"/>
-	<config name="text_domain" value="hrs-wsu-edu,default"/>
+	<config name="text_domain" value="hrswp-theme,default"/>
 
 	<rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis">
 		<properties>

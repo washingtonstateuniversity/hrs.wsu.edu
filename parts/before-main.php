@@ -7,7 +7,7 @@
  * theme, including the site title, search button, and expandable search menu.
  * The search menu also contains a WP nav menu.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.14.0
  */
 

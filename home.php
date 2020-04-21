@@ -8,6 +8,8 @@
  * @since 0.14.0
  */
 
+use HrswpTheme\components\navigation;
+
 global $is_feature;
 
 get_header();
@@ -16,7 +18,7 @@ get_header();
 <main id="wsuwp-main" class="spine-hrs_unit-index">
 
 	<header class="page-header">
-		<h1><?php esc_html_e( 'News from Human Resource Services', 'hrs-wsu-edu' ); ?></h1>
+		<h1><?php esc_html_e( 'News from Human Resource Services', 'hrswp-theme' ); ?></h1>
 	</header>
 
 	<?php
@@ -47,7 +49,7 @@ get_header();
 							if ( false !== $reminders && $reminders->have_posts() ) {
 								?>
 								<div class="reminders">
-									<h2><?php esc_html_e( 'Reminders', 'hrs-wsu-edu' ); ?></h2>
+									<h2><?php esc_html_e( 'Reminders', 'hrswp-theme' ); ?></h2>
 									<ul>
 										<?php
 										while ( $reminders->have_posts() ) :
@@ -82,10 +84,22 @@ get_header();
 					<section class="row single gutter pad-ends hrs-units-browse">
 						<div class="column one">
 							<header>
-								<h2><?php esc_html_e( 'Latest From ...', 'hrs-wsu-edu' ); ?></h2>
+								<h2><?php esc_html_e( 'Latest From ...', 'hrswp-theme' ); ?></h2>
 							</header>
 							<ul class="gallery gallery-columns-3">
-								<?php \WSU\HRS\Template_Tags\the_terms_gallery( 'hrs_unit' ); ?>
+								<?php
+								$list = wp_list_categories(
+									array(
+										'echo'       => false,
+										'hide_empty' => 0,
+										'taxonomy'   => 'hrs_unit',
+										'title_li'   => '',
+									)
+								);
+
+								$list = str_replace( 'cat-item', 'gallery-item cat-item', $list );
+								echo wp_kses_post( $list );
+								?>
 							</ul>
 						</div>
 					</section>
@@ -93,7 +107,7 @@ get_header();
 					<section class="row single gutter pad-ends article-archive">
 						<div class="column one">
 							<header>
-								<h2><?php esc_html_e( 'More News from HRS', 'hrs-wsu-edu' ); ?></h2>
+								<h2><?php esc_html_e( 'More News from HRS', 'hrswp-theme' ); ?></h2>
 							</header>
 							<div class="articles-list">
 					<?php
@@ -121,7 +135,7 @@ get_header();
 		<?php
 	endif;
 
-	\WSU\HRS\Template_Tags\hrs_pagination();
+	navigation\render();
 
 	get_template_part( 'parts/footers' );
 	?>

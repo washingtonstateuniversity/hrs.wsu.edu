@@ -13,18 +13,18 @@
  * unneeded options dropped and using vanilla JavaScript instead of jQuery to
  * handle the image replacement.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 1.0.0
  */
 
-namespace WSU\HRS\Class_Lazy_Load_Images;
+namespace HrswpTheme\lib\Lazy_Load_Images;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	die( 'Silence is golden.' );
 }
 
 /**
- * The HRS Lazy Load Images class.
+ * The HRSWP Lazy Load Images class.
  *
  * @since 1.0.0
  */
@@ -237,8 +237,8 @@ class Lazy_Load_Images {
  *
  * @return object A single HRS Lazy Load Images instance.
  */
-function hrs_lazy_load_images_init() {
+function lazy_load_images_init() {
 	return Lazy_Load_Images::get_instance();
 }
 
-add_action( 'init', __NAMESPACE__ . '\hrs_lazy_load_images_init' );
+add_action( 'init', __NAMESPACE__ . '\lazy_load_images_init' );

@@ -4,9 +4,15 @@
  *
  * This component outputes the HRS search menu.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 2.0.0
  */
+
+namespace HrswpTheme\components\search_menu;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	die( 'Silence is golden.' );
+}
 
 ?>
 <div id="search-menu" class="expandable">

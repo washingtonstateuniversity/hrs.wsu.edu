@@ -1,18 +1,17 @@
 <?php
 /**
- * HRS Child Theme Documents Gallery: Shortcode
+ * HRSWP Theme Document Gallery: Shortcode
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.13.0
+ * @since 2.0.0 Consolidated into the components directory
  */
 
-namespace WSU\HRS\Shortcode_Documents_Gallery;
+namespace HrswpTheme\components\shortcode_document_gallery;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	die( 'Silence is golden.' );
 }
-
-add_shortcode( 'hrsgallery', __NAMESPACE__ . '\hrs_gallery' );
 
 /**
  * Builds the HRS Documents Gallery shortcode output.
@@ -214,3 +213,4 @@ function hrs_gallery( $attr ) {
 
 	return $output;
 }
+add_shortcode( 'hrsgallery', __NAMESPACE__ . '\hrs_gallery' );
