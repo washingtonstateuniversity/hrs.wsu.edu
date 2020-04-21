@@ -1,18 +1,17 @@
 <?php
 /**
- * HRS Child Theme Last Updated Label: Shortcode
+ * HRSWP Theme Last Updated Label: Shortcode
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.13.0
+ * @since 2.0.0 Consolidated into the components directory
  */
 
-namespace WSU\HRS\Shortcode_Last_Updated;
+namespace HrswpTheme\components\shortcode_last_updated;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	die( 'Silence is golden.' );
 }
-
-add_shortcode( 'lastupdated', __NAMESPACE__ . '\hrs_last_update_shortcode' );
 
 /**
  * Displays the date the post was last modified.
@@ -50,3 +49,4 @@ function hrs_last_update_shortcode( $atts ) {
 		esc_html( get_the_modified_date( $args['date_format'] ) )
 	);
 }
+add_shortcode( 'lastupdated', __NAMESPACE__ . '\hrs_last_update_shortcode' );
