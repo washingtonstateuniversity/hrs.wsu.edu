@@ -4,8 +4,7 @@
  *
  * The template for layout out the content of page content in single page views.
  *
- * @package WSU_Human_Resources_Services
- *
+ * @package HrswpTheme
  * @since 0.17.6
  */
 

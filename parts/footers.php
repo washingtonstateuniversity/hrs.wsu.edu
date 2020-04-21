@@ -7,7 +7,7 @@
  * `main` element. It displays the global site footer for the HRS child theme,
  * including two WP nav menus.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.2.8
  */
 
