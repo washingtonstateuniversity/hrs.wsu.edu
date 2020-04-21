@@ -6,13 +6,15 @@
  * single post page view or as part of an archive view showing a list of
  * articles.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.14.0
  */
 
-use WSU\HRS\Template_Tags as Tags;
-?>
+namespace HrswpTheme\articles\post;
+use HrswpTheme\components\terms_lists;
+use HrswpTheme\components\post_date;
 
+?>
 <?php $post_share_placement = spine_get_option( 'post_social_placement' ); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'article-content' ); ?>>
@@ -27,7 +29,7 @@ use WSU\HRS\Template_Tags as Tags;
 				<h1 class="article-title"><?php the_title(); ?></h1>
 			<?php endif; ?>
 		<?php endif; ?>
-		<?php Tags\the_post_time_html(); ?>
+		<?php post_date\render(); ?>
 	</header>
 
 	<?php
@@ -100,7 +102,7 @@ use WSU\HRS\Template_Tags as Tags;
 	<?php endif; ?>
 
 	<footer class="article-footer">
-		<?php Tags\all_terms_by_post_type(); ?>
+		<?php terms_lists\all_terms_by_post_type(); ?>
 	</footer><!-- .entry-meta -->
 
 </article>
