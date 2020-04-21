@@ -19,10 +19,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Experimental
 -->
 
-## 2.0.0-alpha.5 (:construction: 2020-04-17)
+## 2.0.0-alpha.6 (:construction: 2020-04-21)
 
 ### Changed
 
+- Renamed HRS Theme namespace.
+- :globe_with_meridians: Update text domain for new theme namespace.
 - :art: Update styles to support core block changes in WordPress v5.4.0.
 - :fire: Switch from Sass to CSS using the 'postcss-present-env' plugin to allow things like variables and nesting.
 - :boom: Update development environment structure and build processes to be more component based.
@@ -57,7 +59,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - :arrow_up: npm-run-all => 4.1.5
 - :arrow_up: postcss-cli => 7.1.0
 - :arrow_up: rimraf => 3.0.2
-- :arrow_up: stylelint => 13.3.2
+- :arrow_up: stylelint => 13.3.3
 - :arrow_up: webpack => 4.42.1
 - :arrow_up: webpack-cli => 3.3.11
 
@@ -118,6 +120,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - :heavy_plus_sign: wp-prettier npm dev-dependency aliased to prettier
 - :heavy_plus_sign: resolve-bin npm dev dependency
 - :heavy_plus_sign: source-map-loader npm dev dependency
+- :heavy_plus_sign: stylelint-a11y
 - :heavy_plus_sign: stylelint-config-wordpress npm dev dependency
 - :heavy_plus_sign: thread-loader npm dev dependency
 - :heavy_plus_sign: webpack-bundle-analyzer npm dev dependency
