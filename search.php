@@ -36,7 +36,7 @@ get_header();
 					<?php
 					while ( have_posts() ) :
 						the_post();
-						get_template_part( 'articles/archive-content' );
+						get_template_part( 'build/templates/archive' );
 					endwhile;
 					?>
 
@@ -65,7 +65,7 @@ get_header();
 		<?php
 	}
 
-	get_template_part( 'parts/footers' );
+	get_template_part( 'build/templates/footer' );
 	?>
 
 </main><!--/#page-->

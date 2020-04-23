@@ -84,7 +84,7 @@ get_header();
 				}
 			}
 
-			get_template_part( 'articles/archive-content' );
+			get_template_part( 'build/templates/archive' );
 
 			$output_post_count++;
 
@@ -99,7 +99,7 @@ get_header();
 
 	navigation\render();
 
-	get_template_part( 'parts/footers' );
+	get_template_part( 'build/templates/footer' );
 	?>
 
 </main><!--/#page-->

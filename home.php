@@ -9,6 +9,7 @@
  */
 
 use HrswpTheme\components\navigation;
+use HrswpTheme\inc\queries;
 
 global $is_feature;
 
@@ -44,7 +45,7 @@ get_header();
 							</div><!-- .articles-list -->
 
 							<?php
-							$reminders = WSU\HRS\Queries\get_reminder_posts( 'objects' );
+							$reminders = queries\get_reminder_posts( 'objects' );
 
 							if ( false !== $reminders && $reminders->have_posts() ) {
 								?>
@@ -122,7 +123,7 @@ get_header();
 				}
 			}
 
-			get_template_part( 'articles/archive-content' );
+			get_template_part( 'build/templates/archive' );
 
 			$result_count++;
 
@@ -137,7 +138,7 @@ get_header();
 
 	navigation\render();
 
-	get_template_part( 'parts/footers' );
+	get_template_part( 'build/templates/footer' );
 	?>
 </main><!--/#page-->
 

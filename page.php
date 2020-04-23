@@ -13,8 +13,6 @@ get_header();
 
 <main id="wsuwp-main" class="spine-page-default">
 
-	<?php get_template_part( 'parts/headers' ); ?>
-
 	<section class="row single gutter pad-ends article-container">
 		<div class="column one">
 
@@ -22,7 +20,7 @@ get_header();
 			if ( have_posts() ) :
 				while ( have_posts() ) :
 					the_post();
-					get_template_part( 'articles/article' );
+					get_template_part( 'build/templates/page' );
 				endwhile;
 			endif;
 			?>
@@ -30,7 +28,7 @@ get_header();
 		</div><!--/column-->
 	</section>
 
-	<?php get_template_part( 'parts/footers' ); ?>
+	<?php get_template_part( 'build/templates/footer' ); ?>
 
 </main>
 
