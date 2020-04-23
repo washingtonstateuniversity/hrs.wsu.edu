@@ -11,6 +11,8 @@
  * @since 0.2.8
  */
 
+namespace HrswpTheme\templates\footer;
+
 // Arguments for the WP nav menus in the site footer.
 $footer_nav_args = array(
 	'theme_location'  => 'hrs-site-footer',
