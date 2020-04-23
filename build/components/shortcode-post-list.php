@@ -109,7 +109,7 @@ function hrs_recent_posts( $args ) {
 
 		foreach ( $posts as $post ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			setup_postdata( $post );
-			get_template_part( 'articles/archive-content' );
+			get_template_part( 'build/templates/archive' );
 		}
 
 		if ( ! empty( $query['style'] ) ) {
