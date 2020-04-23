@@ -8,8 +8,9 @@
  * @since 0.17.6
  */
 
-?>
+namespace HrswpTheme\templates\single;
 
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'article-content' ); ?>>
 
 	<?php if ( true === spine_get_option( 'articletitle_show' ) ) : ?>
