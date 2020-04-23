@@ -4,7 +4,7 @@
  *
  * The template for displaying individual post views.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.14.0
  */
 

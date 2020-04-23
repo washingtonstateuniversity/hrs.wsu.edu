@@ -2,7 +2,7 @@
 /**
  * Functions modifying default TablePress plugin
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 2.0.0
  */
 

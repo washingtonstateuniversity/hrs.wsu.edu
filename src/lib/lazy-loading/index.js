@@ -10,7 +10,7 @@
  * @see https://www.smashingmagazine.com/2018/01/deferring-lazy-loading-intersection-observer-api/
  * @see https://github.com/deanhume/lazy-observer-load
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 1.0.0
  */
 

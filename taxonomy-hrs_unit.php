@@ -4,7 +4,7 @@
  *
  * The template for displaying lists of posts in the custom HRS Unit taxonomy.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.14.0
  */
 

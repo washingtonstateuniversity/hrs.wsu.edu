@@ -4,7 +4,7 @@
  *
  * The default template for displaying individual page views.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.17.0
  */
 

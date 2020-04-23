@@ -7,7 +7,7 @@
  * we redirect automatically to the attachment's parent post if it exists and
  * the attachment file itself if it doesn't.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 1.4.0
  */
 
