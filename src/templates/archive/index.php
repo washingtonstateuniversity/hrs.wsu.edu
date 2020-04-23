@@ -4,11 +4,11 @@
  *
  * The template for layout out the content of individual posts in archive views.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.14.0
  */
 
-use WSU\HRS\Template_Tags as Tags;
+use HrswpTheme\components\terms_lists;
 global $is_feature;
 ?>
 
@@ -43,7 +43,7 @@ global $is_feature;
 		<?php if ( ! is_tax( 'hrs_unit' ) && has_term( '', 'hrs_unit' ) ) : ?>
 			<footer class="article-footer article-taxonomy--primary">
 				<?php
-				WSU\HRS\Template_Tags\the_terms(
+				terms_lists\the_terms(
 					array(
 						'taxonomy'      => 'hrs_unit',
 						'show_title'    => false,
