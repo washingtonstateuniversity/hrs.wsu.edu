@@ -17,8 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 require dirname( __FILE__ ) . '/asset-loader.php';
 require dirname( __FILE__ ) . '/class-lazy-load-images.php';
-require dirname( __FILE__ ) . '/class-template-loader.php';
-require dirname( __FILE__ ) . '/global-styles.php';
 
 /**
  * Load inc files.
