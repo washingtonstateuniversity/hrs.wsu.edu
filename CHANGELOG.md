@@ -19,7 +19,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project management
 -->
 
-## 2.0.0-alpha.6 (:construction: 2020-04-21)
+## 2.0.0-alpha.7 (:construction: 2020-05-04)
 
 ### Enhancements
 
@@ -123,7 +123,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Documentation
 
-- Improve changelog organization with type categories.
+- Improve changelog organization with type categories. (82117b7)
 - Add the Prettier badge. (e00da29)
 - :memo: Update documentation. (1afaa73)
 
