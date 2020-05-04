@@ -1,3 +1,12 @@
+<?php
+/**
+ * HRS Head Section Template
+ *
+ * @package HrswpTheme
+ * @since 2.0.0
+ */
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js no-svg lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 7]><html class="no-js no-svg lt-ie9 <?php language_attributes(); ?>> <![endif]-->
@@ -31,18 +40,25 @@
 <body <?php body_class(); ?>>
 
 <?php
-	if ( ( spine_get_option( 'spineless' ) == 'true' ) && is_front_page() ) {
-		$spineless = ' spineless';
-	} else {
-		$spineless = '';
-	}
+$binder = array(
+	spine_get_option( 'grid_style' ),
+	spine_get_option( 'large_format' ),
+	spine_get_option( 'broken_binding' ),
+);
+
+if ( true === ( spine_get_option( 'spineless' ) ) && is_front_page() ) {
+	$binder[] = 'spineless';
+}
+
+$binder_classes = implode( ' ', $binder );
 ?>
 
-<a href="#wsuwp-main" class="screen-reader-shortcut"><?php _e( 'Skip to main content' ); ?></a>
-<a href="#<?php echo esc_attr( apply_filters( 'wsu_spine_navigation_id', 'spine-sitenav' ) ); ?>" class="screen-reader-shortcut"><?php _e( 'Skip to navigation' ); ?></a>
+<a href="#wsuwp-main" class="screen-reader-shortcut"><?php _e( 'Skip to main content', 'hrswp-theme' ); ?></a>
+<a href="#<?php echo esc_attr( apply_filters( 'wsu_spine_navigation_id', 'spine-sitenav' ) ); ?>" class="screen-reader-shortcut"><?php _e( 'Skip to navigation', 'hrswp-theme' ); ?></a>
 
 <?php get_template_part( 'parts/before-jacket' ); ?>
 <div id="jacket" class="style-<?php echo esc_attr( spine_get_option( 'theme_style' ) ); ?> colors-<?php echo esc_attr( spine_get_option( 'secondary_colors' ) ); ?> spacing-<?php echo esc_attr( spine_get_option( 'theme_spacing' ) ); ?>">
 	<?php get_template_part( 'parts/before-binder' ); ?>
-	<div id="binder" class="<?php echo esc_attr( spine_get_option( 'grid_style' ) ); echo $spineless; echo esc_attr( spine_get_option( 'large_format' ) ); echo esc_attr( spine_get_option( 'broken_binding' ) ); ?>">
-		<?php get_template_part( 'build/templates/header' );
+	<div id="binder" class="<?php echo esc_attr( $binder_classes ); ?>">
+		<?php
+		get_template_part( 'build/templates/header' );
