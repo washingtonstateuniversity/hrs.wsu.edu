@@ -9,151 +9,128 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 <!--
 ## Major.MinorAddorDeprec.Bugfix (YYYY-MM-DD)
 
-### Todo (for upcoming changes)
-### Security (in case of fixed vulnerabilities)
-### Fixed (for any bug fixes)
-### Changed (for changes in existing functionality)
-### Added (for new features)
-### Deprecated (for once-stable features removed in upcoming releases)
-### Removed (for deprecated features removed in this release)
-### Experimental
+### Features
+### Enhancements
+### Bug Fixes
+### Experiments
+### Deprecations
+### Code Quality
+### Documentation
+### Project management
 -->
 
 ## 2.0.0-alpha.6 (:construction: 2020-04-21)
 
-### Changed
+### Enhancements
 
-- Renamed HRS Theme namespace.
-- :globe_with_meridians: Update text domain for new theme namespace.
-- :art: Update styles to support core block changes in WordPress v5.4.0.
-- :fire: Switch from Sass to CSS using the 'postcss-present-env' plugin to allow things like variables and nesting.
-- :boom: Update development environment structure and build processes to be more component based.
-  - Break down styles into frontend and backend and organize them by component and template.
-  - Break down scripts into frontend and backend and organize them by component and template.
-  - Begin breaking templates into logical parts and placing them with their respective components and templates.
-  - Place block modification scripts along with other component parts.
-  - :truck: Move lazy loading script into the `lib` directory and modify for export support.
-  - :truck: Move search menu script into the `components` directory and modify for export support.
-  - :truck: Modify the JS entry point, now `src/index.js` to handle all frontend imports and add `src/editor.js` to handle all backend imports.
-- :memo: Update documentation.
-- Use pre-optimized images instead of optimizing on every build and use Webpack to copy from source to build.
-- :boom: Revamp `composer.json` with better metadata and build processes.
-- :boom: Revamp `package.json` with better metadata and build processes focused on PostCSS and Webpack.
-- :boom: Revamp Webpack config to use one set of rules geared to the WP block environment, to process frontend and backend scripts separately, and to handle copying componenent assets from entry to output directory.
-- :wrench: Simplify `.gitignore` rules.
-- :wrench: Update `.gitattributes` rules to match directory changes.
-- :wrench: Update phpcs ruleset to use WordPress preset recommendations and rename file.
-- :wrench: Update stylelint config to use WordPress preset recommendations.
-- :wrench: Update eslint config to use WordPress preset recommendations.
-- :wrench: Update editorconfig with newer WP-aligned rules.
-- Modify the Gravity Forms filters to more easily include more form adjustments.
-- :construction_worker: Update Travis rules to monitor the 2.x branch and only test PHP 7.0+.
-- :arrow_up: squizlabs/php_codesniffer => 3.4.2
-- :arrow_up: wp-coding-standards/wpcs => 2.2.0
-- :arrow_up: @wordpress/babel-preset-default => 4.12.1
-- :arrow_up: @wordpress/dependency-extraction-webpack-plugin => 2.5.0
-- :arrow_up: @wordpress/eslint-plugin => 4.1.0
-- :arrow_up: babel-loader => 8.1.0
-- :arrow_up: cssnano => 4.1.10
-- :arrow_up: eslint => 6.8.0
-- :arrow_up: npm-run-all => 4.1.5
-- :arrow_up: postcss-cli => 7.1.0
-- :arrow_up: rimraf => 3.0.2
-- :arrow_up: stylelint => 13.3.3
-- :arrow_up: webpack => 4.42.1
-- :arrow_up: webpack-cli => 3.3.11
-
-### Added
-
-- Frontend styles organized by component aggregated by directory-level `style.css` imports.
-- Frontend editor scripts named `[component]/index.js` organized by component.
-- Global source files for variables and utility scripts and styles.
+- Add `header.php` to override parent theme version. (a0aecb9)
+- Add source directories for global (`src/global`) and library (`src/lib`) scripts and styles. (a95d77c, 0d85255)
 - Library source files for scripts and styles for external or plugin modifications.
-- Backend styles organized by component aggregated by directory-level `editor.css` imports.
-- Backend editor scripts named `[component]/editor.js` organized by component.
-- :wrench: Config file for PostCSS.
-- :wrench: Config file for the npm-package-json-lint linter.
-- :wrench: Configuration file for the Prettier package to handle linting JavaScript files
-- :bento: audio component
-- :bento: builder-banner component
-- :bento: button component, with core block editor filters.
-- :bento: card component
-- :bento: columns component
-- :bento: cover component
-- :bento: embed component
-- :bento: gallery component
-- :bento: heading component
-- :bento: icons component
-- :bento: image component
-- :bento: latest-posts component
-- :bento: list component, with core block editor filters.
-- :bento: media-text component
-- :bento: navigation-link component
-- :bento: navigation component
-- :bento: paragraph component
-- :bento: preformatted component
-- :bento: pullquote component
-- :bento: quote component
-- :bento: search-menu component, with PHP template.
-- :bento: search component
-- :bento: separator component
-- :bento: table component
-- :bento: text-control component
-- :bento: text-tags component
-- :bento: video component
-- :bento: wp-admin-bar component
-- :bento: archive template
-- :bento: base template
-- :bento: builder template
-- :bento: footer template
-- :bento: front-page template
-- :bento: header template
-- :bento: home template
-- :bento: page template
-- :bento: single template
-- :heavy_plus_sign: @wordpress/dependency-extraction-webpack-plugin npm dev dependency
-- :heavy_plus_sign: @wordpress/npm-package-json-lint-config npm dev dependency
-- :heavy_plus_sign: copy-webpack-plugin npm dev dependency
-- :heavy_plus_sign: npm-package-json-lint npm dev dependency
-- :heavy_plus_sign: postcss-import npm dev dependency
-- :heavy_plus_sign: postcss-preset-env npm dev dependency
-- :heavy_plus_sign: wp-prettier npm dev-dependency aliased to prettier
-- :heavy_plus_sign: resolve-bin npm dev dependency
-- :heavy_plus_sign: source-map-loader npm dev dependency
-- :heavy_plus_sign: stylelint-a11y
-- :heavy_plus_sign: stylelint-config-wordpress npm dev dependency
-- :heavy_plus_sign: thread-loader npm dev dependency
-- :heavy_plus_sign: webpack-bundle-analyzer npm dev dependency
-- :heavy_plus_sign: dealerdirect/phpcodesniffer-composer-installer
-- :heavy_plus_sign: phpcompatibility/php-compatibility
-- :heavy_plus_sign: sirbrillig/phpcs-variable-analysis
-- :heavy_plus_sign: roave/security-advisories
+- :art: Update styles to support core block changes in WordPress v5.4.0. (53479e7, 5832f02, 84f75fa, 568129f, 5da07ca, 2a632ec)
+- Modify the Gravity Forms filters to more easily include more form adjustments. (c4a829f)
+- :bento: Move all component, template part, and global markup, scripts, and styles into dedicated individual directories located at `src/components/{{component-name}}/`, `src/templates/{{template-name}}/` and `src/global/`.
+  - Add Components style and script entry point processors (5420047)
+	- WP admin bar component (12b64cc)
+  - Video component (47424b7)
+  - Text tags component (d587a9e)
+  - Text control component (7905deb)
+  - Table component (9da6db5)
+  - Separator component (7862a02)
+  - Search component (0c1d747)
+  - Search Menu component, with PHP template and frontend script (a9fe37c)
+  - Quote component (2c1ec73)
+  - Pullquote component (fb5da1f)
+  - Preformatted component (f2ef603)
+  - Paragraph component (8dfaebf)
+  - Navigation component (bd91fb6)
+  - Navigation link component (0d693be)
+  - Media-text component (35ea3e6)
+  - List component, with core block editor filters (61da475)
+  - Latest Posts component (d19d95e)
+  - Image component (cd0ff5f)
+  - Icons component (a4161ee)
+  - Heading component (d5f0c82)
+  - Gallery component (997fdc9)
+  - Embed component (df501c7)
+  - Cover component (bb92f06)
+  - Single template (646f68e)
+  - Page template (ae23674)
+  - Home template (0b0c78d)
+  - Header template (dfa2d24)
+  - Front-page template (48a45ad)
+  - Footer template (8775942)
+  - Builder template (a674a40)
+  - Base template (2faf4e4)
+  - Archive template (c954286)
 
-### Removed
+### Deprecations
 
-- :boom: All custom blocks. Prefer a plugin.
-- svgo config file.
-- :fire: Javascript variant for legacy browsers. Use only one integrated index file and tune later as needed.
-- :boom: Remove MS SQL Server connector class and all related template tags and shortcodes.
-- URL search parameters polyfill formerly used by the search filter.
-- :fire: Search-filter JavaScript tool in preference for HRS Search Filter block.
-- :heavy_minus_sign: url-search-params-polyfill npm dependency
-- :heavy_minus_sign: @babel/core
-- :heavy_minus_sign: @babel/plugin-syntax-dynamic-import
-- :heavy_minus_sign: @babel/polyfill
-- :heavy_minus_sign: @babel/preset-env
-- :heavy_minus_sign: autoprefixer
-- :heavy_minus_sign: babel-eslint
-- :heavy_minus_sign: eslint-loader
-- :heavy_minus_sign: mkdirp
-- :heavy_minus_sign: node-sass
-- :heavy_minus_sign: svgo
-- :heavy_minus_sign: webpack-merge
+- :boom: Remove all custom blocks to a separate plugin. (9a8e517)
+- :fire: Remove Javascript variant for legacy browsers. Use only one integrated index file and tune later as needed. (e8215de)
+- :heavy_minus_sign: Remove the `url-search-params` npm dependency. (2590294)
+- Remove search-filter JavaScript tool in preference for HRS Search Filter block. (a24e48f, 78fe58e)
+- Remove MS SQL Server connector class and all related template tags and shortcodes. (0336af6)
+- :heavy_minus_sign: Remove uneeded dev dependencies following build tool update.
+  - `url-search-params-polyfill` isn't needed since we're not offering this support anymore.
+  - `@babel/core`, `@babel/plugin-syntax-dynamic-import`, `@babel/polyfill`, `@babel/preset-env`, `babel-eslint`, and `eslint-loader` are all taken over by WordPress packages.
+  - `autoprefixer`
+  - `mkdirp`
+  - `node-sass`
+  - `svgo`
+  - Svgo config file.
+  - `webpack-merge`
 
-### Experimental
+### Code Quality
 
-- :alembic: Store component and basic template markup in source and pull into main templates as needed.
-  - Move search menu PHP into component directory and include in header.
+- :recycle: Refactor binder element class logic to better align with WP coding standards. (306f51d)
+- :fire: Remove unneeded template part files. (7405a3a)
+- Renamed HRS Theme namespace. (9d89a62, dda2434)
+- :globe_with_meridians: Update text domain for new theme namespace. (a36a3b0, e404364)
+- :heavy_plus_sign: Add `stylelint-a11y` npm stylelint plugin and configure. (a96e194, 5120208)
+- Switch from Sass to CSS using the `postcss-present-env` plugin to allow things like variables and nesting. (209dc79)
+  - Add the `postcss-import` and `postcss-preset-env` npm PostCSS plugins.
+- :truck: Update environment structure to be more component based.
+  - Move shortcodes to `src/components` directory. (288cccb)
+  - Move post date and terms lists to `src/components`. (b3ebdd6)
+	- Move search menu script into the `src/components` directory and modify for export support. (ea65d91, b513b52)
+	- Move template parts into respective `src/templates` directories. (e24ed08, 282bbd2, 4d252ac, 8834964, c9e98a6)
+	- Move pagination to `src/components`. (5e7cc55)
+	- Distribute `functions.php` and `setup` methods into more specific files. (da340dd)
+  - Move lazy loading script into the `src/lib` directory and modify for export support. (e154010)
+	- Move the lazy loading class into the `lib` directory. (2080425)
+	- Move custom queries into the `inc` directory. (75d0567)
+  - Modify the JS entry point, now `src/index.js` to handle all frontend imports and add `src/editor.js` to handle all backend imports. (442d44f, 4eb46b0)
+	- Add style entry points for templates source directory. (741de2e)
+- Break down scripts and styles into frontend and backend and organize them by component and template. (b0b9eb3)
+- :wrench: Add config file for the `npm-package-json-lint` linter, for `postcss-cli`, and for `wp-prettier`. (26dca82, 4a70723, 7e46e0e)
+- :heavy_plus_sign: Add `wp-prettier` npm dev dependency aliased to `prettier`. (98734a2)
+- :wrench: Update linter configs to use WordPress preset recommendations. (09bb5f6, a38d3f9, 6c5d034)
+- :boom: Revamp Webpack config to use one set of rules geared to the WP block environment, to process frontend and backend scripts separately, and to handle copying componenent assets from entry to output directory. (5fb2313)
+  - :heavy_plus_sign: `@wordpress/dependency-extraction-webpack-plugin`
+	- :heavy_plus_sign: `copy-webpack-plugin`
+	- :heavy_plus_sign: `resolve-bin`
+	- :heavy_plus_sign: `source-map-loader`
+	- :heavy_plus_sign: `thread-loader`
+	- :heavy_plus_sign: `webpack-bundle-analyzer`
+- :wrench: Simplify `.gitignore` rules. (2c1f44d)
+- Use pre-optimized images instead of optimizing on every build and use Webpack to copy from source to build. (847675c)
+- :wrench: Update editorconfig with newer WP-aligned rules. (236ccff)
+- :construction_worker: Update Travis rules to monitor the 2.x branch and only test PHP 7.0+. (132359b, 6a16c27)
+- Add the `npm-package-json-lint` npm dev package with the `@wordpress/npm-package-json-lint-config` package to handle code quality of `package.json` file.
+- Use the WordPress `stylelint-config-wordpress` linting rules.
+- Directly include the `dealerdirect/phpcodesniffer-composer-installer` Composer dev dependency for PHPCS.
+- Add the `phpcompatibility/php-compatibility` and `sirbrillig/phpcs-variable-analysis` Composer packages for additional PHPCS quality checking.
+
+### Documentation
+
+- Improve changelog organization with type categories.
+- Add the Prettier badge. (e00da29)
+- :memo: Update documentation. (1afaa73)
+
+### Project Management
+
+- Revamp `composer.json` and `package.json` with better metadata and build processes focused on PostCSS and Webpack. (c292a6e, 2692f07)
+- Add the `roave/security-advisories` Composer package to monitor Composer package security.
 
 ## 1.10.2 (2020-04-16)
 
@@ -165,18 +142,18 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
-- :wastebasket: Hide deprecated blocks from the inserter (but keep in existing posts).
+- :wastebasket: Hide deprecated blocks from the inserter (but keep in existing posts). (9a32500)
 
 ## 1.10.0 (2020-03-31)
 
 ### Added
 
-- :sparkles: Post sidebar control to toggle feature image visibility on single views, using post meta and the body class filter.
-- :sparkles: Post and page sidebar control to toggle title visibility, using post meta and the body class filter.
+- :sparkles: Post sidebar control to toggle feature image visibility on single views, using post meta and the body class filter. (1f9c064)
+- :sparkles: Post and page sidebar control to toggle title visibility, using post meta and the body class filter. (ac1a196, 3f7a7a2, f2197f2)
 
 ### Changed
 
-- :art: Apply frontend table styles to editor.
+- :art: Apply frontend table styles to editor. (20d099d)
 - :arrow_up: @babel/core => 7.9.0
 - :arrow_up: @babel/preset-env => 7.9.0
 - :arrow_up: autoprefixer => 9.7.5
@@ -187,15 +164,15 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
-- :alien: Add new `.has-text-align-*` class rules for updated core block classes.
+- :alien: Add new `.has-text-align-*` class rules for updated core block classes. (f24f7e3)
 
 ### Added
 
-- :art: Style option to hide the page title from all but screen readers.
+- :art: Style option to hide the page title from all but screen readers. (169e79e)
 
 ### Changed
 
-- :art: Modify form styles for the HRS contact form.
+- :art: Modify form styles for the HRS contact form. (6f2ae31)
 - :arrow_up: @babel/core => 7.8.7
 - :arrow_up: @babel/polyfill => 7.8.7
 - :arrow_up: rimraf => 3.0.2
@@ -207,12 +184,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
-- Fix #115 remove deprecated sudo key from Travis config.
-- Fix #114 specify os in Travis config.
-- :wrench: Specify `is_theme` as 'true' in phpcs config to allow WP template names that violate their own rules.
-- :wrench: Include browser globals in eslint rules.
-- :warning: Specifically declare WP globals in use.
-- :warning: PHP lint issues following rules update.
+- Fix #115 remove deprecated sudo key from Travis config. (17e3469)
+- Fix #114 specify os in Travis config. (a7eb2bb)
+- :wrench: Specify `is_theme` as 'true' in phpcs config to allow WP template names that violate their own rules. (6bacf4e)
+- :wrench: Include browser globals in eslint rules. (6a37b87)
+- :warning: Specifically declare WP globals in use. (d8ccdf0)
+- :warning: PHP lint issues following rules update. (fd5df24)
 
 ## 1.7.2 (2019-09-20)
 
