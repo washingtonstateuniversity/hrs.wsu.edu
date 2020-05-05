@@ -14,6 +14,14 @@
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	width: 100%;
 	z-index: 200;
+
+	& input[type="submit"] {
+		border: none;
+		border-top-right-radius: 5px;
+		border-top-left-radius: 0;
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 0;
+	}
 }
 
 #search-menu.is-visible {
@@ -43,10 +51,6 @@
 	right: 6px;
 	width: auto;
 	z-index: 100000;
-}
-
-#search-menu input[type="submit"] {
-	align-self: center;
 }
 
 .search-links-title {
@@ -80,10 +84,6 @@
 
 	#search-menu .search-form {
 		margin-right: 3rem;
-	}
-
-	.search-toggle {
-		padding: 0.75rem 1.5rem;
 	}
 
 }

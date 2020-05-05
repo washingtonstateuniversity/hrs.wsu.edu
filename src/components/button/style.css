@@ -45,11 +45,6 @@ main input[type="submit"],
 	}
 }
 
-.site-header button,
-.site-header input[type="submit"] {
-	font-size: var(--font-size-1);
-}
-
 .is-style-outline .wp-block-button__link,
 .is-style-outline .button,
 .button.style-outline,
