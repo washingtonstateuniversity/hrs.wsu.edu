@@ -19,10 +19,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project management
 -->
 
-## 2.0.0-alpha.7 (:construction: 2020-05-04)
+## 2.0.0-alpha.8 (:construction: 2020-05-06)
 
 ### Enhancements
 
+- Refactor search menu with updated script and styles, including improved accessibility by modifying tabindex when links are hidden. (d31eb0a, ff53bf3, 1eb7803)
+- Align button styles with in-progress WSU Design System. (d023614)
 - Add `header.php` to override parent theme version. (a0aecb9)
 - Add source directories for global (`src/global`) and library (`src/lib`) scripts and styles. (a95d77c, 0d85255)
 - Library source files for scripts and styles for external or plugin modifications.
