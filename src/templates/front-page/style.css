@@ -1,3 +1,7 @@
+.home .spineless .alignfull {
+	max-width: 1386px;
+}
+
 .home-main-subnav nav ul {
 	display: flex;
 	flex-wrap: wrap;
