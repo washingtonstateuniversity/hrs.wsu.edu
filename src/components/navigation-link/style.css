@@ -23,13 +23,4 @@ main {
 		font-weight: 700;
 	}
 
-	& .has-background a {
-		border-bottom-color: currentColor;
-
-		&:hover,
-		&:focus {
-			color: var(--nav-color-hover);
-			background: #fff;
-		}
-	}
 }
