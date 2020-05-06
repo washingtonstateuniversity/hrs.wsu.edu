@@ -1,87 +1,128 @@
-const searchToggle = /** @type {!Element} */ ( document.querySelector(
-	'.search-toggle'
-) );
-
-const searchMenu = /** @type {!Element} */ ( document.getElementById(
-	'search-menu'
-) );
-
-const searchCloser = /** @type {!Element} */ ( document.querySelector(
-	'.close-search-menu'
-) );
-
-let isOpen = false;
-
 /**
- * Opens a closed search menu.
+ * Site Search Menu
  */
-const open = function openSearchMenu() {
-	const searchField = /** @type {!Element} */ ( document.querySelector(
-		'#search-menu .search-field'
-	) );
-	isOpen = true;
-	searchMenu.classList.add( 'is-visible' );
-	searchToggle.setAttribute( 'aria-expanded', true );
-	searchField.focus();
-};
+class SearchMenu {
+	/**
+	 * Instantiates the site search menu.
+	 *
+	 * @param {Node} siteSearch The site search node.
+	 */
+	constructor( siteSearch ) {
+		this._siteSearch = siteSearch;
+		this._searchMenu = this._siteSearch.querySelector( '.search-menu' );
+		this._searchHeading = this._siteSearch.querySelector(
+			'.search-heading'
+		);
+		this._searchInput = this._siteSearch.querySelector(
+			'input[type="search"]'
+		);
+		this._searchMenuTargets = this._searchMenu.querySelectorAll(
+			'a, input'
+		);
+		this._trigger = '';
 
-/**
- * Closes an open search menu.
- */
-const close = function hideSearchMenu() {
-	isOpen = false;
-	searchMenu.classList.remove( 'is-visible' );
-	searchToggle.setAttribute( 'aria-expanded', false );
-};
+		this.expand = this.expand.bind( this );
+		this.collapse = this.collapse.bind( this );
+		this.toggle = this.toggle.bind( this );
+		this.handleSelectOutside = this.handleSelectOutside.bind( this );
 
-/**
- * A callback that handles selection of the search menu button.
- *
- * @param {!Event} event The event associated with the selection.
- */
-const toggle = function handleSearchToggleSelect( event ) {
-	event.preventDefault();
-	if ( isOpen ) {
-		close();
-	} else {
-		open();
+		this._setupHeadingButton();
+		this._addEventListeners();
+
+		this.activate();
 	}
-};
 
-/**
- * Closes an open menu if the user selected outside the menu.
- *
- * @param {!Event} event The event associated with the selection.
- */
-const maybeClose = function handleClickOutsideSearchMenu( event ) {
-	const target = /** @type {!Element} */ ( event.target );
-	if (
-		isOpen &&
-		! searchToggle.contains( target ) &&
-		! searchMenu.contains( target )
-	) {
-		close();
+	expand( trigger, target ) {
+		this._setAriaExpanded( trigger, 'true' );
+		this._setAriaHidden( target, 'false' );
+		this._setTabindex( 0 );
+		this._searchInput.focus();
 	}
-};
 
-/**
- * Adds event handlers for the search menu.
- */
-const addSearchMenuEventListeners = () => {
-	searchToggle.addEventListener( 'click', toggle );
-	searchToggle.addEventListener( 'touchend', toggle );
-	searchCloser.addEventListener( 'click', toggle );
-	searchCloser.addEventListener( 'touchend', toggle );
+	collapse( trigger, target ) {
+		this._setAriaExpanded( trigger, 'false' );
+		this._setAriaHidden( target, 'true' );
+		this._setTabindex( -1 );
+	}
 
-	document.addEventListener( 'click', maybeClose );
-	document.addEventListener( 'keyup', ( event ) => {
-		if ( isOpen ) {
-			if ( 'Escape' === event.key || 'Esc' === event.key ) {
-				close();
-			}
+	toggle( e ) {
+		const trigger = e.target;
+		const target = document.getElementById(
+			trigger.getAttribute( 'aria-controls' )
+		);
+
+		e.preventDefault();
+
+		if ( this._isExpanded( trigger ) ) {
+			this.collapse( trigger, target );
+			return;
 		}
-	} );
-};
+
+		this.expand( trigger, target );
+	}
+
+	handleSelectOutside( e ) {
+		if (
+			this._isExpanded( this._trigger ) &&
+			! this._siteSearch.contains( e.target )
+		) {
+			this.collapse( this._trigger, this._searchMenu );
+		}
+	}
+
+	_setupHeadingButton() {
+		const targetId = this._searchHeading.nextElementSibling.id;
+		const Button = document.createElement( 'button' );
+		const ButtonText = this._searchHeading.textContent;
+
+		this._searchHeading.innerHTML = '';
+
+		Button.setAttribute( 'type', 'button' );
+		Button.setAttribute( 'aria-controls', targetId );
+		Button.setAttribute( 'id', `${ targetId }-trigger` );
+		Button.classList.add( 'search-menu-trigger' );
+
+		this._searchHeading.appendChild( Button );
+		Button.appendChild( document.createTextNode( ButtonText ) );
+		this._trigger = Button;
+	}
+
+	_addEventListeners() {
+		this._trigger.addEventListener( 'click', this.toggle );
+		document.addEventListener( 'click', this.handleSelectOutside );
+		document.addEventListener( 'keyup', ( event ) => {
+			if ( this._isExpanded( this._trigger ) ) {
+				if ( 'Escape' === event.key || 'Esc' === event.key ) {
+					this.collapse( this._trigger, this._searchMenu );
+				}
+			}
+		} );
+	}
+
+	activate() {
+		this._siteSearch.classList.add( 'active' );
+		this._setAriaHidden( this._searchMenu, 'true' );
+		this._setTabindex( -1 );
+	}
+
+	_isExpanded( trigger ) {
+		return 'true' === trigger.getAttribute( 'aria-expanded' );
+	}
+
+	_setAriaHidden( element, state ) {
+		return element.setAttribute( 'aria-hidden', state );
+	}
+
+	_setAriaExpanded( element, state ) {
+		return element.setAttribute( 'aria-expanded', state );
+	}
+
+	_setTabindex( state ) {
+		this._searchMenuTargets.forEach( ( target ) => {
+			target.setAttribute( 'tabindex', state );
+		} );
+	}
+}
 
 export const metadata = {
 	name: 'search-menu',
@@ -89,5 +130,10 @@ export const metadata = {
 };
 
 export const settings = {
-	init: addSearchMenuEventListeners,
+	init: () => {
+		const searchMenu = document.querySelector(
+			'.site-header .site-search'
+		);
+		new SearchMenu( searchMenu );
+	},
 };
