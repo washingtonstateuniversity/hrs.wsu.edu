@@ -15,10 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div id="search-menu" class="expandable">
+<h2 class="search-heading">Search</h2>
+<div id="site-search-menu" class="search-menu">
 	<?php get_search_form(); ?>
 	<div class="search-links">
-		<p class="search-links-title">Common Searches</p>
+		<h3>Common Searches</h3>
 		<?php
 		wp_nav_menu(
 			array(
@@ -30,6 +31,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 			)
 		);
 		?>
-		<button class="screen-reader-text close-search-menu">Close menu</button>
 	</div>
 </div>

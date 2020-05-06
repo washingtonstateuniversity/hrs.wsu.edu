@@ -18,8 +18,9 @@ namespace HrswpTheme\templates\header;
 	<section class="row single">
 		<div class="site-banner column one">
 			<a class="site-title" href="<?php echo esc_url( home_url() ); ?>">Human Resource Services</a>
-			<button class="search-toggle" aria-expanded="false" aria-controls="search-menu">Search</button>
+			<div class="site-search">
+				<?php get_template_part( '/build/components/search-menu' ); ?>
+			</div>
 		</div>
-		<?php get_template_part( '/build/components/search-menu' ); ?>
 	</section>
 </header>
