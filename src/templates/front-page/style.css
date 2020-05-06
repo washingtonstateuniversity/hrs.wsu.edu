@@ -97,7 +97,8 @@
 		margin-left: 2rem;
 	}
 
-	.home #binder.spineless #search-menu {
+	.home #binder.spineless .search-menu {
+		left: inherit;
 		right: 0;
 		width: 60%;
 	}
