@@ -4,7 +4,7 @@
 # @link https://github.com/washingtonstateuniversity/hrs.wsu.edu
 
 language: php
-
+os: linux
 dist: trusty
 
 # Cache some data across builds for performance.
@@ -32,8 +32,8 @@ env:
     - LINT=1
 
 # Declare non-Trusty versions of PHP to use.
-matrix:
-  fast-finish: true
+jobs:
+  fast_finish: true
   include:
     - php: "5.3"
       env: LINT=0
@@ -43,8 +43,6 @@ branches:
   only:
     - stable
     - 1.x
-
-sudo: false
 
 before_install:
   # Speed up build time by disabling Xdebug.
@@ -59,7 +57,7 @@ install:
   # Workaround for an outdated dependency only showing during Travis build.
   - if [[ "$LINT" == "1" ]]; then npm install har-validator@latest --save-dev; fi
   # NPM install for ci environments @link https://docs.npmjs.com/cli/ci.html
-  - if [[ "$LINT" == "1" ]]; then npm ci; fi
+  - if [[ "$LINT" == "1" ]]; then npm install; fi
 
 before_script:
   # Refresh path following CodeSniffer install.
