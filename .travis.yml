@@ -57,7 +57,7 @@ install:
   # Workaround for an outdated dependency only showing during Travis build.
   - if [[ "$LINT" == "1" ]]; then npm install har-validator@latest --save-dev; fi
   # NPM install for ci environments @link https://docs.npmjs.com/cli/ci.html
-  - if [[ "$LINT" == "1" ]]; then npm install; fi
+  - if [[ "$LINT" == "1" ]]; then npm ci; fi
 
 before_script:
   # Refresh path following CodeSniffer install.
