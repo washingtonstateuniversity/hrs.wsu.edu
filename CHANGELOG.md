@@ -132,6 +132,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Project Management
 
+- Rename primary branch from `master` to `stable`. See the Internet Engineering Task Force (IEFT), [Terminology, Power and Oppressive Language](https://tools.ietf.org/id/draft-knodel-terminology-00.html#rfc.section.1.1.1).
 - Revamp `composer.json` and `package.json` with better metadata and build processes focused on PostCSS and Webpack. (c292a6e, 2692f07)
 - Add the `roave/security-advisories` Composer package to monitor Composer package security.
 

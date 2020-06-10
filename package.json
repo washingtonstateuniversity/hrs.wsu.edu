@@ -13,7 +13,7 @@
 		"WordPress",
 		"Theme"
 	],
-	"homepage": "https://github.com/washingtonstateuniversity/hrs.wsu.edu/blob/master/README.md",
+	"homepage": "https://github.com/washingtonstateuniversity/hrs.wsu.edu/blob/stable/README.md",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/washingtonstateuniversity/hrs.wsu.edu.git"

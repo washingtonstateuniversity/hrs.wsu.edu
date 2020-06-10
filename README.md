@@ -1,6 +1,6 @@
 # WSU Human Resource Services Theme
 
-[![Build Status](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu.svg?branch=master)](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Build Status](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu.svg?branch=stable)](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 **Contributors:** WSU University Communications, Adam Turner  
 **Requires at least:** WordPress 5.0  
@@ -42,7 +42,7 @@ The WSU HRS Theme development environment relies primarily on the NPM and Compos
 3. Install the Composer dependencies.
 4. Install the NPM dependencies.
 5. Ensure PHP, CSS, and JS linting coding standards checks are working -- this should exit with zero (0) errors.
-6. If you plan to contribute changes to the WSU HRS Theme you're encouraged to follow the [Git feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). The production branch is `master` and the primary development branch is `1.x`, such that the general development flow will be `new-feature` --> `1.x` --> `master`.
+6. If you plan to contribute changes to the WSU HRS Theme you're encouraged to follow the [Git feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). The production branch is `stable` and the primary development branch is `1.x`, such that the general development flow will be `new-feature` --> `1.x` --> `stable`.
 
 In a terminal:
 

@@ -33,7 +33,7 @@ env:
 
 branches:
   only:
-    - master
+    - stable
     - 2.x
 
 before_install:
