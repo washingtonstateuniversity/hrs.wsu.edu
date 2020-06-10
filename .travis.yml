@@ -41,7 +41,7 @@ matrix:
 
 branches:
   only:
-    - master
+    - stable
     - 1.x
 
 sudo: false
