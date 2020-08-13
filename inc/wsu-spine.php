@@ -185,6 +185,16 @@ function remove_spine_filters() {
 }
 
 /**
+ * Includes the HRSWP footer template in the Builder template.
+ *
+ * @since 2.0.0
+ */
+function include_hrswp_footer_in_builder() {
+	get_template_part( 'build/templates/footer' );
+}
+add_action( 'spine_theme_template_after_footer', __NAMESPACE__ . '\include_hrswp_footer_in_builder' );
+
+/**
  * Sets the Spine version for this site.
  *
  * Retrieves the Spine version if it exists, and calls the setter if it
