@@ -14,9 +14,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Bug Fixes
 ### Experiments
 ### Deprecations
-### Code Quality
+### Code quality
 ### Documentation
-### Project management
+### Build Tooling
+### Project Management
 -->
 
 ## 2.0.0-alpha.10 (:construction: 2020-06-10)
@@ -66,6 +67,10 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
   - Base template. (2faf4e4)
   - Archive template. (c954286)
 
+### Bug Fixes
+
+- 🐛 Fix #127 include footer in builder template. (1f4aad8)
+
 ### Deprecations
 
 - :boom: Remove all custom blocks to a separate plugin. (9a8e517)
@@ -90,8 +95,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Renamed HRS Theme namespace. (9d89a62, dda2434)
 - :globe_with_meridians: Update text domain for new theme namespace. (a36a3b0, e404364)
 - :heavy_plus_sign: Add `stylelint-a11y` npm stylelint plugin and configure. (a96e194, 5120208)
-- Switch from Sass to CSS using the `postcss-present-env` plugin to allow things like variables and nesting. (209dc79)
-  - Add the `postcss-import` and `postcss-preset-env` npm PostCSS plugins.
 - :truck: Update environment structure to be more component based.
   - Move shortcodes to `src/components` directory. (288cccb)
   - Move post date and terms lists to `src/components`. (b3ebdd6)
@@ -108,13 +111,6 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - :wrench: Add config file for the `npm-package-json-lint` linter, for `postcss-cli`, and for `wp-prettier`. (26dca82, 4a70723, 7e46e0e)
 - :heavy_plus_sign: Add `wp-prettier` npm dev dependency aliased to `prettier`. (98734a2)
 - :wrench: Update linter configs to use WordPress preset recommendations. (09bb5f6, a38d3f9, 6c5d034)
-- :boom: Revamp Webpack config to use one set of rules geared to the WP block environment, to process frontend and backend scripts separately, and to handle copying componenent assets from entry to output directory. (5fb2313)
-  - :heavy_plus_sign: `@wordpress/dependency-extraction-webpack-plugin`
-	- :heavy_plus_sign: `copy-webpack-plugin`
-	- :heavy_plus_sign: `resolve-bin`
-	- :heavy_plus_sign: `source-map-loader`
-	- :heavy_plus_sign: `thread-loader`
-	- :heavy_plus_sign: `webpack-bundle-analyzer`
 - :wrench: Simplify `.gitignore` rules. (2c1f44d)
 - Use pre-optimized images instead of optimizing on every build and use Webpack to copy from source to build. (847675c)
 - :wrench: Update editorconfig with newer WP-aligned rules. (236ccff)
@@ -129,6 +125,18 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Improve changelog organization with type categories. (82117b7)
 - Add the Prettier badge. (e00da29)
 - :memo: Update documentation. (1afaa73)
+
+### Build Tooling
+
+- Switch from Sass to CSS using the `postcss-present-env` plugin to allow things like variables and nesting. (209dc79)
+- Add the `postcss-import` and `postcss-preset-env` npm PostCSS plugins.
+- :boom: Revamp Webpack config to use one set of rules geared to the WP block environment, to process frontend and backend scripts separately, and to handle copying componenent assets from entry to output directory. (5fb2313)
+  - :heavy_plus_sign: `@wordpress/dependency-extraction-webpack-plugin`
+	- :heavy_plus_sign: `copy-webpack-plugin`
+	- :heavy_plus_sign: `resolve-bin`
+	- :heavy_plus_sign: `source-map-loader`
+	- :heavy_plus_sign: `thread-loader`
+	- :heavy_plus_sign: `webpack-bundle-analyzer`
 
 ### Project Management
 
