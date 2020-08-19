@@ -144,6 +144,24 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 - Revamp `composer.json` and `package.json` with better metadata and build processes focused on PostCSS and Webpack. (c292a6e, 2692f07)
 - Add the `roave/security-advisories` Composer package to monitor Composer package security.
 
+## 1.10.3 (2020-06-10)
+
+### Changed
+
+- Rename "master" branch to "stable." See the Internet Engineering Task Force (IEFT), [Terminology, Power and Oppressive Language](https://tools.ietf.org/id/draft-knodel-terminology-00.html#rfc.section.1.1.1).
+- :arrow_up: @babel/core => 7.10.2
+- :arrow_up: @babel/polyfill => 7.10.1
+- :arrow_up: @babel/preset-env => 7.10.2
+- :arrow_up: @wordpress/babel-preset-default => 4.14.0
+- :arrow_up: autoprefixer => 9.8.0
+- :arrow_up: eslint-loader => 3.0.4
+- :arrow_up: mkdirp => 1.0.4
+- :arrow_up: node-sass => 4.14.1
+- :arrow_up: postcss-cli => 7.1.1
+- :arrow_up: stylelint => 13.6.0
+- :arrow_up: webpack => 4.43.0
+- :arrow_up: url-search-params-polyfill => 8.1.0
+
 ## 1.10.2 (2020-04-16)
 
 ### Added
