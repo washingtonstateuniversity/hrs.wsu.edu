@@ -14,7 +14,7 @@
 namespace HrswpTheme\templates\header;
 
 ?>
-<header class="site-header" aria-label="hrs-website">
+<header class="site-header" aria-label="HRS Site Header">
 	<section class="row single">
 		<div class="site-banner column one">
 			<?php
