@@ -15,11 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<h2 class="search-heading">Search</h2>
+<p class="search-heading">Search</p>
 <div id="site-search-menu" class="search-menu">
 	<?php get_search_form(); ?>
 	<div class="search-links">
-		<h3>Common Searches</h3>
 		<?php
 		wp_nav_menu(
 			array(

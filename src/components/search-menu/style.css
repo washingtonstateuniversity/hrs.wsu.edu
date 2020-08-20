@@ -1,6 +1,7 @@
 .site-search .search-heading {
 	display: none;
 	margin: 0;
+	padding: 0;
 }
 
 .site-search.active {
