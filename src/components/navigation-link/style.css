@@ -1,0 +1,26 @@
+.site-header,
+main {
+
+	& a {
+		border-bottom: 1px solid var(--nav-color-border);
+		color: var(--text-color);
+		font-weight: 600;
+		text-decoration: none;
+		transition: all 0.3s ease;
+
+		&:hover,
+		&:focus {
+			color: var(--nav-color-hover);
+		}
+	}
+
+	& h1 a,
+	& h2 a,
+	& h3 a,
+	& h4 a,
+	& h5 a,
+	& h6 a {
+		font-weight: 700;
+	}
+
+}

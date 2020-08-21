@@ -1,5 +1,6 @@
 {
-  "name": "washingtonstateuniversity/hrs.wsu.edu",
+	"name": "washingtonstateuniversity/hrs.wsu.edu",
+	"license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "Washington State University"
@@ -9,11 +10,16 @@
     }
   ],
   "require-dev": {
-    "squizlabs/php_codesniffer": "3.*",
-    "wp-coding-standards/wpcs": "2.x"
-  },
-  "scripts": {
-    "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs",
-    "post-update-cmd" : "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs"
-  }
+		"dealerdirect/phpcodesniffer-composer-installer": "~0.6.0",
+		"squizlabs/php_codesniffer": "^3.4.2",
+		"phpcompatibility/php-compatibility": "^9.2.0",
+		"wp-coding-standards/wpcs": "~2.2.0",
+		"sirbrillig/phpcs-variable-analysis": "^2.7",
+		"roave/security-advisories": "dev-master"
+	},
+	"scripts": {
+		"format": "phpcbf --standard=.phpcs.xml.dist --report-summary --report-source",
+		"lint-summary": "phpcs --standard=.phpcs.xml.dist --colors --report-summary --report-source",
+		"lint-detail": "phpcs --standard=.phpcs.xml.dist --colors"
+	}
 }

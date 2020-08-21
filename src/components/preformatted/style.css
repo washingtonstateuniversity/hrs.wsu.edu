@@ -1,0 +1,24 @@
+pre.wp-block-code,
+pre.wp-block-preformatted,
+pre.wp-block-verse {
+	margin-bottom: 1em;
+}
+
+pre.wp-block-code {
+	background-color: var(--text-color);
+	border-radius: 4px;
+	color: #fff;
+	overflow-x: auto;
+	padding: 1em 2em;
+}
+
+pre.wp-block-preformatted,
+pre.wp-block-verse {
+	white-space: wrap;
+	white-space: pre-wrap;
+}
+
+pre.wp-block-verse {
+	font-family: var(--sans-serif-fonts);
+	padding: 1em 2em 0;
+}

@@ -1,83 +1,25 @@
 ## Folders and files for git to ignore
 
-# Adjusted from: https://gist.github.com/octocat/9257657 and
-# https://github.com/github/gitignore/blob/master/Global/
-# See also: https://help.github.com/articles/ignoring-files/
+# Build/test tool files and directories
+/jsdoc
+/node_modules
+/npm-debug.log
+/phpunit.xml
+/phpcs.xml
+/tests/phpunit/data/plugins/wordpress-importer
+/tests/phpunit/data/.trac-ticket-cache*
+/tests/qunit/compiled.html
+/tests/phpunit/build
+/vendor
+/wp-cli.local.yml
 
-# Build and test files #
-########################
-node_modules
-vendor
-*.scssc
-.sass-cache
-**/.sass-cache
-**/.sass-cache/*
-
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
-
-# OS generated files #
-######################
-# Linux
+# OS generated files
 *~
 .Trash-*
-
-# Windows
-Thumbs.db
-thumbs.db
-ehthumbs.db
-Desktop.ini
-desktop.ini
-$RECYCLE.BIN/
-*.cab
-*.msi
-*.msm
-*.msp
-*.lnk
-
-# OSX
 .DS_Store
-*.DS_Store
-.DS_Store?
-.AppleDouble
-.LSOverride
 ._*
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
 
-# Misc #
-########
-*.bak
-*.[Cc]ache
-*.cpr
-*.orig
-*.php.in
-
-# WordPress
-.htaccess
-sitemap.xml
-sitemap.xml.gz
+# Just in case
 wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/wp-cache-config.php
-wp-content/plugins/hello.php
-/readme.html
-/license.txt
+wp-tests-config.php
+.htaccess

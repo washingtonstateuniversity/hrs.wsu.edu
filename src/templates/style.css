@@ -1,0 +1,9 @@
+@import "./archive/style.css";
+@import "./base/style.css";
+@import "./builder/style.css";
+@import "./footer/style.css";
+@import "./front-page/style.css";
+@import "./header/style.css";
+@import "./home/style.css";
+@import "./page/style.css";
+@import "./single/style.css";

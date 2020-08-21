@@ -1,23 +1,149 @@
 # Changelog: WSU HRS Child Theme
 
-**Author:** WSU Web Communications  
-**Author:** Adam Turner  
-**URI:** https://github.com/washingtonstateuniversity/hrs.wsu.edu/
-
 This document details all notable changes to the WSU HRS Child Theme. Uses [Semantic Versioning](http://semver.org/) (as of v0.3.1).
 
 <!--
 ## Major.MinorAddorDeprec.Bugfix (YYYY-MM-DD)
 
-### Todo (for upcoming changes)
-### Security (in case of fixed vulnerabilities)
-### Fixed (for any bug fixes)
-### Changed (for changes in existing functionality)
-### Added (for new features)
-### Deprecated (for once-stable features removed in upcoming releases)
-### Removed (for deprecated features removed in this release)
-### Experimental (for features that are still being tested)
+### Features
+### Enhancements
+### Bug Fixes
+### Experiments
+### Deprecations
+### Code quality
+### Documentation
+### Build Tooling
+### Project Management
 -->
+
+## 2.0.0-beta.1 (:construction: 2020-08-21)
+
+### Enhancements
+
+- Refactor search menu with updated script and styles, including improved accessibility by modifying tabindex when links are hidden. (d31eb0a, ff53bf3, 1eb7803, a974b39)
+- Align button styles with in-progress WSU Design System. (d023614)
+- Add `header.php` to override parent theme version. (a0aecb9)
+- Add source directories for global (`src/global`) and library (`src/lib`) scripts and styles. (a95d77c, 0d85255)
+- Library source files for scripts and styles for external or plugin modifications.
+- :art: Update styles to support core block changes in WordPress v5.4.0. (53479e7, 5832f02, 84f75fa, 568129f, 5da07ca, 2a632ec)
+- Modify the Gravity Forms filters to more easily include more form adjustments. (c4a829f)
+- :bento: Move all component, template part, and global markup, scripts, and styles into dedicated individual directories located at `src/components/{{component-name}}/`, `src/templates/{{template-name}}/` and `src/global/`.
+  - Add Components style and script entry point processors (5420047)
+	- Social links component. (9ad6b83)
+	- WP admin bar component. (12b64cc)
+  - Video component. (47424b7)
+  - Text tags component. (d587a9e)
+  - Text control component. (7905deb)
+  - Table component. (9da6db5)
+  - Separator component. (7862a02)
+  - Search component. (0c1d747)
+  - Search Menu component, with PHP template and frontend script. (a9fe37c)
+  - Quote component. (2c1ec73)
+  - Pullquote component. (fb5da1f)
+  - Preformatted component. (f2ef603)
+  - Paragraph component. (8dfaebf)
+  - Navigation component. (bd91fb6)
+  - Navigation link component. (0d693be)
+  - Media-text component. (35ea3e6)
+  - List component, with core block editor filters. (61da475)
+  - Latest Posts component. (d19d95e)
+  - Image component. (cd0ff5f)
+  - Icons component. (a4161ee)
+  - Heading component. (d5f0c82)
+  - Gallery component. (997fdc9)
+  - Embed component. (df501c7)
+  - Cover component. (bb92f06)
+  - Single template. (646f68e)
+  - Page template. (ae23674)
+  - Home template. (0b0c78d)
+  - Header template. (dfa2d24)
+  - Front-page template. (48a45ad)
+  - Footer template. (8775942)
+  - Builder template. (a674a40)
+  - Base template. (2faf4e4)
+  - Archive template. (c954286)
+
+### Bug Fixes
+
+- 🌐 Fix #132 heading order in search menu. (33bc285)
+- Fix site header aria label. (27db595)
+- 🌐 Fix #83 Add level 1 heading on homepage. (5ad298f)
+- 🐛 Fix #127 include footer in builder template. (1f4aad8)
+
+### Deprecations
+
+- :boom: Remove all custom blocks to a separate plugin. (9a8e517)
+- :fire: Remove Javascript variant for legacy browsers. Use only one integrated index file and tune later as needed. (e8215de)
+- :heavy_minus_sign: Remove the `url-search-params` npm dependency. (2590294)
+- Remove search-filter JavaScript tool in preference for HRS Search Filter block. (a24e48f, 78fe58e)
+- Remove MS SQL Server connector class and all related template tags and shortcodes. (0336af6)
+- :heavy_minus_sign: Remove uneeded dev dependencies following build tool update.
+  - `url-search-params-polyfill` isn't needed since we're not offering this support anymore.
+  - `@babel/core`, `@babel/plugin-syntax-dynamic-import`, `@babel/polyfill`, `@babel/preset-env`, `babel-eslint`, and `eslint-loader` are all taken over by WordPress packages.
+  - `autoprefixer`
+  - `mkdirp`
+  - `node-sass`
+  - `svgo`
+  - Svgo config file.
+  - `webpack-merge`
+
+### Code Quality
+
+- :recycle: Refactor binder element class logic to better align with WP coding standards. (306f51d)
+- :fire: Remove unneeded template part files. (7405a3a)
+- Renamed HRS Theme namespace. (9d89a62, dda2434)
+- :globe_with_meridians: Update text domain for new theme namespace. (a36a3b0, e404364)
+- :heavy_plus_sign: Add `stylelint-a11y` npm stylelint plugin and configure. (a96e194, 5120208)
+- :truck: Update environment structure to be more component based.
+  - Move shortcodes to `src/components` directory. (288cccb)
+  - Move post date and terms lists to `src/components`. (b3ebdd6)
+	- Move search menu script into the `src/components` directory and modify for export support. (ea65d91, b513b52)
+	- Move template parts into respective `src/templates` directories. (e24ed08, 282bbd2, 4d252ac, 8834964, c9e98a6)
+	- Move pagination to `src/components`. (5e7cc55)
+	- Distribute `functions.php` and `setup` methods into more specific files. (da340dd)
+  - Move lazy loading script into the `src/lib` directory and modify for export support. (e154010)
+	- Move the lazy loading class into the `lib` directory. (2080425)
+	- Move custom queries into the `inc` directory. (75d0567)
+  - Modify the JS entry point, now `src/index.js` to handle all frontend imports and add `src/editor.js` to handle all backend imports. (442d44f, 4eb46b0)
+	- Add style entry points for templates source directory. (741de2e)
+- Break down scripts and styles into frontend and backend and organize them by component and template. (b0b9eb3)
+- :wrench: Add config file for the `npm-package-json-lint` linter, for `postcss-cli`, and for `wp-prettier`. (26dca82, 4a70723, 7e46e0e)
+- :heavy_plus_sign: Add `wp-prettier` npm dev dependency aliased to `prettier`. (98734a2)
+- :wrench: Update linter configs to use WordPress preset recommendations. (09bb5f6, a38d3f9, 6c5d034)
+- :wrench: Simplify `.gitignore` rules. (2c1f44d)
+- Use pre-optimized images instead of optimizing on every build and use Webpack to copy from source to build. (847675c)
+- :wrench: Update editorconfig with newer WP-aligned rules. (236ccff)
+- :construction_worker: Update Travis rules to monitor the 2.x branch and only test PHP 7.0+. (132359b, 6a16c27)
+- Add the `npm-package-json-lint` npm dev package with the `@wordpress/npm-package-json-lint-config` package to handle code quality of `package.json` file.
+- Use the WordPress `stylelint-config-wordpress` linting rules.
+- Directly include the `dealerdirect/phpcodesniffer-composer-installer` Composer dev dependency for PHPCS.
+- Add the `phpcompatibility/php-compatibility` and `sirbrillig/phpcs-variable-analysis` Composer packages for additional PHPCS quality checking.
+
+### Documentation
+
+- Improve changelog organization with type categories. (82117b7)
+- Add the Prettier badge. (e00da29)
+- :memo: Update documentation. (1afaa73)
+
+### Build Tooling
+
+- Switch from Sass to CSS using the `postcss-present-env` plugin to allow things like variables and nesting. (209dc79)
+- Add the `postcss-import` and `postcss-preset-env` npm PostCSS plugins.
+- :boom: Revamp Webpack config to use one set of rules geared to the WP block environment, to process frontend and backend scripts separately, and to handle copying componenent assets from entry to output directory. (5fb2313)
+  - :heavy_plus_sign: `@wordpress/dependency-extraction-webpack-plugin`
+	- :heavy_plus_sign: `copy-webpack-plugin`
+	- :heavy_plus_sign: `resolve-bin`
+	- :heavy_plus_sign: `source-map-loader`
+	- :heavy_plus_sign: `thread-loader`
+	- :heavy_plus_sign: `webpack-bundle-analyzer`
+
+### Project Management
+
+- Update CHANGELOG and README headers and badges. (c2d1ced)
+- Switch to GPLv3+ license in place of GPLv2+. (245ae12, c2d1ced)
+- Rename primary branch from `master` to `stable`. See the Internet Engineering Task Force (IEFT), [Terminology, Power and Oppressive Language](https://tools.ietf.org/id/draft-knodel-terminology-00.html#rfc.section.1.1.1).
+- Revamp `composer.json` and `package.json` with better metadata and build processes focused on PostCSS and Webpack. (c292a6e, 2692f07)
+- Add the `roave/security-advisories` Composer package to monitor Composer package security.
 
 ## 1.10.3 (2020-06-10)
 
@@ -47,18 +173,18 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Changed
 
-- :wastebasket: Hide deprecated blocks from the inserter (but keep in existing posts).
+- :wastebasket: Hide deprecated blocks from the inserter (but keep in existing posts). (9a32500)
 
 ## 1.10.0 (2020-03-31)
 
 ### Added
 
-- :sparkles: Post sidebar control to toggle feature image visibility on single views, using post meta and the body class filter.
-- :sparkles: Post and page sidebar control to toggle title visibility, using post meta and the body class filter.
+- :sparkles: Post sidebar control to toggle feature image visibility on single views, using post meta and the body class filter. (1f9c064)
+- :sparkles: Post and page sidebar control to toggle title visibility, using post meta and the body class filter. (ac1a196, 3f7a7a2, f2197f2)
 
 ### Changed
 
-- :art: Apply frontend table styles to editor.
+- :art: Apply frontend table styles to editor. (20d099d)
 - :arrow_up: @babel/core => 7.9.0
 - :arrow_up: @babel/preset-env => 7.9.0
 - :arrow_up: autoprefixer => 9.7.5
@@ -69,15 +195,15 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
-- :alien: Add new `.has-text-align-*` class rules for updated core block classes.
+- :alien: Add new `.has-text-align-*` class rules for updated core block classes. (f24f7e3)
 
 ### Added
 
-- :art: Style option to hide the page title from all but screen readers.
+- :art: Style option to hide the page title from all but screen readers. (169e79e)
 
 ### Changed
 
-- :art: Modify form styles for the HRS contact form.
+- :art: Modify form styles for the HRS contact form. (6f2ae31)
 - :arrow_up: @babel/core => 7.8.7
 - :arrow_up: @babel/polyfill => 7.8.7
 - :arrow_up: rimraf => 3.0.2
@@ -89,44 +215,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Fixed
 
-- :bug: `setup_postdata` requires writing to global `$post` to work.
-- :warning: phpcs linter issues.
-
-### Changed
-
-- Increment WP tested to 5.3.2.
-- :arrow_up: squizlabs/php_codesniffer => 3.5.4
-- :arrow_up: wp-coding-standards/wpcs => 2.2.1
-- :arrow_up: @babel/core => 7.8.4
-- :arrow_up: @babel/plugin-syntax-dynamic-import => 7.8.3
-- :arrow_up: @babel/polyfill => 7.8.3
-- :arrow_up: @babel/preset-env => 7.8.4
-- :arrow_up: @wordpress/babel-preset-default => 4.10.0
-- :arrow_up: @wordpress/eslint-plugin => 3.4.1
-- :arrow_up: autoprefixer => 9.7.4
-- :arrow_up: eslint => 6.8.0
-- :arrow_up: eslint-loader => 3.0.3
-- :arrow_up: mkdirp => 1.0.3
-- :arrow_up: node-sass => 4.13.1
-- :arrow_up: postcss-cli => 7.1.0
-- :arrow_up: rimraf => 3.0.1
-- :arrow_up: stylelint => 13.0.0
-- :arrow_up: svgo => 1.3.2
-- :arrow_up: webpack => 4.41.5
-- :arrow_up: webpack-cli => 3.3.10
-- :arrow_up: url-search-params-polyfill => 8.0.0
-
-### Added
-
-- Additional Gravity Forms custom form modifications.
-- Template tags and shortcodes to handle fetching and displaying more external content for salary and job classification data.
-- Queries for additional MSSQL database tables.
-
-### Deprecated
-
-- SASS-base stylesheets. Converting to CSS-only stylesheets using post-css plugins to handle processing.
-- Javascript search-filter tool and related template tags. This is moving to a block in a separate plugin.
-- :wastebasket: SQL Server connector class (`HRS_MSDB`), template tags, and shortcodes. These are moving to a separate plugin.
+- Fix #115 remove deprecated sudo key from Travis config. (17e3469)
+- Fix #114 specify os in Travis config. (a7eb2bb)
+- :wrench: Specify `is_theme` as 'true' in phpcs config to allow WP template names that violate their own rules. (6bacf4e)
+- :wrench: Include browser globals in eslint rules. (6a37b87)
+- :warning: Specifically declare WP globals in use. (d8ccdf0)
+- :warning: PHP lint issues following rules update. (fd5df24)
 
 ## 1.7.2 (2019-09-20)
 

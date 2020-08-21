@@ -1,0 +1,56 @@
+.site-header {
+	margin: 50px 0 -50px;
+}
+
+.site-header .column {
+	align-items: center;
+	border-top: 8px solid var(--brand-crimson);
+	border-bottom: 8px solid var(--body-background-color);
+	display: flex;
+	justify-content: flex-end;
+	padding: 0.75rem 1rem;
+	z-index: 900;
+}
+
+.home #binder.spineless .site-header {
+	margin-left: 0;
+}
+
+.site-header .site-title {
+	font-size: var(--font-size-4);
+	margin: 0;
+	padding: 0;
+}
+
+.site-title a {
+	border: none;
+	color: var(--brand-crimson);
+	font-weight: 700;
+	margin-right: 2rem;
+}
+
+@media (min-width: 43em) {
+
+	.site-header .site-title {
+		font-size: var(--font-size-6);
+		margin: 0;
+	}
+
+}
+
+@media (min-width: 61.875em) {
+
+	.site-header {
+		margin: 0 0 0 198px;
+	}
+
+	.site-header .column {
+		padding: 1rem 2rem;
+	}
+
+	.site-header .site-title {
+		font-size: var(--font-size-7);
+		margin: 0;
+	}
+
+}

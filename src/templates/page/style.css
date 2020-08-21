@@ -1,0 +1,75 @@
+.page-header {
+	padding: 1.5rem 2rem;
+}
+
+body.page .article-content > .article-header,
+body.single .article-content > .article-header {
+	margin-bottom: var(--font-size-8);
+}
+
+body.page.hide-title .article-content > .article-header,
+body.single.hide-title .article-content > .article-header {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+body.page.hide-title .article-content > .article-body,
+body.single.hide-title .article-content > .article-body {
+	margin-top: -2rem;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.article-taxonomy--primary ul {
+	font-size: var(--font-size-0);
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.article-taxonomy--primary ul a {
+	color: var(--neutral-dark);
+
+	&::after {
+		background-size: 80%;
+	}
+
+	&:hover,
+	&:focus {
+		color: var(--nav-color-hover);
+	}
+}
+
+body.page .article-content > .article-header,
+body.single .article-content > .article-header,
+body.page .article-content .article-body > *:not(.alignwide):not(.alignfull),
+body.single .article-content .article-body > *:not(.alignwide):not(.alignfull) {
+	max-width: 45rem;
+}
+
+body.page .article-content .article-feature.article-feature,
+body.single .article-content .article-feature.article-feature {
+	margin-left: -2rem;
+	margin-right: -2rem;
+	max-width: 34em;
+}
+
+@media (min-width: 34em) {
+
+	body.page .article-content .article-feature.article-feature,
+	body.single .article-content .article-feature.article-feature {
+		float: right;
+		margin-left: 2rem;
+		margin-right: 0;
+		width: 40vw;
+	}
+
+}

@@ -1,0 +1,12 @@
+/**
+ * CSS breakpoint variables
+ *
+ * @since 0.11.0
+ * @since 2.0.0 Converted to CSS variables.
+ */
+
+:root {
+	--small: 34em;     /* 544px @ 16px base */
+	--medium: 43em;    /* 688px @ 16px base */
+	--large: 61.875em; /* 990px @ 16px base */
+}

@@ -1,0 +1,36 @@
+form.evaluators-selection-form {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: none;
+	font-variant-numeric: lining-nums tabular-nums;
+	margin-bottom: 1.5rem;
+	width: 100%;
+}
+
+/* stylelint-disable selector-class-pattern */
+form.evaluators-selection-form table.gfield_list,
+form.evaluators-selection-form table.gfield_list caption,
+form.evaluators-selection-form table.gfield_list tbody,
+form.evaluators-selection-form table.gfield_list tfoot,
+form.evaluators-selection-form table.gfield_list thead,
+form.evaluators-selection-form table.gfield_list tr,
+form.evaluators-selection-form table.gfield_list th,
+form.evaluators-selection-form table.gfield_list td {
+	vertical-align: top;
+}
+
+form.evaluators-selection-form  thead tr {
+	border-bottom: none;
+}
+
+form.evaluators-selection-form table.gfield_list th,
+form.evaluators-selection-form table.gfield_list td {
+	padding: 0 0.45em 0.45em 0;
+	text-align: left;
+}
+
+form.evaluators-selection-form table.gfield_list thead th {
+	background-color: transparent;
+	font-weight: 600;
+}
+/* stylelint-enable selector-class-pattern */

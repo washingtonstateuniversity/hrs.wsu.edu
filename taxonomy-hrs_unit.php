@@ -4,9 +4,12 @@
  *
  * The template for displaying lists of posts in the custom HRS Unit taxonomy.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 0.14.0
  */
+
+use HrswpTheme\components\navigation;
+
 global $is_feature;
 
 get_header();
@@ -16,13 +19,14 @@ get_header();
 
 	<header class="page-header">
 		<?php /* translators: the HRS news archive title: 1: the taxonomy name */ ?>
-		<h1><?php printf( esc_html__( 'HRS News from %s', 'hrs-wsu-edu' ), single_term_title( '', false ) ); ?></h1>
+		<h1><?php printf( esc_html__( 'HRS News from %s', 'hrswp-theme' ), single_term_title( '', false ) ); ?></h1>
 	</header>
 
 	<?php
 	if ( have_posts() ) {
 		$result_count = 0;
-		while ( have_posts() ) : the_post();
+		while ( have_posts() ) :
+			the_post();
 
 			if ( ! is_paged() ) {
 
@@ -70,7 +74,7 @@ get_header();
 				}
 			}
 
-			get_template_part( 'articles/archive-content' );
+			get_template_part( 'build/templates/archive' );
 
 			$result_count++;
 
@@ -83,9 +87,9 @@ get_header();
 		<?php
 	}
 
-	\WSU\HRS\Template_Tags\hrs_pagination();
+	navigation\render();
 
-	get_template_part( 'parts/footers' );
+	get_template_part( 'build/templates/footer' );
 	?>
 </main><!--/#page-->
 <?php

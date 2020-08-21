@@ -1,0 +1,18 @@
+/**
+ * Theme Name: WSU Human Resources Services
+ * Theme URI: https://github.com/washingtonstateuniversity/hrs.wsu.edu/
+ * Author: Adam Turner, WSU University Communications
+ *
+ * Stylesheet: Login page
+ *
+ * @since 0.12.0
+ */
+
+#login h1 a,
+.login h1 a {
+	background: url(images/wsu-cougar-head-crimson.svg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding: 2em;
+}

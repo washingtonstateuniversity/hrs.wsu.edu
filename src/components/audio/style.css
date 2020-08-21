@@ -1,0 +1,4 @@
+.wp-block-audio audio {
+	width: 100%;
+	min-width: 300px;
+}

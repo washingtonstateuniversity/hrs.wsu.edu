@@ -1,0 +1,89 @@
+footer ul,
+footer dd {
+	font-size: var(--font-size-0);
+
+	& a {
+		border-bottom-color: transparent;
+
+		&:hover,
+		&:focus {
+			border-bottom-color: currentColor;
+		}
+	}
+}
+
+.site-footer {
+	margin-top: 1.5rem;
+}
+
+.site-footer nav ul {
+	padding: 0;
+}
+
+.footer-nav {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.footer-nav nav {
+	flex: 3 1 auto;
+	margin: 1.5rem 2rem;
+}
+
+.footer-nav .wsu-brand {
+	flex: 1 1 auto;
+	margin: 1.5rem 2rem;
+	position: relative;
+}
+
+.footer-nav .wsu-cougar-head {
+	bottom: 0;
+	width: 100px;
+	height: auto;
+	position: absolute;
+	right: 0;
+}
+
+.footer-nav .footer-nav-title {
+	font-weight: 600;
+}
+
+.site-reference {
+	background: var(--brand-crimson);
+	color: #fff;
+}
+
+.site-reference ul {
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-end;
+}
+
+.site-reference li {
+	padding: 0;
+}
+
+
+.site-reference a {
+	border: none;
+	color: #fff;
+	display: block;
+	font-weight: 400;
+	padding: 1em 0.75em;
+
+	&:hover,
+	&:focus {
+		border: none;
+		color: var(--neutral-light);
+		text-decoration: underline;
+	}
+}
+
+@media (min-width: 34em) {
+
+	.site-reference ul {
+		flex-flow: row wrap;
+		margin-right: 1.25rem;
+	}
+
+}

@@ -1,0 +1,23 @@
+.editor-styles-wrapper {
+
+	& p {
+		font-size: 1em;
+	}
+
+	/* No drop cap styling anywhere. */
+	& p.has-drop-cap:not(:focus)::first-letter {
+		float: none;
+		font-size: inherit;
+		line-height: inherit;
+		font-weight: inherit;
+		margin: inherit;
+		text-transform: none;
+		font-style: normal;
+	}
+
+	& p.has-drop-cap:not(:focus)::after {
+		display: none;
+		padding-top: 0;
+	}
+
+}

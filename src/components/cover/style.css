@@ -1,0 +1,175 @@
+.wp-block-cover-image,
+.wp-block-cover {
+	align-items: center;
+	background-color: #000;
+	background-position: center center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1.5em;
+	min-height: 430px;
+	overflow: hidden;
+	position: relative;
+}
+
+/* stylelint-disable selector-class-pattern */
+.wp-block-cover__inner-container {
+	color: var(--section-background-color);
+	width: calc(100% - 70px);
+	z-index: 1;
+
+	& > :last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+
+.wp-block-cover-image.has-light-background-color,
+.wp-block-cover-image.has-accent-green-background-color,
+.wp-block-cover-image.has-accent-yellow-background-color,
+.wp-block-cover-image.has-accent-blue-background-color,
+.wp-block-cover-image.has-accent-orange-background-color,
+.wp-block-cover.has-light-background-color,
+.wp-block-cover.has-accent-green-background-color,
+.wp-block-cover.has-accent-yellow-background-color,
+.wp-block-cover.has-accent-blue-background-color,
+.wp-block-cover.has-accent-orange-background-color {
+
+	& .wp-block-cover__inner-container,
+	& .wp-block-cover-text {
+		color: var(--text-color);
+	}
+}
+
+.wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link),
+.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link) {
+	color: inherit;
+	padding: 0 0.25em;
+
+	&:hover,
+	&:focus {
+		color: var(--section-background-color);
+		background-color: var(--nav-color-hover);
+	}
+
+	&:active {
+		background-color: var(--nav-color);
+	}
+}
+/* stylelint-enable selector-class-pattern */
+
+.wp-block-cover-image.has-parallax,
+.wp-block-cover.has-parallax {
+	background-attachment: fixed;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+
+	.wp-block-cover-image.has-parallax,
+	.wp-block-cover.has-parallax {
+		background-attachment: scroll;
+	}
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.wp-block-cover-image.has-parallax,
+	.wp-block-cover.has-parallax {
+		background-attachment: scroll;
+	}
+
+}
+
+.wp-block-cover-image.has-background-dim::before,
+.wp-block-cover.has-background-dim::before {
+	background-color: inherit;
+	bottom: 0;
+	content: "";
+	left: 0;
+	opacity: 0.5;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-10::before,
+.wp-block-cover.has-background-dim.has-background-dim-10::before {
+	opacity: 0.1;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-20::before,
+.wp-block-cover.has-background-dim.has-background-dim-20::before {
+	opacity: 0.2;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-30::before,
+.wp-block-cover.has-background-dim.has-background-dim-30::before {
+	opacity: 0.3;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-40::before,
+.wp-block-cover.has-background-dim.has-background-dim-40::before {
+	opacity: 0.4;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-50::before,
+.wp-block-cover.has-background-dim.has-background-dim-50::before {
+	opacity: 0.5;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-60::before,
+.wp-block-cover.has-background-dim.has-background-dim-60::before {
+	opacity: 0.6;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-70::before,
+.wp-block-cover.has-background-dim.has-background-dim-70::before {
+	opacity: 0.7;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-80::before,
+.wp-block-cover.has-background-dim.has-background-dim-80::before {
+	opacity: 0.8;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-90::before,
+.wp-block-cover.has-background-dim.has-background-dim-90::before {
+	opacity: 0.9;
+}
+
+.wp-block-cover-image.has-background-dim.has-background-dim-100::before,
+.wp-block-cover.has-background-dim.has-background-dim-100::before {
+	opacity: 1;
+}
+
+.wp-block-cover-image::after,
+.wp-block-cover::after {
+	content: "";
+	display: block;
+	font-size: 0;
+	min-height: inherit;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+
+	.wp-block-cover-image::after,
+	.wp-block-cover::after {
+		content: none;
+	}
+
+}
+
+/* stylelint-disable selector-class-pattern */
+.wp-block-cover__video-background {
+	height: 100%;
+	left: 50%;
+	object-fit: cover;
+	position: absolute;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 100%;
+	z-index: 0;
+}
+/* stylelint-enable selector-class-pattern */

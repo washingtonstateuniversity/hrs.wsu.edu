@@ -1,0 +1,10 @@
+module.exports = {
+	root: true,
+	extends: [ 'plugin:@wordpress/eslint-plugin/recommended' ],
+	globals: {
+		wp: true,
+	},
+	env: {
+		browser: true,
+	},
+}

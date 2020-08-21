@@ -1,0 +1,46 @@
+blockquote {
+	font-family: var(--sans-serif-fonts);
+	margin-bottom: 1em;
+	padding: 1.5em 1em;
+}
+
+blockquote p:last-of-type {
+	padding: 0;
+}
+
+blockquote cite {
+	display: block;
+	font-style: italic;
+	padding-top: 1em;
+}
+
+blockquote cite::before {
+	content: "- ";
+}
+
+.wp-block-quote {
+	background-color: var(--body-background-color);
+	border-left: 4px solid var(--accent-crimson);
+	position: relative;
+}
+
+.wp-block-quote::before {
+	color: var(--accent-crimson);
+	content: "\201C";
+	font-size: var(--font-size-8);
+	position: absolute;
+	left: 10px;
+	top: 0;
+}
+
+.wp-block-quote.is-style-large p,
+.wp-block-quote.is-large p {
+	font-style: italic;
+}
+
+.wp-block-quote.is-style-large p,
+.wp-block-quote.is-large p,
+.wp-block-pullquote p {
+	font-size: var(--font-size-5);
+	line-height: 1.5;
+}

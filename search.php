@@ -4,9 +4,11 @@
  *
  * The template for displaying search results.
  *
- * @package WSU_Human_Resources_Services
+ * @package HrswpTheme
  * @since 1.0.0
  */
+
+use HrswpTheme\components\navigation;
 
 get_header();
 ?>
@@ -14,10 +16,11 @@ get_header();
 <main id="wsuwp-main" class="spine-search-index">
 	<?php
 	if ( have_posts() ) {
+		global $wp_query;
 		?>
 		<header class="page-header">
 			<h1>
-				<?php esc_html_e( 'Search results for: ', 'hrs-wsu-edu' ); ?>
+				<?php esc_html_e( 'Search results for: ', 'hrswp-theme' ); ?>
 				<span class="search-query"><?php echo get_search_query(); ?></span>
 			</h1>
 			<span class="meta">Found about <?php echo esc_html( absint( $wp_query->found_posts ) ); ?> results.</span>
@@ -33,7 +36,7 @@ get_header();
 					<?php
 					while ( have_posts() ) :
 						the_post();
-						get_template_part( 'articles/archive-content' );
+						get_template_part( 'build/templates/archive' );
 					endwhile;
 					?>
 
@@ -42,12 +45,12 @@ get_header();
 		</section>
 
 		<?php
-		\WSU\HRS\Template_Tags\hrs_pagination();
+		navigation\render();
 	} else {
 		?>
 		<header class="page-header">
 			<h1>
-				<?php esc_html_e( 'No search results for:', 'hrs-wsu-edu' ); ?>
+				<?php esc_html_e( 'No search results for:', 'hrswp-theme' ); ?>
 				<span class="search-query"><?php echo get_search_query(); ?></span>
 			</h1>
 		</header>
@@ -62,7 +65,7 @@ get_header();
 		<?php
 	}
 
-	get_template_part( 'parts/footers' );
+	get_template_part( 'build/templates/footer' );
 	?>
 
 </main><!--/#page-->

@@ -1,0 +1,191 @@
+@media (max-width: 43em) {
+
+	table,
+	caption,
+	tbody,
+	tr,
+	th,
+	td {
+		display: block;
+		text-align: left;
+	}
+
+	thead,
+	th:empty,
+	td:empty {
+		display: none;
+		visibility: hidden;
+	}
+
+	td[data-column]::before {
+		content: attr(data-column) ": ";
+		display: inline-block;
+		font-weight: 600;
+		padding-right: 0.25em;
+		width: 25%;
+	}
+
+	tbody tr {
+		margin-bottom: 1.5rem;
+	}
+
+	tbody td,
+	tfoot th {
+		border: none;
+		line-height: 1.4;
+		padding: 4px 8px;
+	}
+
+	table .column-1 {
+		font-weight: 600;
+	}
+}
+
+.wp-block-table table,
+.tablepress {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: none;
+	font-variant-numeric: lining-nums tabular-nums;
+	margin-bottom: 1.5rem;
+	width: 100%;
+}
+
+thead tr {
+	font-weight: 600;
+}
+
+tbody tr {
+	border-bottom: 1px solid var(--neutral-light);
+}
+
+.wp-block-table td,
+.wp-block-table th {
+	padding: 0.45em;
+	text-align: left;
+}
+
+th.nums,
+td.nums {
+	text-align: right;
+}
+
+th {
+	background-color: var(--neutral-blue);
+	font-weight: 600;
+}
+
+.wp-block-table.is-style-stripes tr:nth-child(odd) {
+	background: #f9f9f9;
+}
+
+.wp-block-table .has-fixed-layout,
+.tablepress.has-fixed-layout {
+	table-layout: fixed;
+}
+
+.sticky-header th {
+	position: relative;
+	position: sticky;
+	top: 49px;
+}
+
+@media ( min-width: 989px ) {
+
+	.sticky-header th {
+		top: -1px;
+	}
+
+	body.admin-bar .sticky-header th {
+		top: 31px;
+	}
+
+}
+
+.tablepress tfoot th,
+.tablepress thead th {
+	background-color: var(--neutral-blue);
+	vertical-align: inherit;
+}
+
+.tablepress thead th {
+	border-bottom: inherit;
+}
+
+/* stylelint-disable selector-class-pattern */
+.dataTables_filter {
+	float: none;
+	margin-bottom: 1em;
+}
+/* stylelint-enable selector-class-pattern */
+
+/* HRS Contacts adjustments. */
+.tablepress-hrs-contacts td.column-3 {
+	white-space: nowrap;
+}
+
+.tablepress.tablepress-hrs-contacts tbody td {
+	vertical-align: text-bottom;
+}
+
+/* The 2018 Medical Premium Changes table. */
+.hrs-medical-premium-changes-2018 tbody {
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+
+.hrs-medical-premium-changes-2018 tbody td {
+	border-right: 1px solid #ddd;
+}
+
+.hrs-medical-premium-changes-2018 tbody td:not(.column-1) {
+	text-align: center;
+	width: 9%;
+}
+
+.hrs-medical-premium-changes-2018 tr .column-3,
+.hrs-medical-premium-changes-2018 tr .column-5,
+.hrs-medical-premium-changes-2018 tr .column-7,
+.hrs-medical-premium-changes-2018 tr .column-9 {
+	background-color: #eee;
+	font-weight: 600;
+}
+
+.hrs-medical-premium-changes-2018 .row-1 td {
+	background-color: $brand-crimson;
+	color: #fff;
+	font-weight: 600;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.hrs-medical-premium-changes-2018 .row-2 td {
+	background-color: #2a3033;
+	color: #fff;
+	text-align: center;
+}
+
+.hrs-medical-premium-changes-2018 .row-3 .column-1,
+.hrs-medical-premium-changes-2018 .row-8 .column-1,
+.hrs-medical-premium-changes-2018 .row-12 .column-1 {
+	background-color: #d7dadb;
+	font-weight: 600;
+}
+
+.hrs-representation-table .column-1 {
+	width: 450px !important;
+}
+
+.hrs-previous-representation-cases-table .column-1 {
+	width: 500px !important;
+}
+
+.hrs-representation-table .column-2,
+.hrs-previous-representation-cases-table .column-2 {
+	width: 150px !important;
+}
+
+.hrs-representation-table .column-3,
+.hrs-previous-representation-cases-table .column-3 {
+	width: 100px !important;
+}

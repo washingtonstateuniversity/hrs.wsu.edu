@@ -1,0 +1,100 @@
+.alignleft {
+
+	/*rtl:ignore*/
+	float: left;
+
+	/*rtl:ignore*/
+	margin-right: 2em;
+
+}
+
+.alignright {
+
+	/*rtl:ignore*/
+	float: right;
+
+	/*rtl:ignore*/
+	margin-left: 2em;
+
+}
+
+.has-text-align-left {
+
+	/*rtl:ignore*/
+	text-align: left;
+
+}
+
+.has-text-align-right,
+.wp-block-button.alignright,
+.wp-block-file.alignright {
+
+	/*rtl:ignore*/
+	text-align: right;
+
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Highly specified to override Spine theme */
+.column figure.alignfull.alignfull,
+.alignfull {
+	margin-right: -2rem;
+	margin-left: -2rem;
+	max-width: 1180px;
+}
+
+.has-text-align-center,
+.textaligncenter,
+figure.aligncenter,
+.wp-block-button.aligncenter,
+.wp-block-file.aligncenter {
+	text-align: center;
+}
+
+/* Highly selected in order to override parent theme rules. */
+#wsuwp-main figure.wp-block-embed.alignleft.alignleft,
+#wsuwp-main figure.wp-block-embed.alignright.alignright,
+#wsuwp-main figure.wp-block-video.alignleft.alignleft,
+#wsuwp-main figure.wp-block-video.alignright.alignright,
+#wsuwp-main figure.wp-block-pullquote.alignleft.alignleft,
+#wsuwp-main figure.wp-block-pullquote.alignright.alignright,
+#wsuwp-main .wp-block-cover-image.alignleft,
+#wsuwp-main .wp-block-cover-image.alignright,
+#wsuwp-main .wp-block-cover.alignleft,
+#wsuwp-main .wp-block-cover.alignright,
+#wsuwp-main .wp-block-gallery.alignleft,
+#wsuwp-main .wp-block-gallery.alignright,
+#wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignleft,
+#wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignright,
+#wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignleft,
+#wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignright {
+	width: 100%;
+}
+
+@media (min-width: 43em) {
+
+	#wsuwp-main figure.wp-block-embed.alignleft.alignleft,
+	#wsuwp-main figure.wp-block-embed.alignright.alignright,
+	#wsuwp-main figure.wp-block-video.alignleft.alignleft,
+	#wsuwp-main figure.wp-block-video.alignright.alignright,
+	#wsuwp-main figure.wp-block-pullquote.alignleft.alignleft,
+	#wsuwp-main figure.wp-block-pullquote.alignright.alignright,
+	#wsuwp-main .wp-block-cover-image.alignleft,
+	#wsuwp-main .wp-block-cover-image.alignright,
+	#wsuwp-main .wp-block-cover.alignleft,
+	#wsuwp-main .wp-block-cover.alignright,
+	#wsuwp-main .wp-block-gallery.alignleft,
+	#wsuwp-main .wp-block-gallery.alignright,
+	#wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignleft,
+	#wsuwp-main .wp-block-hrs-wsu-edu-callouts.alignright,
+	#wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignleft,
+	#wsuwp-main .wp-block-hrs-wsu-edu-notifications.alignright {
+		max-width: 49%;
+	}
+
+}

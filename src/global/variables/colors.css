@@ -1,0 +1,91 @@
+:root {
+	--brand-crimson: #981e32;
+	--brand-gray: #5e6a71;
+	--accent-crimson: #c60c30;
+	--accent-green: #ada400;
+	--accent-orange: #f6861f;
+	--accent-blue: #00a5bd;
+	--accent-yellow: #ffb81c;
+	--neutral-blue: #aec7cb;
+	--neutral-dark: #475055;
+	--neutral-light: #eff0f1;
+	--dark-dark: #191919;
+	--body-background-color: #f2f2f2;
+	--section-background-color: #fdfdfd;
+	--text-color: var(--dark-dark);
+	--nav-color: var(--brand-crimson);
+	--nav-color-border: #da1e00;
+	--nav-color-hover: var(--accent-crimson);
+}
+
+.has-brand-crimson-background-color.has-brand-crimson-background-color {
+	background-color: var(--brand-crimson);
+}
+
+.has-brand-gray-background-color.has-brand-gray-background-color {
+	background-color: var(--brand-gray);
+}
+
+.has-accent-crimson-background-color.has-accent-crimson-background-color {
+	background-color: var(--accent-crimson);
+}
+
+.has-accent-green-background-color.has-accent-green-background-color {
+	background-color: var(--accent-green);
+}
+
+.has-accent-orange-background-color.has-accent-orange-background-color {
+	background-color: var(--accent-orange);
+}
+
+.has-accent-blue-background-color.has-accent-blue-background-color {
+	background-color: var(--accent-blue);
+}
+
+.has-accent-yellow-background-color.has-accent-yellow-background-color {
+	background-color: var(--accent-yellow);
+}
+
+.has-light-background-color.has-light-background-color {
+	background-color: var(--section-background-color);
+}
+
+.has-dark-background-color.has-dark-background-color {
+	background-color: var(--text-color);
+}
+
+.has-brand-crimson-color.has-brand-crimson-color {
+	color: var(--brand-crimson);
+}
+
+.has-brand-gray-color.has-brand-gray-color {
+	color: var(--brand-gray);
+}
+
+.has-accent-crimson-color.has-accent-crimson-color {
+	color: var(--accent-crimson);
+}
+
+.has-accent-green-color.has-accent-green-color {
+	color: var(--accent-green);
+}
+
+.has-accent-orange-color.has-accent-orange-color {
+	color: var(--accent-orange);
+}
+
+.has-accent-blue-color.has-accent-blue-color {
+	color: var(--accent-blue);
+}
+
+.has-accent-yellow-color.has-accent-yellow-color {
+	color: var(--accent-yellow);
+}
+
+.has-light-color.has-light-color {
+	color: var(--section-background-color);
+}
+
+.has-dark-color.has-dark-color {
+	color: var(--text-color);
+}

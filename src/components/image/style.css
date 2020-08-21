@@ -1,0 +1,36 @@
+figure > a {
+	border-bottom: none;
+	display: block;
+}
+
+figcaption {
+	color: var(--neutral-dark);
+	font-size: var(--font-size-1);
+	letter-spacing: 0.02em;
+	margin-bottom: 1em;
+	padding: 0.3em 0.5em 0;
+}
+
+.wp-block-image {
+	margin-bottom: 1em;
+	max-width: 100%;
+}
+
+.wp-block-image .alignleft,
+.wp-block-image .alignright,
+.wp-block-image .aligncenter,
+.wp-block-image.is-resized {
+	display: table;
+}
+
+.wp-block-image .alignleft > figcaption,
+.wp-block-image .alignright > figcaption,
+.wp-block-image .aligncenter > figcaption,
+.wp-block-image.is-resized > figcaption {
+	caption-side: bottom;
+	display: table-caption;
+}
+
+.is-style-rounded img {
+	border-radius: 9999px;
+}

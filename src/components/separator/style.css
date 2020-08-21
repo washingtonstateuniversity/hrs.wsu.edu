@@ -1,0 +1,20 @@
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	width: 5.5em;
+}
+
+.wp-block-separator.is-style-dots {
+	background: none;
+	border: none;
+	text-align: center;
+	max-width: none;
+	line-height: 1;
+	height: auto;
+}
+
+.wp-block-separator.is-style-dots::before {
+	content: "\00b7 \00b7 \00b7";
+	color: var(--neutral-dark;);
+	font-family: serif;
+	font-size: 24px;
+	letter-spacing: 2em;
+}
