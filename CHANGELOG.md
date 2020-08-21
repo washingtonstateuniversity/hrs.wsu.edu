@@ -16,7 +16,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project Management
 -->
 
-## 2.0.0 (2020-06-10)
+## 2.0.0-beta.1 (:construction: 2020-08-21)
 
 ### Enhancements
 
@@ -65,6 +65,9 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Bug Fixes
 
+- 🌐 Fix #132 heading order in search menu. (33bc285)
+- Fix site header aria label. (27db595)
+- 🌐 Fix #83 Add level 1 heading on homepage. (5ad298f)
 - 🐛 Fix #127 include footer in builder template. (1f4aad8)
 
 ### Deprecations
@@ -136,6 +139,8 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Project Management
 
+- Update CHANGELOG and README headers and badges. (c2d1ced)
+- Switch to GPLv3+ license in place of GPLv2+. (245ae12, c2d1ced)
 - Rename primary branch from `master` to `stable`. See the Internet Engineering Task Force (IEFT), [Terminology, Power and Oppressive Language](https://tools.ietf.org/id/draft-knodel-terminology-00.html#rfc.section.1.1.1).
 - Revamp `composer.json` and `package.json` with better metadata and build processes focused on PostCSS and Webpack. (c292a6e, 2692f07)
 - Add the `roave/security-advisories` Composer package to monitor Composer package security.
