@@ -1,14 +1,6 @@
 # WSU Human Resource Services Theme
 
-[![Build Status](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu.svg?branch=stable)](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-**Contributors:** WSU University Communications, Adam Turner  
-**Requires at least:** WordPress 5.0  
-**Tested up to:** WordPress 5.3.2  
-**Requires PHP:** 5.6  
-**Version:** 2.0.0-alpha.10  
-**License:** GPLv2 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
+[![Build Status](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu.svg?branch=stable)](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu) [![Release Version](https://img.shields.io/github/v/release/washingtonstateuniversity/hrs.wsu.edu)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/releases/tag/v1.10.3) ![WordPress tested up to version 5.5](https://img.shields.io/badge/WordPress-v5.5%20tested-success.svg) ![WordPress Block Ready](https://img.shields.io/badge/block-ready-blueviolet) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![GPLv3 License](https://img.shields.io/github/license/washingtonstateuniversity/hrs.wsu.edu)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/blob/stable/LICENSE.md)
 
 ## Description
 
