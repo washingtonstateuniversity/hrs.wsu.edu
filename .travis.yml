@@ -1,35 +1,23 @@
 # Travis CI configuration
 # @link https://travis-ci.org/
-# WSU Human Resource Services Theme
-# @link https://github.com/washingtonstateuniversity/hrs.wsu.edu
 
-language: php
 os: linux
-dist: trusty
+dist: xenial
 
-# Cache some data across builds for performance.
-# https://docs.travis-ci.com/user/caching/
+language: generic
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
 cache:
   apt: true
-  npm: true
   directories:
-    # Cache directory for older Composer versions.
     - $HOME/.composer/cache
-    # Cache directory for more recent Composer versions.
-    - $HOME/.cache/composer/files
-
-# PHP versions to build on.
-php:
-  - 7.3
-  - 7.2
-  - 7.1
-  - 7.0
-
-env:
-  global:
-    - WP_VERSION=5.0
-    - WP_MULTISITE=0
-    - LINT=1
+    - vendor
+    - $HOME/.npm
+    - $HOME/.nvm/.cache
 
 branches:
   only:
@@ -37,31 +25,32 @@ branches:
     - 2.x
 
 before_install:
-  # Speed up build time by disabling Xdebug.
-  - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
-  # Make sure NPM is installed
-  - npm i -g npm
+  - npm --version
+  - node --version
+  - nvm install --latest-npm
 
-install:
-  - cd $TRAVIS_BUILD_DIR
-  # Install PHP_CodeSniffer and WP Coding Standards
-  - if [[ "$LINT" == "1" ]]; then composer install --no-suggest; fi
-  # NPM install for ci environments @link https://docs.npmjs.com/cli/ci.html
-  - if [[ "$LINT" == "1" ]]; then npm ci; fi
+jobs:
+  include:
+    - name: Lint JS
+      install: npm ci
+      script: npm run lint:scripts
 
-before_script:
-  # Refresh path following CodeSniffer install.
-  - phpenv rehash;
+    - name: Lint CSS
+      install: npm ci
+      script: npm run lint:styles
 
-script:
-  # Search theme for PHP syntax errors @see https://github.com/WordPress/twentynineteen/
-  # The usage of bash + || exit 1 is to ensure xargs does not exit on first error.
-  - find . \( -name '*.php' \) -not -path "./vendor/*" | xargs -n1 bash -c 'php -lf $0 || exit 1'
-  # Search for PHP, JS, and CSS errors with linting and coding standards checks.
-  # Then test building the production version of the theme.
-  - if [[ "$LINT" == "1" ]]; then npm run build; fi
+    - name: Lint JSON
+      install: npm ci
+      script: npm run lint:pkg
 
-notifications:
-  email:
-    on_success: never
-    on_failure: change
+    - name: Lint PHP
+      install: composer install
+      script:
+        - find . \( -name '*.php' \) -not -path "./vendor/*" | xargs -n1 bash -c 'php -lf $0 || exit 1'
+        - npm run lint:php
+
+    - name: Build
+      install:
+        - npm ci
+        - composer install
+      script: npm run build
