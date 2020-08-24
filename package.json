@@ -22,15 +22,15 @@
 		"url": "https://github.com/washingtonstateuniversity/hrs.wsu.edu/issues"
 	},
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^7.1.0",
 		"@wordpress/babel-preset-default": "^4.17.0",
 		"@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
-		"@wordpress/npm-package-json-lint-config": "^3.0.0",
+		"@wordpress/eslint-plugin": "^7.1.0",
+		"@wordpress/npm-package-json-lint-config": "^3.1.0",
 		"babel-loader": "^8.1.0",
 		"copy-webpack-plugin": "^6.0.3",
 		"cssnano": "^4.1.10",
 		"eslint": "^7.7.0",
-		"npm-package-json-lint": "^5.0.0",
+		"npm-package-json-lint": "^5.1.0",
 		"npm-run-all": "^4.1.5",
 		"postcss-cli": "^7.1.1",
 		"postcss-import": "^12.0.1",
