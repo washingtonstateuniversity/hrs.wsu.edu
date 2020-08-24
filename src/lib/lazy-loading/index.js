@@ -9,8 +9,7 @@
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
  * @see https://www.smashingmagazine.com/2018/01/deferring-lazy-loading-intersection-observer-api/
  * @see https://github.com/deanhume/lazy-observer-load
- *
- * @package HrswpTheme
+ * @package
  * @since 1.0.0
  */
 
