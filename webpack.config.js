@@ -2,9 +2,8 @@
  * External dependencies
  */
 const { BundleAnalyzerPlugin } = require( 'webpack-bundle-analyzer' );
-const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
-const { escapeRegExp } = require( 'lodash' );
-const { resolve, sep } = require( 'path' );
+const CopyPlugin = require( 'copy-webpack-plugin' );
+const { resolve, basename, dirname } = require( 'path' );
 
 /**
  * WordPress dependencies
@@ -59,21 +58,25 @@ const config = {
 		// WP_BUNDLE_ANALYZER global variable enables utility that represents
 		// bundle content as a convenient interactive zoomable treemap.
 		process.env.WP_BUNDLE_ANALYZER && new BundleAnalyzerPlugin(),
-		new CopyWebpackPlugin( [
-			{
-				from: './src/*/**/index.php',
-				test: new RegExp(
-					`([\\w-]+)${ escapeRegExp( sep ) }([\\w-]+)${ escapeRegExp(
-						sep
-					) }index\\.php$`
-				),
-				to: '[1]/[2].php',
-			},
-			{
-				from: './src/images/**/*',
-				to: 'images/[name].[ext]',
-			},
-		] ),
+		new CopyPlugin( {
+			patterns: [
+				{
+					from: './src/*/**/index.php',
+					transformPath( targetPath ) {
+						const dir = basename( dirname( targetPath ) );
+						const parent = basename(
+							dirname( dirname( targetPath ) )
+						);
+
+						return `${ parent }/${ dir }.php`;
+					},
+				},
+				{
+					from: './src/images/**/*',
+					to: 'images/[name].[ext]',
+				},
+			],
+		} ),
 		new DependencyExtractionWebpackPlugin( { injectPolyfill: true } ),
 	].filter( Boolean ),
 	stats: {
