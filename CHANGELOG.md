@@ -16,7 +16,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project Management
 -->
 
-## 2.0.0-beta.2 (:construction: 2020-08-24)
+## 2.0.0-beta.3 (:construction: 2020-08-25)
 
 ### Enhancements
 
@@ -90,6 +90,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Code Quality
 
+- 👷 Fix #145 refactor Travis CI config. (6673ce2)
 - :recycle: Refactor binder element class logic to better align with WP coding standards. (306f51d)
 - :fire: Remove unneeded template part files. (7405a3a)
 - Renamed HRS Theme namespace. (9d89a62, dda2434)
