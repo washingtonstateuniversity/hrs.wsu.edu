@@ -12,11 +12,11 @@ use HrswpTheme\components\terms_lists;
 global $is_feature;
 ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-content' ); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-content' ); ?> aria-labelledby="article-<?php the_ID(); ?>-title">
 
 		<header class="article-header">
 			<p class="article-title">
-				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+				<a id="article-<?php the_ID(); ?>-title" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</p>
 			<?php if ( is_search() ) : ?>
 				<span class="meta"><?php the_permalink(); ?></span>
