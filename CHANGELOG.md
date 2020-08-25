@@ -16,7 +16,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project Management
 -->
 
-## 2.0.0-beta.3 (:construction: 2020-08-25)
+## 2.0.0-beta.4 (:construction: 2020-08-25)
 
 ### Enhancements
 
@@ -65,6 +65,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Bug Fixes
 
+- 🌐 Add ARIA labeling to generic landmark regions such as `nav` and `article` elements. (cbb5c1c)
 - Fix NPM Package Lint config to allow GPL 3.0 license in npm license. (bd01a56)
 - 🌐 Fix #132 heading order in search menu. (33bc285)
 - Fix site header aria label. (27db595)
