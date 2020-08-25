@@ -59,7 +59,7 @@ function the_terms( $args = array() ) {
 		} else {
 			$taxonomy_obj = get_taxonomy( $atts['taxonomy'] );
 			/* translators: The taxonomy name in singular tense */
-			$term_title = sprintf( __( '<dt>%s</dt>', 'hrswp-theme' ), esc_html( $taxonomy_obj->labels->singular_name ) );
+			$term_title = sprintf( '<dt>%s</dt>', esc_html( $taxonomy_obj->labels->singular_name ) );
 		}
 	} else {
 		$term_title = '';

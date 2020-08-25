@@ -60,10 +60,9 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\gravityforms_setup' );
  * @param object $field      The current field.
  * @param string $text       The current column name.
  * @param string $value      The currently entered/selected value for the column's input.
- * @param int    $form_id    The ID of the current form.
  * @return string The HTML content of the List field column.
  */
-function hrs_filter_evals_reason_column( $input, $input_info, $field, $text, $value, $form_id ) {
+function hrs_filter_evals_reason_column( $input, $input_info, $field, $text, $value ) {
 	$input_field_name = 'input_' . $field->id . '[]';
 	$tabindex         = GFCommon::get_tabindex();
 
