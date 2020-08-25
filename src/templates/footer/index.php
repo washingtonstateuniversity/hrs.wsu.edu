@@ -15,27 +15,29 @@ namespace HrswpTheme\templates\footer;
 
 // Arguments for the WP nav menus in the site footer.
 $footer_nav_args = array(
-	'theme_location'  => 'hrs-site-footer',
-	'menu'            => 'hrs-site-footer',
-	'container'       => 'nav',
-	'container_class' => false,
-	'container_id'    => false,
-	'menu_class'      => null,
-	'menu_id'         => null,
-	'items_wrap'      => '<span class="footer-nav-title">' . __( 'About', 'hrswp-theme' ) . '</span><ul>%3$s</ul>',
-	'depth'           => 4,
+	'theme_location'       => 'hrs-site-footer',
+	'menu'                 => 'hrs-site-footer',
+	'container'            => 'nav',
+	'container_class'      => false,
+	'container_id'         => false,
+	'container_aria_label' => 'About HRS',
+	'menu_class'           => null,
+	'menu_id'              => null,
+	'items_wrap'           => '<span class="footer-nav-title">' . __( 'About', 'hrswp-theme' ) . '</span><ul>%3$s</ul>',
+	'depth'                => 4,
 );
 
 $site_reference_args = array(
-	'theme_location'  => 'site-reference',
-	'menu'            => 'site-reference',
-	'container'       => 'nav',
-	'container_class' => 'site-reference',
-	'container_id'    => false,
-	'menu_class'      => null,
-	'menu_id'         => null,
-	'items_wrap'      => '<ul>%3$s</ul>',
-	'depth'           => 1,
+	'theme_location'       => 'site-reference',
+	'menu'                 => 'site-reference',
+	'container'            => 'nav',
+	'container_class'      => 'site-reference',
+	'container_id'         => false,
+	'container_aria_label' => 'Policies and contact',
+	'menu_class'           => null,
+	'menu_id'              => null,
+	'items_wrap'           => '<ul>%3$s</ul>',
+	'depth'                => 1,
 );
 ?>
 
