@@ -22,11 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php
 		wp_nav_menu(
 			array(
-				'theme_location' => 'hrs-search-menu',
-				'menu'           => 'hrs-search-menu',
-				'container'      => 'nav',
-				'items_wrap'     => '<ul>%3$s</ul>',
-				'depth'          => 2,
+				'theme_location'       => 'hrs-search-menu',
+				'menu'                 => 'hrs-search-menu',
+				'container'            => 'nav',
+				'container_aria_label' => 'Common searches',
+				'items_wrap'           => '<ul>%3$s</ul>',
+				'depth'                => 2,
 			)
 		);
 		?>
