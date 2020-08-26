@@ -217,7 +217,7 @@ class Lazy_Load_Images {
 	 * @return string The placeholder image URI.
 	 */
 	private static function get_placeholder_image_path() {
-		$placeholder_path = get_stylesheet_directory_uri() . '/assets/images/1x1.trans.gif';
+		$placeholder_path = get_stylesheet_directory_uri() . '/build/images/1x1.trans.gif';
 
 		/**
 		 * Filters the HRS Lazy Load Images placeholder image path.
