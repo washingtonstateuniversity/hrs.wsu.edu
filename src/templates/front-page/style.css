@@ -80,7 +80,7 @@
 	padding: 0.9em;
 
 	&::after {
-		background-image: url(../images/icons/link_light.svg);
+		background-image: url(images/link_light.svg);
 		background-size: 70%;
 	}
 
