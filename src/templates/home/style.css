@@ -34,7 +34,7 @@
 	& a {
 
 		&::before {
-			background-image: url(../images/icons/event.svg);
+			background-image: url(images/event.svg);
 			height: 2em;
 			margin-left: -2.6rem;
 			position: absolute;

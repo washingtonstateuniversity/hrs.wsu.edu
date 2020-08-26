@@ -3,7 +3,7 @@
 }
 
 .archive .page-header h1::before {
-	background-image: url(../images/icons/bookmarks.svg);
+	background-image: url(images/bookmarks.svg);
 }
 
 section.latest {
