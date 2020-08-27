@@ -1,3 +1,10 @@
+/* Have to use `!important` flag because WP editor uses inline styles. */
+hr.wp-block-separator.has-background,
+hr.wp-block-separator.has-text-color {
+	background-color: rgba(93, 105, 112, 0.5) !important;
+	color: rgba(93, 105, 112, 0.5) !important;
+}
+
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	margin: 0;
 	max-width: 5.5em;

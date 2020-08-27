@@ -1,3 +1,9 @@
+hr.wp-block-separator.has-background,
+hr.wp-block-separator.has-text-color {
+	background-color: rgba(93, 105, 112, 0.5);
+	color: rgba(93, 105, 112, 0.5);
+}
+
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	width: 5.5em;
 }
