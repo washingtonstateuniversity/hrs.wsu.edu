@@ -16,7 +16,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project Management
 -->
 
-## 2.0.0-beta.5 (:construction: 2020-08-26)
+## 2.0.0-beta.6 (:construction: 2020-08-27)
 
 ### Enhancements
 
@@ -75,6 +75,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Deprecations
 
+- Remove "post list" and "last updated" shortcodes in favor of using a plugin. (d47d4cd, 55d6240)
 - :boom: Remove all custom blocks to a separate plugin. (9a8e517)
 - :fire: Remove Javascript variant for legacy browsers. Use only one integrated index file and tune later as needed. (e8215de)
 - :heavy_minus_sign: Remove the `url-search-params` npm dependency. (2590294)
