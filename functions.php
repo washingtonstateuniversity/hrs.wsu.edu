@@ -57,6 +57,9 @@ function theme_supports() {
 	add_theme_support( 'disable-custom-colors' );
 	add_theme_support( 'disable-custom-font-sizes' );
 
+	// Disable the WP Core block patterns.
+	remove_theme_support( 'core-block-patterns' );
+
 	// Only allow certain users to adjust colors.
 	if ( ! current_user_can( 'publish_posts' ) ) {
 
