@@ -40,7 +40,6 @@ require dirname( __DIR__ ) . '/inc/wsu-spine.php';
 require dirname( __DIR__ ) . '/build/components/navigation.php';
 require dirname( __DIR__ ) . '/build/components/post-date.php';
 require dirname( __DIR__ ) . '/build/components/shortcode-document-gallery.php';
-require dirname( __DIR__ ) . '/build/components/shortcode-last-updated.php';
 require dirname( __DIR__ ) . '/build/components/terms-list.php';
 
 /**
