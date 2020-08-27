@@ -55,6 +55,8 @@ function theme_supports() {
 
 	// Disables some custom Gutenberg block options.
 	add_theme_support( 'disable-custom-colors' );
+	add_theme_support( 'disable-custom-gradients' );
+	add_theme_support( 'editor-gradient-presets', array() );
 	add_theme_support( 'disable-custom-font-sizes' );
 
 	// Only allow certain users to adjust colors.
