@@ -2,6 +2,12 @@
 	max-width: 1386px;
 }
 
+body.home #wsuwp-main ul.wp-block-social-links {
+	justify-content: flex-end;
+	margin-top: 1rem;
+	max-width: 1386px;
+}
+
 .home-main-subnav nav ul {
 	display: flex;
 	flex-wrap: wrap;
