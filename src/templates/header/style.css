@@ -4,6 +4,7 @@
 
 .site-header .column {
 	align-items: center;
+	background-color: #fdfdfd;
 	border-top: 8px solid var(--brand-crimson);
 	border-bottom: 8px solid var(--body-background-color);
 	display: flex;
