@@ -16,10 +16,11 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project Management
 -->
 
-## 2.0.0-beta.6 (:construction: 2020-08-27)
+## 2.0.0-rc.1 (:construction: 2020-09-02)
 
 ### Enhancements
 
+- 🎨 Fix #157 update front-page layout for block editor. (fe5da9c)
 - Refactor search menu with updated script and styles, including improved accessibility by modifying tabindex when links are hidden. (d31eb0a, ff53bf3, 1eb7803, a974b39)
 - Align button styles with in-progress WSU Design System. (d023614)
 - Add `header.php` to override parent theme version. (a0aecb9)
@@ -65,6 +66,8 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Bug Fixes
 
+- Mitigate some small-screen core columns block layout issues. (8d5d50d)
+- Revert site header background color to white. (0b1ce2b)
 - Fix #79 hide lazy load placeholder images on no-js. (faed62b)
 - 🌐 Add ARIA labeling to generic landmark regions such as `nav` and `article` elements. (cbb5c1c)
 - Fix NPM Package Lint config to allow GPL 3.0 license in npm license. (bd01a56)
