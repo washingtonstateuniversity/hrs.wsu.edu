@@ -12,7 +12,7 @@ The WSU Human Resource Services theme is not intended for general use and is not
 
 ### Installation
 
-1. [Download the latest version from GitHub](https://github.com/washingtonstateuniversity/hrs.wsu.edu/archive/stable.zip) and rename the .zip file to: `hrs.wsu.edu.zip`.
+1. [Download the latest release from GitHub](https://github.com/washingtonstateuniversity/hrs.wsu.edu/releases/latest) and rename the .zip file to: `hrs.wsu.edu.zip`.
 2. From here you can either extract the files into the theme directory via SFTP and skip to step 5, or navigate to the Themes screen in the admin area of your site to upload it through the theme uploader (steps 3-4).
 3. Select Themes > Add New and then select the "Upload Theme" button.
 4. Select "Choose File" and locate the downloaded .zip file for the theme (it **must** be a file in .zip format) on your computer. Select "Install Now."
