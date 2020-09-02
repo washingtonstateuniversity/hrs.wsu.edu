@@ -129,6 +129,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Documentation
 
+- Replace screenshot for new front page layout. (3dc5e9a)
 - Improve changelog organization with type categories. (82117b7)
 - Add the Prettier badge. (e00da29)
 - :memo: Update documentation. (1afaa73)
@@ -153,6 +154,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Project Management
 
+- Replace the theme screenshot. (3dc5e9a)
 - Update CHANGELOG and README headers and badges. (c2d1ced)
 - Switch to GPLv3+ license in place of GPLv2+. (245ae12, c2d1ced)
 - Rename primary branch from `master` to `stable`. See the Internet Engineering Task Force (IEFT), [Terminology, Power and Oppressive Language](https://tools.ietf.org/id/draft-knodel-terminology-00.html#rfc.section.1.1.1).
