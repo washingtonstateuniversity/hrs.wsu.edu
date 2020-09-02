@@ -27,7 +27,7 @@
 
 .wp-block-column {
 	flex-grow: 1;
-	flex-basis: 100%;
+	flex-basis: 100% !important; /* Need to override inline styles */
 	min-width: 0;
 	word-break: break-word;
 	overflow-wrap: break-word;
@@ -51,14 +51,10 @@
 	}
 }
 
-@media (min-width: 34em) {
-
-	.wp-block-columns {
-		flex-wrap: nowrap;
-	}
+@media (min-width: 576px) {
 
 	.wp-block-column {
-		flex-basis: 50%;
+		flex-basis: calc(50% - 1rem) !important; /* Need to override inline styles */
 		flex-grow: 0;
 	}
 
@@ -68,6 +64,14 @@
 
 	.wp-block-column:nth-child(even) {
 		margin-left: 1rem;
+	}
+
+}
+
+@media (min-width: 900px) {
+
+	.wp-block-columns {
+		flex-wrap: nowrap;
 	}
 
 	.wp-block-column:not(:first-child) {
@@ -87,31 +91,6 @@
  */
 
 @media only screen and (min-width: 640px) {
-
-	.hrs-two-col {
-		width: 47%;
-		clear: none !important;
-	}
-
-	.hrs-1-of-4 {
-		width: 23%;
-	}
-
-	.hrs-1-of-5 {
-		width: 20%;
-	}
-
-	.hrs-2-of-5 {
-		width: 40%;
-	}
-
-	.hrs-3-of-5 {
-		width: 60%;
-	}
-
-	.hrs-4-of-5 {
-		width: 80%;
-	}
 
 	/* stylelint-disable selector-class-pattern */
 	.gform_wrapper .gfield_error.hrs-two-col {
