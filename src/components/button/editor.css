@@ -1,21 +1,9 @@
-/* stylelint-disable selector-class-pattern */
-
-/*
- * Hide UI controls we don't use until there's a way to disable them.
- * This includes a terrible hack to target the frustratingly unnamed panel
- * for the border radius control. In ~5.5.0 it appears right after the
- * color panel. So... there you go.
- */
-.components-panel .block-editor-panel-color-gradient-settings,
-.components-panel .block-editor-panel-color-gradient-settings + .components-panel__body {
-	display: none;
-}
-
 .wp-block-button,
 .wp-block-file {
 	margin-bottom: 1em;
 }
 
+/* stylelint-disable selector-class-pattern */
 .wp-block-button__link,
 .wp-block-file__button {
 	background: var(--brand-crimson);
