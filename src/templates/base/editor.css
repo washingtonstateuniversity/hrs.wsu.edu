@@ -1,4 +1,4 @@
-body {
+body .editor-styles-wrapper {
 	background-color: var(--section-background-color);
 	color: var(--text-color);
 	font-size: 16px;
@@ -15,7 +15,7 @@ body {
 
 @media (min-width: 791px) {
 
-	body {
+	body .editor-styles-wrapper {
 		font-size: 18px;
 	}
 
