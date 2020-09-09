@@ -117,12 +117,6 @@ body.home #wsuwp-main ul.wp-block-social-links {
 		margin-left: 2rem;
 	}
 
-	.home #binder.spineless .search-menu {
-		left: inherit;
-		right: 0;
-		width: 60%;
-	}
-
 }
 
 .home #binder.spineless #wsuwp-main section:nth-of-type(-n+2) {
