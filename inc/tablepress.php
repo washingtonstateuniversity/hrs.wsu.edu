@@ -69,7 +69,7 @@ function tablepress_attributes_filter( $tag_attributes, $table_id, $cell_content
 	$table_props = get_transient( 'hrswp_tablepress_header_columns' );
 
 	if ( false === $table_props ) {
-		$table       = TablePress::$model_table->load( $table_id );
+		$table       = \TablePress::$model_table->load( $table_id );
 		$table_props = array(
 			'header_row' => $table['data'][0],
 		);
