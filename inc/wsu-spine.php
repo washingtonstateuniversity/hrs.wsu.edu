@@ -185,6 +185,16 @@ function remove_spine_filters() {
 }
 
 /**
+ * Removes select Spine meta boxes.
+ *
+ * @since 2.0.0
+ */
+function remove_spine_meta_boxes() {
+	remove_meta_box( 'spine-main-header', 'page', 'advanced' );
+}
+add_action( 'do_meta_boxes', __NAMESPACE__ . '\remove_spine_meta_boxes' );
+
+/**
  * Includes the HRSWP footer template in the Builder template.
  *
  * @since 2.0.0
