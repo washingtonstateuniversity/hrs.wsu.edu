@@ -20,6 +20,7 @@ class SearchMenu {
 			'a, input'
 		);
 		this._trigger = '';
+		this._triggerText = '';
 
 		this.expand = this.expand.bind( this );
 		this.collapse = this.collapse.bind( this );
@@ -33,6 +34,9 @@ class SearchMenu {
 	}
 
 	expand( trigger, target ) {
+		this._triggerText = this._trigger.innerHTML;
+		this._trigger.innerHTML = 'Close';
+
 		this._setAriaExpanded( trigger, 'true' );
 		this._setAriaHidden( target, 'false' );
 		this._setTabindex( 0 );
@@ -40,6 +44,7 @@ class SearchMenu {
 	}
 
 	collapse( trigger, target ) {
+		this._trigger.innerHTML = this._triggerText;
 		this._setAriaExpanded( trigger, 'false' );
 		this._setAriaHidden( target, 'true' );
 		this._setTabindex( -1 );
@@ -100,7 +105,6 @@ class SearchMenu {
 	}
 
 	activate() {
-		this._siteSearch.classList.add( 'active' );
 		this._setAriaHidden( this._searchMenu, 'true' );
 		this._setTabindex( -1 );
 	}
