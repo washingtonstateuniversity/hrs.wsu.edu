@@ -34,8 +34,10 @@ main input[type="submit"],
 	&:hover,
 	&:focus {
 		background: #fff;
-		border: 1px solid var(--nav-color-hover);
+		border-color: var(--nav-color-hover);
+		border-width: 1px;
 		color: var(--nav-color-hover);
+		outline: none;
 	}
 
 	&:active {
