@@ -1,7 +1,3 @@
-.no-js .site-search .search-heading {
-	display: none;
-}
-
 .site-search {
 
 	& .search-heading {
@@ -76,6 +72,29 @@
 
 	.site-search .search-menu {
 		width: 60%;
+	}
+
+}
+
+.no-js {
+
+	& .site-search .search-heading {
+		display: none;
+	}
+
+	& .site-header .column.site-banner {
+		align-items: flex-end;
+		flex-direction: column;
+	}
+
+	& .site-search .search-menu {
+		box-shadow: none;
+		opacity: 1;
+		padding-top: 1.5rem;
+		position: relative;
+		visibility: visible;
+		width: 100%;
+		z-index: 2;
 	}
 
 }
