@@ -103,7 +103,7 @@ add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\register_login_assets' );
  */
 function render_noscript_styles() {
 	?>
-	<noscript><style>#search-menu { float: right !important; padding-top: 1.5rem !important; position: relative !important; top: 0; transform: none !important; }</style></noscript>
+	<noscript><style>.site-search .search-heading {display:none;}.site-header .column.site-banner {align-items:flex-end;flex-direction:column;}.site-search .search-menu {box-shadow:none;opacity:1;padding-top:1.5rem;position:relative;visibility:visible;width:100%;z-index:2;}</style></noscript>
 	<?php
 }
 add_action( 'wp_head', __NAMESPACE__ . '\render_noscript_styles' );
@@ -141,11 +141,6 @@ function filter_script_loader_tag( $tag, $handle ) {
 	// Load main script as module to serve ES6+ version to supporting browsers.
 	if ( 'hrswp-main' === $handle ) {
 		$tag = str_replace( 'text/javascript', 'module', $tag );
-	}
-
-	// Module-supporting browsers know not to load `nomodule` scripts.
-	if ( 'hrswp-legacy' === $handle ) {
-		$tag = str_replace( ' src=', ' defer nomodule src=', $tag );
 	}
 
 	// Add `async` attribute to the WSU Spine script tag.
