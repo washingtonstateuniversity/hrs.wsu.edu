@@ -33,4 +33,18 @@ form.evaluators-selection-form table.gfield_list thead th {
 	background-color: transparent;
 	font-weight: 600;
 }
+
+form.contact-hrs select.large,
+form.contact-hrs input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+form.contact-hrs textarea.large {
+	border: 0.05em solid #d6d6d6;
+	border-radius: 5px;
+	color: #191919;
+	padding: 0.7em 1em;
+}
+
+form.contact-hrs select.large,
+form.contact-hrs input[type="text"] {
+	height: 2.9em;
+}
 /* stylelint-enable selector-class-pattern */
