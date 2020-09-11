@@ -16,7 +16,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project Management
 -->
 
-## 2.0.0-rc.1 (:construction: 2020-09-02)
+## 2.0.0-rc.2 (:construction: 2020-09-11)
 
 ### Enhancements
 
@@ -66,6 +66,9 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Bug Fixes
 
+- Fix #163 prevent search menu flash on page load. (aef8827, 245ddc7)
+- Fix #167 theme styles leaking into editor UI. (1b71860)
+- Fix #164 TablePress class misreferenced. (3e5bced)
 - Mitigate some small-screen core columns block layout issues. (8d5d50d)
 - Revert site header background color to white. (0b1ce2b)
 - Fix #79 hide lazy load placeholder images on no-js. (faed62b)
@@ -78,6 +81,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Deprecations
 
+- Remove unused meta boxes from page edit screen. (4a5b7eb)
 - Remove "post list" and "last updated" shortcodes in favor of using a plugin. (d47d4cd, 55d6240)
 - :boom: Remove all custom blocks to a separate plugin. (9a8e517)
 - :fire: Remove Javascript variant for legacy browsers. Use only one integrated index file and tune later as needed. (e8215de)
