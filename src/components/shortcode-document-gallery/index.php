@@ -171,7 +171,7 @@ function hrs_gallery( $attr ) {
 	$selector   = "hrs-gallery-{$instance}";
 	$size_class = sanitize_html_class( $atts['size'] );
 
-	$output = "<div id='{$selector}' class='gallery hrs-gallery gallery-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+	$output = "<div id='{$selector}' class='blocks-gallery-grid alignwide hrs-documents-gallery columns-{$columns} gallery-size-{$size_class}'>";
 
 	$i = 0;
 	foreach ( $attachments as $id => $attachment ) {
@@ -179,11 +179,12 @@ function hrs_gallery( $attr ) {
 			'aria-describedby' => "selector-$id",
 		) : '';
 		if ( ! empty( $atts['link'] ) && 'file' === $atts['link'] ) {
-			$image_output = wp_get_attachment_link( $id, $atts['size'], false, $atts['useicon'], false, $attr );
+			$image_output = wp_get_attachment_link( $id, $atts['size'], false, true, false, $attr );
 		} elseif ( ! empty( $atts['link'] ) && 'none' === $atts['link'] ) {
 			$image_output = wp_get_attachment_link( $id, $atts['size'], false, $attr );
 		} else {
-			$image_output = wp_get_attachment_link( $id, $atts['size'], true, $atts['useicon'], false, $attr );
+			$image_output = wp_get_attachment_link( $id, $atts['size'], true, true, false, $attr );
+
 		}
 		$image_meta = wp_get_attachment_metadata( $id );
 
@@ -191,7 +192,7 @@ function hrs_gallery( $attr ) {
 		if ( isset( $image_meta['height'], $image_meta['width'] ) ) {
 			$orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
 		}
-		$output .= "<{$itemtag} class='gallery-item'>";
+		$output .= "<{$itemtag} class='blocks-gallery-item'>";
 		$output .= "
 				<{$icontag} class='gallery-icon {$orientation}'>
 					{$image_output}
