@@ -1,5 +1,6 @@
 .hrs-documents-gallery.blocks-gallery-grid .blocks-gallery-item {
 	flex-grow: 0;
+	justify-content: flex-start;
 }
 
 .hrs-documents-gallery.blocks-gallery-grid .blocks-gallery-item figcaption {
