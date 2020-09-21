@@ -1,0 +1,16 @@
+.hrs-documents-gallery.blocks-gallery-grid .blocks-gallery-item {
+	flex-grow: 0;
+	justify-content: flex-start;
+}
+
+.hrs-documents-gallery.blocks-gallery-grid .blocks-gallery-item figcaption {
+	position: relative;
+}
+
+.hrs-documents-gallery.blocks-gallery-grid .blocks-gallery-item img {
+	width: 100%;
+}
+
+.hrs-documents-gallery figcaption::before {
+	content: none;
+}
