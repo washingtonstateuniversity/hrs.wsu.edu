@@ -16,7 +16,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project Management
 -->
 
-## 2.0.0-rc.2 (:construction: 2020-09-11)
+## 2.0.0 (2020-09-21)
 
 ### Enhancements
 
@@ -142,9 +142,9 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 - ⬆️ Update Composer dependencies and fix `composer.json` spacing. (7d0a988)
 - ⬆️ Update npm package lint dependency and config. (3869ce8)
-- ⬆️ Update JavaScript build tools; ESLint, Prettier, WordPress ESLint Plugin. (2444736)
-- ⬆️ Update Webpack and related dependencies. (9779eb9)
-- ⬆️ Update CSS build tools, Stylelint, Stylelint config, and PostCSS CLI. (1b3f923)
+- ⬆️ Update JavaScript build tools; ESLint, Prettier, WordPress ESLint Plugin. (2444736, a240db7)
+- ⬆️ Update Webpack and related dependencies. (9779eb9, a240db7)
+- ⬆️ Update CSS build tools, Stylelint, Stylelint config, and PostCSS CLI. (1b3f923, a240db7)
 - ⬆️ Update Copy Webpack Plugin to v6+ and fix copy patterns syntax for v6.0 changes. (3cc637c)
 - Switch from Sass to CSS using the `postcss-present-env` plugin to allow things like variables and nesting. (209dc79)
 - Add the `postcss-import` and `postcss-preset-env` npm PostCSS plugins.
