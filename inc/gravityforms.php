@@ -40,8 +40,8 @@ function gravityforms_setup() {
 
 	foreach ( $form_ids as $form_id ) {
 		if ( 0 !== $form_id ) {
-			add_filter( 'gform_column_input_content_' . $form_id . '_8_5', 'hrs_filter_evals_reason_column', 10, 6 );
-			add_filter( 'gform_column_input_' . $form_id . '_8_6', 'hrs_filter_evals_rel_column', 10, 5 );
+			add_filter( 'gform_column_input_content_' . $form_id . '_8_5', __NAMESPACE__ . '\hrs_filter_evals_reason_column', 10, 6 );
+			add_filter( 'gform_column_input_' . $form_id . '_8_6', __NAMESPACE__ . '\hrs_filter_evals_rel_column', 10, 5 );
 		}
 	}
 }
@@ -64,7 +64,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\gravityforms_setup' );
  */
 function hrs_filter_evals_reason_column( $input, $input_info, $field, $text, $value ) {
 	$input_field_name = 'input_' . $field->id . '[]';
-	$tabindex         = GFCommon::get_tabindex();
+	$tabindex         = \GFCommon::get_tabindex();
 
 	$input = sprintf(
 		'<textarea name="%1$s" %2$s class="textarea medium" cols="40" rows="10">%3$s</textarea>',
@@ -93,7 +93,7 @@ function hrs_filter_evals_reason_column( $input, $input_info, $field, $text, $va
  * @return array The filtered input info array.
  */
 function hrs_filter_evals_rel_column( $input_info, $field, $column, $value, $form_id ) {
-	$eq_threesixty_form_id = absint( RGFormsModel::get_form_id( 'EQ360 Evaluators Selection' ) );
+	$eq_threesixty_form_id = absint( \RGFormsModel::get_form_id( 'EQ360 Evaluators Selection' ) );
 
 	// If this is the 'EQ360 Evaluators Selection' form.
 	if ( $eq_threesixty_form_id === $form_id ) {
