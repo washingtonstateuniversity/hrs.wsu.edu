@@ -16,6 +16,18 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project Management
 -->
 
+## 2.0.1-rc.1 (:construction: 2020-11-20)
+
+### Bug Fixes
+
+- Fix #178 missing namespaces break Gravity Forms filters. (980c2df)
+
+## Build Tooling
+
+- ⬆️ Build tools/composer updates. (2d87314)
+- ⬆️ Upgrade css and js linting tools. (f35d337)
+- ⬆️ Upgrade Webpack build plugins, wait on Webpack 5 upgrade. (2228178)
+
 ## 2.0.0 (2020-09-21)
 
 ### Enhancements
