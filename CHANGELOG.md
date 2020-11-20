@@ -16,7 +16,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project Management
 -->
 
-## 2.0.1-rc.1 (:construction: 2020-11-20)
+## 2.0.1 (2020-11-20)
 
 ### Bug Fixes
 
