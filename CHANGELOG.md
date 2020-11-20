@@ -22,7 +22,7 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 - Fix #178 missing namespaces break Gravity Forms filters. (980c2df)
 
-## Build Tooling
+### Build Tooling
 
 - ⬆️ Build tools/composer updates. (2d87314)
 - ⬆️ Upgrade css and js linting tools. (f35d337)
