@@ -62,3 +62,13 @@ function excerpt_more_link_content( $more_string ) {
 	return $more_string;
 }
 add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more_link_content' );
+
+/**
+ * Removes the "Protected" prefix from protected page titles.
+ *
+ * @since 2.1.0
+ */
+function filter_protected_title_format() {
+	return '%s';
+}
+add_filter( 'protected_title_format', __NAMESPACE__ . '\filter_protected_title_format' );
