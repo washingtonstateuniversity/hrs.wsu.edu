@@ -40,11 +40,7 @@ while ( have_posts() ) :
 
 	?>
 	<section class="row single gutter pad-top article-container">
-
 		<div class="column one">
-
-			<?php $post_share_placement = spine_get_option( 'post_social_placement' ); ?>
-
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'article-content' ); ?>>
 
 				<header class="article-header">
@@ -134,10 +130,7 @@ while ( have_posts() ) :
 				</footer><!-- .entry-meta -->
 
 			</article>
-
-
 		</div><!--/column-->
-
 	</section>
 	<?php
 endwhile;
