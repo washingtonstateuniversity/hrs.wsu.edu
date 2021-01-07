@@ -94,8 +94,11 @@ class SearchMenu {
 
 	_addEventListeners() {
 		this._trigger.addEventListener( 'click', this.toggle );
-		document.addEventListener( 'click', this.handleSelectOutside );
-		document.addEventListener( 'keyup', ( event ) => {
+		this._trigger.ownerDocument.addEventListener(
+			'click',
+			this.handleSelectOutside
+		);
+		this._trigger.ownerDocument.addEventListener( 'keyup', ( event ) => {
 			if ( this._isExpanded( this._trigger ) ) {
 				if ( 'Escape' === event.key || 'Esc' === event.key ) {
 					this.collapse( this._trigger, this._searchMenu );

@@ -33,24 +33,21 @@ const config = {
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				use: [
-					require.resolve( 'thread-loader' ),
-					{
-						loader: require.resolve( 'babel-loader' ),
-						options: {
-							// Babel uses a directory within local node_modules
-							// by default. Use the environment variable option
-							// to enable more persistent caching.
-							cacheDirectory:
-								process.env.BABEL_CACHE_DIRECTORY || true,
-							presets: [
-								require.resolve(
-									'@wordpress/babel-preset-default'
-								),
-							],
-						},
+				use: {
+					loader: require.resolve( 'babel-loader' ),
+					options: {
+						// Babel uses a directory within local node_modules
+						// by default. Use the environment variable option
+						// to enable more persistent caching.
+						cacheDirectory:
+							process.env.BABEL_CACHE_DIRECTORY || true,
+						presets: [
+							require.resolve(
+								'@wordpress/babel-preset-default'
+							),
+						],
 					},
-				],
+				},
 			},
 		],
 	},
@@ -62,13 +59,12 @@ const config = {
 			patterns: [
 				{
 					from: './src/*/**/index.php',
-					transformPath( targetPath ) {
-						const dir = basename( dirname( targetPath ) );
+					to( { absoluteFilename } ) {
+						const dir = basename( dirname( absoluteFilename ) );
 						const parent = basename(
-							dirname( dirname( targetPath ) )
+							dirname( dirname( absoluteFilename ) )
 						);
-
-						return `${ parent }/${ dir }.php`;
+						return `${ parent }/${ dir }.[ext]`;
 					},
 				},
 				{
