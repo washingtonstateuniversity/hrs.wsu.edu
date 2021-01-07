@@ -7,14 +7,39 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 
 ### Features
 ### Enhancements
-### Bug Fixes
+### Bug fixes
 ### Experiments
 ### Deprecations
 ### Code quality
 ### Documentation
-### Build Tooling
-### Project Management
+### Build tools
+### Project management
 -->
+
+## 2.1.0-rc.1 (:construction: 2021-01-07)
+
+### Enhancements
+
+- Fix #187 Remove "protected" prefix from page titles. (889b314)
+- Remove unused TablePress table styles. (fd6fb8a)
+
+### Code quality
+
+- Use `node.ownerDocument` instead of global element for event listeners. (6e38514)
+- Remove unused variable and extra space in `single` template. (6d8d49d)
+
+### Build tools
+
+- ➖ Uninstall Thread Loader and remove it from Webpack config until it works with Webpack 5. (574571d)
+- Update Prettier to the latest WordPress packaged version. (7490afe)
+- ➕ Update to latest Babel packages, which require adding Babel Core and Runtime dependencies. (8f8159b)
+- ➕ Upgrade to PostCSS CLI 8, which require adding PostCSS core as a peer dependency. (e5b30fe)
+- ⬆️ Update to latest ESLint minor version. (6fb1b16)
+- Update Composer PHP Codesniffer Installer and phpcs variable analysis. (25203b4)
+- Change Copy Webpack Plugin `to` function for new syntax. (d34af03)
+- ⬆️ Upgrade to Webpack 5 along with associated Webpack plugins. (d34af03)
+- ⬆️ (@dependabot) Bump ini from 1.3.5 to 1.3.7. (9298d2c)
+- ⬆️ (@dependabot) Bump dot-prop from 4.2.0 to 4.2.1. (db48055)
 
 ## 2.0.1 (2020-11-20)
 
