@@ -62,13 +62,12 @@ const config = {
 			patterns: [
 				{
 					from: './src/*/**/index.php',
-					transformPath( targetPath ) {
-						const dir = basename( dirname( targetPath ) );
+					to( { absoluteFilename } ) {
+						const dir = basename( dirname( absoluteFilename ) );
 						const parent = basename(
-							dirname( dirname( targetPath ) )
+							dirname( dirname( absoluteFilename ) )
 						);
-
-						return `${ parent }/${ dir }.php`;
+						return `${ parent }/${ dir }.[ext]`;
 					},
 				},
 				{
