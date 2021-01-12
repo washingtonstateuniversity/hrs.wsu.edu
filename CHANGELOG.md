@@ -16,6 +16,12 @@ This document details all notable changes to the WSU HRS Child Theme. Uses [Sema
 ### Project management
 -->
 
+## 2.1.1-rc.1 (:construction: 2021-01-12)
+
+### Bug fixes
+
+- 🐛 Fix #200 remove custom display options from reusable blocks. (19a3242)
+
 ## 2.1.0 (2021-01-11)
 
 ### Enhancements
