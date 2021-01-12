@@ -24,6 +24,10 @@ const DisplayOptionsPanelContent = ( props ) => {
 		updateMeta,
 	} = props;
 
+	if ( 'wp_block' === postType ) {
+		return null;
+	}
+
 	return (
 		<PluginDocumentSettingPanel
 			name={ PANEL_NAME }
@@ -76,9 +80,14 @@ const DisplayOptionsPanel = compose(
 	} ),
 	withSelect( ( select, props ) => {
 		const { displayTitleMetaName, displayFeatureMetaName } = props;
+		const postType = select( 'core/editor' ).getCurrentPostType();
+
+		if ( 'wp_block' === postType ) {
+			return { postType };
+		}
 
 		return {
-			postType: select( 'core/editor' ).getCurrentPostType(),
+			postType,
 			displayTitle: select( 'core/editor' ).getEditedPostAttribute(
 				'meta'
 			)[ displayTitleMetaName ],
