@@ -64,12 +64,12 @@ const config = {
 						const parent = basename(
 							dirname( dirname( absoluteFilename ) )
 						);
-						return `${ parent }/${ dir }.[ext]`;
+						return `${ parent }/${ dir }[ext]`;
 					},
 				},
 				{
 					from: './src/images/**/*',
-					to: 'images/[name].[ext]',
+					to: 'images/[name][ext]',
 				},
 			],
 		} ),
