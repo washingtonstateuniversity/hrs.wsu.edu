@@ -1,20 +1,26 @@
 # Changelog: WSU HRS Child Theme
 
-This document details all notable changes to the WSU HRS Child Theme. Uses [Semantic Versioning](http://semver.org/) (as of v0.3.1).
+This document details all notable changes to the WSU HRS Child Theme. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!--
 ## Major.MinorAddorDeprec.Bugfix (YYYY-MM-DD)
 
-### Features
-### Enhancements
-### Bug fixes
-### Experiments
-### Deprecations
-### Code quality
-### Documentation
-### Build tools
-### Project management
+### Added (for new features)
+### Changed (for changes in existing functionality)
+### Deprecated (for soon-to-be removed features)
+### Removed (for now removed features)
+### Fixed (for any bug fixes)
+### Security (in case of vulnerabilities)
 -->
+
+## 2.1.2-rc.1 (:construction: 2021-05-12)
+
+### Changed
+
+- Revert Changelog TOC to prefer "Keep a Changelog" format.
+- Add another form to the Gravity Forms filter hook to modify fields.
+- Update Composer and npm built and lint dependencies.
+- Update Copy Webpack Plugin to version 8 and fix the `to` syntax in Webpack config.
 
 ## 2.1.1 (2021-01-13)
 
