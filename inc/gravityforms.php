@@ -31,6 +31,7 @@ function gravityforms_setup() {
 	 */
 	$form_names = array(
 		'360 Evaluators Selection',
+		'360 Evaluators Selection Form',
 		'WSUTC 360 Evaluators Selection',
 		'EQ360 Evaluators Selection',
 		'Progress Review Evaluators Selection',
