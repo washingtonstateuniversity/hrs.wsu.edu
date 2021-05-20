@@ -1,8 +1,15 @@
+.search-form {
+	display: flex;
+}
+
 .search-form,
 .wp-block-search {
-	display: flex;
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
+
+	& .wp-block-search__inside-wrapper {
+		display: flex;
+	}
 
 	& input {
 		border: 1px solid #ccc;
@@ -28,7 +35,8 @@
 		outline-offset: -2px;
 	}
 
-	& [type="submit"] {
+	& .search-submit,
+	& .wp-block-search__button {
 		border: none;
 		border-top-right-radius: 5px;
 		border-top-left-radius: 0;
