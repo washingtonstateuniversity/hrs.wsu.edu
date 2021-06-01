@@ -7,6 +7,7 @@
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
 
+	/* stylelint-disable selector-class-pattern */
 	& .wp-block-search__inside-wrapper {
 		display: flex;
 	}
@@ -45,6 +46,7 @@
 		flex-shrink: 1;
 		width: auto;
 	}
+	/* stylelint-enable selector-class-pattern */
 }
 
 .wp-block-search label {
