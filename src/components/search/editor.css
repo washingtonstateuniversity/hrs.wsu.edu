@@ -1,0 +1,82 @@
+.wp-block-search {
+
+	/* stylelint-disable selector-class-pattern */
+	& .wp-block-search__inside-wrapper {
+		border: none;
+		display: flex;
+	}
+
+	& .wp-block-search__inside-wrapper .wp-block-search__input,
+	& .wp-block-search__inside-wrapper .wp-block-search__button {
+		font-size: var(--font-size-2);
+		line-height: 1.5;
+		margin: 0;
+		padding: 20px;
+		width: 100%;
+	}
+
+	& .wp-block-search__inside-wrapper .wp-block-search__input {
+		background: #f8f8f8;
+		border: 1px solid #ccc;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.03), 0 0 0 0 rgba(0, 0, 0, 0.03), 0 0 0 0 rgba(0, 0, 0, 0.02);
+		color: var(--text-color);
+		transition: box-shadow 0.3s cubic-bezier(0, 0, 0.03, 1);
+
+		&:focus {
+			border-color: #999;
+			box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.03), 0 3px 14px 2px rgba(0, 0, 0, 0.03), 0 4px 15px 0 rgba(0, 0, 0, 0.02);
+			outline: none;
+		}
+	}
+
+	/* Highly selected to override WP core styles. */
+	& .wp-block-search__inside-wrapper .wp-block-search__button.wp-block-search__button {
+		word-wrap: break-word;
+		background: var(--brand-crimson);
+		border: none;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.1);
+		color: #fff;
+		cursor: pointer;
+		display: inline-block;
+		flex-shrink: 1;
+		font-family: inherit;
+		font-size: var(--font-size-base);
+		letter-spacing: 0.85px;
+		line-height: 2.5;
+		outline-offset: -2px;
+		padding: 0.75rem 1.5rem;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: all 0.3s ease;
+		width: auto;
+
+		&.has-icon {
+			line-height: 0;
+		}
+	}
+
+	& .wp-block-search__button svg {
+		height: 36px;
+		width: 36px;
+	}
+
+	/* We don't use the button inside/outside style. */
+	&.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+		border: 0;
+		padding: 0;
+	}
+
+	&.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+		border: 1px solid #ccc;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		padding: 20px;
+	}
+	/* stylelint-enable selector-class-pattern */
+
+}
