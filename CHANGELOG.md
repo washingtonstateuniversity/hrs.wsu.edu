@@ -13,6 +13,17 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
+## 2.2.0-alpha.1 (:construction: Future)
+
+### Changed
+
+- Move search header styles from the `button` to the `search-menu` component. (3b0b729)
+- Update the search block styles to support new layout options introduced in WP 5.7. This also fixes #215 and #225. (7d59ba9)
+
+### Deprecated
+
+- Deprecate WP core button and buttons block styles in favor of the HRSWP Blocks plugin variant. (3b0b729)
+
 ## 2.1.2 (2021-05-14)
 
 ### Changed
