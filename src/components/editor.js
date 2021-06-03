@@ -6,11 +6,10 @@ const { registerBlockStyle, unregisterBlockStyle } = wp.blocks;
 /**
  * Internal dependencies
  */
-import * as button from './button/editor';
 import * as list from './list/editor';
 
 export default function initEditorComponents() {
-	[ button, list ].forEach( ( component ) => {
+	[ list ].forEach( ( component ) => {
 		if ( ! component ) {
 			return;
 		}
