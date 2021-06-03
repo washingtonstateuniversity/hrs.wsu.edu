@@ -1,15 +1,39 @@
 /**
  * WordPress dependencies
  */
-const { registerBlockStyle, unregisterBlockStyle } = wp.blocks;
+const {
+	registerBlockStyle,
+	unregisterBlockStyle,
+	unregisterBlockType,
+} = wp.blocks;
 
 /**
  * Internal dependencies
  */
 import * as list from './list/editor';
 
-export default function initEditorComponents() {
-	[ list ].forEach( ( component ) => {
+/**
+ * Blocks to modify styles for.
+ */
+const blockStylesList = [ list ];
+
+/**
+ * Blocks to unregister.
+ */
+const unregisterList = [
+	'core/latest-comments',
+	'core/latest-posts',
+	'core/more',
+	'core/nextpage',
+];
+
+/**
+ * Adds or removes styles from the given blocks.
+ *
+ * @return {void}
+ */
+function modifyBlockStyles() {
+	blockStylesList.forEach( ( component ) => {
 		if ( ! component ) {
 			return;
 		}
@@ -17,14 +41,27 @@ export default function initEditorComponents() {
 		const { name } = metadata;
 		const { registerStyles, unregisterStyles } = settings;
 
-		wp.domReady( () => {
-			if ( registerStyles ) {
-				registerBlockStyle( name, registerStyles );
-			}
-
-			if ( unregisterStyles ) {
-				unregisterBlockStyle( name, unregisterStyles );
-			}
-		} );
+		if ( registerStyles ) {
+			registerBlockStyle( name, registerStyles );
+		}
+		if ( unregisterStyles ) {
+			unregisterBlockStyle( name, unregisterStyles );
+		}
 	} );
 }
+
+/**
+ * Unregisters the given blocks.
+ *
+ * @return {void}
+ */
+function unregisterBlocks() {
+	unregisterList.forEach( ( name ) => {
+		if ( ! name ) {
+			return;
+		}
+		unregisterBlockType( name );
+	} );
+}
+
+export { modifyBlockStyles, unregisterBlocks };

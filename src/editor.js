@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import initEditorComponents from './components/editor';
+import { modifyBlockStyles, unregisterBlocks } from './components/editor';
 import registerDisplayOptions from './lib/block-filters';
 
 /**
@@ -9,9 +9,8 @@ import registerDisplayOptions from './lib/block-filters';
  *
  * @since 2.0.0
  */
-function editor() {
-	initEditorComponents();
-	registerDisplayOptions();
-}
-
-editor();
+registerDisplayOptions();
+wp.domReady( () => {
+	modifyBlockStyles();
+	unregisterBlocks();
+} );
