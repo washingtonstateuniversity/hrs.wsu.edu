@@ -13,10 +13,15 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 2.2.0-alpha.1 (:construction: Future)
+## 2.2.0-alpha.2 (:construction: Future)
+
+### Added
+
+- Method to unregister specific blocks to close #217. (2d904ac)
 
 ### Changed
 
+- Streamline block modifications registry functions. (2d904ac)
 - Move search header styles from the `button` to the `search-menu` component. (3b0b729)
 - Update the search block styles to support new layout options introduced in WP 5.7. This also fixes #215 and #225. (7d59ba9)
 
