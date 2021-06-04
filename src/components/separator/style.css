@@ -1,4 +1,4 @@
-hr.wp-block-separator.has-background,
+hr.wp-block-separator,
 hr.wp-block-separator.has-text-color {
 	background-color: rgba(93, 105, 112, 0.5);
 	color: rgba(93, 105, 112, 0.5);
@@ -8,8 +8,9 @@ hr.wp-block-separator.has-text-color {
 	width: 5.5em;
 }
 
-.wp-block-separator.is-style-dots {
-	background: none;
+.wp-block-separator.is-style-dots,
+.wp-block-separator.is-style-dots.has-text-color {
+	background-color: transparent;
 	border: none;
 	text-align: center;
 	max-width: none;
@@ -19,7 +20,7 @@ hr.wp-block-separator.has-text-color {
 
 .wp-block-separator.is-style-dots::before {
 	content: "\00b7 \00b7 \00b7";
-	color: var(--neutral-dark;);
+	color: var(--neutral-dark);
 	font-family: serif;
 	font-size: 24px;
 	letter-spacing: 2em;
