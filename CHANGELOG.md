@@ -13,7 +13,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 2.2.0-alpha.3 (:construction: Future)
+## 2.2.0-alpha.4 (:construction: Future)
 
 ### Added
 
@@ -21,6 +21,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Changed
 
+- Fix #210 update social link styles to support new WP 5.7 features, including icon size. (50d7b53)
 - Disable separator block color output, a stopgap solution for #214. (d82aef3)
 - Streamline block modifications registry functions. (2d904ac)
 - Move search header styles from the `button` to the `search-menu` component. (3b0b729)
@@ -32,7 +33,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Fixed
 
-- Correct alignment of the separator block in the editor. (d82aef3)
+- Fix #212 correct alignment of the separator block in the editor. (d82aef3)
 
 ## 2.1.2 (2021-05-14)
 
