@@ -13,7 +13,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 2.2.0-alpha.4 (:construction: Future)
+## 2.2.0-alpha.5 (:construction: Future)
 
 ### Added
 
@@ -33,6 +33,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Fixed
 
+- Fix #209 match editor preformatted block font to frontend. (6a328c9)
 - Fix #212 correct alignment of the separator block in the editor. (d82aef3)
 
 ## 2.1.2 (2021-05-14)
