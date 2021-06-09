@@ -1,70 +1,300 @@
+/* stylelint-disable selector-class-pattern */
 .wp-block-cover-image,
 .wp-block-cover {
-	align-items: center;
-	background-color: #000;
-	background-position: center center;
+	position: relative;
 	background-size: cover;
+	background-position: center center;
+	min-height: 430px;
+	width: 100%;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 1.5em;
-	min-height: 430px;
-	overflow: hidden;
-	position: relative;
-}
+	align-items: center;
+	padding: 1em;
+	box-sizing: border-box;
 
-/* stylelint-disable selector-class-pattern */
-.wp-block-cover__inner-container {
-	color: var(--section-background-color);
-	width: calc(100% - 70px);
-	z-index: 1;
-
-	& > :last-child {
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
-}
-
-.wp-block-cover-image.has-light-background-color,
-.wp-block-cover-image.has-accent-green-background-color,
-.wp-block-cover-image.has-accent-yellow-background-color,
-.wp-block-cover-image.has-accent-blue-background-color,
-.wp-block-cover-image.has-accent-orange-background-color,
-.wp-block-cover.has-light-background-color,
-.wp-block-cover.has-accent-green-background-color,
-.wp-block-cover.has-accent-yellow-background-color,
-.wp-block-cover.has-accent-blue-background-color,
-.wp-block-cover.has-accent-orange-background-color {
-
-	& .wp-block-cover__inner-container,
-	& .wp-block-cover-text {
-		color: var(--text-color);
-	}
-}
-
-.wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link),
-.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link) {
-	color: inherit;
-	padding: 0 0.25em;
-
-	&:hover,
-	&:focus {
-		color: var(--section-background-color);
-		background-color: var(--nav-color-hover);
+	&.has-parallax {
+		background-attachment: fixed;
 	}
 
-	&:active {
-		background-color: var(--nav-color);
+	&.is-repeated {
+		background-repeat: repeat;
+		background-size: auto;
 	}
-}
-/* stylelint-enable selector-class-pattern */
 
-.wp-block-cover-image.has-parallax,
-.wp-block-cover.has-parallax {
-	background-attachment: fixed;
+	/**
+	 * Set a default background color for has-background-dim _unless_ it
+	 * includes another background-color class
+	 * (e.g. has-green-background-color). The presence of another background-
+	 * color class implies that another style will provide the background color
+	 * for the overlay.
+	 *
+	 * See:
+	 *   - Issue with background color specificity: https://github.com/WordPress/gutenberg/issues/26545
+	 *   - Issue with alternative fix: https://github.com/WordPress/gutenberg/issues/26545
+	 */
+	&.has-background-dim:not([class*="-background-color"]) {
+		background-color: #000;
+	}
+
+	&.has-background-dim::before {
+		content: "";
+		background-color: inherit;
+	}
+
+	&.has-background-dim:not(.has-background-gradient)::before,
+	& .wp-block-cover__gradient-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+		opacity: 0.5;
+	}
+
+
+	&.has-background-dim.has-background-dim-10 {
+
+		&:not(.has-background-gradient)::before,
+		& .wp-block-cover__gradient-background {
+			opacity: 0.1;
+		}
+
+	}
+
+	&.has-background-dim.has-background-dim-20 {
+
+		&:not(.has-background-gradient)::before,
+		& .wp-block-cover__gradient-background {
+			opacity: 0.2;
+		}
+
+	}
+
+	&.has-background-dim.has-background-dim-30 {
+
+		&:not(.has-background-gradient)::before,
+		& .wp-block-cover__gradient-background {
+			opacity: 0.3;
+		}
+
+	}
+
+	&.has-background-dim.has-background-dim-40 {
+
+		&:not(.has-background-gradient)::before,
+		& .wp-block-cover__gradient-background {
+			opacity: 0.4;
+		}
+
+	}
+
+	&.has-background-dim.has-background-dim-50 {
+
+		&:not(.has-background-gradient)::before,
+		& .wp-block-cover__gradient-background {
+			opacity: 0.5;
+		}
+
+	}
+
+	&.has-background-dim.has-background-dim-60 {
+
+		&:not(.has-background-gradient)::before,
+		& .wp-block-cover__gradient-background {
+			opacity: 0.6;
+		}
+
+	}
+
+	&.has-background-dim.has-background-dim-70 {
+
+		&:not(.has-background-gradient)::before,
+		& .wp-block-cover__gradient-background {
+			opacity: 0.7;
+		}
+
+	}
+
+	&.has-background-dim.has-background-dim-80 {
+
+		&:not(.has-background-gradient)::before,
+		& .wp-block-cover__gradient-background {
+			opacity: 0.8;
+		}
+
+	}
+
+	&.has-background-dim.has-background-dim-90 {
+
+		&:not(.has-background-gradient)::before,
+		& .wp-block-cover__gradient-background {
+			opacity: 0.9;
+		}
+
+	}
+
+	&.has-background-dim.has-background-dim-100 {
+
+		&:not(.has-background-gradient)::before,
+		& .wp-block-cover__gradient-background {
+			opacity: 1;
+		}
+
+	}
+
+	/* Aligned cover blocks should not use our global alignment rules */
+	&.aligncenter,
+	&.alignleft,
+	&.alignright {
+		display: flex;
+	}
+
+	&.alignfull {
+		width: inherit;
+	}
+
+	& .wp-block-cover__inner-container {
+		width: 100%;
+		z-index: 1;
+		color: #fff;
+	}
+
+	& p,
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
+
+		&:not(.has-text-color) {
+			color: inherit;
+		}
+
+		& > a {
+			color: inherit;
+			border-bottom-color: currentColor;
+		}
+
+		& > a:hover,
+		& > a:focus {
+			color: var(--nav-color-hover);
+			background-color: rgba(255, 255, 255, 0.6);
+		}
+
+	}
+
+	/* Give links background when background color would obscure them. */
+	&.has-light-background-color,
+	&.has-accent-green-background-color,
+	&.has-accent-yellow-background-color,
+	&.has-accent-blue-background-color,
+	&.has-accent-orange-background-color {
+
+		& .wp-block-cover__inner-container {
+			color: #000;
+		}
+	}
+
+	/* Position: Top */
+	&.is-position-top-left {
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+
+	&.is-position-top-center {
+		align-items: flex-start;
+		justify-content: center;
+	}
+
+	&.is-position-top-right {
+		align-items: flex-start;
+		justify-content: flex-end;
+	}
+
+	/* Position: Center */
+	&.is-position-center-left {
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	&.is-position-center-center {
+		align-items: center;
+		justify-content: center;
+	}
+
+	&.is-position-center-right {
+		align-items: center;
+		justify-content: flex-end;
+	}
+
+	/* Position: Bottom */
+	&.is-position-bottom-left {
+		align-items: flex-end;
+		justify-content: flex-start;
+	}
+
+	&.is-position-bottom-center {
+		align-items: flex-end;
+		justify-content: center;
+	}
+
+	&.is-position-bottom-right {
+		align-items: flex-end;
+		justify-content: flex-end;
+	}
+
+	&.has-custom-content-position.has-custom-content-position {
+
+		& .wp-block-cover__inner-container {
+			margin: 0;
+			width: auto;
+		}
+
+	}
+
+	/* Extra specificity for in edit mode where other styles would override it. */
+	& img.wp-block-cover__image-background,
+	& video.wp-block-cover__video-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		max-width: none;
+		max-height: none;
+		object-fit: cover;
+		outline: none;
+		border: none;
+		box-shadow: none;
+	}
+
+}
+
+/* Extra specificity where the WSU Spine would override it. */
+.column .wp-block-cover-image,
+.column .wp-block-cover {
+
+	& img.wp-block-cover__image-background,
+	& video.wp-block-cover__video-background {
+		height: 100%;
+		max-width: none;
+	}
+
 }
 
 @supports (-webkit-overflow-scrolling: touch) {
 
+	/*
+	 * Mobile Safari does not support fixed background attachment properly.
+	 * See also https://stackoverflow.com/questions/24154666/background-size-cover-not-working-on-ios
+	 * Chrome on Android does not appear to support the attachment at all: https://issuetracker.google.com/issues/36908439
+	 */
 	.wp-block-cover-image.has-parallax,
 	.wp-block-cover.has-parallax {
 		background-attachment: scroll;
@@ -81,95 +311,68 @@
 
 }
 
-.wp-block-cover-image.has-background-dim::before,
-.wp-block-cover.has-background-dim::before {
-	background-color: inherit;
-	bottom: 0;
-	content: "";
-	left: 0;
-	opacity: 0.5;
-	position: absolute;
-	right: 0;
-	top: 0;
-	z-index: 1;
+.wp-block-cover__video-background,
+.wp-block-cover__image-background {
+	z-index: 0;
 }
 
-.wp-block-cover-image.has-background-dim.has-background-dim-10::before,
-.wp-block-cover.has-background-dim.has-background-dim-10::before {
-	opacity: 0.1;
-}
+/*
+ * Styles below only exist to support older versions of the block.
+ * Versions that not had inner blocks and used an h2 heading had a section (and
+ * not a div) with a class wp-block-cover-image (and not a wp-block-cover). We
+ * are using the previous referred differences to target old versions.
+ */
 
-.wp-block-cover-image.has-background-dim.has-background-dim-20::before,
-.wp-block-cover.has-background-dim.has-background-dim-20::before {
-	opacity: 0.2;
-}
+section.wp-block-cover-image h2,
+.wp-block-cover-image-text,
+.wp-block-cover-text {
+	color: #fff;
 
-.wp-block-cover-image.has-background-dim.has-background-dim-30::before,
-.wp-block-cover.has-background-dim.has-background-dim-30::before {
-	opacity: 0.3;
-}
-
-.wp-block-cover-image.has-background-dim.has-background-dim-40::before,
-.wp-block-cover.has-background-dim.has-background-dim-40::before {
-	opacity: 0.4;
-}
-
-.wp-block-cover-image.has-background-dim.has-background-dim-50::before,
-.wp-block-cover.has-background-dim.has-background-dim-50::before {
-	opacity: 0.5;
-}
-
-.wp-block-cover-image.has-background-dim.has-background-dim-60::before,
-.wp-block-cover.has-background-dim.has-background-dim-60::before {
-	opacity: 0.6;
-}
-
-.wp-block-cover-image.has-background-dim.has-background-dim-70::before,
-.wp-block-cover.has-background-dim.has-background-dim-70::before {
-	opacity: 0.7;
-}
-
-.wp-block-cover-image.has-background-dim.has-background-dim-80::before,
-.wp-block-cover.has-background-dim.has-background-dim-80::before {
-	opacity: 0.8;
-}
-
-.wp-block-cover-image.has-background-dim.has-background-dim-90::before,
-.wp-block-cover.has-background-dim.has-background-dim-90::before {
-	opacity: 0.9;
-}
-
-.wp-block-cover-image.has-background-dim.has-background-dim-100::before,
-.wp-block-cover.has-background-dim.has-background-dim-100::before {
-	opacity: 1;
-}
-
-.wp-block-cover-image::after,
-.wp-block-cover::after {
-	content: "";
-	display: block;
-	font-size: 0;
-	min-height: inherit;
-}
-
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-
-	.wp-block-cover-image::after,
-	.wp-block-cover::after {
-		content: none;
+	& a,
+	& a:hover,
+	& a:focus,
+	& a:active {
+		color: #fff;
 	}
 
 }
 
-/* stylelint-disable selector-class-pattern */
-.wp-block-cover__video-background {
-	height: 100%;
-	left: 50%;
-	object-fit: cover;
-	position: absolute;
-	top: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	width: 100%;
-	z-index: 0;
+.wp-block-cover-image
+.wp-block-cover {
+
+	&.has-left-content {
+		justify-content: flex-start;
+	}
+
+	&.has-right-content {
+		justify-content: flex-end;
+	}
+
+}
+
+section.wp-block-cover-image.has-left-content > h2,
+.wp-block-cover-image.has-left-content .wp-block-cover-image-text,
+.wp-block-cover.has-left-content .wp-block-cover-text {
+	margin-left: 0;
+	text-align: left;
+}
+
+section.wp-block-cover-image.has-right-content > h2,
+.wp-block-cover-image.has-right-content .wp-block-cover-image-text,
+.wp-block-cover.has-right-content .wp-block-cover-text {
+	margin-right: 0;
+	text-align: right;
+}
+
+section.wp-block-cover-image > h2,
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text {
+	font-size: 2em;
+	line-height: 1.25;
+	z-index: 1;
+	margin-bottom: 0;
+	max-width: 840px;
+	padding: 0.44em;
+	text-align: center;
 }
 /* stylelint-enable selector-class-pattern */
