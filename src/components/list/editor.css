@@ -1,22 +1,22 @@
-[data-type="core/list"] {
+ol.wp-block-list {
 
-	& ol ol {
+	& ol {
 		list-style: lower-alpha;
 	}
 
-	& ol ol ol {
+	& ol ol {
 		list-style: lower-roman;
 	}
 
-	& ol.is-style-alpha {
+	&.is-style-alpha {
 		list-style: upper-alpha;
 	}
 
-	& ol.is-style-alpha ol {
+	&.is-style-alpha ol {
 		list-style: decimal;
 	}
 
-	& ol.is-style-alpha ol ol {
+	&.is-style-alpha ol ol {
 		list-style: lower-alpha;
 	}
 
