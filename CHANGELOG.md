@@ -27,6 +27,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 - Streamline block modifications registry functions. (2d904ac)
 - Move search header styles from the `button` to the `search-menu` component. (3b0b729)
 - Update the search block styles to support new layout options introduced in WP 5.7. This also fixes #215 and #225. (7d59ba9)
+- Upgrade @wordpress/babel-preset-default from 5.2.2 => 6.2.0 ()
 
 ### Deprecated
 
@@ -38,6 +39,11 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 - Fix #207 update cover block styles for WP 5.7 and 5.8. (448ecd3)
 - Fix #209 match editor preformatted block font to frontend. (6a328c9)
 - Fix #212 correct alignment of the separator block in the editor. (d82aef3)
+
+### Security
+
+- Bump @babel/core from 7.14.2 to 7.14.5. ()
+- Bump @babel/runtime from 7.14.0 to 7.14.5. ()
 
 ## 2.1.2 (2021-05-14)
 
