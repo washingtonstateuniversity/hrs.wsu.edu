@@ -28,6 +28,9 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 - Move search header styles from the `button` to the `search-menu` component. (3b0b729)
 - Update the search block styles to support new layout options introduced in WP 5.7. This also fixes #215 and #225. (7d59ba9)
 - Upgrade @wordpress/babel-preset-default from 5.2.2 => 6.2.0 ()
+- Upgrade copy-webpack-plugin from 8.1.1 to 9.0.0. ()
+- Upgrade source-map-loader from 2.0.1 to 3.0.0. ()
+- Update webpack from 5.37.0 to 5.38.1. ()
 
 ### Deprecated
 
@@ -42,6 +45,9 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Security
 
+- Bump webpack-cli from 4.7.0 to 4.7.2. ()
+- Bump webpack-bundle-analyzer from 4.4.1 to 4.4.2. ()
+- Bump @wordpress/dependency-extraction-webpack-plugin from 3.1.2 to 3.1.4. ()
 - Bump @babel/core from 7.14.2 to 7.14.5. ()
 - Bump @babel/runtime from 7.14.0 to 7.14.5. ()
 
