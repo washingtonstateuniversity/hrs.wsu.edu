@@ -1,6 +1,13 @@
 .wp-block-columns {
+	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;
+	margin-bottom: 1.5em;
+
+	&.has-background {
+		padding: 1.25em 2.375em;
+
+	}
 
 	&.are-vertically-aligned-top {
 		align-items: flex-start;
@@ -15,22 +22,16 @@
 	}
 }
 
-.wp-block-columns.has-background {
-	margin-bottom: 1em;
-	padding: 1em 2em;
-
-	& .wp-block-column :last-child {
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
-}
-
 .wp-block-column {
 	flex-grow: 1;
 	flex-basis: 100% !important; /* Need to override inline styles */
 	min-width: 0;
 	word-break: break-word;
 	overflow-wrap: break-word;
+
+	&.has-background {
+		padding: 1em 2em;
+	}
 
 	&.is-vertically-aligned-top {
 		align-self: flex-start;
