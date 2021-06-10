@@ -4,7 +4,7 @@ p.has-drop-cap:not(:focus)::after {
 }
 
 p.has-background {
-	padding: 1em 2em;
+	padding: 1.25em 2.375em;
 }
 
 p.has-background + *:not(.has-background) {
@@ -12,5 +12,12 @@ p.has-background + *:not(.has-background) {
 }
 
 p.has-text-color a {
+	border-bottom-color: currentColor;
 	color: inherit;
+
+	&:hover,
+	&:focus {
+		color: var(--nav-color-hover);
+		background-color: rgba(255, 255, 255, 0.6);
+	}
 }

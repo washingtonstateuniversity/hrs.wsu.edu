@@ -12,12 +12,6 @@
 		grid-template-columns: 1fr 50%;
 	}
 
-	&.has-brand-crimson-background-color,
-	&.has-brand-gray-background-color,
-	&.has-accent-crimson-background-color,
-	&.has-dark-background-color {
-		color: var(--section-background-color);
-	}
 }
 
 /* stylelint-disable selector-class-pattern */
@@ -67,7 +61,7 @@
 	grid-row: 1;
 
 	/*!rtl:end:ignore*/
-	padding: 0 8% 0 8%;
+	padding: 5% 8%;
 	word-break: break-word;
 }
 
@@ -94,6 +88,15 @@
 	max-width: unset;
 	width: 100%;
 	vertical-align: middle;
+}
+
+.wp-block-media-text .wp-block-media-text__media > a {
+	line-height: 0;
+}
+
+.wp-block-media-text.is-image-fill .wp-block-media-text__media > a {
+	display: block;
+	height: 100%;
 }
 
 .wp-block-media-text.is-image-fill figure.wp-block-media-text__media {
