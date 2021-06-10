@@ -32,6 +32,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 - Upgrade source-map-loader from 2.0.1 to 3.0.0. ()
 - Update webpack from 5.37.0 to 5.38.1. ()
 - Update postcss from 8.2.15 to 8.3.1. ()
+- Update eslint from 7.26.0 to 7.28.0. ()
 
 ### Deprecated
 
@@ -46,6 +47,8 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Security
 
+- Bump @wordpress/eslint-plugin from 9.0.4 to 9.0.6. ()
+- Bump @wordpress/npm-package-json-lint-config from 4.0.3 to 4.0.5. ()
 - Bump cssnano from 5.0.2 to 5.0.6. ()
 - Bump webpack-cli from 4.7.0 to 4.7.2. ()
 - Bump webpack-bundle-analyzer from 4.4.1 to 4.4.2. ()
