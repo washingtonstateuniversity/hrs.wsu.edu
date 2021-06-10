@@ -31,6 +31,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 - Upgrade copy-webpack-plugin from 8.1.1 to 9.0.0. ()
 - Upgrade source-map-loader from 2.0.1 to 3.0.0. ()
 - Update webpack from 5.37.0 to 5.38.1. ()
+- Update postcss from 8.2.15 to 8.3.1. ()
 
 ### Deprecated
 
@@ -45,6 +46,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Security
 
+- Bump cssnano from 5.0.2 to 5.0.6. ()
 - Bump webpack-cli from 4.7.0 to 4.7.2. ()
 - Bump webpack-bundle-analyzer from 4.4.1 to 4.4.2. ()
 - Bump @wordpress/dependency-extraction-webpack-plugin from 3.1.2 to 3.1.4. ()
