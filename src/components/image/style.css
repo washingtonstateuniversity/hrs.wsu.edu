@@ -13,24 +13,50 @@ figcaption {
 
 .wp-block-image {
 	margin-bottom: 1em;
-	max-width: 100%;
+
+	& img {
+		max-width: 100%;
+	}
+
+	&:not(.is-style-rounded) img {
+		border-radius: inherit;
+	}
+
+	&.alignwide img,
+	&.alignfull img {
+		width: 100%;
+	}
+
+	&.alignleft,
+	&.alignright,
+	&.aligncenter {
+		display: table;
+
+		> figcaption {
+			caption-side: bottom;
+			display: table-caption;
+		}
+	}
+
+	&.is-style-rounded img,
+	&.is-style-circle-mask img {
+		border-radius: 9999px;
+	}
+
 }
 
-.wp-block-image .alignleft,
-.wp-block-image .alignright,
-.wp-block-image .aligncenter,
-.wp-block-image.is-resized {
-	display: table;
-}
+/* Switch to using a circular SVG mask if browser supports it */
+@supports (mask-image: none) or (-webkit-mask-image: none) {
 
-.wp-block-image .alignleft > figcaption,
-.wp-block-image .alignright > figcaption,
-.wp-block-image .aligncenter > figcaption,
-.wp-block-image.is-resized > figcaption {
-	caption-side: bottom;
-	display: table-caption;
-}
+	.wp-block-image.is-style-circle-mask img {
+		/* stylelint-disable */
+		mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');
+		/* stylelint-enable */
+		mask-mode: alpha;
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		mask-position: center;
+		border-radius: 0;
+	}
 
-.is-style-rounded img {
-	border-radius: 9999px;
 }
