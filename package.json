@@ -57,13 +57,14 @@
 	"scripts": {
 		"build": "NODE_ENV=production run-s clean test 'build:*'",
 		"build:scripts": "webpack",
-		"build:styles": "postcss 'src/*.css' --dir build",
+		"build:styles": "postcss 'src/*.css' --dir build/",
 		"clean": "rimraf build/",
 		"lint:scripts": "eslint '*.js' 'src/**/*.js'",
 		"lint:styles": "stylelint 'src/**/*.css'",
 		"lint:pkg": "npmPkgJsonLint .",
-		"lint:php": "composer lint-detail",
+		"lint:php": "composer lint",
 		"fix:scripts": "eslint --fix '*.js' 'src/**/*.js'",
+		"fix:php": "composer format",
 		"start": "run-p 'build:*'",
 		"fix": "run-p 'fix:*'",
 		"test": "run-p 'lint:*'"
