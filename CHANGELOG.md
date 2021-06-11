@@ -13,7 +13,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 2.2.0-alpha.8 (:construction: Future)
+## 2.2.0-beta.1 (:construction: Future)
 
 ### Added
 
@@ -27,12 +27,12 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 - Streamline block modifications registry functions. (2d904ac)
 - Move search header styles from the `button` to the `search-menu` component. (3b0b729)
 - Update the search block styles to support new layout options introduced in WP 5.7. This also fixes #215 and #225. (7d59ba9)
-- Upgrade @wordpress/babel-preset-default from 5.2.2 => 6.2.0 ()
-- Upgrade copy-webpack-plugin from 8.1.1 to 9.0.0. ()
-- Upgrade source-map-loader from 2.0.1 to 3.0.0. ()
-- Update webpack from 5.37.0 to 5.38.1. ()
-- Update postcss from 8.2.15 to 8.3.1. ()
-- Update eslint from 7.26.0 to 7.28.0. ()
+- Upgrade @wordpress/babel-preset-default from 5.2.2 => 6.2.0 (921aeb7)
+- Upgrade copy-webpack-plugin from 8.1.1 to 9.0.0. (17e86e5)
+- Upgrade source-map-loader from 2.0.1 to 3.0.0. (17e86e5)
+- Update webpack from 5.37.0 to 5.38.1. (17e86e5)
+- Update postcss from 8.2.15 to 8.3.2. (43af3e2)
+- Update eslint from 7.26.0 to 7.28.0. (bdee822)
 
 ### Deprecated
 
@@ -47,14 +47,15 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Security
 
-- Bump @wordpress/eslint-plugin from 9.0.4 to 9.0.6. ()
-- Bump @wordpress/npm-package-json-lint-config from 4.0.3 to 4.0.5. ()
-- Bump cssnano from 5.0.2 to 5.0.6. ()
-- Bump webpack-cli from 4.7.0 to 4.7.2. ()
-- Bump webpack-bundle-analyzer from 4.4.1 to 4.4.2. ()
-- Bump @wordpress/dependency-extraction-webpack-plugin from 3.1.2 to 3.1.4. ()
-- Bump @babel/core from 7.14.2 to 7.14.5. ()
-- Bump @babel/runtime from 7.14.0 to 7.14.5. ()
+- Bump @wordpress/eslint-plugin from 9.0.4 to 9.0.6. (bdee822)
+- Bump @wordpress/npm-package-json-lint-config from 4.0.3 to 4.0.5. (bdee822)
+- Bump cssnano from 5.0.2 to 5.0.6. (43af3e2)
+- Bump webpack-cli from 4.7.0 to 4.7.2. (17e86e5)
+- Bump webpack-bundle-analyzer from 4.4.1 to 4.4.2. (17e86e5)
+- Bump @wordpress/dependency-extraction-webpack-plugin from 3.1.2 to 3.1.4. (17e86e5)
+- Bump @babel/core from 7.14.2 to 7.14.5. (921aeb7)
+- Bump @babel/runtime from 7.14.0 to 7.14.5. (921aeb7)
+- Bump roave/security-advisories from dev-master 630d41c to dev-master ba84189. (2021036)
 
 ## 2.1.2 (2021-05-14)
 
