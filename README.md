@@ -1,6 +1,6 @@
 # WSU Human Resource Services Theme
 
-[![Build Status](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu.svg?branch=stable)](https://travis-ci.org/washingtonstateuniversity/hrs.wsu.edu) [![Release Version](https://img.shields.io/github/v/release/washingtonstateuniversity/hrs.wsu.edu)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/releases/latest) ![WordPress tested up to version 5.5.1](https://img.shields.io/badge/WordPress-v5.5.1%20tested-success.svg) ![WordPress Block Ready](https://img.shields.io/badge/block-ready-blueviolet) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![GPLv3 License](https://img.shields.io/github/license/washingtonstateuniversity/hrs.wsu.edu)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/blob/stable/LICENSE.md)
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Build Status](https://github.com/washingtonstateuniversity/hrs.wsu.edu/actions/workflows/coding-standards.yml/badge.svg)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/actions) [![Release Version](https://img.shields.io/github/v/release/washingtonstateuniversity/hrs.wsu.edu)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/releases/latest) ![WordPress tested up to version 5.5.1](https://img.shields.io/badge/WordPress-v5.5.1%20tested-success.svg) ![WordPress Block Ready](https://img.shields.io/badge/block-ready-blueviolet) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![GPLv3 License](https://img.shields.io/github/license/washingtonstateuniversity/hrs.wsu.edu)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/blob/develop/LICENSE.md)
 
 ## Description
 
@@ -84,3 +84,15 @@ Specifically, the HRS theme aims to support all browsers with greater than 1% gl
 ~~~
 
 Review the current list of mobile and desktop browsers this resolves to using the [Browserlist online demo](http://browserl.ist/) (search for `> 1%,ie 11,Firefox ESR`).
+
+## Support Level
+
+**Active:** WSU HRS actively works on this theme. We plant to continue work for the foreseeable future, adding new features, enhancing existing ones, and maintaining compatability with the latest version of WordPress. Bug reports, feature requests, questions, and pull requests are welcome.
+
+## Changelog
+
+All notable changes are documented in the [CHANGELOG.md](https://github.com/washingtonstateuniversity/hrs.wsu.edu/blob/develop/CHANGELOG.md), with dates and version numbers.
+
+## Contributing
+
+Please submit bugs and feature requests through [GitHub Issues](https://github.com/washingtonstateuniversity/hrs.wsu.edu/issues). Refer to [CONTRIBUTING.md](https://github.com/washingtonstateuniversity/hrs.wsu.edu/blob/develop/CONTRIBUTING.md) for the development workflow and details for submitting pull requests.
