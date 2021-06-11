@@ -13,7 +13,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 2.2.0-beta.1 (:construction: Future)
+## 2.2.0-beta.2 (:construction: Future)
 
 ### Added
 
@@ -47,6 +47,11 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Security
 
+- Bump lodash from 4.17.20 to 4.17.21. (fdcbc3b)
+- Bump hosted-git-info from 2.8.8 to 2.8.9. (e4b1aee)
+- Bump browserslist from 4.16.1 to 4.16.6. (714719a)
+- Bump trim-newlines from 3.0.0 to 3.0.1. (a257a97)
+- Bump glob-parent from 5.1.1 to 5.1.2. (00fb165)
 - Bump @wordpress/eslint-plugin from 9.0.4 to 9.0.6. (bdee822)
 - Bump @wordpress/npm-package-json-lint-config from 4.0.3 to 4.0.5. (bdee822)
 - Bump cssnano from 5.0.2 to 5.0.6. (43af3e2)
