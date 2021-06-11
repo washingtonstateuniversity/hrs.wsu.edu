@@ -18,8 +18,7 @@
 		"roave/security-advisories": "dev-master"
 	},
 	"scripts": {
-		"format": "phpcbf --standard=.phpcs.xml.dist --report-summary --report-source",
-		"lint-summary": "phpcs --standard=.phpcs.xml.dist --colors --report-summary --report-source",
-		"lint-detail": "phpcs --standard=.phpcs.xml.dist --colors"
+		"format": "phpcbf --standard=phpcs.xml.dist --report=summary,source",
+		"lint": "phpcs --colors"
 	}
 }
