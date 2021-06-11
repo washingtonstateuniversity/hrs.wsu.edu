@@ -13,14 +13,18 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 2.2.0-beta.2 (:construction: Future)
+## 2.2.0-beta.3 (:construction: Future)
 
 ### Added
 
+- Contributing documentation in `CONTRIBUTING.md`. (44a141e)
 - Method to unregister specific blocks to close #217. (2d904ac)
 
 ### Changed
 
+- Update contributing docs and readme. (44a141e)
+- Simplify Composer coding standards scripts. (71d2058)
+- Switch to GitHub Actions for CI tests. (71d2058)
 - Update core block styles for WordPress 5.7 feature and fine-tuning to close #218. (9e4be30 and dbdc0b4)
 - Fix #210 update social link styles to support new WP 5.7 features, including icon size. (50d7b53)
 - Disable separator block color output, a stopgap solution for #214. (d82aef3)
