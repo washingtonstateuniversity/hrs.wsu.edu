@@ -61,4 +61,5 @@ $binder_classes = implode( ' ', $binder );
 	<?php get_template_part( 'parts/before-binder' ); ?>
 	<div id="binder" class="<?php echo esc_attr( $binder_classes ); ?>">
 		<?php
+		get_template_part( 'spine' );
 		get_template_part( 'build/templates/header' );

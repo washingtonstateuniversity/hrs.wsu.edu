@@ -18,6 +18,11 @@ ol.is-style-alpha ol ol {
 	list-style: lower-alpha;
 }
 
+ol.has-background,
+ul.has-background {
+	padding: 1.25em 2.375em;
+}
+
 dl dt,
 dl dd {
 	display: block;

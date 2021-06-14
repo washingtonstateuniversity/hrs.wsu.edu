@@ -1,37 +1,27 @@
 /* stylelint-disable selector-class-pattern */
-.wp-block-cover__inner-container {
-	color: var(--section-background-color);
-}
+.wp-block-cover-image,
+.wp-block-cover {
 
-.wp-block-cover-image.has-light-background-color,
-.wp-block-cover-image.has-accent-green-background-color,
-.wp-block-cover-image.has-accent-yellow-background-color,
-.wp-block-cover-image.has-accent-blue-background-color,
-.wp-block-cover-image.has-accent-orange-background-color,
-.wp-block-cover.has-light-background-color,
-.wp-block-cover.has-accent-green-background-color,
-.wp-block-cover.has-accent-yellow-background-color,
-.wp-block-cover.has-accent-blue-background-color,
-.wp-block-cover.has-accent-orange-background-color {
+	& p,
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
 
-	.wp-block-cover__inner-container {
-		color: var(--text-color);
-	}
-}
+		& > a {
+			color: inherit;
+			border-bottom-color: currentColor;
+		}
 
-.wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link),
-.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link) {
-	color: inherit;
-	padding: 0 0.25em;
+		& > a:hover,
+		& > a:focus {
+			color: var(--nav-color-hover);
+			background-color: rgba(255, 255, 255, 0.6);
+		}
 
-	&:hover,
-	&:focus {
-		color: var(--section-background-color);
-		background-color: var(--nav-color-hover);
 	}
 
-	&:active {
-		background-color: var(--nav-color);
-	}
 }
 /* stylelint-enable selector-class-pattern */

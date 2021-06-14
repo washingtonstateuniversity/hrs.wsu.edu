@@ -3,7 +3,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	list-style-type: none;
-	margin: 0;
 	padding: 0;
 
 	& .blocks-gallery-image,
@@ -15,96 +14,44 @@
 		margin: 0 1em 1em 0;
 		padding: 0;
 		position: relative;
-		width: calc((100% - 1em) / 2);
+		width: calc(50% - 1em);
 
 		&:nth-of-type(even) {
 			margin-right: 0;
 		}
+
+		& img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+			width: 100%;
+		}
+
+		& figcaption {
+			background-color: #000;
+			background-color: rgba(0, 0, 0, 0.6);
+			bottom: 0;
+			color: #fff;
+			margin-bottom: 5px;
+			max-height: 100%;
+			overflow: auto;
+			padding: 0.75em 0.5em;
+			position: absolute;
+
+			& img {
+				display: inline;
+			}
+		}
 	}
 
-	& .blocks-gallery-image:last-child,
-	& .blocks-gallery-item:last-child {
-		margin-right: 0;
+	& figcaption {
+		flex-grow: 1;
 	}
 
-	&.alignleft,
-	&.aligncenter,
-	&.alignright {
-		display: flex;
-	}
-
-	&.aligncenter .blocks-gallery-item figure {
-		justify-content: center;
-	}
-}
-
-/* Overselected with #binder to override Spine theme. */
-#binder .wp-block-gallery .blocks-gallery-image figure,
-#binder .wp-block-gallery .blocks-gallery-item figure,
-#binder .blocks-gallery-grid .blocks-gallery-image figure,
-#binder .blocks-gallery-grid .blocks-gallery-item figure {
-	margin: 0;
-	height: 100%;
-}
-
-@supports (position: sticky) {
-
-	.wp-block-gallery .blocks-gallery-image figure,
-	.wp-block-gallery .blocks-gallery-item figure,
-	.blocks-gallery-grid .blocks-gallery-image figure,
-	.blocks-gallery-grid .blocks-gallery-item figure {
-		align-items: flex-end;
-		display: flex;
-		justify-content: flex-start;
-	}
-
-}
-
-.wp-block-gallery .blocks-gallery-image img,
-.wp-block-gallery .blocks-gallery-item img,
-.blocks-gallery-grid .blocks-gallery-image img,
-.blocks-gallery-grid .blocks-gallery-item img {
-	display: block;
-	max-width: 100%;
-	height: auto;
-	width: 100%;
-}
-
-@supports (position: sticky) {
-
-	.wp-block-gallery .blocks-gallery-image img,
-	.wp-block-gallery .blocks-gallery-item img,
-	.blocks-gallery-grid .blocks-gallery-image img,
-	.blocks-gallery-grid .blocks-gallery-item img {
-		width: auto;
-	}
-}
-
-.wp-block-gallery .blocks-gallery-image figcaption,
-.wp-block-gallery .blocks-gallery-item figcaption,
-.blocks-gallery-grid .blocks-gallery-image figcaption,
-.blocks-gallery-grid .blocks-gallery-item figcaption {
-	background-color: #000;
-	background-color: rgba(0, 0, 0, 0.6);
-	bottom: 0;
-	color: #fff;
-	margin-bottom: 5px;
-	max-height: 100%;
-	overflow: auto;
-	padding: 0.75em 0.5em;
-	position: absolute;
-
-	& img {
-		display: inline;
-	}
-}
-
-/* Cropped styles. */
-.wp-block-gallery.is-cropped,
-.blocks-gallery-grid.is-cropped {
-
-	& .blocks-gallery-image,
-	& .blocks-gallery-item {
+	/* Cropped styles. */
+	&.is-cropped .blocks-gallery-image,
+	&.is-cropped .blocks-gallery-item {
+		align-self: inherit;
 
 		& a,
 		& img {
@@ -113,15 +60,52 @@
 
 	}
 
+	&.columns-1 .blocks-gallery-image,
+	&.columns-1 .blocks-gallery-item {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	&.aligncenter .blocks-gallery-item figure {
+		justify-content: center;
+	}
+}
+
+/* Overselected because the Spine parent theme is. */
+.column .wp-block-gallery,
+.column .blocks-gallery-grid {
+
+	& .blocks-gallery-image figure,
+	& .blocks-gallery-item figure {
+		margin: 0;
+		height: 100%;
+	}
+
 }
 
 @supports (position: sticky) {
 
-	.wp-block-gallery.is-cropped,
-	.blocks-gallery-grid.is-cropped {
+	.wp-block-gallery,
+	.blocks-gallery-grid {
 
 		& .blocks-gallery-image,
 		& .blocks-gallery-item {
+
+			& figure {
+				align-items: flex-end;
+				display: flex;
+				justify-content: flex-start;
+			}
+
+			& img {
+				width: auto;
+			}
+
+		}
+
+		/* Cropped styles. */
+		&.is-cropped .blocks-gallery-image,
+		&.is-cropped .blocks-gallery-item {
 
 			& a,
 			& img {
@@ -134,14 +118,6 @@
 
 	}
 
-}
-
-.wp-block-gallery.columns-1 .blocks-gallery-image,
-.wp-block-gallery.columns-1 .blocks-gallery-item,
-.blocks-gallery-grid.columns-1 .blocks-gallery-image
-.blocks-gallery-grid.columns-1 .blocks-gallery-item {
-	width: 100%;
-	margin-right: 0;
 }
 
 @media (min-width: 43em) {
@@ -221,4 +197,11 @@
 
 	}
 
+}
+
+.wp-block-gallery .blocks-gallery-image:last-child,
+.wp-block-gallery .blocks-gallery-item:last-child
+.blocks-gallery-grid .blocks-gallery-image:last-child,
+.blocks-gallery-grid .blocks-gallery-item:last-child {
+	margin-right: 0;
 }

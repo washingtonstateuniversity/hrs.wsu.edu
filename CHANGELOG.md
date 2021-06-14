@@ -13,6 +13,59 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
+## 2.2.0 (2021-06-14)
+
+### Added
+
+- Contributing documentation in `CONTRIBUTING.md`. (44a141e)
+- Method to unregister specific blocks to close #217. (2d904ac)
+
+### Changed
+
+- Update contributing docs and readme. (44a141e)
+- Simplify Composer coding standards scripts. (71d2058)
+- Switch to GitHub Actions for CI tests. (71d2058)
+- Update core block styles for WordPress 5.7 feature and fine-tuning to close #218. (9e4be30 and dbdc0b4)
+- Fix #210 update social link styles to support new WP 5.7 features, including icon size. (50d7b53)
+- Disable separator block color output, a stopgap solution for #214. (d82aef3)
+- Streamline block modifications registry functions. (2d904ac)
+- Move search header styles from the `button` to the `search-menu` component. (3b0b729)
+- Update the search block styles to support new layout options introduced in WP 5.7. This also fixes #215 and #225. (7d59ba9)
+- Upgrade @wordpress/babel-preset-default from 5.2.2 => 6.2.0 (921aeb7)
+- Upgrade copy-webpack-plugin from 8.1.1 to 9.0.0. (17e86e5)
+- Upgrade source-map-loader from 2.0.1 to 3.0.0. (17e86e5)
+- Update webpack from 5.37.0 to 5.38.1. (17e86e5)
+- Update postcss from 8.2.15 to 8.3.2. (43af3e2)
+- Update eslint from 7.26.0 to 7.28.0. (bdee822)
+
+### Deprecated
+
+- Deprecate WP core button and buttons block styles in favor of the HRSWP Blocks plugin variant. (3b0b729)
+
+### Fixed
+
+- Fix #203 and #204 update list block styles for WP 5.7 background color. (bdc6ab2)
+- Fix #207 update cover block styles for WP 5.7 and 5.8. (448ecd3)
+- Fix #209 match editor preformatted block font to frontend. (6a328c9)
+- Fix #212 correct alignment of the separator block in the editor. (d82aef3)
+
+### Security
+
+- Bump lodash from 4.17.20 to 4.17.21. (fdcbc3b)
+- Bump hosted-git-info from 2.8.8 to 2.8.9. (e4b1aee)
+- Bump browserslist from 4.16.1 to 4.16.6. (714719a)
+- Bump trim-newlines from 3.0.0 to 3.0.1. (a257a97)
+- Bump glob-parent from 5.1.1 to 5.1.2. (00fb165)
+- Bump @wordpress/eslint-plugin from 9.0.4 to 9.0.6. (bdee822)
+- Bump @wordpress/npm-package-json-lint-config from 4.0.3 to 4.0.5. (bdee822)
+- Bump cssnano from 5.0.2 to 5.0.6. (43af3e2)
+- Bump webpack-cli from 4.7.0 to 4.7.2. (17e86e5)
+- Bump webpack-bundle-analyzer from 4.4.1 to 4.4.2. (17e86e5)
+- Bump @wordpress/dependency-extraction-webpack-plugin from 3.1.2 to 3.1.4. (17e86e5)
+- Bump @babel/core from 7.14.2 to 7.14.5. (921aeb7)
+- Bump @babel/runtime from 7.14.0 to 7.14.5. (921aeb7)
+- Bump roave/security-advisories from dev-master 630d41c to dev-master ba84189. (2021036)
+
 ## 2.1.2 (2021-05-14)
 
 ### Changed

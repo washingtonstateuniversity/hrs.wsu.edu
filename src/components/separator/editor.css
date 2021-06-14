@@ -1,11 +1,58 @@
 /* Have to use `!important` flag because WP editor uses inline styles. */
-hr.wp-block-separator.has-background,
+hr.wp-block-separator,
 hr.wp-block-separator.has-text-color {
 	background-color: rgba(93, 105, 112, 0.5) !important;
 	color: rgba(93, 105, 112, 0.5) !important;
 }
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
-	margin: 0;
+	margin-left: 0;
 	max-width: 5.5em;
+	width: 5.5em;
+}
+
+@media (min-width: 760px) {
+
+	.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+		left: -19.5em;
+		margin-left: auto;
+		position: relative;
+		top: 0;
+	}
+
+}
+
+@media (min-width: 780px) and (max-width: 1038px) {
+
+	.is-sidebar-opened .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+		margin-left: 0;
+		position: unset;
+	}
+
+}
+
+@media (min-width: 791px) {
+
+	.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+		left: -17.25em;
+		position: relative;
+	}
+
+}
+
+.wp-block-separator.is-style-dots {
+	background: none;
+	border: none;
+	text-align: center;
+	max-width: none;
+	line-height: 1;
+	height: auto;
+}
+
+.wp-block-separator.is-style-dots::before {
+	content: "\00b7 \00b7 \00b7";
+	color: var(--neutral-dark);
+	font-family: serif;
+	font-size: 24px;
+	letter-spacing: 2em;
 }

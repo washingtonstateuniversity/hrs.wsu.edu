@@ -1,43 +1,51 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Report a bug with the HRS Blocks plugin.
 ---
 
-**Describe the bug**
+## Description
+<!-- Please write a brief description of the bug. -->
 
-A clear and concise description of what the bug is.
+## Step-by-step reproduction instructions
+<!--
+Please list the steps needed to reproduce the bug. For example:
+1. Go to '...'
+2. Click on '...'
+3. Scroll down to '...'
+-->
 
-**To reproduce**
+## Expected behaviour
+<!-- Please describe what you expected to happen. -->
 
-Steps to reproduce the behavior:
+## Actual behaviour
+<!-- Please describe what actually happened. -->
 
-1. Go to...
-2. Click on...
-3. Scroll down to...
-4. See error
+## Screenshots or screen recording (optional)
+<!--
+If possible, please upload a screenshot or screen recording which demonstrates
+the bug. You can use LIEcap to create a GIF screen recording:
+https://www.cockos.com/licecap/
+-->
 
-**Expected behavior**
+## Code snippet (optional)
+<!--
+If this bug is to related to a developer API, please share a code snippet that
+demonstrates the issue.
 
-A clear and concise description of what you expected to happen.
+For small snippets paste it directly here, or you can use GitHub Gist to share
+multiple code files: https://gist.github.com
 
-**Screenshots**
+Please ensure the shared code can be used by a developer to reproduce the
+issue—ideally it can be copied into a local development environment or executed
+in a browser console to help debug the issue.
+-->
 
-If applicable, add screenshots to help explain your problem.
+## WordPress information
+- WordPress version: <!-- e.g. "5.6.0". Find this in Tools → Site Health → Info → WordPress -->
+- Are all plugins except HRS Blocks deactivated? <!-- "Yes" or "No" -->
+- Are you using the HRS child theme? <!-- "Yes" or "No" -->
 
-**The system showing the bug (please complete the following information):**
-
-- OS: [e.g. iOS, Ubuntu, Windows]
-- OS Version: [e.g. 12.2, 16.04, 10]
-- Browser [e.g. chrome, safari, firefox]
-- Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
-
-- Device: [e.g. iPhone6]
-- OS: [e.g. iOS8.1]
-- Browser [e.g. stock browser, safari]
-- Version [e.g. 22]
-
-**Additional context**
-
-- Please add the version of WordPress you are using.
+## Device information
+- Device: <!-- e.g. "Desktop" or "iPhone 11" -->
+- Operating system: <!-- e.g. "Windows 10" or "iOS 14" -->
+- Browser: <!-- e.g. "Chrome 86.0" or "Mobile Safari" -->

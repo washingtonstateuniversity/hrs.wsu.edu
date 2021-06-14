@@ -9,3 +9,7 @@
 .wp-block-code .block-editor-plain-text:focus {
 	color: #fff;
 }
+
+.editor-styles-wrapper .wp-block.wp-block-preformatted {
+	font-family: "Courier New", Courier, monospace;
+}
