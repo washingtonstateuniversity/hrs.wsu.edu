@@ -13,6 +13,12 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
+## 2.2.1-beta.1 (Future release)
+
+### Fixed
+
+- Add styles for updated Spine parent theme search UI.
+
 ## 2.2.0 (2021-06-14)
 
 ### Added
