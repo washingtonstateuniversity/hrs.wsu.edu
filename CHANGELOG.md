@@ -13,6 +13,23 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
+## 2.2.1 (2021-06-24)
+
+### Fixed
+
+- Fix #235 style submit-type buttons. (3c86948)
+- Add styles for updated Spine parent theme search UI. (9a00792)
+
+### Changed
+
+- Update eslint from 7.28.0 to 7.29.0. (edc5ed1)
+- Update webpack from 5.38.1 to 5.40.0. (edc5ed1)
+
+### Security
+
+- Bump postcss from 8.3.2 to 8.3.5. (edc5ed1)
+- Bump @babel/core and @babel/runtime from 7.14.5 to 7.14.6. (edc5ed1)
+
 ## 2.2.0 (2021-06-14)
 
 ### Added
