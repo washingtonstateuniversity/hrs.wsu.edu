@@ -23,8 +23,19 @@ const blockStylesList = [ list ];
 const unregisterList = [
 	'core/latest-comments',
 	'core/latest-posts',
+	'core/loginout',
 	'core/more',
 	'core/nextpage',
+	'core/post-content',
+	'core/post-date',
+	'core/post-excerpt',
+	'core/post-featured-image',
+	'core/post-title',
+	'core/query',
+	'core/site-logo',
+	'core/site-tagline',
+	'core/site-title',
+	'core/query-title',
 ];
 
 /**
