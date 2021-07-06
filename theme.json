@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"settings": {
+		"typography": {
+			"customFontSize": true,
+			"customLineHeight": false,
+			"dropCap": true
+		},
+		"layout": {
+			"contentSize": "45rem",
+			"wideSize": "1180px"
+		}
+	}
+}
