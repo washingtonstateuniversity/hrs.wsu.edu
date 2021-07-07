@@ -104,6 +104,11 @@
 				"typography": {
 					"fontSizes": []
 				}
+			},
+			"core/table": {
+				"color": {
+					"palette": []
+				}
 			}
 		}
 	}
