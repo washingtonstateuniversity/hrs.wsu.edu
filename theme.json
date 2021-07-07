@@ -1,10 +1,59 @@
 {
 	"version": 1,
 	"settings": {
-		"typography": {
-			"customFontSize": true,
-			"customLineHeight": false,
-			"dropCap": true
+		"color": {
+			"custom": false,
+			"customGradient": false,
+			"duotone": [],
+			"gradients": [],
+			"link": false,
+			"palette": [
+				{
+					"name": "Brand Crimson",
+					"slug": "brand-crimson",
+					"color": "#981e32"
+				},
+				{
+					"name": "Brand Gray",
+					"slug": "brand-gray",
+					"color": "#5e6a71"
+				},
+				{
+					"name": "Accent Crimson",
+					"slug": "accent-crimson",
+					"color": "#c60c30"
+				},
+				{
+					"name": "Accent Green",
+					"slug": "accent-green",
+					"color": "#ada400"
+				},
+				{
+					"name": "Accent Orange",
+					"slug": "accent-orange",
+					"color": "#f6861f"
+				},
+				{
+					"name": "Accent Blue",
+					"slug": "accent-blue",
+					"color": "#00a5bd"
+				},
+				{
+					"name": "Accent Yellow",
+					"slug": "accent-yellow",
+					"color": "#ffb81c"
+				},
+				{
+					"name": "White",
+					"slug": "light",
+					"color": "#fdfdfd"
+				},
+				{
+					"name": "Black",
+					"slug": "dark",
+					"color": "#191919"
+				}
+			]
 		},
 		"layout": {
 			"contentSize": "45rem",
