@@ -105,6 +105,11 @@
 					"fontSizes": []
 				}
 			},
+			"core/separator": {
+				"color": {
+					"palette": []
+				}
+			},
 			"core/table": {
 				"color": {
 					"palette": []
