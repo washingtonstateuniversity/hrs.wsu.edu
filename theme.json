@@ -4,7 +4,38 @@
 		"color": {
 			"custom": false,
 			"customGradient": false,
-			"duotone": [],
+			"duotone": [
+				{
+					"name": "Crimson and Gray",
+					"slug": "crimson-and-gray",
+					"colors": [ "#981e32", "#5e6a71" ]
+				},
+				{
+					"name": "Crimson and Blue",
+					"slug": "crimson-and-blue",
+					"colors": [ "#981e32", "#00a5bd" ]
+				},
+				{
+					"name": "Gray and Yellow",
+					"slug": "blue-and-orance",
+					"colors": [ "#5e6a71", "#ffb81c" ]
+				},
+				{
+					"name": "Blue and Orange",
+					"slug": "blue-and-orance",
+					"colors": [ "#00a5bd", "#f6861f" ]
+				},
+				{
+					"name": "Green and Blue",
+					"slug": "green-and-blue",
+					"colors": [ "#ada400", "#00a5bd" ]
+				},
+				{
+					"name": "Blue and Crimson",
+					"slug": "blue-and-crimson",
+					"colors": [ "#00a5bd", "#981e32" ]
+				}
+			],
 			"gradients": [],
 			"link": false,
 			"palette": [
