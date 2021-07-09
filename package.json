@@ -45,7 +45,7 @@
 		"stylelint": "^13.13.1",
 		"stylelint-a11y": "^1.2.3",
 		"stylelint-config-wordpress": "^17.0.0",
-		"webpack": "^5.40.0",
+		"webpack": "^5.44.0",
 		"webpack-bundle-analyzer": "^4.4.2",
 		"webpack-cli": "^4.7.2"
 	},
