@@ -15,7 +15,16 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 2.3.0-rc.1 (:construction: Future)
 
+### Added
 
+- Create `theme.json` file with global styles for color, duotone presets, spacing, typography, and layout; close #233. (02c8e3a)
+
+### Changed
+
+- Fix #214 remove separator block color options. (02c8e3a)
+- Fix #213 remove table block color options. (02c8e3a)
+- Fix #206 disable header font size and color options. (02c8e3a)
+- Fix #237 unregister unwanted new WordPress 5.8 core blocks, such as the query block. (4602444)
 
 ## 2.2.1 (2021-06-24)
 
