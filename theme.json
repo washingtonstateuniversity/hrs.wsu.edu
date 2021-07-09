@@ -121,13 +121,21 @@
 					"slug": "large"
 				},
 				{
-					"name": "Larger",
+					"name": "Huge",
 					"size": "36.486px",
-					"slug": "larger"
+					"slug": "huge"
 				}
 			]
 		},
 		"blocks": {
+			"core/button": {
+				"color": {
+					"palette": []
+				},
+				"typography": {
+					"fontSizes": []
+				}
+			},
 			"core/heading": {
 				"color": {
 					"palette": []
