@@ -23,5 +23,10 @@
 
 	}
 
+	& .wp-block-cover__inner-container > .wp-block {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
 }
 /* stylelint-enable selector-class-pattern */
