@@ -13,6 +13,27 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
+## 2.3.0 (2021-07-19)
+
+### Added
+
+- Create `theme.json` file with global styles for color, duotone presets, spacing, typography, and layout; close #233. (02c8e3a)
+
+### Changed
+
+- Fix #214 remove separator block color options. (02c8e3a)
+- Fix #213 remove table block color options. (02c8e3a)
+- Fix #206 disable header font size and color options. (02c8e3a)
+- Fix #237 unregister unwanted new WordPress 5.8 core blocks, such as the query block. (4602444)
+- Update webpack from 5.40.0 to 5.44.0. (b24325e)
+- Update eslint from 7.29.0 to 7.30.0. (b24325e)
+
+### Security
+
+- Bump sirbrillig/phpcs-variable-analysis from 2.11.0 to 2.11.2. (b24325e)
+- Bump copy-webpack-plugin from 9.0.0 to 9.0.1. (b24325e)
+- Bump resolve-bin from 0.4.0 to 0.4.1. (b24325e)
+
 ## 2.2.1 (2021-06-24)
 
 ### Fixed
