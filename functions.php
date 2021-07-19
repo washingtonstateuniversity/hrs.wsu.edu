@@ -49,7 +49,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\theme_nav_menus' );
  */
 function theme_supports() {
 	add_theme_support( 'html5', array( 'search-form' ) );
-	add_theme_support( 'align-wide' );
+	add_theme_support( 'align-wide' ); // TODO: move to a separate deprecated section.
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'editor-styles' );
 
