@@ -179,9 +179,17 @@ add_filter( 'theme_page_templates', __NAMESPACE__ . '\remove_spine_templates' );
  */
 function remove_spine_filters() {
 	global $spine_theme_setup;
+	global $wsu_analytics;
 
-	remove_action( 'admin_init', array( $spine_theme_setup, 'add_editor_style' ) );
 	remove_filter( 'get_the_excerpt', 'spine_trim_excerpt', 5 );
+
+	if ( isset( $spine_theme_setup ) ) {
+		remove_action( 'admin_init', array( $spine_theme_setup, 'add_editor_style' ) );
+	}
+
+	if ( isset( $wsu_analytics ) ) {
+		remove_action( 'admin_head', array( $wsu_analytics, 'display_tag_manager' ), 100 );
+	}
 }
 
 /**
