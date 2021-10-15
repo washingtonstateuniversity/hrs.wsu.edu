@@ -1,6 +1,24 @@
 {
 	"version": 1,
 	"settings": {
+		"custom": {
+			"typography": {
+				"font": "\"Montserrat\", sans-serif",
+				"scale": 1.125,
+				"normal": "1rem",
+				"tiny": "calc(var(--wp--custom--typography--small) / var(--wp--custom--typography--scale))",
+				"small": "calc(var(--wp--custom--typography--normal) / var(--wp--custom--typography--scale))",
+				"normalx": "calc(var(--wp--custom--typography--normal) * var(--wp--custom--typography--scale))",
+				"medium": "calc(var(--wp--custom--typography--normalx) * var(--wp--custom--typography--scale))",
+				"mediumx": "calc(var(--wp--custom--typography--medium) * var(--wp--custom--typography--scale))",
+				"large": "calc(var(--wp--custom--typography--mediumx) * var(--wp--custom--typography--scale))",
+				"largex": "calc(var(--wp--custom--typography--large) * var(--wp--custom--typography--scale))",
+				"huge": "calc(var(--wp--custom--typography--largex) * var(--wp--custom--typography--scale))",
+				"hugex": "calc(var(--wp--custom--typography--huge) * var(--wp--custom--typography--scale))",
+				"massive": "calc(var(--wp--custom--typography--hugex) * var(--wp--custom--typography--scale))",
+				"massivex": "calc(var(--wp--custom--typography--massive) * var(--wp--custom--typography--scale))"
+			}
+		},
 		"color": {
 			"custom": false,
 			"customGradient": false,
@@ -102,27 +120,27 @@
 			"fontSizes": [
 				{
 					"name": "Small",
-					"size": "14.22px",
+					"size": "var(--wp--custom--typography--small)",
 					"slug": "small"
 				},
 				{
 					"name": "Normal",
-					"size": "18px",
+					"size": "var(--wp--custom--typography--normal)",
 					"slug": "normal"
 				},
 				{
 					"name": "Medium",
-					"size": "22.788px",
+					"size": "var(--wp--custom--typography--medium)",
 					"slug": "medium"
 				},
 				{
 					"name": "Large",
-					"size": "28.836px",
+					"size": "var(--wp--custom--typography--large)",
 					"slug": "large"
 				},
 				{
 					"name": "Huge",
-					"size": "36.486px",
+					"size": "var(--wp--custom--typography--huge)",
 					"slug": "huge"
 				}
 			]
