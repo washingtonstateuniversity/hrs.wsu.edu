@@ -27,6 +27,9 @@
 	<link type="text/plain" rel="author" href="https://repo.wsu.edu/spine/1/authors.txt" />
 	<link type="text/html" rel="help" href="https://brand.wsu.edu/media/web" />
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 	<!-- SCRIPTS and STYLES -->
 	<!-- Custom scripts and styles should be added with wp_enqueue_script() and wp_enqueue_style() -->
 
