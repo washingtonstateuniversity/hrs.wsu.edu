@@ -6,7 +6,8 @@
 
 .blog .latest .articles-list .article-title,
 .blog .features .articles-list .article-title {
-	font-size: var(--font-size-6);
+	font-size: var(--wp--custom--typography--largex);
+	line-height: 1.4;
 }
 
 .blog .reminders {
@@ -61,7 +62,7 @@
 		border: 1px solid var(--nav-color);
 		background-color: var(--section-background-color);
 		display: block;
-		font-size: var(--font-size-2);
+		font-size: var(--wp--preset--font-size--medium);
 		height: 100%;
 		padding: 1.5rem 0.5rem;
 

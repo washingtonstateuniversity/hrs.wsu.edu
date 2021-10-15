@@ -1,19 +1,10 @@
-html {
-	background-color: var(--body-background-color);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
 #jacket {
 	overflow: hidden;
 }
 
 main,
 .site-header {
-	background-repeat: no-repeat;
-	background-position: left top;
 	color: var(--text-color);
-	font: 400 18px/1.6 var(--sans-serif-fonts);
 	word-wrap: break-word;
 }
 

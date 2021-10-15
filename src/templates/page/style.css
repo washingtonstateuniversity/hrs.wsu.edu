@@ -4,7 +4,7 @@
 
 body.page .article-content > .article-header,
 body.single .article-content > .article-header {
-	margin-bottom: var(--font-size-8);
+	margin-bottom: 2.281em;
 }
 
 body.page.hide-title .article-content > .article-header,
@@ -28,7 +28,7 @@ body.single.hide-title .article-content > .article-body {
 
 /* stylelint-disable-next-line selector-class-pattern */
 .article-taxonomy--primary ul {
-	font-size: var(--font-size-0);
+	font-size: var(--wp--custom--typography--tiny);
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -48,8 +48,6 @@ body.single.hide-title .article-content > .article-body {
 	}
 }
 
-body.page .article-content > .article-header,
-body.single .article-content > .article-header,
 body.page .article-content .article-body > *:not(.alignwide):not(.alignfull),
 body.single .article-content .article-body > *:not(.alignwide):not(.alignfull) {
 	max-width: 45rem;

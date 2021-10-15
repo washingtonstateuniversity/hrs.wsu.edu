@@ -1,7 +1,7 @@
 .editor-styles-wrapper {
 
 	& p {
-		font-size: 1em;
+		font-size: var(--wp--custom--typography--normal);
 	}
 
 	/* No drop cap styling anywhere. */

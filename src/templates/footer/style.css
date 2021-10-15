@@ -1,6 +1,6 @@
 footer ul,
 footer dd {
-	font-size: var(--font-size-0);
+	font-size: var(--wp--custom--typography--tiny);
 
 	& a {
 		border-bottom-color: transparent;
@@ -45,6 +45,7 @@ footer dd {
 }
 
 .footer-nav .footer-nav-title {
+	font-size: var(--wp--custom--typography--normalx);
 	font-weight: 600;
 }
 

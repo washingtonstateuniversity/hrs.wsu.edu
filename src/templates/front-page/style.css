@@ -18,7 +18,7 @@ body.home #wsuwp-main ul.wp-block-social-links {
 }
 
 .home-main-subnav nav li {
-	font-size: var(--font-size-2);
+	font-size: var(--wp--preset--font-size--medium);
 	flex-basis: 48%;
 	margin-bottom: 0.5em;
 	padding: 0;
@@ -71,7 +71,7 @@ body.home #wsuwp-main ul.wp-block-social-links {
 }
 
 .home-detail-subnav h2 {
-	font-size: var(--font-size-3);
+	font-size: var(--wp--preset--font-size--large);
 	margin: 0;
 	padding: 0;
 }

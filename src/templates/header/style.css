@@ -18,7 +18,7 @@
 }
 
 .site-header .site-title {
-	font-size: var(--font-size-4);
+	font-size: var(--wp--preset--font-size--huge);
 	margin: 0;
 	padding: 0;
 }
@@ -33,7 +33,7 @@
 @media (min-width: 43em) {
 
 	.site-header .site-title {
-		font-size: var(--font-size-6);
+		font-size: var(--wp--preset--font-size--huge);
 		margin: 0;
 	}
 
@@ -50,7 +50,7 @@
 	}
 
 	.site-header .site-title {
-		font-size: var(--font-size-7);
+		font-size: var(--wp--preset--font-size--huge);
 		margin: 0;
 	}
 

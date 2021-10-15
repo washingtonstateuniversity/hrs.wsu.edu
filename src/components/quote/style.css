@@ -1,5 +1,5 @@
 blockquote {
-	font-family: var(--sans-serif-fonts);
+	font-family: var(--wp--custom--typography--font);
 	margin-bottom: 1em;
 	padding: 1.5em 1em;
 }
@@ -27,7 +27,7 @@ blockquote cite::before {
 .wp-block-quote::before {
 	color: var(--accent-crimson);
 	content: "\201C";
-	font-size: var(--font-size-8);
+	font-size: var(--wp--custom--typography--hugex);
 	position: absolute;
 	left: 10px;
 	top: 0;
@@ -41,6 +41,6 @@ blockquote cite::before {
 .wp-block-quote.is-style-large p,
 .wp-block-quote.is-large p,
 .wp-block-pullquote p {
-	font-size: var(--font-size-5);
+	font-size: var(--wp--preset--font-size--huge);
 	line-height: 1.5;
 }

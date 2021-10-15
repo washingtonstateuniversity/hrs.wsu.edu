@@ -367,7 +367,7 @@ section.wp-block-cover-image.has-right-content > h2,
 section.wp-block-cover-image > h2,
 .wp-block-cover-image .wp-block-cover-image-text,
 .wp-block-cover .wp-block-cover-text {
-	font-size: 2em;
+	font-size: var(--wp--preset--font-size--huge);
 	line-height: 1.25;
 	z-index: 1;
 	margin-bottom: 0;

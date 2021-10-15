@@ -20,12 +20,12 @@
 }
 
 .wp-block-pullquote p {
-	font-size: var(--font-size-5);
+	font-size: var(--wp--preset--font-size--huge);
 	line-height: 1.5;
 }
 
 .wp-block-pullquote blockquote {
-	font-family: var(--sans-serif-fonts);
+	font-family: var(--wp--custom--typography--font);
 	margin-bottom: 1em;
 	padding: 1em 2em 2em;
 }
@@ -66,7 +66,7 @@
 .wp-block-pullquote.is-style-solid-color blockquote p {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-size: var(--font-size-7);
+	font-size: var(--wp--preset--font-size--huge);
 }
 
 .wp-block-pullquote.alignleft,
@@ -80,6 +80,6 @@
 	}
 
 	& blockquote p {
-		font-size: var(--font-size-3);
+		font-size: var(--wp--preset--font-size--large);
 	}
 }

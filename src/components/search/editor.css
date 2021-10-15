@@ -8,7 +8,7 @@
 
 	& .wp-block-search__inside-wrapper .wp-block-search__input,
 	& .wp-block-search__inside-wrapper .wp-block-search__button {
-		font-size: var(--font-size-2);
+		font-size: var(--wp--preset--font-size--medium);
 		line-height: 1.5;
 		margin: 0;
 		padding: 20px;
@@ -43,7 +43,7 @@
 		display: inline-block;
 		flex-shrink: 1;
 		font-family: inherit;
-		font-size: var(--font-size-base);
+		font-size: var(--wp--preset--font-size--normal);
 		letter-spacing: 0.85px;
 		line-height: 2.5;
 		outline-offset: -2px;

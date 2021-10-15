@@ -5,7 +5,7 @@ figure > a {
 
 figcaption {
 	color: var(--neutral-dark);
-	font-size: var(--font-size-1);
+	font-size: var(--wp--preset--font-size--small);
 	letter-spacing: 0.02em;
 	margin-bottom: 1em;
 	padding: 0.3em 0.5em 0;

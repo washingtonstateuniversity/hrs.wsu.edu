@@ -7,7 +7,7 @@
 }
 
 .wp-block-pullquote p {
-	font-size: var(--font-size-5);
+	font-size: var(--wp--preset--font-size--huge);
 	line-height: 1.5;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote p {
-	font-size: var(--font-size-7);
+	font-size: var(--wp--preset--font-size--huge);
 	line-height: 1.4;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -61,6 +61,6 @@
 	}
 
 	& blockquote p {
-		font-size: var(--font-size-3);
+		font-size: var(--wp--preset--font-size--large);
 	}
 }

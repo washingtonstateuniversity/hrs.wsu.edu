@@ -45,7 +45,7 @@
 @media (min-width: 34em) {
 
 	.pager ul {
-		font-size: var(--font-size-base);
+		font-size: var(--wp--preset--font-size--normal);
 	}
 
 }

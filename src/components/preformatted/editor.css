@@ -3,7 +3,7 @@
 .wp-block-code .block-editor-plain-text {
 	background-color: var(--text-color);
 	color: #fff;
-	font-size: 16px;
+	font-size: var(--wp--custom--typography--normal);
 }
 
 .wp-block-code .block-editor-plain-text:focus {

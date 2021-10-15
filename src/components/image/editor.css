@@ -1,6 +1,6 @@
 .wp-block-image figcaption {
 	color: var(--neutral-dark);
-	font-size: var(--font-size-1);
+	font-size: var(--wp--preset--font-size--small);
 	letter-spacing: 0.02em;
 	line-height: normal;
 	margin-top: 0;

@@ -45,7 +45,7 @@
 		cursor: pointer;
 		display: inline-block;
 		font-family: inherit;
-		font-size: var(--font-size-base);
+		font-size: var(--wp--preset--font-size--normal);
 		letter-spacing: 0.85px;
 		line-height: 1.5;
 		overflow-wrap: break-word;
@@ -89,7 +89,7 @@
 }
 
 .search-links-title {
-	font-size: var(--font-size-6);
+	font-size: var(--wp--preset--font-size--huge);
 	padding-bottom: 1rem;
 }
 

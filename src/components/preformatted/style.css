@@ -19,6 +19,6 @@ pre.wp-block-verse {
 }
 
 pre.wp-block-verse {
-	font-family: var(--sans-serif-fonts);
+	font-family: var(--wp--custom--typography--font);
 	padding: 1em 2em 0;
 }
