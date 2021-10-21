@@ -33,7 +33,7 @@
 	 *   - Issue with alternative fix: https://github.com/WordPress/gutenberg/issues/26545
 	 */
 	&.has-background-dim:not([class*="-background-color"]) {
-		background-color: #000;
+		background-color: var(--wp--preset--color--black);
 	}
 
 	&.has-background-dim::before {
@@ -157,7 +157,7 @@
 	& .wp-block-cover__inner-container {
 		width: 100%;
 		z-index: 1;
-		color: #fff;
+		color: var(--wp--preset--color--white);
 	}
 
 	& p,
@@ -179,8 +179,8 @@
 
 		& > a:hover,
 		& > a:focus {
-			color: var(--nav-color-hover);
-			background-color: rgba(255, 255, 255, 0.6);
+			color: var(--wp--preset--color--dark);
+			background-color: var(--wp--preset--color--light);
 		}
 
 	}
@@ -193,7 +193,7 @@
 	&.has-accent-orange-background-color {
 
 		& .wp-block-cover__inner-container {
-			color: #000;
+			color: var(--wp--preset--color--black);
 		}
 	}
 
@@ -326,13 +326,13 @@
 section.wp-block-cover-image h2,
 .wp-block-cover-image-text,
 .wp-block-cover-text {
-	color: #fff;
+	color: var(--wp--preset--color--white);
 
 	& a,
 	& a:hover,
 	& a:focus,
 	& a:active {
-		color: #fff;
+		color: var(--wp--preset--color--white);
 	}
 
 }
@@ -367,7 +367,7 @@ section.wp-block-cover-image.has-right-content > h2,
 section.wp-block-cover-image > h2,
 .wp-block-cover-image .wp-block-cover-image-text,
 .wp-block-cover .wp-block-cover-text {
-	font-size: 2em;
+	font-size: var(--wp--preset--font-size--huge);
 	line-height: 1.25;
 	z-index: 1;
 	margin-bottom: 0;

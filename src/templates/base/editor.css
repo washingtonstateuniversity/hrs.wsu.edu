@@ -1,15 +1,13 @@
 body .editor-styles-wrapper {
-	background-color: var(--section-background-color);
-	color: var(--text-color);
+	color: var(--wp--custom--wsu-color-black--90);
 	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.4;
+	line-height: 1.5;
 }
 
 /* stylelint-disable selector-class-pattern */
 .editor-styles-wrapper .wp-block,
 .editor-post-title__block .editor-post-title__input {
-	font-family: var(--sans-serif-fonts);
+	font-family: var(--wp--custom--typography--font);
 }
 /* stylelint-enable selector-class-pattern */
 

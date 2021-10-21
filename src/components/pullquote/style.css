@@ -2,12 +2,12 @@
 	padding: 1em 0 0;
 	margin-bottom: 1em;
 	text-align: center;
-	border-top: 2px solid var(--accent-crimson);
-	border-bottom: 10px solid var(--accent-crimson);
+	border-top: 2px solid var(--wp--custom--wsu-color-core--gray);
+	border-bottom: 10px solid var(--wp--custom--wsu-color-core--gray);
 }
 
 .wp-block-pullquote p {
-	font-size: var(--font-size-5);
+	font-size: var(--wp--preset--font-size--huge);
 	line-height: 1.5;
 }
 
@@ -17,13 +17,13 @@
 
 	&:hover,
 	&:focus {
-		color: #fff;
-		background-color: var(--nav-color-hover);
+		color: var(--wp--preset--color--white);
+		background-color: var(--wp--custom--wsu-color-core--gray);
 	}
 
 	&:active {
-		color: #fff;
-		background-color: var(--nav-color);
+		color: var(--wp--preset--color--white);
+		background-color: var(--wp--custom--wsu-color-core--crimson);
 	}
 }
 
@@ -44,7 +44,7 @@
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote p {
-	font-size: var(--font-size-7);
+	font-size: var(--wp--preset--font-size--huge);
 	line-height: 1.4;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -61,6 +61,6 @@
 	}
 
 	& blockquote p {
-		font-size: var(--font-size-3);
+		font-size: var(--wp--preset--font-size--large);
 	}
 }

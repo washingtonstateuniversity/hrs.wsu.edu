@@ -1,6 +1,6 @@
 footer ul,
 footer dd {
-	font-size: var(--font-size-0);
+	font-size: var(--wp--custom--typography--tiny);
 
 	& a {
 		border-bottom-color: transparent;
@@ -21,36 +21,44 @@ footer dd {
 }
 
 .footer-nav {
+	background-color: var(--wp--custom--wsu-color-black--5);
+	border-top: 1px solid var(--wp--custom--wsu-color-black--10);
 	display: flex;
 	flex-flow: row nowrap;
 }
 
 .footer-nav nav {
 	flex: 3 1 auto;
-	margin: 1.5rem 2rem;
+	margin: 1.5rem 2.25rem;
 }
 
 .footer-nav .wsu-brand {
+	align-self: flex-start;
 	flex: 1 1 auto;
-	margin: 1.5rem 2rem;
 	position: relative;
 }
 
 .footer-nav .wsu-cougar-head {
-	bottom: 0;
+	top: 2.25rem;
 	width: 100px;
 	height: auto;
 	position: absolute;
-	right: 0;
+	right: 2.25rem;
 }
 
 .footer-nav .footer-nav-title {
+	color: var(--wp--custom--wsu-color-black--70);
+	display: block;
+	font-size: var(--wp--custom--typography--medium);
 	font-weight: 600;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
 }
 
 .site-reference {
-	background: var(--brand-crimson);
+	background-color: var(--wp--custom--wsu-color-black--80);
 	color: #fff;
+	padding: 0.5rem 0;
 }
 
 .site-reference ul {
@@ -74,7 +82,7 @@ footer dd {
 	&:hover,
 	&:focus {
 		border: none;
-		color: var(--neutral-light);
+		color: var(--wp--custom--wsu-color-black--20);
 		text-decoration: underline;
 	}
 }
