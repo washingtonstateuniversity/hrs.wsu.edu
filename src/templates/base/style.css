@@ -4,13 +4,8 @@
 
 main,
 .site-header {
-	color: var(--text-color);
+	color: var(--wp--custom--wsu-color-black--90);
 	word-wrap: break-word;
-}
-
-main section,
-main .page-header {
-	background-color: var(--section-background-color);
 }
 
 @media (min-width: 61.875em) {
@@ -18,7 +13,7 @@ main .page-header {
 	main section,
 	main .page-header,
 	.site-header {
-		border-left: 8px solid var(--body-background-color);
+		border-left: 8px solid var(--wp--custom--wsu-color-black--0);
 	}
 
 	.home #binder.spineless main section,

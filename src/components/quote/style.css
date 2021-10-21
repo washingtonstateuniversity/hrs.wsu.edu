@@ -19,13 +19,13 @@ blockquote cite::before {
 }
 
 .wp-block-quote {
-	background-color: var(--body-background-color);
-	border-left: 4px solid var(--accent-crimson);
+	background-color: var(--wp--custom--wsu-color-black--0);
+	border-left: 4px solid var(--wp--custom--wsu-color-core--gray);
 	position: relative;
 }
 
 .wp-block-quote::before {
-	color: var(--accent-crimson);
+	color: var(--wp--custom--wsu-color-core--gray);
 	content: "\201C";
 	font-size: var(--wp--custom--typography--hugex);
 	position: absolute;

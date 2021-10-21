@@ -8,6 +8,5 @@
  * @since 1.1.0
  */
 
-@import "./global/editor.css";
 @import "./components/editor.css";
 @import "./templates/editor.css";

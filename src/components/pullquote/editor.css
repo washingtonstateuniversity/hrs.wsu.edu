@@ -15,8 +15,8 @@
 	padding: 1em 0 0;
 	margin-bottom: 1em;
 	text-align: center;
-	border-top: 2px solid var(--accent-crimson);
-	border-bottom: 10px solid var(--accent-crimson);
+	border-top: 2px solid var(--wp--custom--wsu-color-core--gray);
+	border-bottom: 10px solid var(--wp--custom--wsu-color-core--gray);
 }
 
 .wp-block-pullquote p {
@@ -37,13 +37,13 @@
 
 	&:hover,
 	&:focus {
-		color: #fff;
-		background-color: var(--nav-color-hover);
+		background-color: var(--wp--custom--wsu-color-core--gray);
+		color: var(--wp--preset--color--white);
 	}
 
 	&:active {
-		color: #fff;
-		background-color: var(--nav-color);
+		background-color: var(--wp--custom--wsu-color-core--crimson);
+		color: var(--wp--preset--color--white);
 	}
 }
 

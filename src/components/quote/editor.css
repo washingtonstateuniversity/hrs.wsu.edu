@@ -1,6 +1,6 @@
 .wp-block-quote.wp-block-quote {
-	background-color: var(--body-background-color);
-	border-left: 4px solid var(--accent-crimson);
+	background-color: var(--wp--custom--wsu-color-black--0);
+	border-left: 4px solid var(--wp--custom--wsu-color-core--gray);
 	font-family: var(--wp--custom--typography--font);
 	margin-bottom: 1em;
 	padding: 1em 2em;
@@ -21,7 +21,7 @@
 /* stylelint-enable selector-class-pattern */
 
 .wp-block-quote::before {
-	color: var(--accent-crimson);
+	color: var(--wp--custom--wsu-color-core--gray);
 	content: "\201C";
 	font-size: var(--wp--custom--typography--hugex);
 	position: absolute;

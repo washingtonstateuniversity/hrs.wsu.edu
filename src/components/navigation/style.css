@@ -20,14 +20,14 @@
 
 		&:hover,
 		&:focus {
-			background: var(--nav-color-hover);
-			color: var(--section-background-color);
+			background: var(--wp--preset--color--primary-crimson);
+			color: var(--wp--preset--color--light);
 		}
 	}
 
 	& .current {
-		background: var(--body-background-color);
-		border: 1px solid var(--neutral-dark);
+		background: var(--wp--custom--wsu-color-black--0);
+		border: 1px solid var(--wp--custom--wsu-color-black--70);
 	}
 }
 
@@ -55,7 +55,7 @@
 }
 
 .atoz li {
-	border: 1px solid var(--nav-color);
+	border: 1px solid var(--wp--custom--wsu-color-core--crimson);
 	display: inline-block;
 	margin: 0.2em 0.1em;
 	padding: 0;
@@ -64,7 +64,7 @@
 
 .atoz li a {
 	border-bottom: none;
-	color: var(--nav-color);
+	color: var(--wp--custom--wsu-color-core--crimson);
 	display: block;
 	font-weight: 400;
 	min-width: 2.3em;
@@ -73,7 +73,7 @@
 
 	&:hover,
 	&:focus {
-		background-color: var(--nav-color);
+		background-color: var(--wp--custom--wsu-color-core--crimson);
 		color: #fff;
 	}
 }

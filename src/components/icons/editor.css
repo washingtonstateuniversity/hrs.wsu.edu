@@ -1,5 +1,5 @@
 .wp-block figcaption::before {
-	color: var(--accent-crimson);
+	color: var(--wp--custom--wsu-color-core--gray);
 	content: "\f323";
 	display: inline-block;
 	width: 1em;

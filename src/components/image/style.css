@@ -4,7 +4,7 @@ figure > a {
 }
 
 figcaption {
-	color: var(--neutral-dark);
+	color: var(--wp--custom--wsu-color-black--70);
 	font-size: var(--wp--preset--font-size--small);
 	letter-spacing: 0.02em;
 	margin-bottom: 1em;

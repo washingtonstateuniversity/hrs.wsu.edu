@@ -2,15 +2,15 @@
 main {
 
 	& a {
-		border-bottom: 1px solid var(--nav-color-border);
-		color: var(--text-color);
+		border-bottom: 1px solid var(----wp--custom--wsu-color-accent--crimson);
+		color: var(--wp--custom--wsu-color-black--90);
 		font-weight: 600;
 		text-decoration: none;
 		transition: all 0.3s ease;
 
 		&:hover,
 		&:focus {
-			color: var(--nav-color-hover);
+			color: var(--wp--custom--wsu-color-core--gray);
 		}
 	}
 

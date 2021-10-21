@@ -3,9 +3,9 @@
 
 	/* stylelint-disable selector-class-pattern */
 	& .wp-block-button__link {
-		background: var(--brand-crimson);
-		color: #fff;
-		border: 1px solid var(--brand-crimson);
+		background: var(--wp--preset--color--primary-crimson);
+		color: var(--wp--preset--color--white);
+		border: 1px solid var(--wp--preset--color--primary-crimson);
 		border-radius: 3px;
 		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.1);
 		cursor: pointer;
@@ -24,36 +24,36 @@
 
 		&:hover,
 		&:focus {
-			background: #fff;
-			border-color: var(--nav-color-hover);
+			background-color: var(--wp--preset--color--white);
+			border-color: var(--wp--custom--wsu-color-core--gray);
 			border-width: 1px;
-			color: var(--nav-color-hover);
+			color: var(--wp--custom--wsu-color-core--gray);
 			outline: none;
 		}
 
 		&:active {
-			background: var(--neutral-light);
-			border: 1px solid var(--brand-crimson);
-			color: var(--nav-color-hover);
+			background-color: var(--wp--custom--wsu-color-black--20);
+			border: 1px solid var(--wp--custom--wsu-color-core--crimson);
+			color: var(--wp--custom--wsu-color-core--gray);
 		}
 	}
 
 	&.is-style-outline .wp-block-button__link {
-		background: #fff;
-		border: 1px solid var(--brand-crimson);
-		color: var(--brand-crimson);
+		background: var(--wp--preset--color--white);
+		border: 1px solid var(--wp--custom--wsu-color-core--crimson);
+		color: var(--wp--custom--wsu-color-core--crimson);
 
 		&:hover,
 		&:focus {
-			background: var(--nav-color-hover);
-			border: 1px solid var(--nav-color-border);
+			background: var(--wp--custom--wsu-color-core--gray);
+			border: 1px solid var(----wp--custom--wsu-color-accent--crimson);
 			box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
-			color: #fff;
+			color: var(--wp--preset--color--white);
 		}
 
 		&:active {
-			background: darken(var(--brand-crimson, 10%));
-			border: 1px solid var(--neutral-dark);
+			background: darken(var(--wp--custom--wsu-color-core--crimson, 10%));
+			border: 1px solid var(--wp--custom--wsu-color-black--70);
 			box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
 			outline-width: 0;
 		}
@@ -68,18 +68,18 @@
 	&.is-style-squared .wp-block-button__link,
 	&.is-style-text .wp-block-button__link {
 		background: transparent;
-		color: var(--nav-color);
+		color: var(--wp--custom--wsu-color-core--crimson);
 		border: 1px solid transparent;
 		box-shadow: none;
 
 		&:hover,
 		&:focus {
-			background: var(--nav-color-hover);
+			background: var(--wp--custom--wsu-color-core--gray);
 			color: #fff;
 		}
 
 		&:active {
-			background: darken(var(--brand-crimson, 10%));
+			background: darken(var(--wp--custom--wsu-color-core--crimson, 10%));
 			box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
 		}
 	}

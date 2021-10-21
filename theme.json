@@ -17,90 +17,68 @@
 				"hugex": "calc(var(--wp--custom--typography--huge) * var(--wp--custom--typography--scale))",
 				"massive": "calc(var(--wp--custom--typography--hugex) * var(--wp--custom--typography--scale))",
 				"massivex": "calc(var(--wp--custom--typography--massive) * var(--wp--custom--typography--scale))"
+			},
+			"wsuColorCore": {
+				"crimson": "#a60f2d",
+				"crimsonLight": "#ca1237",
+				"gray": "#4d4d4d"
+			},
+			"wsuColorBlack": {
+				"100": "hsl(0, 0%, 0%)",
+				"90": "hsl(0, 0%, 10%)",
+				"80": "hsl(0, 0%, 20%)",
+				"70": "hsl(0, 0%, 30%)",
+				"60": "hsl(0, 0%, 40%)",
+				"50": "hsl(0, 0%, 50%)",
+				"40": "hsl(0, 0%, 60%)",
+				"30": "hsl(0, 0%, 70%)",
+				"20": "hsl(0, 0%, 80%)",
+				"10": "hsl(0, 0%, 90%)",
+				"5": "hsl(0, 0%, 95%)",
+				"3": "hsl(0, 0%, 98%)",
+				"0": "hsl(0, 0%, 100%)"
+			},
+			"wsuColorAccent": {
+				"crimson": "#fae6ea",
+				"autumn": "#ff6727",
+				"goldfinch": "#f3e700",
+				"vineyard": "#aadc24",
+				"pacificSky": "#5bc3f5",
+				"midnight": "#002d61"
 			}
 		},
 		"color": {
 			"custom": false,
 			"customGradient": false,
-			"duotone": [
-				{
-					"name": "Crimson and Gray",
-					"slug": "crimson-and-gray",
-					"colors": [ "#981e32", "#5e6a71" ]
-				},
-				{
-					"name": "Crimson and Blue",
-					"slug": "crimson-and-blue",
-					"colors": [ "#981e32", "#00a5bd" ]
-				},
-				{
-					"name": "Gray and Yellow",
-					"slug": "blue-and-orance",
-					"colors": [ "#5e6a71", "#ffb81c" ]
-				},
-				{
-					"name": "Blue and Orange",
-					"slug": "blue-and-orance",
-					"colors": [ "#00a5bd", "#f6861f" ]
-				},
-				{
-					"name": "Green and Blue",
-					"slug": "green-and-blue",
-					"colors": [ "#ada400", "#00a5bd" ]
-				},
-				{
-					"name": "Blue and Crimson",
-					"slug": "blue-and-crimson",
-					"colors": [ "#00a5bd", "#981e32" ]
-				}
-			],
 			"gradients": [],
+			"customDuotone": false,
+			"duotone": [],
 			"link": false,
 			"palette": [
 				{
-					"name": "Brand Crimson",
-					"slug": "brand-crimson",
-					"color": "#981e32"
+					"name": "Crimson",
+					"slug": "primary-crimson",
+					"color": "var(--wp--custom--wsu-color-core--crimson)"
 				},
 				{
-					"name": "Brand Gray",
-					"slug": "brand-gray",
-					"color": "#5e6a71"
+					"name": "Gray",
+					"slug": "primary-gray",
+					"color": "var(--wp--custom--wsu-color-core--gray)"
 				},
 				{
-					"name": "Accent Crimson",
-					"slug": "accent-crimson",
-					"color": "#c60c30"
+					"name": "Secondary Crimson",
+					"slug": "secondary-crimson",
+					"color": "var(--wp--custom--wsu-color-core--crimson-light)"
 				},
 				{
-					"name": "Accent Green",
-					"slug": "accent-green",
-					"color": "#ada400"
-				},
-				{
-					"name": "Accent Orange",
-					"slug": "accent-orange",
-					"color": "#f6861f"
-				},
-				{
-					"name": "Accent Blue",
-					"slug": "accent-blue",
-					"color": "#00a5bd"
-				},
-				{
-					"name": "Accent Yellow",
-					"slug": "accent-yellow",
-					"color": "#ffb81c"
-				},
-				{
-					"name": "White",
+					"name": "Light",
 					"slug": "light",
-					"color": "#fdfdfd"
+					"color": "var(--wp--custom--wsu-color-black--3)"
 				},
 				{
-					"name": "Black",
+					"name": "Dark",
 					"slug": "dark",
-					"color": "#191919"
+					"color": "var(--wp--custom--wsu-color-black--90)"
 				}
 			]
 		},

@@ -17,7 +17,7 @@ p.has-text-color a {
 
 	&:hover,
 	&:focus {
-		color: var(--nav-color-hover);
-		background-color: rgba(255, 255, 255, 0.6);
+		color: var(--wp--preset--color--dark);
+		background-color: var(--wp--preset--color--light);
 	}
 }

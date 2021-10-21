@@ -1,13 +1,13 @@
 .wp-block-code,
 .wp-block-code .editor-plain-text,
 .wp-block-code .block-editor-plain-text {
-	background-color: var(--text-color);
-	color: #fff;
+	background-color: var(--wp--custom--wsu-color-black--90);
+	color: var(--wp--preset--color--white);
 	font-size: var(--wp--custom--typography--normal);
 }
 
 .wp-block-code .block-editor-plain-text:focus {
-	color: #fff;
+	color: var(--wp--preset--color--white);
 }
 
 .editor-styles-wrapper .wp-block.wp-block-preformatted {

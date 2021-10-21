@@ -1,5 +1,5 @@
 body .editor-styles-wrapper {
-	color: var(--text-color);
+	color: var(--wp--custom--wsu-color-black--90);
 	font-size: 16px;
 	line-height: 1.5;
 }

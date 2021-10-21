@@ -15,8 +15,8 @@
 }
 
 .blog .reminders h2 {
-	border-left: 12px solid var(--brand-crimson);
-	border-bottom: 2px solid var(--brand-crimson);
+	border-left: 12px solid var(--wp--custom--wsu-color-core--crimson);
+	border-bottom: 2px solid var(--wp--custom--wsu-color-core--crimson);
 	font-style: italic;
 	font-weight: 600;
 	padding: 0.25em 0.5em;
@@ -50,7 +50,7 @@
 }
 
 .blog .hrs-units-browse {
-	background-color: var(--body-background-color);
+	background-color: var(--wp--custom--wsu-color-black--0);
 	text-align: center;
 }
 
@@ -59,8 +59,8 @@
 	padding: 0;
 
 	& a {
-		border: 1px solid var(--nav-color);
-		background-color: var(--section-background-color);
+		border: 1px solid var(--wp--custom--wsu-color-core--crimson);
+		background-color: var(--wp--custom--wsu-color-black--30);
 		display: block;
 		font-size: var(--wp--preset--font-size--medium);
 		height: 100%;
@@ -68,8 +68,8 @@
 
 		&:hover,
 		&:focus {
-			background-color: var(--nav-color-hover);
-			color: var(--section-background-color);
+			background-color: var(--wp--custom--wsu-color-core--gray);
+			color: var(--wp--custom--wsu-color-black--30);
 		}
 	}
 }

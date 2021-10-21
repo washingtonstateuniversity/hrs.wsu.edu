@@ -1,10 +1,10 @@
 .wp-block-media-text {
 
-	&.has-brand-crimson-background-color,
-	&.has-brand-gray-background-color,
-	&.has-accent-crimson-background-color,
+	&.has-primary-crimson-background-color,
+	&.has-primary-gray-background-color,
+	&.has-secondary-crimson-background-color,
 	&.has-dark-background-color {
-		color: var(--section-background-color);
+		color: var(--wp--custom--wsu-color-black--30);
 	}
 
 }

@@ -56,7 +56,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_assets', 25 );
  */
 function inline_styles() {
 	$inline_styles = 'body {
-		background-color: #fff;
+		background-color: var(--wp--preset--color--white);
 		font-family: var(--wp--custom--typography--font);
 		font-size: 16px;
 		line-height: 1.5;

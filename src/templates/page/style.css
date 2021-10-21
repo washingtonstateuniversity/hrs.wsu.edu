@@ -36,7 +36,7 @@ body.single.hide-title .article-content > .article-body {
 
 /* stylelint-disable-next-line selector-class-pattern */
 .article-taxonomy--primary ul a {
-	color: var(--neutral-dark);
+	color: var(--wp--custom--wsu-color-black--70);
 
 	&::after {
 		background-size: 80%;
@@ -44,7 +44,7 @@ body.single.hide-title .article-content > .article-body {
 
 	&:hover,
 	&:focus {
-		color: var(--nav-color-hover);
+		color: var(--wp--custom--wsu-color-core--gray);
 	}
 }
 
