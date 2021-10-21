@@ -5,9 +5,9 @@ pre.wp-block-verse {
 }
 
 pre.wp-block-code {
-	background-color: var(--text-color);
+	background-color: var(--wp--custom--wsu-color-black--90);
 	border-radius: 4px;
-	color: #fff;
+	color: var(--wp--preset--color--white);
 	overflow-x: auto;
 	padding: 1em 2em;
 }
@@ -19,6 +19,6 @@ pre.wp-block-verse {
 }
 
 pre.wp-block-verse {
-	font-family: var(--sans-serif-fonts);
+	font-family: var(--wp--custom--typography--font);
 	padding: 1em 2em 0;
 }

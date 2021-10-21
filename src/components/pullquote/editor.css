@@ -15,17 +15,17 @@
 	padding: 1em 0 0;
 	margin-bottom: 1em;
 	text-align: center;
-	border-top: 2px solid var(--accent-crimson);
-	border-bottom: 10px solid var(--accent-crimson);
+	border-top: 2px solid var(--wp--custom--wsu-color-core--gray);
+	border-bottom: 10px solid var(--wp--custom--wsu-color-core--gray);
 }
 
 .wp-block-pullquote p {
-	font-size: var(--font-size-5);
+	font-size: var(--wp--preset--font-size--huge);
 	line-height: 1.5;
 }
 
 .wp-block-pullquote blockquote {
-	font-family: var(--sans-serif-fonts);
+	font-family: var(--wp--custom--typography--font);
 	margin-bottom: 1em;
 	padding: 1em 2em 2em;
 }
@@ -37,13 +37,13 @@
 
 	&:hover,
 	&:focus {
-		color: #fff;
-		background-color: var(--nav-color-hover);
+		background-color: var(--wp--custom--wsu-color-core--gray);
+		color: var(--wp--preset--color--white);
 	}
 
 	&:active {
-		color: #fff;
-		background-color: var(--nav-color);
+		background-color: var(--wp--custom--wsu-color-core--crimson);
+		color: var(--wp--preset--color--white);
 	}
 }
 
@@ -66,7 +66,7 @@
 .wp-block-pullquote.is-style-solid-color blockquote p {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-size: var(--font-size-7);
+	font-size: var(--wp--preset--font-size--huge);
 }
 
 .wp-block-pullquote.alignleft,
@@ -80,6 +80,6 @@
 	}
 
 	& blockquote p {
-		font-size: var(--font-size-3);
+		font-size: var(--wp--preset--font-size--large);
 	}
 }

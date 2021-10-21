@@ -10,7 +10,7 @@
 	}
 
 	& .search-menu {
-		background: var(--neutral-light);
+		background: var(--wp--custom--wsu-color-black--5);
 		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.03), 0 0 0 0 rgba(0, 0, 0, 0.03), 0 0 0 0 rgba(0, 0, 0, 0.02);
 		right: 0;
 		opacity: 0;
@@ -37,15 +37,15 @@
 
 	& .search-menu-trigger,
 	& input[type="submit"] {
-		background: var(--brand-crimson);
-		color: #fff;
-		border: 1px solid var(--brand-crimson);
+		background: var(--wp--preset--color--primary-crimson);
+		color: var(--wp--preset--color--white);
+		border: 1px solid var(--wp--preset--color--primary-crimson);
 		border-radius: 3px;
 		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.1);
 		cursor: pointer;
 		display: inline-block;
 		font-family: inherit;
-		font-size: var(--font-size-base);
+		font-size: var(--wp--preset--font-size--normal);
 		letter-spacing: 0.85px;
 		line-height: 1.5;
 		overflow-wrap: break-word;
@@ -58,18 +58,22 @@
 
 		&:hover,
 		&:focus {
-			background: #fff;
-			border-color: var(--nav-color-hover);
+			background-color: var(--wp--preset--color--white);
+			border-color: var(--wp--custom--wsu-color-core--gray);
 			border-width: 1px;
-			color: var(--nav-color-hover);
+			color: var(--wp--custom--wsu-color-core--gray);
 			outline: none;
 		}
 
 		&:active {
-			background: var(--neutral-light);
-			border: 1px solid var(--brand-crimson);
-			color: var(--nav-color-hover);
+			background-color: var(--wp--custom--wsu-color-black--20);
+			border: 1px solid var(--wp--custom--wsu-color-core--crimson);
+			color: var(--wp--custom--wsu-color-core--gray);
 		}
+	}
+
+	& .search-menu-trigger {
+		width: 100%;
 	}
 
 	& input[type="submit"] {
@@ -83,13 +87,13 @@
 }
 
 .search-menu-trigger[aria-expanded="true"] {
-	background: var(--neutral-dark);
-	border-color: var(--neutral-dark);
-	color: var(--neutral-light);
+	background: var(--wp--preset--color--white);
+	border: 1px solid var(--wp--custom--wsu-color-core--crimson);
+	color: var(--wp--custom--wsu-color-core--crimson);
 }
 
 .search-links-title {
-	font-size: var(--font-size-6);
+	font-size: var(--wp--preset--font-size--huge);
 	padding-bottom: 1rem;
 }
 

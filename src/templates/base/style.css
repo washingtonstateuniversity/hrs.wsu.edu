@@ -1,25 +1,11 @@
-html {
-	background-color: var(--body-background-color);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
 #jacket {
 	overflow: hidden;
 }
 
 main,
 .site-header {
-	background-repeat: no-repeat;
-	background-position: left top;
-	color: var(--text-color);
-	font: 400 18px/1.6 var(--sans-serif-fonts);
+	color: var(--wp--custom--wsu-color-black--90);
 	word-wrap: break-word;
-}
-
-main section,
-main .page-header {
-	background-color: var(--section-background-color);
 }
 
 @media (min-width: 61.875em) {
@@ -27,7 +13,7 @@ main .page-header {
 	main section,
 	main .page-header,
 	.site-header {
-		border-left: 8px solid var(--body-background-color);
+		border-left: 8px solid var(--wp--custom--wsu-color-black--0);
 	}
 
 	.home #binder.spineless main section,

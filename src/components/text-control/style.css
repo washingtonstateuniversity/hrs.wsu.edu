@@ -10,8 +10,8 @@ input[type="time"],
 input[type="url"],
 select,
 textarea {
-	color: var(--text-color);
-	border: 1px solid #ccc;
-	background: #f8f8f8;
+	color: var(--wp--custom--wsu-color-black--90);
+	border: 1px solid var(--wp--custom--wsu-color-black--20);
+	background: var(--wp--custom--wsu-color-black--3);
 	border-radius: 4px;
 }
