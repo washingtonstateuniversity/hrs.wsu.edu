@@ -40,15 +40,6 @@ body.single .article-footer dd:nth-last-of-type(1)::after {
 	content: "";
 }
 
-body.single .article-footer a {
-	color: var(--wp--custom--wsu-color-black--90);
-
-	&:hover,
-	&:focus {
-		color: var(--wp--custom--wsu-color-core--gray);
-	}
-}
-
 @media (min-width: 43em) {
 
 	body.single .article-footer {
