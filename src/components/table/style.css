@@ -112,12 +112,10 @@ th {
 	border-bottom: inherit;
 }
 
-/* stylelint-disable selector-class-pattern */
 .dataTables_filter {
 	float: none;
 	margin-bottom: 1em;
 }
-/* stylelint-enable selector-class-pattern */
 
 /* HRS Contacts adjustments. */
 .tablepress-hrs-contacts td.column-3 {

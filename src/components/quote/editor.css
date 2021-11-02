@@ -7,7 +7,6 @@
 	position: relative;
 }
 
-/* stylelint-disable selector-class-pattern */
 .wp-block-quote__citation {
 	color: inherit;
 	font-size: inherit;
@@ -18,7 +17,6 @@
 .wp-block-quote__citation::before {
 	content: "- ";
 }
-/* stylelint-enable selector-class-pattern */
 
 .wp-block-quote::before {
 	color: var(--wp--custom--wsu-color-core--gray);

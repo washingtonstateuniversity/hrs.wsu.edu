@@ -1,4 +1,3 @@
-/* stylelint-disable selector-class-pattern */
 .wp-block[data-align="left"] > [data-type="core/embed"],
 .wp-block[data-align="right"] > [data-type="core/embed"],
 .wp-block-embed.alignleft,
@@ -83,4 +82,3 @@
 	}
 
 }
-/* stylelint-enable selector-class-pattern */

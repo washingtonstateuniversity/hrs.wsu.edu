@@ -7,7 +7,6 @@
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
 
-	/* stylelint-disable selector-class-pattern */
 	& .wp-block-search__inside-wrapper {
 		display: flex;
 	}
@@ -70,6 +69,5 @@
 		fill: var(--wp--preset--color--white);
 		width: 36px;
 	}
-	/* stylelint-enable selector-class-pattern */
 
 }
