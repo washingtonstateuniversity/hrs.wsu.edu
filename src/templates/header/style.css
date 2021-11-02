@@ -20,13 +20,35 @@
 	font-size: var(--wp--preset--font-size--huge);
 	margin: 0;
 	padding: 0;
-}
+	position: relative;
 
-.site-title a {
-	border: none;
-	color: var(--wp--custom--wsu-color-core--crimson);
-	font-weight: 700;
-	margin-right: 2rem;
+	&::after {
+		background-color: transparent;
+	}
+
+	& a {
+		color: var(--wp--custom--wsu-color-core--crimson);
+		font-weight: 700;
+		margin-right: 2rem;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: var(--wp--preset--color--secondary-crimson);
+			text-decoration: none;
+
+			&::after {
+				background-color: var(--wp--preset--color--secondary-crimson);
+				bottom: -4px;
+				content: "";
+				display: block;
+				height: 0.075em;
+				left: 0;
+				position: absolute;
+				width: 2.25em;
+			}
+		}
+	}
 }
 
 @media (min-width: 43em) {
