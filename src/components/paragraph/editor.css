@@ -2,22 +2,50 @@
 
 	& p {
 		font-size: var(--wp--custom--typography--normal);
-	}
 
-	/* No drop cap styling anywhere. */
-	& p.has-drop-cap:not(:focus)::first-letter {
-		float: none;
-		font-size: inherit;
-		line-height: inherit;
-		font-weight: inherit;
-		margin: inherit;
-		text-transform: none;
-		font-style: normal;
-	}
+		&.has-background {
+			padding: 1.25em 2.375em;
+		}
 
-	& p.has-drop-cap:not(:focus)::after {
-		display: none;
-		padding-top: 0;
+		&.has-background + *:not(.has-background) {
+			margin-top: 1em;
+		}
+
+		&.has-primary-crimson-background-color,
+		&.has-primary-gray-background-color,
+		&.has-secondary-crimson-background-color,
+		&.has-dark-background-color {
+
+			& a:not(.wp-block-button__link):not(.is-style-secondary) {
+				color: var(--wp--preset--color--white);
+				text-decoration-color: var(--wp--preset--color--white);
+				text-decoration-thickness: 0.1em;
+
+				&:hover,
+				&:focus {
+					background-color: var(--wp--preset--color--white);
+					color: var(--wp--preset--color--primary-crimson);
+					text-decoration-color: var(--wp--preset--color--white);
+				}
+			}
+
+		}
+
+		/* No drop cap styling anywhere. */
+		&.has-drop-cap:not(:focus)::first-letter {
+			float: none;
+			font-size: inherit;
+			line-height: inherit;
+			font-weight: inherit;
+			margin: inherit;
+			text-transform: none;
+			font-style: normal;
+		}
+
+		&.has-drop-cap:not(:focus)::after {
+			display: none;
+			padding-top: 0;
+		}
 	}
 
 }
