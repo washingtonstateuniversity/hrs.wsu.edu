@@ -19,16 +19,38 @@
 	}
 
 	& .wp-social-link {
+		border-radius: 9999px; /* This makes it pill-shaped instead of oval, in cases where the image fed is not perfectly sized. */
+		display: block;
+		height: auto;
 		margin: 4px 8px 4px 0;
 		padding: 0;
+		transition: transform 0.1s ease;
 
 		& a {
+			display: block;
+			line-height: 0;
 			padding: 0.25em;
+			transition: transform 0.1s ease;
+		}
+
+		& a.wp-block-social-link-anchor,
+		& a.wp-block-social-link-anchor:hover,
+		& a.wp-block-social-link-anchor:focus,
+		& a.wp-block-social-link-anchor:active,
+		& a.wp-block-social-link-anchor:visited,
+		& svg {
+			color: currentColor;
+			fill: currentColor;
 		}
 
 		& svg {
 			height: 1em;
 			width: 1em;
+		}
+
+		&:hover,
+		&:focus {
+			transform: scale(1.1);
 		}
 	}
 
@@ -57,34 +79,6 @@
 		justify-content: flex-end;
 	}
 
-}
-
-.wp-social-link {
-	border-radius: 9999px; /* This makes it pill-shaped instead of oval, in cases where the image fed is not perfectly sized. */
-	display: block;
-	height: auto;
-	transition: transform 0.1s ease;
-
-	& a {
-		display: block;
-		line-height: 0;
-		transition: transform 0.1s ease;
-	}
-
-	& a,
-	& a:hover,
-	& a:focus,
-	& a:active,
-	& a:visited,
-	& svg {
-		color: currentColor;
-		fill: currentColor;
-	}
-
-	&:hover,
-	&:focus {
-		transform: scale(1.1);
-	}
 }
 
 @media (prefers-reduced-motion: reduce) {
