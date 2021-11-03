@@ -50,30 +50,35 @@
 
 }
 
-.atoz ul {
-	padding: 0 0 1.5em;
-}
+.article-content .atoz {
 
-.atoz li {
-	border: 1px solid var(--wp--custom--wsu-color-core--crimson);
-	display: inline-block;
-	margin: 0.2em 0.1em;
-	padding: 0;
-	text-align: center;
-}
-
-.atoz li a {
-	border-bottom: none;
-	color: var(--wp--custom--wsu-color-core--crimson);
-	display: block;
-	font-weight: 400;
-	min-width: 2.3em;
-	padding: 8px;
-	transition: all 0.5s ease;
-
-	&:hover,
-	&:focus {
-		background-color: var(--wp--custom--wsu-color-core--crimson);
-		color: #fff;
+	& ul {
+		padding: 0 0 1.5em;
 	}
+
+	& li {
+		border: 1px solid var(--wp--custom--wsu-color-core--crimson);
+		display: inline-block;
+		margin: 0.2em 0.1em;
+		padding: 0;
+		text-align: center;
+	}
+
+	& ul li a:not(.is-style-secondary) {
+		border-bottom: none;
+		color: var(--wp--custom--wsu-color-core--crimson);
+		display: block;
+		font-weight: 400;
+		min-width: 2.3em;
+		padding: 15px 10px;
+		text-decoration: none;
+		transition: all 0.5s ease;
+
+		&:hover,
+		&:focus {
+			background-color: var(--wp--custom--wsu-color-core--crimson);
+			color: #fff;
+		}
+	}
+
 }
