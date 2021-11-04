@@ -30,7 +30,7 @@ global $is_feature;
 			$image_size = ( $is_feature ) ? 'spine-large_size' : 'spine-small_size';
 			?>
 			<figure class="article-image">
-				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( $image_size ); ?></a>
+				<?php the_post_thumbnail( $image_size ); ?>
 			</figure>
 			<?php
 		endif;
