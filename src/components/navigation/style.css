@@ -94,15 +94,15 @@
 			}
 		}
 
-		& .has-icon-form::before {
+		& a.has-icon-form::before {
 			background-image: url(images/form.svg);
 		}
 
-		& .has-icon-person::before {
+		& a.has-icon-person::before {
 			background-image: url(images/person.svg);
 		}
 
-		& .has-icon-spa::before {
+		& a.has-icon-spa::before {
 			background-image: url(images/spa.svg);
 		}
 	}
