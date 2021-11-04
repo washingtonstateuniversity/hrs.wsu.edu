@@ -1,11 +1,17 @@
 .wp-block-cover {
 
+
 	&.has-background-dim:not([class*="-background-color"]) {
 		background-color: var(--wp--preset--color--white);
 	}
 
 	& .wp-block-cover__inner-container {
 		color: var(--wp--custom--wsu-color-black--90);
+	}
+
+	&:not(.has-custom-content-position) .wp-block-cover__inner-container > .wp-block {
+		margin-right: auto;
+		margin-left: auto;
 	}
 
 	&.has-primary-crimson-background-color,
@@ -15,11 +21,6 @@
 
 		& .wp-block-cover__inner-container {
 			color: var(--wp--preset--color--white);
-
-			& > .wp-block {
-				margin-right: auto;
-				margin-left: auto;
-			}
 		}
 
 		& .wp-block-cover__inner-container a:not(.wp-block-button__link) {
