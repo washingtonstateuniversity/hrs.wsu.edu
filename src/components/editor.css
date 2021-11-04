@@ -11,6 +11,7 @@
 @import "./quote/editor.css";
 @import "./search/editor.css";
 @import "./list/editor.css";
+@import "./navigation/editor.css";
 @import "./navigation-link/editor.css";
 @import "./separator/editor.css";
 @import "./text-tags/editor.css";
