@@ -17,7 +17,7 @@
 }
 
 .site-header .site-title {
-	font-size: var(--wp--preset--font-size--huge);
+	font-size: var(--wp--preset--font-size--large);
 	margin: 0;
 	padding: 0;
 	position: relative;
