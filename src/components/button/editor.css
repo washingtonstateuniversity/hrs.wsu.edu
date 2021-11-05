@@ -57,12 +57,6 @@
 		}
 	}
 
-	&.is-style-small .wp-block-button__link {
-		border-radius: 6px;
-		padding: 0.25em 0.75em;
-		vertical-align: baseline;
-	}
-
 	&.is-style-squared .wp-block-button__link,
 	&.is-style-text .wp-block-button__link {
 		background: transparent;
