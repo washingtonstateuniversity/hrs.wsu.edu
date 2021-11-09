@@ -2,11 +2,41 @@
 	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;
-	margin-bottom: 1.5em;
+	margin-bottom: 2rem;
 
-	&.has-background {
-		padding: 1.25em 2.375em;
+	&.has-text-color {
+		color: var(--wp--custom--wsu-color-black--90) !important;
+	}
 
+	&.has-primary-crimson-background-color,
+	&.has-primary-gray-background-color,
+	&.has-secondary-crimson-background-color,
+	&.has-dark-background-color,
+	&.has-light-background-color {
+		background-color: transparent !important;
+		border-top: 3px solid;
+		border-bottom: 3px solid;
+		padding: 2rem 1rem 1rem;
+	}
+
+	&.has-primary-crimson-background-color {
+		border-color: var(--wp--preset--color--primary-crimson);
+	}
+
+	&.has-primary-gray-background-color {
+		border-color: var(--wp--preset--color--primary-gray);
+	}
+
+	&.has-secondary-crimson-background-color {
+		border-color: var(--wp--preset--color--secondary-crimson);
+	}
+
+	&.has-dark-background-color {
+		border-color: var(--wp--preset--color--dark);
+	}
+
+	&.has-light-background-color {
+		border-color: var(--wp--preset--color--light);
 	}
 
 	&.are-vertically-aligned-top {
@@ -24,13 +54,48 @@
 
 .wp-block-column {
 	flex-grow: 1;
-	flex-basis: 100% !important; /* Need to override inline styles */
+	margin-top: 2rem;
 	min-width: 0;
 	word-break: break-word;
 	overflow-wrap: break-word;
 
-	&.has-background {
-		padding: 1em 2em;
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&.has-text-color {
+		color: var(--wp--custom--wsu-color-black--90) !important;
+	}
+
+	&.has-primary-crimson-background-color,
+	&.has-primary-gray-background-color,
+	&.has-secondary-crimson-background-color,
+	&.has-dark-background-color,
+	&.has-light-background-color {
+		background-color: transparent !important;
+		border-top: 3px solid;
+		border-bottom: 3px solid;
+		padding: 2rem 1rem 1rem;
+	}
+
+	&.has-primary-crimson-background-color {
+		border-color: var(--wp--preset--color--primary-crimson);
+	}
+
+	&.has-primary-gray-background-color {
+		border-color: var(--wp--preset--color--primary-gray);
+	}
+
+	&.has-secondary-crimson-background-color {
+		border-color: var(--wp--preset--color--secondary-crimson);
+	}
+
+	&.has-dark-background-color {
+		border-color: var(--wp--preset--color--dark);
+	}
+
+	&.has-light-background-color {
+		border-color: var(--wp--preset--color--light);
 	}
 
 	&.is-vertically-aligned-top {
@@ -52,19 +117,34 @@
 	}
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
 
 	.wp-block-column {
-		flex-basis: calc(50% - 1rem) !important; /* Need to override inline styles */
-		flex-grow: 0;
+		flex-basis: 100% !important; /* Need to override inline styles */
 	}
 
-	.wp-block-column:nth-child(odd) {
+}
+
+@media (min-width: 576px) {
+
+	.wp-block-column:nth-child(odd):not(:last-child) {
 		margin-right: 1rem;
 	}
 
 	.wp-block-column:nth-child(even) {
 		margin-left: 1rem;
+	}
+
+	.wp-block-column:nth-child(-n+2) {
+		margin-top: 0;
+	}
+
+}
+
+@media (min-width: 576px) and (max-width: 900px) {
+
+	.wp-block-column {
+		flex-basis: calc(50% - 1rem) !important; /* Need to override inline styles */
 	}
 
 }
@@ -73,6 +153,11 @@
 
 	.wp-block-columns {
 		flex-wrap: nowrap;
+
+		& .wp-block-column {
+			flex-basis: 0;
+			margin-top: 0;
+		}
 	}
 
 	.wp-block-column:not(:first-child) {
@@ -93,9 +178,8 @@
 
 @media only screen and (min-width: 640px) {
 
-	/* stylelint-disable selector-class-pattern */
 	.gform_wrapper .gfield_error.hrs-two-col {
 		width: 47%;
 	}
-	/* stylelint-enable selector-class-pattern */
+
 }

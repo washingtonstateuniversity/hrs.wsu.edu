@@ -11,11 +11,13 @@ const {
  * Internal dependencies
  */
 import * as list from './list/editor';
+import * as heading from './heading/editor';
+import * as paragraph from './paragraph/editor';
 
 /**
  * Blocks to modify styles for.
  */
-const blockStylesList = [ list ];
+const blockStylesList = [ list, heading, paragraph ];
 
 /**
  * Blocks to unregister.

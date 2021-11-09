@@ -1,7 +1,6 @@
 .wp-block-button {
 	margin-bottom: 1em;
 
-	/* stylelint-disable selector-class-pattern */
 	& .wp-block-button__link {
 		background: var(--wp--preset--color--primary-crimson);
 		color: var(--wp--preset--color--white);
@@ -52,38 +51,31 @@
 		}
 
 		&:active {
-			background: darken(var(--wp--custom--wsu-color-core--crimson, 10%));
+			background: var(--wp--custom--wsu-color-core--crimson);
 			border: 1px solid var(--wp--custom--wsu-color-black--70);
 			box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
 			outline-width: 0;
 		}
 	}
 
-	&.is-style-small .wp-block-button__link {
-		border-radius: 6px;
-		padding: 0.25em 0.75em;
-		vertical-align: baseline;
-	}
-
 	&.is-style-squared .wp-block-button__link,
 	&.is-style-text .wp-block-button__link {
-		background: transparent;
+		background-color: transparent;
 		color: var(--wp--custom--wsu-color-core--crimson);
 		border: 1px solid transparent;
 		box-shadow: none;
 
 		&:hover,
 		&:focus {
-			background: var(--wp--custom--wsu-color-core--gray);
+			background-color: var(--wp--custom--wsu-color-core--gray);
 			color: #fff;
 		}
 
 		&:active {
-			background: darken(var(--wp--custom--wsu-color-core--crimson, 10%));
+			background-color: var(--wp--custom--wsu-color-core--crimson);
 			box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
 		}
 	}
-	/* stylelint-enable selector-class-pattern */
 
 }
 

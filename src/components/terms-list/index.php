@@ -72,7 +72,7 @@ function the_terms( $args = array() ) {
 		if ( ! is_wp_error( $term_link ) ) {
 			$terms_list[] = sprintf(
 				/* translators: 1: the list item element tag, 2: the term URL, 3: the term name */
-				__( '<%1$s><a href="%2$s">%3$s</a></%1$s>', 'hrswp-theme' ),
+				__( '<%1$s><a class="is-style-secondary" href="%2$s">%3$s</a></%1$s>', 'hrswp-theme' ),
 				esc_html( $atts['item_tag'] ),
 				esc_url( $term_link ),
 				esc_html( $term->name )

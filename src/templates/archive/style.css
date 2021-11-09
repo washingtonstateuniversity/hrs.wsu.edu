@@ -16,6 +16,17 @@ section.latest article {
 	line-height: 1.5;
 }
 
+.archive-content .article-title a {
+	color: inherit;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: var(--wp--preset--color--secondary-crimson);
+		text-decoration: underline;
+	}
+}
+
 @media ( max-width: 43em ) {
 
 	@supports (display: grid) {

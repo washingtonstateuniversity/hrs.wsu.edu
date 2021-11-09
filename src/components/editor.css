@@ -1,6 +1,7 @@
 @import "./button/editor.css";
 @import "./columns/editor.css";
 @import "./cover/editor.css";
+@import "./heading/editor.css";
 @import "./icons/editor.css";
 @import "./image/editor.css";
 @import "./media-text/editor.css";
@@ -10,6 +11,7 @@
 @import "./quote/editor.css";
 @import "./search/editor.css";
 @import "./list/editor.css";
+@import "./navigation/editor.css";
 @import "./navigation-link/editor.css";
 @import "./separator/editor.css";
 @import "./text-tags/editor.css";

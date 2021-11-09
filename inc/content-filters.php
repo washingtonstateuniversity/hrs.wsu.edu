@@ -42,7 +42,9 @@ add_filter( 'body_class', __NAMESPACE__ . '\update_body_class' );
  * @return int The number of words to trim the automatic excerpt to.
  */
 function excerpt_length( $word_count ) {
-	$word_count = 20;
+	global $is_feature;
+
+	$word_count = ( $is_feature ) ? 80 : 20;
 
 	return $word_count;
 }

@@ -10,7 +10,6 @@
 
 	& .article-title {
 		font-size: var(--wp--custom--typography--mediumx);
-		font-weight: 900;
 		line-height: 1.2;
 		padding: 0.5em 0 0.2em;
 	}
@@ -100,7 +99,6 @@
 
 }
 
-/* stylelint-disable selector-class-pattern */
 .wp-block-latest-posts__post-date,
 .article-date {
 	display: block;
@@ -116,4 +114,3 @@
 .wp-block-latest-posts__post-date {
 	color: var(--wp--custom--wsu-color-core--gray);
 }
-/* stylelint-enable selector-class-pattern */

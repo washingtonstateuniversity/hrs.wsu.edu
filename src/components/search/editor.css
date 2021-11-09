@@ -1,6 +1,5 @@
 .wp-block-search {
 
-	/* stylelint-disable selector-class-pattern */
 	& .wp-block-search__inside-wrapper {
 		border: none;
 		display: flex;
@@ -76,6 +75,5 @@
 		border-bottom-left-radius: 5px;
 		padding: 20px;
 	}
-	/* stylelint-enable selector-class-pattern */
 
 }

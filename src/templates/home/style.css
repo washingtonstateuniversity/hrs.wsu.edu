@@ -10,66 +10,30 @@
 	line-height: 1.4;
 }
 
-.blog .reminders {
-	padding-top: 3rem;
-}
-
-.blog .reminders h2 {
-	border-left: 12px solid var(--wp--custom--wsu-color-core--crimson);
-	border-bottom: 2px solid var(--wp--custom--wsu-color-core--crimson);
-	font-style: italic;
-	font-weight: 600;
-	padding: 0.25em 0.5em;
-	margin-left: -0.3em;
-	margin-bottom: 1.5rem;
-}
-
-.blog .reminders ul {
-	list-style-type: none;
-	padding: 0 0 0 2em;
-
-	& li {
-		margin-bottom: 1em;
-	}
-
-	& a {
-
-		&::before {
-			background-image: url(images/event.svg);
-			height: 2em;
-			margin-left: -2.6rem;
-			position: absolute;
-			width: 2em;
-		}
-
-		&::after {
-			background-size: 70%;
-			position: absolute;
-		}
-	}
-}
-
 .blog .hrs-units-browse {
-	background-color: var(--wp--custom--wsu-color-black--0);
+	border-top: 2px solid var(--wp--custom--wsu-color-black--10);
+	border-bottom: 2px solid var(--wp--custom--wsu-color-black--10);
 	text-align: center;
-}
 
-.blog .hrs-units-browse .blocks-gallery-grid {
-	list-style-type: none;
-	padding: 0;
+	& ul {
+		align-items: center;
+		display: flex;
+		flex-flow: row wrap;
+		font-size: var(--wp--custom--typography--normalx);
+		justify-content: center;
+		list-style-type: none;
 
-	& a {
-		border: 1px solid var(--wp--custom--wsu-color-core--crimson);
-		background-color: var(--wp--custom--wsu-color-black--30);
-		display: block;
-		font-size: var(--wp--preset--font-size--medium);
-		height: 100%;
-		padding: 1.5rem 0.5rem;
+		& a {
+			display: block;
+			padding: 0.5em;
+			text-decoration-color: var(--wp--preset--color--secondary-crimson);
+			text-decoration-thickness: 0.1em;
+			transition: all 0.3s ease;
 
-		&:hover,
-		&:focus {
-			background-color: var(--wp--custom--wsu-color-core--gray);
-			color: var(--wp--custom--wsu-color-black--30);
+			&:hover,
+			&:focus {
+				text-decoration-thickness: 0.2em;
+			}
 		}
 	}
 }
@@ -78,30 +42,4 @@
 	margin-bottom: 2.25rem;
 	text-align: center;
 	text-transform: capitalize;
-}
-
-@media (min-width: 34em) {
-
-	.blog .reminders {
-		padding-top: 0;
-	}
-
-	.blog .reminders h2 {
-		margin-left: 0;
-	}
-
-	.blog .features .column {
-		display: grid;
-		grid-template-columns: 3fr 1fr;
-		grid-column-gap: 3rem;
-	}
-
-}
-
-@media (min-width: 43em) {
-
-	.blog .features .articles-list article {
-		grid-auto-rows: 1fr 1fr;
-	}
-
 }

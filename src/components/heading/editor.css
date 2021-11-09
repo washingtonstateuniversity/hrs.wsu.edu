@@ -1,0 +1,28 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+	&.wp-block-heading.is-style-callout {
+		margin-top: 2.5rem;
+		margin-bottom: 1em;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+
+		&::after {
+			background-color: var(--wp--preset--color--secondary-crimson);
+			content: "";
+			display: block;
+			height: 0.2em;
+			margin-top: 0.35em;
+			margin-left: auto;
+			margin-right: auto;
+			position: relative;
+			top: auto;
+			width: 1em;
+		}
+	}
+}

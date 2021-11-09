@@ -4,7 +4,7 @@
 
 body.page .article-content > .article-header,
 body.single .article-content > .article-header {
-	margin-bottom: 2.281em;
+	margin-bottom: var(--wp--custom--typography--massive);
 }
 
 body.page.hide-title .article-content > .article-header,
@@ -32,20 +32,6 @@ body.single.hide-title .article-content > .article-body {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-}
-
-/* stylelint-disable-next-line selector-class-pattern */
-.article-taxonomy--primary ul a {
-	color: var(--wp--custom--wsu-color-black--70);
-
-	&::after {
-		background-size: 80%;
-	}
-
-	&:hover,
-	&:focus {
-		color: var(--wp--custom--wsu-color-core--gray);
-	}
 }
 
 body.page .article-content .article-body > *:not(.alignwide):not(.alignfull),
