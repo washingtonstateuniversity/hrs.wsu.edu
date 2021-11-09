@@ -35,7 +35,7 @@ h6 {
 }
 
 h1 {
-	font-size: var(--wp--custom--typography--massivex);
+	font-size: var(--wp--custom--typography--massive);
 	font-weight: 800;
 	margin-top: 0;
 }
@@ -78,4 +78,12 @@ h5 {
 
 h6 {
 	font-size: var(--wp--preset--font-size--small);
+}
+
+@media (min-width: 900px) {
+
+	h1 {
+		font-size: var(--wp--custom--typography--massivex);
+	}
+
 }

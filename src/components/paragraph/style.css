@@ -5,6 +5,10 @@ p {
 		font-size: inherit;
 	}
 
+	&.has-huge-font-size {
+		line-height: 1.4;
+	}
+
 	&.is-style-accent {
 		padding-top: 2rem;
 		padding-right: 1.5rem;

@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;
-	margin-bottom: 1.5em;
+	margin-bottom: 2rem;
 
 	&.has-text-color {
 		color: var(--wp--custom--wsu-color-black--90) !important;
@@ -55,9 +55,14 @@
 .wp-block-column {
 	flex-grow: 1;
 	flex-basis: 100% !important; /* Need to override inline styles */
+	margin-top: 2rem;
 	min-width: 0;
 	word-break: break-word;
 	overflow-wrap: break-word;
+
+	&:first-child {
+		margin-top: 0;
+	}
 
 	&.has-text-color {
 		color: var(--wp--custom--wsu-color-black--90) !important;
@@ -128,12 +133,20 @@
 		margin-left: 1rem;
 	}
 
+	.wp-block-column:nth-child(-n+2) {
+		margin-top: 0;
+	}
+
 }
 
 @media (min-width: 900px) {
 
 	.wp-block-columns {
 		flex-wrap: nowrap;
+
+		& .wp-block-column {
+			margin-top: 0;
+		}
 	}
 
 	.wp-block-column:not(:first-child) {
