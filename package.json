@@ -23,7 +23,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.16.0",
-		"@babel/runtime": "^7.14.6",
+		"@babel/runtime": "^7.16.3",
 		"@wordpress/babel-preset-default": "^6.2.0",
 		"@wordpress/dependency-extraction-webpack-plugin": "^3.1.4",
 		"@wordpress/eslint-plugin": "^9.0.6",
