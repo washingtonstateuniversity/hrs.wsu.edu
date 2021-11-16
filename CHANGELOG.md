@@ -15,6 +15,70 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 3.0.0-rc.1 (:construction: TBD)
 
+### Added
+
+- Accent paragraph style. (b065cee)
+- Google Fonts preconnect links. (c418bd1)
+
+### Changed
+
+- Add Babel parser options to eslint config. (36fb0c2)
+- Fix atoz nav list link styles. (b065cee)
+- Increase excerpt length of feature articles. (b065cee)
+- Update front page styles to align with brand changes. (b065cee)
+- Replace column block backgrounds with alternative decoration. (b065cee)
+- Adjust link styles for text with background color. (b065cee)
+- Align default link styles closer to updated brand and add secondary link styles. (b065cee)
+- Update global footer link styles for brand. (b065cee)
+- Update heading styles. (b065cee)
+- Update header info and favicon for new brand, close #245. (b065cee)
+- Update colors for new WSU brand, close #246. (c418bd1)
+- Update font variables with new syntax and sizes. (c418bd1)
+- Replace font with updated WSU brand font, close #244. (c418bd1)
+- Upgrade roave/security-advisories from dev-master bac54e1 to dev-master 07a4c67. (4e2c509)
+- Upgrade eslint from 7.30.0 to 8.2.0. (3388455, 36fb0c2)
+- Upgrade postcss-preset-env from 6.7.0 to 7.0.0. (977d184)
+- Upgrade postcss-cli from 8.3.1 to 9.0.2. (c15c4a4)
+- Upgrade resolve-bin from 0.4.1 to 1.0.0. (93093e4)
+- Replace stylelint-config-wordpress with @wordpress/stylelint-config. (c15c4a4)
+- Update @wordpress/npm-package-json-lint-config from 4.0.5 to 4.1.0. (3388455)
+- Update npm-package-json-lint from 5.1.0 to 5.4.2. (3388455, 2d98d0a)
+- Update @wordpress/eslint-plugin from 9.0.6 to 9.3.0. (3388455, 36fb0c2)
+- Update copy-webpack-plugin from 9.0.1 to 9.1.0. (c2512a1)
+- Update webpack-bundle-analyzer from 4.4.2 to 4.5.0. (93093e4)
+- Update @wordpress/dependency-extraction-webpack-plugin from 3.1.4 to 3.2.1. (93093e4)
+- Update webpack-cli from 4.7.2 to 4.9.1. (93093e4)
+- Update webpack from 5.44.0 to 5.64.1. (93093e4, c2512a1, 4d5ca96)
+- Update @wordpress/babel-preset-default from 6.2.0 to 6.4.1. (c1e7ca2, 699deb0)
+- Update @babel/runtime from 7.14.6 to 7.16.3. (c1e7ca2)
+- Update @babel/core from 7.14.6 to 7.16.0. (c1e7ca2)
+
+### Removed
+
+- Small button style. (b065cee)
+- News "Reminders" section and update areas nav. (b065cee)
+- `selector-class-pattern` stylelint rule until WP adheres to it. (b065cee)
+- Redundant theme supports, close #238. (f6f69dc)
+- Typography css in favor of `theme.json` global styles. (c418bd1)
+
+### Fixed
+
+- Match WP button block styles to HRS button block. (724be8a)
+- Fix #247 adjust columns block layouts for different screen sizes. (b065cee)
+- Remove duplicate link from archive article images. (b065cee)
+- Fix cover block content center alignment in editor. (b065cee)
+- Fix WSU GA plugin block editor conflict. (a3027d2)
+
+### Security
+
+- Bump ansi-regex from 5.0.0 to 5.0.1. (ab87e6a)
+- Bump squizlabs/php_codesniffer from 3.6.0 to 3.6.1. (c320e92)
+- Bump cssnano from 5.0.6 to 5.0.11. (c15c4a4, b8d4973)
+- Bump postcss from 8.3.5 to 8.3.11. (c15c4a4)
+- Bump babel-loader from 8.2.2 to 8.2.3. (c1e7ca2)
+- Bump nth-check from 2.0.0 to 2.0.1. (c1a8d98)
+- Bump path-parse from 1.0.6 to 1.0.7. (eaacad5)
+
 ## 2.3.0 (2021-07-19)
 
 ### Added
