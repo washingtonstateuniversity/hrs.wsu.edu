@@ -16,7 +16,7 @@ section.latest article {
 	line-height: 1.5;
 }
 
-.archive-content .article-title a {
+.archive-content .article-title a:not(.wp-block-button__link):not(.is-style-secondary) {
 	color: inherit;
 	text-decoration: none;
 
