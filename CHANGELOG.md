@@ -63,6 +63,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Fixed
 
+- Fix link specificity dropping tax list styles. (7d3ca76)
 - Fix #249 match list font size to paragraph font size. (591f1f7)
 - Match WP button block styles to HRS button block. (724be8a)
 - Fix #247 adjust columns block layouts for different screen sizes. (b065cee)
