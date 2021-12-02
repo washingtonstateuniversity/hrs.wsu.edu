@@ -7,7 +7,6 @@ form.evaluators-selection-form {
 	width: 100%;
 }
 
-/* stylelint-disable selector-class-pattern */
 form.evaluators-selection-form table.gfield_list,
 form.evaluators-selection-form table.gfield_list caption,
 form.evaluators-selection-form table.gfield_list tbody,
@@ -47,4 +46,3 @@ form.contact-hrs select.large,
 form.contact-hrs input[type="text"] {
 	height: 2.9em;
 }
-/* stylelint-enable selector-class-pattern */

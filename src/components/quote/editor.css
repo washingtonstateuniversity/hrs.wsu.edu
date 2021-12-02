@@ -1,13 +1,12 @@
 .wp-block-quote.wp-block-quote {
-	background-color: var(--body-background-color);
-	border-left: 4px solid var(--accent-crimson);
-	font-family: var(--sans-serif-fonts);
+	background-color: var(--wp--custom--wsu-color-black--0);
+	border-left: 4px solid var(--wp--custom--wsu-color-core--gray);
+	font-family: var(--wp--custom--typography--font);
 	margin-bottom: 1em;
 	padding: 1em 2em;
 	position: relative;
 }
 
-/* stylelint-disable selector-class-pattern */
 .wp-block-quote__citation {
 	color: inherit;
 	font-size: inherit;
@@ -18,12 +17,11 @@
 .wp-block-quote__citation::before {
 	content: "- ";
 }
-/* stylelint-enable selector-class-pattern */
 
 .wp-block-quote::before {
-	color: var(--accent-crimson);
+	color: var(--wp--custom--wsu-color-core--gray);
 	content: "\201C";
-	font-size: var(--font-size-8);
+	font-size: var(--wp--custom--typography--hugex);
 	position: absolute;
 	left: 10px;
 	top: 0.5em;
@@ -31,7 +29,7 @@
 
 .wp-block-quote.is-style-large p,
 .wp-block-quote.is-large p {
-	font-size: var(--font-size-5);
+	font-size: var(--wp--preset--font-size--huge);
 	font-style: italic;
 	line-height: 1.5;
 }

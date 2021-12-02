@@ -31,7 +31,7 @@ global $is_feature;
 				if ( 0 === $result_count ) {
 					$is_feature = true;
 					?>
-					<section class="row single gutter pad-ends features">
+					<section class="row single gutter pad-top features">
 						<div class="column one">
 							<div class="articles-list">
 					<?php
@@ -42,30 +42,6 @@ global $is_feature;
 
 					?>
 							</div><!-- .articles-list -->
-
-							<?php
-							$reminders = queries\get_reminder_posts( 'objects' );
-
-							if ( false !== $reminders && $reminders->have_posts() ) {
-								?>
-								<div class="reminders">
-									<h2><?php esc_html_e( 'Reminders', 'hrswp-theme' ); ?></h2>
-									<ul>
-										<?php
-										while ( $reminders->have_posts() ) :
-											$reminders->the_post();
-											?>
-											<li><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></li>
-											<?php
-										endwhile;
-										?>
-									</ul>
-								</div>
-								<?php
-							}
-
-							wp_reset_postdata();
-							?>
 						</div>
 					</section><!-- .features -->
 
@@ -81,12 +57,12 @@ global $is_feature;
 						</div>
 					</section><!-- .latest -->
 
-					<section class="row single gutter pad-ends hrs-units-browse">
+					<section class="row single gutter hrs-units-browse">
 						<div class="column one">
 							<header>
 								<h2><?php esc_html_e( 'Latest From ...', 'hrswp-theme' ); ?></h2>
 							</header>
-							<ul class="blocks-gallery-grid columns-3">
+							<ul>
 								<?php
 								$list = wp_list_categories(
 									array(
@@ -107,7 +83,7 @@ global $is_feature;
 					<section class="row single gutter pad-ends article-archive">
 						<div class="column one">
 							<header>
-								<h2><?php esc_html_e( 'More News from HRS', 'hrswp-theme' ); ?></h2>
+								<h2 class="is-style-callout"><?php esc_html_e( 'More News from HRS', 'hrswp-theme' ); ?></h2>
 							</header>
 							<div class="articles-list">
 					<?php

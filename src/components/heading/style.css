@@ -12,29 +12,78 @@ h6 {
 	&.has-background {
 		padding: 1.25em 2.375em;
 	}
+
+	&.is-style-callout {
+		margin-top: 2.5rem;
+		margin-bottom: 1em;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+
+		&::after {
+			background-color: var(--wp--preset--color--secondary-crimson);
+			content: "";
+			display: block;
+			height: 0.2em;
+			margin-top: 0.35em;
+			margin-left: auto;
+			margin-right: auto;
+			position: relative;
+			width: 1em;
+		}
+	}
 }
 
 h1 {
-	font-size: var(--font-size-8);
-	margin: 0;
+	font-size: var(--wp--custom--typography--massive);
+	font-weight: 800;
+	margin-top: 0;
+}
+
+h1:not(.post) {
+	margin-top: 0.4em;
+	padding-bottom: 0.1em;
+	position: relative;
+
+	&::after {
+		background-color: var(--wp--preset--color--secondary-crimson);
+		bottom: -4px;
+		content: "";
+		display: block;
+		height: 0.075em;
+		left: 0;
+		position: absolute;
+		width: 2.25em;
+	}
 }
 
 h2 {
-	font-size: var(--font-size-6);
+	font-size: var(--wp--preset--font-size--huge);
+	font-weight: 700;
 }
 
 h3 {
-	font-size: var(--font-size-4);
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 600;
 }
 
 h4 {
-	font-size: var(--font-size-2);
+	font-size: var(--wp--custom--typography--normalx);
+	font-weight: 600;
 }
 
 h5 {
-	font-size: var(--font-size-base);
+	font-size: var(--wp--preset--font-size--normal);
 }
 
 h6 {
-	font-size: var(--font-size-1);
+	font-size: var(--wp--preset--font-size--small);
+}
+
+@media (min-width: 900px) {
+
+	h1 {
+		font-size: var(--wp--custom--typography--massivex);
+	}
+
 }

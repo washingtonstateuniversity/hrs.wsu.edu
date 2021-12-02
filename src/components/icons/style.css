@@ -3,7 +3,6 @@
  * ".has-icon-before"-style class.
  */
 
-/* stylelint-disable selector-class-pattern */
 figcaption,
 .wp-block-latest-posts__post-date,
 .article-date,
@@ -33,7 +32,6 @@ main h4 a,
 .subnav a,
 .reminders li a,
 .home-detail-subnav h2 a,
-.article-taxonomy--primary ul a,
 .cards .article-title a,
 .articles-list .article-title a,
 .recent-articles .article-title a {
@@ -57,7 +55,6 @@ main h4 a,
 	}
 
 }
-/* stylelint-enable selector-class-pattern */
 
 main h1 a,
 main h2 a,

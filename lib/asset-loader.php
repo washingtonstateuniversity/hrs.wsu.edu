@@ -30,10 +30,12 @@ function register_assets() {
 
 	wp_enqueue_style(
 		'source_sans_pro',
-		'//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,900,900i',
+		'//fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
 		array(),
 		$version
 	);
+
+	wp_add_inline_style( 'hrswp-theme', inline_styles() );
 
 	wp_enqueue_script(
 		'hrswp-main',
@@ -44,6 +46,27 @@ function register_assets() {
 	);
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_assets', 25 );
+
+/**
+ * Defines inline styles for the head section.
+ *
+ * @since 2.4.0
+ *
+ * 1.125
+ */
+function inline_styles() {
+	$inline_styles = 'body {
+		background-color: var(--wp--preset--color--white);
+		font-family: var(--wp--custom--typography--font);
+		font-size: 16px;
+		line-height: 1.5;
+	}';
+
+	$inline_styles = str_replace( '\n', '', $inline_styles );
+	$inline_styles = preg_replace( '/\s*([:;{}])\s*/', '$1', $inline_styles );
+
+	return $inline_styles;
+}
 
 /**
  * Registers HRS Theme block editor assets.

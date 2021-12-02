@@ -7,9 +7,9 @@ body.single .article-body {
 }
 
 body.single .article-content .article-footer {
-	border-top: 8px solid var(--body-background-color);
+	border-top: 8px solid var(--wp--custom--wsu-color-black--0);
 	clear: both;
-	color: var(--neutral-dark);
+	color: var(--wp--custom--wsu-color-black--70);
 	margin: 0 -2rem;
 	padding: 1.5rem 2rem 0.75rem;
 }
@@ -38,15 +38,6 @@ body.single .article-footer dd::after {
 
 body.single .article-footer dd:nth-last-of-type(1)::after {
 	content: "";
-}
-
-body.single .article-footer a {
-	color: var(--text-color);
-
-	&:hover,
-	&:focus {
-		color: var(--nav-color-hover);
-	}
 }
 
 @media (min-width: 43em) {

@@ -1,6 +1,6 @@
 {
 	"extends": [
-		"stylelint-config-wordpress"
+		"@wordpress/stylelint-config"
 	],
 	"plugins": [
 		"stylelint-a11y"
@@ -8,6 +8,7 @@
 	"rules": {
 		"font-family-no-missing-generic-family-keyword": null,
 		"no-descending-specificity": null,
+		"selector-class-pattern": null,
 		"a11y/no-outline-none": true,
 		"a11y/selector-pseudo-class-focus": true
 	}

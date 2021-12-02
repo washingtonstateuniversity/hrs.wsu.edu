@@ -52,7 +52,7 @@
 	}
 
 	& .builder-banner-inner-title {
-		color: var(--brand-crimson);
+		color: var(--wp--custom--wsu-color-core--crimson);
 		font-size: 1.5rem;
 		font-weight: 600;
 		padding: 1rem;
@@ -67,7 +67,7 @@
 		overflow: hidden;
 
 		& p {
-			color: var(--text-color);
+			color: var(--wp--custom--wsu-color-black--90);
 			margin-top: 1px;
 			padding: 0 1rem 1rem;
 		}

@@ -50,7 +50,7 @@ while ( have_posts() ) :
 						</h2>
 					<?php else : ?>
 						<?php if ( true === spine_get_option( 'articletitle_show' ) ) : ?>
-							<h1 class="article-title"><?php the_title(); ?></h1>
+							<h1 class="article-title post"><?php the_title(); ?></h1>
 						<?php endif; ?>
 					<?php endif; ?>
 					<?php post_date\render(); ?>

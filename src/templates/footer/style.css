@@ -1,6 +1,6 @@
 footer ul,
 footer dd {
-	font-size: var(--font-size-0);
+	font-size: var(--wp--custom--typography--tiny);
 
 	& a {
 		border-bottom-color: transparent;
@@ -21,36 +21,57 @@ footer dd {
 }
 
 .footer-nav {
+	background-color: var(--wp--custom--wsu-color-black--5);
+	border-top: 1px solid var(--wp--custom--wsu-color-black--10);
 	display: flex;
 	flex-flow: row nowrap;
-}
 
-.footer-nav nav {
-	flex: 3 1 auto;
-	margin: 1.5rem 2rem;
-}
+	& nav {
+		flex: 3 1 auto;
+		margin: 1.5rem 2.25rem;
+	}
 
-.footer-nav .wsu-brand {
-	flex: 1 1 auto;
-	margin: 1.5rem 2rem;
-	position: relative;
-}
+	& .wsu-brand {
+		align-self: flex-start;
+		flex: 1 1 auto;
+		position: relative;
+	}
 
-.footer-nav .wsu-cougar-head {
-	bottom: 0;
-	width: 100px;
-	height: auto;
-	position: absolute;
-	right: 0;
-}
+	& .wsu-cougar-head {
+		top: 2.25rem;
+		width: 100px;
+		height: auto;
+		position: absolute;
+		right: 2.25rem;
+	}
 
-.footer-nav .footer-nav-title {
-	font-weight: 600;
+	& .footer-nav-title {
+		color: var(--wp--custom--wsu-color-black--70);
+		display: block;
+		font-size: var(--wp--custom--typography--medium);
+		font-weight: 600;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+	}
+
+	& a:not(.wp-block-button__link):not(.is-style-secondary) {
+		color: inherit;
+		text-decoration: none;
+		text-decoration-color: var(--wp--preset--color--secondary-crimson);
+
+		&:hover,
+		&:focus {
+			color: var(--wp--preset--color--primary-crimson);
+			text-decoration: underline;
+		}
+	}
+
 }
 
 .site-reference {
-	background: var(--brand-crimson);
-	color: #fff;
+	background-color: var(--wp--custom--wsu-color-black--80);
+	color: var(--wp--preset--color--white);
+	padding: 0.5rem 0;
 }
 
 .site-reference ul {
@@ -64,18 +85,34 @@ footer dd {
 }
 
 
-.site-reference a {
-	border: none;
-	color: #fff;
+.site-footer .site-reference a {
+	color: var(--wp--preset--color--white);
 	display: block;
-	font-weight: 400;
+	margin: 0 3px;
 	padding: 1em 0.75em;
+	position: relative;
+	text-decoration: none;
+
+	&::after {
+		content: "";
+		position: absolute;
+		background-color: #ca1237;
+		left: -1px;
+		right: -1px;
+		bottom: 0;
+		height: 5px;
+		opacity: 0;
+		transition: all 0.333s cubic-bezier(0, 0, 0.03, 1);
+	}
 
 	&:hover,
 	&:focus {
-		border: none;
-		color: var(--neutral-light);
-		text-decoration: underline;
+
+		&::after {
+			bottom: calc(-1em + 5px);
+			opacity: 1;
+		}
+
 	}
 }
 

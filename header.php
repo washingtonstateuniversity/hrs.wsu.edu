@@ -15,20 +15,17 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<title><?php echo esc_html( spine_get_title() ); ?></title>
 
-	<!-- FAVICON -->
-	<link rel="shortcut icon" href="https://repo.wsu.edu/spine/1/favicon.ico" />
+	<link rel="icon" href="https://repo.wsu.edu/favicon/icon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://repo.wsu.edu/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://repo.wsu.edu/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://repo.wsu.edu/favicon/favicon-16x16.png">
 
-	<!-- RESPOND -->
-	<meta name="viewport" content="width=device-width, user-scalable=yes">
-
-	<!-- DOCS -->
-	<link type="text/plain" rel="author" href="https://repo.wsu.edu/spine/1/authors.txt" />
-	<link type="text/html" rel="help" href="https://brand.wsu.edu/media/web" />
-
-	<!-- SCRIPTS and STYLES -->
-	<!-- Custom scripts and styles should be added with wp_enqueue_script() and wp_enqueue_style() -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 	<?php wp_head(); ?>
 

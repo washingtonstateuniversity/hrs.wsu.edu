@@ -1,112 +1,21 @@
-.home .spineless .alignfull {
-	max-width: 1386px;
-}
-
 body.home #wsuwp-main ul.wp-block-social-links {
 	justify-content: flex-end;
 	margin-top: 1rem;
 	max-width: 1386px;
 }
 
-.home-main-subnav nav ul {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	margin-right: -1rem;
-	margin-left: -1rem;
-	padding: 0;
-}
+.home {
 
-.home-main-subnav nav li {
-	font-size: var(--font-size-2);
-	flex-basis: 48%;
-	margin-bottom: 0.5em;
-	padding: 0;
-	text-align: center;
-}
-
-.home-main-subnav nav a {
-	background-color: var(--neutral-dark);
-	border-bottom: none;
-	border-radius: 9px;
-	color: #fff;
-	display: block;
-	padding: 1.5em 0.75em;
-
-	&:hover,
-	&:focus {
-		background-color: var(--nav-color-hover);
-		color: #fff;
-	}
-}
-
-@media (min-width: 700px) {
-
-	.home-main-subnav nav ul {
-		flex-wrap: nowrap;
-		margin: 0;
+	& .spineless .alignfull {
+		max-width: 1386px;
 	}
 
-	.home-main-subnav nav li {
-		flex-basis: 24%;
-		margin-bottom: 0;
+	& #binder.spineless #wsuwp-main section:nth-of-type(-n+2) {
+		background: transparent;
 	}
 
-	.home-main-subnav nav a {
-		padding: 1em 0.75em;
-	}
-
-}
-
-.home-detail-subnav {
-	margin-top: 2rem;
-}
-
-.home-detail-subnav .wp-block-column:last-of-type {
-	margin-right: 0;
-}
-
-.home-detail-subnav .wp-block-column {
-	margin-bottom: 2rem;
-}
-
-.home-detail-subnav h2 {
-	font-size: var(--font-size-3);
-	margin: 0;
-	padding: 0;
-}
-
-.home-detail-subnav h2 a {
-	background-color: var(--brand-crimson);
-	border-bottom: none;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-	color: #fff;
-	display: block;
-	font-weight: 400;
-	padding: 0.9em;
-
-	&::after {
-		background-image: url(images/link_light.svg);
-		background-size: 70%;
-	}
-
-	&:hover,
-	&:focus {
-		background-color: var(--nav-color-hover);
-	}
-}
-
-.home-detail-subnav ul {
-	background-color: var(--section-background-color);
-	padding: 1.5em 2em;
-}
-
-@media (min-width: 1420px) {
-
-	.home-detail-subnav {
-		margin-right: -2rem;
-		margin-left: -2rem;
+	& #spine.cropped #glue {
+		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.05);
 	}
 
 }
@@ -117,12 +26,8 @@ body.home #wsuwp-main ul.wp-block-social-links {
 		margin-left: 2rem;
 	}
 
-}
+	.home .article-content .quick-links-container {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
 
-.home #binder.spineless #wsuwp-main section:nth-of-type(-n+2) {
-	background: transparent;
-}
-
-.home #spine.cropped #glue {
-	box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.05);
 }

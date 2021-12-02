@@ -56,7 +56,7 @@ thead tr {
 }
 
 tbody tr {
-	border-bottom: 1px solid var(--neutral-light);
+	border-bottom: 1px solid var(--wp--custom--wsu-color-black--20);
 }
 
 .wp-block-table td,
@@ -71,12 +71,12 @@ td.nums {
 }
 
 th {
-	background-color: var(--neutral-blue);
+	background-color: var(--wp--custom--wsu-color-black--10);
 	font-weight: 600;
 }
 
 .wp-block-table.is-style-stripes tr:nth-child(odd) {
-	background: #f9f9f9;
+	background: var(--wp--custom--wsu-color-black--3);
 }
 
 .wp-block-table .has-fixed-layout,
@@ -104,7 +104,7 @@ th {
 
 .tablepress tfoot th,
 .tablepress thead th {
-	background-color: var(--neutral-blue);
+	background-color: var(--wp--custom--wsu-color-black--10);
 	vertical-align: inherit;
 }
 
@@ -112,12 +112,10 @@ th {
 	border-bottom: inherit;
 }
 
-/* stylelint-disable selector-class-pattern */
 .dataTables_filter {
 	float: none;
 	margin-bottom: 1em;
 }
-/* stylelint-enable selector-class-pattern */
 
 /* HRS Contacts adjustments. */
 .tablepress-hrs-contacts td.column-3 {

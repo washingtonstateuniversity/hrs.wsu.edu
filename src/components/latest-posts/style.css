@@ -9,15 +9,14 @@
 	list-style-type: none;
 
 	& .article-title {
-		line-height: 1.1;
-		font-size: var(--font-size-4);
-		font-weight: 900;
+		font-size: var(--wp--custom--typography--mediumx);
+		line-height: 1.2;
 		padding: 0.5em 0 0.2em;
 	}
 
 	& .article-footer {
 		border: none;
-		color: var(--text-color);
+		color: var(--wp--custom--wsu-color-black--90);
 		margin: 0 0 0.5em;
 		padding: 0;
 	}
@@ -60,8 +59,8 @@
 	section:not(.features) .articles-list {
 
 		& article {
-			border-bottom: 6px solid var(--body-background-color);
-			font-size: 1rem;
+			border-bottom: 6px solid var(--wp--custom--wsu-color-black--0);
+			font-size: var(--wp--custom--typography--normal);
 			line-height: 1.5;
 			max-width: 61.875em;
 			padding: 0.75rem 0;
@@ -100,11 +99,10 @@
 
 }
 
-/* stylelint-disable selector-class-pattern */
 .wp-block-latest-posts__post-date,
 .article-date {
 	display: block;
-	font-size: var(--font-size-0);
+	font-size: var(--wp--custom--typography--tiny);
 
 	&::before {
 		background-image: url(images/time.svg);
@@ -114,6 +112,5 @@
 
 .meta,
 .wp-block-latest-posts__post-date {
-	color: var(--brand-gray);
+	color: var(--wp--custom--wsu-color-core--gray);
 }
-/* stylelint-enable selector-class-pattern */

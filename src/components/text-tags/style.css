@@ -5,8 +5,8 @@ acronym[title] {
 }
 
 ins {
-	background-color: var(--accent-green);
-	color: #000;
+	background-color: var(--wp--custom--wsu-color-accent--vineyard);
+	color: var(--wp--preset--color--black);
 	margin: -0.05em 0;
 	padding: 0.05em 0.25em;
 }

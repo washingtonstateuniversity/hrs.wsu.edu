@@ -1,7 +1,7 @@
 hr.wp-block-separator,
 hr.wp-block-separator.has-text-color {
-	background-color: rgba(93, 105, 112, 0.5);
-	color: rgba(93, 105, 112, 0.5);
+	background-color: var(--wp--custom--wsu-color-black--10);
+	color: var(--wp--custom--wsu-color-black--10);
 }
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
@@ -20,7 +20,7 @@ hr.wp-block-separator.has-text-color {
 
 .wp-block-separator.is-style-dots::before {
 	content: "\00b7 \00b7 \00b7";
-	color: var(--neutral-dark);
+	color: var(--wp--custom--wsu-color-black--70);
 	font-family: serif;
 	font-size: 24px;
 	letter-spacing: 2em;

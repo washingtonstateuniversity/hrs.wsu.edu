@@ -1,17 +1,16 @@
 .wp-block-button {
 
-	/* stylelint-disable selector-class-pattern */
 	& .wp-block-button__link {
-		background: var(--brand-crimson);
-		color: #fff;
-		border: 1px solid var(--brand-crimson);
+		background-color: var(--wp--preset--color--primary-crimson);
+		border: 1px solid var(--wp--preset--color--primary-crimson);
 		border-radius: 3px;
 		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.1);
+		box-sizing: border-box;
+		color: #fff;
 		cursor: pointer;
 		display: inline-block;
 		font-family: inherit;
-		font-size: var(--font-size-base);
-		letter-spacing: 0.85px;
+		font-size: var(--wp--preset--font-size--normal);
 		line-height: 1.5;
 		overflow-wrap: break-word;
 		padding: 0.75rem 1.5rem;
@@ -23,63 +22,58 @@
 
 		&:hover,
 		&:focus {
-			background: #fff;
-			border: 1px solid var(--nav-color-hover);
-			color: var(--nav-color-hover);
+			background-color: #fff;
+			border-color: var(--wp--preset--color--secondary-crimson);
+			border-width: 1px;
+			color: var(--wp--preset--color--secondary-crimson);
+			outline: none;
 		}
 
 		&:active {
-			background: var(--neutral-light);
-			border: 1px solid var(--brand-crimson);
-			color: var(--nav-color-hover);
+			background-color: var(--wp--preset--color--light);
+			border: 1px solid var(--wp--preset--color--primary-crimson);
+			color: var(--wp--preset--color--secondary-crimson);
 		}
 	}
 
 	&.is-style-outline .wp-block-button__link {
-		background: #fff;
-		border: 1px solid var(--brand-crimson);
-		color: var(--brand-crimson);
+		background-color: var(--wp--preset--color--white);
+		border: 1px solid var(--wp--preset--color--primary-crimson);
+		color: var(--wp--preset--color--primary-crimson);
 
 		&:hover,
 		&:focus {
-			background: var(--nav-color-hover);
-			border: 1px solid var(--nav-color-border);
+			background-color: var(--wp--preset--color--secondary-crimson);
+			border-color: var(--wp--preset--color--primary-crimson);
 			box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
-			color: #fff;
+			color: var(--wp--preset--color--white);
 		}
 
 		&:active {
-			background: darken(var(--brand-crimson, 10%));
-			border: 1px solid var(--neutral-dark);
+			background: var(--wp--preset--color--primary-crimson);
+			border: 1px solid var(--wp--preset--color--dark);
 			box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
 			outline-width: 0;
 		}
 	}
 
-	&.is-style-small .wp-block-button__link {
-		border-radius: 6px;
-		padding: 0.25em 0.75em;
-		vertical-align: baseline;
-	}
-
 	&.is-style-squared .wp-block-button__link,
 	&.is-style-text .wp-block-button__link {
 		background: transparent;
-		color: var(--nav-color);
+		color: var(--wp--custom--wsu-color-core--crimson);
 		border: 1px solid transparent;
 		box-shadow: none;
 
 		&:hover,
 		&:focus {
-			background: var(--nav-color-hover);
+			background-color: var(--wp--preset--color--secondary-crimson);
 			color: #fff;
 		}
 
 		&:active {
-			background: darken(var(--brand-crimson, 10%));
+			background: var(--wp--custom--wsu-color-core--crimson);
 			box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
 		}
 	}
-	/* stylelint-enable selector-class-pattern */
 
 }

@@ -1,3 +1,8 @@
+ol,
+ul {
+	padding: 0 0 1em 2em;
+}
+
 ol ol {
 	list-style: lower-alpha;
 }

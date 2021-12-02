@@ -20,14 +20,14 @@
 
 		&:hover,
 		&:focus {
-			background: var(--nav-color-hover);
-			color: var(--section-background-color);
+			background: var(--wp--preset--color--primary-crimson);
+			color: var(--wp--preset--color--light);
 		}
 	}
 
 	& .current {
-		background: var(--body-background-color);
-		border: 1px solid var(--neutral-dark);
+		background: var(--wp--custom--wsu-color-black--0);
+		border: 1px solid var(--wp--custom--wsu-color-black--70);
 	}
 }
 
@@ -45,35 +45,107 @@
 @media (min-width: 34em) {
 
 	.pager ul {
-		font-size: var(--font-size-base);
+		font-size: var(--wp--preset--font-size--normal);
 	}
 
 }
 
-.atoz ul {
-	padding: 0 0 1.5em;
-}
+.article-content {
 
-.atoz li {
-	border: 1px solid var(--nav-color);
-	display: inline-block;
-	margin: 0.2em 0.1em;
-	padding: 0;
-	text-align: center;
-}
+	& .quick-links-container {
+		column-gap: 1.5rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		list-style-type: none;
+		margin: 2rem 1rem 4rem;
+		padding: 0;
+		row-gap: 4.5rem;
 
-.atoz li a {
-	border-bottom: none;
-	color: var(--nav-color);
-	display: block;
-	font-weight: 400;
-	min-width: 2.3em;
-	padding: 8px;
-	transition: all 0.5s ease;
+		& a:not(.is-style-secondary) {
+			align-items: center;
+			background-color: var(--wp--custom--wsu-color-black--3);
+			border-radius: 5px;
+			box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+			color: var(--wp--custom--wsu-color-black--100);
+			display: grid;
+			font-size: var(--wp--custom--typography--mediumx);
+			font-weight: 600;
+			height: 100%;
+			padding: 26px 24px;
+			text-decoration: none;
+			transition: all 0.333s cubic-bezier(0, 0, 0.03, 1);
 
-	&:hover,
-	&:focus {
-		background-color: var(--nav-color);
-		color: #fff;
+			&::before {
+				background-image: url(images/info.svg);
+				background-position: center 100%;
+				background-repeat: no-repeat;
+				background-size: contain;
+				content: "";
+				display: inline-block;
+				height: 1.5rem;
+				margin: 0 0.4em -0.2em 0;
+				width: 1.5rem;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: var(--wp--custom--wsu-color-black--10);
+				box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+			}
+		}
+
+		& a.has-icon-form::before {
+			background-image: url(images/form.svg);
+		}
+
+		& a.has-icon-person::before {
+			background-image: url(images/person.svg);
+		}
+
+		& a.has-icon-spa::before {
+			background-image: url(images/spa.svg);
+		}
 	}
+
+	& .atoz {
+
+		& ul {
+			padding: 0 0 1.5em;
+		}
+
+		& li {
+			border: 1px solid var(--wp--custom--wsu-color-core--crimson);
+			display: inline-block;
+			margin: 0.2em 0.1em;
+			padding: 0;
+			text-align: center;
+		}
+
+		& ul li a:not(.is-style-secondary) {
+			border-bottom: none;
+			color: var(--wp--custom--wsu-color-core--crimson);
+			display: block;
+			font-weight: 400;
+			min-width: 2.3em;
+			padding: 15px 10px;
+			text-decoration: none;
+			transition: all 0.5s ease;
+
+			&:hover,
+			&:focus {
+				background-color: var(--wp--custom--wsu-color-core--crimson);
+				color: #fff;
+			}
+		}
+
+	}
+
+}
+
+@media (min-width: 61.875em) {
+
+	.article-content .quick-links-container {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
 }

@@ -7,13 +7,24 @@
 }
 
 section.latest {
-	border-top: 8px solid var(--body-background-color);
-	border-bottom: 8px solid var(--body-background-color);
+	border-top: 8px solid var(--wp--custom--wsu-color-black--0);
+	border-bottom: 8px solid var(--wp--custom--wsu-color-black--0);
 }
 
 section.latest article {
-	font-size: 1rem;
+	font-size: var(--wp--preset--font-size--normal);
 	line-height: 1.5;
+}
+
+.archive-content .article-title a:not(.wp-block-button__link):not(.is-style-secondary) {
+	color: inherit;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: var(--wp--preset--color--secondary-crimson);
+		text-decoration: underline;
+	}
 }
 
 @media ( max-width: 43em ) {
