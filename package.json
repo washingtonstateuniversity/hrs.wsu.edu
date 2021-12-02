@@ -35,7 +35,7 @@
 		"eslint": "^8.3.0",
 		"npm-package-json-lint": "^5.4.2",
 		"npm-run-all": "^4.1.5",
-		"postcss": "^8.3.11",
+		"postcss": "^8.4.4",
 		"postcss-cli": "^9.0.2",
 		"postcss-import": "^14.0.2",
 		"postcss-preset-env": "^7.0.0",
