@@ -9,14 +9,6 @@ body .editor-styles-wrapper {
 	font-family: var(--wp--custom--typography--font);
 }
 
-@media (min-width: 791px) {
-
-	body .editor-styles-wrapper {
-		font-size: 18px;
-	}
-
-}
-
 .wp-block {
 	max-width: calc(45rem);
 }

@@ -1,5 +1,5 @@
 .site-header {
-	margin: 50px 0 -50px;
+	margin: 50px 0 -14px;
 }
 
 .site-header .column {
@@ -63,7 +63,7 @@
 @media (min-width: 61.875em) {
 
 	.site-header {
-		margin: 0 0 0 198px;
+		margin: 0 0 36px 198px;
 	}
 
 	.site-header .column {
