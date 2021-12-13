@@ -51,4 +51,4 @@ function hrs_logout_redirect_home( $redirect_to, $requested_redirect_to ) {
 
 	return $requested_redirect_to;
 }
-add_filter( 'logout_redirect', 'hrs_logout_redirect_home', 10, 2 );
+add_filter( 'logout_redirect', __NAMESPACE__ . '\hrs_logout_redirect_home', 10, 2 );
