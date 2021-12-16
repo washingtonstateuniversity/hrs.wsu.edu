@@ -13,7 +13,9 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 3.0.1-rc.1 (:construction: TBD)
+## 3.0.1 (2021-12-16)
+
+### Fixed
 
 - Fix #251 missing namespace in logout redirect hook. (5b2ed93)
 
