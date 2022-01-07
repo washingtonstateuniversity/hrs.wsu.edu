@@ -1,5 +1,5 @@
 {
-	"version": 1,
+	"version": 2,
 	"settings": {
 		"custom": {
 			"typography": {
@@ -47,13 +47,18 @@
 				"midnight": "#002d61"
 			}
 		},
+        "border": {},
 		"color": {
+            "background": true,
 			"custom": false,
-			"customGradient": false,
-			"gradients": [],
 			"customDuotone": false,
+			"customGradient": false,
+            "defaultGradients": false,
+			"defaultPalette": false,
 			"duotone": [],
+			"gradients": [],
 			"link": false,
+            "text": true,
 			"palette": [
 				{
 					"name": "Crimson",
@@ -87,15 +92,15 @@
 			"wideSize": "1180px"
 		},
 		"spacing": {
-			"customMargin": false,
-			"customPadding": false,
+			"margin": false,
+			"padding": false,
 			"units": [ "px", "em", "rem", "vh", "vw" ]
 		},
 		"typography": {
 			"customFontSize": false,
-			"customLineHeight": false,
 			"dropCap": false,
-			"fontSizes": [
+            "fontFamilies": [],
+            "fontSizes": [
 				{
 					"name": "Small",
 					"size": "var(--wp--custom--typography--small)",
@@ -121,7 +126,13 @@
 					"size": "var(--wp--custom--typography--huge)",
 					"slug": "huge"
 				}
-			]
+			],
+            "fontStyle": true,
+			"fontWeight": false,
+			"letterSpacing": false,
+			"lineHeight": false,
+            "textDecoration": false,
+            "textTransform": true
 		},
 		"blocks": {
 			"core/button": {
