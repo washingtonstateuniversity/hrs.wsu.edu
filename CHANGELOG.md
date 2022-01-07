@@ -15,6 +15,15 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 3.1.0-rc.1 (:construction: TBD)
 
+### Added
+
+- Add custom content manager user role. (73e51ce)
+
+### Fixed
+
+- Fix #253 replace deprecated `login_headertitle` with `login_headertext` hook. (dcb131d)
+- Fix path to phpcbf standards file. (02b425b)
+
 ## 3.0.1 (2021-12-16)
 
 ### Fixed
