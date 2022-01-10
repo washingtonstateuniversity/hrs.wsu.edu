@@ -13,11 +13,15 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 3.1.0-rc.1 (:construction: TBD)
+## 3.1.0 (2022-01-10)
 
 ### Added
 
 - Add custom content manager user role. (73e51ce)
+
+### Changed
+
+- Bump WordPress tested-to to 5.8.3.
 
 ### Fixed
 
