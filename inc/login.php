@@ -28,13 +28,17 @@ add_filter( 'login_headerurl', __NAMESPACE__ . '\login_logo_url' );
  * Changes the login logo text to the site title.
  *
  * @since 0.12.0
+ * @since 3.1.0 switch to `login_headertext` hook
  *
+ * @param string $login_header_text The login header logo link text.
  * @return string The login logo text.
  */
-function login_logo_url_title() {
-	return get_bloginfo( 'name' );
+function login_logo_url_title( $login_header_text ) {
+	$login_header_text = get_bloginfo( 'name' );
+
+	return $login_header_text;
 }
-add_filter( 'login_headertitle', __NAMESPACE__ . '\login_logo_url_title' );
+add_filter( 'login_headertext', __NAMESPACE__ . '\login_logo_url_title', 10, 1 );
 
 /**
  * Redirects users to the home page on logout.
