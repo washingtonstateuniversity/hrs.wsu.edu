@@ -8,11 +8,7 @@
 		color: var(--wp--custom--wsu-color-black--90) !important;
 	}
 
-	&.has-primary-crimson-background-color,
-	&.has-primary-gray-background-color,
-	&.has-secondary-crimson-background-color,
-	&.has-dark-background-color,
-	&.has-light-background-color {
+	&:where(.has-background) {
 		background-color: transparent !important;
 		border-top: 3px solid;
 		border-bottom: 3px solid;
@@ -67,11 +63,7 @@
 		color: var(--wp--custom--wsu-color-black--90) !important;
 	}
 
-	&.has-primary-crimson-background-color,
-	&.has-primary-gray-background-color,
-	&.has-secondary-crimson-background-color,
-	&.has-dark-background-color,
-	&.has-light-background-color {
+	&:where(.has-background) {
 		background-color: transparent !important;
 		border-top: 3px solid;
 		border-bottom: 3px solid;
