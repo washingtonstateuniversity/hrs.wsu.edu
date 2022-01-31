@@ -153,6 +153,14 @@
 					"fontSizes": []
 				}
 			},
+			"core/pullquote": {
+				"border": {
+					"color": false,
+					"style": false,
+					"radius": false,
+					"width": false
+				}
+			},
 			"core/separator": {
 				"color": {
 					"palette": []
