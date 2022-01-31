@@ -1,4 +1,5 @@
 p {
+	overflow-wrap: break-word;
 
 	&.has-drop-cap:not(:focus)::first-letter,
 	&.has-drop-cap:not(:focus)::after {
