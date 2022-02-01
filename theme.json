@@ -155,10 +155,14 @@
 			},
 			"core/pullquote": {
 				"border": {
-					"color": false,
+					"color": true,
 					"style": false,
 					"radius": false,
 					"width": false
+				},
+				"typography": {
+					"fontSizes": [],
+					"fontStyle": false
 				}
 			},
 			"core/separator": {
