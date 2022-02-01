@@ -4,6 +4,12 @@
 	"settings": {
         "appearanceTools": false,
 		"custom": {
+			"layout": {
+				"contentSize": "45rem",
+				"narrowSize": "34em",
+				"mediumSize": "61.875em",
+				"wideSize": "1180px"
+			},
 			"typography": {
 				"font": "\"Montserrat\", sans-serif",
 				"scale": 1.125,
@@ -90,8 +96,8 @@
 			]
 		},
 		"layout": {
-			"contentSize": "45rem",
-			"wideSize": "1180px"
+			"contentSize": "var(--wp--custom--layout--content-size)",
+			"wideSize": "var(--wp--custom--layout--wide-size)"
 		},
 		"spacing": {
 			"margin": false,
