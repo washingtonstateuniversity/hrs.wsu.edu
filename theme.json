@@ -171,6 +171,13 @@
 					"fontStyle": false
 				}
 			},
+			"core/quote": {
+				"typography": {
+					"fontSizes": [],
+					"fontStyle": false,
+					"textTransform": false
+				}
+			},
 			"core/separator": {
 				"color": {
 					"palette": []
