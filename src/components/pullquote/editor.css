@@ -33,7 +33,6 @@
 	margin-right: 2em;
 	margin-left: 2em;
 	width: calc(var(--wp--custom--layout--wide-size) / 2);
-	width: calc(1180px / 2);
 
 	& p {
 		font-size: var(--wp--preset--font-size--large);
