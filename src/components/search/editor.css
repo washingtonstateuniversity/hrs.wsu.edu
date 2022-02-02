@@ -31,29 +31,38 @@
 
 	/* Highly selected to override WP core styles. */
 	& .wp-block-search__inside-wrapper .wp-block-search__button.wp-block-search__button {
-		word-wrap: break-word;
-		background: var(--wp--custom--wsu-color-core--crimson);
-		border: none;
+		background-color: var(--wp--preset--color--primary-crimson);
+		border: 1px solid transparent;
 		border-top-right-radius: 5px;
+		border-top-left-radius: 0;
 		border-bottom-right-radius: 5px;
-		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.1);
+		border-bottom-left-radius: 0;
+		box-sizing: border-box;
 		color: var(--wp--preset--color--white);
 		cursor: pointer;
 		display: inline-block;
-		flex-shrink: 1;
 		font-family: inherit;
 		font-size: var(--wp--preset--font-size--normal);
-		letter-spacing: 0.85px;
-		line-height: 2.5;
-		outline-offset: -2px;
-		padding: 0.75rem 1.5rem;
+		flex-shrink: 1;
+		line-height: 1.5;
+		overflow-wrap: break-word;
+		padding: 1.5rem;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
 		transition: all 0.3s ease;
 		width: auto;
+		white-space: normal;
+
+		&:hover,
+		&:focus {
+			background-color: var(--wp--preset--color--white);
+			border-color: var(--wp--preset--color--secondary-crimson);
+			color: var(--wp--preset--color--secondary-crimson);
+		}
 
 		&.has-icon {
+			padding: 1rem;
 			line-height: 0;
 		}
 	}

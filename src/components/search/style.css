@@ -36,15 +36,36 @@
 		outline-offset: -2px;
 	}
 
-	& .search-submit,
 	& .wp-block-search__button {
-		border: none;
+		background-color: var(--wp--preset--color--primary-crimson);
+		border: 1px solid transparent;
 		border-top-right-radius: 5px;
 		border-top-left-radius: 0;
 		border-bottom-right-radius: 5px;
 		border-bottom-left-radius: 0;
+		box-sizing: border-box;
+		color: var(--wp--preset--color--white);
+		cursor: pointer;
+		display: inline-block;
+		font-family: inherit;
+		font-size: var(--wp--preset--font-size--normal);
 		flex-shrink: 1;
+		line-height: 1.5;
+		overflow-wrap: break-word;
+		padding: 0.75rem 1.5rem;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: all 0.3s ease;
 		width: auto;
+		white-space: normal;
+
+		&:hover,
+		&:focus {
+			background-color: var(--wp--preset--color--white);
+			border-color: var(--wp--preset--color--secondary-crimson);
+			color: var(--wp--preset--color--secondary-crimson);
+		}
 	}
 
 }

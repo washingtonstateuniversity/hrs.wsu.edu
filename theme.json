@@ -178,6 +178,11 @@
 					"textTransform": false
 				}
 			},
+			"core/search": {
+				"color": {
+					"palette": []
+				}
+			},
 			"core/separator": {
 				"color": {
 					"palette": []
