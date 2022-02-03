@@ -122,15 +122,6 @@ th {
 	margin-bottom: 1em;
 }
 
-/* HRS Contacts adjustments. */
-.tablepress-hrs-contacts td.column-3 {
-	white-space: nowrap;
-}
-
-.tablepress.tablepress-hrs-contacts tbody td {
-	vertical-align: text-bottom;
-}
-
 .hrs-representation-table .column-1 {
 	width: 450px !important;
 }
