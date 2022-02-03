@@ -196,6 +196,11 @@
 			"core/table": {
 				"color": {
 					"palette": []
+				},
+				"typography": {
+					"fontSizes": [],
+					"fontStyle": false,
+					"textTransform": false
 				}
 			}
 		}
