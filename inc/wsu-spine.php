@@ -25,9 +25,21 @@ function spine_setup() {
 	set_spine_schema();
 
 	// Enable the Builder module. Set to false when not needed.
-	add_filter( 'spine_enable_builder_module', '__return_true' );
+	add_filter( 'spine_enable_builder_module', '__return_false' );
 }
-add_action( 'after_setup_theme', __NAMESPACE__ . '\remove_spine_filters', 5 );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\spine_setup', 5 );
+
+/**
+ * Removes the Spine body class meta box for some users.
+ *
+ * @since 3.2.0
+ */
+function remove_body_class_metabox() {
+	if ( ! current_user_can( 'delete_others_pages' ) ) {
+		remove_meta_box( 'wsuwp-body-class-meta', 'page', 'side' );
+	}
+}
+add_action( 'add_meta_boxes_page', __NAMESPACE__ . '\remove_body_class_metabox', 15 );
 
 /**
  * Updates the Spine options list with the HRS theme's default options.
