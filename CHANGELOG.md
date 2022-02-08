@@ -15,6 +15,32 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 3.2.0 (:construction: TBD)
 
+### Added
+
+- Add file block styles for WP 5.9. (5bb7746)
+
+### Changed
+
+- Move content size variables to global styles. (e6d090e)
+- Fix #254 Update gallery block styles for version 2 in WP 5.9 and transition version 1 gallery block styles to deprecated. (40a0688, 8b2db2b)
+- Update paragraph block styles for WP 5.9. (4895de0)
+- Update columns block styles for WP 5.9. (061586b, 79c2a8a, 0c8e6bc)
+- Update cover block styles for WP 5.9. (061586b)
+- Update embed block styles for WP 5.9. (83918e8)
+- Update pullquote block styles for WP 5.9 and remove border options. (44ec685)
+- Update quote block styles for WP 5.9. (4d6c888)
+- Update search block styles for WP 5.9. (fb19bad)
+- Update social icons block styles for WP 5.9. (0320faf)
+- Remove typography options from table block, move small-screen table collapse inside a class, and remove unused custom table styles. (d6f4d22, 543678f, 2ae1938)
+- Remove some unused block editor panels. (fc54d6b)
+- Remove the Spine body class meta box for some users. (fc54d6b)
+- Update nanoid from 3.1.30 to 3.2.0. (495a248)
+
+### Fixed
+
+- Fix #257 unregister unwanted FSE and other core blocks. (39ba758)
+- Give search header menu specific max width. (a5b4912)
+
 ## 3.1.0 (2022-01-10)
 
 ### Added
