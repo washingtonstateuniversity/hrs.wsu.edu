@@ -9,29 +9,33 @@
 	}
 
 	&:where(.has-background) {
-		background-color: transparent !important;
 		border-top: 3px solid;
 		border-bottom: 3px solid;
 		padding: 2rem 1rem 1rem;
 	}
 
 	&.has-primary-crimson-background-color {
+		background-color: transparent !important;
 		border-color: var(--wp--preset--color--primary-crimson);
 	}
 
 	&.has-primary-gray-background-color {
+		background-color: transparent !important;
 		border-color: var(--wp--preset--color--primary-gray);
 	}
 
 	&.has-secondary-crimson-background-color {
+		background-color: transparent !important;
 		border-color: var(--wp--preset--color--secondary-crimson);
 	}
 
 	&.has-dark-background-color {
+		background-color: transparent !important;
 		border-color: var(--wp--preset--color--dark);
 	}
 
 	&.has-light-background-color {
+		background-color: transparent !important;
 		border-color: var(--wp--preset--color--light);
 	}
 
@@ -64,29 +68,33 @@
 	}
 
 	&:where(.has-background) {
-		background-color: transparent !important;
 		border-top: 3px solid;
 		border-bottom: 3px solid;
 		padding: 2rem 1rem 1rem;
 	}
 
 	&.has-primary-crimson-background-color {
+		background-color: transparent !important;
 		border-color: var(--wp--preset--color--primary-crimson);
 	}
 
 	&.has-primary-gray-background-color {
+		background-color: transparent !important;
 		border-color: var(--wp--preset--color--primary-gray);
 	}
 
 	&.has-secondary-crimson-background-color {
+		background-color: transparent !important;
 		border-color: var(--wp--preset--color--secondary-crimson);
 	}
 
 	&.has-dark-background-color {
+		background-color: transparent !important;
 		border-color: var(--wp--preset--color--dark);
 	}
 
 	&.has-light-background-color {
+		background-color: transparent !important;
 		border-color: var(--wp--preset--color--light);
 	}
 
