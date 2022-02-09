@@ -26,7 +26,7 @@
 		"@babel/runtime": "^7.17.2",
 		"@wordpress/babel-preset-default": "^6.5.0",
 		"@wordpress/dependency-extraction-webpack-plugin": "^3.3.0",
-		"@wordpress/eslint-plugin": "^9.3.0",
+		"@wordpress/eslint-plugin": "^10.0.0",
 		"@wordpress/npm-package-json-lint-config": "^4.1.0",
 		"@wordpress/stylelint-config": "^20.0.0",
 		"babel-loader": "^8.2.3",
