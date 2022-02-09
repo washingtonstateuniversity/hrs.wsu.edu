@@ -39,8 +39,8 @@
 		& a.wp-block-social-link-anchor:active,
 		& a.wp-block-social-link-anchor:visited,
 		& svg {
-			color: currentColor;
-			fill: currentColor;
+			color: currentcolor;
+			fill: currentcolor;
 		}
 
 		& svg {

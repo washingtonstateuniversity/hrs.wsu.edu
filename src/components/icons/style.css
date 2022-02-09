@@ -51,7 +51,7 @@ main h4 a,
 
 	&:hover,
 	&:focus {
-		border-bottom-color: currentColor;
+		border-bottom-color: currentcolor;
 	}
 
 }
