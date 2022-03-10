@@ -13,7 +13,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 3.2.0-rc.2 (:construction: TBD)
+## 3.2.0 (2022-03-10)
 
 ### Added
 
@@ -21,6 +21,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Changed
 
+- Bump WP tested-to to 5.9.1.
 - Move content size variables to global styles. (e6d090e)
 - Fix #254 Update gallery block styles for version 2 in WP 5.9 and transition version 1 gallery block styles to deprecated. (40a0688, 8b2db2b)
 - Update paragraph block styles for WP 5.9. (4895de0)
