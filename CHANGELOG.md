@@ -13,6 +13,58 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
+## 3.2.0 (2022-03-10)
+
+### Added
+
+- Add file block styles for WP 5.9. (5bb7746)
+
+### Changed
+
+- Bump WP tested-to to 5.9.1.
+- Move content size variables to global styles. (e6d090e)
+- Fix #254 Update gallery block styles for version 2 in WP 5.9 and transition version 1 gallery block styles to deprecated. (40a0688, 8b2db2b)
+- Update paragraph block styles for WP 5.9. (4895de0)
+- Update columns block styles for WP 5.9. (061586b, 79c2a8a, 0c8e6bc)
+- Update cover block styles for WP 5.9. (061586b)
+- Update embed block styles for WP 5.9. (83918e8)
+- Update pullquote block styles for WP 5.9 and remove border options. (44ec685)
+- Update quote block styles for WP 5.9. (4d6c888)
+- Update search block styles for WP 5.9. (fb19bad)
+- Update social icons block styles for WP 5.9. (0320faf)
+- Remove typography options from table block, move small-screen table collapse inside a class, and remove unused custom table styles. (d6f4d22, 543678f, 2ae1938)
+- Remove some unused block editor panels. (fc54d6b)
+- Remove the Spine body class meta box for some users. (fc54d6b)
+- Upgrade stylelint from 13.13.1 to 14.4.0. (1a54bb9)
+- Upgrade roave/security-advisories dev-master 07a4c67 to 2ec9ad6. (7bedc70)
+- Upgrade @wordpress/stylelint-config from 19.1.0 to 20.0.0. (1a54bb9)
+- Upgrade @wordpress/eslint-plugin from 9.3.0 to 10.0.0. (5f0808f)
+- Update eslint from 8.3.0 to 8.8.0. (5f0808f)
+- Update postcss-preset-env from 7.0.1 to 7.3.1. (9c56f57)
+- Update postcss-cli from 9.0.2 to 9.1.0. (9c56f57)
+- Update @wordpress/dependency-extraction-webpack-plugin from 3.2.1 to 3.3.0. (629f02b)
+- Update copy-webpack-plugin from 10.0.0 to 10.2.4. (259c019)
+- Update @babel/core from 7.16.0 to 7.17.2. (e2f71af)
+- Update @babel/runtime from 7.16.3 to 7.17.2. (e2f71af)
+- Update @wordpress/babel-preset-default from 6.4.1 to 6.5.0. (e2f71af)
+- Update webpack from 5.64.4 to 5.68.0. (2adde7f)
+- Update nanoid from 3.1.30 to 3.2.0. (495a248)
+
+### Fixed
+
+- Replace `currentColor` with `currentcolor`. (21e4f2c)
+- Fix #257 unregister unwanted FSE and other core blocks. (39ba758)
+- Give search header menu specific max width. (a5b4912)
+
+### Security
+
+- Bump dealerdirect/phpcodesniffer-composer-installer from 0.7.1 to 0.7.2. (e3d6712)
+- Bump squizlabs/php_codesniffer from 3.6.1 to 3.6.2. (89e755d)
+- Bump cssnano from 5.0.12 to 5.0.17. (694ace7)
+- Bump postcss from 8.4.4 to 8.4.6. (9c56f57)
+- Bump source-map-loader from 3.0.0 to 3.0.1. (037a81d)
+- Bump webpack-cli from 4.9.1 to 4.9.2. (2adde7f)
+
 ## 3.1.0 (2022-01-10)
 
 ### Added
