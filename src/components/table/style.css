@@ -1,44 +1,49 @@
 @media (max-width: 43em) {
 
-	table,
-	caption,
-	tbody,
-	tr,
-	th,
-	td {
-		display: block;
-		text-align: left;
+	.wp-block-table.is-collapsible table,
+	.tablepress.is-collapsible {
+
+		& caption,
+		& tbody,
+		& tr,
+		& th,
+		& td {
+			display: block;
+			text-align: left;
+		}
+
+		& thead,
+		& th:empty,
+		& td:empty {
+			display: none;
+			visibility: hidden;
+		}
+
+		& td[data-column]::before {
+			content: attr(data-column) ": ";
+			display: inline-block;
+			font-weight: 600;
+			padding-right: 0.25em;
+			width: 25%;
+		}
+
+		& tbody tr {
+			margin-bottom: 1.5rem;
+		}
+
+		& tbody td,
+		& tfoot th {
+			border: none;
+			line-height: 1.4;
+			padding: 4px 8px;
+		}
+
+		& .column-1 {
+			font-weight: 600;
+		}
+
 	}
 
-	thead,
-	th:empty,
-	td:empty {
-		display: none;
-		visibility: hidden;
-	}
-
-	td[data-column]::before {
-		content: attr(data-column) ": ";
-		display: inline-block;
-		font-weight: 600;
-		padding-right: 0.25em;
-		width: 25%;
-	}
-
-	tbody tr {
-		margin-bottom: 1.5rem;
-	}
-
-	tbody td,
-	tfoot th {
-		border: none;
-		line-height: 1.4;
-		padding: 4px 8px;
-	}
-
-	table .column-1 {
-		font-weight: 600;
-	}
 }
 
 .wp-block-table table,
@@ -115,15 +120,6 @@ th {
 .dataTables_filter {
 	float: none;
 	margin-bottom: 1em;
-}
-
-/* HRS Contacts adjustments. */
-.tablepress-hrs-contacts td.column-3 {
-	white-space: nowrap;
-}
-
-.tablepress.tablepress-hrs-contacts tbody td {
-	vertical-align: text-bottom;
 }
 
 .hrs-representation-table .column-1 {

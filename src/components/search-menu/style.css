@@ -82,6 +82,7 @@
 		border-top-left-radius: 0;
 		border-bottom-right-radius: 5px;
 		border-bottom-left-radius: 0;
+		max-width: 150px;
 	}
 
 }

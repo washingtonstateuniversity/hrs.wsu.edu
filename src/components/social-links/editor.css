@@ -1,0 +1,19 @@
+.wp-block-social-links {
+
+	& .wp-social-link {
+		color: var(--wp--custom--wsu-color-black--90) !important;
+	}
+
+	&:not(.is-style-logos-only) .wp-social-link {
+		background-color: var(--wp--custom--wsu-color-black--3) !important;
+	}
+
+	&.is-style-logos-only .wp-social-link {
+
+		& button {
+			padding: 0.25em;
+		}
+
+	}
+
+}

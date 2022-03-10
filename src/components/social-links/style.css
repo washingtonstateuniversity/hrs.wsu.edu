@@ -20,9 +20,9 @@
 
 	& .wp-social-link {
 		border-radius: 9999px; /* This makes it pill-shaped instead of oval, in cases where the image fed is not perfectly sized. */
+		color: var(--wp--custom--wsu-color-black--90) !important;
 		display: block;
 		height: auto;
-		margin: 4px 8px 4px 0;
 		padding: 0;
 		transition: transform 0.1s ease;
 
@@ -39,8 +39,8 @@
 		& a.wp-block-social-link-anchor:active,
 		& a.wp-block-social-link-anchor:visited,
 		& svg {
-			color: currentColor;
-			fill: currentColor;
+			color: currentcolor;
+			fill: currentcolor;
 		}
 
 		& svg {
@@ -52,6 +52,25 @@
 		&:focus {
 			transform: scale(1.1);
 		}
+	}
+
+	&:not(.is-style-logos-only) .wp-social-link {
+		background-color: var(--wp--custom--wsu-color-black--3) !important;
+	}
+
+	&.is-style-logos-only .wp-social-link {
+		width: auto;
+
+		& svg {
+			height: 1.25em;
+			width: 1.25em;
+		}
+	}
+
+	&.is-style-pill-shape .wp-social-link {
+		padding-left: calc((2/3) * 1em);
+		padding-right: calc((2/3) * 1em);
+		width: auto;
 	}
 
 	&.has-small-icon-size {
@@ -71,7 +90,6 @@
 	}
 
 	&.aligncenter {
-		display: flex;
 		justify-content: center;
 	}
 
@@ -85,21 +103,6 @@
 
 	.wp-social-link {
 		transition: none;
-	}
-
-}
-
-/* Treatment for logos-only and pill-shape styles. */
-.wp-block-social-links.is-style-logos-only,
-.wp-block-social-links.is-style-pill-shape {
-
-	& .wp-social-link {
-		width: auto;
-	}
-
-	& .wp-social-link a {
-		padding-left: calc((2/3) * 1em);
-		padding-right: calc((2/3) * 1em);
 	}
 
 }

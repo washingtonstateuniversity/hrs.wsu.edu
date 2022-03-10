@@ -20,6 +20,7 @@
 
 .wp-block-embed {
 	margin-bottom: 1em;
+	overflow-wrap: break-word;
 
 	/* Don't allow iframe to overflow it's container. */
 	& iframe {

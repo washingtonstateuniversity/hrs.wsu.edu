@@ -23,20 +23,30 @@ const blockStylesList = [ list, heading, paragraph ];
  * Blocks to unregister.
  */
 const unregisterList = [
+	'core/archives',
+	'core/calendar',
+	'core/html',
 	'core/latest-comments',
 	'core/latest-posts',
 	'core/loginout',
 	'core/more',
+	'core/navigation',
 	'core/nextpage',
+	'core/post-author',
+	'core/post-comments',
 	'core/post-content',
 	'core/post-date',
 	'core/post-excerpt',
 	'core/post-featured-image',
+	'core/post-navigation-link',
+	'core/post-terms',
+	'core/page-list',
 	'core/post-title',
 	'core/query',
 	'core/site-logo',
 	'core/site-tagline',
 	'core/site-title',
+	'core/term-description',
 	'core/query-title',
 ];
 
