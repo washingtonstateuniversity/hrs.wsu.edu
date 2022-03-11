@@ -22,7 +22,7 @@
 		"url": "https://github.com/washingtonstateuniversity/hrs.wsu.edu/issues"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.17.2",
+		"@babel/core": "^7.17.5",
 		"@babel/runtime": "^7.17.2",
 		"@wordpress/babel-preset-default": "^6.5.0",
 		"@wordpress/dependency-extraction-webpack-plugin": "^3.3.0",
