@@ -78,7 +78,7 @@ function get_version() {
 function wordpress_version_notice() {
 	print_f(
 		'<div class="error><p>%s</p></div>',
-		__( 'The HRS theme requires WordPress 5.0.0 or later to function properly. Please upgrade WordPress before activating the HRS Theme', 'hrswp-theme' )
+		__( 'The HRS theme requires WordPress 5.9.0 or later to function properly. Please upgrade WordPress before activating the HRS Theme', 'hrswp-theme' )
 	);
 
 	// @TODO deactivate theme.
@@ -98,7 +98,7 @@ function pre_init() {
 	// Remove '-src' from the version string for `version_compare()`.
 	$version = preg_replace( '/-[A-Za-z-0-9]*$/', '', $wp_version );
 
-	if ( version_compare( $version, '5.0.0', '<' ) ) {
+	if ( version_compare( $version, '5.9.0', '<' ) ) {
 		add_action( 'admin_notices', __NAMESPACE__ . '\wordpress_version_notice' );
 		return;
 	}
