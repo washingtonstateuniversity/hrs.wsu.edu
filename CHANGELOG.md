@@ -15,7 +15,32 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 3.2.2-rc.1 (:construction: TBD)
 
+### Changed
 
+- Bump required WP version to 5.9. (c02ee20)
+- Upgrade npm-package-json-lint from 5.4.2 to 6.0.3. (d90d281, 511c3b6)
+- Upgrade @wordpress/eslint-plugin from 10.0.2 to 11.0.1. (fee5f6e)
+- Update roave/security-advisories dev-master from 2ec9ad6 to cd0f4e1. (2cf881a)
+- Update eslint from 8.8.0 to 8.11.0. (0a0ceb3, c50c105)
+- Update stylelint from 14.4.0 to 14.5.3. (1b73e39)
+- Update cssnano from 5.0.17 to 5.1.4. (12fa5e2, fd94758)
+- Update postcss-preset-env from 7.3.1 to 7.4.2. (d311ed9)
+- Update @wordpress/dependency-extraction-webpack-plugin from 3.3.0 to 3.4.1. (847aa97)
+- Update @wordpress/babel-preset-default from 6.5.0 to 6.6.1. (5ada179)
+- Update webpack from 5.68.0 to 5.70.0. (39c4848)
+
+### Fixed
+
+- Fix #259 add style for cover block opacity 0. (d63096c)
+
+### Security
+
+- Bump sirbrillig/phpcs-variable-analysis from 2.11.2 to 2.11.3. (6fe2464)
+- Bump @wordpress/npm-package-json-lint-config from 4.1.0 to 4.1.2. (13e651d)
+- Bump @wordpress/eslint-plugin from 10.0.0 to 10.0.2. (079917a)
+- Bump @wordpress/stylelint-config from 20.0.0 to 20.0.2. (973294e)
+- Bump postcss from 8.4.6 to 8.4.8. (1abd012)
+- Bump @babel/core from 7.17.2 to 7.17.5. (4a71170)
 
 ## 3.2.1 (2022-03-14)
 
