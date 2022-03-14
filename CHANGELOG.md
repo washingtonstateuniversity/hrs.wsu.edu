@@ -17,7 +17,8 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Changed
 
-- Bump required WP version to 5.9. (c02ee20)
+- Bump WP tested-to to 5.9.2. (3576880)
+- Bump required WP version to 5.9 and require for activation. (c02ee20, fc5ee52)
 - Upgrade npm-package-json-lint from 5.4.2 to 6.0.3. (d90d281, 511c3b6)
 - Upgrade @wordpress/eslint-plugin from 10.0.2 to 11.0.1. (fee5f6e)
 - Update roave/security-advisories dev-master from 2ec9ad6 to cd0f4e1. (2cf881a)
