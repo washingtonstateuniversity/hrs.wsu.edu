@@ -24,7 +24,10 @@ const blockStylesList = [ list, heading, paragraph ];
  */
 const unregisterList = [
 	'core/archives',
+	'core/avatar',
 	'core/calendar',
+	'core/comments-query-loop',
+	'core/post-comments-form',
 	'core/html',
 	'core/latest-comments',
 	'core/latest-posts',
@@ -33,6 +36,7 @@ const unregisterList = [
 	'core/navigation',
 	'core/nextpage',
 	'core/post-author',
+	'core/post-author-biography',
 	'core/post-comments',
 	'core/post-content',
 	'core/post-date',
@@ -43,6 +47,7 @@ const unregisterList = [
 	'core/page-list',
 	'core/post-title',
 	'core/query',
+	'core/read-more',
 	'core/site-logo',
 	'core/site-tagline',
 	'core/site-title',
