@@ -22,6 +22,10 @@
 
 	}
 
+	&:not(.has-border-color) {
+		border-color: var(--wp--custom--wsu-color-black--90);
+	}
+
 	& blockquote p {
 		font-size: var(--wp--preset--font-size--huge);
 		line-height: 1.5;
