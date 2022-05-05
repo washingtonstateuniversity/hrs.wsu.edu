@@ -173,6 +173,9 @@
 				}
 			},
 			"core/quote": {
+				"color": {
+					"palette": []
+				},
 				"typography": {
 					"fontSizes": [],
 					"fontStyle": false,
