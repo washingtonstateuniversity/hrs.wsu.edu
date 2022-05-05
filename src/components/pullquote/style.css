@@ -27,6 +27,10 @@
 
 	}
 
+	&:not(.has-border-color) {
+		border-color: var(--wp--custom--wsu-color-black--90);
+	}
+
 	&.alignleft p,
 	&.alignright p {
 		font-size: var(--wp--preset--font-size--large);
