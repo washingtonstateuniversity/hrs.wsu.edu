@@ -2,8 +2,6 @@
 @import "./socials-without-bg.css";
 
 .wp-block-social-links {
-	display: flex;
-	flex-wrap: wrap;
 	font-size: 24px;
 	padding-left: 0;
 	padding-right: 0;
@@ -18,7 +16,7 @@
 		box-shadow: none;
 	}
 
-	& .wp-social-link {
+	& .wp-block-social-link {
 		border-radius: 9999px; /* This makes it pill-shaped instead of oval, in cases where the image fed is not perfectly sized. */
 		color: var(--wp--custom--wsu-color-black--90) !important;
 		display: block;
@@ -27,7 +25,8 @@
 		transition: transform 0.1s ease;
 
 		& a {
-			display: block;
+			align-items: center;
+			display: flex;
 			line-height: 0;
 			padding: 0.25em;
 			transition: transform 0.1s ease;
@@ -51,6 +50,12 @@
 		&:hover,
 		&:focus {
 			transform: scale(1.1);
+		}
+
+		& span:not(.screen-reader-text) {
+			font-size: 0.65em;
+			margin-left: 0.5em;
+			margin-right: 0.5em;
 		}
 	}
 
