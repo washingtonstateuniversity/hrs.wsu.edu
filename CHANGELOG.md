@@ -15,6 +15,21 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 3.3.0-rc.1 (:construction: TBD)
 
+### Changed
+
+- Fix #271 convert a-to-z list style to work with `core/list` block. (0f26c8f)
+- Fix #267 adjust core/gallery block margins for new gap value. (9971eea)
+- Fix #268 update cover block css for new layout. (d4e094e)
+- Fix #265 Allow changing text color without changing border color. (7dcfe67)
+- Fix #264 Remove color options from core/quote block. (3ba7ff2)
+- Fix #266 Disable duotone (again). (538faea)
+- Fix #269 Unregister core theme blocks new to WordPress 6.0. (ca633e0)
+- Bump minimist from 1.2.5 to 1.2.6. (034cab0)
+
+### Fixed
+
+- Fix social links label size and alignment. (0bf88ac)
+
 ## 3.2.2 (2022-03-14)
 
 ### Changed
