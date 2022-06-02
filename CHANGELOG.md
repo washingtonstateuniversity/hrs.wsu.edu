@@ -17,6 +17,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Changed
 
+- Bump WP tested-to to 6.0.0.
 - Fix #271 convert a-to-z list style to work with `core/list` block. (0f26c8f)
 - Fix #267 adjust core/gallery block margins for new gap value. (9971eea)
 - Fix #268 update cover block css for new layout. (d4e094e)
