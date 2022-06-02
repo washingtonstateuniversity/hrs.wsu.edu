@@ -61,6 +61,7 @@
 			"custom": false,
 			"customDuotone": false,
 			"customGradient": false,
+			"defaultDuotone": false,
             "defaultGradients": false,
 			"defaultPalette": false,
 			"duotone": [],
@@ -172,6 +173,9 @@
 				}
 			},
 			"core/quote": {
+				"color": {
+					"palette": []
+				},
 				"typography": {
 					"fontSizes": [],
 					"fontStyle": false,

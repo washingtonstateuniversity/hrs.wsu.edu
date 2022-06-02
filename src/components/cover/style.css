@@ -29,6 +29,7 @@
 	}
 
 	& .has-background-dim:not(.has-background-gradient)::before,
+	& .wp-block-cover__background,
 	& .wp-block-cover__gradient-background {
 		position: absolute;
 		top: 0;
@@ -208,7 +209,7 @@
 
 }
 
-@supports (-webkit-overflow-scrolling: touch) {
+@supports (-webkit-touch-callout: inherit) {
 
 	/*
 	 * Mobile Safari does not support fixed background attachment properly.

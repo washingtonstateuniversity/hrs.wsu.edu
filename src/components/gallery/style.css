@@ -1,6 +1,14 @@
 /* Import styles for rendering content of deprecated gallery versions. */
 @import "./deprecated.css";
 
+/*
+ * The following is a temporary override until flex layout supports
+ * an align items setting of normal.
+ */
+figure.wp-block-gallery.has-nested-images {
+	align-items: normal;
+}
+
 .wp-block-gallery.has-nested-images {
 	display: flex;
 	flex-wrap: wrap;
@@ -10,16 +18,8 @@
 	 * specificity chain on default image block on front end.
 	 */
 	& figure.wp-block-image:not(#individual-image) {
-		margin: 0 1em 1em 0;
 		width: calc(50% - 1em / 2);
-
-		&:last-of-type:not(#individual-image) {
-			margin-right: 0;
-		}
-
-		&:nth-of-type(even) {
-			margin-right: 0;
-		}
+		margin: 0;
 	}
 
 	& figure.wp-block-image {
@@ -27,9 +27,8 @@
 		flex-grow: 1;
 		justify-content: center;
 		position: relative;
-		margin-top: auto;
-		margin-bottom: auto;
 		flex-direction: column;
+		max-width: 100%;
 
 		& > div,
 		& > a {
@@ -95,10 +94,6 @@
 			margin-top: 0;
 			margin-bottom: auto;
 
-			& img {
-				margin-bottom: 1em;
-			}
-
 			& figcaption {
 				bottom: 1em;
 			}
@@ -124,7 +119,6 @@
 	}
 
 	&.columns-1 figure.wp-block-image:not(#individual-image) {
-		margin-right: 0;
 		width: 100%;
 	}
 
@@ -140,32 +134,26 @@
 	.wp-block-gallery.has-nested-images {
 
 		&.columns-3 figure.wp-block-image:not(#individual-image) {
-			margin-right: 1em;
 			width: calc((100% / 3) - 1em);
 		}
 
 		&.columns-4 figure.wp-block-image:not(#individual-image) {
-			margin-right: 1em;
 			width: calc((100% / 4) - 1em);
 		}
 
 		&.columns-5 figure.wp-block-image:not(#individual-image) {
-			margin-right: 1em;
 			width: calc((100% / 5) - 1em);
 		}
 
 		&.columns-6 figure.wp-block-image:not(#individual-image) {
-			margin-right: 1em;
 			width: calc((100% / 6) - 1em);
 		}
 
 		&.columns-7 figure.wp-block-image:not(#individual-image) {
-			margin-right: 1em;
 			width: calc((100% / 7) - 1em);
 		}
 
 		&.columns-8 figure.wp-block-image:not(#individual-image) {
-			margin-right: 1em;
 			width: calc((100% / 8) - 1em);
 		}
 
@@ -174,28 +162,11 @@
 			margin-right: 1em;
 		}
 
-		/* Unset the right margin on every rightmost gallery item. */
-		&.columns-1 figure.wp-block-image:not(#individual-image):nth-of-type(1n),
-		&.columns-2 figure.wp-block-image:not(#individual-image):nth-of-type(2n),
-		&.columns-3 figure.wp-block-image:not(#individual-image):nth-of-type(3n),
-		&.columns-4 figure.wp-block-image:not(#individual-image):nth-of-type(4n),
-		&.columns-5 figure.wp-block-image:not(#individual-image):nth-of-type(5n),
-		&.columns-6 figure.wp-block-image:not(#individual-image):nth-of-type(6n),
-		&.columns-7 figure.wp-block-image:not(#individual-image):nth-of-type(7n),
-		&.columns-8 figure.wp-block-image:not(#individual-image):nth-of-type(8n) {
-			margin-right: 0;
-		}
-
 		/* If number of columns not set, default to 3 if 3 or more images. */
 		&.columns-default {
 
 			& figure.wp-block-image:not(#individual-image) {
-				margin-right: 1em;
 				width: calc(33.33% - 1em);
-			}
-
-			& figure.wp-block-image:not(#individual-image):nth-of-type(3n+3) {
-				margin-right: 0;
 			}
 
 			/* If only 2 child images use 2 columns. */
