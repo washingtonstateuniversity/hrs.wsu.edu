@@ -6,7 +6,7 @@ body .editor-styles-wrapper {
 
 .editor-styles-wrapper .wp-block,
 .editor-post-title__block .editor-post-title__input {
-	font-family: var(--wp--custom--typography--font);
+	font-family: var(--wp--preset--font-family--montserrat);
 }
 
 .wp-block {
