@@ -71,6 +71,10 @@ const config = {
 					from: './src/images/**/*',
 					to: 'images/[name][ext]',
 				},
+				{
+					from: './src/lib/fonts/**/*',
+					to: 'fonts/[name][ext]',
+				},
 			],
 		} ),
 		new DependencyExtractionWebpackPlugin( { injectPolyfill: true } ),
