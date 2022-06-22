@@ -11,7 +11,6 @@
 				"wideSize": "1180px"
 			},
 			"typography": {
-				"font": "\"Montserrat\", sans-serif",
 				"scale": 1.125,
 				"normal": "1rem",
 				"tiny": "calc(var(--wp--custom--typography--small) / var(--wp--custom--typography--scale))",
@@ -108,7 +107,29 @@
 		"typography": {
 			"customFontSize": false,
 			"dropCap": false,
-            "fontFamilies": [],
+            "fontFamilies": [
+				{
+					"fontFamily": "\"Montserrat\",sans-serif",
+					"name": "Montserrat",
+					"slug": "montserrat",
+					"fontFace": [
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "400 500 600 700 800 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./build/fonts/Montserrat-VariableFont_wght.ttf.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "400 500 600 700 800 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./build/fonts/Montserrat-Italic-VariableFont_wght.ttf.woff2" ]
+						}
+					]
+				}
+			],
             "fontSizes": [
 				{
 					"name": "Small",

@@ -28,13 +28,6 @@ function register_assets() {
 		$version
 	);
 
-	wp_enqueue_style(
-		'source_sans_pro',
-		'//fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
-		array(),
-		$version
-	);
-
 	wp_add_inline_style( 'hrswp-theme', inline_styles() );
 
 	wp_enqueue_script(
@@ -57,7 +50,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_assets', 25 );
 function inline_styles() {
 	$inline_styles = 'body {
 		background-color: var(--wp--preset--color--white);
-		font-family: var(--wp--custom--typography--font);
+		font-family: var(--wp--preset--font-family--montserrat);
 		font-size: 16px;
 		line-height: 1.5;
 	}';
