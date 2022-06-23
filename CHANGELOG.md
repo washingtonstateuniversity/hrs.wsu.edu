@@ -13,6 +13,18 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
+## 3.4.0 (2022-06-23)
+
+### Added
+
+- Add locally hosted font files. (7593bf5)
+
+### Changed
+
+- Switch from Google-hosted fonts to locally hosted and move font definitions into `theme.json`, close #273. (7593bf5)
+- Upgrade Browserlist database. (8260604)
+- Bump shell-quote from 1.7.2 to 1.7.3. (49ae785)
+
 ## 3.3.0 (2022-06-02)
 
 ### Changed
