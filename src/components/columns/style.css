@@ -1,7 +1,8 @@
 .wp-block-columns {
+	align-items: initial !important;
 	box-sizing: border-box;
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: wrap !important;
 	margin-bottom: 2rem;
 
 	&.has-text-color {
