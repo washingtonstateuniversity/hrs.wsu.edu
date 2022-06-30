@@ -15,7 +15,10 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 3.4.1-rc.1 (:construction: TBD)
 
+### Fixed
 
+- Fix #276 columns block stack on mobile. (6c4971d)
+- Fix columns vertical alignment issue. (6c4971d)
 
 ## 3.4.0 (2022-06-23)
 
