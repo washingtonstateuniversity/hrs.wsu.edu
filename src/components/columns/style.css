@@ -3,7 +3,7 @@
 	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap !important;
-	margin-bottom: 2rem;
+	margin-bottom: 1.5em;
 
 	&.has-text-color {
 		color: var(--wp--custom--wsu-color-black--90) !important;
@@ -12,7 +12,7 @@
 	&:where(.has-background) {
 		border-top: 3px solid;
 		border-bottom: 3px solid;
-		padding: 2rem 1rem 1rem;
+		padding: 2rem 1rem;
 	}
 
 	&.has-primary-crimson-background-color {
@@ -51,18 +51,26 @@
 	&.are-vertically-aligned-bottom {
 		align-items: flex-end;
 	}
+
+	&.is-not-stacked-on-mobile {
+		flex-wrap: nowrap !important;
+
+		& > .wp-block-column {
+			flex-basis: 0;
+			flex-grow: 1;
+
+			&[style*="flex-basis"] {
+				flex-grow: 0;
+			}
+		}
+	}
 }
 
 .wp-block-column {
 	flex-grow: 1;
-	margin-top: 2rem;
 	min-width: 0;
 	word-break: break-word;
 	overflow-wrap: break-word;
-
-	&:first-child {
-		margin-top: 0;
-	}
 
 	&.has-text-color {
 		color: var(--wp--custom--wsu-color-black--90) !important;
@@ -71,7 +79,7 @@
 	&:where(.has-background) {
 		border-top: 3px solid;
 		border-bottom: 3px solid;
-		padding: 2rem 1rem 1rem;
+		padding: 2rem 1rem;
 	}
 
 	&.has-primary-crimson-background-color {
@@ -120,32 +128,18 @@
 
 @media (max-width: 576px) {
 
-	.wp-block-column {
-		flex-basis: 100% !important; /* Need to override inline styles */
-	}
-
-}
-
-@media (min-width: 576px) {
-
-	.wp-block-column:nth-child(odd):not(:last-child) {
-		margin-right: 1rem;
-	}
-
-	.wp-block-column:nth-child(even) {
-		margin-left: 1rem;
-	}
-
-	.wp-block-column:nth-child(-n+2) {
-		margin-top: 0;
+	/* Need to override inline styles */
+	.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+		flex-basis: 100% !important;
 	}
 
 }
 
 @media (min-width: 576px) and (max-width: 900px) {
 
-	.wp-block-column {
-		flex-basis: calc(50% - 1rem) !important; /* Need to override inline styles */
+	/* Need to override WordPress's aggressive inline styles */
+	.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+		flex-basis: calc(50% - 2rem) !important;
 	}
 
 }
@@ -153,20 +147,24 @@
 @media (min-width: 900px) {
 
 	.wp-block-columns {
-		flex-wrap: nowrap;
+		flex-wrap: nowrap !important;
+	}
 
-		& .wp-block-column {
-			flex-basis: 0;
-			margin-top: 0;
+	/* Available space should be divided equally amongst columns without an
+	assigned width. This is achieved by assigning a flex basis that is
+	consistent (equal), would not cause the sum total of column widths to
+	exceed 100%, and which would cede to a column with an assigned width.
+	The `flex-grow` allows columns to maximally and equally occupy space
+	remaining after subtracting the space occupied by columns with
+	explicit widths (if any exist). */
+	.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+		flex-basis: 0;
+		flex-grow: 1;
+		margin-top: 0;
+
+		&[style*="flex-basis"] {
+			flex-grow: 0;
 		}
-	}
-
-	.wp-block-column:not(:first-child) {
-		margin-left: 1rem;
-	}
-
-	.wp-block-column:not(:last-child) {
-		margin-right: 1rem;
 	}
 
 }
