@@ -28,6 +28,7 @@ require dirname( __DIR__ ) . '/inc/media.php';
 require dirname( __DIR__ ) . '/inc/meta.php';
 require dirname( __DIR__ ) . '/inc/queries.php';
 require dirname( __DIR__ ) . '/inc/roles.php';
+require dirname( __DIR__ ) . '/inc/settings.php';
 require dirname( __DIR__ ) . '/inc/taxonomy.php';
 require dirname( __DIR__ ) . '/inc/wsu-spine.php';
 
