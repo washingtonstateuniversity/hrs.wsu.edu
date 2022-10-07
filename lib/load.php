@@ -45,6 +45,13 @@ require dirname( __DIR__ ) . '/build/components/shortcode-document-gallery.php';
 require dirname( __DIR__ ) . '/build/components/terms-list.php';
 
 /**
+ * Conditionally load login access.
+ */
+if ( '1' === get_option( 'hrswp_theme_require_login' ) ) {
+	require dirname( __DIR__ ) . '/inc/access.php';
+}
+
+/**
  * Load Gravity Forms compatability file.
  */
 if ( class_exists( 'GFForms' ) ) {
