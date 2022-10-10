@@ -29,6 +29,15 @@ function update_body_class( $classes ) {
 		}
 	}
 
+	$environment = wp_get_environment_type();
+	if (
+		'local' === $environment ||
+		'development' === $environment ||
+		'staging' === $environment
+	) {
+		$classes[] = 'environment-' . esc_attr( $environment );
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', __NAMESPACE__ . '\update_body_class' );
@@ -74,3 +83,47 @@ function filter_protected_title_format() {
 	return '%s';
 }
 add_filter( 'protected_title_format', __NAMESPACE__ . '\filter_protected_title_format' );
+
+/**
+ * Adds a text node to the admin bar with the environment type.
+ *
+ * @since 3.5.0
+ *
+ * @param \WP_Admin_Bar $wp_admin_bar The WP_Admin_Bar instance, passed by reference.
+ * @return void
+ */
+add_action(
+	'admin_bar_menu',
+	function ( \WP_Admin_Bar $wp_admin_bar ): void {
+		$environment = wp_get_environment_type();
+		switch ( $environment ) {
+			case 'local':
+				$icon = '🧪';
+				break;
+			case 'development':
+				$icon = '⚗️';
+				break;
+			case 'staging':
+				$icon = '🚀';
+				break;
+			case 'production':
+			default:
+				$icon = '🌲';
+				break;
+		}
+
+		$wp_admin_bar->add_menu(
+			array(
+				'id'    => 'environment-label',
+				'title' => sprintf(
+					'<span class="environment-icon" aria-hidden="true">%2$s</span> %1$s',
+					/* translators: the name of the WordPress environment */
+					esc_html( sprintf( __( '%s Environment', 'hrswp-theme' ), ucfirst( $environment ) ) ),
+					esc_html( $icon )
+				),
+				'href'  => false,
+			)
+		);
+	},
+	15
+);
