@@ -23,3 +23,51 @@ main,
 	}
 
 }
+
+body.environment-local,
+body.environment-development,
+body.environment-staging {
+	margin-bottom: 3rem;
+
+	&::after {
+		content: "⚠️ Non-Production Environment";
+		color: var(--wp--preset--color--light);
+		text-align: center;
+		background: var(--wp--preset--color--secondary-crimson);
+		max-height: 3rem;
+		width: 100%;
+		position: fixed;
+		font-weight: 700;
+		bottom: 0;
+		right: 0;
+		padding: 1rem;
+	}
+}
+
+body.environment-local::after {
+	content: "🧪 Local Environment";
+}
+
+body.environment-development::after {
+	content: "⚗️ Development Environment";
+}
+
+body.environment-staging::after {
+	content: "🚀 Staging Environment";
+}
+
+@media (max-width: 989px) {
+
+	body.environment-local.admin-bar::after {
+		bottom: 32px;
+	}
+
+}
+
+@media screen and (max-width: 782px) {
+
+	body.environment-local.admin-bar::after {
+		bottom: 46px;
+	}
+
+}
