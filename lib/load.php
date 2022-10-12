@@ -31,6 +31,7 @@ require dirname( __DIR__ ) . '/inc/roles.php';
 require dirname( __DIR__ ) . '/inc/settings.php';
 require dirname( __DIR__ ) . '/inc/taxonomy.php';
 require dirname( __DIR__ ) . '/inc/wsu-spine.php';
+require dirname( __DIR__ ) . '/inc/classes/class-svg-icons.php';
 
 /**
  * Load component files.
