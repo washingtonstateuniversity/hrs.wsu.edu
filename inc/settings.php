@@ -36,6 +36,30 @@ function settings_field_require_login(): void {
 }
 
 /**
+ * Displays the HRS environment indicator settings field.
+ *
+ * @since 3.5.0
+ *
+ * @return void
+ */
+function settings_field_environment_indicator(): void {
+	$option = 'hrswp_theme_env_indicator';
+	printf(
+		'<fieldset>
+			<legend class="screen-reader-text"><span>%4$s</span></legend>
+			<label for="%1$s">
+				<input id="%1$s" type="checkbox" name="%1$s" value="1" %2$s/>
+				%3$s
+			</label>
+		</fieldset>',
+		$option,
+		checked( '1', get_option( $option ), false ),
+		__( 'Display environment indicator', 'hrswp-theme' ),
+		__( 'HRS environment indicator settings', 'hrswp-theme' )
+	);
+}
+
+/**
  * Displays the HRS settings page.
  *
  * @since 3.5.0
@@ -77,12 +101,23 @@ function settings_page_content(): void {
 add_action(
 	'admin_init',
 	function(): void {
-		$slug         = 'hrswp-theme';
-		$login_option = 'hrswp_theme_require_login';
+		$slug                 = 'hrswp-theme';
+		$login_option         = 'hrswp_theme_require_login';
+		$env_indicator_option = 'hrswp_theme_env_indicator';
 
 		register_setting(
 			$slug,
 			$login_option,
+			array(
+				'sanitize_callback' => function ( ?string $value ): string {
+					return ( '1' === $value ) ? '1' : '0';
+				},
+			)
+		);
+
+		register_setting(
+			$slug,
+			$env_indicator_option,
 			array(
 				'sanitize_callback' => function ( ?string $value ): string {
 					return ( '1' === $value ) ? '1' : '0';
@@ -101,6 +136,14 @@ add_action(
 			$login_option,
 			esc_html__( 'Frontend access', 'hrswp-theme' ),
 			__NAMESPACE__ . '\settings_field_require_login',
+			$slug,
+			$slug . '_section_env_options'
+		);
+
+		add_settings_field(
+			$env_indicator_option,
+			esc_html__( 'Environment indicator', 'hrswp-theme' ),
+			__NAMESPACE__ . '\settings_field_environment_indicator',
 			$slug,
 			$slug . '_section_env_options'
 		);
