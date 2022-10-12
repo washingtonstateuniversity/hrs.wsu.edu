@@ -6,6 +6,7 @@
 @import "./columns/style.css";
 @import "./cover/style.css";
 @import "./embed/style.css";
+@import "./environment/style.css";
 @import "./file/style.css";
 @import "./forms/style.css";
 @import "./gallery/style.css";
