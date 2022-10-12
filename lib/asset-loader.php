@@ -167,3 +167,22 @@ function filter_script_loader_tag( $tag, $handle ) {
 	return $tag;
 }
 add_filter( 'script_loader_tag', __NAMESPACE__ . '\filter_script_loader_tag', 10, 2 );
+
+/**
+ * Registers HRS Theme admin assets.
+ *
+ * @since 3.5.0
+ *
+ * @return void
+ */
+add_action(
+	'admin_enqueue_scripts',
+	function () {
+		wp_enqueue_style(
+			'hrswp-theme-admin',
+			get_stylesheet_directory_uri() . '/build/editor.css',
+			array(),
+			HrswpTheme\get_version()
+		);
+	}
+);

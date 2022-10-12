@@ -1,0 +1,47 @@
+body.environment-local,
+body.environment-development,
+body.environment-staging {
+	margin-bottom: 4rem;
+
+	& .environment-banner {
+		color: var(--wp--preset--color--light);
+		text-align: center;
+		background: var(--wp--preset--color--secondary-crimson);
+		max-height: 3rem;
+		width: 100%;
+		position: fixed;
+		font-weight: 600;
+		bottom: 0;
+		right: 0;
+		padding: 1rem;
+		z-index: 9;
+
+		& .svg-icon {
+			fill: #a7aaad;
+			fill: rgba(240, 246, 252, 0.6);
+			margin-right: 4px;
+			position: relative;
+			top: 4px;
+		}
+	}
+}
+
+@media (max-width: 989px) {
+
+	body.environment-local .environment-banner,
+	body.environment-development .environment-banner,
+	body.environment-staging .environment-banner {
+		bottom: 32px;
+	}
+
+}
+
+@media screen and (max-width: 782px) {
+
+	body.environment-local .environment-banner,
+	body.environment-development .environment-banner,
+	body.environment-staging .environment-banner {
+		bottom: 46px;
+	}
+
+}

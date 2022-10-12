@@ -1,0 +1,91 @@
+body {
+
+	&.environment-local #wpadminbar,
+	&.environment-development #wpadminbar,
+	&.environment-staging #wpadminbar,
+	&.environment-production #wpadminbar {
+
+		& .svg-icon {
+			position: relative;
+			fill: #a7aaad;
+			fill: rgba(240, 246, 252, 0.6);
+			transition: fill 0.1s ease-in-out;
+			top: 4px;
+		}
+
+		&:not(.mobile) .ab-top-menu > li:focus > .ab-item .svg-icon,
+		&:not(.mobile) .ab-top-menu > li:hover > .ab-item .svg-icon {
+			fill: #72aee6;
+		}
+
+	}
+
+	&.environment-local #wpadminbar,
+	&.environment-development #wpadminbar,
+	&.environment-staging #wpadminbar {
+		background: #a60f2d;
+	}
+
+	&.environment-production #wpadminbar {
+		background: #4d4d4d;
+	}
+
+	&.block-editor-page.environment-local .edit-post-layout,
+	&.block-editor-page.environment-development .edit-post-layout,
+	&.block-editor-page.environment-staging .edit-post-layout,
+	&.block-editor-page.environment-production .edit-post-layout {
+		margin-bottom: 3rem;
+
+		&::after {
+			background: var(--wp--preset--color--secondary-crimson);
+			bottom: 0;
+			color: var(--wp--preset--color--light);
+			content: "Non-Production Environment";
+			font-size: var(--wp--preset--font-size--normal);
+			font-weight: 600;
+			display: block;
+			max-height: 3rem;
+			padding: 1rem;
+			position: fixed;
+			text-align: center;
+			width: 100%;
+		}
+
+	}
+
+	&.block-editor-page.environment-local .edit-post-layout::after {
+		content: "Local Environment";
+	}
+
+	&.block-editor-page.environment-development .edit-post-layout::after {
+		content: "Development Environment";
+	}
+
+	&.block-editor-page.environment-staging .edit-post-layout::after {
+		content: "Staging Environment";
+	}
+
+	&.block-editor-page.environment-production .edit-post-layout::after {
+		background: var(--wp--preset--color--primary-gray);
+		content: "Production Environment";
+	}
+
+}
+
+@media screen and (min-width: 782px) {
+
+	body {
+
+		&.block-editor-page.environment-local .edit-post-layout,
+		&.block-editor-page.environment-development .edit-post-layout,
+		&.block-editor-page.environment-staging .edit-post-layout {
+			border-top: 12px solid var(--wp--preset--color--primary-crimson);
+		}
+
+		&.block-editor-page.environment-production .edit-post-layout {
+			border-top: 12px solid var(--wp--preset--color--primary-gray);
+		}
+
+	}
+
+}
