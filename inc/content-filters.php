@@ -31,9 +31,9 @@ function update_body_class( $classes ) {
 		}
 	}
 
-	// @todo If setting disabled then return unmodified $classes
-
-	$classes[] = 'environment-' . esc_attr( wp_get_environment_type() );
+	if ( '1' === get_option( 'hrswp_theme_env_indicator', true ) ) {
+		$classes[] = 'environment-' . esc_attr( wp_get_environment_type() );
+	}
 
 	return $classes;
 }
@@ -51,7 +51,10 @@ add_filter(
 	'admin_body_class',
 	function ( string $classes ): string {
 
-		// @todo If setting disabled then return unmodified $classes
+		// Return unmodified if visual environment indicators aren't enabled.
+		if ( '1' !== get_option( 'hrswp_theme_env_indicator', true ) ) {
+			return $classes;
+		}
 
 		return $classes .= ' environment-' . esc_attr( wp_get_environment_type() ) . ' ';
 	}
@@ -111,7 +114,10 @@ add_action(
 	'admin_bar_menu',
 	function ( \WP_Admin_Bar $wp_admin_bar ): void {
 
-		// @todo If setting disabled then return early
+		// Return early if visual environment indicators aren't enabled.
+		if ( '1' !== get_option( 'hrswp_theme_env_indicator', true ) ) {
+			return;
+		}
 
 		$environment = wp_get_environment_type();
 		switch ( $environment ) {
@@ -149,8 +155,10 @@ add_action(
 add_action(
 	'wp_footer',
 	function (): void {
-
-		// @todo If setting disabled then return early
+		// Return early if visual environment indicators aren't enabled.
+		if ( '1' !== get_option( 'hrswp_theme_env_indicator', true ) ) {
+			return;
+		}
 
 		$environment = wp_get_environment_type();
 
