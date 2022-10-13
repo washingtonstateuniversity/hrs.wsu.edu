@@ -170,7 +170,16 @@
 					"palette": []
 				},
 				"typography": {
-					"fontSizes": []
+					"fontSizes": [],
+					"fontFamilies": []
+				}
+			},
+			"core/cover": {
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": [],
+					"fontStyle": false,
+					"textTransform": false
 				}
 			},
 			"core/heading": {
@@ -178,7 +187,18 @@
 					"palette": []
 				},
 				"typography": {
-					"fontSizes": []
+					"fontSizes": [],
+					"fontFamilies": []
+				}
+			},
+			"core/list": {
+				"typography": {
+					"fontFamilies": []
+				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"fontFamilies": []
 				}
 			},
 			"core/pullquote": {
@@ -198,6 +218,7 @@
 					"palette": []
 				},
 				"typography": {
+					"fontFamilies": [],
 					"fontSizes": [],
 					"fontStyle": false,
 					"textTransform": false
@@ -223,6 +244,7 @@
 					"palette": []
 				},
 				"typography": {
+					"fontFamilies": [],
 					"fontSizes": [],
 					"fontStyle": false,
 					"textTransform": false
