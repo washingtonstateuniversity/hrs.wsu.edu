@@ -6,7 +6,11 @@ const { dispatch } = wp.data;
 /**
  * Internal dependencies
  */
-import { modifyBlockStyles, unregisterBlocks } from './components/editor';
+import {
+	modifyBlockStyles,
+	useUnregisterBlockTypes,
+	useUnregisterBlockVariation,
+} from './components/editor';
 import registerDisplayOptions from './lib/block-filters';
 
 function removeEditorPanels() {
@@ -25,5 +29,6 @@ registerDisplayOptions();
 removeEditorPanels();
 wp.domReady( () => {
 	modifyBlockStyles();
-	unregisterBlocks();
+	useUnregisterBlockTypes();
+	useUnregisterBlockVariation();
 } );

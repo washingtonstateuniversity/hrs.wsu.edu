@@ -5,7 +5,10 @@ const {
 	registerBlockStyle,
 	unregisterBlockStyle,
 	unregisterBlockType,
+	unregisterBlockVariation,
+	store: blocksStore,
 } = wp.blocks;
+const { select } = wp.data;
 
 /**
  * Internal dependencies
@@ -13,47 +16,15 @@ const {
 import * as list from './list/editor';
 import * as heading from './heading/editor';
 import * as paragraph from './paragraph/editor';
+import {
+	unregisterBlocksList,
+	unregisterBlockVariationsList,
+} from './unregister';
 
 /**
  * Blocks to modify styles for.
  */
 const blockStylesList = [ list, heading, paragraph ];
-
-/**
- * Blocks to unregister.
- */
-const unregisterList = [
-	'core/archives',
-	'core/avatar',
-	'core/calendar',
-	'core/comments-query-loop',
-	'core/post-comments-form',
-	'core/html',
-	'core/latest-comments',
-	'core/latest-posts',
-	'core/loginout',
-	'core/more',
-	'core/navigation',
-	'core/nextpage',
-	'core/post-author',
-	'core/post-author-biography',
-	'core/post-comments',
-	'core/post-content',
-	'core/post-date',
-	'core/post-excerpt',
-	'core/post-featured-image',
-	'core/post-navigation-link',
-	'core/post-terms',
-	'core/page-list',
-	'core/post-title',
-	'core/query',
-	'core/read-more',
-	'core/site-logo',
-	'core/site-tagline',
-	'core/site-title',
-	'core/term-description',
-	'core/query-title',
-];
 
 /**
  * Adds or removes styles from the given blocks.
@@ -83,13 +54,45 @@ function modifyBlockStyles() {
  *
  * @return {void}
  */
-function unregisterBlocks() {
-	unregisterList.forEach( ( name ) => {
-		if ( ! name ) {
+function useUnregisterBlockTypes() {
+	const { getBlockTypes } = select( blocksStore );
+	const blockTypes = getBlockTypes().map( ( blockType ) => blockType.name );
+
+	unregisterBlocksList.forEach( ( name ) => {
+		if ( ! name || false === blockTypes.includes( name ) ) {
 			return;
 		}
+
 		unregisterBlockType( name );
 	} );
 }
 
-export { modifyBlockStyles, unregisterBlocks };
+/**
+ * Unregisters given block variations.
+ *
+ * @return {void}
+ */
+function useUnregisterBlockVariation() {
+	const { getBlockVariations } = select( blocksStore );
+
+	unregisterBlockVariationsList.forEach(
+		( { blockName, variationNames } ) => {
+			const blockVariations = getBlockVariations( blockName ).map(
+				( variationType ) => variationType.name
+			);
+
+			variationNames.forEach( ( variation ) => {
+				if ( false === blockVariations.includes( variation ) ) {
+					return;
+				}
+				unregisterBlockVariation( blockName, variation );
+			} );
+		}
+	);
+}
+
+export {
+	modifyBlockStyles,
+	useUnregisterBlockTypes,
+	useUnregisterBlockVariation,
+};
