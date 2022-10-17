@@ -251,5 +251,15 @@
 				}
 			}
 		}
+	},
+	"styles": {
+		"blocks": {
+			"core/pullquote": {
+				"border": {
+					"style": "solid",
+					"width": "8px 1px 1px"
+				}
+			}
+		}
 	}
 }
