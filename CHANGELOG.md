@@ -15,6 +15,27 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 3.5.0-rc.1 (:construction: TBD)
 
+### Added
+
+- Remove some typography supports from select blocks.
+- Add HRS setting to toggle environment indicator. (b8cb0bb)
+- Create admin bar node displaying WP environment on frontend and backend. (f7c49be)
+- Add environment banner on frontend and editor backend for non-production environments. (f7c49be)
+- Add non-production env notice in header title meta. (f7c49be)
+- Add SVG icon class to display SVG icons. (f7c49be)
+- Add frontend login requirement for "require login" option. (c011875)
+- Add general HRS settings page with "require login" option. (e60659d)
+
+### Changed
+
+- Bump required PHP version to 7.4. (0e6e35c)
+- Check that block exists before unregistering it, move the unregister list to a separate file, and unregister variations. (76929d9)
+- Add "styles" section to `theme.json` to set `core/pullquote` block style defaults, close #282. (6f29be9, bd414aa)
+
+### Security
+
+- Bump terser from 5.12.0 to 5.14.2. (933b3f6)
+
 ## 3.4.1 (2022-06-30)
 
 ### Fixed

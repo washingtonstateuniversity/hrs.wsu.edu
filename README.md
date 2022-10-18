@@ -6,6 +6,10 @@
 
 This is the WordPress theme for the Washington State University (WSU) Human Resource Services (HRS) website. It's a child theme of the [WSU Spine parent theme](https://github.com/washingtonstateuniversity/WSUWP-spine-parent-theme).
 
+## Settings
+
+The HRSWP Theme provides a shared settings page for the HRS Theme and HRSWP plugins. The HRS Theme registers two settings for managing production and non-production environments. One toggles environment notices on and off, and the other whether to require a login for frontend access.
+
 ## Installation & Dependencies
 
 The WSU Human Resource Services theme is not intended for general use and is not available from the WordPress Themes repository. It must be manually installed.
@@ -21,13 +25,15 @@ The WSU Human Resource Services theme is not intended for general use and is not
 ### Dependencies
 
 - **WSU Spine Parent theme (required)**: The HRS theme will not activate without this parent theme. [Download the WSU Spine Parent theme](https://github.com/washingtonstateuniversity/WSUWP-spine-parent-theme/archive/master.zip) and follow the instructions under [installation](#installation). Make sure to rename the Spine theme directory to `wsuspine` in the themes directory.
-- **HRSWP Blocks plugin (recommended)**: The [HRSWP Blocks plugin](https://github.com/washingtonstateuniversity/hrswp-plugin-blocks) provides several custom blocks and block adjustments that complement the HRS theme.
-- **HRSWP Sqlsrv DB plugin (optional)**: The [HRSWP Sqlsrv DB plugin](https://github.com/washingtonstateuniversity/hrswp-plugin-sqlsrv-db) provides tools to connect to and query external Microsoft SQL Server databases, along with several custom blocks to facilitate displaying the external content.
+- **HRSWP Blocks plugin (recommended)**: The [HRSWP Blocks plugin](https://github.com/washingtonstateuniversity/hrswp-plugin-blocks) provides several custom blocks and block adjustments that complement the HRS theme. Also includes several blocks that work with the HRSWP Sqlsrv DB plugin to display external content.
+- **HRSWP Sqlsrv DB plugin (recommended)**: The [HRSWP Sqlsrv DB plugin](https://github.com/washingtonstateuniversity/hrswp-plugin-sqlsrv-db) provides tools to connect to and query external Microsoft SQL Server databases. It is required for the HRSWP Blocks plugin to function completely.
 - **WSUWP HRS Courses plugin (optional)**: The [WSUWP HRS Courses plugin](https://github.com/washingtonstateuniversity/wsuwp-plugin-hrs-courses) creates a Courses custom post type with supporting custom taxonomies.
 
 ## For developers
 
-The WSU HRS Theme development environment relies NPM and Composer for test and build processes. The `package.json` and `composer.json` configuration files will install the necessary dependencies for testing and building the production version of the theme. The NPM scripts in `package.json` do most of the heavy lifting.
+The HRS Theme is not a Full Site Editing-enabled theme. It unregisters all of the FSE blocks, along with several others that are not used in the standard HRS environment. Refer to the list in `src/components/unregister.js`.
+
+The WSU HRS Theme development environment relies on NPM and Composer for test and build processes. The `package.json` and `composer.json` configuration files will install the necessary dependencies for testing and building the production version of the theme. The NPM scripts in `package.json` do most of the heavy lifting.
 
 ### Initial setup
 
