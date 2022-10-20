@@ -28,6 +28,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Changed
 
+- Bump WP tested-to to 6.0.3.
 - Bump required PHP version to 7.4. (0e6e35c)
 - Check that block exists before unregistering it, move the unregister list to a separate file, and unregister variations. (76929d9)
 - Add "styles" section to `theme.json` to set `core/pullquote` block style defaults, close #282. (6f29be9, bd414aa)
