@@ -154,6 +154,12 @@ function filter_spine_get_title( $title ) {
 
 	$title = $page_title . $site_title . $global_title;
 
+	$environment = wp_get_environment_type();
+	if ( 'production' !== $environment ) {
+		/* translators: the name of the WordPress environment */
+		$title = esc_html( sprintf( __( '%s Environment: ', 'hrswp-theme' ), ucfirst( $environment ) ) ) . $title;
+	}
+
 	return $title;
 }
 add_filter( 'spine_get_title', __NAMESPACE__ . '\filter_spine_get_title' );

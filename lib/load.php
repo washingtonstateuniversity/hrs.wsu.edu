@@ -28,8 +28,10 @@ require dirname( __DIR__ ) . '/inc/media.php';
 require dirname( __DIR__ ) . '/inc/meta.php';
 require dirname( __DIR__ ) . '/inc/queries.php';
 require dirname( __DIR__ ) . '/inc/roles.php';
+require dirname( __DIR__ ) . '/inc/settings.php';
 require dirname( __DIR__ ) . '/inc/taxonomy.php';
 require dirname( __DIR__ ) . '/inc/wsu-spine.php';
+require dirname( __DIR__ ) . '/inc/classes/class-svg-icons.php';
 
 /**
  * Load component files.
@@ -42,6 +44,13 @@ require dirname( __DIR__ ) . '/build/components/navigation.php';
 require dirname( __DIR__ ) . '/build/components/post-date.php';
 require dirname( __DIR__ ) . '/build/components/shortcode-document-gallery.php';
 require dirname( __DIR__ ) . '/build/components/terms-list.php';
+
+/**
+ * Conditionally load login access.
+ */
+if ( '1' === get_option( 'hrswp_theme_require_login' ) ) {
+	require dirname( __DIR__ ) . '/inc/access.php';
+}
 
 /**
  * Load Gravity Forms compatability file.

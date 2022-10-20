@@ -8,6 +8,8 @@
 
 namespace HrswpTheme\inc\content_filters;
 
+use HrswpTheme\inc\Class_SVG_Icons;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Silence is golden.' );
 }
@@ -29,9 +31,34 @@ function update_body_class( $classes ) {
 		}
 	}
 
+	if ( '1' === get_option( 'hrswp_theme_env_indicator', true ) ) {
+		$classes[] = 'environment-' . esc_attr( wp_get_environment_type() );
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', __NAMESPACE__ . '\update_body_class' );
+
+/**
+ * Modifies the WordPress admin body classes.
+ *
+ * @since 3.5.0
+ *
+ * @param string $classes A string of body class names.
+ * @return string A string of body class names.
+ */
+add_filter(
+	'admin_body_class',
+	function ( string $classes ): string {
+
+		// Return unmodified if visual environment indicators aren't enabled.
+		if ( '1' !== get_option( 'hrswp_theme_env_indicator', true ) ) {
+			return $classes;
+		}
+
+		return $classes .= ' environment-' . esc_attr( wp_get_environment_type() ) . ' ';
+	}
+);
 
 /**
  * Sets the default excerpt word count.
@@ -74,3 +101,93 @@ function filter_protected_title_format() {
 	return '%s';
 }
 add_filter( 'protected_title_format', __NAMESPACE__ . '\filter_protected_title_format' );
+
+/**
+ * Adds a text node to the admin bar with the environment type.
+ *
+ * @since 3.5.0
+ *
+ * @param \WP_Admin_Bar $wp_admin_bar The WP_Admin_Bar instance, passed by reference.
+ * @return void
+ */
+add_action(
+	'admin_bar_menu',
+	function ( \WP_Admin_Bar $wp_admin_bar ): void {
+
+		// Return early if visual environment indicators aren't enabled.
+		if ( '1' !== get_option( 'hrswp_theme_env_indicator', true ) ) {
+			return;
+		}
+
+		$environment = wp_get_environment_type();
+		switch ( $environment ) {
+			case 'local':
+				$icon = Class_SVG_Icons\SVG_Icons::get_svg( 'lab', 20 );
+				break;
+			case 'development':
+				$icon = Class_SVG_Icons\SVG_Icons::get_svg( 'wrench', 20 );
+				break;
+			case 'staging':
+				$icon = Class_SVG_Icons\SVG_Icons::get_svg( 'rocket', 20 );
+				break;
+			case 'production':
+			default:
+				$icon = Class_SVG_Icons\SVG_Icons::get_svg( 'trees', 20 );
+				break;
+		}
+
+		$wp_admin_bar->add_menu(
+			array(
+				'id'    => 'environment-label',
+				'title' => sprintf(
+					'<span class="environment-icon" aria-hidden="true">%2$s</span> %1$s',
+					/* translators: the name of the WordPress environment */
+					esc_html( sprintf( __( '%s Environment', 'hrswp-theme' ), ucfirst( $environment ) ) ),
+					$icon
+				),
+				'href'  => false,
+			)
+		);
+	},
+	15
+);
+
+add_action(
+	'wp_footer',
+	function (): void {
+		// Return early if visual environment indicators aren't enabled.
+		if ( '1' !== get_option( 'hrswp_theme_env_indicator', true ) ) {
+			return;
+		}
+
+		$environment = wp_get_environment_type();
+
+		// Don't output an environment banner in production.
+		if ( 'production' === $environment ) {
+			return;
+		}
+
+		switch ( $environment ) {
+			case 'local':
+				$icon = Class_SVG_Icons\SVG_Icons::get_svg( 'lab', 20 );
+				break;
+			case 'development':
+				$icon = Class_SVG_Icons\SVG_Icons::get_svg( 'wrench', 20 );
+				break;
+			case 'staging':
+				$icon = Class_SVG_Icons\SVG_Icons::get_svg( 'rocket', 20 );
+				break;
+			case 'production':
+			default:
+				return;
+				break;
+		}
+
+		printf(
+			'<div class="environment-banner"><span class="environment-icon" aria-hidden="true">%2$s</span>%1$s</div>',
+			/* translators: the name of the WordPress environment */
+			esc_html( sprintf( __( '%s Environment', 'hrswp-theme' ), ucfirst( $environment ) ) ),
+			$icon
+		);
+	}
+);
