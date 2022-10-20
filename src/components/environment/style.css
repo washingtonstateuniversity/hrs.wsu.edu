@@ -28,9 +28,9 @@ body.environment-staging {
 
 @media (max-width: 989px) {
 
-	body.environment-local .environment-banner,
-	body.environment-development .environment-banner,
-	body.environment-staging .environment-banner {
+	body.admin-bar.environment-local .environment-banner,
+	body.admin-bar.environment-development .environment-banner,
+	body.admin-bar.environment-staging .environment-banner {
 		bottom: 32px;
 	}
 
@@ -38,9 +38,9 @@ body.environment-staging {
 
 @media screen and (max-width: 782px) {
 
-	body.environment-local .environment-banner,
-	body.environment-development .environment-banner,
-	body.environment-staging .environment-banner {
+	body.admin-bar.environment-local .environment-banner,
+	body.admin-bar.environment-development .environment-banner,
+	body.admin-bar.environment-staging .environment-banner {
 		bottom: 46px;
 	}
 
