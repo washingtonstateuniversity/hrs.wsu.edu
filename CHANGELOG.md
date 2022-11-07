@@ -15,6 +15,11 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 3.5.1-rc.1 (:construction: TBD)
 
+### Fixed
+
+- Fix #281, remove duplicate Button block styles. (10cc779)
+- Remove WordPress-injected inline button styles. (10cc779)
+
 ## 3.5.0 (2022-10-20)
 
 ### Added
