@@ -260,6 +260,26 @@
 					"width": "8px 1px 1px"
 				}
 			}
+		},
+		"elements": {
+			"button": {
+				"border": {
+					"width": ""
+				},
+				"color": {
+					"background": "",
+					"text": ""
+				},
+				"typography": {
+					"fontFamily": "",
+					"fontSize": "",
+					"lineHeight": "",
+					"textDecoration": ""
+				},
+				"spacing": {
+					"padding": {}
+				}
+			}
 		}
 	}
 }
