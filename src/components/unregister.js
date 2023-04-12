@@ -17,6 +17,7 @@ const unregisterBlocksList = [
 	'core/nextpage',
 	'core/post-author',
 	'core/post-author-biography',
+	'core/post-author-name',
 	'core/post-comments',
 	'core/post-comments-form',
 	'core/post-content',

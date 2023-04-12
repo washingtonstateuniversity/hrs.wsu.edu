@@ -1,6 +1,6 @@
 {
 	"name": "@washingtonstateuniversity/hrs.wsu.edu",
-	"version": "3.5.1",
+	"version": "3.5.2",
 	"description": "The WordPress theme for WSU Human Resource Services.",
 	"author": "Adam Turner",
 	"contributors": [
@@ -45,7 +45,7 @@
 		"source-map-loader": "^3.0.1",
 		"stylelint": "^14.5.3",
 		"stylelint-a11y": "^1.2.3",
-		"webpack": "^5.70.0",
+		"webpack": "^5.76.0",
 		"webpack-bundle-analyzer": "^4.5.0",
 		"webpack-cli": "^4.9.2"
 	},

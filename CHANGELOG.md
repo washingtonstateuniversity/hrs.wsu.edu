@@ -13,6 +13,23 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
+## 3.5.2 (2023-04-12)
+
+### Changed
+
+- Bump WordPress tested-to to 6.2.
+- Update broswerslist database. (670fc85)
+
+### Fixed
+
+- Fix #290 remove WP 6.2 theme blocks. (69ad4fc)
+
+### Security
+
+- Bump webpack from 5.70.0 to 5.76.0. (5ad9b7e)
+- Bump loader-utils from 1.4.1 to 1.4.2. (b4f85d3)
+- Bump json5 from 1.0.1 to 1.0.2. (a861d29)
+
 ## 3.5.1 (2022-11-10)
 
 ### Fixed
