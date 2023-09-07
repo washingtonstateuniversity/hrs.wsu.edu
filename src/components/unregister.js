@@ -36,6 +36,7 @@ const unregisterBlocksList = [
 	'core/site-tagline',
 	'core/site-title',
 	'core/term-description',
+	'twofactor/user-settings',
 ];
 
 /**
