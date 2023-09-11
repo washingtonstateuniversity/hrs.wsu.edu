@@ -8,6 +8,7 @@ const unregisterBlocksList = [
 	'core/calendar',
 	'core/comments',
 	'core/comments-query-loop',
+	'core/details',
 	'core/html',
 	'core/latest-comments',
 	'core/latest-posts',
@@ -35,6 +36,7 @@ const unregisterBlocksList = [
 	'core/site-tagline',
 	'core/site-title',
 	'core/term-description',
+	'twofactor/user-settings',
 ];
 
 /**
