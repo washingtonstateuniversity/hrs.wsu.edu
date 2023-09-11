@@ -13,10 +13,11 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 3.5.3-rc.1 (:construction: TBD)
+## 3.5.3 (2023-09-11)
 
 ### Changed
 
+- Bump WordPress tested-to to 6.3.1.
 - Unregister `twofactor/user-settings` block. (e05cdb4)
 - Unregister `core/details` block. (c81b3ee)
 
