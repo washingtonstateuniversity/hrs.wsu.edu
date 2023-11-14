@@ -15,6 +15,10 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 3.5.4 (TBD)
 
+### Changed
+
+- Bump WordPress tested-to to 6.4.1.
+
 ### Security
 
 - Bump @babel/traverse from 7.17.0 to 7.23.2. (479ddbb)
