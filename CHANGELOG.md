@@ -13,6 +13,13 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
+## 3.5.4 (TBD)
+
+### Security
+
+- Bump @babel/traverse from 7.17.0 to 7.23.2. (479ddbb)
+- Bump postcss from 8.4.25 to 8.4.31. (94c0917)
+
 ## 3.5.3 (2023-09-11)
 
 ### Changed
