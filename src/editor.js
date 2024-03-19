@@ -14,7 +14,7 @@ import {
 import registerDisplayOptions from './lib/block-filters';
 
 function removeEditorPanels() {
-	const { removeEditorPanel } = dispatch( 'core/edit-post' );
+	const { removeEditorPanel } = dispatch( 'core/editor' );
 
 	removeEditorPanel( 'discussion-panel' );
 	removeEditorPanel( 'template' );
