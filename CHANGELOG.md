@@ -15,6 +15,14 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 3.6.0-rc.1 (:construction: TBD)
 
+### Changed
+
+- Fix #303 disable drop shadows. (ff337f5)
+
+### Fixed
+
+- Fix #302 `removeEditorPanel` moved from `core/edit-post` to `core/editor` store. (855f8c0)
+
 ## 3.5.4 (2023-11-14)
 
 ### Changed
