@@ -21,6 +21,10 @@
 	"bugs": {
 		"url": "https://github.com/washingtonstateuniversity/hrs.wsu.edu/issues"
 	},
+	"engines": {
+		"node": ">=20.10.0",
+		"npm": ">=10.2.3"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.17.5",
 		"@babel/runtime": "^7.17.2",
