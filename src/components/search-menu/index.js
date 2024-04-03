@@ -10,15 +10,13 @@ class SearchMenu {
 	constructor( siteSearch ) {
 		this._siteSearch = siteSearch;
 		this._searchMenu = this._siteSearch.querySelector( '.search-menu' );
-		this._searchHeading = this._siteSearch.querySelector(
-			'.search-heading'
-		);
+		this._searchHeading =
+			this._siteSearch.querySelector( '.search-heading' );
 		this._searchInput = this._siteSearch.querySelector(
 			'input[type="search"]'
 		);
-		this._searchMenuTargets = this._searchMenu.querySelectorAll(
-			'a, input'
-		);
+		this._searchMenuTargets =
+			this._searchMenu.querySelectorAll( 'a, input' );
 		this._trigger = '';
 		this._triggerText = '';
 

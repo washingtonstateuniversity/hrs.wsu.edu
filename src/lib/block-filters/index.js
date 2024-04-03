@@ -88,12 +88,14 @@ const DisplayOptionsPanel = compose(
 
 		return {
 			postType,
-			displayTitle: select( 'core/editor' ).getEditedPostAttribute(
-				'meta'
-			)[ displayTitleMetaName ],
-			displayFeature: select( 'core/editor' ).getEditedPostAttribute(
-				'meta'
-			)[ displayFeatureMetaName ],
+			displayTitle:
+				select( 'core/editor' ).getEditedPostAttribute( 'meta' )[
+					displayTitleMetaName
+				],
+			displayFeature:
+				select( 'core/editor' ).getEditedPostAttribute( 'meta' )[
+					displayFeatureMetaName
+				],
 		};
 	} )
 )( DisplayOptionsPanelContent );
