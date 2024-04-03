@@ -3,7 +3,7 @@
 	<description>Sniffs for WordPress themes.</description>
 
 	<!-- Ignore WP Scripts-generated asset files. -->
-	<exclude-pattern>*/build/*asset.php*</exclude-pattern>
+	<exclude-pattern>*/build/*</exclude-pattern>
 
 	<!-- Ignore third-party code. -->
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
