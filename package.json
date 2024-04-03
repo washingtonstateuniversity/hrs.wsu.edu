@@ -44,7 +44,7 @@
 		"postcss-import": "^16.1.0",
 		"postcss-preset-env": "^9.5.4",
 		"prettier": "npm:wp-prettier@3.0.3",
-		"resolve-bin": "^1.0.0",
+		"resolve-bin": "^1.0.1",
 		"rimraf": "^5.0.5",
 		"source-map-loader": "^5.0.0",
 		"stylelint": "^15.10.1",
