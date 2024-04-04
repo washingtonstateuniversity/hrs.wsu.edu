@@ -8,6 +8,7 @@
  */
 
 namespace HrswpTheme\components\terms_lists;
+
 use HrswpTheme\inc\queries;
 
 if ( ! defined( 'ABSPATH' ) ) {
