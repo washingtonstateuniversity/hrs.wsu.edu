@@ -17,12 +17,39 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ### Changed
 
+- Close #301 bump WordPress tested-to to 6.5.0. (79f16b9)
 - Fix #303 disable drop shadows. (ff337f5)
+- Upgrade Node.js to v20 and track version at project level. (7de4a5d) 
+- Upgrade @wordpress/eslint-plugin from 11.0.1 to 17.3.0 and eslint to 8.57.0. (57e8d63)
+- Upgrade prettier from wp-prettier@2.6.1-beta-1 to wp-prettier@3.0.3. (e3657c9)
+- Upgrade webpack-cli from 4.9.2 to 5.1.4. (738c882)
+- Upgrade @wordpress/dependency-extraction-webpack-plugin from 3.4.1 to 5.6.0. (738c882)
+- Upgrade @wordpress/babel-preset-default from 6.6.1 to 7.39.0. (53388eb)
+- Upgrade babel-loader from 8.2.3 to 9.1.3. (53388eb)
+- Upgrade source-map-loader from 3.0.1 to 5.0.0. (d0fcec9)
+- Upgrade rimraf from 3.0.2 to 5.0.5. (2b71445)
+- Upgrade npm-package-json-lint from 6.0.3 to 7.1.0. (2218ade)
+- Upgrade @wordpress/stylelint-config from 20.0.2 to 21.38.0. (f497747)
+- Upgrade copy-webpack-plugin from 10.2.4 to 12.0.2. (891d82e)
+- Upgrade cssnano from 5.1.4 to 6.1.2. (ee10f94)
+- Upgrade postcss-cli from 9.1.0 to 11.0.0. (b3677f0)
+- Upgrade postcss-import from 14.0.2 to 16.1.0. (b3677f0)
+- Upgrade postcss-preset-env from 7.4.2 to 9.5.4 (b3677f0)
+- Update webpack from 5.76.0 to 5.91.0. (738c882)
+- Update webpack-bundle-analyzer from 4.5.0 to 4.10.1. (738c882)
+- Update @babel/core from 7.17.5 to 7.24.4. (53388eb)
+- Update @babel/runtime from 7.17.2 to 7.24.4. (53388eb)
+- Update @wordpress/npm-package-json-lint-config from 4.1.2 to 4.40.0. (2218ade)
+- Upgrade Composer dependencies and config and fix resulting issues. (5146e42)
 
 ### Fixed
 
 - Fix regression to continue supporting WP 5.9+.
 - Fix #302 `removeEditorPanel` moved from `core/edit-post` to `core/editor` store. (855f8c0)
+
+### Security
+
+- Bump resolve-bin from 1.0.0 to 1.0.1. (c2528f1)
 
 ## 3.5.4 (2023-11-14)
 
