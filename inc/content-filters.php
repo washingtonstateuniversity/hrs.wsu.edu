@@ -180,14 +180,13 @@ add_action(
 			case 'production':
 			default:
 				return;
-				break;
 		}
 
 		printf(
 			'<div class="environment-banner"><span class="environment-icon" aria-hidden="true">%2$s</span>%1$s</div>',
 			/* translators: the name of the WordPress environment */
 			esc_html( sprintf( __( '%s Environment', 'hrswp-theme' ), ucfirst( $environment ) ) ),
-			$icon
+			wp_kses( $icon, Class_SVG_Icons\SVG_Icons::allowed_tags() )
 		);
 	}
 );

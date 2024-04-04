@@ -103,5 +103,5 @@ function pre_init() {
 		return;
 	}
 
-	require dirname( __FILE__ ) . '/lib/load.php';
+	require __DIR__ . '/lib/load.php';
 }

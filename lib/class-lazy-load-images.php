@@ -229,16 +229,3 @@ class Lazy_Load_Images {
 		return apply_filters( 'hrs_lazy_load_placeholder_path', $placeholder_path );
 	}
 }
-
-/**
- * Creates an instance of the HRS Lazy Load Images class.
- *
- * @since 1.0.0
- *
- * @return object A single HRS Lazy Load Images instance.
- */
-function lazy_load_images_init() {
-	return Lazy_Load_Images::get_instance();
-}
-
-add_action( 'init', __NAMESPACE__ . '\lazy_load_images_init' );
