@@ -43,24 +43,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Set up PHP version
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
-          coverage: none
-          tools: composer, cs2pr
-      - name: Log debug information
-        run: |
-          php --version
-          composer --version
+            php-version: '7.4'
+            coverage: none
+            tools: composer, cs2pr
+
       - name: Install Composer dependencies
         uses: ramsey/composer-install@v1
         with:
-          composer-options: "--no-progress --no-ansi --no-interaction"
+            composer-options: '--no-progress --no-ansi --no-interaction'
+
       - name: Make Composer packages available globally
         run: echo "${PWD}/vendor/bin" >> $GITHUB_PATH
+
       - name: Log PHPCS debug information
         run: phpcs -i
+
       - name: Run PHPCS
-        run: phpcs -q -n --report=checkstyle | cs2pr
+        run: phpcs -q -n --report=checkstyle . | cs2pr

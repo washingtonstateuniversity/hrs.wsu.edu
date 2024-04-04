@@ -97,7 +97,7 @@ function get_reminder_posts( $output = 'ids' ) {
 function get_hrs_unit_posts( $args = array() ) {
 	$defaults = array(
 		'posts_per_page' => get_option( 'posts_per_page' ),
-		'tax_query'      => array(
+		'tax_query'      => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 			array(
 				'taxonomy' => 'hrs_unit',
 				'field'    => 'slug',

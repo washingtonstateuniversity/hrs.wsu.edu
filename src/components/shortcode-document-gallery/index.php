@@ -52,7 +52,7 @@ function hrs_gallery( $attr ) {
 	$post = get_post();
 
 	static $instance = 0;
-	$instance++;
+	++$instance;
 
 	// Build the includes array if the user specified IDs.
 	if ( ! empty( $attr['ids'] ) || ! empty( $attr['urls'] ) ) {

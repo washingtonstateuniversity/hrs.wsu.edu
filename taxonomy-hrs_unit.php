@@ -64,19 +64,17 @@ get_header();
 							<div class="articles-list">
 					<?php
 				}
-			} else {
-				if ( 0 === $result_count ) {
-					?>
-					<section class="row single gutter pad-ends article-archive">
-						<div class="column one">
-							<div class="articles-list">
-					<?php
-				}
+			} elseif ( 0 === $result_count ) {
+				?>
+				<section class="row single gutter pad-ends article-archive">
+					<div class="column one">
+						<div class="articles-list">
+				<?php
 			}
 
 			get_template_part( 'build/templates/archive' );
 
-			$result_count++;
+			++$result_count;
 
 		endwhile;
 		?>
