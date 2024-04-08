@@ -19,7 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return void
  */
 function settings_field_require_login(): void {
-	$option = 'hrswp_theme_require_login';
 	printf(
 		'<fieldset>
 			<legend class="screen-reader-text"><span>%4$s</span></legend>
@@ -28,10 +27,10 @@ function settings_field_require_login(): void {
 				%3$s
 			</label>
 		</fieldset>',
-		$option,
-		checked( '1', get_option( $option ), false ),
-		__( 'Require login for frontend access', 'hrswp-theme' ),
-		__( 'HRS login requirement settings', 'hrswp-theme' )
+		'hrswp_theme_require_login',
+		checked( '1', get_option( 'hrswp_theme_require_login' ), false ),
+		esc_html__( 'Require login for frontend access', 'hrswp-theme' ),
+		esc_html__( 'HRS login requirement settings', 'hrswp-theme' )
 	);
 }
 
@@ -43,7 +42,6 @@ function settings_field_require_login(): void {
  * @return void
  */
 function settings_field_environment_indicator(): void {
-	$option = 'hrswp_theme_env_indicator';
 	printf(
 		'<fieldset>
 			<legend class="screen-reader-text"><span>%4$s</span></legend>
@@ -52,10 +50,10 @@ function settings_field_environment_indicator(): void {
 				%3$s
 			</label>
 		</fieldset>',
-		$option,
-		checked( '1', get_option( $option ), false ),
-		__( 'Display environment indicator', 'hrswp-theme' ),
-		__( 'HRS environment indicator settings', 'hrswp-theme' )
+		'hrswp_theme_env_indicator',
+		checked( '1', get_option( 'hrswp_theme_env_indicator' ), false ),
+		esc_html__( 'Display environment indicator', 'hrswp-theme' ),
+		esc_html__( 'HRS environment indicator settings', 'hrswp-theme' )
 	);
 }
 
@@ -100,7 +98,7 @@ function settings_page_content(): void {
  */
 add_action(
 	'admin_init',
-	function(): void {
+	function (): void {
 		$slug                 = 'hrswp-theme';
 		$login_option         = 'hrswp_theme_require_login';
 		$env_indicator_option = 'hrswp_theme_env_indicator';
@@ -159,7 +157,7 @@ add_action(
  */
 add_action(
 	'admin_menu',
-	function(): void {
+	function (): void {
 		add_options_page(
 			esc_html__( 'HRS Theme and Plugin Settings', 'hrswp-theme' ),
 			esc_html__( 'HRS Settings', 'hrswp-theme' ),

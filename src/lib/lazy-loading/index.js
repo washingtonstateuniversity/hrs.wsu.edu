@@ -13,9 +13,9 @@
  * @since 1.0.0
  */
 
-const images = /** @type {Element[]} */ ( document.querySelectorAll(
-	'[data-src]'
-) );
+const images = /** @type {Element[]} */ (
+	document.querySelectorAll( '[data-src]' )
+);
 const config = {
 	rootMargin: '100px 0px',
 	threshold: 0,

@@ -9,6 +9,7 @@
  */
 
 namespace HrswpTheme\templates\single;
+
 use HrswpTheme\components\terms_lists;
 use HrswpTheme\components\post_date;
 
