@@ -13,7 +13,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 3.6.0-rc.3 (:construction: TBD)
+## 3.6.0 (2024-04-08)
 
 ### Changed
 
