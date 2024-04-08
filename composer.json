@@ -1,5 +1,6 @@
 {
 	"name": "washingtonstateuniversity/hrs.wsu.edu",
+	"type": "phpcodesniffer-hrs-standard",
 	"license": "GPL-3.0-or-later",
 	"authors": [
 		{
@@ -9,21 +10,22 @@
 			"name": "Adam Turner"
 		}
 	],
-	"require-dev": {
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
-		"squizlabs/php_codesniffer": "^3.6.2",
-		"phpcompatibility/php-compatibility": "^9.2.0",
-		"wp-coding-standards/wpcs": "^2.3.0",
-		"sirbrillig/phpcs-variable-analysis": "^2.11.3",
-		"roave/security-advisories": "dev-master"
-	},
-	"scripts": {
-		"format": "phpcbf",
-		"lint": "phpcs --colors"
-	},
 	"config": {
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
+	},
+	"prefer-stable": true,
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "*",
+		"squizlabs/php_codesniffer": "^3.6.2",
+		"phpcompatibility/phpcompatibility-wp": "^2",
+		"wp-coding-standards/wpcs": "^3.0.0",
+		"sirbrillig/phpcs-variable-analysis": "^2.11.2",
+		"roave/security-advisories": "dev-master"
+	},
+	"scripts": {
+		"format": "phpcbf --standard=phpcs.xml.dist --report=summary,source",
+		"lint": "phpcs --colors . "
 	}
 }

@@ -7,7 +7,9 @@
  */
 
 namespace HrswpTheme\lib\asset_loader;
+
 use HrswpTheme;
+use HrswpTheme\lib\Lazy_Load_Images;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Silence is golden.' );
@@ -85,7 +87,10 @@ function register_block_editor_assets() {
 			'wp-compose',
 			'wp-data',
 		),
-		$version
+		$version,
+		array(
+			'in_footer' => true,
+		)
 	);
 
 	wp_enqueue_style(
@@ -184,5 +189,19 @@ add_action(
 			array(),
 			HrswpTheme\get_version()
 		);
+	}
+);
+
+/**
+ * Creates an instance of the HRS Lazy Load Images class.
+ *
+ * @since 1.0.0
+ *
+ * @return object A single HRS Lazy Load Images instance.
+ */
+add_action(
+	'init',
+	function () {
+		return Lazy_Load_Images\Lazy_Load_Images::get_instance();
 	}
 );

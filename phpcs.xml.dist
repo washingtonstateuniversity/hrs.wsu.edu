@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Coding Standards">
+	<description>Sniffs for WordPress themes.</description>
+
+	<!-- Ignore WP Scripts-generated asset files. -->
+	<exclude-pattern>*/build/*</exclude-pattern>
+
+	<!-- Ignore third-party code. -->
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+
+	<!-- Ignore filenames -->
+	<rule ref="WordPress.Files.FileName">
+		<properties>
+			<property name="is_theme" value="true"/>
+		</properties>
+	</rule>
+
+	<!-- Loads the PHP Compatibility ruleset. -->
+	<rule ref="PHPCompatibilityWP"/>
+
+	<!-- Loads the WP rulesets -->
+	<rule ref="WordPress"/>
+
+	<!-- Loads the variable analysis ruleset. -->
+	<rule ref="VariableAnalysis"/>
+
+	<arg value="ps"/>
+	<arg name="extensions" value="php"/>
+	<arg name="basepath" value="./"/>
+	<arg name="parallel" value="20"/>
+
+	<!-- Sets the minimum supported PHP version to 7.4, which is also WordPress's. -->
+	<config name="testVersion" value="7.4-"/>
+
+	<!-- Sets the minimum supported WP version to 5.4. -->
+	<config name="minimum_wp_version" value="5.4" />
+
+	<!-- Defines the valid textdomain options. -->
+	<config name="text_domain" value="hrswp-theme,default"/>
+</ruleset>

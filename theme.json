@@ -99,6 +99,9 @@
 			"contentSize": "var(--wp--custom--layout--content-size)",
 			"wideSize": "var(--wp--custom--layout--wide-size)"
 		},
+		"shadow": {
+			"defaultPresets": false
+		},
 		"spacing": {
 			"margin": false,
 			"padding": false,

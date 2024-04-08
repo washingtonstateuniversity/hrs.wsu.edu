@@ -1,7 +1,8 @@
 /**
  * WordPress dependencies
  */
-const { dispatch } = wp.data;
+import { dispatch } from '@wordpress/data';
+import { store as editorStore } from '@wordpress/editor';
 
 /**
  * Internal dependencies
@@ -14,7 +15,10 @@ import {
 import registerDisplayOptions from './lib/block-filters';
 
 function removeEditorPanels() {
-	const { removeEditorPanel } = dispatch( 'core/edit-post' );
+	const { removeEditorPanel } =
+		typeof dispatch( editorStore ).removeEditorPanel !== 'undefined'
+			? dispatch( editorStore )
+			: dispatch( 'core/edit-post' );
 
 	removeEditorPanel( 'discussion-panel' );
 	removeEditorPanel( 'template' );

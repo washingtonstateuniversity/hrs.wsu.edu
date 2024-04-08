@@ -18,12 +18,12 @@ namespace HrswpTheme\templates\header;
 	<section class="row single">
 		<div class="site-banner column one">
 			<?php
-			$tag = ( is_front_page() ) ? 'h1' : 'p';
+			$title_tag = ( is_front_page() ) ? 'h1' : 'p';
 			printf(
 				'<%1$s class="site-title"><a href="%2$s">%3$s</a></%1$s>',
-				esc_attr( $tag ),
+				esc_attr( $title_tag ),
 				esc_url( get_home_url() ),
-				get_bloginfo( 'title' )
+				esc_html( get_bloginfo( 'title' ) )
 			);
 			?>
 			<div class="site-search">
