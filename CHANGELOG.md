@@ -15,6 +15,8 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 
 ## 3.6.1 (2024-04-10)
 
+### Changed
+
 - Bump WP tested-to to 6.5.2.
 
 ## 3.6.0 (2024-04-08)
