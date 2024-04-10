@@ -13,7 +13,7 @@ This document details all notable changes to the WSU HRS Child Theme. The format
 ### Security (in case of vulnerabilities)
 -->
 
-## 3.6.1-rc.1 (TBD)
+## 3.6.1 (2024-04-10)
 
 - Bump WP tested-to to 6.5.2.
 
