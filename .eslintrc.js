@@ -1,15 +1,12 @@
-const eslintConfig = {
+module.exports = {
 	root: true,
 	extends: [ 'plugin:@wordpress/eslint-plugin/recommended' ],
-	parserOptions: {
-		requireConfigFile: false,
-		babelOptions: {
-			presets: [ require.resolve( '@wordpress/babel-preset-default' ) ],
+	settings: {
+		jsdoc: {
+			mode: 'typescript',
 		},
 	},
-	env: {
-		browser: true,
+	rules: {
+		'@wordpress/no-unsafe-wp-apis': 'off',
 	},
 };
-
-module.exports = eslintConfig;
