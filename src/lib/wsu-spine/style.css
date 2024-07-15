@@ -30,7 +30,7 @@
 			content: "$";
 			text-align: center;
 			top: 0.9em;
-			font-family: Spine-Icons;
+			font-family: Spine-Icons; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
 			text-indent: 0;
 			position: absolute;
 			left: 0;
