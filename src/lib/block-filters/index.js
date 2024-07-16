@@ -4,7 +4,7 @@
 const { __ } = wp.i18n;
 const { registerPlugin } = wp.plugins;
 const { createElement } = wp.element;
-const { PluginDocumentSettingPanel } = wp.editPost;
+const { PluginDocumentSettingPanel } = wp.editor;
 const { ToggleControl } = wp.components;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
