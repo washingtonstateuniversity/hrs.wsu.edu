@@ -8,16 +8,4 @@ ol.wp-block-list {
 		list-style: lower-roman;
 	}
 
-	&.is-style-alpha {
-		list-style: upper-alpha;
-	}
-
-	&.is-style-alpha ol {
-		list-style: decimal;
-	}
-
-	&.is-style-alpha ol ol {
-		list-style: lower-alpha;
-	}
-
 }

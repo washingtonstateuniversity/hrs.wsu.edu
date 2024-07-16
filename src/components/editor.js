@@ -13,7 +13,6 @@ const { select } = wp.data;
 /**
  * Internal dependencies
  */
-import * as list from './list/editor';
 import * as heading from './heading/editor';
 import * as paragraph from './paragraph/editor';
 import {
@@ -24,7 +23,7 @@ import {
 /**
  * Blocks to modify styles for.
  */
-const blockStylesList = [ list, heading, paragraph ];
+const blockStylesList = [ heading, paragraph ];
 
 /**
  * Adds or removes styles from the given blocks.
