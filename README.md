@@ -1,8 +1,11 @@
 # WSU Human Resource Services Theme
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Build Status](https://github.com/washingtonstateuniversity/hrs.wsu.edu/actions/workflows/coding-standards.yml/badge.svg)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/actions) [![Release Version](https://img.shields.io/github/v/release/washingtonstateuniversity/hrs.wsu.edu)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/releases/latest) ![WordPress tested up to version 6.5.0](https://img.shields.io/badge/WordPress-v6.5.0%20tested-success.svg) ![WordPress Block Ready](https://img.shields.io/badge/block-ready-blueviolet) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![GPLv3 License](https://img.shields.io/github/license/washingtonstateuniversity/hrs.wsu.edu)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/blob/develop/LICENSE.md)
+[![Support Level](https://img.shields.io/badge/support-archived-red.svg)](#support-level) [![Build Status](https://github.com/washingtonstateuniversity/hrs.wsu.edu/actions/workflows/coding-standards.yml/badge.svg)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/actions) [![Release Version](https://img.shields.io/github/v/release/washingtonstateuniversity/hrs.wsu.edu)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/releases/latest) ![WordPress tested up to version 6.5.0](https://img.shields.io/badge/WordPress-v6.5.0%20tested-success.svg) ![WordPress Block Ready](https://img.shields.io/badge/block-ready-blueviolet) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![GPLv3 License](https://img.shields.io/github/license/washingtonstateuniversity/hrs.wsu.edu)](https://github.com/washingtonstateuniversity/hrs.wsu.edu/blob/develop/LICENSE.md)
 
 ## Description
+
+> [!CAUTION]
+> As of 26 July 2024, this project is archived and no longer being actively maintained.
 
 This is the WordPress theme for the Washington State University (WSU) Human Resource Services (HRS) website. It's a child theme of the [WSU Spine parent theme](https://github.com/washingtonstateuniversity/WSUWP-spine-parent-theme).
 
@@ -51,7 +54,7 @@ git clone https://github.com/washingtonstateuniversity/hrs.wsu.edu.git
 cd hrs.wsu.edu
 composer install
 npm install
-npm test
+npm lint
 git checkout -b new-feature
 git push origin new-feature
 ~~~
@@ -93,7 +96,7 @@ Review the current list of mobile and desktop browsers this resolves to using th
 
 ## Support Level
 
-**Active:** WSU HRS actively works on this theme. We plant to continue work for the foreseeable future, adding new features, enhancing existing ones, and maintaining compatability with the latest version of WordPress. Bug reports, feature requests, questions, and pull requests are welcome.
+**Archived:** WSU HRS no longer maintains this theme.
 
 ## Changelog
 
