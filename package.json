@@ -71,6 +71,6 @@
 		"fix:php": "composer format",
 		"start": "run-p 'build:*'",
 		"fix": "run-p 'fix:*'",
-		"test": "run-p 'lint:*'"
+		"lint": "run-p 'lint:*'"
 	}
 }
