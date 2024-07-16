@@ -15,7 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Load lib files.
  */
-require __DIR__ . '/class-lazy-load-images.php';
 require __DIR__ . '/asset-loader.php';
 
 /**

@@ -2,7 +2,6 @@
  * Internal dependencies
  */
 import initComponents from './components';
-import initLazyLoading from './lib/lazy-loading';
 
 /**
  * Initializes all of the site submodules.
@@ -13,7 +12,6 @@ import initLazyLoading from './lib/lazy-loading';
  */
 function main() {
 	initComponents();
-	initLazyLoading();
 }
 
 main();
