@@ -1,9 +1,14 @@
+:root :where(a:where(:not(.wp-element-button))) {
+	text-decoration: none;
+}
+
 .article-content,
 .archive-content,
 .search-links {
 
 	& a:not(.wp-block-button__link):not(.is-style-secondary) {
 		color: var(--wp--preset--color--primary-crimson);
+		text-decoration: underline;
 		text-decoration-color: var(--wp--preset--color--secondary-crimson);
 		text-decoration-thickness: 0.1em;
 		transition: all 0.3s ease;
