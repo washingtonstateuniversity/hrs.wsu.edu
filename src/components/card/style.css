@@ -20,6 +20,11 @@
 
 	& .article-image {
 		order: -1;
+
+		& img {
+			aspect-ratio: 4/3;
+			object-fit: cover;
+		}
 	}
 
 	& .article-footer {
